@@ -1,0 +1,18 @@
+{
+  "name": "crm-playwright",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@playwright/test": "^1.49.1",
+    "@types/node": "^22.10.1"
+  },
+  "dependencies": {
+    "javascript": "^1.0.0",
+    "playwright": "^1.49.1"
+  }
+}
