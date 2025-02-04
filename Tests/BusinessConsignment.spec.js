@@ -1,10 +1,13 @@
 import{test} from '@playwright/test'
 import { CustomerPage } from '../Pages/CustomerPage'
 import { PersonalAccountPage} from '../Pages/PersonalAccountPage'
+import { BusinessAccountPage} from '../Pages/BusinessAccountPage'
 import { AddressPage} from '../Pages/AddressPage'
 import { PhoneNumberPage} from '../Pages/PhoneNumberPage'
+import { BusinessPhoneNumberPage} from '../Pages/BusinessPhoneNumberPage'
 import { EmailPage} from '../Pages/EmailPage'
 import { NewConsignmentVehiclePage} from '../Pages/NewConsignmentVehiclePage'
+import { NewBusinessConsignmentVehiclePage} from '../Pages/NewBusinessConsignmentVehiclePage'
 
 test('test',async({page}) =>
 {
@@ -13,7 +16,10 @@ test('test',async({page}) =>
     const addresspage = new AddressPage(page)
     const phonenumberpage = new PhoneNumberPage(page)
     const emailpage = new EmailPage(page)
+    const businessaccountpage = new BusinessAccountPage(page) 
     const newconsignmentvehiclepage = new NewConsignmentVehiclePage(page)
+    const businessphonenumberpage = new BusinessPhoneNumberPage(page)
+    const newbusinessconsignmentvehiclepage = new NewBusinessConsignmentVehiclePage(page)
 
     await customerpage.url()
     await customerpage.manager()
@@ -35,12 +41,28 @@ test('test',async({page}) =>
     await emailpage.enter_emailid()
     await personalaccountpage.personalAccountDocuments()
 
+    await businessaccountpage.accounttype_dropdown()
+    await businessaccountpage.names()
+    await businessaccountpage.save()
+    await addresspage.newaddress()
+    await addresspage.generaladdress()
+    await addresspage.saveandclose()
+    await businessphonenumberpage.phonenumberbtn()
+    await phonenumberpage.General_PhoneNumber()
+    await businessaccountpage.personalAccountDocuments()
+    await businessaccountpage.RelatedAccount()
+    await addresspage.saveandclose()
+
+
+
     await newconsignmentvehiclepage.newcon()
     await newconsignmentvehiclepage.vehicledeatails()
     await newconsignmentvehiclepage.Mileage()
     await newconsignmentvehiclepage.SaleDetails()
-    //await newconsignmentvehiclepage.Account()
-    await newconsignmentvehiclepage.Account_Address()
+
+    await newbusinessconsignmentvehiclepage.Account()
+    await newbusinessconsignmentvehiclepage.Account_Address()
+
     await newconsignmentvehiclepage.Appilication_Info()
     await newconsignmentvehiclepage.SaleDay()
     await newconsignmentvehiclepage.Assign()

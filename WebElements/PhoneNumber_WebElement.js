@@ -10,6 +10,8 @@ class PhoneNumber_WebElement
         this.AreaCode = "//input[@aria-label='Area Code']"
         this.Number = "//input[@aria-label='Number']"
 
+        this.Phone_Type_BusinessPhone = "//select[@aria-label='Phone Type']"
+
     }
 
 }

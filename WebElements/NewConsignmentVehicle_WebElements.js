@@ -83,5 +83,14 @@ class NewConsignmentVehicle_WebElement
         this.WordTemplate = "//span[text()='Word Templates']"
         this.PrintConsignmentForm = "//span[text()='Print Consignment Form']"
 
+        //business account
+        this.hover_Account = "//ul[@title='Account']"
+        this.Delete_Personal_Account= "//button[contains(@aria-label,'Delete')]"
+        this.Account_field = "//input[@aria-label='Account, Lookup']"
+        this.Select_Business_Account = "//div[@aria-label='Account Lookup results']/ul/li"
+        this.Account_Address = "//input[@aria-label='Account Address, Lookup']"
+        this.Select_Business_Address = "//div[@aria-label='Account Address Lookup results']/ul/li"
+        this.Business_TitleTo = "//input[@aria-label='Titled To']"
+
     }
 }
