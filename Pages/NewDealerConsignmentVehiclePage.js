@@ -1,9 +1,9 @@
 import { expect } from '@playwright/test'
 import { TestData } from '../TestData/testdata.js';
 import { NewConsignmentVehicle_WebElement } from '../WebElements/NewConsignmentVehicle_WebElements.js';
-import { PersonalAccountPage } from '../Pages/PersonalAccountPage.js'  
-exports.NewConsignmentVehiclePage =
-class NewConsignmentVehiclePage
+import { PersonalAccountPage } from './PersonalAccountPage.js'  
+exports.NewDealerConsignmentVehiclePage =
+class NewDealerConsignmentVehiclePage
 {
     constructor(page)
     {
@@ -99,21 +99,28 @@ class NewConsignmentVehiclePage
         //For personal no need to enter firstname and last name
             // await this.page.locator(this.newconsignmentvehicle_webelement.Responsible_Account).fill(this.testdata.FirstName+" "+ this.testdata.LastName)
             // await this.page.locator(this.newconsignmentvehicle_webelement.Responsible_Account_dropdown).click({ timeout: 60000 })
+
+            await this.page.locator(this.newconsignmentvehicle_webelement.hover_Account).hover()
+            await this.page.locator(this.newconsignmentvehicle_webelement.Delete_Personal_Account).click()
+            await this.page.locator(this.newconsignmentvehicle_webelement.Account_field).click()
+            await this.page.locator(this.newconsignmentvehicle_webelement.Account_field).press('Enter')
+            await this.page.locator(this.newconsignmentvehicle_webelement.Select_Business_Account).click()
+
+
     }
     async Account_Address()
     {
-        await this.page.locator(this.newconsignmentvehicle_webelement.Account_Address).scrollIntoViewIfNeeded({ force: true });
-
-        await this.page.locator(this.newconsignmentvehicle_webelement.Event_name).scrollIntoViewIfNeeded();
+        await this.page.locator(this.newconsignmentvehicle_webelement.Account_Address).scrollIntoViewIfNeeded({ timeout: 5000 });
         await this.page.locator(this.newconsignmentvehicle_webelement.Account_Address).click()
         await this.page.locator(this.newconsignmentvehicle_webelement.Account_Address).fill(this.testdata.Account_Address)
         await this.page.locator(this.newconsignmentvehicle_webelement.Account_Address_dropdown).click()
         await this.page.locator(this.newconsignmentvehicle_webelement.Title_To).click()
-        await this.page.locator(this.newconsignmentvehicle_webelement.Title_To).fill(this.testdata.personal_TitleTo)
+        await this.page.locator(this.newconsignmentvehicle_webelement.Title_To).fill(this.testdata.Dealer_TitleTo)
     }
     async Appilication_Info()
     {
-        await this.page.locator(this.newconsignmentvehicle_webelement.Event_name).scrollIntoViewIfNeeded({ force: true }) 
+        await this.page.locator(this.newconsignmentvehicle_webelement.Event_name).scrollIntoViewIfNeeded({ timeout: 5000 }) 
+     
         await this.page.locator(this.newconsignmentvehicle_webelement.Event_name).click()
         await this.page.locator(this.newconsignmentvehicle_webelement.Event_name).fill(this.testdata.Event_name)
         await this.page.locator(this.newconsignmentvehicle_webelement.Event_Name_dropdown).click()

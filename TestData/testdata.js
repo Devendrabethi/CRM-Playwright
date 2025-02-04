@@ -7,15 +7,21 @@ class TestData
         this.URL ="https://bjac-hotfixqa.crm.dynamics.com/main.aspx?appid=58533451-8dc7-ef11-b8e9-6045bd056e7e"
         this.Emailid = "dbethi@barrett-jackson.com";//"dbethi@barrett-jackson.com";//d365testuser2@barrett-jackson.com"; //2-->consignment and 1-->bidder
         this.Password = "PerIrrSza4Qy0-W";//"1--1YCmv10=!43W";2--Tt(jc3JBth@8 PerIrrSza4Qy0-W
-        this.FirstName = "Ldpxyssd"
-        this.LastName = "Cpfsx"
+        this.FirstName = "syfssssd"
+        this.LastName = "Cpsdfsfsx"
         this.Account_Type_Personal = "Personal";
         this.Account_Type_Business = "Business";
+        this.Account_Type_Dealer = "Dealer";
         this.Business_TitleTo = "Devendra Business";
+        this.Dealer_TitleTo = "Devendra Dealer";
         this.Source = "other";
         this.BusinessCustomername = ""
         this.EIN_Number = "3534534534"
         this.Business_PhoneType = "BUSINESS PHONE";
+
+        this.Dealer_Number =  "Dealer1234";
+        this.Dealer_TaxID_Number =  "Resale1234";
+        this.Dealer_PhoneType = "DEALER PHONE";
         
         this.Street_Address = "5055 E Somerset Dr";
         this.Country_name = "united states of America";

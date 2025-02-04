@@ -24,39 +24,39 @@ class PersonalAccountPage
    
     async  names()
                 {
-                //     let GlobalUserData = {}; // Declare the global object first
-                //     // Create a random object (JavaScript has a built-in Random function)
-                // function generateRandomString(length) {
-                //     const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-                //     let result = '';
-                //     for (let i = 0; i < length; i++) {
-                //         result += chars.charAt(Math.floor(Math.random() * chars.length));
-                //     }0
-                //     return result;
-                // }
+                    let GlobalUserData = {}; // Declare the global object first
+                    // Create a random object (JavaScript has a built-in Random function)
+                function generateRandomString(length) {
+                    const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+                    let result = '';
+                    for (let i = 0; i < length; i++) {
+                        result += chars.charAt(Math.floor(Math.random() * chars.length));
+                    }0
+                    return result;
+                }
 
-                // // Generate random first and last names (e.g., 5-10 characters each)
-                // const randomFirstName = generateRandomString(Math.floor(Math.random() * (10 - 3 + 1)) + 5);
-                // const randomLastName = generateRandomString(Math.floor(Math.random() * (10 - 3 + 1)) + 5);
+                // Generate random first and last names (e.g., 5-10 characters each)
+                const randomFirstName = generateRandomString(Math.floor(Math.random() * (10 - 3 + 1)) + 5);
+                const randomLastName = generateRandomString(Math.floor(Math.random() * (10 - 3 + 1)) + 5);
 
-                // const firstName = "DevTesting" + randomFirstName;
-                // const lastName = "Individual" + randomLastName;
+                const firstName = "DevTesting" + randomFirstName;
+                const lastName = "Individual" + randomLastName;
 
-                // // Store the values (example, assuming GlobalUserData is a global object)
-                // GlobalUserData = { FirstName: firstName, LastName: lastName };
+                // Store the values (example, assuming GlobalUserData is a global object)
+                GlobalUserData = { FirstName: firstName, LastName: lastName };
 
-                // // Locate the input fields for first and last names (using selectors)
-                // const firstNameField = await this.page.locator(this.PersonalAccount_WebElements.Firstname);  //'input[name="firstname"]'
-                // const lastNameField = await this.page.locator(this.PersonalAccount_WebElements.Lastname); //'input[name="lastname"]'
+                // Locate the input fields for first and last names (using selectors)
+                const firstNameField = await this.page.locator(this.PersonalAccount_WebElements.Firstname);  //'input[name="firstname"]'
+                const lastNameField = await this.page.locator(this.PersonalAccount_WebElements.Lastname); //'input[name="lastname"]'
 
-                // // Fill the form fields with the generated names
-                // await firstNameField.fill(firstName);
-                // await lastNameField.fill(lastName);
+                // Fill the form fields with the generated names
+                await firstNameField.fill(firstName);
+                await lastNameField.fill(lastName);
 
-                await this.page.locator(this.PersonalAccount_WebElements.Firstname).click();
-                await this.page.locator(this.PersonalAccount_WebElements.Firstname).fill(this.testdata.FirstName);
-                await this.page.locator(this.PersonalAccount_WebElements.Lastname).click();
-                await this.page.locator(this.PersonalAccount_WebElements.Lastname).fill(this.testdata.LastName);
+                // await this.page.locator(this.PersonalAccount_WebElements.Firstname).click();
+                // await this.page.locator(this.PersonalAccount_WebElements.Firstname).fill(this.testdata.FirstName);
+                // await this.page.locator(this.PersonalAccount_WebElements.Lastname).click();
+                // await this.page.locator(this.PersonalAccount_WebElements.Lastname).fill(this.testdata.LastName);
 
                 await this.page.waitForTimeout(1000); 
                 return GlobalUserData; // Return the object containing names
