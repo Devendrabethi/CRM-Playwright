@@ -4,7 +4,7 @@ class TestData
 {
     constructor()
     {
-        this.URL ="https://bjac-hotfixqa.crm.dynamics.com/main.aspx?appid=58533451-8dc7-ef11-b8e9-6045bd056e7e"
+        this.URL ="https://bjac-uat.crm.dynamics.com/main.aspx?appid=a7691afc-ad8a-ef11-ac21-000d3a5c4875"//Hotfixqa: https://bjac-hotfixqa.crm.dynamics.com/main.aspx?appid=58533451-8dc7-ef11-b8e9-6045bd056e7e  //uat: https://bjac-uat.crm.dynamics.com/main.aspx?appid=a7691afc-ad8a-ef11-ac21-000d3a5c4875
         this.Emailid = "dbethi@barrett-jackson.com";//"dbethi@barrett-jackson.com";//d365testuser2@barrett-jackson.com"; //2-->consignment and 1-->bidder
         this.Password = "PerIrrSza4Qy0-W";//"1--1YCmv10=!43W";2--Tt(jc3JBth@8 PerIrrSza4Qy0-W
         this.FirstName = "syfssssd"

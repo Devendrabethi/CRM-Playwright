@@ -81,7 +81,7 @@ class DealerAccountPage
                     const Dealername = generateRandomString(Math.floor(Math.random() * (16 - 5 + 1)) + 5);
                     
                     
-                    const dealername = Dealername;
+                    const dealername ="Dealer" + Dealername;
                     
                     // Store the values (example, assuming GlobalUserData is a global object)
                     GlobalUserData = { dealernametext: dealername};
@@ -147,6 +147,7 @@ class DealerAccountPage
         await this.page.locator(this.dealeraccount_webelements.Related_Accounts_tab).click();
         await this.page.locator(this.dealeraccount_webelements.threedotbtn).click();
         await this.page.locator(this.dealeraccount_webelements.Add_Existing_Account).click();
+        await this.page.waitForTimeout(500)
         await this.page.locator(this.dealeraccount_webelements.FirstAccount_Realting).click();
         await this.page.locator(this.dealeraccount_webelements.Add_btn).click();
         await this.page.locator(this.dealeraccount_webelements.RealtedAccount_More_option).click();

@@ -24,7 +24,7 @@ class NewConsignmentVehiclePage
         let GlobalUserData = {}; // Declare the global object first
         // Create a random object (JavaScript has a built-in Random function)
    function generateRandomString(length) {
-       const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+       const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890abcdefghijklmnopqrstuvwxyz";
        let result = '';
        for (let i = 0; i < length; i++) {
            result += chars.charAt(Math.floor(Math.random() * chars.length));
@@ -36,7 +36,7 @@ class NewConsignmentVehiclePage
    const randomVin = generateRandomString(Math.floor(Math.random() * (16 - 5 + 1)) + 5);
    
 
-   const VinNumber = randomVin;
+   const VinNumber ="1GTG5B"+randomVin;
 
    // Store the values (example, assuming GlobalUserData is a global object)
    GlobalUserData = { vin: VinNumber};
@@ -102,9 +102,8 @@ class NewConsignmentVehiclePage
     }
     async Account_Address()
     {
-        await this.page.locator(this.newconsignmentvehicle_webelement.Account_Address).scrollIntoViewIfNeeded({ force: true });
-
-        await this.page.locator(this.newconsignmentvehicle_webelement.Event_name).scrollIntoViewIfNeeded();
+        //await this.page.locator(this.newconsignmentvehicle_webelement.Event_name).scrollIntoView()
+        //await this.page.locator(this.newconsignmentvehicle_webelement.Event_text).click()
         await this.page.locator(this.newconsignmentvehicle_webelement.Account_Address).click()
         await this.page.locator(this.newconsignmentvehicle_webelement.Account_Address).fill(this.testdata.Account_Address)
         await this.page.locator(this.newconsignmentvehicle_webelement.Account_Address_dropdown).click()
@@ -113,7 +112,7 @@ class NewConsignmentVehiclePage
     }
     async Appilication_Info()
     {
-        await this.page.locator(this.newconsignmentvehicle_webelement.Event_name).scrollIntoViewIfNeeded({ force: true }) 
+       // await this.page.locator(this.newconsignmentvehicle_webelement.Event_name).scrollIntoViewIfNeeded({ force: true }) 
         await this.page.locator(this.newconsignmentvehicle_webelement.Event_name).click()
         await this.page.locator(this.newconsignmentvehicle_webelement.Event_name).fill(this.testdata.Event_name)
         await this.page.locator(this.newconsignmentvehicle_webelement.Event_Name_dropdown).click()
@@ -198,8 +197,6 @@ class NewConsignmentVehiclePage
                     await frame.locator(this.newconsignmentvehicle_webelement.Refresh_btn).click()
                     await this.page.waitForTimeout(6000)
                     //await frame.locator(this.newconsignmentvehicle_webelement.scroll_allphoto).scrollIntoViewIfNeeded()
-
-
                     await this.page.locator(this.newconsignmentvehicle_webelement.Marketing_Tab).click()
                     await this.page.locator(this.newconsignmentvehicle_webelement.ShortDescription).fill(this.testdata.ShortDescriptionText)
                     await this.page.locator(this.newconsignmentvehicle_webelement.LongDescription).fill(this.testdata.LongDescriptionText)
@@ -246,6 +243,10 @@ class NewConsignmentVehiclePage
                 await this.page.locator(this.newconsignmentvehicle_webelement.WordTemplate).click()
                 await this.page.locator(this.newconsignmentvehicle_webelement.PrintConsignmentForm).click()
                 await this.page.locator(this.newconsignmentvehicle_webelement.Refresh_consignment).click()
+
+                await this.page.locator(this.newconsignmentvehicle_webelement.Integration_Tab).click()
+                await this.page.waitForTimeout(3000)
+
    }
 
 }

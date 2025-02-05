@@ -40,7 +40,7 @@ class PersonalAccountPage
                 const randomLastName = generateRandomString(Math.floor(Math.random() * (10 - 3 + 1)) + 5);
 
                 const firstName = "DevTesting" + randomFirstName;
-                const lastName = "Individual" + randomLastName;
+                const lastName = "Ind" + randomLastName;
 
                 // Store the values (example, assuming GlobalUserData is a global object)
                 GlobalUserData = { FirstName: firstName, LastName: lastName };

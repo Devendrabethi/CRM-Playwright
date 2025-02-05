@@ -32,6 +32,7 @@ class NewConsignmentVehicle_WebElement
         this.Account_Address = "//input[@aria-label='Account Address, Lookup'] "
         this.Account_Address_dropdown = "//div[@aria-label='Account Address Lookup results']/ul/li "
         this.Title_To = "//input[@aria-label='Titled To'] "
+        this.Event_text = "//span[@title='Event']"
         this.Event_name = " //input[@aria-label='Event, Lookup']"
         this.Event_Name_dropdown = "//div[@aria-label='Event Lookup results']/ul/li "
         this.Representative_Consignment_name = "//input[@aria-label='Requested Consignment Representative, Lookup'] "
@@ -91,6 +92,9 @@ class NewConsignmentVehicle_WebElement
         this.Account_Address = "//input[@aria-label='Account Address, Lookup']"
         this.Select_Business_Address = "//div[@aria-label='Account Address Lookup results']/ul/li"
         this.Business_TitleTo = "//input[@aria-label='Titled To']"
+
+        //Integration
+        this.Integration_Tab = "//ul[@aria-label='Opportunity Form']/li[contains(@aria-label,'Integration')]"
 
     }
 }
