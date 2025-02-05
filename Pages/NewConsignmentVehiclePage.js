@@ -20,6 +20,7 @@ class NewConsignmentVehiclePage
     {
         await this.page.locator(this.newconsignmentvehicle_webelement.Vehicle_field).click()
         await this.page.locator(this.newconsignmentvehicle_webelement.New_Vehicle_link).click()
+        await this.page.locator(this.newconsignmentvehicle_webelement.New_Vehicle_link).press('Enter');
 
         let GlobalUserData = {}; // Declare the global object first
         // Create a random object (JavaScript has a built-in Random function)
@@ -186,10 +187,10 @@ class NewConsignmentVehiclePage
             "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\odometer.jpg",
             "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\LIEN Release.jpg"
         ]
-                   // await this.page.waitForTimeout(2000)
+                   // await this.page.waitForTimeout(2000)                   
                     const frame = await this.page.frameLocator(this.newconsignmentvehicle_webelement.Photo_frame)
-                    await frame.locator(this.newconsignmentvehicle_webelement.plus_Add_Photo_btn).click()
                     if(!frame) throw new Error('Iframe not found')
+                    await frame.locator(this.newconsignmentvehicle_webelement.plus_Add_Photo_btn).click()
                     await frame.locator(this.newconsignmentvehicle_webelement.Upload_photo_input).setInputFiles(fileToUpload)
                     await frame.locator(this.newconsignmentvehicle_webelement.Upload_photo_btn).click()
                     await this.page.waitForTimeout(12000)

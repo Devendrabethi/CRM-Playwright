@@ -32,38 +32,6 @@ class DealerAccountPage
    
     async  names()
                 {
-                //     let GlobalUserData = {}; // Declare the global object first
-                //     // Create a random object (JavaScript has a built-in Random function)
-                // function generateRandomString(length) {
-                //     const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-                //     let result = '';
-                //     for (let i = 0; i < length; i++) {
-                //         result += chars.charAt(Math.floor(Math.random() * chars.length));
-                //     }0
-                //     return result;
-                // }
-
-                // // Generate random first and last names (e.g., 5-10 characters each)
-                // const randomFirstName = generateRandomString(Math.floor(Math.random() * (10 - 3 + 1)) + 5);
-                // const randomLastName = generateRandomString(Math.floor(Math.random() * (10 - 3 + 1)) + 5);
-
-                // const firstName = "DevTesting" + randomFirstName;
-                // const lastName = "Individual" + randomLastName;
-
-                // // Store the values (example, assuming GlobalUserData is a global object)
-                // GlobalUserData = { FirstName: firstName, LastName: lastName };
-
-                // // Locate the input fields for first and last names (using selectors)
-                // const firstNameField = await this.page.locator(this.PersonalAccount_WebElements.Firstname);  //'input[name="firstname"]'
-                // const lastNameField = await this.page.locator(this.PersonalAccount_WebElements.Lastname); //'input[name="lastname"]'
-
-                // // Fill the form fields with the generated names
-                // await firstNameField.fill(firstName);
-                // await lastNameField.fill(lastName);
-
-                // await this.page.locator(this.businessaccount_webelements.Customer_Name_Business).click();
-                // await this.page.locator(this.businessaccount_webelements.Customer_Name_Business).fill(this.testdata.BusinessCustomername);
-
                 let GlobalUserData = {}; // Declare the global object first
                 // Create a random object (JavaScript has a built-in Random function)
            function generateRandomString(length)
@@ -147,8 +115,9 @@ class DealerAccountPage
         await this.page.locator(this.dealeraccount_webelements.Related_Accounts_tab).click();
         await this.page.locator(this.dealeraccount_webelements.threedotbtn).click();
         await this.page.locator(this.dealeraccount_webelements.Add_Existing_Account).click();
-        await this.page.waitForTimeout(500)
+        await this.page.waitForTimeout(2000)
         await this.page.locator(this.dealeraccount_webelements.FirstAccount_Realting).click();
+        await this.page.waitForTimeout(2000)
         await this.page.locator(this.dealeraccount_webelements.Add_btn).click();
         await this.page.locator(this.dealeraccount_webelements.RealtedAccount_More_option).click();
         await this.page.locator(this.dealeraccount_webelements.Related_Accounts_refresh).click();

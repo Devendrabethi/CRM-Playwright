@@ -19,5 +19,7 @@ class Address_WebElements
         this.Save_Close = "//span[text()='Save & Close']"
         this.Save_btn = "//span[text()='Save']"
 
+        this.scripterror = "//button[@aria-label='OK']" 
+
     }
 }
