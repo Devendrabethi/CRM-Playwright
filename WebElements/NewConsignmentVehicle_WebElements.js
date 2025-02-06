@@ -49,7 +49,7 @@ class NewConsignmentVehicle_WebElement
 
         this.Documentation_Tab = "//ul[@aria-label='Opportunity Form']/li[contains(@aria-label,'Documentation')]"
         this.Vehicle_Add_Document_btn = "//ul[@aria-label='Vehicle Documents Commands']/li/button[contains(@aria-label,'Add Document')]"
-        this.frame = "//iframe[@id='FullPageWebResource']"
+        this.frame = "//iframe[@id='FullPageWebResource']"  
         this.Select_DocumentType_dropdown = "//select[@id='documentType']"
         this.Expiration_Date_field = "//input[@id='date-picker']"
         this.Next_Month = "//div[@class='datepicker-days']/table[@class='table-condensed'][1]/thead/tr[2]/th[3]"

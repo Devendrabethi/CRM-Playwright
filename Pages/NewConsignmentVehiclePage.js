@@ -20,7 +20,7 @@ class NewConsignmentVehiclePage
     {
         await this.page.locator(this.newconsignmentvehicle_webelement.Vehicle_field).click()
         await this.page.locator(this.newconsignmentvehicle_webelement.New_Vehicle_link).click()
-        await this.page.locator(this.newconsignmentvehicle_webelement.New_Vehicle_link).press('Enter');
+        //await this.page.locator(this.newconsignmentvehicle_webelement.New_Vehicle_link).press('Enter');
 
         let GlobalUserData = {}; // Declare the global object first
         // Create a random object (JavaScript has a built-in Random function)
@@ -196,7 +196,7 @@ class NewConsignmentVehiclePage
                     await this.page.waitForTimeout(12000)
                     await frame.locator(this.newconsignmentvehicle_webelement.Cross_mark).click()
                     await frame.locator(this.newconsignmentvehicle_webelement.Refresh_btn).click()
-                    await this.page.waitForTimeout(6000)
+                    await this.page.waitForTimeout(2000)
                     //await frame.locator(this.newconsignmentvehicle_webelement.scroll_allphoto).scrollIntoViewIfNeeded()
                     await this.page.locator(this.newconsignmentvehicle_webelement.Marketing_Tab).click()
                     await this.page.locator(this.newconsignmentvehicle_webelement.ShortDescription).fill(this.testdata.ShortDescriptionText)
