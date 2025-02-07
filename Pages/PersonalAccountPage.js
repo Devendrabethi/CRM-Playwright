@@ -1,6 +1,6 @@
 import { expect } from '@playwright/test'
 import { PersonalAccount_WebElements } from '../WebElements/PersonalAccount_WebElements'    
-import { GlobalUserData } from './GlobalUserData.js';  // Import it when needed
+//import { GlobalUserData } from './GlobalUserData.js';  // Import it when needed
 import { TestData } from '../TestData/testdata.js';
 
 
@@ -24,8 +24,6 @@ class PersonalAccountPage
    
     async  names()
                 {
-                    let GlobalUserData = {}; // Declare the global object first
-                    // Create a random object (JavaScript has a built-in Random function)
                 function generateRandomString(length) {
                     const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
                     let result = '';
@@ -36,22 +34,15 @@ class PersonalAccountPage
                 }
 
                 // Generate random first and last names (e.g., 5-10 characters each)
-                const randomFirstName = generateRandomString(Math.floor(Math.random() * (10 - 3 + 1)) + 5);
-                const randomLastName = generateRandomString(Math.floor(Math.random() * (10 - 3 + 1)) + 5);
+                const randomFirstName = generateRandomString(Math.floor(Math.random() * (26-19)) + 1);
+                const randomLastName = generateRandomString(Math.floor(Math.random() * (26-19)) + 1);
 
                 const firstName = "DevTesting" + randomFirstName;
                 const lastName = "Ind" + randomLastName;
 
-                // Store the values (example, assuming GlobalUserData is a global object)
-                GlobalUserData = { FirstName: firstName, LastName: lastName };
-
-                // Locate the input fields for first and last names (using selectors)
-                const firstNameField = await this.page.locator(this.PersonalAccount_WebElements.Firstname);  //'input[name="firstname"]'
-                const lastNameField = await this.page.locator(this.PersonalAccount_WebElements.Lastname); //'input[name="lastname"]'
-
                 // Fill the form fields with the generated names
-                await firstNameField.fill(firstName);
-                await lastNameField.fill(lastName);
+                await this.page.locator(this.PersonalAccount_WebElements.Firstname).fill(firstName);
+                await this.page.locator(this.PersonalAccount_WebElements.Lastname).fill(lastName);
 
                 // await this.page.locator(this.PersonalAccount_WebElements.Firstname).click();
                 // await this.page.locator(this.PersonalAccount_WebElements.Firstname).fill(this.testdata.FirstName);
@@ -59,7 +50,7 @@ class PersonalAccountPage
                 // await this.page.locator(this.PersonalAccount_WebElements.Lastname).fill(this.testdata.LastName);
 
                 await this.page.waitForTimeout(1000); 
-                return GlobalUserData; // Return the object containing names
+                //return GlobalUserData; // Return the object containing names
     }
 
     async save()

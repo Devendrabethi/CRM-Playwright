@@ -2,7 +2,6 @@ import { expect } from '@playwright/test'
 import { BusinessAccount_WebElements } from '../WebElements/BusinessAccount_WebElements.js'
 import { PersonalAccount_WebElements } from '../WebElements/PersonalAccount_WebElements.js'  
 import { DealerAccount_WebElements } from '../WebElements/DealerAccount_WebElements.js'
-import { GlobalUserData } from './GlobalUserData.js';  // Import it when needed
 import { TestData } from '../TestData/testdata.js';
 
 
@@ -21,8 +20,6 @@ class DealerAccountPage
     async accounttype_dropdown()
     {
         await this.page.locator(this.dealeraccount_webelements.Createnewaccountbtn).click();
-        await this.page.selectOption(this.dealeraccount_webelements.Account_Type_Dealer,this.testdata.Account_Type_Dealer);
-
         await this.page.locator(this.dealeraccount_webelements.Account_Type_Dealer).click(); // Open dropdown
         await this.page.selectOption(this.dealeraccount_webelements.Account_Type_Dealer,this.testdata.Account_Type_Dealer);
         //await this.page.locator(`text=${this.testdata.Account_Type_Dealer}`).click(); // Select the option
@@ -32,7 +29,7 @@ class DealerAccountPage
    
     async  names()
                 {
-                let GlobalUserData = {}; // Declare the global object first
+                //let GlobalUserData = {}; // Declare the global object first
                 // Create a random object (JavaScript has a built-in Random function)
            function generateRandomString(length)
             {
@@ -46,22 +43,22 @@ class DealerAccountPage
            }
                     
                     // Generate random first and last names (e.g., 5-10 characters each)
-                    const Dealername = generateRandomString(Math.floor(Math.random() * (16 - 5 + 1)) + 5);
+                    const Dealername = generateRandomString(Math.floor(Math.random() * (26-19)) + 3);
                     
                     
                     const dealername ="Dealer" + Dealername;
                     
                     // Store the values (example, assuming GlobalUserData is a global object)
-                    GlobalUserData = { dealernametext: dealername};
+                    //GlobalUserData = { dealernametext: dealername};
                     
                     // Locate the input fields for first and last names (using selectors)
-                    const dealernameField = await this.page.locator(this.dealeraccount_webelements.Customer_Name_Dealer);  
+                    //const dealernameField = await this.page.locator(this.dealeraccount_webelements.Customer_Name_Dealer);  
                     
                     
                     // Fill the form fields with the generated names
                     //await this.page.locator(this.email_webelement.Email).fill(this.emailid)
                     await this.page.locator(this.dealeraccount_webelements.Customer_Name_Dealer).click()
-                    await dealernameField.fill(dealername)
+                    await this.page.locator(this.dealeraccount_webelements.Customer_Name_Dealer).fill(dealername)
 
                 await this.page.locator(this.dealeraccount_webelements.Dealer_Field_text).click();
                 await this.page.locator(this.dealeraccount_webelements.Dealer_Number).click();
@@ -70,7 +67,7 @@ class DealerAccountPage
                 await this.page.locator(this.dealeraccount_webelements.Dealer_TAXID).fill(this.testdata.Dealer_TaxID_Number);
 
                 await this.page.waitForTimeout(1000); 
-                return GlobalUserData; // Return the object containing names
+                //return GlobalUserData; // Return the object containing names
     }
 
     async save()

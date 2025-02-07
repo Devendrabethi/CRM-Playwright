@@ -45,7 +45,7 @@ test('test',async({page}) =>
 
     await emailpage.NewEmailbtn()
     await emailpage.enter_emailid()
-    await personalaccountpage.personalAccountDocuments()
+   await personalaccountpage.personalAccountDocuments()
 
     await dealeraccountpage.accounttype_dropdown()
     await dealeraccountpage.names()
@@ -55,7 +55,7 @@ test('test',async({page}) =>
     await addresspage.saveandclose()
     await dealerphonenumberpage.phonenumberbtn()
     await phonenumberpage.General_PhoneNumber()
-    await dealeraccountpage.personalAccountDocuments()
+   await dealeraccountpage.personalAccountDocuments()
     await dealeraccountpage.RelatedAccount()
     await addresspage.saveandclose()
 

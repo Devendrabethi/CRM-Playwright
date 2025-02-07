@@ -155,6 +155,7 @@ class BidderOpportunityPage
         await this.page.locator(this.bidderopportunity_webelements.First_Invoice).dblclick()  
         await this.page.selectOption(this.bidderopportunity_webelements.select_Payment_Method,this.testdata.Payment_method)
         await this.page.locator(this.bidderopportunity_webelements.Payment_Date).click()
+        await this.page.waitForTimeout(1000)
         await this.page.locator(this.bidderopportunity_webelements.Payment_current_Date).click()  
         await this.page.waitForTimeout(1000)
         await this.page.locator(this.bidderopportunity_webelements.Bidder_Assign_To).click()
@@ -163,7 +164,69 @@ class BidderOpportunityPage
         await this.page.locator(this.bidderopportunity_webelements.Bidder_Assign_To).click()
         await this.page.locator(this.bidderopportunity_webelements.Save_btn).click()
         await this.page.locator(this.bidderopportunity_webelements.Save_Close).click()
+        await this.page.waitForTimeout(5000)
         await this.page.locator(this.bidderopportunity_webelements.Refresh_Bidder).click()
-
     }
+    async RibbonLevel()
+    {
+        await this.page.locator(this.bidderopportunity_webelements.reqinforbtn).click()
+        const frame = await this.page.frameLocator(this.bidderopportunity_webelements.reqinforframe)
+        if(!frame) throw new Error('Iframe not found')
+            await frame.locator(this.bidderopportunity_webelements.selectvehiclephotoreq).selectOption([
+                { label: 'Bidder Badge Photo' }
+              ]);
+              await frame.locator(this.bidderopportunity_webelements.selectconsigndoc).selectOption([
+                { label: 'Funds Letter' },
+                { label: 'Authorization to Bid' }
+              ]);
+              await frame.locator(this.bidderopportunity_webelements.selectcustomerDocumentsDrpreq).selectOption([
+                { label: 'Drivers License' },
+                { label: 'Passport' },
+                { label: 'Insurance' },
+                { label: 'Dealer License' },
+                { label: 'Resale License' },
+                { label: 'Business License' },
+                { label: 'Wholesale License' }
+              ]);
+              await frame.locator(this.bidderopportunity_webelements.selectPayment).selectOption([
+                { label: 'Credit Card Deposit' }
+              ]);
+                const dialogPromise = this.page.waitForEvent('dialog');
+                await frame.locator(this.bidderopportunity_webelements.submitbtn).click();
+                const dialog = await dialogPromise;
+                await dialog.accept();
+
+                await this.page.locator(this.bidderopportunity_webelements.PrintAll).click()
+                await this.page.locator(this.bidderopportunity_webelements.Refresh_Bidder).click()
+
+                await this.page.locator(this.bidderopportunity_webelements.Print_Agreement).click()
+                await this.page.waitForTimeout(2000)
+                await this.page.locator(this.bidderopportunity_webelements.Print).click()
+                await this.page.waitForTimeout(1000)
+                await this.page.locator(this.bidderopportunity_webelements.Save_btn).click()
+                await this.page.waitForTimeout(1000)
+                await this.page.locator(this.bidderopportunity_webelements.GoBack_btn).click()
+                await this.page.locator(this.bidderopportunity_webelements.Refresh_Bidder).click()
+                
+                await this.page.locator(this.bidderopportunity_webelements.Send_Agreement).click()
+                await this.page.waitForTimeout(3000)
+                await this.page.locator(this.bidderopportunity_webelements.Send).click()
+                await this.page.waitForTimeout(2000)
+                await this.page.locator(this.bidderopportunity_webelements.Okbtn).click()
+                await this.page.locator(this.bidderopportunity_webelements.Save_btn).click()
+                await this.page.waitForTimeout(1000)
+                await this.page.locator(this.bidderopportunity_webelements.GoBack_btn).click()
+                await this.page.locator(this.bidderopportunity_webelements.Refresh_Bidder).click()
+
+                await this.page.locator(this.bidderopportunity_webelements.Sync).click()
+
+                await this.page.locator(this.bidderopportunity_webelements.Envelop).click()
+                await this.page.locator(this.bidderopportunity_webelements.CheckStatus).click()
+                await this.page.waitForTimeout(3000)
+
+                await this.page.locator(this.bidderopportunity_webelements.Integration_Tab).click()
+                await this.page.waitForTimeout(3000)
+                await this.page.locator(this.bidderopportunity_webelements.Refresh_Bidder).click()
+
+   }
 }

@@ -1,8 +1,7 @@
 import { expect } from '@playwright/test'
 import { BusinessAccount_WebElements } from '../WebElements/BusinessAccount_WebElements'
 import { PersonalAccount_WebElements } from '../WebElements/PersonalAccount_WebElements'  
-import { GlobalUserData } from './GlobalUserData.js';  // Import it when needed
-import { TestData } from '../TestData/testdata.js';
+import { TestData } from '../TestData/testdata';
 
 
 exports.BusinessAccountPage =
@@ -19,14 +18,16 @@ class BusinessAccountPage
     async accounttype_dropdown()
     {
         await this.page.locator(this.businessaccount_webelements.Createnewaccountbtn).click();
-        await this.page.selectOption(this.PersonalAccount_WebElements.AccountType_Dropdown,this.testdata.Account_Type_Business);      
+        await this.page.locator(this.businessaccount_webelements.Account_Type_Business).click();
+        await this.page.selectOption(this.businessaccount_webelements.Account_Type_Business,this.testdata.Account_Type_Business);      
+        
     }
 
    
     async  names()
                 {
 
-                let GlobalUserData = {}; // Declare the global object first
+               // let GlobalUserData = {}; // Declare the global object first
                 // Create a random object (JavaScript has a built-in Random function)
            function generateRandomString(length)
             {
@@ -40,28 +41,28 @@ class BusinessAccountPage
            }
                     
                     // Generate random first and last names (e.g., 5-10 characters each)
-                    const Businessname = generateRandomString(Math.floor(Math.random() * (16 - 5 + 1)) + 5);
+                    const Businessname = generateRandomString(Math.floor(Math.random() * (26-19)) + 3);
                     
                     
                     const businessname ="Bus"+ Businessname;
                     
                     // Store the values (example, assuming GlobalUserData is a global object)
-                    GlobalUserData = { businessnametext: businessname};
+                   // GlobalUserData = { businessnametext: businessname};
                     
                     // Locate the input fields for first and last names (using selectors)
-                    const businessnameField = await this.page.locator(this.businessaccount_webelements.Customer_Name_Business);  
+                  //  const businessnameField = await this.page.locator(this.businessaccount_webelements.Customer_Name_Business);  
                     
                     
                     // Fill the form fields with the generated names
                     //await this.page.locator(this.email_webelement.Email).fill(this.emailid)
                     await this.page.locator(this.businessaccount_webelements.Customer_Name_Business).click()
-                    await businessnameField.fill(businessname)
+                    await this.page.locator(this.businessaccount_webelements.Customer_Name_Business).fill(businessname)
 
                 await this.page.locator(this.businessaccount_webelements.EIN).click();
-                await this.page.locator(this.businessaccount_webelements.EIN).fill(this.testdata.EIN_Number);//update
+                await this.page.locator(this.businessaccount_webelements.EIN).fill(this.testdata.EIN_Number);
 
                 await this.page.waitForTimeout(1000); 
-                return GlobalUserData; // Return the object containing names
+               // return GlobalUserData; // Return the object containing names
     }
 
     async save()

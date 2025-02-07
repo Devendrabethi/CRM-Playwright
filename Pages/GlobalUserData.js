@@ -1,1 +1,1 @@
-export let GlobalUserData = {};  // Declare the global object in a module
+let GlobalUserData = {};

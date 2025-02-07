@@ -12,9 +12,9 @@ class BidderOpportunity_WebElements
         this.Select_Interner_Bidder = "//select[@aria-label='Internet Bidder']"
 
         this.Mailing_Address = "//input[@aria-label='Mailing Address, Lookup']"
-        this.Mailing_Address_select = "//div[@aria-label='Mailing Address Lookup results']/ul/li"
+        this.Mailing_Address_select = "//div[@aria-label='Mailing Address Lookup results']/ul/li[1]"
         this.Vehicle_Titling = "//input[@aria-label='Vehicle Titling, Lookup']"
-        this.Vehicle_Titling_address_select = "//div[@aria-label='Vehicle Titling Lookup results']/ul/li"
+        this.Vehicle_Titling_address_select = "//div[@aria-label='Vehicle Titling Lookup results']/ul/li[2]"
         this.Save_Bidder_Opportunity = "//span[text()='Save']"
         this.Refresh_Bidder_Opportunity = "//button[@aria-label='Refresh']"
 
@@ -47,7 +47,7 @@ class BidderOpportunity_WebElements
         this.Opportunity_Product_Tab = "//ul[@aria-label='Opportunity Form']/li[contains(@title,'Opportunity Products')]"
         this.Add_Product_button = "//button[@aria-label='Add product']"
         this.Existing_Product = "//input[@aria-label='Existing Product, Lookup']"
-        this.Selecting_product = "//ul[@aria-label='Lookup results']/li"
+        this.Selecting_product = "//ul[@aria-label='Lookup results']/li[1]"
         this.Quantity = "//input[@aria-label='Quantity']"
 
 
@@ -67,5 +67,31 @@ class BidderOpportunity_WebElements
         this.Save_btn = "//span[text()='Save']"
         this.Save_Close = "//span[text()='Save & Close']"
          this.Refresh_Bidder="(//button[@aria-label='Refresh'])[1]"
+
+
+         this.reqinforbtn ="//span[text()='Request Information']"
+         this.reqinforframe ="//iframe[@id='FullPageWebResource']"
+         this.selectvehiclephotoreq ="//select[@id='photosDrp']"
+         this.selectconsigndoc = "//select[@id='opportunityDocumentsDrp']"
+         this.selectcustomerDocumentsDrpreq = "//select[@id='customerDocumentsDrp']"
+         this.selectPayment = "//select[@id='paymentDrp']"
+         this.submitbtn = "//button[@type='submit']"
+ 
+         this.PrintAll = "//span[text()='Print All']"
+
+         this.Print_Agreement = "//button[@aria-label='Print Agreement']"
+         this.Print = "//button[@aria-label='Print']"
+         this.GoBack_btn = "//button[@aria-label='Press Enter to go back.']"
+
+         this.Send_Agreement = "//button[@aria-label='Send Agreement']"
+         this.Send = "//button[@aria-label='Send']"
+         this.Okbtn = "//button[@aria-label='OK']"
+
+         this.Sync = "//button[@aria-label='Sync']"
+
+         this.Envelop = "//ul[@aria-label='Opportunity Form']/li[contains(@aria-label,'Envelopes')]"
+         this.CheckStatus = "//button[@aria-label='Check Status']"
+
+        this.Integration_Tab = "//ul[@aria-label='Opportunity Form']/li[contains(@aria-label,'Integration')]"
     }
 }
