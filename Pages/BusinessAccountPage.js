@@ -26,9 +26,6 @@ class BusinessAccountPage
    
     async  names()
                 {
-
-               // let GlobalUserData = {}; // Declare the global object first
-                // Create a random object (JavaScript has a built-in Random function)
            function generateRandomString(length)
             {
                const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -39,22 +36,11 @@ class BusinessAccountPage
                 }
                return result;
            }
-                    
-                    // Generate random first and last names (e.g., 5-10 characters each)
                     const Businessname = generateRandomString(Math.floor(Math.random() * (26-19)) + 3);
                     
                     
                     const businessname ="Bus"+ Businessname;
                     
-                    // Store the values (example, assuming GlobalUserData is a global object)
-                   // GlobalUserData = { businessnametext: businessname};
-                    
-                    // Locate the input fields for first and last names (using selectors)
-                  //  const businessnameField = await this.page.locator(this.businessaccount_webelements.Customer_Name_Business);  
-                    
-                    
-                    // Fill the form fields with the generated names
-                    //await this.page.locator(this.email_webelement.Email).fill(this.emailid)
                     await this.page.locator(this.businessaccount_webelements.Customer_Name_Business).click()
                     await this.page.locator(this.businessaccount_webelements.Customer_Name_Business).fill(businessname)
 
@@ -62,7 +48,6 @@ class BusinessAccountPage
                 await this.page.locator(this.businessaccount_webelements.EIN).fill(this.testdata.EIN_Number);
 
                 await this.page.waitForTimeout(1000); 
-               // return GlobalUserData; // Return the object containing names
     }
 
     async save()

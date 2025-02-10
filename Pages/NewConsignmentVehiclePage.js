@@ -22,34 +22,20 @@ class NewConsignmentVehiclePage
         await this.page.locator(this.newconsignmentvehicle_webelement.New_Vehicle_link).click()
         //await this.page.locator(this.newconsignmentvehicle_webelement.New_Vehicle_link).press('Enter');
 
-       // let GlobalUserData = {}; // Declare the global object first
-        // Create a random object (JavaScript has a built-in Random function)
-   function generateRandomString(length) {
-       const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
-       let result = '';
-       for (let i = 0; i < length; i++) {
-           result += chars.charAt(Math.floor(Math.random() * chars.length));
-       }
-       return result;
-   }
+            function generateRandomString(length) {
+                const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+                let result = '';
+                for (let i = 0; i < length; i++) {
+                    result += chars.charAt(Math.floor(Math.random() * chars.length));
+                }
+                return result;
+            }
+            const randomVin = generateRandomString(Math.floor(Math.random() * (36-34)) + 15);
+            
 
-   // Generate random first and last names (e.g., 5-10 characters each)
-   const randomVin = generateRandomString(Math.floor(Math.random() * (36-34)) + 15);
-   
-
-   const VinNumber =randomVin;
-
-   // Store the values (example, assuming GlobalUserData is a global object)
-  //GlobalUserData = { vin: VinNumber};
-
-   // Locate the input fields for first and last names (using selectors)
-   //const VinField = await this.page.locator(this.newconsignmentvehicle_webelement.Vin);  
-   
-
-   // Fill the form fields with the generated names
-   //await this.page.locator(this.email_webelement.Email).fill(this.emailid)
-   await this.page.locator(this.newconsignmentvehicle_webelement.Vin).click()
-   await this.page.locator(this.newconsignmentvehicle_webelement.Vin).fill(VinNumber)
+            const VinNumber =randomVin;
+        await this.page.locator(this.newconsignmentvehicle_webelement.Vin).click()
+        await this.page.locator(this.newconsignmentvehicle_webelement.Vin).fill(VinNumber)
         await this.page.locator(this.newconsignmentvehicle_webelement.Year).fill(this.testdata.Vehicle_Year)
         await this.page.locator(this.newconsignmentvehicle_webelement.Make_field).click()
         await this.page.locator(this.newconsignmentvehicle_webelement.Make_field).fill(this.testdata.Vehicle_Make)

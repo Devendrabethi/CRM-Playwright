@@ -37,7 +37,7 @@ class PersonalAccountPage
                 const randomFirstName = generateRandomString(Math.floor(Math.random() * (26-19)) + 1);
                 const randomLastName = generateRandomString(Math.floor(Math.random() * (26-19)) + 1);
 
-                const firstName = "DevTesting" + randomFirstName;
+                const firstName = "Dev" + randomFirstName;
                 const lastName = "Ind" + randomLastName;
 
                 // Fill the form fields with the generated names
@@ -62,7 +62,7 @@ class PersonalAccountPage
         await this.page.locator(this.PersonalAccount_WebElements.Documents_Tab).click()
         const fileToUpload = 
         {
-            "Customer Photo" :      "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\colorphoto.jpg",
+           // "Customer Photo" :      "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\colorphoto.jpg",
             "Driver's License" :    "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\license_09242024.jpg",
             "Trust Documents" :   "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\trust Doc.jpg",
             "Passport" :          "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\passport2.jpg",

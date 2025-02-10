@@ -22,9 +22,6 @@ class EmailPage
     }
     async enter_emailid()
     {
-        
-       // let GlobalUserData = {}; // Declare the global object first
-         // Create a random object (JavaScript has a built-in Random function)
     function generateRandomString(length) {
         const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
         let result = '';
@@ -33,22 +30,10 @@ class EmailPage
         }
         return result;
     }
-
-    // Generate random first and last names (e.g., 5-10 characters each)
     const randomEmail = generateRandomString(Math.floor(Math.random() * (26-19)) + 5);
     
 
     const emailid = randomEmail+"@yopmail.com";
-
-    // Store the values (example, assuming GlobalUserData is a global object)
-   //GlobalUserData = { email: emailid};
-
-    // Locate the input fields for first and last names (using selectors)
-   // const emailfield = await this.page.locator(this.email_webelement.Email);  
-    
-
-    // Fill the form fields with the generated names
-    //await this.page.locator(this.email_webelement.Email).fill(this.emailid)
     await this.page.locator(this.email_webelement.Email).click({ timeout: 60000 })
     await this.page.locator(this.email_webelement.Email).fill(emailid)
     await this.page.locator(this.address_webelements.Save_btn).click()

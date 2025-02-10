@@ -29,8 +29,6 @@ class DealerAccountPage
    
     async  names()
                 {
-                //let GlobalUserData = {}; // Declare the global object first
-                // Create a random object (JavaScript has a built-in Random function)
            function generateRandomString(length)
             {
                const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -41,22 +39,10 @@ class DealerAccountPage
                 }
                return result;
            }
-                    
-                    // Generate random first and last names (e.g., 5-10 characters each)
                     const Dealername = generateRandomString(Math.floor(Math.random() * (26-19)) + 3);
                     
                     
                     const dealername ="Dealer" + Dealername;
-                    
-                    // Store the values (example, assuming GlobalUserData is a global object)
-                    //GlobalUserData = { dealernametext: dealername};
-                    
-                    // Locate the input fields for first and last names (using selectors)
-                    //const dealernameField = await this.page.locator(this.dealeraccount_webelements.Customer_Name_Dealer);  
-                    
-                    
-                    // Fill the form fields with the generated names
-                    //await this.page.locator(this.email_webelement.Email).fill(this.emailid)
                     await this.page.locator(this.dealeraccount_webelements.Customer_Name_Dealer).click()
                     await this.page.locator(this.dealeraccount_webelements.Customer_Name_Dealer).fill(dealername)
 
