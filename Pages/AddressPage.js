@@ -65,6 +65,6 @@ class AddressPage
         await this.page.locator(this.address_webelements.Save_btn).click()
         await this.page.waitForTimeout(1000)
         await this.page.locator(this.address_webelements.Save_Close).click()
-        await this.page.waitForTimeout(5000)
+        await this.page.waitForTimeout(3000)
     }
 }

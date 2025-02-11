@@ -18,6 +18,7 @@ class BidderOpportunityPage
     async New_Bidder_Opportunity()
     {
         await this.page.locator(this.bidderopportunity_webelements.Bidder_Registration).click();   
+        await this.page.waitForTimeout(4000)
     }
 
     async Bidder_details()

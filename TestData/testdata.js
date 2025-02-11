@@ -42,7 +42,7 @@ class TestData
 
         this. Account_Address = "5055 E Somerset Dr - Arizona";
         this.personal_TitleTo = "Devendra Individual";
-        this.Event_name = "Scottsdale 2025";
+        this.Event_name = "Palm Beach 2025";
         this.Odometer_Type = "Miles";
         this.Odometeer_mileage = "45000";
         this.Sale_Type = "No Reserve";

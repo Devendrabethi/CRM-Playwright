@@ -14,7 +14,7 @@ class BidderOpportunity_WebElements
         this.Mailing_Address = "//input[@aria-label='Mailing Address, Lookup']"
         this.Mailing_Address_select = "//div[@aria-label='Mailing Address Lookup results']/ul/li[1]"
         this.Vehicle_Titling = "//input[@aria-label='Vehicle Titling, Lookup']"
-        this.Vehicle_Titling_address_select = "//div[@aria-label='Vehicle Titling Lookup results']/ul/li[2]"
+        this.Vehicle_Titling_address_select = "//div[@aria-label='Vehicle Titling Lookup results']/ul/li[1]"
         this.Save_Bidder_Opportunity = "//span[text()='Save']"
         this.Refresh_Bidder_Opportunity = "//button[@aria-label='Refresh']"
 
