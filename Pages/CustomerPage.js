@@ -16,7 +16,7 @@ class CustomerPage
     async url()
     {
         
-        await this.page.setViewportSize({ width: 1920, height: 1080 });
+        await this.page.setViewportSize({ width: 1920, height: 950 });
         await this.page.goto(this.testdata.URL)
         await this.page.locator(this.customer_webElements.emailid).fill(this.testdata.Emailid)
         await this.page.locator(this.customer_webElements.nextbtn).click()
