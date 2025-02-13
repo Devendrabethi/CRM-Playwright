@@ -77,5 +77,8 @@ class TestData
 
         this.Payment_method = "Cash"
 
+        this.CustomerName = "Devendra"
+        this.VehicleName = "Chevrolet"
+        
     }
 }

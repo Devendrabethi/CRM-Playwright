@@ -5,6 +5,7 @@ import { AddressPage} from '../Pages/AddressPage'
 import { PhoneNumberPage} from '../Pages/PhoneNumberPage'
 import { EmailPage} from '../Pages/EmailPage'
 import { NewConsignmentVehiclePage} from '../Pages/NewConsignmentVehiclePage'
+import { BidderOpportunityPage} from '../Pages/BidderOpportunityPage'
 
 test('test',async({page}) =>
 {
@@ -14,6 +15,7 @@ test('test',async({page}) =>
     const phonenumberpage = new PhoneNumberPage(page)
     const emailpage = new EmailPage(page)
     const newconsignmentvehiclepage = new NewConsignmentVehiclePage(page)
+    const bidderopportunitypage = new BidderOpportunityPage(page)
 
     await customerpage.url()
     await customerpage.manager()
@@ -48,5 +50,6 @@ test('test',async({page}) =>
     await newconsignmentvehiclepage.UploadPhoto()
     await newconsignmentvehiclepage.TaskTab()
     await newconsignmentvehiclepage.RibbonLevel()
+    await bidderopportunitypage.HamburgerMenu()
 
 })

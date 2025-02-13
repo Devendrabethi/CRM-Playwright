@@ -8,6 +8,7 @@ import { BusinessPhoneNumberPage} from '../Pages/BusinessPhoneNumberPage'
 import { EmailPage} from '../Pages/EmailPage'
 import { NewConsignmentVehiclePage} from '../Pages/NewConsignmentVehiclePage'
 import { NewBusinessConsignmentVehiclePage} from '../Pages/NewBusinessConsignmentVehiclePage'
+import { BidderOpportunityPage} from '../Pages/BidderOpportunityPage'
 
 test('test',async({page}) =>
 {
@@ -20,6 +21,7 @@ test('test',async({page}) =>
     const newconsignmentvehiclepage = new NewConsignmentVehiclePage(page)
     const businessphonenumberpage = new BusinessPhoneNumberPage(page)
     const newbusinessconsignmentvehiclepage = new NewBusinessConsignmentVehiclePage(page)
+    const bidderopportunitypage = new BidderOpportunityPage(page)
 
     await customerpage.url()
     await customerpage.manager()
@@ -70,5 +72,5 @@ test('test',async({page}) =>
     await newconsignmentvehiclepage.UploadPhoto()
     await newconsignmentvehiclepage.TaskTab()
     await newconsignmentvehiclepage.RibbonLevel()
-
+    await bidderopportunitypage.HamburgerMenu()
 })

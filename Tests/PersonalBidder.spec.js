@@ -50,5 +50,5 @@ test('test',async({page}) =>
     await bidderopportunitypage.Invoice_Tab()
     await bidderopportunitypage.TaskTab()
     await bidderopportunitypage.RibbonLevel()
-
+    await bidderopportunitypage.HamburgerMenu()
 })

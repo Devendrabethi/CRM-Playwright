@@ -97,5 +97,38 @@ class BidderOpportunity_WebElements
          this.CheckStatus = "//button[@aria-label='Check Status']"
 
         this.Integration_Tab = "//ul[@aria-label='Opportunity Form']/li[contains(@aria-label,'Integration')]"
+
+        //HamburgerMenu
+        this.MenuCusomer = "//span[text()='Customers']"
+        this.CustomerFilter = "//input[@aria-label='Account Filter by keyword']"
+        this.MenuVehicle = "//span[text()='Vehicles']"
+        this.VehicleFilter = "//input[@aria-label='Vehicle Filter by keyword']"
+        this.MenuOpportunityDropdown = "//span[text()='Opportunities']"
+        this.MenuConsignment = "//span[text()='Consignments']"
+        this.ConsignmentandBidderFilter = "//input[@aria-label='Opportunity Filter by keyword']"
+        this.MenuBidder = "//span[text()='Bidders']"
+        this.MenuAbsenteeBids = "//span[text()='Absentees Bids']"
+        this.BidderPalmBeach2025Dropdown = "//span[text()='Bidder Palm Beach 2025']"
+        this.MenuSubmit = "//span[text()='Submitted']"
+        this.MenuInReview = "//span[text()='In Review']"
+        this.MenuComplete = "//span[text()='Complete']"
+        this.MenuAllOpportunity = "//span[text()='All Opportunities']"
+        this.MenuCredentialMailing = "//span[text()='Credential Mailing']"
+        this.MenuAbsentee = "//span[text()='Absentee']"
+        this.MenuMethodOfPayment = "//span[text()='Method of Payment']"
+        this.MenuMyAssigned = "//span[text()='My Assigned']"
+        this.VIPOpportunities = "//span[text()='VIP Opportunities']"
+
+        this.ConsignmentPalmBeach2025 = "//span[text()='Consignment Palm Beach 2025']"
+        this.MenuAllOpportunity = "//span[text()='All Opportunities']"
+        this.MenuOpportunityWithOpenTask = "//span[text()='Opportunities with Open Tasks']"
+        this.MenuNewOpportunity = "//span[text()='New Opportunities']"
+        this.MenuInCompleteOpportunity = "//span[text()='Incomplete Opportunities']"
+        this.MenuEvaluateOpportunity = "//span[text()='Evaluated Opportunities']"
+        this.MenuCompleteOpportunity = "//span[text()='Complete Opportunities']"
+        this.MenuAssignedOpportunity = "//span[text()='Assigned Opportunities']"
+
+        this.MenuHome = "//span[text()='Home']"
+
     }
 }
