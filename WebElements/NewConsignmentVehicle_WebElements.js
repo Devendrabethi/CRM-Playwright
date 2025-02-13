@@ -72,6 +72,12 @@ class NewConsignmentVehicle_WebElement
         this.LongDescription = "//textarea[@aria-label='Long Description']"
         this.Refresh_consignment="(//button[@aria-label='Refresh'])[1]"
 
+        this.TaskTab = "//ul[@aria-label='Opportunity Form']/li[contains(@aria-label,'Tasks')]"
+        this.TaskRefresh = "(//span[text()='Refresh'])[2]/../parent::button"
+        this.SelectAllTaskRadiobtn = "//div[@data-testid='subject']/../../../preceding-sibling::div"
+        this.MarkComplete = "//span[text()='MARK COMPLETE']/../parent::button"
+        this.Status = "//label[text()='Status']"
+
         this.reqinforbtn ="//span[text()='Request Information']"
         this.reqinforframe ="//iframe[@id='FullPageWebResource']"
         this.selectvehiclephotoreq ="//select[@id='photosDrp']"

@@ -74,6 +74,7 @@ test('test',async({page}) =>
     await newconsignmentvehiclepage.Assign()
     await newconsignmentvehiclepage.ConsVehicleDoc()
     await newconsignmentvehiclepage.UploadPhoto()
+    await newconsignmentvehiclepage.TaskTab()
     await newconsignmentvehiclepage.RibbonLevel()
 
 })

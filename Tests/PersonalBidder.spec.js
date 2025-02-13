@@ -48,6 +48,7 @@ test('test',async({page}) =>
     await bidderopportunitypage.Opportunity_product_tab()
     await addresspage.saveandclose()
     await bidderopportunitypage.Invoice_Tab()
+    await bidderopportunitypage.TaskTab()
     await bidderopportunitypage.RibbonLevel()
 
 })

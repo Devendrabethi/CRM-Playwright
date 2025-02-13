@@ -36,6 +36,7 @@ class BidderOpportunity_WebElements
         this.Select_Absentee_Bid = "//select[@aria-label='Absentee Bids']"
         this.Lot_Number = "//input[@aria-label='Lot Number']"
         this.Contact_Phone = "//input[@aria-label='Contact Phone']"
+        this.MaximumBid = "//input[@aria-label='Maximum Bid']"
         this.Save_Absentee_Bid = "//button[@aria-label='Save and Close']"
 
 
@@ -43,6 +44,9 @@ class BidderOpportunity_WebElements
         this.frame = "//iframe[@id='FullPageWebResource']"  
         this.Select_DocumentType_dropdown = "//select[@id='documentType']"
         this.Bidder_Registerdoc_Refresh = "//ul[@aria-label='Opportunity Document Commands']/li[2]/button[@aria-label='Refresh']"
+        
+        this.TaskTab = "//ul[@aria-label='Opportunity Form']/li[contains(@aria-label,'Tasks')]"
+        this.TaskRefresh = "(//span[text()='Refresh'])[2]/../parent::button"
 
         this.Opportunity_Product_Tab = "//ul[@aria-label='Opportunity Form']/li[contains(@title,'Opportunity Products')]"
         this.Add_Product_button = "//button[@aria-label='Add product']"

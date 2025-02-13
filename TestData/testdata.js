@@ -65,9 +65,12 @@ class TestData
         this.Deposite_Amount = "2500";
         this.Payment_Number = "345346";
 
-        this.selectAdsenteeBid = "Internet";
-        this.Lot = "22";
-        this. Contact_number = "5672345678";
+        this.selectAdsenteeBidInternet = "Internet";
+        this.selectAdsenteeBidPhone = "Phone";
+        this.delectAbsenteeBidAbsenteeRepresentative = "Absentee Representative"
+        this.Lot = "250";
+        this.Contact_number = "5672345678";
+        this.MaxBid = "90000"
 
         this.Existing_Product = "GALA TICKET";
         this.Quantity = "2";

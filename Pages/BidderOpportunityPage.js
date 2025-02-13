@@ -81,11 +81,28 @@ class BidderOpportunityPage
     async Add_Absentee_Bid()
     {
         await this.page.locator(this.bidderopportunity_webelements.Add_New_Absentee_Bid_btn).click()
-        await this.page.selectOption(this.bidderopportunity_webelements.Select_Absentee_Bid,this.testdata.selectAdsenteeBid)
-        // await this.page.locator(this.bidderopportunity_webelements.Lot_Number).click()
-        // await this.page.locator(this.bidderopportunity_webelements.Lot_Number).fill(this.testdata.Lot)
-        // await this.page.locator(this.bidderopportunity_webelements.Contact_Phone).click()
-        // await this.page.locator(this.bidderopportunity_webelements.Contact_Phone).fill(this.testdata.Contact_number)
+        await this.page.selectOption(this.bidderopportunity_webelements.Select_Absentee_Bid,this.testdata.selectAdsenteeBidInternet)
+        await this.page.locator(this.bidderopportunity_webelements.Save_Absentee_Bid).click()
+        await this.page.waitForTimeout(1000)
+
+        await this.page.locator(this.bidderopportunity_webelements.Add_New_Absentee_Bid_btn).click()
+        await this.page.selectOption(this.bidderopportunity_webelements.Select_Absentee_Bid,this.testdata.selectAdsenteeBidPhone)
+        await this.page.waitForTimeout(4000)
+        await this.page.locator(this.bidderopportunity_webelements.Lot_Number).click()
+        await this.page.locator(this.bidderopportunity_webelements.Lot_Number).fill(this.testdata.Lot)
+        await this.page.locator(this.bidderopportunity_webelements.Contact_Phone).click()
+        await this.page.locator(this.bidderopportunity_webelements.Contact_Phone).fill(this.testdata.Contact_number)
+
+        await this.page.locator(this.bidderopportunity_webelements.Save_Absentee_Bid).click()
+        await this.page.waitForTimeout(1000)
+
+        await this.page.locator(this.bidderopportunity_webelements.Add_New_Absentee_Bid_btn).click()
+        await this.page.selectOption(this.bidderopportunity_webelements.Select_Absentee_Bid,this.testdata.delectAbsenteeBidAbsenteeRepresentative)
+        await this.page.waitForTimeout(4000)
+        await this.page.locator(this.bidderopportunity_webelements.Lot_Number).click()
+        await this.page.locator(this.bidderopportunity_webelements.Lot_Number).fill(this.testdata.Lot)
+        await this.page.locator(this.bidderopportunity_webelements.MaximumBid).click()
+        await this.page.locator(this.bidderopportunity_webelements.MaximumBid).fill(this.testdata.MaxBid)
 
         await this.page.locator(this.bidderopportunity_webelements.Save_Absentee_Bid).click()
         await this.page.waitForTimeout(1000)
@@ -168,6 +185,13 @@ class BidderOpportunityPage
         await this.page.waitForTimeout(5000)
         await this.page.locator(this.bidderopportunity_webelements.Refresh_Bidder).click()
     }
+    async TaskTab()
+    {
+        await this.page.locator(this.bidderopportunity_webelements.TaskTab).click()
+        await this.page.locator(this.bidderopportunity_webelements.TaskRefresh).click()
+        await this.page.waitForTimeout(2000)
+        await this.page.locator(this.bidderopportunity_webelements.Refresh_Bidder).click()
+    }
     async RibbonLevel()
     {
         await this.page.locator(this.bidderopportunity_webelements.reqinforbtn).click()
@@ -197,7 +221,19 @@ class BidderOpportunityPage
                 const dialog = await dialogPromise;
                 await dialog.accept();
 
+                //Download file
+                const path1 = require('path');  
+                const fs1 = require('fs');
+                const downloadDir1 = path1.join(__dirname, 'Download');
+                if (!fs1.existsSync(downloadDir1)) {
+                    fs1.mkdirSync(downloadDir1);
+                  }
+                const downloadPromise1 = this.page.waitForEvent('download')
                 await this.page.locator(this.bidderopportunity_webelements.PrintAll).click()
+                const download1 = await downloadPromise1
+                const downloadPath1 = path1.join(downloadDir1, download1.suggestedFilename());
+                await download1.saveAs(downloadPath1)
+
                 await this.page.locator(this.bidderopportunity_webelements.Refresh_Bidder).click()
 
                 await this.page.locator(this.bidderopportunity_webelements.Print_Agreement).click()
