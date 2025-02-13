@@ -78,6 +78,15 @@ class NewConsignmentVehicle_WebElement
         this.MarkComplete = "//span[text()='MARK COMPLETE']/../parent::button"
         this.Status = "//label[text()='Status']"
 
+        this.ActivitiesTab = "//ul[@aria-label='Opportunity Form']/li[contains(@aria-label,'Activities')]"
+        this.PlusbtnActivity = "//button[@title='Create a timeline record.']"
+        this.EmailActivity = "//li[@aria-label='Email Activity']"
+        this.FrameActivity = "//iframe[@aria-label='Designer']"
+        this.FrameActivity1 = "//iframe[@title='Description rich text editor']"
+        this.EnterTextActivity = "//body[@aria-label='Press ALT 0 for help']"
+        this.SendActivity = "//button[@aria-label='Send Email']"
+
+
         this.reqinforbtn ="//span[text()='Request Information']"
         this.reqinforframe ="//iframe[@id='FullPageWebResource']"
         this.selectvehiclephotoreq ="//select[@id='photosDrp']"

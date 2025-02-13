@@ -100,6 +100,16 @@ class BidderOpportunity_WebElements
 
         //HamburgerMenu
         this.MenuCusomer = "//span[text()='Customers']"
+        this.AllAccountDropdown = "//span[text()='All Accounts']"
+        this.AllBusinessAccount = "//label[text()='All Business Accounts']/../parent::button"
+        this.AllBusinessAccountDropdown = "//span[text()='All Business Accounts']"
+        this.AllDealerAccount = "//label[text()='All Dealer Accounts']/../parent::button"
+        this.AllDealerAccountDropdown = "//span[text()='All Dealer Accounts']"
+        this.AllPersonalAccount = "//label[text()='All Personal Accounts']/../parent::button"
+        this.AllPersonalAccountDropdown = "//span[text()='All Personal Accounts']"
+        this.AllVipAccount = "//label[text()='All VIP Accounts']/../parent::button"
+        this.AllVipAccountDropdown = "//span[text()='All VIP Accounts']"
+        this.AllAccount = "//label[text()='All Accounts']/../parent::button"
         this.CustomerFilter = "//input[@aria-label='Account Filter by keyword']"
         this.MenuVehicle = "//span[text()='Vehicles']"
         this.VehicleFilter = "//input[@aria-label='Vehicle Filter by keyword']"

@@ -202,6 +202,24 @@ class NewConsignmentVehiclePage
         await this.page.locator(this.newconsignmentvehicle_webelement.TaskRefresh).click()
         await this.page.locator(this.newconsignmentvehicle_webelement.Refresh_consignment).click()
     }
+    async ActivitiesTab()
+    {
+        await this.page.waitForTimeout(2000)
+        await this.page.locator(this.newconsignmentvehicle_webelement.ActivitiesTab).click()
+        await this.page.locator(this.newconsignmentvehicle_webelement.PlusbtnActivity).click()
+        await this.page.waitForTimeout(1000)
+        await this.page.locator(this.newconsignmentvehicle_webelement.EmailActivity).click()
+        await this.page.waitForTimeout(8000)
+        //Nested Frames inside 2nd frame we have text field
+        const frame2 = await this.page.frameLocator(this.newconsignmentvehicle_webelement.FrameActivity)
+        const frame3 = await frame2.frameLocator(this.newconsignmentvehicle_webelement.FrameActivity1)
+        await frame3.locator(this.newconsignmentvehicle_webelement.EnterTextActivity).click();
+          
+        await frame3.locator(this.newconsignmentvehicle_webelement.EnterTextActivity).fill(this.testdata.SendActivityText)
+        await this.page.locator(this.newconsignmentvehicle_webelement.SendActivity).click()
+        await this.page.waitForTimeout(6000)
+        await this.page.locator(this.newconsignmentvehicle_webelement.Refresh_consignment).click()
+    }
     async RibbonLevel()
     {
         await this.page.locator(this.newconsignmentvehicle_webelement.reqinforbtn).click()

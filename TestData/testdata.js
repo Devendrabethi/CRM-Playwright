@@ -79,6 +79,8 @@ class TestData
 
         this.CustomerName = "Devendra"
         this.VehicleName = "Chevrolet"
+
+        this.SendActivityText = "Testing Purpose"
         
     }
 }
