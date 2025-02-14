@@ -7,7 +7,7 @@ import { EmailPage} from '../Pages/EmailPage'
 import { NewConsignmentVehiclePage} from '../Pages/NewConsignmentVehiclePage'
 import { BidderOpportunityPage} from '../Pages/BidderOpportunityPage'
 
-test('test',async({page}) =>
+test('test',async({page}) =>    // Activity functionality works only in UAT
 {
     const customerpage = new CustomerPage(page)
     const personalaccountpage = new PersonalAccountPage(page) 
@@ -35,13 +35,14 @@ test('test',async({page}) =>
 
     await emailpage.NewEmailbtn()
     await emailpage.enter_emailid()
+    await emailpage.WebsiteandForgotPassword()
     await personalaccountpage.personalAccountDocuments()
 
     await newconsignmentvehiclepage.newcon()
     await newconsignmentvehiclepage.vehicledeatails()
     await newconsignmentvehiclepage.Mileage()
     await newconsignmentvehiclepage.SaleDetails()
-    //await newconsignmentvehiclepage.Account()  not req for personal cong
+    //await newconsignmentvehiclepage.Account()  //not req for personal cong
     await newconsignmentvehiclepage.Account_Address()
     await newconsignmentvehiclepage.Appilication_Info()
     await newconsignmentvehiclepage.SaleDay()
@@ -49,7 +50,7 @@ test('test',async({page}) =>
     await newconsignmentvehiclepage.ConsVehicleDoc()
     await newconsignmentvehiclepage.UploadPhoto()
     await newconsignmentvehiclepage.TaskTab()
-    await newconsignmentvehiclepage.ActivitiesTab()  // this functionality works only in UAT
+    //await newconsignmentvehiclepage.ActivitiesTab()  // Activity functionality works only in UAT
     await newconsignmentvehiclepage.RibbonLevel()
     await bidderopportunitypage.HamburgerMenu()
 

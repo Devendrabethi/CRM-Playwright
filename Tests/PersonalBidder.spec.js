@@ -35,6 +35,9 @@ test('test',async({page}) =>
 
     await emailpage.NewEmailbtn()
     await emailpage.enter_emailid()
+
+    await emailpage.WebsiteandForgotPassword()
+    
     await personalaccountpage.personalAccountDocuments()
 
     await bidderopportunitypage.New_Bidder_Opportunity()

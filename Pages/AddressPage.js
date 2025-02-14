@@ -35,11 +35,13 @@ class AddressPage
 
 
     async generaladdress() {
-        try {
+        
             await this.page.locator(this.address_webelements.Street_Address).click();
             await this.page.locator(this.address_webelements.Street_Address).fill(this.testdata.Street_Address);
-            await this.page.locator(this.address_webelements.Country).fill(this.testdata.Country_name);
-            await this.page.locator(this.address_webelements.Country_text).click();
+
+            // await this.page.locator(this.address_webelements.Country).fill(this.testdata.Country_name);
+            // await this.page.locator(this.address_webelements.Country_text).click();
+
             await this.page.locator(this.address_webelements.State_Address).fill(this.testdata.Street_name);
             await this.page.locator(this.address_webelements.State_text).click();
             await this.page.locator(this.address_webelements.City).fill(this.testdata.City_name);
@@ -48,14 +50,7 @@ class AddressPage
             await this.page.locator(this.address_webelements.County_text).click();
             await this.page.selectOption(this.address_webelements.Select_status, this.testdata.status);
     
-        } catch (error) {
-            console.error("Error encountered:", error);
-            // Retry once after clicking the 'scripterror' element
-            await this.page.locator(this.address_webelements.scripterror).click();
-            console.log("Retrying once after handling script error...");
-            // Retry the operation once
-            await this.generaladdress();
-        }
+        
     }
     
 

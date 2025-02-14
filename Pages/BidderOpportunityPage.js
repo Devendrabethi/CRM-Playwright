@@ -39,9 +39,9 @@ class BidderOpportunityPage
         await this.page.locator(this.bidderopportunity_webelements.Mailing_Address).click()
         await this.page.locator(this.bidderopportunity_webelements.Mailing_Address).fill(this.testdata.Account_Address)
         await this.page.locator(this.bidderopportunity_webelements.Mailing_Address_select).click();
-        await this.page.locator(this.bidderopportunity_webelements.Vehicle_Titling).click()
-        await this.page.locator(this.bidderopportunity_webelements.Vehicle_Titling).fill(this.testdata.Account_Address)
-        await this.page.locator(this.bidderopportunity_webelements.Vehicle_Titling_address_select).click();
+        // await this.page.locator(this.bidderopportunity_webelements.Vehicle_Titling).click()
+        // await this.page.locator(this.bidderopportunity_webelements.Vehicle_Titling).fill(this.testdata.Account_Address)
+        // await this.page.locator(this.bidderopportunity_webelements.Vehicle_Titling_address_select).click();
     }
     async BidderAssign()
     {
@@ -82,8 +82,8 @@ class BidderOpportunityPage
     {
         await this.page.locator(this.bidderopportunity_webelements.Add_New_Absentee_Bid_btn).click()
         await this.page.selectOption(this.bidderopportunity_webelements.Select_Absentee_Bid,this.testdata.selectAdsenteeBidInternet)
-        await this.page.locator(this.bidderopportunity_webelements.Save_Absentee_Bid).click()
         await this.page.waitForTimeout(1000)
+        await this.page.locator(this.bidderopportunity_webelements.Save_Absentee_Bid).click()
 
         await this.page.locator(this.bidderopportunity_webelements.Add_New_Absentee_Bid_btn).click()
         await this.page.selectOption(this.bidderopportunity_webelements.Select_Absentee_Bid,this.testdata.selectAdsenteeBidPhone)
@@ -92,9 +92,9 @@ class BidderOpportunityPage
         await this.page.locator(this.bidderopportunity_webelements.Lot_Number).fill(this.testdata.Lot)
         await this.page.locator(this.bidderopportunity_webelements.Contact_Phone).click()
         await this.page.locator(this.bidderopportunity_webelements.Contact_Phone).fill(this.testdata.Contact_number)
-
-        await this.page.locator(this.bidderopportunity_webelements.Save_Absentee_Bid).click()
         await this.page.waitForTimeout(1000)
+        await this.page.locator(this.bidderopportunity_webelements.Save_Absentee_Bid).click()
+        
 
         await this.page.locator(this.bidderopportunity_webelements.Add_New_Absentee_Bid_btn).click()
         await this.page.selectOption(this.bidderopportunity_webelements.Select_Absentee_Bid,this.testdata.delectAbsenteeBidAbsenteeRepresentative)
@@ -103,8 +103,14 @@ class BidderOpportunityPage
         await this.page.locator(this.bidderopportunity_webelements.Lot_Number).fill(this.testdata.Lot)
         await this.page.locator(this.bidderopportunity_webelements.MaximumBid).click()
         await this.page.locator(this.bidderopportunity_webelements.MaximumBid).fill(this.testdata.MaxBid)
-
+        await this.page.waitForTimeout(1000)
         await this.page.locator(this.bidderopportunity_webelements.Save_Absentee_Bid).click()
+        await this.page.locator(this.bidderopportunity_webelements.PhoneObserver).click()
+        const frame = await this.page.frameLocator(this.bidderopportunity_webelements.FrameSendAbsenteebid)
+                    if(!frame) throw new Error('Iframe not found')
+
+        await frame.locator(this.bidderopportunity_webelements.SendAbsenteeBid).click()
+        await this.page.locator(this.bidderopportunity_webelements.OkPopUp).click()
         await this.page.waitForTimeout(1000)
     }
     async RegisterDocuments()
@@ -247,12 +253,19 @@ class BidderOpportunityPage
                 
                 await this.page.locator(this.bidderopportunity_webelements.Send_Agreement).click()
                 await this.page.waitForTimeout(3000)
-                await this.page.locator(this.bidderopportunity_webelements.Send).click()
-                await this.page.waitForTimeout(2000)
-                await this.page.locator(this.bidderopportunity_webelements.Okbtn).click()
-                await this.page.locator(this.bidderopportunity_webelements.Save_btn).click()
-                await this.page.waitForTimeout(1000)
-                await this.page.locator(this.bidderopportunity_webelements.GoBack_btn).click()
+                try
+                {
+                    await this.page.locator(this.bidderopportunity_webelements.Send_Agreement_Close).click()  
+                } 
+                catch (error) 
+                {
+                    await this.page.locator(this.bidderopportunity_webelements.Send).click()
+                    await this.page.waitForTimeout(2000)
+                    await this.page.locator(this.bidderopportunity_webelements.Okbtn).click()
+                    await this.page.locator(this.bidderopportunity_webelements.Save_btn).click()
+                    await this.page.waitForTimeout(1000)
+                    await this.page.locator(this.bidderopportunity_webelements.GoBack_btn).click()
+                }
                 await this.page.locator(this.bidderopportunity_webelements.Refresh_Bidder).click()
 
                 await this.page.locator(this.bidderopportunity_webelements.Sync).click()
@@ -269,6 +282,20 @@ class BidderOpportunityPage
    {
                 await this.page.waitForTimeout(3000)
                 await this.page.locator(this.bidderopportunity_webelements.MenuCusomer).click()
+
+                //Download file
+                const path1 = require('path');  
+                const fs1 = require('fs');
+                const downloadDir1 = path1.join(__dirname, 'Download');
+                if (!fs1.existsSync(downloadDir1)) {
+                    fs1.mkdirSync(downloadDir1);
+                  }
+                const downloadPromise1 = this.page.waitForEvent('download')
+                await this.page.locator(this.bidderopportunity_webelements.ExportToExcel).click()
+                const download1 = await downloadPromise1
+                const downloadPath1 = path1.join(downloadDir1, download1.suggestedFilename());
+                await download1.saveAs(downloadPath1)
+
                 await this.page.locator(this.bidderopportunity_webelements.AllAccountDropdown).click()
                 await this.page.locator(this.bidderopportunity_webelements.AllBusinessAccount).click()
                 await this.page.waitForTimeout(3000)
@@ -290,20 +317,76 @@ class BidderOpportunityPage
                 await this.page.waitForTimeout(5000)
 
                 await this.page.locator(this.bidderopportunity_webelements.MenuVehicle).click()
+
+                  //Download file
+                const path2 = require('path');  
+                const fs2 = require('fs');
+                const downloadDir2 = path2.join(__dirname, 'Download');
+                if (!fs2.existsSync(downloadDir2)) {
+                    fs2.mkdirSync(downloadDir2);
+                  }
+                const downloadPromise2 = this.page.waitForEvent('download')
+                await this.page.locator(this.bidderopportunity_webelements.ExportToExcel).click()
+                const download2 = await downloadPromise2
+                const downloadPath2 = path2.join(downloadDir2, download2.suggestedFilename());
+                await download2.saveAs(downloadPath2)
+
                 await this.page.locator(this.bidderopportunity_webelements.VehicleFilter).fill(this.testdata.VehicleName)
                 await this.page.locator(this.bidderopportunity_webelements.VehicleFilter).press('Enter')
                 await this.page.waitForTimeout(5000)
 
                 await this.page.locator(this.bidderopportunity_webelements.MenuOpportunityDropdown).click()
                 await this.page.locator(this.bidderopportunity_webelements.MenuConsignment).click()
+
+                 //Download file
+                const path3 = require('path');  
+                const fs3 = require('fs');
+                const downloadDir3 = path3.join(__dirname, 'Download');
+                if (!fs3.existsSync(downloadDir3)) {
+                    fs3.mkdirSync(downloadDir3);
+                  }
+                const downloadPromise3 = this.page.waitForEvent('download')
+                await this.page.locator(this.bidderopportunity_webelements.ExportToExcel).click()
+                const download3 = await downloadPromise3
+                const downloadPath3 = path3.join(downloadDir3, download3.suggestedFilename());
+                await download3.saveAs(downloadPath3)
+
                 await this.page.locator(this.bidderopportunity_webelements.ConsignmentandBidderFilter).fill(this.testdata.CustomerName)
                 await this.page.locator(this.bidderopportunity_webelements.ConsignmentandBidderFilter).press('Enter')
                 await this.page.waitForTimeout(4000)
                 await this.page.locator(this.bidderopportunity_webelements.MenuBidder).click()
+
+                 //Download file
+                 const path4 = require('path');  
+                 const fs4 = require('fs');
+                 const downloadDir4 = path4.join(__dirname, 'Download');
+                 if (!fs4.existsSync(downloadDir4)) {
+                 fs4.mkdirSync(downloadDir4);
+                 }
+                 const downloadPromise4 = this.page.waitForEvent('download')
+                 await this.page.locator(this.bidderopportunity_webelements.ExportToExcel).click()
+                 const download4 = await downloadPromise4
+                 const downloadPath4 = path4.join(downloadDir4, download4.suggestedFilename());
+                 await download4.saveAs(downloadPath4)
+
                 await this.page.locator(this.bidderopportunity_webelements.ConsignmentandBidderFilter).fill(this.testdata.CustomerName)
                 await this.page.locator(this.bidderopportunity_webelements.ConsignmentandBidderFilter).press('Enter')
                 await this.page.waitForTimeout(4000)
                 await this.page.locator(this.bidderopportunity_webelements.MenuAbsenteeBids).click()
+
+                //Download file
+                const path5 = require('path');  
+                const fs5 = require('fs');
+                const downloadDir5 = path5.join(__dirname, 'Download');
+                if (!fs5.existsSync(downloadDir5)) {
+                    fs5.mkdirSync(downloadDir5);
+                  }
+                const downloadPromise5 = this.page.waitForEvent('download')
+                await this.page.locator(this.bidderopportunity_webelements.ExportToExcel).click()
+                const download5 = await downloadPromise5
+                const downloadPath5 = path5.join(downloadDir5, download5.suggestedFilename());
+                await download5.saveAs(downloadPath5)
+                
                 await this.page.waitForTimeout(4000)
 
                 await this.page.locator(this.bidderopportunity_webelements.BidderPalmBeach2025Dropdown).click()

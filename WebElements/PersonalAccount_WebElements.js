@@ -25,5 +25,9 @@ class PersonalAccount_WebElements
         this.Upload_Document = "//input[@id='fileInput']"
         this.Upload_btn = "//button[@id='uploadButton']"
         this.Persondoc_Refresh = "//ul[@aria-label='Account Documents Commands']/li[2]/button[@aria-label='Refresh']"
+
+        this.ExistCropPhoto = "//button[@id='cropPhotoTab']"
+        this.CropImage = "//button[@id='cropButton']"
+        this.Upload_Document_CropImage = "//input[@id='cropFileInput']"
     }
 }

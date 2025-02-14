@@ -62,7 +62,7 @@ class PersonalAccountPage
         await this.page.locator(this.PersonalAccount_WebElements.Documents_Tab).click()
         const fileToUpload = 
         {
-            "Customer Photo" :      "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\colorphoto.jpg",
+           // "Customer Photo" :      "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\colorphoto.jpg",
             "Driver's License" :    "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\license_09242024.jpg",
             "Trust Documents" :   "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\trust Doc.jpg",
             "Passport" :          "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\passport2.jpg",
@@ -88,6 +88,25 @@ class PersonalAccountPage
              }
                    // await this.page.waitForTimeout(4000)
                     //await this.page.screenshot({ path: './ScreenShot/AccountDocumentsPage.png', fullPage: true})
+
+                    const fileToUpload1 = 
+                    {
+                        "Customer Photo" :      "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\colorphoto.jpg",
+                    }
+                    for (const [documentType, documentPath] of Object.entries(fileToUpload1))
+                        {
+                              // await this.page.waitForTimeout(2000)
+                               await this.page.locator(this.PersonalAccount_WebElements.Add_Document_btn).click()
+                               const frame = await this.page.frameLocator(this.PersonalAccount_WebElements.frame)
+                               if(!frame) throw new Error('Iframe not found')
+                                await frame.locator(this.PersonalAccount_WebElements.Select_DocumentType_dropdown).selectOption(documentType)
+                                await frame.locator(this.PersonalAccount_WebElements.ExistCropPhoto).click()
+                                await frame.locator(this.PersonalAccount_WebElements.Upload_Document_CropImage).setInputFiles(documentPath)
+                               await frame.locator(this.PersonalAccount_WebElements.CropImage).click()
+                               await frame.locator(this.PersonalAccount_WebElements.Upload_btn).click()
+                               await this.page.locator(this.PersonalAccount_WebElements.Persondoc_Refresh).click()
+
+                        }
                   
     }
  };

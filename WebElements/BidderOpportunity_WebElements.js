@@ -38,6 +38,10 @@ class BidderOpportunity_WebElements
         this.Contact_Phone = "//input[@aria-label='Contact Phone']"
         this.MaximumBid = "//input[@aria-label='Maximum Bid']"
         this.Save_Absentee_Bid = "//button[@aria-label='Save and Close']"
+        this.PhoneObserver = "//button[contains(@aria-label,'Phone Observer')]"
+        this.FrameSendAbsenteebid = "//iframe[@id='WebResource_Send_Absentee_Bids']"
+        this.SendAbsenteeBid = "//button[text()='Send Absentee Bids']"
+        this.OkPopUp = "//button[@aria-label='OK']"
 
 
         this.AddDocument_Register = "(//button[@aria-label='Add Document'])[1]"
@@ -88,6 +92,7 @@ class BidderOpportunity_WebElements
          this.GoBack_btn = "//button[@aria-label='Press Enter to go back.']"
 
          this.Send_Agreement = "//button[@aria-label='Send Agreement']"
+         this.Send_Agreement_Close = "//button[@aria-label='OK']"
          this.Send = "//button[@aria-label='Send']"
          this.Okbtn = "//button[@aria-label='OK']"
 
@@ -100,6 +105,7 @@ class BidderOpportunity_WebElements
 
         //HamburgerMenu
         this.MenuCusomer = "//span[text()='Customers']"
+        this.ExportToExcel = "//span[text()='Export to Excel']/../parent::button"
         this.AllAccountDropdown = "//span[text()='All Accounts']"
         this.AllBusinessAccount = "//label[text()='All Business Accounts']/../parent::button"
         this.AllBusinessAccountDropdown = "//span[text()='All Business Accounts']"

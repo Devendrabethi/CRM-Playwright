@@ -4,11 +4,11 @@ class TestData
 {
     constructor()
     {
-        this.URL ="https://bjac-uat.crm.dynamics.com/main.aspx?appid=a7691afc-ad8a-ef11-ac21-000d3a5c4875"//Hotfixqa: https://bjac-hotfixqa.crm.dynamics.com/main.aspx?appid=58533451-8dc7-ef11-b8e9-6045bd056e7e  //uat: https://bjac-uat.crm.dynamics.com/main.aspx?appid=a7691afc-ad8a-ef11-ac21-000d3a5c4875
+        this.URL ="https://bjac-hotfixqa.crm.dynamics.com/main.aspx?appid=58533451-8dc7-ef11-b8e9-6045bd056e7e"//Hotfixqa: https://bjac-hotfixqa.crm.dynamics.com/main.aspx?appid=58533451-8dc7-ef11-b8e9-6045bd056e7e  //uat: https://bjac-uat.crm.dynamics.com/main.aspx?appid=a7691afc-ad8a-ef11-ac21-000d3a5c4875
         this.Emailid = "d365testuser3@barrett-jackson.com";//"dbethi@barrett-jackson.com";//d365testuser2@barrett-jackson.com"; //2-->consignment and 1-->bidder
         this.Password = "ZNcCzew8NjYz";//"1--1YCmv10=!43W";2--Tt(jc3JBth@8 PerIrrSza4Qy0-W;ZNcCzew8NjYz--testuser3
-        this.FirstName = "syfssssd"
-        this.LastName = "Cpsdfsfsx"
+        this.FirstName = ""
+        this.LastName = ""
         this.Account_Type_Personal = "Personal";
         this.Account_Type_Business = "Business";
         this.Account_Type_Dealer = "Dealer";
@@ -24,7 +24,7 @@ class TestData
         this.Dealer_PhoneType = "DEALER PHONE";
         
         this.Street_Address = "5055 E Somerset Dr";
-        this.Country_name = "united states of America";
+        this.Country_name = "United States Of America";
         this.Street_name = "Arizona";
         this.City_name = "Cottonwood";
         this.Postal_code = "86326";
@@ -68,7 +68,7 @@ class TestData
         this.selectAdsenteeBidInternet = "Internet";
         this.selectAdsenteeBidPhone = "Phone";
         this.delectAbsenteeBidAbsenteeRepresentative = "Absentee Representative"
-        this.Lot = "250";
+        this.Lot = "199";
         this.Contact_number = "5672345678";
         this.MaxBid = "90000"
 
