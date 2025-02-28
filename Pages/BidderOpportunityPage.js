@@ -29,8 +29,10 @@ class BidderOpportunityPage
         await this.page.selectOption(this.bidderopportunity_webelements.Select_Bid_LimitType_dropdown,this.testdata.Bidder_BidLImit_Type); 
         await this.page.locator(this.bidderopportunity_webelements.Bid_Limit_Value).click()
         await this.page.locator(this.bidderopportunity_webelements.Bid_Limit_Value).fill(this.testdata.Bidder_Limit_Value)  
+        await this.page.waitForTimeout(1000)
         await this.page.locator(this.bidderopportunity_webelements.Bid_Limit_Estimation).click()
         await this.page.locator(this.bidderopportunity_webelements.Bid_Limit_Estimation).fill(this.testdata.Bidder_Estimate_Value)  
+        await this.page.waitForTimeout(1000)
         await this.page.selectOption(this.bidderopportunity_webelements.Select_Interner_Bidder,this.testdata.Bidder_Internet_yesandpush); 
         await this.page.waitForTimeout(2000)
     }
@@ -82,7 +84,7 @@ class BidderOpportunityPage
     {
         await this.page.locator(this.bidderopportunity_webelements.Add_New_Absentee_Bid_btn).click()
         await this.page.selectOption(this.bidderopportunity_webelements.Select_Absentee_Bid,this.testdata.selectAdsenteeBidInternet)
-        await this.page.waitForTimeout(1000)
+        await this.page.waitForTimeout(3000)
         await this.page.locator(this.bidderopportunity_webelements.Save_Absentee_Bid).click()
 
         await this.page.locator(this.bidderopportunity_webelements.Add_New_Absentee_Bid_btn).click()
@@ -249,28 +251,53 @@ class BidderOpportunityPage
                 await this.page.locator(this.bidderopportunity_webelements.Save_btn).click()
                 await this.page.waitForTimeout(1000)
                 await this.page.locator(this.bidderopportunity_webelements.GoBack_btn).click()
+                await this.page.waitForTimeout(2000)
                 await this.page.locator(this.bidderopportunity_webelements.Refresh_Bidder).click()
                 
                 await this.page.locator(this.bidderopportunity_webelements.Send_Agreement).click()
                 await this.page.waitForTimeout(3000)
-                try
-                {
-                    await this.page.locator(this.bidderopportunity_webelements.Send_Agreement_Close).click()  
-                } 
-                catch (error) 
-                {
-                    await this.page.locator(this.bidderopportunity_webelements.Send).click()
-                    await this.page.waitForTimeout(2000)
-                    await this.page.locator(this.bidderopportunity_webelements.Okbtn).click()
-                    await this.page.locator(this.bidderopportunity_webelements.Save_btn).click()
-                    await this.page.waitForTimeout(1000)
-                    await this.page.locator(this.bidderopportunity_webelements.GoBack_btn).click()
-                }
+
+                try {
+                  // Check if the Send_Agreement_Close button is present
+                  const sendAgreementCloseButton = await this.page.locator(this.bidderopportunity_webelements.Send_Agreement_Close).isVisible();
+              
+                  if (sendAgreementCloseButton) {
+                      // If the Send_Agreement_Close button is visible, click it
+                      await this.page.locator(this.bidderopportunity_webelements.Send_Agreement_Close).click();
+                  } else {
+                      // Else, execute the alternative sequence of actions
+                      await this.page.locator(this.bidderopportunity_webelements.Send).click();
+                      await this.page.waitForTimeout(2000);
+                      await this.page.locator(this.bidderopportunity_webelements.Okbtn).click();
+                      await this.page.locator(this.bidderopportunity_webelements.Save_btn).click();
+                      await this.page.waitForTimeout(1000);
+                      await this.page.locator(this.bidderopportunity_webelements.GoBack_btn).click();
+                      await this.page.waitForTimeout(1000);
+                  }
+              } catch (error) {
+                  console.error("Error occurred:", error);
+              }
+
+
+                // try
+                // {
+                //     await this.page.locator(this.bidderopportunity_webelements.Send_Agreement_Close).click()  
+                // } 
+                // catch (error) 
+                // {
+                //     await this.page.locator(this.bidderopportunity_webelements.Send).click()
+                //     await this.page.waitForTimeout(2000)
+                //     await this.page.locator(this.bidderopportunity_webelements.Okbtn).click()
+                //     await this.page.locator(this.bidderopportunity_webelements.Save_btn).click()
+                //     await this.page.waitForTimeout(1000)
+                //     await this.page.locator(this.bidderopportunity_webelements.GoBack_btn).click()
+                    
+                // }
                 await this.page.locator(this.bidderopportunity_webelements.Refresh_Bidder).click()
 
                 await this.page.locator(this.bidderopportunity_webelements.Sync).click()
 
-                await this.page.locator(this.bidderopportunity_webelements.Envelop).click()
+                await this.page.locator(this.bidderopportunity_webelements.AgreementsTab).click()
                 await this.page.locator(this.bidderopportunity_webelements.CheckStatus).click()
                 await this.page.waitForTimeout(3000)
 

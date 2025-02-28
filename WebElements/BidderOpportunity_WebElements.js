@@ -52,9 +52,9 @@ class BidderOpportunity_WebElements
         this.TaskTab = "//ul[@aria-label='Opportunity Form']/li[contains(@aria-label,'Tasks')]"
         this.TaskRefresh = "(//span[text()='Refresh'])[2]/../parent::button"
 
-        this.Opportunity_Product_Tab = "//ul[@aria-label='Opportunity Form']/li[contains(@title,'Opportunity Products')]"
+        this.Opportunity_Product_Tab = "//ul[@aria-label='Opportunity Form']/li[contains(@title,'Products')]"
         this.Add_Product_button = "//button[@aria-label='Add product']"
-        this.Existing_Product = "//input[@aria-label='Existing Product, Lookup']"
+        this.Existing_Product = "//input[@aria-label='Product, Lookup']"
         this.Selecting_product = "//ul[@aria-label='Lookup results']/li[1]"
         this.Quantity = "//input[@aria-label='Quantity']"
 
@@ -93,12 +93,12 @@ class BidderOpportunity_WebElements
 
          this.Send_Agreement = "//button[@aria-label='Send Agreement']"
          this.Send_Agreement_Close = "//button[@aria-label='OK']"
-         this.Send = "//button[@aria-label='Send']"
+         this.Send = "//button[@title='Send']/parent::li"
          this.Okbtn = "//button[@aria-label='OK']"
 
          this.Sync = "//button[@aria-label='Sync']"
 
-         this.Envelop = "//ul[@aria-label='Opportunity Form']/li[contains(@aria-label,'Envelopes')]"
+         this.AgreementsTab = "//ul[@aria-label='Opportunity Form']/li[contains(@aria-label,'Agreements')]"
          this.CheckStatus = "//button[@aria-label='Check Status']"
 
         this.Integration_Tab = "//ul[@aria-label='Opportunity Form']/li[contains(@aria-label,'Integration')]"

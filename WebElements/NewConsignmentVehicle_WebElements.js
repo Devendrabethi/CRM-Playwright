@@ -55,7 +55,7 @@ class NewConsignmentVehicle_WebElement
         this.Next_Month = "//div[@class='datepicker-days']/table[@class='table-condensed'][1]/thead/tr[2]/th[3]"
         this.Select_NextMonthDate = "//table[@class='table-condensed']/thead/following-sibling::tbody/tr[4]/td[5]"
         this.Upload_Document = "//input[@id='fileInput']"
-        this.Upload_btn = "//button[text()='Upload']"
+        this.Upload_btn = "//button[@id='uploadButton']"
         this.Vehicledoc_Refresh ="//ul[@aria-label='Vehicle Documents Commands']/li[2]/button[@aria-label='Refresh']"
 
         this.Photo_Tab="//ul[@aria-label='Opportunity Form']/li[contains(@aria-label,'Photos')]"
