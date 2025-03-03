@@ -84,12 +84,11 @@ class BidderOpportunityPage
     {
         await this.page.locator(this.bidderopportunity_webelements.Add_New_Absentee_Bid_btn).click()
         await this.page.selectOption(this.bidderopportunity_webelements.Select_Absentee_Bid,this.testdata.selectAdsenteeBidInternet)
-        await this.page.waitForTimeout(3000)
         await this.page.locator(this.bidderopportunity_webelements.Save_Absentee_Bid).click()
 
         await this.page.locator(this.bidderopportunity_webelements.Add_New_Absentee_Bid_btn).click()
         await this.page.selectOption(this.bidderopportunity_webelements.Select_Absentee_Bid,this.testdata.selectAdsenteeBidPhone)
-        await this.page.waitForTimeout(4000)
+        await this.page.waitForTimeout(3000)
         await this.page.locator(this.bidderopportunity_webelements.Lot_Number).click()
         await this.page.locator(this.bidderopportunity_webelements.Lot_Number).fill(this.testdata.Lot)
         await this.page.locator(this.bidderopportunity_webelements.Contact_Phone).click()
@@ -100,7 +99,7 @@ class BidderOpportunityPage
 
         await this.page.locator(this.bidderopportunity_webelements.Add_New_Absentee_Bid_btn).click()
         await this.page.selectOption(this.bidderopportunity_webelements.Select_Absentee_Bid,this.testdata.delectAbsenteeBidAbsenteeRepresentative)
-        await this.page.waitForTimeout(4000)
+        await this.page.waitForTimeout(3000)
         await this.page.locator(this.bidderopportunity_webelements.Lot_Number).click()
         await this.page.locator(this.bidderopportunity_webelements.Lot_Number).fill(this.testdata.Lot)
         await this.page.locator(this.bidderopportunity_webelements.MaximumBid).click()
