@@ -43,12 +43,12 @@ class EmailPage
     //await this.page.waitForTimeout(4000)
     }
 
-    async WebsiteandForgotPassword()
-    {
-        await this.page.locator(this.email_webelement.WebSiteAccount).click()
-        await this.page.locator(this.email_webelement.OkPopup).click()
-        await this.page.locator(this.email_webelement.FrogotPassword).click()
-        await this.page.locator(this.email_webelement.OkPopup).click()
+    // async WebsiteandForgotPassword()
+    // {
+    //     await this.page.locator(this.email_webelement.WebSiteAccount).click()
+    //     await this.page.locator(this.email_webelement.OkPopup).click()
+    //     await this.page.locator(this.email_webelement.FrogotPassword).click()
+    //     await this.page.locator(this.email_webelement.OkPopup).click()
 
-    }
+    // }
 }
