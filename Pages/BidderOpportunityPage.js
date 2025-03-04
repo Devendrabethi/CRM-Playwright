@@ -25,7 +25,7 @@ class BidderOpportunityPage
     {
         await this.page.locator(this.bidderopportunity_webelements.Bidder_Pakage_Type).click()
         await this.page.locator(this.bidderopportunity_webelements.Bidder_Pakage_Type).fill(this.testdata.Bidder_Package_Type)
-        await this.page.locator(this.bidderopportunity_webelements.Bidder_Package_Type_Absentee_Bidder).click();
+        await this.page.locator(this.bidderopportunity_webelements.Select_Bidder_Package_Type).click();
         await this.page.selectOption(this.bidderopportunity_webelements.Select_Bid_LimitType_dropdown,this.testdata.Bidder_BidLImit_Type); 
         await this.page.locator(this.bidderopportunity_webelements.Bid_Limit_Value).click()
         await this.page.locator(this.bidderopportunity_webelements.Bid_Limit_Value).fill(this.testdata.Bidder_Limit_Value)  
@@ -83,8 +83,8 @@ class BidderOpportunityPage
     async Add_Absentee_Bid()
     {
         await this.page.locator(this.bidderopportunity_webelements.Add_New_Absentee_Bid_btn).click()
-        await this.page.selectOption(this.bidderopportunity_webelements.Select_Absentee_Bid,this.testdata.selectAdsenteeBidInternet)
-        await this.page.locator(this.bidderopportunity_webelements.Save_Absentee_Bid).click()
+        // await this.page.selectOption(this.bidderopportunity_webelements.Select_Absentee_Bid,this.testdata.selectAdsenteeBidInternet)
+        // await this.page.locator(this.bidderopportunity_webelements.Save_Absentee_Bid).click()
 
         await this.page.locator(this.bidderopportunity_webelements.Add_New_Absentee_Bid_btn).click()
         await this.page.selectOption(this.bidderopportunity_webelements.Select_Absentee_Bid,this.testdata.selectAdsenteeBidPhone)
@@ -201,47 +201,48 @@ class BidderOpportunityPage
     }
     async RibbonLevel()
     {
-        await this.page.locator(this.bidderopportunity_webelements.reqinforbtn).click()
-        const frame = await this.page.frameLocator(this.bidderopportunity_webelements.reqinforframe)
-        if(!frame) throw new Error('Iframe not found')
-            await frame.locator(this.bidderopportunity_webelements.selectvehiclephotoreq).selectOption([
-                { label: 'Bidder Badge Photo' }
-              ]);
-              await frame.locator(this.bidderopportunity_webelements.selectconsigndoc).selectOption([
-                { label: 'Funds Letter' },
-                { label: 'Authorization to Bid' }
-              ]);
-              await frame.locator(this.bidderopportunity_webelements.selectcustomerDocumentsDrpreq).selectOption([
-                { label: 'Drivers License' },
-                { label: 'Passport' },
-                { label: 'Insurance' },
-                { label: 'Dealer License' },
-                { label: 'Resale License' },
-                { label: 'Business License' },
-                { label: 'Wholesale License' }
-              ]);
-              await frame.locator(this.bidderopportunity_webelements.selectPayment).selectOption([
-                { label: 'Credit Card Deposit' }
-              ]);
+                      //Download file PrintAll
+                      const path1 = require('path');  
+                      const fs1 = require('fs');
+                      const downloadDir1 = path1.join(__dirname, 'Download');
+                      if (!fs1.existsSync(downloadDir1)) {
+                          fs1.mkdirSync(downloadDir1);
+                        }
+                      const downloadPromise1 = this.page.waitForEvent('download')
+                      await this.page.locator(this.bidderopportunity_webelements.PrintAll).click()
+                      const download1 = await downloadPromise1
+                      const downloadPath1 = path1.join(downloadDir1, download1.suggestedFilename());
+                      await download1.saveAs(downloadPath1)
+      
+                      await this.page.locator(this.bidderopportunity_webelements.Refresh_Bidder).click()
+
+                  await this.page.locator(this.bidderopportunity_webelements.reqinforbtn).click()
+                  const frame = await this.page.frameLocator(this.bidderopportunity_webelements.reqinforframe)
+                  if(!frame) throw new Error('Iframe not found')
+                  await frame.locator(this.bidderopportunity_webelements.selectvehiclephotoreq).selectOption([
+                      { label: 'Bidder Badge Photo' }
+                    ]);
+                    await frame.locator(this.bidderopportunity_webelements.selectconsigndoc).selectOption([
+                      { label: 'Funds Letter' },
+                      { label: 'Authorization to Bid' }
+                    ]);
+                    await frame.locator(this.bidderopportunity_webelements.selectcustomerDocumentsDrpreq).selectOption([
+                      { label: 'Drivers License' },
+                      { label: 'Passport' },
+                      { label: 'Insurance' },
+                      { label: 'Dealer License' },
+                      { label: 'Resale License' },
+                      { label: 'Business License' },
+                      { label: 'Wholesale License' }
+                    ]);
+                    await frame.locator(this.bidderopportunity_webelements.selectPayment).selectOption([
+                      { label: 'Credit Card Deposit' }
+                    ]);
                 const dialogPromise = this.page.waitForEvent('dialog');
                 await frame.locator(this.bidderopportunity_webelements.submitbtn).click();
                 const dialog = await dialogPromise;
                 await dialog.accept();
 
-                //Download file
-                const path1 = require('path');  
-                const fs1 = require('fs');
-                const downloadDir1 = path1.join(__dirname, 'Download');
-                if (!fs1.existsSync(downloadDir1)) {
-                    fs1.mkdirSync(downloadDir1);
-                  }
-                const downloadPromise1 = this.page.waitForEvent('download')
-                await this.page.locator(this.bidderopportunity_webelements.PrintAll).click()
-                const download1 = await downloadPromise1
-                const downloadPath1 = path1.join(downloadDir1, download1.suggestedFilename());
-                await download1.saveAs(downloadPath1)
-
-                await this.page.locator(this.bidderopportunity_webelements.Refresh_Bidder).click()
 
                 await this.page.locator(this.bidderopportunity_webelements.Print_Agreement).click()
                 await this.page.waitForTimeout(2000)
@@ -273,26 +274,28 @@ class BidderOpportunityPage
                       await this.page.locator(this.bidderopportunity_webelements.GoBack_btn).click();
                       await this.page.waitForTimeout(1000);
                   }
-              } catch (error) {
+              } catch (error) 
+              {
                   console.error("Error occurred:", error);
               }
 
+                //await this.page.locator(this.bidderopportunity_webelements.Refresh_Bidder).click()
 
-                // try
-                // {
-                //     await this.page.locator(this.bidderopportunity_webelements.Send_Agreement_Close).click()  
-                // } 
-                // catch (error) 
-                // {
-                //     await this.page.locator(this.bidderopportunity_webelements.Send).click()
-                //     await this.page.waitForTimeout(2000)
-                //     await this.page.locator(this.bidderopportunity_webelements.Okbtn).click()
-                //     await this.page.locator(this.bidderopportunity_webelements.Save_btn).click()
-                //     await this.page.waitForTimeout(1000)
-                //     await this.page.locator(this.bidderopportunity_webelements.GoBack_btn).click()
-                    
-                // }
-                await this.page.locator(this.bidderopportunity_webelements.Refresh_Bidder).click()
+                await this.page.selectOption(this.bidderopportunity_webelements.StatusChange,this.testdata.SelectStatusComplete); 
+                await this.page.locator(this.bidderopportunity_webelements.Save_btn).click();
+
+                //Download file Print Bidder Badge
+                const path2 = require('path');  
+                const fs2 = require('fs');
+                const downloadDir2 = path2.join(__dirname, 'Download');
+                if (!fs2.existsSync(downloadDir2)) {
+                  fs2.mkdirSync(downloadDir2);
+                  }
+                const downloadPromise2 = this.page.waitForEvent('download')
+                await this.page.locator(this.bidderopportunity_webelements.PrintBidderBadge).click();
+                const download2 = await downloadPromise2
+                const downloadPath2 = path2.join(downloadDir1, download2.suggestedFilename());
+                await download2.saveAs(downloadPath2)
 
                 await this.page.locator(this.bidderopportunity_webelements.Sync).click()
 
@@ -303,6 +306,7 @@ class BidderOpportunityPage
                 await this.page.locator(this.bidderopportunity_webelements.Integration_Tab).click()
                 await this.page.waitForTimeout(3000)
                 await this.page.locator(this.bidderopportunity_webelements.Refresh_Bidder).click()
+
    }
    async HamburgerMenu()
    {

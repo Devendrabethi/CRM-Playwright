@@ -5,7 +5,7 @@ class BidderOpportunity_WebElements
     {
         this.Bidder_Registration = "//button[@aria-label='Bidder Registration']"
         this.Bidder_Pakage_Type = "//input[@aria-label='Bidder Package Type, Lookup']"
-        this.Bidder_Package_Type_Absentee_Bidder = "//ul[@aria-label='Lookup results']/li[@aria-label='ABSENTEE (BIDDER), 61']"
+        this.Select_Bidder_Package_Type = "//ul[@aria-label='Lookup results']/li[1]"//"//ul[@aria-label='Lookup results']/li[@aria-label='ABSENTEE (BIDDER), 61']"
         this.Select_Bid_LimitType_dropdown = "//select[@aria-label='Bid Limit Type']"
         this.Bid_Limit_Value = "//input[@aria-label='Bid Limit Value']"
         this.Bid_Limit_Estimation = "//input[@aria-label='Bid Limit Estimated']"
@@ -102,6 +102,9 @@ class BidderOpportunity_WebElements
          this.CheckStatus = "//button[@aria-label='Check Status']"
 
         this.Integration_Tab = "//ul[@aria-label='Opportunity Form']/li[contains(@aria-label,'Integration')]"
+
+        this.StatusChange = "//select[@aria-label='Status']"
+        this.PrintBidderBadge = "//button[@aria-label='Print Bidder Badge']"
 
         //HamburgerMenu
         this.MenuCusomer = "//span[text()='Customers']"
