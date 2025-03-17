@@ -35,7 +35,7 @@ test('test',async({page}) =>    // Activity functionality works only in UAT
 
     await emailpage.NewEmailbtn()
     await emailpage.enter_emailid()
-    await emailpage.WebsiteandForgotPassword()
+    await emailpage.CredentialTab()
     await personalaccountpage.personalAccountDocuments()
 
     await newconsignmentvehiclepage.newcon()

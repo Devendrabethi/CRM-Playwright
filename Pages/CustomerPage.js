@@ -22,6 +22,10 @@ class CustomerPage
         await this.page.locator(this.customer_webElements.password).fill(this.testdata.Password)
         await this.page.locator(this.customer_webElements.signinbtn).click()
         await this.page.locator(this.customer_webElements.yesbtn).click()
+
+        const frame = await this.page.frameLocator(this.customer_webElements.frame_AuctionManager)
+                    if(!frame) throw new Error('Iframe not found')
+        await frame.locator(this.customer_webElements.Auction_management).click()
     }
 
     async manager()

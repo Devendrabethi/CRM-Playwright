@@ -43,12 +43,23 @@ class EmailPage
     //await this.page.waitForTimeout(4000)
     }
 
-    // async WebsiteandForgotPassword()
-    // {
-    //     await this.page.locator(this.email_webelement.WebSiteAccount).click()
-    //     await this.page.locator(this.email_webelement.OkPopup).click()
-    //     await this.page.locator(this.email_webelement.FrogotPassword).click()
-    //     await this.page.locator(this.email_webelement.OkPopup).click()
+    async CredentialTab()
+    {
+        await this.page.locator(this.email_webelement.CredentialTab).click()
+        await this.page.waitForTimeout(1000)
+        const frame = await this.page.frameLocator(this.email_webelement.frame)
+        if(!frame) throw new Error('Iframe not found')
+        await frame.locator(this.email_webelement.Createbtn).click()
+        await this.page.locator(this.email_webelement.Okbtn).click()
+        await this.page.waitForTimeout(1000)
+        await frame.locator(this.email_webelement.Verifybtn).click()
 
-    // }
+        await this.page.locator(this.email_webelement.Okbtn).click()
+        await this.page.waitForTimeout(1000)
+        await frame.locator(this.email_webelement.ResetPassword).click()
+
+        await this.page.locator(this.email_webelement.Okbtn).click()
+        await this.page.waitForTimeout(1000)
+
+    }
 }

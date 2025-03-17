@@ -8,7 +8,8 @@ class Customer_WebElements {
         this.password = "//input[@name='passwd']";
         this.signinbtn = "//input[@id='idSIButton9']";
         this.yesbtn = "//input[@id='idSIButton9']";
-        this.verify_management = "//span[text()='Management']";
+        this.frame_AuctionManager = "//iframe[@id='AppLandingPage']"
+        this.Auction_management = "//a[@title='Auction Manager']";
         this.managementbtn = "//span[text()='Management']";
         this.Customerbtn = "//span[text()='Customers']";
         this.verifyallaccount = "//span[text()='All Accounts']"

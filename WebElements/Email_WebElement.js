@@ -6,9 +6,12 @@ class Email_WebElement
         this.New_Email_btn = "//button[@aria-label='New Email. Add New Email']"
         this.Email = "//input[@aria-label='Email']"
 
-        this.WebSiteAccount = "//button[@aria-label='Website Account']"
-        this.OkPopup = "//button[@aria-label='Ok']"
-        this.FrogotPassword = "//button[@aria-label='Forgot Password']"
+        this.CredentialTab = "//ul[@aria-label='Account Form']/li[contains(@title,'Credentials')]"
+        this.frame = "//iframe[@id='WebResource_Create_Credentials']"
+        this.Createbtn = "//button[@id='create']"
+        this.Okbtn = "//button[@aria-label='OK']"
+        this.Verifybtn = "//button[@id='verify']"
+        this.ResetPassword = "//button[text()='RESET PASSWORD']"
 
     }
 }

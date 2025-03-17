@@ -53,7 +53,7 @@ class BidderOpportunity_WebElements
         this.TaskRefresh = "(//span[text()='Refresh'])[2]/../parent::button"
 
         this.Opportunity_Product_Tab = "//ul[@aria-label='Opportunity Form']/li[contains(@title,'Products')]"
-        this.Add_Product_button = "//button[@aria-label='Add product']"
+        this.Add_Product_button = "//button[@aria-label='Add Product']"
         this.Existing_Product = "//input[@aria-label='Product, Lookup']"
         this.Selecting_product = "//ul[@aria-label='Lookup results']/li[1]"
         this.Quantity = "//input[@aria-label='Quantity']"
@@ -67,6 +67,7 @@ class BidderOpportunity_WebElements
 
         this.Payment_Date = "//input[@aria-label='Date of Payment Date']/following-sibling::i"
         this.Payment_current_Date = "//td[@aria-current='date']"//"//button[contains(@class, 'dayButton') and contains(@class, 'dayIsToday')]"
+        this.Payment_Number = "//input[@aria-label='Payment Number']"
 
         this.Bidder_Assign_To = "//button[@aria-label='More Header Editable Fields']"
         this.Bidder_Status = "(//div[@aria-label='Status'])[2]"

@@ -82,7 +82,7 @@ class BidderOpportunityPage
 
     async Add_Absentee_Bid()
     {
-        await this.page.locator(this.bidderopportunity_webelements.Add_New_Absentee_Bid_btn).click()
+        //await this.page.locator(this.bidderopportunity_webelements.Add_New_Absentee_Bid_btn).click()
         // await this.page.selectOption(this.bidderopportunity_webelements.Select_Absentee_Bid,this.testdata.selectAdsenteeBidInternet)
         // await this.page.locator(this.bidderopportunity_webelements.Save_Absentee_Bid).click()
 
@@ -90,7 +90,7 @@ class BidderOpportunityPage
         await this.page.selectOption(this.bidderopportunity_webelements.Select_Absentee_Bid,this.testdata.selectAdsenteeBidPhone)
         await this.page.waitForTimeout(3000)
         await this.page.locator(this.bidderopportunity_webelements.Lot_Number).click()
-        await this.page.locator(this.bidderopportunity_webelements.Lot_Number).fill(this.testdata.Lot)
+        await this.page.locator(this.bidderopportunity_webelements.Lot_Number).fill(this.testdata.Lotphone)
         await this.page.locator(this.bidderopportunity_webelements.Contact_Phone).click()
         await this.page.locator(this.bidderopportunity_webelements.Contact_Phone).fill(this.testdata.Contact_number)
         await this.page.waitForTimeout(1000)
@@ -101,7 +101,7 @@ class BidderOpportunityPage
         await this.page.selectOption(this.bidderopportunity_webelements.Select_Absentee_Bid,this.testdata.delectAbsenteeBidAbsenteeRepresentative)
         await this.page.waitForTimeout(3000)
         await this.page.locator(this.bidderopportunity_webelements.Lot_Number).click()
-        await this.page.locator(this.bidderopportunity_webelements.Lot_Number).fill(this.testdata.Lot)
+        await this.page.locator(this.bidderopportunity_webelements.Lot_Number).fill(this.testdata.lotabsentee)
         await this.page.locator(this.bidderopportunity_webelements.MaximumBid).click()
         await this.page.locator(this.bidderopportunity_webelements.MaximumBid).fill(this.testdata.MaxBid)
         await this.page.waitForTimeout(1000)
@@ -167,6 +167,7 @@ class BidderOpportunityPage
         await this.page.selectOption(this.bidderopportunity_webelements.select_Payment_Method,this.testdata.Payment_method)
         await this.page.locator(this.bidderopportunity_webelements.Payment_Date).click()
         await this.page.locator(this.bidderopportunity_webelements.Payment_current_Date).click()
+        await this.page.locator(this.bidderopportunity_webelements.Payment_Number).fill(this.testdata.PaymentNumber)
         await this.page.waitForTimeout(1000)
         await this.page.locator(this.bidderopportunity_webelements.Bidder_Assign_To).click()
         await this.page.locator(this.bidderopportunity_webelements.Bidder_Status).click()
@@ -182,6 +183,7 @@ class BidderOpportunityPage
         await this.page.locator(this.bidderopportunity_webelements.Payment_Date).click()
         await this.page.waitForTimeout(1000)
         await this.page.locator(this.bidderopportunity_webelements.Payment_current_Date).click()  
+        await this.page.locator(this.bidderopportunity_webelements.Payment_Number).fill(this.testdata.PaymentNumber)
         await this.page.waitForTimeout(1000)
         await this.page.locator(this.bidderopportunity_webelements.Bidder_Assign_To).click()
         await this.page.locator(this.bidderopportunity_webelements.Bidder_Status).click()
@@ -253,6 +255,19 @@ class BidderOpportunityPage
                 await this.page.locator(this.bidderopportunity_webelements.GoBack_btn).click()
                 await this.page.waitForTimeout(2000)
                 await this.page.locator(this.bidderopportunity_webelements.Refresh_Bidder).click()
+
+                 //Download file Print Bidder Badge
+                 const path2 = require('path');  
+                 const fs2 = require('fs');
+                 const downloadDir2 = path2.join(__dirname, 'Download');
+                 if (!fs2.existsSync(downloadDir2)) {
+                   fs2.mkdirSync(downloadDir2);
+                   }
+                 const downloadPromise2 = this.page.waitForEvent('download')
+                 await this.page.locator(this.bidderopportunity_webelements.PrintBidderBadge).click();
+                 const download2 = await downloadPromise2
+                 const downloadPath2 = path2.join(downloadDir1, download2.suggestedFilename());
+                 await download2.saveAs(downloadPath2)
                 
                 await this.page.locator(this.bidderopportunity_webelements.Send_Agreement).click()
                 await this.page.waitForTimeout(3000)
@@ -281,21 +296,10 @@ class BidderOpportunityPage
 
                 //await this.page.locator(this.bidderopportunity_webelements.Refresh_Bidder).click()
 
-                await this.page.selectOption(this.bidderopportunity_webelements.StatusChange,this.testdata.SelectStatusComplete); 
-                await this.page.locator(this.bidderopportunity_webelements.Save_btn).click();
+                // await this.page.selectOption(this.bidderopportunity_webelements.StatusChange,this.testdata.SelectStatusComplete); 
+                // await this.page.locator(this.bidderopportunity_webelements.Save_btn).click();
 
-                //Download file Print Bidder Badge
-                const path2 = require('path');  
-                const fs2 = require('fs');
-                const downloadDir2 = path2.join(__dirname, 'Download');
-                if (!fs2.existsSync(downloadDir2)) {
-                  fs2.mkdirSync(downloadDir2);
-                  }
-                const downloadPromise2 = this.page.waitForEvent('download')
-                await this.page.locator(this.bidderopportunity_webelements.PrintBidderBadge).click();
-                const download2 = await downloadPromise2
-                const downloadPath2 = path2.join(downloadDir1, download2.suggestedFilename());
-                await download2.saveAs(downloadPath2)
+               
 
                 await this.page.locator(this.bidderopportunity_webelements.Sync).click()
 

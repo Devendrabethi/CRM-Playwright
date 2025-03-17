@@ -4,9 +4,9 @@ class TestData
 {
     constructor()
     {
-        this.URL ="https://bjac-hotfixqa.crm.dynamics.com/main.aspx?appid=58533451-8dc7-ef11-b8e9-6045bd056e7e"//Hotfixqa: https://bjac-hotfixqa.crm.dynamics.com/main.aspx?appid=58533451-8dc7-ef11-b8e9-6045bd056e7e  //uat: https://bjac-uat.crm.dynamics.com/main.aspx?appid=a7691afc-ad8a-ef11-ac21-000d3a5c4875
-        this.Emailid = "d365testuser3@barrett-jackson.com";//"dbethi@barrett-jackson.com";//d365testuser2@barrett-jackson.com"; //2-->consignment and 1-->bidder
-        this.Password = "ZNcCzew8NjYz";//"1--1YCmv10=!43W";2--Tt(jc3JBth@8 PerIrrSza4Qy0-W;ZNcCzew8NjYz--testuser3
+        this.URL ="https://bjac-uat.crm.dynamics.com/"//main.aspx?appid=58533451-8dc7-ef11-b8e9-6045bd056e7e"//Hotfixqa: https://bjac-hotfixqa.crm.dynamics.com/main.aspx?appid=58533451-8dc7-ef11-b8e9-6045bd056e7e  //uat: https://bjac-uat.crm.dynamics.com/main.aspx?appid=a7691afc-ad8a-ef11-ac21-000d3a5c4875
+        this.Emailid = "d365testuser3@barrett-jackson.com";//"dbethi@barrett-jackson.com";//d365testuser3@barrett-jackson.com"; 
+        this.Password = "ZNcCzew8NjYz";//ZNcCzew8NjYz--testuser3
         this.FirstName = ""
         this.LastName = ""
         this.Account_Type_Personal = "Personal";
@@ -68,7 +68,8 @@ class TestData
         this.selectAdsenteeBidInternet = "Internet";
         this.selectAdsenteeBidPhone = "Phone";
         this.delectAbsenteeBidAbsenteeRepresentative = "Absentee Representative"
-        this.Lot = "199";
+        this.Lotphone = "155";
+        this.lotabsentee = "156"
         this.Contact_number = "5672345678";
         this.MaxBid = "90000"
 
@@ -76,7 +77,7 @@ class TestData
         this.Quantity = "2";
 
         this.Payment_method = "Cash"
-
+        this.PaymentNumber = "0001"
         this.CustomerName = "Devendra"
         this.VehicleName = "Chevrolet"
 
