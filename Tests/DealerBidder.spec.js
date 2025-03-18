@@ -52,7 +52,7 @@ test('test',async({page}) =>
     await addresspage.saveandclose()
     await dealerphonenumberpage.phonenumberbtn()
     await phonenumberpage.General_PhoneNumber()
-   await dealeraccountpage.personalAccountDocuments()
+    await dealeraccountpage.personalAccountDocuments()
     await dealeraccountpage.RelatedAccount()
     await addresspage.saveandclose()
 
@@ -65,7 +65,7 @@ test('test',async({page}) =>
     await bidderopportunitypage.bidder_Address()
     await bidderopportunitypage.BidderAssign()
     await bidderopportunitypage.Add_Envelop()
-    await bidderopportunitypage.Add_Absentee_Bid()
+    //await bidderopportunitypage.Add_Absentee_Bid()
     await bidderopportunitypage.RegisterDocuments()
     await bidderopportunitypage.Opportunity_product_tab()
     await addresspage.saveandclose()

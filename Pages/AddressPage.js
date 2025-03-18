@@ -46,8 +46,9 @@ class AddressPage
             await this.page.locator(this.address_webelements.State_text).click();
             await this.page.locator(this.address_webelements.City).fill(this.testdata.City_name);
             await this.page.locator(this.address_webelements.Postal_Code).fill(this.testdata.Postal_code);
+            await this.page.locator(this.address_webelements.County).click()
             await this.page.locator(this.address_webelements.County).fill(this.testdata.County_name);
-            await this.page.waitForTimeout(1000)
+            await this.page.waitForTimeout(4000)
             await this.page.locator(this.address_webelements.County_text).click();
             await this.page.selectOption(this.address_webelements.Select_status, this.testdata.status);
     

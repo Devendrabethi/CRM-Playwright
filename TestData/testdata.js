@@ -52,12 +52,12 @@ class TestData
         this.ShortDescriptionText = "Describe your vehicle to bidders.\nDescribe your vehicle to bidders.\nDescribe your vehicle to bidders.\nDescribe your vehicle to bidders.\nDescribe your vehicle to bidders."
         this.LongDescriptionText = "Ford is the second-largest U.S.-based automaker, behind General Motors, and the sixth-largest in the world, behind Toyota, Volkswagen Group, Hyundai Motor Group, Stellantis, and General Motors, based on 2022 vehicle production.[10] The company went public in 1956 but the Ford family, through special Class B shares, retain 40 percent of the voting rights.[5][11] During the 2008–2010 automotive industry crisis, the company struggled financially but did not have to be rescued by the federal government, unlike the other two major US automakers."
 
-        this.Bidder_Package_Type= "PREMIUM PACKAGE"//"ABSENTEE (BIDDER)"; 
+        this.Bidder_Package_Type= "SELECT PACKAGE"//"ABSENTEE (BIDDER)"; 
         this.Bidder_BidLImit_Type = "Woodside";
         this.Bidder_Limit_Value = "30000";
         this.Bidder_Estimate_Value = "20000";
         this.Bidder_Internet_yesandpush = "Yes & Pushed";
-        this.Existing_Product = "GALA TICKET";
+        this.Existing_Product = "CHILD GUEST";
         this.Quantity = "2";
 
         this.Envelop_Number = "123455";
@@ -73,7 +73,7 @@ class TestData
         this.Contact_number = "5672345678";
         this.MaxBid = "90000"
 
-        this.Existing_Product = "GALA TICKET";
+        this.Existing_Product = "CHILD GUEST";
         this.Quantity = "2";
 
         this.Payment_method = "Cash"
