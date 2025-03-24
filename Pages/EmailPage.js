@@ -36,6 +36,7 @@ class EmailPage
     const emailid = randomEmail+"@yopmail.com";
     await this.page.locator(this.email_webelement.Email).click({ timeout: 60000 })
     await this.page.locator(this.email_webelement.Email).fill(emailid)
+    await this.page.waitForTimeout(1000)
     await this.page.locator(this.address_webelements.Save_btn).click()
     //await this.page.waitForTimeout(2000)
     await this.page.locator(this.address_webelements.Save_Close).click()

@@ -93,7 +93,7 @@ class BidderOpportunity_WebElements
          this.GoBack_btn = "//button[@aria-label='Press Enter to go back.']"
 
          this.Send_Agreement = "//button[@aria-label='Send Agreement']"
-         this.Send_Agreement_Close = "//button[@aria-label='OK']"
+         this.Send_Agreement_Close = "//span[text()='OK']"//"//button[@aria-label='OK']"
          this.Send = "//button[@title='Send']/parent::li"
          this.Okbtn = "//button[@aria-label='OK']"
 

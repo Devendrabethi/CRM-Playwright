@@ -29,9 +29,9 @@ class NewConsignmentVehicle_WebElement
         this.Bjack_value = " //input[@aria-label='Barrett-Jackson Value']"
         this.Responsible_Account = "//input[@aria-label='Responsible Account, Lookup'] "
         this.Responsible_Account_dropdown = "//div[@aria-label='Responsible Account Lookup results']/ul/li "
-        this.Account_Address = "//input[@aria-label='Account Address, Lookup'] "
-        this.Account_Address_dropdown = "//div[@aria-label='Account Address Lookup results']/ul/li "
-        this.Title_To = "//input[@aria-label='Titled To'] "
+        this.Account_Address = "//input[@aria-label='Titled To Address, Lookup'] "
+        this.Account_Address_dropdown = "//div[@aria-label='Titled To Address Lookup results']/ul/li "
+        this.Title_To = "//input[@aria-label='POA/ODO'] "
         this.Event_text = "//span[@title='Event']"
         this.Event_name = " //input[@aria-label='Event, Lookup']"
         this.Event_Name_dropdown = "//div[@aria-label='Event Lookup results']/ul/li "
@@ -100,13 +100,13 @@ class NewConsignmentVehicle_WebElement
         this.PrintConsignmentForm = "//span[text()='Print Consignment Form']"
 
         //business account
-        this.hover_Account = "//ul[@title='Account']"
+        this.hover_Account = "//ul[@title='Titled To']"
         this.Delete_Personal_Account= "//button[contains(@aria-label,'Delete')]"
-        this.Account_field = "//input[@aria-label='Account, Lookup']"
-        this.Select_Business_Account = "//div[@aria-label='Account Lookup results']/ul/li"
-        this.Account_Address = "//input[@aria-label='Account Address, Lookup']"
-        this.Select_Business_Address = "//div[@aria-label='Account Address Lookup results']/ul/li"
-        this.Business_TitleTo = "//input[@aria-label='Titled To']"
+        this.Account_field = "//input[@aria-label='Titled To, Lookup']"
+        this.Select_Business_Account = "//div[@aria-label='Titled To Lookup results']/ul/li"
+        this.Account_Address = "//input[@aria-label='Titled To Address, Lookup']"
+        this.Select_Business_Address = "//div[@aria-label='Titled To Address Lookup results']/ul/li"
+        this.Business_TitleTo = "//input[@aria-label='POA/ODO']"
 
         //Integration
         this.Integration_Tab = "//ul[@aria-label='Opportunity Form']/li[contains(@aria-label,'Integration')]"

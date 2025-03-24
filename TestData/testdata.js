@@ -5,8 +5,8 @@ class TestData
     constructor()
     {
         this.URL ="https://bjac-uat.crm.dynamics.com/"//main.aspx?appid=58533451-8dc7-ef11-b8e9-6045bd056e7e"//Hotfixqa: https://bjac-hotfixqa.crm.dynamics.com/main.aspx?appid=58533451-8dc7-ef11-b8e9-6045bd056e7e  //uat: https://bjac-uat.crm.dynamics.com/main.aspx?appid=a7691afc-ad8a-ef11-ac21-000d3a5c4875
-        this.Emailid = "d365testuser3@barrett-jackson.com";//"dbethi@barrett-jackson.com";//d365testuser3@barrett-jackson.com"; 
-        this.Password = "ZNcCzew8NjYz";//ZNcCzew8NjYz--testuser3
+        this.Emailid = "dbethi@barrett-jackson.com";//"dbethi@barrett-jackson.com";//d365testuser3@barrett-jackson.com"; 
+        this.Password = "Pongal1212$1";//ZNcCzew8NjYz--testuser3
         this.FirstName = ""
         this.LastName = ""
         this.Account_Type_Personal = "Personal";
@@ -52,7 +52,7 @@ class TestData
         this.ShortDescriptionText = "Describe your vehicle to bidders.\nDescribe your vehicle to bidders.\nDescribe your vehicle to bidders.\nDescribe your vehicle to bidders.\nDescribe your vehicle to bidders."
         this.LongDescriptionText = "Ford is the second-largest U.S.-based automaker, behind General Motors, and the sixth-largest in the world, behind Toyota, Volkswagen Group, Hyundai Motor Group, Stellantis, and General Motors, based on 2022 vehicle production.[10] The company went public in 1956 but the Ford family, through special Class B shares, retain 40 percent of the voting rights.[5][11] During the 2008–2010 automotive industry crisis, the company struggled financially but did not have to be rescued by the federal government, unlike the other two major US automakers."
 
-        this.Bidder_Package_Type= "SELECT PACKAGE"//"ABSENTEE (BIDDER)"; 
+        this.Bidder_Package_Type= "PREMIUM PACKAGE"//"SELECT PACKAGE"//"ABSENTEE (BIDDER)"; 
         this.Bidder_BidLImit_Type = "Woodside";
         this.Bidder_Limit_Value = "30000";
         this.Bidder_Estimate_Value = "20000";
@@ -68,8 +68,8 @@ class TestData
         this.selectAdsenteeBidInternet = "Internet";
         this.selectAdsenteeBidPhone = "Phone";
         this.delectAbsenteeBidAbsenteeRepresentative = "Absentee Representative"
-        this.Lotphone = "155";
-        this.lotabsentee = "156"
+        this.Lotphone = "501";
+        this.lotabsentee = "502"
         this.Contact_number = "5672345678";
         this.MaxBid = "90000"
 

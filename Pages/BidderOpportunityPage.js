@@ -153,7 +153,9 @@ class BidderOpportunityPage
         await this.page.locator(this.bidderopportunity_webelements.Opportunity_Product_Tab).click()
         await this.page.locator(this.bidderopportunity_webelements.Add_Product_button).click()
         await this.page.locator(this.bidderopportunity_webelements.Existing_Product).click()
+        await this.page.waitForTimeout(2000)
         await this.page.locator(this.bidderopportunity_webelements.Existing_Product).fill(this.testdata.Existing_Product)
+        await this.page.waitForTimeout(2000)
         await this.page.locator(this.bidderopportunity_webelements.Selecting_product).click()
         await this.page.locator(this.bidderopportunity_webelements.Quantity).click()
         await this.page.locator(this.bidderopportunity_webelements.Quantity).fill(this.testdata.Quantity)
@@ -279,6 +281,7 @@ class BidderOpportunityPage
                   if (sendAgreementCloseButton) {
                       // If the Send_Agreement_Close button is visible, click it
                       await this.page.locator(this.bidderopportunity_webelements.Send_Agreement_Close).click();
+                      await this.page.waitForTimeout(2000);
                   } else {
                       // Else, execute the alternative sequence of actions
                       await this.page.locator(this.bidderopportunity_webelements.Send).click();
@@ -306,7 +309,26 @@ class BidderOpportunityPage
                 await this.page.locator(this.bidderopportunity_webelements.AgreementsTab).click()
                 await this.page.locator(this.bidderopportunity_webelements.CheckStatus).click()
                 await this.page.waitForTimeout(3000)
-
+                try 
+                {
+                  // Check if the Send_Agreement_Close button is present
+                  const sendAgreementCloseButton = await this.page.locator(this.bidderopportunity_webelements.Send_Agreement_Close).isVisible();
+                  if (sendAgreementCloseButton)
+                   {
+                  // If the Send_Agreement_Close button is visible, click it
+                  await this.page.locator(this.bidderopportunity_webelements.Send_Agreement_Close).click();
+                  await this.page.waitForTimeout(2000);
+                  } 
+                  
+              else 
+              {
+                console.log('Send_Agreement_Close button not visible or not present');
+              }
+            }
+            catch (error) 
+              {
+                  console.error("Error occurred:", error);
+              }
                 await this.page.locator(this.bidderopportunity_webelements.Integration_Tab).click()
                 await this.page.waitForTimeout(3000)
                 await this.page.locator(this.bidderopportunity_webelements.Refresh_Bidder).click()
