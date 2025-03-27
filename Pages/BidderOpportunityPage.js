@@ -82,9 +82,9 @@ class BidderOpportunityPage
 
     async Add_Absentee_Bid()
     {
-        //await this.page.locator(this.bidderopportunity_webelements.Add_New_Absentee_Bid_btn).click()
-        // await this.page.selectOption(this.bidderopportunity_webelements.Select_Absentee_Bid,this.testdata.selectAdsenteeBidInternet)
-        // await this.page.locator(this.bidderopportunity_webelements.Save_Absentee_Bid).click()
+        await this.page.locator(this.bidderopportunity_webelements.Add_New_Absentee_Bid_btn).click()
+        await this.page.selectOption(this.bidderopportunity_webelements.Select_Absentee_Bid,this.testdata.selectAdsenteeBidInternet)
+        await this.page.locator(this.bidderopportunity_webelements.Save_Absentee_Bid).click()
 
         await this.page.locator(this.bidderopportunity_webelements.Add_New_Absentee_Bid_btn).click()
         await this.page.selectOption(this.bidderopportunity_webelements.Select_Absentee_Bid,this.testdata.selectAdsenteeBidPhone)
@@ -106,6 +106,7 @@ class BidderOpportunityPage
         await this.page.locator(this.bidderopportunity_webelements.MaximumBid).fill(this.testdata.MaxBid)
         await this.page.waitForTimeout(1000)
         await this.page.locator(this.bidderopportunity_webelements.Save_Absentee_Bid).click()
+        
         await this.page.locator(this.bidderopportunity_webelements.PhoneObserver).click()
         const frame = await this.page.frameLocator(this.bidderopportunity_webelements.FrameSendAbsenteebid)
                     if(!frame) throw new Error('Iframe not found')

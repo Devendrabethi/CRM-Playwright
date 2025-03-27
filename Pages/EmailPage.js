@@ -53,9 +53,9 @@ class EmailPage
         await frame.locator(this.email_webelement.Createbtn).click()
         await this.page.locator(this.email_webelement.Okbtn).click()
         await this.page.waitForTimeout(1000)
-        await frame.locator(this.email_webelement.Verifybtn).click()
+        //await frame.locator(this.email_webelement.Verifybtn).click()
 
-        await this.page.locator(this.email_webelement.Okbtn).click()
+       // await this.page.locator(this.email_webelement.Okbtn).click()
         await this.page.waitForTimeout(1000)
         await frame.locator(this.email_webelement.ResetPassword).click()
 
