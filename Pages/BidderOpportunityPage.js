@@ -303,7 +303,18 @@ class BidderOpportunityPage
                 // await this.page.selectOption(this.bidderopportunity_webelements.StatusChange,this.testdata.SelectStatusComplete); 
                 // await this.page.locator(this.bidderopportunity_webelements.Save_btn).click();
 
-               
+                await this.page.locator(this.bidderopportunity_webelements.Administration).click()
+                await this.page.locator(this.bidderopportunity_webelements.ChangeBidderNumber).click()
+                const frame1 = await this.page.frameLocator(this.bidderopportunity_webelements.FrameChangeBidderNumber)
+                    if(!frame1) throw new Error('Iframe not found')
+                    await frame1.locator(this.bidderopportunity_webelements.AutoAssign).click()
+                    await this.page.waitForTimeout(1000);
+                    await frame1.locator(this.bidderopportunity_webelements.SelectBidderManager).selectOption(this.testdata.ManagerName)
+                    await frame1.locator(this.bidderopportunity_webelements.PasswordManager).fill(this.testdata.ManagerPassword)
+                    await frame1.locator(this.bidderopportunity_webelements.BidderNumberCheckbox).click()
+                    await this.page.waitForTimeout(1000);
+                    await frame1.locator(this.bidderopportunity_webelements.Approvebutton).click()
+
 
                 await this.page.locator(this.bidderopportunity_webelements.Sync).click()
 

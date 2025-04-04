@@ -84,6 +84,9 @@ class TestData
         this.SendActivityText = "Testing Purpose"
 
         this.SelectStatusComplete = "Complete"
+
+        this.ManagerName = "d365testuser 1"
+        this.ManagerPassword = "D365Test"
         
     }
 }

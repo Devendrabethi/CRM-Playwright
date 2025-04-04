@@ -107,6 +107,15 @@ class BidderOpportunity_WebElements
         this.StatusChange = "//select[@aria-label='Status']"
         this.PrintBidderBadge = "//button[@aria-label='Print Bidder Badge']"
 
+        this.Administration = "//button[@aria-label='ADMINISTRATION']"
+        this.ChangeBidderNumber = "//button[@aria-label='Change Bidder Number']"
+        this.FrameChangeBidderNumber = "//iframe[@aria-label='Change_Bidder_Number']"
+        this.AutoAssign = "//button[text()='Auto Assign']"
+        this.BidderNumberCheckbox = "//input[@id='biddernumbercheck']"
+        this.SelectBidderManager = "//select[@id='Manager']"
+        this.PasswordManager = "//input[@id='passwordmanager']"
+        this.Approvebutton = "//button[@id='approveButton']"
+
         //HamburgerMenu
         this.MenuCusomer = "//span[text()='Customers']"
         this.ExportToExcel = "//span[text()='Export to Excel']/../parent::button"
