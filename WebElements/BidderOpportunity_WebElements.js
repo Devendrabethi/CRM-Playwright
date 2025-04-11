@@ -65,6 +65,24 @@ class BidderOpportunity_WebElements
         this.Second_Invoice = "//div[@aria-label='Press SPACE to select this row.'][2]/div[1]"
         this.select_Payment_Method = "//select[@aria-label='Payment Method']"
 
+        this.SelectAllInvoice = "(//div[@col-id='__row_status'])[1]"
+        this.EnterPaymentButton = "//button[@aria-label='Enter Payment']"
+        this.FrameInvoice = "//iframe[@aria-label='Pay_Invoice']"
+        this.SelectPaymentMethod = "//select[@id='paymentMethods']"
+
+        this.PaymentNumber = "//input[@id='paymentnumber']"
+
+        this.FrameCard = "//iframe[contains(@name, 'single-card')]"
+        this.CardNum = "//input[@title='Credit card number']"
+        this.CardExpDate = "//input[@title='Expiration date']"
+        this.Cvv = "//input[@title='CVV']"
+        this.ZipCode = "//input[@title='ZIP Code']"
+        this.SubmitButton = "//button[text()='Submit Payment']"
+        this.PaymentOk = "//button[@aria-label='OK']"
+
+        this.CardlessSubmitbutton = "//button[@id='submitButton']"
+
+
         this.Payment_Date = "//input[@aria-label='Date of Payment Date']/following-sibling::i"
         this.Payment_current_Date = "//td[@aria-current='date']"//"//button[contains(@class, 'dayButton') and contains(@class, 'dayIsToday')]"
         this.Payment_Number = "//input[@aria-label='Payment Number']"

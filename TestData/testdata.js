@@ -4,9 +4,9 @@ class TestData
 {
     constructor()
     {
-        this.URL ="https://bjac-hotfixqa.crm.dynamics.com/"//main.aspx?appid=58533451-8dc7-ef11-b8e9-6045bd056e7e"//Hotfixqa: https://bjac-hotfixqa.crm.dynamics.com/main.aspx?appid=58533451-8dc7-ef11-b8e9-6045bd056e7e  //uat: https://bjac-uat.crm.dynamics.com/main.aspx?appid=a7691afc-ad8a-ef11-ac21-000d3a5c4875
-        this.Emailid = "dbethi@barrett-jackson.com";//"dbethi@barrett-jackson.com";//d365testuser3@barrett-jackson.com"; 
-        this.Password = "Pongal1212$1";//ZNcCzew8NjYz--testuser3
+        this.URL ="https://bjac-uat.crm.dynamics.com/"//main.aspx?appid=58533451-8dc7-ef11-b8e9-6045bd056e7e"//Hotfixqa: https://bjac-hotfixqa.crm.dynamics.com/main.aspx?appid=58533451-8dc7-ef11-b8e9-6045bd056e7e  //uat: https://bjac-uat.crm.dynamics.com/main.aspx?appid=a7691afc-ad8a-ef11-ac21-000d3a5c4875
+        this.Emailid = "d365testuser3@barrett-jackson.com";//"dbethi@barrett-jackson.com";//d365testuser3@barrett-jackson.com"; 
+        this.Password = "ZNcCzew8NjYz";//ZNcCzew8NjYz--testuser3
         this.FirstName = ""
         this.LastName = ""
         this.Account_Type_Personal = "Personal";
@@ -87,6 +87,14 @@ class TestData
 
         this.ManagerName = "d365testuser 1"
         this.ManagerPassword = "D365Test"
-        
+
+        this.SelectInvoiceVisa = "Visa"
+        this.CardCC ="4111 1111 1111 1111"// "	6011 0000 0000 0004"//"4111 1111 1111 1111"
+        this.CardExp = "05/28"
+        this.CVVNum = "111"
+        this.ZipCOde = "11111"
+
+        this.SelectInvoiceCash = "Cash"
+        this.PaymentNumberValue = "0005"
     }
 }
