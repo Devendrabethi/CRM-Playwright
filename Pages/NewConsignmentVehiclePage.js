@@ -117,6 +117,7 @@ class NewConsignmentVehiclePage
         await this.page.locator(this.newconsignmentvehicle_webelement.Assign_To_Inputfield).press('Enter');
         await this.page.locator(this.newconsignmentvehicle_webelement.Assign_To_Specialist_dropdown).click()
         await this.page.locator(this.newconsignmentvehicle_webelement.save_consignment).click()
+        await this.page.waitForTimeout(2000)
         await this.page.locator(this.newconsignmentvehicle_webelement.Refresh_consignment).click({ timeout: 60000 }) 
 
     }
@@ -166,12 +167,12 @@ class NewConsignmentVehiclePage
         [
             "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\front.jpg",
             "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\rare.jpg",
-            "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\side.jpg",
-            "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\interior.jpg",
-            "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\engine.jpg",
-            "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\vin.jpeg",
-            "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\odometer.jpg",
-            "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\LIEN Release.jpg"
+            // "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\side.jpg",
+            // "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\interior.jpg",
+            // "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\engine.jpg",
+            // "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\vin.jpeg",
+            // "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\odometer.jpg",
+            // "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\LIEN Release.jpg"
         ]
                    // await this.page.waitForTimeout(2000)                   
                     const frame = await this.page.frameLocator(this.newconsignmentvehicle_webelement.Photo_frame)
@@ -253,7 +254,7 @@ class NewConsignmentVehiclePage
                 const dialog = await dialogPromise;
                 await dialog.accept();
 
-                //Download file
+                //print all Download file
                 const path1 = require('path');  
                 const fs1 = require('fs');
                 const downloadDir1 = path1.join(__dirname, 'Download');
@@ -269,7 +270,7 @@ class NewConsignmentVehiclePage
                 await this.page.locator(this.newconsignmentvehicle_webelement.Refresh_consignment).click()
                 await this.page.locator(this.newconsignmentvehicle_webelement.WordTemplate).click()
                 
-                 //Download file
+                 //print consignment form Download file
                 const path2 = require('path');  
                 const fs2 = require('fs');
                 const downloadDir2 = path2.join(__dirname, 'Download');

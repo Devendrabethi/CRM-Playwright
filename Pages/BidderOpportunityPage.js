@@ -399,7 +399,11 @@ class BidderOpportunityPage
                 await this.page.locator(this.bidderopportunity_webelements.Refresh_Bidder).click()
 
    }
-   async HamburgerMenu()
+   async BidderHamburgerMenu ()
+  {
+                await this.page.locator(this.bidderopportunity_webelements.managementbtn).click()
+  }
+   async ConsignmentHamburgerMenu()
    {
                 await this.page.waitForTimeout(3000)
                 await this.page.locator(this.bidderopportunity_webelements.MenuCusomer).click()

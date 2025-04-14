@@ -72,6 +72,5 @@ test('test',async({page}) =>
     await bidderopportunitypage.AnotherProduct()
     await bidderopportunitypage.TaskTab()
     await bidderopportunitypage.RibbonLevel()
-    //await bidderopportunitypage.HamburgerMenu()
 
 })

@@ -80,5 +80,4 @@ test('test',async({page}) =>
     await newconsignmentvehiclepage.TaskTab()
     await newconsignmentvehiclepage.ActivitiesTab()  // this functionality works only in UAT
     await newconsignmentvehiclepage.RibbonLevel()
-    //await bidderopportunitypage.HamburgerMenu()
 })

@@ -135,6 +135,7 @@ class BidderOpportunity_WebElements
         this.Approvebutton = "//button[@id='approveButton']"
 
         //HamburgerMenu
+        this.managementbtn = "//span[text()='Management']";
         this.MenuCusomer = "//span[text()='Customers']"
         this.ExportToExcel = "//span[text()='Export to Excel']/../parent::button"
         this.AllAccountDropdown = "//span[text()='All Accounts']"
