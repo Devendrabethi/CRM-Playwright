@@ -7,7 +7,41 @@ import { EmailPage} from '../Pages/EmailPage'
 import { NewConsignmentVehiclePage} from '../Pages/NewConsignmentVehiclePage'
 import { BidderOpportunityPage} from '../Pages/BidderOpportunityPage'
 
-test('test',async({page}) =>    // Activity functionality works only in UAT
+test('Creating Personal account with documents',async({page}) => 
+{
+    const customerpage = new CustomerPage(page)
+    const personalaccountpage = new PersonalAccountPage(page) 
+    const addresspage = new AddressPage(page)
+    const phonenumberpage = new PhoneNumberPage(page)
+    const emailpage = new EmailPage(page)
+
+    await customerpage.url()
+    await customerpage.manager()
+    await customerpage.customer()
+    await personalaccountpage.accounttype_dropdown()
+    await personalaccountpage.names()
+    await personalaccountpage.save()
+    await addresspage.newaddress()
+    await addresspage.generaladdress()
+    await addresspage.saveandclose()
+    await phonenumberpage.phonenumberbtn()
+    await phonenumberpage.General_PhoneNumber()
+    await emailpage.NewEmailbtn()
+    await emailpage.enter_emailid()
+    await emailpage.CredentialTab()
+    await personalaccountpage.personalAccountDocuments()
+})
+
+test('Checking Hamburger Menu',async({page}) =>  
+{
+    const customerpage = new CustomerPage(page)
+    const bidderopportunitypage = new BidderOpportunityPage(page)
+
+    await customerpage.url()
+    await bidderopportunitypage.BidderHamburgerMenu()
+    await bidderopportunitypage.ConsignmentHamburgerMenu()
+})
+test('Creating Individual Consignment',async({page}) =>    // Activity functionality works only in UAT
 {
     const customerpage = new CustomerPage(page)
     const personalaccountpage = new PersonalAccountPage(page) 
@@ -20,24 +54,18 @@ test('test',async({page}) =>    // Activity functionality works only in UAT
     await customerpage.url()
     await customerpage.manager()
     await customerpage.customer()
-
     await personalaccountpage.accounttype_dropdown()
     await personalaccountpage.names()
     await personalaccountpage.save()
-    
-    
     await addresspage.newaddress()
     await addresspage.generaladdress()
     await addresspage.saveandclose()
-
     await phonenumberpage.phonenumberbtn()
     await phonenumberpage.General_PhoneNumber()
-
     await emailpage.NewEmailbtn()
     await emailpage.enter_emailid()
     await emailpage.CredentialTab()
     await personalaccountpage.personalAccountDocuments()
-
     await newconsignmentvehiclepage.newcon()
     await newconsignmentvehiclepage.vehicledeatails()
     await newconsignmentvehiclepage.Mileage()
@@ -47,11 +75,12 @@ test('test',async({page}) =>    // Activity functionality works only in UAT
     await newconsignmentvehiclepage.Appilication_Info()
     await newconsignmentvehiclepage.SaleDay()
     await newconsignmentvehiclepage.Assign()
+    await newconsignmentvehiclepage.MarketingTab()
     await newconsignmentvehiclepage.ConsVehicleDoc()
     await newconsignmentvehiclepage.UploadPhoto()
     await newconsignmentvehiclepage.TaskTab()
     //await newconsignmentvehiclepage.ActivitiesTab()  // Activity functionality works only in UAT
     await newconsignmentvehiclepage.RibbonLevel()
     await bidderopportunitypage.ConsignmentHamburgerMenu()
-
+    await newconsignmentvehiclepage.IntegrationTab()
 })

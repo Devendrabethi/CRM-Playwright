@@ -15,7 +15,7 @@ class CustomerPage
 
     async url()
     {
-        await this.page.setViewportSize({ width: 1920, height: 950 });
+        //await this.page.setViewportSize({ width: 1920, height: 950 });
         await this.page.goto(this.testdata.URL)
         await this.page.locator(this.customer_webElements.emailid).fill(this.testdata.Emailid)
         await this.page.locator(this.customer_webElements.nextbtn).click()
@@ -37,7 +37,7 @@ class CustomerPage
 
     async customer()
     {
-        await this.page.locator(this.customer_webElements.Createnewaccountbtn).click({ timeout: 60000 })
+        await this.page.locator(this.customer_webElements.Createnewaccountbtn).click()
     }
 
 }

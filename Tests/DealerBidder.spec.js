@@ -10,7 +10,78 @@ import { NewConsignmentVehiclePage} from '../Pages/NewConsignmentVehiclePage'
 import { BidderOpportunityPage} from '../Pages/BidderOpportunityPage'
 import { NewDealerConsignmentVehiclePage} from '../Pages/NewDealerConsignmentVehiclePage'
 
-test('test',async({page}) =>
+
+test('Creating Personal account with documents',async({page}) =>
+    {
+        const customerpage = new CustomerPage(page)
+        const personalaccountpage = new PersonalAccountPage(page) 
+        const addresspage = new AddressPage(page)
+        const phonenumberpage = new PhoneNumberPage(page)
+        const emailpage = new EmailPage(page)
+    
+        await customerpage.url()
+        await customerpage.manager()
+        await customerpage.customer()
+        await personalaccountpage.accounttype_dropdown()
+        await personalaccountpage.names()
+        await personalaccountpage.save()
+        await addresspage.newaddress()
+        await addresspage.generaladdress()
+        await addresspage.saveandclose()
+        await phonenumberpage.phonenumberbtn()
+        await phonenumberpage.General_PhoneNumber()
+        await emailpage.NewEmailbtn()
+        await emailpage.enter_emailid()
+        await emailpage.CredentialTab()
+        await personalaccountpage.personalAccountDocuments()
+    })
+    test('Creating Personal account with documents and Dealer account with documenst and relating both',async({page}) =>
+        {
+            const customerpage = new CustomerPage(page)
+            const personalaccountpage = new PersonalAccountPage(page) 
+            const addresspage = new AddressPage(page)
+            const phonenumberpage = new PhoneNumberPage(page)
+            const emailpage = new EmailPage(page)
+            const dealeraccountpage = new DealerAccountPage(page) 
+            const dealerphonenumberpage = new DealerPhoneNumberPage(page)
+        
+            await customerpage.url()
+            await customerpage.manager()
+            await customerpage.customer()
+            await personalaccountpage.accounttype_dropdown()
+            await personalaccountpage.names()
+            await personalaccountpage.save()
+            await addresspage.newaddress()
+            await addresspage.generaladdress()
+            await addresspage.saveandclose()
+            await phonenumberpage.phonenumberbtn()
+            await phonenumberpage.General_PhoneNumber()
+            await emailpage.NewEmailbtn()
+            await emailpage.enter_emailid()
+            await emailpage.CredentialTab()
+            await personalaccountpage.personalAccountDocuments()
+            await dealeraccountpage.accounttype_dropdown()
+            await dealeraccountpage.names()
+            await dealeraccountpage.save()
+            await addresspage.newaddress()
+            await addresspage.generaladdress()
+            await addresspage.saveandclose()
+            await dealerphonenumberpage.phonenumberbtn()
+            await phonenumberpage.General_PhoneNumber()
+            await dealeraccountpage.personalAccountDocuments()
+            await dealeraccountpage.RelatedAccount()
+            await addresspage.saveandclose()
+        })
+test('Checking Hamburger Menu',async({page}) =>    
+        {
+            const customerpage = new CustomerPage(page)
+            const bidderopportunitypage = new BidderOpportunityPage(page)
+        
+            await customerpage.url()
+            await bidderopportunitypage.BidderHamburgerMenu()
+            await bidderopportunitypage.ConsignmentHamburgerMenu()
+        })
+test('Creating Dealer Bidder Opportunity',async({page}) =>
 {
     const customerpage = new CustomerPage(page)
     const personalaccountpage = new PersonalAccountPage(page) 
@@ -26,24 +97,18 @@ test('test',async({page}) =>
     await customerpage.url()
     await customerpage.manager()
     await customerpage.customer()
-
     await personalaccountpage.accounttype_dropdown()
     await personalaccountpage.names()
     await personalaccountpage.save()
-    
-    
     await addresspage.newaddress()
     await addresspage.generaladdress()
     await addresspage.saveandclose()
-
     await phonenumberpage.phonenumberbtn()
     await phonenumberpage.General_PhoneNumber()
-
     await emailpage.NewEmailbtn()
     await emailpage.enter_emailid()
     await emailpage.CredentialTab()
     await personalaccountpage.personalAccountDocuments()
-
     await dealeraccountpage.accounttype_dropdown()
     await dealeraccountpage.names()
     await dealeraccountpage.save()
@@ -55,11 +120,8 @@ test('test',async({page}) =>
     await dealeraccountpage.personalAccountDocuments()
     await dealeraccountpage.RelatedAccount()
     await addresspage.saveandclose()
-
-
     await bidderopportunitypage.New_Bidder_Opportunity()
     await newdealerconsignmentvehiclepage.Account()
-
     await newconsignmentvehiclepage.Appilication_Info()
     await bidderopportunitypage.Bidder_details()
     await bidderopportunitypage.bidder_Address()

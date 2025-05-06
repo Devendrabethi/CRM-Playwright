@@ -19,7 +19,7 @@ class BidderOpportunity_WebElements
         this.Refresh_Bidder_Opportunity = "//button[@aria-label='Refresh']"
 
 
-        this.Add_Envelop_btn = "//button[@aria-label='Add Envelope. Add New Bid Limit Deposit']"
+        this.Add_Envelop_btn = "//button[@aria-label='Add Envelope']"//"//span[text()='New Bid Limit Deposit']"//
         this.Envelop_Number = "//input[@aria-label='Envelope Number']"
         this.Select_Deposite_Type = "//select[@aria-label='Deposit Type']"
         this.Deposite_Amount = "//input[@aria-label='Deposit Amount']"

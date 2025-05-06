@@ -96,6 +96,9 @@ class NewConsignmentVehiclePage
         await this.page.locator(this.newconsignmentvehicle_webelement.Account_Address_dropdown).click()
         await this.page.locator(this.newconsignmentvehicle_webelement.Title_To).click()
         await this.page.locator(this.newconsignmentvehicle_webelement.Title_To).fill(this.testdata.personal_TitleTo)
+        await this.page.locator(this.newconsignmentvehicle_webelement.AppStatus_Status).click() 
+        await this.page.waitForTimeout(1000)
+        await this.page.locator(this.newconsignmentvehicle_webelement.AppStatus_Status).click() 
     }
     async Appilication_Info()
     {
@@ -120,6 +123,14 @@ class NewConsignmentVehiclePage
         await this.page.waitForTimeout(2000)
         await this.page.locator(this.newconsignmentvehicle_webelement.Refresh_consignment).click({ timeout: 60000 }) 
 
+    }
+    async MarketingTab()
+    {
+        await this.page.locator(this.newconsignmentvehicle_webelement.Marketing_Tab).click()
+        await this.page.locator(this.newconsignmentvehicle_webelement.ShortDescription).fill(this.testdata.ShortDescriptionText)
+        await this.page.locator(this.newconsignmentvehicle_webelement.LongDescription).fill(this.testdata.LongDescriptionText)
+        await this.page.locator(this.newconsignmentvehicle_webelement.Refresh_consignment).click()
+        await this.page.locator(this.newconsignmentvehicle_webelement.Marketing_Tab).click()
     }
     async ConsVehicleDoc()
     {
@@ -185,11 +196,6 @@ class NewConsignmentVehiclePage
                     await frame.locator(this.newconsignmentvehicle_webelement.Refresh_btn).click()
                     await this.page.waitForTimeout(2000)
                     //await frame.locator(this.newconsignmentvehicle_webelement.scroll_allphoto).scrollIntoViewIfNeeded()
-                    await this.page.locator(this.newconsignmentvehicle_webelement.Marketing_Tab).click()
-                    await this.page.locator(this.newconsignmentvehicle_webelement.ShortDescription).fill(this.testdata.ShortDescriptionText)
-                    await this.page.locator(this.newconsignmentvehicle_webelement.LongDescription).fill(this.testdata.LongDescriptionText)
-                    await this.page.locator(this.newconsignmentvehicle_webelement.Refresh_consignment).click()
-                    await this.page.locator(this.newconsignmentvehicle_webelement.Marketing_Tab).click()
 
     }
     async TaskTab()
@@ -284,11 +290,12 @@ class NewConsignmentVehiclePage
                 await download2.saveAs(downloadPath2)
 
                 await this.page.locator(this.newconsignmentvehicle_webelement.Refresh_consignment).click()
-
-                await this.page.locator(this.newconsignmentvehicle_webelement.Integration_Tab).click()
-                await this.page.waitForTimeout(3000)
-                await this.page.locator(this.newconsignmentvehicle_webelement.Refresh_consignment).click()
-
+   }
+   async IntegrationTab()
+   {
+    await this.page.locator(this.newconsignmentvehicle_webelement.Integration_Tab).click()
+    await this.page.waitForTimeout(4000)
+    await this.page.locator(this.newconsignmentvehicle_webelement.Refresh_consignment).click()
    }
 
 }

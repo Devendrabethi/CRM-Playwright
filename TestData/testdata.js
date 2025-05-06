@@ -4,7 +4,7 @@ class TestData
 {
     constructor()
     {
-        this.URL ="https://bjac-uat.crm.dynamics.com/"//main.aspx?appid=58533451-8dc7-ef11-b8e9-6045bd056e7e"//Hotfixqa: https://bjac-hotfixqa.crm.dynamics.com/main.aspx?appid=58533451-8dc7-ef11-b8e9-6045bd056e7e  //uat: https://bjac-uat.crm.dynamics.com/main.aspx?appid=a7691afc-ad8a-ef11-ac21-000d3a5c4875
+        this.URL ="https://bjac-atodev.crm.dynamics.com/"//main.aspx?appid=58533451-8dc7-ef11-b8e9-6045bd056e7e"//Hotfixqa: https://bjac-hotfixqa.crm.dynamics.com/main.aspx?appid=58533451-8dc7-ef11-b8e9-6045bd056e7e  //uat: https://bjac-uat.crm.dynamics.com/main.aspx?appid=a7691afc-ad8a-ef11-ac21-000d3a5c4875
         this.Emailid = "dbethi@barrett-jackson.com";//"dbethi@barrett-jackson.com";//d365testuser3@barrett-jackson.com"; 
         this.Password = "Pongal1212$1";//ZNcCzew8NjYz--testuser3
         this.FirstName = ""
@@ -60,7 +60,7 @@ class TestData
         this.Existing_Product = "CHILD GUEST";
         this.Quantity = "2";
 
-        this.Envelop_Number = "123455";
+        this.Envelop_Number = "1234.23";
         this.Deposite_Type = "Wire Transfer";
         this.Deposite_Amount = "2500";
         this.Payment_Number = "345346";

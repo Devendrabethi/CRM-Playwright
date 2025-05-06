@@ -94,6 +94,7 @@ class BusinessAccountPage
         await this.page.locator(this.businessaccount_webelements.Add_btn).click();
         await this.page.locator(this.businessaccount_webelements.RealtedAccount_More_option).click();
         await this.page.locator(this.businessaccount_webelements.Related_Accounts_refresh).click();
+        await this.page.waitForTimeout(4000)
     }
 
  };

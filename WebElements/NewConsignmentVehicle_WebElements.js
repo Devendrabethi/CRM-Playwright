@@ -32,6 +32,9 @@ class NewConsignmentVehicle_WebElement
         this.Account_Address = "//input[@aria-label='Titled To Address, Lookup'] "
         this.Account_Address_dropdown = "//div[@aria-label='Titled To Address Lookup results']/ul/li "
         this.Title_To = "//input[@aria-label='POA/ODO'] "
+
+        this.AppStatus_Status = "(//div[@aria-label='Status'])[1]"
+
         this.Event_text = "//span[@title='Event']"
         this.Event_name = " //input[@aria-label='Event, Lookup']"
         this.Event_Name_dropdown = "//div[@aria-label='Event Lookup results']/ul/li "
@@ -87,16 +90,16 @@ class NewConsignmentVehicle_WebElement
         this.SendActivity = "//button[@aria-label='Send Email']"
 
 
-        this.reqinforbtn ="//span[text()='Request Information']"
+        this.reqinforbtn ="//button[@aria-label='Request Information']"
         this.reqinforframe ="//iframe[@id='FullPageWebResource']"
         this.selectvehiclephotoreq ="//select[@id='photosDrp']"
         this.selectconsigndoc = "//select[@id='opportunityDocumentsDrp']"
         this.selectcustomerDocumentsDrpreq = "//select[@id='customerDocumentsDrp']"
         this.submitbtn = "//button[@type='submit']"
 
-        this.PrintAll = "//span[text()='Print All']"
+        this.PrintAll = "//button[@aria-label='Print All']"
 
-        this.WordTemplate = "//span[text()='Word Templates']"
+        this.WordTemplate = "//button[@aria-label='Word Templates']"
         this.PrintConsignmentForm = "//span[text()='Print Consignment Form']"
 
         //business account
