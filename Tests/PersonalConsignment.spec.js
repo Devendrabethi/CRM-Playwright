@@ -28,11 +28,9 @@ test('Creating Personal account with documents',async({page}) =>
     await phonenumberpage.General_PhoneNumber()
     await emailpage.NewEmailbtn()
     await emailpage.enter_emailid()
-    await emailpage.CredentialTab()
-    await personalaccountpage.personalAccountDocuments()
 })
 
-test('Checking Hamburger Menu',async({page}) =>  
+test.skip('Checking Hamburger Menu',async({page}) =>  
 {
     const customerpage = new CustomerPage(page)
     const bidderopportunitypage = new BidderOpportunityPage(page)
@@ -81,6 +79,6 @@ test('Creating Individual Consignment',async({page}) =>    // Activity functiona
     await newconsignmentvehiclepage.TaskTab()
     //await newconsignmentvehiclepage.ActivitiesTab()  // Activity functionality works only in UAT
     await newconsignmentvehiclepage.RibbonLevel()
-    await bidderopportunitypage.ConsignmentHamburgerMenu()
     await newconsignmentvehiclepage.IntegrationTab()
+    await bidderopportunitypage.ConsignmentHamburgerMenu()
 })

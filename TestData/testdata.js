@@ -4,7 +4,7 @@ class TestData
 {
     constructor()
     {
-        this.URL ="https://bjac-atodev.crm.dynamics.com/"//main.aspx?appid=58533451-8dc7-ef11-b8e9-6045bd056e7e"//Hotfixqa: https://bjac-hotfixqa.crm.dynamics.com/main.aspx?appid=58533451-8dc7-ef11-b8e9-6045bd056e7e  //uat: https://bjac-uat.crm.dynamics.com/main.aspx?appid=a7691afc-ad8a-ef11-ac21-000d3a5c4875
+        this.URL ="https://bjac-hotfixqa.crm.dynamics.com/"//main.aspx?appid=58533451-8dc7-ef11-b8e9-6045bd056e7e"//Hotfixqa: https://bjac-hotfixqa.crm.dynamics.com/main.aspx?appid=58533451-8dc7-ef11-b8e9-6045bd056e7e  //uat: https://bjac-uat.crm.dynamics.com/main.aspx?appid=a7691afc-ad8a-ef11-ac21-000d3a5c4875
         this.Emailid = "dbethi@barrett-jackson.com";//"dbethi@barrett-jackson.com";//d365testuser3@barrett-jackson.com"; 
         this.Password = "Pongal1212$1";//ZNcCzew8NjYz--testuser3
         this.FirstName = ""
@@ -34,7 +34,7 @@ class TestData
         this.Area_code = "928";
         this.Phone_Number = "2023810";
 
-        this.Vehicle_Year = "1980";
+        this.Vehicle_Year = "2012";
         this.Vehicle_Make = "Ford";
         this.Vehicle_Model = "F-250";
         this.Vehicle_TransmissionType = "Automatic";
@@ -42,7 +42,7 @@ class TestData
 
         this. Account_Address = "5055 E Somerset Dr - Arizona";
         this.personal_TitleTo = "Devendra Individual";
-        this.Event_name = "Palm Beach 2025";
+        this.Event_name = "Scottsdale Fall 2025";
         this.Odometer_Type = "Miles";
         this.Odometeer_mileage = "45000";
         this.Sale_Type = "No Reserve";

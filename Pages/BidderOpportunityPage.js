@@ -330,7 +330,7 @@ class BidderOpportunityPage
 
                 try {
                   // Check if the Send_Agreement_Close button is present
-                  const sendAgreementCloseButton = await this.page.locator(this.bidderopportunity_webelements.Send_Agreement_Close).isVisible();
+                  const sendAgreementCloseButton = await this.page.locator(this.bidderopportunity_webelements.Send_Agreement_Close)
               
                   if (sendAgreementCloseButton) {
                       // If the Send_Agreement_Close button is visible, click it
@@ -514,7 +514,7 @@ class BidderOpportunityPage
                 
                 await this.page.waitForTimeout(4000)
 
-                await this.page.locator(this.bidderopportunity_webelements.BidderPalmBeach2025Dropdown).click()
+                await this.page.locator(this.bidderopportunity_webelements.BidderScottsdaleFall2025Dropdown).click()
                 await this.page.locator(this.bidderopportunity_webelements.MenuSubmit).click()
                 await this.page.waitForTimeout(4000)
                 await this.page.locator(this.bidderopportunity_webelements.MenuInReview).click()
@@ -533,9 +533,9 @@ class BidderOpportunityPage
                 await this.page.waitForTimeout(4000)
                 await this.page.locator(this.bidderopportunity_webelements.VIPOpportunities).click()
                 await this.page.waitForTimeout(4000)
-                await this.page.locator(this.bidderopportunity_webelements.BidderPalmBeach2025Dropdown).click()
+                await this.page.locator(this.bidderopportunity_webelements.BidderScottsdaleFall2025Dropdown).click()
 
-                await this.page.locator(this.bidderopportunity_webelements.ConsignmentPalmBeach2025).click()
+                await this.page.locator(this.bidderopportunity_webelements.ConsignmentScottsdaleFall2025Dropdown).click()
                 await this.page.locator(this.bidderopportunity_webelements.MenuAllOpportunity).click()
                 await this.page.waitForTimeout(4000)
                 await this.page.locator(this.bidderopportunity_webelements.MenuOpportunityWithOpenTask).click()
@@ -550,7 +550,7 @@ class BidderOpportunityPage
                 await this.page.waitForTimeout(4000)
                 await this.page.locator(this.bidderopportunity_webelements.MenuAssignedOpportunity).click()
                 await this.page.waitForTimeout(4000)
-                await this.page.locator(this.bidderopportunity_webelements.ConsignmentPalmBeach2025).click()
+                await this.page.locator(this.bidderopportunity_webelements.ConsignmentScottsdaleFall2025Dropdown).click()
 
                 await this.page.locator(this.bidderopportunity_webelements.MenuHome).click()
 

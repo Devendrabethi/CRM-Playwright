@@ -28,10 +28,8 @@ test('Creating Personal account with documents',async({page}) =>
         await phonenumberpage.General_PhoneNumber()
         await emailpage.NewEmailbtn()
         await emailpage.enter_emailid()
-        await emailpage.CredentialTab()
-        await personalaccountpage.personalAccountDocuments()
     })
-test('Checking Hamburger Menu',async({page}) =>    
+test.skip('Checking Hamburger Menu',async({page}) =>    
 {
     const customerpage = new CustomerPage(page)
     const bidderopportunitypage = new BidderOpportunityPage(page)

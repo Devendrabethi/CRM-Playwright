@@ -125,7 +125,7 @@ class BidderOpportunity_WebElements
         this.StatusChange = "//select[@aria-label='Status']"
         this.PrintBidderBadge = "//button[@aria-label='Print Bidder Badge']"
 
-        this.Administration = "//button[@aria-label='ADMINISTRATION']"
+        this.Administration = "(//li[@title='Administration'])[2]"
         this.ChangeBidderNumber = "//button[@aria-label='Change Bidder Number']"
         this.FrameChangeBidderNumber = "//iframe[@aria-label='Change_Bidder_Number']"
         this.AutoAssign = "//button[text()='Auto Assign']"
@@ -156,7 +156,7 @@ class BidderOpportunity_WebElements
         this.ConsignmentandBidderFilter = "//input[@aria-label='Opportunity Filter by keyword']"
         this.MenuBidder = "//span[text()='Bidders']"
         this.MenuAbsenteeBids = "//span[text()='Absentees Bids']"
-        this.BidderPalmBeach2025Dropdown = "//span[text()='Bidder Palm Beach 2025']"
+        this.BidderScottsdaleFall2025Dropdown = "//span[text()='Bidder Scottsdale Fall 2025']"
         this.MenuSubmit = "//span[text()='Submitted']"
         this.MenuInReview = "//span[text()='In Review']"
         this.MenuComplete = "//span[text()='Complete']"
@@ -167,7 +167,7 @@ class BidderOpportunity_WebElements
         this.MenuMyAssigned = "//span[text()='My Assigned']"
         this.VIPOpportunities = "//span[text()='VIP Opportunities']"
 
-        this.ConsignmentPalmBeach2025 = "//span[text()='Consignment Palm Beach 2025']"
+        this.ConsignmentScottsdaleFall2025Dropdown = "//span[text()='Consignment Scottsdale Fall 2025']"
         this.MenuAllOpportunity = "//span[text()='All Opportunities']"
         this.MenuOpportunityWithOpenTask = "//span[text()='Opportunities with Open Tasks']"
         this.MenuNewOpportunity = "//span[text()='New Opportunities']"

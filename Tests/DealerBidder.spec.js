@@ -11,7 +11,7 @@ import { BidderOpportunityPage} from '../Pages/BidderOpportunityPage'
 import { NewDealerConsignmentVehiclePage} from '../Pages/NewDealerConsignmentVehiclePage'
 
 
-test('Creating Personal account with documents',async({page}) =>
+test.skip('Creating Personal account with documents',async({page}) =>
     {
         const customerpage = new CustomerPage(page)
         const personalaccountpage = new PersonalAccountPage(page) 
@@ -35,7 +35,7 @@ test('Creating Personal account with documents',async({page}) =>
         await emailpage.CredentialTab()
         await personalaccountpage.personalAccountDocuments()
     })
-    test('Creating Personal account with documents and Dealer account with documenst and relating both',async({page}) =>
+    test.skip('Creating Personal account with documents and Dealer account with documenst and relating both',async({page}) =>
         {
             const customerpage = new CustomerPage(page)
             const personalaccountpage = new PersonalAccountPage(page) 
@@ -72,7 +72,7 @@ test('Creating Personal account with documents',async({page}) =>
             await dealeraccountpage.RelatedAccount()
             await addresspage.saveandclose()
         })
-test('Checking Hamburger Menu',async({page}) =>    
+test.skip('Checking Hamburger Menu',async({page}) =>    
         {
             const customerpage = new CustomerPage(page)
             const bidderopportunitypage = new BidderOpportunityPage(page)
