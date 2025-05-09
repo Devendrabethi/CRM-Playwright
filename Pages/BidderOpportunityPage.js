@@ -395,7 +395,7 @@ class BidderOpportunityPage
                   console.error("Error occurred:", error);
               }
                 await this.page.locator(this.bidderopportunity_webelements.Integration_Tab).click()
-                await this.page.waitForTimeout(3000)
+                await this.page.waitForTimeout(5000)
                 await this.page.locator(this.bidderopportunity_webelements.Refresh_Bidder).click()
 
    }
