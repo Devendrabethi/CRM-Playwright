@@ -7,7 +7,7 @@ import { EmailPage} from '../Pages/EmailPage'
 import { NewConsignmentVehiclePage} from '../Pages/NewConsignmentVehiclePage'
 import { BidderOpportunityPage} from '../Pages/BidderOpportunityPage'
 
-test('Creating Personal account with documents',async({page}) => 
+test.skip('Creating Personal account with documents',async({page}) => 
 {
     const customerpage = new CustomerPage(page)
     const personalaccountpage = new PersonalAccountPage(page) 

@@ -97,8 +97,7 @@ class NewConsignmentVehiclePage
         await this.page.locator(this.newconsignmentvehicle_webelement.Title_To).click()
         await this.page.locator(this.newconsignmentvehicle_webelement.Title_To).fill(this.testdata.personal_TitleTo)
         await this.page.waitForTimeout(1000)
-        await this.page.locator(this.newconsignmentvehicle_webelement.AppStatus_Status).hover()
-        await this.page.locator(this.newconsignmentvehicle_webelement.AppStatus_Status).click() 
+        await this.page.locator(this.newconsignmentvehicle_webelement.Status_Text).click() 
         await this.page.waitForTimeout(2000)
     }
     async Appilication_Info()
@@ -110,9 +109,9 @@ class NewConsignmentVehiclePage
     }
     async SaleDay()
     {
-        await this.page.locator(this.newconsignmentvehicle_webelement.Sale_Day_Tab).click()
-        await this.page.locator(this.newconsignmentvehicle_webelement.Time_on_Block).click()
-        await this.page.locator(this.newconsignmentvehicle_webelement.Time_on_Block_minutes).click()
+        // await this.page.locator(this.newconsignmentvehicle_webelement.Sale_Day_Tab).click()
+        // await this.page.locator(this.newconsignmentvehicle_webelement.Time_on_Block).click()
+        // await this.page.locator(this.newconsignmentvehicle_webelement.Time_on_Block_minutes).click()
     }
     async Assign()
     {
@@ -168,7 +167,7 @@ class NewConsignmentVehiclePage
                         await dialog.accept()
                         })
                     await frame.locator(this.newconsignmentvehicle_webelement.Upload_btn).click()
-                    await this.page.locator(this.newconsignmentvehicle_webelement.Vehicledoc_Refresh).click()
+                    await this.page.locator(this.newconsignmentvehicle_webelement.Vehicledoc_Refresh).click({timeout:60000})
              }
     }
     async UploadPhoto()
@@ -179,12 +178,11 @@ class NewConsignmentVehiclePage
         [
             "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\front.jpg",
             "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\rare.jpg",
-            // "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\side.jpg",
-            // "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\interior.jpg",
-            // "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\engine.jpg",
-            // "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\vin.jpeg",
-            // "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\odometer.jpg",
-            // "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\LIEN Release.jpg"
+            "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\side.jpg",
+            "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\interior.jpg",
+            "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\engine.jpg",
+            "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\vin.jpg",
+            "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\odometer.jpg",
         ]
                    // await this.page.waitForTimeout(2000)                   
                     const frame = await this.page.frameLocator(this.newconsignmentvehicle_webelement.Photo_frame)
@@ -192,12 +190,12 @@ class NewConsignmentVehiclePage
                     await frame.locator(this.newconsignmentvehicle_webelement.plus_Add_Photo_btn).click()
                     await frame.locator(this.newconsignmentvehicle_webelement.Upload_photo_input).setInputFiles(fileToUpload)
                     await frame.locator(this.newconsignmentvehicle_webelement.Upload_photo_btn).click()
-                    await this.page.waitForTimeout(12000)
-                    await frame.locator(this.newconsignmentvehicle_webelement.Cross_mark).click()
+                    //await this.page.waitForTimeout(12000)
+                    await frame.locator(this.newconsignmentvehicle_webelement.Cross_mark).click({timeout:60000})
                     await frame.locator(this.newconsignmentvehicle_webelement.Refresh_btn).click()
-                    await this.page.waitForTimeout(2000)
-                    //await frame.locator(this.newconsignmentvehicle_webelement.scroll_allphoto).scrollIntoViewIfNeeded()
-
+                    //await this.page.waitForTimeout(2000)
+                    await frame.locator(this.newconsignmentvehicle_webelement.scroll_allphoto).click()
+                    await this.page.waitForTimeout(4000)
     }
     async TaskTab()
     {

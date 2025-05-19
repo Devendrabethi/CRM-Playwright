@@ -33,7 +33,7 @@ class NewConsignmentVehicle_WebElement
         this.Account_Address_dropdown = "//div[@aria-label='Titled To Address Lookup results']/ul/li "
         this.Title_To = "//input[@aria-label='POA/ODO'] "
 
-        this.AppStatus_Status = "(//div[@aria-label='Status'])[1]"
+        this.Status_Text = "//label[text()='Status']"
 
         this.Event_text = "//span[@title='Event']"
         this.Event_name = " //input[@aria-label='Event, Lookup']"
@@ -49,7 +49,7 @@ class NewConsignmentVehicle_WebElement
         this.save_consignment = " //span[text()='Save']"
         this.Refresh_consignment = "(//button[@aria-label='Refresh'])[1] "
 
-
+        this.Verify_RegistrationDocuments_Text = "//h2[@title='Registration Documents']"
         this.Documentation_Tab = "//ul[@aria-label='Opportunity Form']/li[contains(@aria-label,'Documentation')]"
         this.Vehicle_Add_Document_btn = "//ul[@aria-label='Vehicle Documents Commands']/li/button[contains(@aria-label,'Add Document')]"
         this.frame = "//iframe[@id='FullPageWebResource']"  
@@ -62,13 +62,13 @@ class NewConsignmentVehicle_WebElement
         this.Vehicledoc_Refresh ="//ul[@aria-label='Vehicle Documents Commands']/li[2]/button[@aria-label='Refresh']"
 
         this.Photo_Tab="//ul[@aria-label='Opportunity Form']/li[contains(@aria-label,'Photos')]"
-        this.Photo_frame = "//iframe[@id='WebResource_uploadphotos']"  //"//iframe[@id='WebResource_new_6']"   //hotfixqa  //iframe[@id='WebResource_uploadphotos']"
+        this.Photo_frame = "//iframe[@title='Upload Vehicle Photos']"  //"//iframe[@id='WebResource_new_6']"   //hotfixqa  //iframe[@id='WebResource_uploadphotos']"
         this.plus_Add_Photo_btn="//h3[@id='primaryphotos']/button[text()=' + Add Photo ']"
         this.Upload_photo_input="//input[@name='file']"
         this.Upload_photo_btn="//button[@id='uploadButton']"
         this.Cross_mark="(//button[@aria-label='Close'])[1]"
         this.Refresh_btn="//img[@id='refreshbutton']"
-        this.scroll_allphoto = "//h3[contains(text(),'All Photos ')]"
+        this.scroll_allphoto = "//span[@id='allphotosCounts']"
 
         this.Marketing_Tab="//ul[@aria-label='Opportunity Form']/li[contains(@aria-label,'Marketing')]"
         this.ShortDescription = "//textarea[@aria-label='Short Description']"

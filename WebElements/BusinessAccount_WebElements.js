@@ -13,6 +13,7 @@ class BusinessAccount_WebElements
 
 
         this.Documents_Tab = "//ul[@aria-label='Account Form']/li[contains(@title,'Documents')]"
+        this.Business_Document_Text = "//h2[@title='Business Documents']"
         this.Add_Document_btn = "//button[@aria-label='Add Document']"
         this.frame = "//iframe[@id='FullPageWebResource']"
         this.Select_DocumentType_dropdown = "//select[@id='documentType']"
@@ -25,6 +26,7 @@ class BusinessAccount_WebElements
 
 
         this.Related_Accounts_tab = "//ul[@aria-label='Account Form']/li[contains(@aria-label,'Related Accounts')]"
+        this.Realted_Account_Text = "//h3[text()='Related Accounts']"
         this.threedotbtn= "//button[@title='More commands for Account']"
         this.Add_Existing_Account= "//span[text()='Add Existing Account']"
         this.FirstAccount_Realting= "//div[@role='region']/ul/li[contains(@id,'resultsContainer_0_0')]"

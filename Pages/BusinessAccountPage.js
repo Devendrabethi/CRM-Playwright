@@ -39,11 +39,11 @@ class BusinessAccountPage
                     const Businessname = generateRandomString(Math.floor(Math.random() * (26-19)) + 3);
                     
                     
-                    const businessname ="Bus"+ Businessname;
+                    const businessname ="Business"+ Businessname;
                     
-                    await this.page.locator(this.businessaccount_webelements.Customer_Name_Business).click()
-                    await this.page.locator(this.businessaccount_webelements.Customer_Name_Business).fill(businessname)
-
+                await this.page.locator(this.businessaccount_webelements.Customer_Name_Business).click()
+                await this.page.locator(this.businessaccount_webelements.Customer_Name_Business).fill(businessname)
+                await expect(this.page.locator(this.businessaccount_webelements.Business_Field_text)).toBeVisible({ timeout: 10000 })
                 await this.page.locator(this.businessaccount_webelements.EIN).click();
                 await this.page.locator(this.businessaccount_webelements.EIN).fill(this.testdata.EIN_Number);
 
@@ -63,7 +63,7 @@ class BusinessAccountPage
         }
         for (const [documentType, documentPath] of Object.entries(fileToUpload))
              {
-                   // await this.page.waitForTimeout(2000)
+                    await expect(this.page.locator(this.businessaccount_webelements.Business_Document_Text)).toBeVisible({ timeout: 10000 })
                     await this.page.locator(this.PersonalAccount_WebElements.Add_Document_btn).click()
                     const frame = await this.page.frameLocator(this.PersonalAccount_WebElements.frame)
                     if(!frame) throw new Error('Iframe not found')
@@ -85,7 +85,9 @@ class BusinessAccountPage
     }
     async RelatedAccount()
     {
+        await expect(this.page.locator(this.businessaccount_webelements.Related_Accounts_tab)).toBeVisible({ timeout: 10000 })
         await this.page.locator(this.businessaccount_webelements.Related_Accounts_tab).click();
+        await expect(this.page.locator(this.businessaccount_webelements.Realted_Account_Text)).toBeVisible({ timeout: 10000 })
         await this.page.locator(this.businessaccount_webelements.threedotbtn).click();
         await this.page.locator(this.businessaccount_webelements.Add_Existing_Account).click();
         await this.page.waitForTimeout(2000)

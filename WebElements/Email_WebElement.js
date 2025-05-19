@@ -3,7 +3,7 @@ class Email_WebElement
 {
     constructor()
     {
-        this.New_Email_btn = "//button[@aria-label='New Email. Add New Email']"
+        this.New_Email_btn = "//button[contains(@aria-label,'New Email')]"
         this.Email = "//input[@aria-label='Email']"
 
         this.CredentialTab = "//ul[@aria-label='Account Form']/li[contains(@title,'Credentials')]"

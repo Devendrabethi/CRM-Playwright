@@ -14,6 +14,7 @@ class DealerAccount_WebElements
 
 
         this.Documents_Tab = "//ul[@aria-label='Account Form']/li[contains(@title,'Documents')]"
+        this.Dealer_Document_Text = "//h2[@title='Dealer Documents']"
         this.Add_Document_btn = "//button[@aria-label='Add Document']"
         this.frame = "//iframe[@id='FullPageWebResource']"
         this.Select_DocumentType_dropdown = "//select[@id='documentType']"

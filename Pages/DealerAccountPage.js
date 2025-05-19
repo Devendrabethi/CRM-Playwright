@@ -45,6 +45,7 @@ class DealerAccountPage
                     const dealername ="Dealer" + Dealername;
                     await this.page.locator(this.dealeraccount_webelements.Customer_Name_Dealer).click()
                     await this.page.locator(this.dealeraccount_webelements.Customer_Name_Dealer).fill(dealername)
+                    await expect(this.page.locator(this.dealeraccount_webelements.Dealer_Field_text)).toBeVisible({ timeout: 10000 })
 
                 await this.page.locator(this.dealeraccount_webelements.Dealer_Field_text).click();
                 await this.page.locator(this.dealeraccount_webelements.Dealer_Number).click();
@@ -73,7 +74,7 @@ class DealerAccountPage
         }
         for (const [documentType, documentPath] of Object.entries(fileToUpload))
              {
-                   // await this.page.waitForTimeout(2000)
+                     await expect(this.page.locator(this.dealeraccount_webelements.Dealer_Document_Text)).toBeVisible({ timeout: 10000 })
                     await this.page.locator(this.PersonalAccount_WebElements.Add_Document_btn).click()
                     const frame = await this.page.frameLocator(this.PersonalAccount_WebElements.frame)
                     if(!frame) throw new Error('Iframe not found')
@@ -95,7 +96,9 @@ class DealerAccountPage
     }
     async RelatedAccount()
     {
+        await expect(this.page.locator(this.businessaccount_webelements.Related_Accounts_tab)).toBeVisible({ timeout: 10000 })
         await this.page.locator(this.dealeraccount_webelements.Related_Accounts_tab).click();
+        await expect(this.page.locator(this.businessaccount_webelements.Realted_Account_Text)).toBeVisible({ timeout: 10000 })
         await this.page.locator(this.dealeraccount_webelements.threedotbtn).click();
         await this.page.locator(this.dealeraccount_webelements.Add_Existing_Account).click();
         await this.page.waitForTimeout(2000)

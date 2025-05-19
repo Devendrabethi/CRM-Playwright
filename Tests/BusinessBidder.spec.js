@@ -11,77 +11,6 @@ import { BidderOpportunityPage} from '../Pages/BidderOpportunityPage'
 import { NewBusinessConsignmentVehiclePage} from '../Pages/NewBusinessConsignmentVehiclePage'
 
 
-// test('Creating Personal account with documents',async({page}) =>
-//     {
-//         const customerpage = new CustomerPage(page)
-//         const personalaccountpage = new PersonalAccountPage(page) 
-//         const addresspage = new AddressPage(page)
-//         const phonenumberpage = new PhoneNumberPage(page)
-//         const emailpage = new EmailPage(page)
-    
-//         await customerpage.url()
-//         await customerpage.manager()
-//         await customerpage.customer()
-//         await personalaccountpage.accounttype_dropdown()
-//         await personalaccountpage.names()
-//         await personalaccountpage.save()
-//         await addresspage.newaddress()
-//         await addresspage.generaladdress()
-//         await addresspage.saveandclose()
-//         await phonenumberpage.phonenumberbtn()
-//         await phonenumberpage.General_PhoneNumber()
-//         await emailpage.NewEmailbtn()
-//         await emailpage.enter_emailid()
-//         await emailpage.CredentialTab()
-//         await personalaccountpage.personalAccountDocuments()
-//     })
-   
-//     test('Creating Personal account with documents and Business account with documents and relating both',async({page}) =>
-//         {
-//             const customerpage = new CustomerPage(page)
-//             const personalaccountpage = new PersonalAccountPage(page) 
-//             const addresspage = new AddressPage(page)
-//             const phonenumberpage = new PhoneNumberPage(page)
-//             const emailpage = new EmailPage(page)
-//             const businessaccountpage = new BusinessAccountPage(page) 
-//             const businessphonenumberpage = new BusinessPhoneNumberPage(page)
-        
-//             await customerpage.url()
-//             await customerpage.manager()
-//             await customerpage.customer()
-//             await personalaccountpage.accounttype_dropdown()
-//             await personalaccountpage.names()
-//             await personalaccountpage.save()
-//             await addresspage.newaddress()
-//             await addresspage.generaladdress()
-//             await addresspage.saveandclose()
-//             await phonenumberpage.phonenumberbtn()
-//             await phonenumberpage.General_PhoneNumber()
-//             await emailpage.NewEmailbtn()
-//             await emailpage.enter_emailid()
-//             await emailpage.CredentialTab()
-//             await personalaccountpage.personalAccountDocuments()
-//             await businessaccountpage.accounttype_dropdown()
-//             await businessaccountpage.names()
-//             await businessaccountpage.save()
-//             await addresspage.newaddress()
-//             await addresspage.generaladdress()
-//             await addresspage.saveandclose()
-//             await businessphonenumberpage.phonenumberbtn()
-//             await phonenumberpage.General_PhoneNumber()
-//             await businessaccountpage.personalAccountDocuments()
-//             await businessaccountpage.RelatedAccount()
-//             await addresspage.saveandclose()
-//         })
-// test('Checking Hamburger Menu',async({page}) =>   
-//         {
-//             const customerpage = new CustomerPage(page)
-//             const bidderopportunitypage = new BidderOpportunityPage(page)
-        
-//             await customerpage.url()
-//             await bidderopportunitypage.BidderHamburgerMenu()
-//             await bidderopportunitypage.ConsignmentHamburgerMenu()
-//         })
 test('Creating Business Bidder Opportunity',async({page}) =>
 {
     const customerpage = new CustomerPage(page)
@@ -129,6 +58,7 @@ test('Creating Business Bidder Opportunity',async({page}) =>
     await bidderopportunitypage.BidderAssign()
     await bidderopportunitypage.Add_Envelop()
     await bidderopportunitypage.Add_Absentee_Bid()
+    await bidderopportunitypage.PhoneObserver()
     await bidderopportunitypage.RegisterDocuments()
     await bidderopportunitypage.Opportunity_product_tab()
     await addresspage.saveandclose()

@@ -16,8 +16,9 @@ class EmailPage
 
     async NewEmailbtn()
     {
-        
-        await this.page.locator(this.email_webelement.New_Email_btn).click({ timeout: 60000 })
+        const New_Email = this.page.locator(this.email_webelement.New_Email_btn)
+       await expect(New_Email).toHaveText('New Email',{ timeout: 10000 })
+        await this.page.locator(this.email_webelement.New_Email_btn).click()
         
     }
     async enter_emailid()
@@ -46,17 +47,18 @@ class EmailPage
 
     async CredentialTab()
     {
+        await expect(this.page.locator(this.email_webelement.CredentialTab)).toBeVisible({ timeout: 10000 })
         await this.page.locator(this.email_webelement.CredentialTab).click()
         await this.page.waitForTimeout(1000)
         const frame = await this.page.frameLocator(this.email_webelement.frame)
         if(!frame) throw new Error('Iframe not found')
         await frame.locator(this.email_webelement.Createbtn).click()
         await this.page.locator(this.email_webelement.Okbtn).click()
-        await this.page.waitForTimeout(1000)
+        await this.page.waitForTimeout(2000)
         //await frame.locator(this.email_webelement.Verifybtn).click()
 
        // await this.page.locator(this.email_webelement.Okbtn).click()
-        await this.page.waitForTimeout(1000)
+       // await this.page.waitForTimeout(1000)
         await frame.locator(this.email_webelement.ResetPassword).click()
 
         await this.page.locator(this.email_webelement.Okbtn).click()

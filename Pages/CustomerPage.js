@@ -31,13 +31,16 @@ class CustomerPage
     async manager()
     {
         await this.page.locator(this.customer_webElements.managementbtn).click()
+        const Customer = this.page.locator(this.customer_webElements.Customerbtn)
+        await expect(Customer).toHaveText('Customers',{ timeout: 10000 })
         await this.page.locator(this.customer_webElements.Customerbtn).click()
        // await expect(this.page.locator(this.customer_webElements.verifyallaccount)).toBeVisible();
     }
 
     async customer()
     {
-        await this.page.locator(this.customer_webElements.Createnewaccountbtn).click()
+       await expect(this.page.locator(this.customer_webElements.Createnewaccountbtn)).toBeVisible({ timeout: 30000 });
+       await this.page.locator(this.customer_webElements.Createnewaccountbtn).click()
     }
 
 }

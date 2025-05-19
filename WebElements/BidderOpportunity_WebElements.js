@@ -4,6 +4,7 @@ class BidderOpportunity_WebElements
     constructor()
     {
         this.Bidder_Registration = "//button[@aria-label='Bidder Registration']"
+        this.Verify_NewOpportunity_Text = "//h1[@title='New Opportunity']"
         this.Bidder_Pakage_Type = "//input[@aria-label='Bidder Package Type, Lookup']"
         this.Select_Bidder_Package_Type = "//ul[@aria-label='Lookup results']/li[1]"//"//ul[@aria-label='Lookup results']/li[@aria-label='ABSENTEE (BIDDER), 61']"
         this.Select_Bid_LimitType_dropdown = "//select[@aria-label='Bid Limit Type']"
@@ -18,8 +19,8 @@ class BidderOpportunity_WebElements
         this.Save_Bidder_Opportunity = "//span[text()='Save']"
         this.Refresh_Bidder_Opportunity = "//button[@aria-label='Refresh']"
 
-
-        this.Add_Envelop_btn = "//button[@aria-label='Add Envelope']"//"//span[text()='New Bid Limit Deposit']"//
+        this.Verify_BidLimitDeposits_Text = "//h3[text()='Bid Limit Deposits']"
+        this.Add_Envelop_btn = "//button[contains(@aria-label, 'Add Envelope')]"//"//span[text()='New Bid Limit Deposit']"//
         this.Envelop_Number = "//input[@aria-label='Envelope Number']"
         this.Select_Deposite_Type = "//select[@aria-label='Deposit Type']"
         this.Deposite_Amount = "//input[@aria-label='Deposit Amount']"
@@ -32,6 +33,7 @@ class BidderOpportunity_WebElements
         this.Cashiering = "//div[text()='At Cashiering']"
         this.Cashiering_Save = "//button[@title='Save']"
 
+        this.Verify_Absentees_Bids_Text = "//h3[text()='Absentees Bids']"
         this.Add_New_Absentee_Bid_btn = "//button[@aria-label='New Absentee Bids. Add New Absentee Bids']"
         this.Select_Absentee_Bid = "//select[@aria-label='Absentee Bids']"
         this.Lot_Number = "//input[@aria-label='Lot Number']"
@@ -42,6 +44,15 @@ class BidderOpportunity_WebElements
         this.FrameSendAbsenteebid = "//iframe[@id='WebResource_Send_Absentee_Bids']"
         this.SendAbsenteeBid = "//button[text()='Send Absentee Bids']"
         this.OkPopUp = "//button[@aria-label='OK']"
+
+        this.Frame_PhoneObserver = "//iframe[@aria-label='launch_phone_observer']"
+        this.managementbtn = "//span[text()='Management']"
+        this.HamBerger_PhoneObserver = "//span[text()='Phone Observer']"
+        this.SelectEvent = "//select[@id='eventdropdown']"
+        this.Select_PhoneObserver_Date = "//select[@id='days']"
+        this.Launch = "//button[@id='launchbutton']"
+        this.Verify_TotalBids = "//div[@id='leftCol']/div/label[contains(text(), 'Bids')]"
+        this.Close_PhoneObserver = "//button[@title='Close']"
 
 
         this.AddDocument_Register = "(//button[@aria-label='Add Document'])[1]"

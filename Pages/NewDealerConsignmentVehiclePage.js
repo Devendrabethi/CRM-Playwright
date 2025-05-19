@@ -116,6 +116,10 @@ class NewDealerConsignmentVehiclePage
         await this.page.locator(this.newconsignmentvehicle_webelement.Account_Address_dropdown).click()
         await this.page.locator(this.newconsignmentvehicle_webelement.Title_To).click()
         await this.page.locator(this.newconsignmentvehicle_webelement.Title_To).fill(this.testdata.Dealer_TitleTo)
+        await this.page.waitForTimeout(1000)
+        await this.page.locator(this.newconsignmentvehicle_webelement.AppStatus_Status).hover()
+        await this.page.locator(this.newconsignmentvehicle_webelement.AppStatus_Status).click() 
+        await this.page.waitForTimeout(2000)
     }
     async Appilication_Info()
     {

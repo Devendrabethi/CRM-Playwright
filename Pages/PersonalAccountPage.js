@@ -16,7 +16,8 @@ class PersonalAccountPage
 
     async accounttype_dropdown()
     {
-       // await page.click(this.PersonalAccount_WebElements.AccountType_Dropdown);
+        const CustomerText = this.page.locator(this.PersonalAccount_WebElements.CustomerText)
+        await expect(CustomerText).toHaveText('Customer',{ timeout: 60000 })
         await this.page.selectOption(this.PersonalAccount_WebElements.AccountType_Dropdown,this.testdata.Account_Type_Personal);
         
     }
@@ -38,7 +39,7 @@ class PersonalAccountPage
                 const randomLastName = generateRandomString(Math.floor(Math.random() * (26-19)) + 1);
 
                 const firstName = "Dev" + randomFirstName;
-                const lastName = "Ind" + randomLastName;
+                const lastName = "Individual" + randomLastName;
 
                 // Fill the form fields with the generated names
                 await this.page.locator(this.PersonalAccount_WebElements.Firstname).fill(firstName);
@@ -55,10 +56,11 @@ class PersonalAccountPage
 
     async save()
     {
-        await this.page.locator(this.PersonalAccount_WebElements.Savebtn).click();
+        await this.page.locator(this.PersonalAccount_WebElements.Savebtn).click({ timeout: 10000 });
     }
     async personalAccountDocuments()
     {
+        await expect(this.page.locator(this.PersonalAccount_WebElements.Documents_Tab)).toBeVisible({ timeout: 10000 })
         await this.page.locator(this.PersonalAccount_WebElements.Documents_Tab).click()
         const fileToUpload = 
         {
@@ -70,7 +72,7 @@ class PersonalAccountPage
         }
         for (const [documentType, documentPath] of Object.entries(fileToUpload))
              {
-                   // await this.page.waitForTimeout(2000)
+                    await expect(this.page.locator(this.PersonalAccount_WebElements.Personal_Document_Text)).toBeVisible({ timeout: 10000 })
                     await this.page.locator(this.PersonalAccount_WebElements.Add_Document_btn).click()
                     const frame = await this.page.frameLocator(this.PersonalAccount_WebElements.frame)
                     if(!frame) throw new Error('Iframe not found')

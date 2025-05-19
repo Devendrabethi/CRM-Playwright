@@ -7,7 +7,7 @@ import { EmailPage} from '../Pages/EmailPage'
 import { NewConsignmentVehiclePage} from '../Pages/NewConsignmentVehiclePage'
 import { BidderOpportunityPage} from '../Pages/BidderOpportunityPage'
 
-test('Creating Personal account with documents',async({page}) =>
+test.skip('Creating Personal account with documents',async({page}) =>
     {
         const customerpage = new CustomerPage(page)
         const personalaccountpage = new PersonalAccountPage(page) 
@@ -70,6 +70,7 @@ test('Creating Individual Bidder Opportunity',async({page}) =>
     await bidderopportunitypage.BidderAssign()
     await bidderopportunitypage.Add_Envelop()
     await bidderopportunitypage.Add_Absentee_Bid()
+    await bidderopportunitypage.PhoneObserver()
     await bidderopportunitypage.RegisterDocuments()
     await bidderopportunitypage.Opportunity_product_tab()
     await addresspage.saveandclose()

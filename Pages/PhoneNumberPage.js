@@ -18,6 +18,8 @@ class PhoneNumberPage
     async phonenumberbtn()
     {
         await this.page.locator(this.phonenumber_webelement.threedotbtn).click()
+        const New_Phone_Number = this.page.locator(this.phonenumber_webelement.New_PhoneNumber_btn)
+       await expect(New_Phone_Number).toHaveText('New Phone Number',{ timeout: 10000 })
         await this.page.locator(this.phonenumber_webelement.New_PhoneNumber_btn).click()
     }
 
