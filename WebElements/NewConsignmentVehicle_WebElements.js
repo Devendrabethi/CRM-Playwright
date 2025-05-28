@@ -5,7 +5,7 @@ class NewConsignmentVehicle_WebElement
     {
         this.New_Consignment_opportunity_btn = "//button[@title='New Consignment Opportunity']"
         this.Vehicle_field = "//input[@aria-label='Vehicle, Lookup']"
-        this.New_Vehicle_link = "//span[text()='New Vehicle']"
+        this.New_Vehicle_link = "(//button[@aria-label='New'])[2]" ////button[@aria-label='New Vehicle']
         this.Quick_Create_Vehicle_text = "//h1[text()='Quick Create: Vehicle']"
         this.Vin = "//input[@aria-label='VIN']"
         this.Year ="//input[@aria-label='Year']"
@@ -63,7 +63,7 @@ class NewConsignmentVehicle_WebElement
 
         this.Photo_Tab="//ul[@aria-label='Opportunity Form']/li[contains(@aria-label,'Photos')]"
         this.Photo_frame = "//iframe[@title='Upload Vehicle Photos']"  //"//iframe[@id='WebResource_new_6']"   //hotfixqa  //iframe[@id='WebResource_uploadphotos']"
-        this.plus_Add_Photo_btn="//h3[@id='primaryphotos']/button[text()=' + Add Photo ']"
+        this.plus_Add_Photo_btn="//h3[@id='primaryphotos']/button"
         this.Upload_photo_input="//input[@name='file']"
         this.Upload_photo_btn="//button[@id='uploadButton']"
         this.Cross_mark="(//button[@aria-label='Close'])[1]"

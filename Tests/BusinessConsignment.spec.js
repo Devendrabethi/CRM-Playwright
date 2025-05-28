@@ -48,7 +48,6 @@ test('Creating Business Consignment',async({page}) =>
     await phonenumberpage.General_PhoneNumber()
     await businessaccountpage.personalAccountDocuments()
     await businessaccountpage.RelatedAccount()
-    await addresspage.saveandclose()
     await newconsignmentvehiclepage.newcon()
     await newconsignmentvehiclepage.vehicledeatails()
     await newconsignmentvehiclepage.Mileage()

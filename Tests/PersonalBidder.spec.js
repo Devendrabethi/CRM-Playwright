@@ -73,7 +73,6 @@ test('Creating Individual Bidder Opportunity',async({page}) =>
     await bidderopportunitypage.PhoneObserver()
     await bidderopportunitypage.RegisterDocuments()
     await bidderopportunitypage.Opportunity_product_tab()
-    await addresspage.saveandclose()
     await bidderopportunitypage.Invoice_Tab()
     await bidderopportunitypage.AnotherProduct()    
     await bidderopportunitypage.TaskTab()

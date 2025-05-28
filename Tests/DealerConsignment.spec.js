@@ -47,7 +47,6 @@ test('Creating Dealer Consignmen ',async({page}) =>
     await phonenumberpage.General_PhoneNumber()
     await dealeraccountpage.personalAccountDocuments()
     await dealeraccountpage.RelatedAccount()
-    await addresspage.saveandclose()
     await newconsignmentvehiclepage.newcon()
     await newconsignmentvehiclepage.vehicledeatails()
     await newconsignmentvehiclepage.Mileage()

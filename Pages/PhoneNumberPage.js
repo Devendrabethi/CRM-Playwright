@@ -33,9 +33,9 @@ class PhoneNumberPage
         await this.page.locator(this.phonenumber_webelement.Number).click()
         await this.page.locator(this.phonenumber_webelement.Number).fill(this.testdata.Phone_Number)
         await this.page.waitForTimeout(1000)
-        await this.page.locator(this.address_webelements.Save_btn).click()
-        await this.page.waitForTimeout(1000)
-        await this.page.locator(this.address_webelements.Save_Close).click()
+        // await this.page.locator(this.address_webelements.Save_btn).click()
+        // await this.page.waitForTimeout(1000)
+        await this.page.locator(this.address_webelements.save_Close_popup).click()
         await this.page.waitForTimeout(4000)
     }
 }

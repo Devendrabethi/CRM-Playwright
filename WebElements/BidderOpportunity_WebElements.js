@@ -39,6 +39,8 @@ class BidderOpportunity_WebElements
         this.Lot_Number = "//input[@aria-label='Lot Number']"
         this.Contact_Phone = "//input[@aria-label='Contact Phone']"
         this.MaximumBid = "//input[@aria-label='Maximum Bid']"
+        this.SaveandClosebutton = "//button[@aria-label='Save and Close Options']"
+        this.saveandCReateNew = "//span[text()='Save & Create New']"
         this.Save_Absentee_Bid = "//button[@aria-label='Save and Close']"
         this.PhoneObserver = "//button[contains(@aria-label,'Phone Observer')]"
         this.FrameSendAbsenteebid = "//iframe[@id='WebResource_Send_Absentee_Bids']"
@@ -64,10 +66,11 @@ class BidderOpportunity_WebElements
         this.TaskRefresh = "(//span[text()='Refresh'])[2]/../parent::button"
 
         this.Opportunity_Product_Tab = "//ul[@aria-label='Opportunity Form']/li[contains(@title,'Products')]"
-        this.Add_Product_button = "//button[@aria-label='Add Product']"
+        this.Add_Product_button = "//button[@aria-label='Add product']"
         this.Existing_Product = "//input[@aria-label='Product, Lookup']"
         this.Selecting_product = "//ul[@aria-label='Lookup results']/li[1]"
         this.Quantity = "//input[@aria-label='Quantity']"
+        this.Save_Close = "//span[text()='Save & Close']"
 
 
         this.Invoice_Tab = "//ul[@aria-label='Opportunity Form']/li[contains(@title,'Invoices')]"
@@ -146,7 +149,7 @@ class BidderOpportunity_WebElements
         this.Approvebutton = "//button[@id='approveButton']"
 
         //HamburgerMenu
-        this.managementbtn = "//span[text()='Management']";
+        this.managementbtn = "//div[@title='Management']";
         this.MenuCusomer = "//span[text()='Customers']"
         this.ExportToExcel = "//span[text()='Export to Excel']/../parent::button"
         this.AllAccountDropdown = "//span[text()='All Accounts']"

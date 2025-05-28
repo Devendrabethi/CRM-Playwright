@@ -33,5 +33,6 @@ class DealerAccount_WebElements
         this.Add_btn= "//span[text()='Add']"
         this.RealtedAccount_More_option= "//button[@aria-label='More commands for Account']"
         this.Related_Accounts_refresh= "(//span[text()='Refresh'])[2]"
+        this.Save_Close = "//span[text()='Save & Close']"
     }
 }

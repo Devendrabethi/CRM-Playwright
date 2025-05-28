@@ -38,16 +38,16 @@ class EmailPage
     await this.page.locator(this.email_webelement.Email).click({ timeout: 60000 })
     await this.page.locator(this.email_webelement.Email).fill(emailid)
     await this.page.waitForTimeout(1000)
-    await this.page.locator(this.address_webelements.Save_btn).click()
+    //await this.page.locator(this.address_webelements.Save_btn).click()
     //await this.page.waitForTimeout(2000)
-    await this.page.locator(this.address_webelements.Save_Close).click()
-    //await this.page.screenshot({path:'ScreenShot/'+Date.now()+'AccountCreated.png'})
-    //await this.page.waitForTimeout(4000)
+    await this.page.locator(this.address_webelements.save_Close_popup).click()
+    await this.page.locator(this.address_webelements.Refresh_Accountpage).click()
+    await this.page.waitForTimeout(2000)
     }
 
     async CredentialTab()
     {
-        await expect(this.page.locator(this.email_webelement.CredentialTab)).toBeVisible({ timeout: 10000 })
+        await expect(this.page.locator(this.email_webelement.CredentialTab)).toBeVisible({ timeout: 30000 })
         await this.page.locator(this.email_webelement.CredentialTab).click()
         await this.page.waitForTimeout(1000)
         const frame = await this.page.frameLocator(this.email_webelement.frame)

@@ -91,7 +91,7 @@ class BidderOpportunityPage
 
         await this.page.locator(this.bidderopportunity_webelements.Add_New_Absentee_Bid_btn).click()
         await this.page.selectOption(this.bidderopportunity_webelements.Select_Absentee_Bid,this.testdata.selectAdsenteeBidPhone)
-        await this.page.waitForTimeout(3000)
+        await this.page.waitForTimeout(1500)
         await this.page.locator(this.bidderopportunity_webelements.Lot_Number).click()
         await this.page.locator(this.bidderopportunity_webelements.Lot_Number).fill(this.testdata.Lotphone)
         await this.page.locator(this.bidderopportunity_webelements.Contact_Phone).click()
@@ -102,7 +102,7 @@ class BidderOpportunityPage
 
         await this.page.locator(this.bidderopportunity_webelements.Add_New_Absentee_Bid_btn).click()
         await this.page.selectOption(this.bidderopportunity_webelements.Select_Absentee_Bid,this.testdata.delectAbsenteeBidAbsenteeRepresentative)
-        await this.page.waitForTimeout(3000)
+        await this.page.waitForTimeout(1500)
         await this.page.locator(this.bidderopportunity_webelements.Lot_Number).click()
         await this.page.locator(this.bidderopportunity_webelements.Lot_Number).fill(this.testdata.lotabsentee)
         await this.page.locator(this.bidderopportunity_webelements.MaximumBid).click()
@@ -179,9 +179,10 @@ class BidderOpportunityPage
         await this.page.locator(this.bidderopportunity_webelements.Existing_Product).fill(this.testdata.Existing_Product)
         await this.page.waitForTimeout(2000)
         await this.page.locator(this.bidderopportunity_webelements.Selecting_product).click()
-        await this.page.locator(this.bidderopportunity_webelements.Quantity).click()
+        //await this.page.locator(this.bidderopportunity_webelements.Quantity).click()
         await this.page.locator(this.bidderopportunity_webelements.Quantity).fill(this.testdata.Quantity)
         await this.page.waitForTimeout(1000)
+        await this.page.locator(this.bidderopportunity_webelements.Save_Close).click()
     }
 
     async Invoice_Tab()
@@ -236,8 +237,8 @@ class BidderOpportunityPage
         await frameCard.locator(this.bidderopportunity_webelements.ZipCode).fill(this.testdata.ZipCOde)
         await frame.locator(this.bidderopportunity_webelements.SubmitButton).click()
         await this.page.locator(this.bidderopportunity_webelements.PaymentOk).click({timeout:60000})
-        await this.page.locator(this.bidderopportunity_webelements.Invoice_Tab).click()
-        await this.page.waitForTimeout(2000)
+        // await this.page.locator(this.bidderopportunity_webelements.Invoice_Tab).click()
+        // await this.page.waitForTimeout(2000)
     }
     async AnotherProduct()
     {
@@ -269,7 +270,7 @@ class BidderOpportunityPage
         await frame.locator(this.bidderopportunity_webelements.CardlessSubmitbutton).click()
         await this.page.locator(this.bidderopportunity_webelements.PaymentOk).click()
         await this.page.locator(this.bidderopportunity_webelements.Invoice_Tab).click()
-        await this.page.waitForTimeout(2000)
+        await this.page.waitForTimeout(4000)
     }
     async TaskTab()
     {
@@ -405,6 +406,7 @@ class BidderOpportunityPage
                 await this.page.locator(this.bidderopportunity_webelements.Integration_Tab).click()
                 await this.page.waitForTimeout(5000)
                 await this.page.locator(this.bidderopportunity_webelements.Refresh_Bidder).click()
+                await this.page.waitForTimeout(2000)
 
    }
    async BidderHamburgerMenu ()

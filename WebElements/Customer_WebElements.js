@@ -10,7 +10,7 @@ class Customer_WebElements {
         this.yesbtn = "//input[@id='idSIButton9']";
         this.frame_AuctionManager = "//iframe[@id='AppLandingPage']"
         this.Auction_management = "//a[@title='Auction Manager']";
-        this.managementbtn = "//span[text()='Management']";
+        this.managementbtn = "//div[@title='Management']";
         this.Customerbtn = "//span[text()='Customers']";
         this.verifyallaccount = "//span[text()='All Accounts']"
         this.Createnewaccountbtn = "//span[text()='New']";

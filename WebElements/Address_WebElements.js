@@ -17,9 +17,8 @@ class Address_WebElements
         this.County_text = "//div[@aria-label='County Lookup results']/ul/li"
         this.Select_status = "//select[@aria-label='Status']"
         this.Save_Close = "//span[text()='Save & Close']"
+        this.save_Close_popup = "(//span[text()='Save & Close'])[2]"
         this.Save_btn = "//span[text()='Save']"
-
-        this.scripterror = "//button[@aria-label='OK']" 
-
+        this.Refresh_Accountpage = "//button[@aria-label='Refresh']"
     }
 }
