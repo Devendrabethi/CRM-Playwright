@@ -40,6 +40,8 @@ class TestData
         this.Vehicle_TransmissionType = "Automatic";
         this.Vehicle_TransmissionSpeed = "3-Speed";
 
+        this.SelctAcceptance = "Accepted"
+
         this. Account_Address = "5055 E Somerset Dr - Arizona";
         this.personal_TitleTo = "Devendra Individual";
         this.Event_name = "Scottsdale Fall 2025";

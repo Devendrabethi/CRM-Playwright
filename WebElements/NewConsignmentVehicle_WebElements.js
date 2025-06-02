@@ -69,6 +69,14 @@ class NewConsignmentVehicle_WebElement
         this.Cross_mark="(//button[@aria-label='Close'])[1]"
         this.Refresh_btn="//img[@id='refreshbutton']"
         this.scroll_allphoto = "//span[@id='allphotosCounts']"
+        
+        this.SelectAll_AllPhotos = "//input[@id='select-all-10']"
+        this.Select_Accepted = "//div[@id='changeStatus-10']/select"
+        this.Okbutton = "//button[@aria-label='OK']"
+        this.Photo_Approve = "//button[@aria-label='Photos Approved: No']"
+        this.SaveButton = "//button[@aria-label='Save (CTRL+S)']"
+
+
 
         this.Marketing_Tab="//ul[@aria-label='Opportunity Form']/li[contains(@aria-label,'Marketing')]"
         this.ShortDescription = "//textarea[@aria-label='Short Description']"

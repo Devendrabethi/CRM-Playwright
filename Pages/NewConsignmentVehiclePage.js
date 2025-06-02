@@ -196,6 +196,16 @@ class NewConsignmentVehiclePage
                     //await this.page.waitForTimeout(2000)
                     await frame.locator(this.newconsignmentvehicle_webelement.scroll_allphoto).click()
                     await this.page.waitForTimeout(4000)
+
+                    await frame.locator(this.newconsignmentvehicle_webelement.SelectAll_AllPhotos).click()
+                    await frame.locator(this.newconsignmentvehicle_webelement.Select_Accepted).selectOption({ label: this.testdata.SelctAcceptance })
+                    await this.page.locator(this.newconsignmentvehicle_webelement.Okbutton).click()
+                    await this.page.waitForTimeout(2000)
+                    await this.page.locator(this.newconsignmentvehicle_webelement.Refresh_consignment).click()
+                    await this.page.locator(this.newconsignmentvehicle_webelement.Status_Text).click() 
+                    await this.page.locator(this.newconsignmentvehicle_webelement.Photo_Approve).click()
+                    await this.page.locator(this.newconsignmentvehicle_webelement.Okbutton).click()
+                    await this.page.locator(this.newconsignmentvehicle_webelement.SaveButton).click()
     }
     async TaskTab()
     {
