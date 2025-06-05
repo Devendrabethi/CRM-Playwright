@@ -4,7 +4,7 @@ class TestData
 {
     constructor()
     {
-        this.URL ="https://bjac-hotfixqa.crm.dynamics.com/"//main.aspx?appid=58533451-8dc7-ef11-b8e9-6045bd056e7e"//Hotfixqa: https://bjac-hotfixqa.crm.dynamics.com/main.aspx?appid=58533451-8dc7-ef11-b8e9-6045bd056e7e  //uat: https://bjac-uat.crm.dynamics.com/main.aspx?appid=a7691afc-ad8a-ef11-ac21-000d3a5c4875
+        this.URL ="https://bjac-uat.crm.dynamics.com/"//main.aspx?appid=58533451-8dc7-ef11-b8e9-6045bd056e7e"//Hotfixqa: https://bjac-hotfixqa.crm.dynamics.com/main.aspx?appid=58533451-8dc7-ef11-b8e9-6045bd056e7e  //uat: https://bjac-uat.crm.dynamics.com/main.aspx?appid=a7691afc-ad8a-ef11-ac21-000d3a5c4875
         this.Emailid = "d365testuser3@barrett-jackson.com";//"dbethi@barrett-jackson.com";//d365testuser3@barrett-jackson.com"; 
         this.Password = "ZNcCzew8NjYz";//ZNcCzew8NjYz--testuser3
         this.FirstName = ""
@@ -101,5 +101,19 @@ class TestData
 
         this.SelectInvoiceCash = "Cash"
         this.PaymentNumberValue = "0005"
+
+        this.Collection_Name = "Devendra"
+        this.Colection_Description = "Devendra Testing Collection"
+
+        this.Charities_Name = "Devendra Testing"
+        this.Charities_Description = "Devendra Testing Charities"
+        this.Charities_URL = "DevendraTesting"
+
+        this.Event_Name = "Scottsdale Fall 2025"
+
+        this.Account_Name = "Devendra"
+        this.Hammer_Amount = "45000"
+
+        this.Donation_Amount = "55000"
     }
 }
