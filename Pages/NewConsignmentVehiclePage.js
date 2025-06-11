@@ -196,13 +196,28 @@ class NewConsignmentVehiclePage
                     //await frame.locator(this.newconsignmentvehicle_webelement.Refresh_btn).click()
                     //await this.page.waitForTimeout(2000)
                     await frame.locator(this.newconsignmentvehicle_webelement.scroll_allphoto).click()
-                    await this.page.waitForTimeout(9000)
+                    await this.page.waitForTimeout(11000)
                     await frame.locator(this.newconsignmentvehicle_webelement.SelectAll_AllPhotos).click({timeout:60000})
                     await frame.locator(this.newconsignmentvehicle_webelement.Select_Accepted).selectOption({ label: this.testdata.SelctAcceptance })
                     await this.page.locator(this.newconsignmentvehicle_webelement.Okbutton).click({timeout:60000})
-                    await this.page.waitForTimeout(9000)
+                    await this.page.waitForTimeout(11000)
                     await frame.locator(this.newconsignmentvehicle_webelement.SelectAll_AllPhotos).click({timeout:60000})
+
+
+                     //Photos Download file
+                    const path1 = require('path');  
+                    const fs1 = require('fs');
+                    const downloadDir1 = path1.join(__dirname, 'Download');
+                    if (!fs1.existsSync(downloadDir1)) 
+                        {
+                           fs1.mkdirSync(downloadDir1);
+                        }
+                    const downloadPromise1 = this.page.waitForEvent('download')
                     await frame.locator(this.newconsignmentvehicle_webelement.Download_Photos).click()
+                    const download1 = await downloadPromise1
+                    const downloadPath1 = path1.join(downloadDir1, download1.suggestedFilename());
+                    await download1.saveAs(downloadPath1)
+
                     await this.page.locator(this.newconsignmentvehicle_webelement.Okbutton).click({timeout:60000})
                     await this.page.waitForTimeout(2000)
                     await frame.locator(this.newconsignmentvehicle_webelement.Delect_Photo).click()
