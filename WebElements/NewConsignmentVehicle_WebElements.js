@@ -70,13 +70,13 @@ class NewConsignmentVehicle_WebElement
         this.Refresh_btn="//img[@id='refreshbutton']"
         this.scroll_allphoto = "//span[@id='allphotosCounts']"
         
-        this.SelectAll_AllPhotos = "//input[@id='select-all-10']"
-        this.Select_Accepted = "//div[@id='changeStatus-10']/select"
+        this.SelectAll_AllPhotos = "(//input[contains(@id,'select-all')])[1]"
+        this.Select_Accepted = "(//div[contains(@id,'changeStatus')]/select)[1]"
         this.Okbutton = "//button[@aria-label='OK']"
         this.Photo_Approve = "//button[@aria-label='Photos Approved: No']"
         this.SaveButton = "//button[@aria-label='Save (CTRL+S)']"
-
-
+        this.Download_Photos = "(//div[contains(@id,'download')])[1]"
+        this.Delect_Photo = "(//div[contains(@id,'delete')])[1]"
 
         this.Marketing_Tab="//ul[@aria-label='Opportunity Form']/li[contains(@aria-label,'Marketing')]"
         this.ShortDescription = "//textarea[@aria-label='Short Description']"

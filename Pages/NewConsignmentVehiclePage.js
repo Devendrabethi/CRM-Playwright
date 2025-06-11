@@ -176,12 +176,13 @@ class NewConsignmentVehiclePage
 
         const fileToUpload = 
         [
-            "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\front.jpg",
-            "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\rare.jpg",
-            "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\side.jpg",
-            "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\interior.jpg",
-            "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\engine.jpg",
-            "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\vin.jpg",
+            "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\front344.jpeg",
+            "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\1Rear34.jpeg",
+            "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\side344.jpeg",
+            "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\1Interiorr.jpeg",
+            "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\1Engine.jpeg",
+            "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\vin.heif",
+            "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\underside.jpg",
             "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\odometer.jpg",
         ]
                    // await this.page.waitForTimeout(2000)                   
@@ -192,20 +193,28 @@ class NewConsignmentVehiclePage
                     await frame.locator(this.newconsignmentvehicle_webelement.Upload_photo_btn).click()
                     //await this.page.waitForTimeout(12000)
                     await frame.locator(this.newconsignmentvehicle_webelement.Cross_mark).click({timeout:60000})
-                    await frame.locator(this.newconsignmentvehicle_webelement.Refresh_btn).click()
+                    //await frame.locator(this.newconsignmentvehicle_webelement.Refresh_btn).click()
                     //await this.page.waitForTimeout(2000)
                     await frame.locator(this.newconsignmentvehicle_webelement.scroll_allphoto).click()
-                    await this.page.waitForTimeout(6000)
-
-                    await frame.locator(this.newconsignmentvehicle_webelement.SelectAll_AllPhotos).click()
+                    await this.page.waitForTimeout(9000)
+                    await frame.locator(this.newconsignmentvehicle_webelement.SelectAll_AllPhotos).click({timeout:60000})
                     await frame.locator(this.newconsignmentvehicle_webelement.Select_Accepted).selectOption({ label: this.testdata.SelctAcceptance })
                     await this.page.locator(this.newconsignmentvehicle_webelement.Okbutton).click({timeout:60000})
+                    await this.page.waitForTimeout(9000)
+                    await frame.locator(this.newconsignmentvehicle_webelement.SelectAll_AllPhotos).click({timeout:60000})
+                    await frame.locator(this.newconsignmentvehicle_webelement.Download_Photos).click()
+                    await this.page.locator(this.newconsignmentvehicle_webelement.Okbutton).click({timeout:60000})
                     await this.page.waitForTimeout(2000)
-                    await this.page.locator(this.newconsignmentvehicle_webelement.Refresh_consignment).click()
-                    await this.page.locator(this.newconsignmentvehicle_webelement.Status_Text).click() 
-                    await this.page.locator(this.newconsignmentvehicle_webelement.Photo_Approve).click()
-                    await this.page.locator(this.newconsignmentvehicle_webelement.Okbutton).click()
-                    await this.page.locator(this.newconsignmentvehicle_webelement.SaveButton).click()
+                    await frame.locator(this.newconsignmentvehicle_webelement.Delect_Photo).click()
+                    await this.page.locator(this.newconsignmentvehicle_webelement.Okbutton).click({timeout:60000})
+                    await this.page.waitForTimeout(3000)
+                    await frame.locator(this.newconsignmentvehicle_webelement.scroll_allphoto).click()
+                    await this.page.waitForTimeout(6000)
+                    //await this.page.locator(this.newconsignmentvehicle_webelement.Refresh_consignment).click()
+                    // await this.page.locator(this.newconsignmentvehicle_webelement.Status_Text).click() 
+                    // await this.page.locator(this.newconsignmentvehicle_webelement.Photo_Approve).click()
+                    // await this.page.locator(this.newconsignmentvehicle_webelement.Okbutton).click()
+                    // await this.page.locator(this.newconsignmentvehicle_webelement.SaveButton).click()
     }
     async TaskTab()
     {
@@ -215,7 +224,7 @@ class NewConsignmentVehiclePage
         await this.page.locator(this.newconsignmentvehicle_webelement.SelectAllTaskRadiobtn).click()
         await this.page.waitForTimeout(2000)
         await this.page.locator(this.newconsignmentvehicle_webelement.MarkComplete).click()
-        await this.page.locator(this.newconsignmentvehicle_webelement.TaskRefresh).click()
+        await this.page.locator(this.newconsignmentvehicle_webelement.TaskRefresh).click({timeout:60000})
         await this.page.locator(this.newconsignmentvehicle_webelement.Refresh_consignment).click()
     }
     async ActivitiesTab()

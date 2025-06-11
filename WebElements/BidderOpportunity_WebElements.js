@@ -66,7 +66,7 @@ class BidderOpportunity_WebElements
         this.TaskRefresh = "(//span[text()='Refresh'])[2]/../parent::button"
 
         this.Opportunity_Product_Tab = "//ul[@aria-label='Opportunity Form']/li[contains(@title,'Products')]"
-        this.Add_Product_button = "//button[@aria-label='Add product']"
+        this.Add_Product_button = "//button[@aria-label='Add Product']"
         this.Existing_Product = "//input[@aria-label='Product, Lookup']"
         this.Selecting_product = "//ul[@aria-label='Lookup results']/li[1]"
         this.Quantity = "//input[@aria-label='Quantity']"

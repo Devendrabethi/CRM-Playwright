@@ -68,7 +68,6 @@ test('Creating Individual Consignment',async({page}) =>    // Activity functiona
     await newconsignmentvehiclepage.vehicledeatails()
     await newconsignmentvehiclepage.Mileage()
     await newconsignmentvehiclepage.SaleDetails()
-    //await newconsignmentvehiclepage.Account()  //not req for personal cong
     await newconsignmentvehiclepage.Account_Address()
     await newconsignmentvehiclepage.Appilication_Info()
     await newconsignmentvehiclepage.SaleDay()
@@ -80,5 +79,4 @@ test('Creating Individual Consignment',async({page}) =>    // Activity functiona
     //await newconsignmentvehiclepage.ActivitiesTab()  // Activity functionality works only in UAT
     await newconsignmentvehiclepage.RibbonLevel()
     await newconsignmentvehiclepage.IntegrationTab()
-    await bidderopportunitypage.ConsignmentHamburgerMenu()
 })

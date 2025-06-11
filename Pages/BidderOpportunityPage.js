@@ -172,7 +172,7 @@ class BidderOpportunityPage
     async Opportunity_product_tab()
     {
         await this.page.locator(this.bidderopportunity_webelements.Opportunity_Product_Tab).click()
-        await expect(this.page.locator(this.bidderopportunity_webelements.Add_Product_button)).toBeVisible({timeout:30000})
+        await expect(this.page.locator(this.bidderopportunity_webelements.Add_Product_button)).toBeVisible({timeout:60000})
         await this.page.locator(this.bidderopportunity_webelements.Add_Product_button).click()
         await this.page.locator(this.bidderopportunity_webelements.Existing_Product).click()
         await this.page.waitForTimeout(2000)

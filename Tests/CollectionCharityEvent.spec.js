@@ -2,7 +2,7 @@ import{test} from '@playwright/test'
 import { CustomerPage } from '../Pages/CustomerPage'
 import { ConsignmentManagerPage } from '../Pages/ConsignmentManagerPage'
 
-test('Validating Colection, Charities and Events',async({page}) =>    // Activity functionality works only in UAT
+test('Validating Colection, Charities and Events',async({page}) =>    // Must have the useraccount TestUser3
 {
     const customerpage = new CustomerPage(page)
     const consignmentmanagerPage = new ConsignmentManagerPage(page) 

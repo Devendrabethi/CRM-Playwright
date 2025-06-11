@@ -1,1 +1,1 @@
-let GlobalUserData = {};
+//let GlobalUserData = {};
