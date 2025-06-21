@@ -193,16 +193,15 @@ class NewConsignmentVehiclePage
                     await frame.locator(this.newconsignmentvehicle_webelement.Upload_photo_btn).click()
                     //await this.page.waitForTimeout(12000)
                     await frame.locator(this.newconsignmentvehicle_webelement.Cross_mark).click({timeout:60000})
-                    //await frame.locator(this.newconsignmentvehicle_webelement.Refresh_btn).click()
-                    //await this.page.waitForTimeout(2000)
+                    await frame.locator(this.newconsignmentvehicle_webelement.Refresh_btn).click()
+                    await this.page.waitForTimeout(2000)
                     await frame.locator(this.newconsignmentvehicle_webelement.scroll_allphoto).click()
-                    await this.page.waitForTimeout(11000)
+                    await this.page.waitForTimeout(8000)
                     await frame.locator(this.newconsignmentvehicle_webelement.SelectAll_AllPhotos).click({timeout:60000})
                     await frame.locator(this.newconsignmentvehicle_webelement.Select_Accepted).selectOption({ label: this.testdata.SelctAcceptance })
                     await this.page.locator(this.newconsignmentvehicle_webelement.Okbutton).click({timeout:60000})
-                    await this.page.waitForTimeout(11000)
+                    await this.page.waitForTimeout(8000)
                     await frame.locator(this.newconsignmentvehicle_webelement.SelectAll_AllPhotos).click({timeout:60000})
-
 
                      //Photos Download file
                     const path1 = require('path');  
@@ -217,14 +216,14 @@ class NewConsignmentVehiclePage
                     const download1 = await downloadPromise1
                     const downloadPath1 = path1.join(downloadDir1, download1.suggestedFilename());
                     await download1.saveAs(downloadPath1)
-
-                    await this.page.locator(this.newconsignmentvehicle_webelement.Okbutton).click({timeout:60000})
-                    await this.page.waitForTimeout(2000)
-                    await frame.locator(this.newconsignmentvehicle_webelement.Delect_Photo).click()
                     await this.page.locator(this.newconsignmentvehicle_webelement.Okbutton).click({timeout:60000})
                     await this.page.waitForTimeout(3000)
-                    await frame.locator(this.newconsignmentvehicle_webelement.scroll_allphoto).click()
-                    await this.page.waitForTimeout(6000)
+
+                    await frame.locator(this.newconsignmentvehicle_webelement.Delect_Photo).click()
+                    await this.page.locator(this.newconsignmentvehicle_webelement.Okbutton).click({timeout:60000})
+                    await this.page.waitForTimeout(8000)
+                    // await frame.locator(this.newconsignmentvehicle_webelement.scroll_allphoto).click()
+                    // await this.page.waitForTimeout(6000)
                     //await this.page.locator(this.newconsignmentvehicle_webelement.Refresh_consignment).click()
                     // await this.page.locator(this.newconsignmentvehicle_webelement.Status_Text).click() 
                     // await this.page.locator(this.newconsignmentvehicle_webelement.Photo_Approve).click()
