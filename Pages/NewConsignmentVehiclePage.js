@@ -306,7 +306,7 @@ class NewConsignmentVehiclePage
                 await download1.saveAs(downloadPath1)
 
                 await this.page.locator(this.newconsignmentvehicle_webelement.Refresh_consignment).click()
-                await this.page.locator(this.newconsignmentvehicle_webelement.WordTemplate).click()
+                await this.page.locator(this.newconsignmentvehicle_webelement.WordTemplate).click({timeout:60000})
                 
                  //print consignment form Download file
                 const path2 = require('path');  
