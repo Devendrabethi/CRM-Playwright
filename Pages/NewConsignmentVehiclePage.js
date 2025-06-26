@@ -248,6 +248,7 @@ class NewConsignmentVehiclePage
                     await frame.locator(this.newconsignmentvehicle_webelement.Hover_on_photo).click()
                     await frame.locator(this.newconsignmentvehicle_webelement.Dropdown_Primary_Section).click()
                     await frame.locator(this.newconsignmentvehicle_webelement.Move_To_FrontPhoto).click()
+                    await this.page.waitForTimeout(3000)
     }
     async TaskTab()
     {
