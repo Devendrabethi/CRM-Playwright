@@ -77,6 +77,13 @@ class NewConsignmentVehicle_WebElement
         this.SaveButton = "//button[@aria-label='Save (CTRL+S)']"
         this.Download_Photos = "(//div[contains(@id,'download')])[4]"
         this.Delect_Photo = "(//div[contains(@id,'delete')])[4]"
+        this.SelectAll_AllPhotos_Interior = "(//input[contains(@id,'select-all')])[2]"
+        this.Download_Photos = "(//div[contains(@id,'download')])[3]"
+        this.Delect_Photo = "(//div[contains(@id,'delete')])[3]"
+
+        this.Hover_on_photo = "(//div[@id='containerExterior']/div/div/div[@class='photo-status-label'])[1]"
+        this.Dropdown_Primary_Section = "//div[@id='containerExterior']/div[1]/div[1]/div[@class='dropdown move-button']"
+        this.Move_To_FrontPhoto = "(//div[@id='containerExterior']/div/div/div[@class='dropdown move-button show'])[1]/div/a[1]"
 
         this.Marketing_Tab="//ul[@aria-label='Opportunity Form']/li[contains(@aria-label,'Marketing')]"
         this.ShortDescription = "//textarea[@aria-label='Short Description']"

@@ -5,8 +5,8 @@ class TestData
     constructor()
     {
         this.URL ="https://bjac-uat.crm.dynamics.com/"//main.aspx?appid=58533451-8dc7-ef11-b8e9-6045bd056e7e"//Hotfixqa: https://bjac-hotfixqa.crm.dynamics.com/main.aspx?appid=58533451-8dc7-ef11-b8e9-6045bd056e7e  //uat: https://bjac-uat.crm.dynamics.com/main.aspx?appid=a7691afc-ad8a-ef11-ac21-000d3a5c4875
-        this.Emailid = "dbethi@barrett-jackson.com";//"dbethi@barrett-jackson.com";//d365testuser3@barrett-jackson.com"; 
-        this.Password = "Chanti1212$1";//ZNcCzew8NjYz--testuser3
+        this.Emailid = "d365testuser3@barrett-jackson.com";//"dbethi@barrett-jackson.com";//d365testuser3@barrett-jackson.com"; 
+        this.Password = "ZNcCzew8NjYz";//ZNcCzew8NjYz--testuser3
         this.FirstName = ""
         this.LastName = ""
         this.Account_Type_Personal = "Personal";
@@ -41,6 +41,10 @@ class TestData
         this.Vehicle_TransmissionSpeed = "3-Speed";
 
         this.SelctAcceptance = "Accepted"
+        this.Rejected = "Rejected"
+        this.Evaluation_Only = "Evaluation Only"
+        this.Preliminary = "Preliminary"
+        this.Print_Rejected = "Print Rejected"
 
         this. Account_Address = "5055 E Somerset Dr - Arizona";
         this.personal_TitleTo = "Devendra Individual";
