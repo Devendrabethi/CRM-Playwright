@@ -85,9 +85,8 @@ class BusinessAccountPage
     }
     async RelatedAccount()
     {
-        await expect(this.page.locator(this.businessaccount_webelements.Related_Accounts_tab)).toBeVisible({ timeout: 10000 })
-        await this.page.locator(this.businessaccount_webelements.Related_Accounts_tab).click();
-        await expect(this.page.locator(this.businessaccount_webelements.Realted_Account_Text)).toBeVisible({ timeout: 10000 })
+        await expect(this.page.locator(this.businessaccount_webelements.Overview_tab)).toBeVisible({ timeout: 30000 })
+        await this.page.locator(this.businessaccount_webelements.Overview_tab).click();
         await this.page.locator(this.businessaccount_webelements.threedotbtn).click();
         await this.page.locator(this.businessaccount_webelements.Add_Existing_Account).click();
         await this.page.waitForTimeout(2000)
@@ -96,7 +95,7 @@ class BusinessAccountPage
         await this.page.locator(this.businessaccount_webelements.Add_btn).click();
         await this.page.locator(this.businessaccount_webelements.RealtedAccount_More_option).click();
         await this.page.locator(this.businessaccount_webelements.Related_Accounts_refresh).click();
-        await this.page.locator(this.businessaccount_webelements.Save_Close).click()
+        await this.page.locator(this.businessaccount_webelements.DoubleclickPersonalAccount).dblclick()
     }
 
  };

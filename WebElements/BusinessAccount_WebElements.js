@@ -25,14 +25,14 @@ class BusinessAccount_WebElements
         this.Businessdoc_Refresh = "//ul[@aria-label='Account Documents Commands']/li[2]/button[@aria-label='Refresh']"
 
 
-        this.Related_Accounts_tab = "//ul[@aria-label='Account Form']/li[contains(@aria-label,'Related Accounts')]"
+        this.Overview_tab = "//ul[@aria-label='Account Form']/li[contains(@aria-label,'Overview')]"
         this.Realted_Account_Text = "//h3[text()='Related Accounts']"
         this.threedotbtn= "//button[@title='More commands for Account']"
         this.Add_Existing_Account= "//span[text()='Add Existing Account']"
         this.FirstAccount_Realting= "//div[@role='region']/ul/li[contains(@id,'resultsContainer_0_0')]"
         this.Add_btn= "//span[text()='Add']"
         this.RealtedAccount_More_option= "//button[@aria-label='More commands for Account']"
-        this.Related_Accounts_refresh= "(//span[text()='Refresh'])[2]"
-        this.Save_Close = "//span[text()='Save & Close']"
+        this.Related_Accounts_refresh= "(//button[@aria-label='Refresh'])[4]"
+        this.DoubleclickPersonalAccount = "(//div[@col-id='bjac_account_accounttype'])[2]"
     }
 }
