@@ -31,5 +31,22 @@ class PersonalAccount_WebElements
         this.ExistCropPhoto = "//button[@id='cropPhotoTab']"
         this.CropImage = "//button[@id='cropButton']"
         this.Upload_Document_CropImage = "//input[@id='cropFileInput']"
+
+
+        this.Tracking_Tab = "//ul[@aria-label='Account Form']/li[@aria-label='Tracking']"
+        this.Create_Package = " //button[@title='Create Package']"
+        this.Event = "//input[@aria-label='Event, Lookup']"
+        this.Select_Tracking_Event = "//div[@aria-label='Event Lookup results']/ul/li"
+        this.Select_PackageType_Dropdown = "//select[@aria-label='Package Type']"
+        this.Select_Carrier = "//select[@aria-label='Carrier']"
+        this.Tracking_Number= "//span[@title='Tracking Number']/following::input[1]"
+        this.Recipient_Company_text = "//span[@title='Recipient Company']"
+        this.Shipper_Address = "//span[@title='Address Line2']"
+        this.Weight = "//span[@title='Weight']/following::input[1]" 
+
+        this.Save_Tracking = "(//button[@aria-label='Save (CTRL+S)'])[2]"
+        this.Refresh_Tracking = "(//button[@title='Refresh'])[2]"
+        this.Print_Label = "//button[@aria-label='Print Label']"
+        this.Close_Tracking = "//button[@aria-label='Close']"
     }
 }

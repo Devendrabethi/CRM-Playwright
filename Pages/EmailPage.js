@@ -53,7 +53,7 @@ class EmailPage
         await this.page.waitForTimeout(1000)
         const frame = await this.page.frameLocator(this.email_webelement.frame)
         if(!frame) throw new Error('Iframe not found')
-        await frame.locator(this.email_webelement.Createbtn).click()
+        await frame.locator(this.email_webelement.Createbtn).click({ timeout: 60000 })
         await this.page.locator(this.email_webelement.Okbtn).click()
         await this.page.waitForTimeout(2000)
         //await frame.locator(this.email_webelement.Verifybtn).click()

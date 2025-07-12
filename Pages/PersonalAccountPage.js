@@ -109,6 +109,100 @@ class PersonalAccountPage
                                await this.page.locator(this.PersonalAccount_WebElements.Persondoc_Refresh).click()
 
                         }
-                  
+    }
+    async Tracking_Tab()
+    {
+         await this.page.locator(this.PersonalAccount_WebElements.Tracking_Tab).click()
+
+         const packageTypes = [
+                                     'Bidder Credential Package',
+                                     'Bidder Collateral Return',
+                                     'Gift(s)',
+                                     'Proceeds',
+                                     'Title(s)',
+                                     'Other',
+                              ];
+
+for (let i = 0; i < packageTypes.length; i++) 
+    {
+                    await this.page.locator(this.PersonalAccount_WebElements.Create_Package).click();
+                    await this.page.waitForTimeout(1000);
+
+                    await this.page.locator(this.PersonalAccount_WebElements.Event).click();
+                    await this.page.locator(this.PersonalAccount_WebElements.Event).fill(this.testdata.Tracking_Event);
+                    await this.page.waitForTimeout(6000);
+
+                    await this.page.locator(this.PersonalAccount_WebElements.Select_Tracking_Event).click();
+
+                    // 🔄 Select different package type each iteration
+                    await this.page.selectOption(this.PersonalAccount_WebElements.Select_PackageType_Dropdown,packageTypes[i])
+
+                    await this.page.selectOption(this.PersonalAccount_WebElements.Select_Carrier, this.testdata.Carrier_FedEx);
+                    await this.page.waitForTimeout(4000);
+
+                    await this.page.locator(this.PersonalAccount_WebElements.Recipient_Company_text).click();
+                    await this.page.locator(this.PersonalAccount_WebElements.Shipper_Address).click();
+                    await this.page.locator(this.PersonalAccount_WebElements.Weight).click();
+                    await this.page.locator(this.PersonalAccount_WebElements.Weight).fill(this.testdata.Weight_Value);
+
+                    await this.page.locator(this.PersonalAccount_WebElements.Save_Tracking).click();
+                    await this.page.waitForTimeout(5000);
+                    await this.page.locator(this.PersonalAccount_WebElements.Refresh_Tracking).click();
+                    await this.page.waitForTimeout(5000);
+                    await this.page.locator(this.PersonalAccount_WebElements.Refresh_Tracking).click();
+                    await this.page.waitForTimeout(5000);
+                    await this.page.locator(this.PersonalAccount_WebElements.Refresh_Tracking).click();
+                    await this.page.waitForTimeout(1000);
+
+                    const [newPage] = await Promise.all([
+                        this.page.context().waitForEvent('page'),
+                        this.page.locator(this.PersonalAccount_WebElements.Print_Label).click()
+                    ]);
+
+                    await newPage.waitForLoadState('load');
+                    await this.page.waitForTimeout(4000);
+                    await newPage.close();
+                    await this.page.bringToFront();
+
+                    await this.page.locator(this.PersonalAccount_WebElements.Close_Tracking).click();
+                    await this.page.waitForTimeout(2000)
+    }
+                    //USPS
+                    await this.page.locator(this.PersonalAccount_WebElements.Create_Package).click()
+                    await this.page.waitForTimeout(1000)
+                    await this.page.locator(this.PersonalAccount_WebElements.Event).click()
+                    await this.page.locator(this.PersonalAccount_WebElements.Event).fill(this.testdata.Tracking_Event)
+                    await this.page.waitForTimeout(6000)
+                    await this.page.locator(this.PersonalAccount_WebElements.Select_Tracking_Event).click()
+                    await this.page.selectOption(this.PersonalAccount_WebElements.Select_PackageType_Dropdown,this.testdata.packageType_Bidder_Credential_Package)
+                    await this.page.selectOption(this.PersonalAccount_WebElements.Select_Carrier,this.testdata.Carrier_USPS)
+                    await this.page.waitForTimeout(4000)
+                    await this.page.locator(this.PersonalAccount_WebElements.Tracking_Number).click()
+                    await this.page.locator(this.PersonalAccount_WebElements.Tracking_Number).fill(this.testdata.Tracking_Number_Value)
+                    await this.page.locator(this.PersonalAccount_WebElements.Save_Tracking).click();
+                    await this.page.waitForTimeout(5000);
+                    await this.page.locator(this.PersonalAccount_WebElements.Refresh_Tracking).click();
+                    await this.page.waitForTimeout(5000);
+                    await this.page.locator(this.PersonalAccount_WebElements.Close_Tracking).click()
+                    await this.page.waitForTimeout(2000)
+
+                    //UPS
+                    await this.page.locator(this.PersonalAccount_WebElements.Create_Package).click()
+                    await this.page.waitForTimeout(1000)
+                    await this.page.locator(this.PersonalAccount_WebElements.Event).click()
+                    await this.page.locator(this.PersonalAccount_WebElements.Event).fill(this.testdata.Tracking_Event)
+                    await this.page.waitForTimeout(6000)
+                    await this.page.locator(this.PersonalAccount_WebElements.Select_Tracking_Event).click()
+                    await this.page.selectOption(this.PersonalAccount_WebElements.Select_PackageType_Dropdown,this.testdata.packageType_Bidder_Credential_Package)
+                    await this.page.selectOption(this.PersonalAccount_WebElements.Select_Carrier,this.testdata.Carrier_UPS)
+                    await this.page.waitForTimeout(4000)
+                    await this.page.locator(this.PersonalAccount_WebElements.Tracking_Number).click()
+                    await this.page.locator(this.PersonalAccount_WebElements.Tracking_Number).fill(this.testdata.Tracking_Number_Value)
+                    await this.page.locator(this.PersonalAccount_WebElements.Save_Tracking).click();
+                    await this.page.waitForTimeout(5000);
+                    await this.page.locator(this.PersonalAccount_WebElements.Refresh_Tracking).click();
+                    await this.page.waitForTimeout(5000);
+                    await this.page.locator(this.PersonalAccount_WebElements.Close_Tracking).click()
+                    await this.page.waitForTimeout(2000)
     }
  };

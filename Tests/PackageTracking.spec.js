@@ -7,15 +7,13 @@ import { EmailPage} from '../Pages/EmailPage'
 import { NewConsignmentVehiclePage} from '../Pages/NewConsignmentVehiclePage'
 import { BidderOpportunityPage} from '../Pages/BidderOpportunityPage'
 
-test('Creating Individual Consignment',async({page}) =>    // Activity functionality works only in UAT
+test('Validating Package Tracking',async({page}) =>    // Activity functionality works only in UAT
 {
     const customerpage = new CustomerPage(page)
     const personalaccountpage = new PersonalAccountPage(page) 
     const addresspage = new AddressPage(page)
     const phonenumberpage = new PhoneNumberPage(page)
     const emailpage = new EmailPage(page)
-    const newconsignmentvehiclepage = new NewConsignmentVehiclePage(page)
-    const bidderopportunitypage = new BidderOpportunityPage(page)
 
     await customerpage.url()
     await customerpage.manager()
@@ -30,22 +28,5 @@ test('Creating Individual Consignment',async({page}) =>    // Activity functiona
     await phonenumberpage.General_PhoneNumber()
     await emailpage.NewEmailbtn()
     await emailpage.enter_emailid()
-    //await personalaccountpage.Tracking_Tab()
-    await emailpage.CredentialTab()
-    await personalaccountpage.personalAccountDocuments()
-    await newconsignmentvehiclepage.newcon()
-    await newconsignmentvehiclepage.vehicledeatails()
-    await newconsignmentvehiclepage.Mileage()
-    await newconsignmentvehiclepage.SaleDetails()
-    await newconsignmentvehiclepage.Account_Address()
-    await newconsignmentvehiclepage.Appilication_Info()
-    await newconsignmentvehiclepage.SaleDay()
-    await newconsignmentvehiclepage.Assign()
-    await newconsignmentvehiclepage.MarketingTab()
-    await newconsignmentvehiclepage.ConsVehicleDoc()
-    await newconsignmentvehiclepage.UploadPhoto()
-    await newconsignmentvehiclepage.TaskTab()
-    //await newconsignmentvehiclepage.ActivitiesTab()  // Activity functionality works only in UAT
-    await newconsignmentvehiclepage.RibbonLevel()
-    await newconsignmentvehiclepage.IntegrationTab()
+    await personalaccountpage.Tracking_Tab()
 })

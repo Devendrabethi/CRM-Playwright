@@ -4,7 +4,7 @@ class TestData
 {
     constructor()
     {
-        this.URL ="https://bjac-hotfixqa.crm.dynamics.com/"//main.aspx?appid=58533451-8dc7-ef11-b8e9-6045bd056e7e"//Hotfixqa: https://bjac-hotfixqa.crm.dynamics.com/main.aspx?appid=58533451-8dc7-ef11-b8e9-6045bd056e7e  //uat: https://bjac-uat.crm.dynamics.com/main.aspx?appid=a7691afc-ad8a-ef11-ac21-000d3a5c4875
+        this.URL ="https://bjac-atodev.crm.dynamics.com/"//main.aspx?appid=58533451-8dc7-ef11-b8e9-6045bd056e7e"//Hotfixqa: https://bjac-hotfixqa.crm.dynamics.com/main.aspx?appid=58533451-8dc7-ef11-b8e9-6045bd056e7e  //uat: https://bjac-uat.crm.dynamics.com/main.aspx?appid=a7691afc-ad8a-ef11-ac21-000d3a5c4875
         this.Emailid = "d365testuser3@barrett-jackson.com";//"dbethi@barrett-jackson.com";//d365testuser3@barrett-jackson.com"; 
         this.Password = "ZNcCzew8NjYz";//ZNcCzew8NjYz--testuser3
         this.FirstName = ""
@@ -59,7 +59,7 @@ class TestData
         this.LongDescriptionText = "Ford is the second-largest U.S.-based automaker, behind General Motors, and the sixth-largest in the world, behind Toyota, Volkswagen Group, Hyundai Motor Group, Stellantis, and General Motors, based on 2022 vehicle production.[10] The company went public in 1956 but the Ford family, through special Class B shares, retain 40 percent of the voting rights.[5][11] During the 2008–2010 automotive industry crisis, the company struggled financially but did not have to be rescued by the federal government, unlike the other two major US automakers."
 
         this.Bidder_Package_Type= "PREMIUM PACKAGE"//"PREMIUM PACKAGE"//"SELECT PACKAGE"//"ABSENTEE (BIDDER)"; 
-        this.Bidder_BidLImit_Type = "Check";
+        this.Bidder_BidLImit_Type = "Woodside";
         this.Bidder_Limit_Value = "30000";
         this.Bidder_Estimate_Value = "20000";
         this.Bidder_Internet_yesandpush = "Yes & Pushed";
@@ -119,5 +119,20 @@ class TestData
         this.Hammer_Amount = "45000"
 
         this.Donation_Amount = "55000"
+        //Tracking
+        this.Tracking_Event = "Scottsdale Fall 2025"
+        this.packageType_Bidder_Credential_Package = "Bidder Credential Package"
+        this.PackageType_Bidder_Collateral_Return = "Bidder Collateral Return"
+        this.PackageType_Gift = "Gift(s)"
+        this.PackageType_Proceeds = "Proceeds"
+        this.PackageType_Title = "Title(s)"
+        this.PackageType_Other = "Other"
+
+        this.Carrier_USPS= "United States Postal Service (USPS)"
+        this.Carrier_FedEx = "FedEx"
+        this.Carrier_UPS = "United Postal Service (UPS)"
+
+        this.Weight_Value = "1"
+        this.Tracking_Number_Value = "125413876524"
     }
 }
