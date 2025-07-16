@@ -233,15 +233,10 @@ for (let i = 0; i < packageTypes.length; i++)
                     await this.page.locator(this.PersonalAccount_WebElements.Refresh_Tracking).click();
                     await this.page.waitForTimeout(1000);
 
-                    const [newPage] = await Promise.all([
-                        this.page.context().waitForEvent('page'),
-                        this.page.locator(this.PersonalAccount_WebElements.Print_Label).click()
-                    ]);
-
-                    await newPage.waitForLoadState('load');
-                    await this.page.waitForTimeout(4000);
-                    await newPage.close();
-                    await this.page.bringToFront();
+                    // page.on('dialog', async (dialog) => {
+                    // console.log(`Dialog message: ${dialog.message()}`);
+                    // await dialog.accept(); // Accepts the alert
+                    // });
 
                     await this.page.locator(this.PersonalAccount_WebElements.Close_Tracking).click();
                     await this.page.waitForTimeout(2000)

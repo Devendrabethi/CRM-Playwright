@@ -193,7 +193,7 @@ class NewConsignmentVehiclePage
                     await frame.locator(this.newconsignmentvehicle_webelement.Upload_photo_input).setInputFiles(fileToUpload)
                     await frame.locator(this.newconsignmentvehicle_webelement.Upload_photo_btn).click()
                     //await this.page.waitForTimeout(12000)
-                    await frame.locator(this.newconsignmentvehicle_webelement.Cross_mark).click({timeout:60000})
+                    await frame.locator(this.newconsignmentvehicle_webelement.Cross_mark).click({timeout:90000})
                     await frame.locator(this.newconsignmentvehicle_webelement.Refresh_btn).click()
                     await this.page.waitForTimeout(4000)  
                     await frame.locator(this.newconsignmentvehicle_webelement.scroll_allphoto).click()
