@@ -141,7 +141,8 @@ for (let i = 0; i < packageTypes.length; i++)
                     await this.page.waitForTimeout(4000);
 
                     await this.page.locator(this.PersonalAccount_WebElements.Recipient_Company_text).click();
-                    await this.page.locator(this.PersonalAccount_WebElements.Shipper_Address).click();
+                    await this.page.selectOption(this.PersonalAccount_WebElements.Select_ImageType_Dropdown,this.testdata.Image_Type_PDF);
+                    await this.page.locator(this.PersonalAccount_WebElements.Shipper_City).click();
                     await this.page.locator(this.PersonalAccount_WebElements.Weight).click();
                     await this.page.locator(this.PersonalAccount_WebElements.Weight).fill(this.testdata.Weight_Value);
 
@@ -203,6 +204,46 @@ for (let i = 0; i < packageTypes.length; i++)
                     await this.page.locator(this.PersonalAccount_WebElements.Refresh_Tracking).click();
                     await this.page.waitForTimeout(5000);
                     await this.page.locator(this.PersonalAccount_WebElements.Close_Tracking).click()
+                    await this.page.waitForTimeout(2000)
+
+                    //ZPLII
+                    await this.page.locator(this.PersonalAccount_WebElements.Create_Package).click();
+                    await this.page.waitForTimeout(1000);
+
+                    await this.page.locator(this.PersonalAccount_WebElements.Event).click();
+                    await this.page.locator(this.PersonalAccount_WebElements.Event).fill(this.testdata.Tracking_Event);
+                    await this.page.waitForTimeout(6000);
+                    await this.page.locator(this.PersonalAccount_WebElements.Select_Tracking_Event).click();
+                    await this.page.selectOption(this.PersonalAccount_WebElements.Select_PackageType_Dropdown,this.testdata.packageType_Bidder_Credential_Package)
+                    await this.page.selectOption(this.PersonalAccount_WebElements.Select_Carrier, this.testdata.Carrier_FedEx);
+                    await this.page.waitForTimeout(4000);
+
+                    await this.page.locator(this.PersonalAccount_WebElements.Recipient_Company_text).click();
+                    await this.page.selectOption(this.PersonalAccount_WebElements.Select_ImageType_Dropdown,this.testdata.ImageType_ZPLII);
+                    await this.page.locator(this.PersonalAccount_WebElements.Shipper_City).click();
+                    await this.page.locator(this.PersonalAccount_WebElements.Weight).click();
+                    await this.page.locator(this.PersonalAccount_WebElements.Weight).fill(this.testdata.Weight_Value);
+
+                    await this.page.locator(this.PersonalAccount_WebElements.Save_Tracking).click();
+                    await this.page.waitForTimeout(5000);
+                    await this.page.locator(this.PersonalAccount_WebElements.Refresh_Tracking).click();
+                    await this.page.waitForTimeout(5000);
+                    await this.page.locator(this.PersonalAccount_WebElements.Refresh_Tracking).click();
+                    await this.page.waitForTimeout(5000);
+                    await this.page.locator(this.PersonalAccount_WebElements.Refresh_Tracking).click();
+                    await this.page.waitForTimeout(1000);
+
+                    const [newPage] = await Promise.all([
+                        this.page.context().waitForEvent('page'),
+                        this.page.locator(this.PersonalAccount_WebElements.Print_Label).click()
+                    ]);
+
+                    await newPage.waitForLoadState('load');
+                    await this.page.waitForTimeout(4000);
+                    await newPage.close();
+                    await this.page.bringToFront();
+
+                    await this.page.locator(this.PersonalAccount_WebElements.Close_Tracking).click();
                     await this.page.waitForTimeout(2000)
     }
  };

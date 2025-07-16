@@ -41,12 +41,13 @@ class PersonalAccount_WebElements
         this.Select_Carrier = "//select[@aria-label='Carrier']"
         this.Tracking_Number= "//span[@title='Tracking Number']/following::input[1]"
         this.Recipient_Company_text = "//span[@title='Recipient Company']"
-        this.Shipper_Address = "//span[@title='Address Line2']"
+        this.Shipper_City = "//span[@title='City']"
+        this.Select_ImageType_Dropdown = "//select[@aria-label='Image Type']"
         this.Weight = "//span[@title='Weight']/following::input[1]" 
 
         this.Save_Tracking = "(//button[@aria-label='Save (CTRL+S)'])[2]"
         this.Refresh_Tracking = "(//button[@title='Refresh'])[2]"
         this.Print_Label = "//button[@aria-label='Print Label']"
-        this.Close_Tracking = "//button[@aria-label='Close']"
+        this.Close_Tracking = "(//button[@aria-label='Close'])[2]"
     }
 }
