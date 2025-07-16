@@ -310,20 +310,20 @@ class BidderOpportunityPage
                 await dialog.accept();
 
                       //Download file PrintAll
-                      const path1 = require('path');  
-                      const fs1 = require('fs');
-                      const downloadDir1 = path1.join(__dirname, 'Download');
-                      if (!fs1.existsSync(downloadDir1)) {
-                          fs1.mkdirSync(downloadDir1);
-                        }
-                      const downloadPromise1 = this.page.waitForEvent('download')
-                      await this.page.locator(this.bidderopportunity_webelements.PrintAll).click()
-                      const download1 = await downloadPromise1
-                      const downloadPath1 = path1.join(downloadDir1, download1.suggestedFilename());
-                      await download1.saveAs(downloadPath1)
+                      // const path1 = require('path');  
+                      // const fs1 = require('fs');
+                      // const downloadDir1 = path1.join(__dirname, 'Download');
+                      // if (!fs1.existsSync(downloadDir1)) {
+                      //     fs1.mkdirSync(downloadDir1);
+                      //   }
+                      // const downloadPromise1 = this.page.waitForEvent('download')
+                      // await this.page.locator(this.bidderopportunity_webelements.PrintAll).click()
+                      // const download1 = await downloadPromise1
+                      // const downloadPath1 = path1.join(downloadDir1, download1.suggestedFilename());
+                      // await download1.saveAs(downloadPath1)
       
-                   //  await this.page.locator(this.bidderopportunity_webelements.Refresh_Bidder).click()
-
+                     await this.page.locator(this.bidderopportunity_webelements.PrintAll).click()
+                    await this.page.waitForTimeout(1000)
                    //Print Agreement
                 await this.page.locator(this.bidderopportunity_webelements.Print_Agreement).click()
                // await this.page.waitForTimeout(2000)
@@ -331,11 +331,11 @@ class BidderOpportunityPage
                 await this.page.waitForTimeout(1000)
                 await this.page.locator(this.bidderopportunity_webelements.Save_btn).click({timeout:60000})
               //  await this.page.waitForTimeout(1000)
-                await this.page.locator(this.bidderopportunity_webelements.GoBack_btn).click()
+                await this.page.locator(this.bidderopportunity_webelements.GoBack_btn).click({timeout:60000})
              //   await this.page.waitForTimeout(2000)
                 //await this.page.locator(this.bidderopportunity_webelements.Refresh_Bidder).click()
                 //Send Agreement
-                await this.page.locator(this.bidderopportunity_webelements.Send_Agreement).click()
+                await this.page.locator(this.bidderopportunity_webelements.Send_Agreement).click({timeout:60000})
                 try 
                 {
                   // Check if the Send_Agreement_Close button is present
@@ -360,9 +360,9 @@ class BidderOpportunityPage
                    fs2.mkdirSync(downloadDir2);
                    }
                  const downloadPromise2 = this.page.waitForEvent('download')
-                 await this.page.locator(this.bidderopportunity_webelements.PrintBidderBadge).click();
+                 await this.page.locator(this.bidderopportunity_webelements.PrintBidderBadge).click({timeout:60000});
                  const download2 = await downloadPromise2
-                 const downloadPath2 = path2.join(downloadDir1, download2.suggestedFilename());
+                 const downloadPath2 = path2.join(downloadDir2, download2.suggestedFilename());
                  await download2.saveAs(downloadPath2)
                 //Administration
                 await this.page.locator(this.bidderopportunity_webelements.Administration).click()
@@ -378,7 +378,7 @@ class BidderOpportunityPage
                     await frame1.locator(this.bidderopportunity_webelements.Approvebutton).click()
 
 
-                await this.page.locator(this.bidderopportunity_webelements.Sync).click()
+                await this.page.locator(this.bidderopportunity_webelements.Sync).click({timeout:60000})
 
                 await this.page.locator(this.bidderopportunity_webelements.AgreementsTab).click()
                 await this.page.locator(this.bidderopportunity_webelements.CheckStatus).click()

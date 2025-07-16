@@ -118,7 +118,7 @@ class BidderOpportunity_WebElements
          this.selectPayment = "//select[@id='paymentDrp']"
          this.submitbtn = "//button[@type='submit']"
  
-         this.PrintAll = "//span[text()='Print All']"
+         this.PrintAll = "//button[@aria-label='Print All']"
 
          this.Print_Agreement = "//button[@aria-label='Print Agreement']"
          this.Print = "//button[@aria-label='Print']"
