@@ -45,6 +45,15 @@ class PersonalAccount_WebElements
         this.Select_ImageType_Dropdown = "//select[@aria-label='Image Type']"
         this.Weight = "//span[@title='Weight']/following::input[1]" 
 
+        this.Enter_New_Address = "//span[text()='Enter New Address']"
+        this.Country_Name = "//input[@aria-label='Country/Territory, Lookup']"
+        this.Select_CountryName = "//div[@aria-label='Country/Territory Lookup results']/ul/li[1]"
+        this.AddressLine1 = "//input[@aria-label='Address Line1']"
+        this.State_Name = "//input[@aria-label='State / Province, Lookup']"
+        this.Select_StateName = "//div[@aria-label='State / Province Lookup results']/ul/li[1]"
+        this.Postal_Code = "//input[@aria-label='Postal Code']"
+        this.City = "//input[@aria-label='City']"
+
         this.Save_Tracking = "(//button[@aria-label='Save (CTRL+S)'])[2]"
         this.Refresh_Tracking = "(//button[@title='Refresh'])[2]"
         this.Print_Label = "//button[@aria-label='Print Label']"

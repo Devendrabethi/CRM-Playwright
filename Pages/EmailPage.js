@@ -50,7 +50,10 @@ class EmailPage
     {
         await expect(this.page.locator(this.email_webelement.CredentialTab)).toBeVisible({ timeout: 30000 })
         await this.page.locator(this.email_webelement.CredentialTab).click()
-        await this.page.waitForTimeout(1000)
+        await this.page.waitForTimeout(2000)
+        await this.page.locator(this.address_webelements.Refresh_Overview).click()
+        await this.page.locator(this.email_webelement.CredentialTab).click()
+        await this.page.waitForTimeout(9000)
         const frame = await this.page.frameLocator(this.email_webelement.frame)
         if(!frame) throw new Error('Iframe not found')
         await frame.locator(this.email_webelement.Createbtn).click({ timeout: 60000 })

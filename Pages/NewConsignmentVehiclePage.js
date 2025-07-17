@@ -223,27 +223,27 @@ class NewConsignmentVehiclePage
                     await frame.locator(this.newconsignmentvehicle_webelement.SelectAll_AllPhotos).click({timeout:60000})
                     await frame.locator(this.newconsignmentvehicle_webelement.Select_Accepted).selectOption({ label: this.testdata.SelctAcceptance })
                     //await this.page.locator(this.newconsignmentvehicle_webelement.Okbutton).click({timeout:60000})
-                    await this.page.waitForTimeout(5000)
+                    await this.page.waitForTimeout(8000)
                     //Rejected
                     await frame.locator(this.newconsignmentvehicle_webelement.SelectAll_AllPhotos).click({timeout:60000})
                     await frame.locator(this.newconsignmentvehicle_webelement.Select_Accepted).selectOption({ label: this.testdata.Rejected })
                     //await this.page.locator(this.newconsignmentvehicle_webelement.Okbutton).click({timeout:60000})
-                    await this.page.waitForTimeout(5000)
+                    await this.page.waitForTimeout(8000)
                     //Evaluation Only
                     await frame.locator(this.newconsignmentvehicle_webelement.SelectAll_AllPhotos).click({timeout:60000})
                     await frame.locator(this.newconsignmentvehicle_webelement.Select_Accepted).selectOption({ label: this.testdata.Evaluation_Only })
                     //await this.page.locator(this.newconsignmentvehicle_webelement.Okbutton).click({timeout:60000})
-                    await this.page.waitForTimeout(5000)
+                    await this.page.waitForTimeout(8000)
                     //Preliminary
                     await frame.locator(this.newconsignmentvehicle_webelement.SelectAll_AllPhotos).click({timeout:60000})
                     await frame.locator(this.newconsignmentvehicle_webelement.Select_Accepted).selectOption({ label: this.testdata.Preliminary })
                    // await this.page.locator(this.newconsignmentvehicle_webelement.Okbutton).click({timeout:60000})
-                    await this.page.waitForTimeout(5000)
+                    await this.page.waitForTimeout(8000)
                     //Print Rejected
                     await frame.locator(this.newconsignmentvehicle_webelement.SelectAll_AllPhotos).click({timeout:60000})
                     await frame.locator(this.newconsignmentvehicle_webelement.Select_Accepted).selectOption({ label: this.testdata.Print_Rejected })
                     //await this.page.locator(this.newconsignmentvehicle_webelement.Okbutton).click({timeout:60000})
-                    await this.page.waitForTimeout(5000)
+                    await this.page.waitForTimeout(8000)
 
                     await frame.locator(this.newconsignmentvehicle_webelement.Hover_on_photo).click()
                     await frame.locator(this.newconsignmentvehicle_webelement.Dropdown_Primary_Section).click()

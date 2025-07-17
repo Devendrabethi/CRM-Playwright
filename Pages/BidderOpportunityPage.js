@@ -2,6 +2,7 @@ import { BidderOpportunity_WebElements } from '../WebElements/BidderOpportunity_
 import { TestData } from '../TestData/testdata.js';
 import { NewConsignmentVehicle_WebElement } from '../WebElements/NewConsignmentVehicle_WebElements.js';
 import { Address_WebElements } from '../WebElements/Address_WebElements' 
+import { PersonalAccount_WebElements } from '../WebElements/PersonalAccount_WebElements'  
 import { expect } from 'allure-playwright';
 
 exports.BidderOpportunityPage =
@@ -13,6 +14,7 @@ class BidderOpportunityPage
         this.testdata = new TestData()
         this.bidderopportunity_webelements = new BidderOpportunity_WebElements()
         this.newconsignmentvehicle_webelement = new NewConsignmentVehicle_WebElement()
+        this.PersonalAccount_WebElements =  new PersonalAccount_WebElements()
         this.address_webelements =  new Address_WebElements()
     }
 
@@ -134,6 +136,31 @@ class BidderOpportunityPage
         await this.page.waitForTimeout(2000)
         await this.page.goBack()
         await this.page.waitForTimeout(2000)
+       }
+//Create Package    
+       async CreatePackage()
+       {
+
+        //USPS
+                    await this.page.locator(this.bidderopportunity_webelements.Create_Package).click()
+                    await this.page.waitForTimeout(1000)
+                    // await this.page.locator(this.PersonalAccount_WebElements.Event).click()
+                    // await this.page.locator(this.PersonalAccount_WebElements.Event).fill(this.testdata.Tracking_Event)
+                    // await this.page.waitForTimeout(6000)
+                    // await this.page.locator(this.PersonalAccount_WebElements.Select_Tracking_Event).click()
+                    await this.page.selectOption(this.PersonalAccount_WebElements.Select_PackageType_Dropdown,this.testdata.packageType_Bidder_Credential_Package)
+                    await this.page.selectOption(this.PersonalAccount_WebElements.Select_Carrier,this.testdata.Carrier_USPS)
+                    await this.page.waitForTimeout(4000)
+                    await this.page.locator(this.PersonalAccount_WebElements.Tracking_Number).click()
+                    await this.page.locator(this.PersonalAccount_WebElements.Tracking_Number).fill(this.testdata.Tracking_Number_Value)
+                    await this.page.locator(this.PersonalAccount_WebElements.Save_Tracking).click();
+                    await this.page.waitForTimeout(5000);
+                    await this.page.locator(this.PersonalAccount_WebElements.Refresh_Tracking).click();
+                    await this.page.waitForTimeout(5000);
+                    await this.page.locator(this.PersonalAccount_WebElements.Close_Tracking).click()
+                    await this.page.waitForTimeout(2000)
+                   // await this.page.locator(this.bidderopportunity_webelements.Bidder_Registerdoc_Refresh).click()
+
        }
     async RegisterDocuments()
     {
@@ -309,7 +336,7 @@ class BidderOpportunityPage
                 const dialog = await dialogPromise;
                 await dialog.accept();
 
-                      //Download file PrintAll
+            //Download file PrintAll
                       // const path1 = require('path');  
                       // const fs1 = require('fs');
                       // const downloadDir1 = path1.join(__dirname, 'Download');
@@ -334,7 +361,7 @@ class BidderOpportunityPage
                 await this.page.locator(this.bidderopportunity_webelements.GoBack_btn).click({timeout:60000})
              //   await this.page.waitForTimeout(2000)
                 //await this.page.locator(this.bidderopportunity_webelements.Refresh_Bidder).click()
-                //Send Agreement
+       //Send Agreement
                 await this.page.locator(this.bidderopportunity_webelements.Send_Agreement).click({timeout:60000})
                 try 
                 {
@@ -352,7 +379,7 @@ class BidderOpportunityPage
                       await this.page.locator(this.bidderopportunity_webelements.GoBack_btn).click();
                      // await this.page.waitForTimeout(1000);
               }
-                 //Download file Print Bidder Badge
+        //Download file Print Bidder Badge
                  const path2 = require('path');  
                  const fs2 = require('fs');
                  const downloadDir2 = path2.join(__dirname, 'Download');
@@ -364,7 +391,7 @@ class BidderOpportunityPage
                  const download2 = await downloadPromise2
                  const downloadPath2 = path2.join(downloadDir2, download2.suggestedFilename());
                  await download2.saveAs(downloadPath2)
-                //Administration
+         //Administration
                 await this.page.locator(this.bidderopportunity_webelements.Administration).click()
                 await this.page.locator(this.bidderopportunity_webelements.ChangeBidderNumber).click({timeout:60000})
                 const frame1 = await this.page.frameLocator(this.bidderopportunity_webelements.FrameChangeBidderNumber)
@@ -379,7 +406,7 @@ class BidderOpportunityPage
 
 
                 await this.page.locator(this.bidderopportunity_webelements.Sync).click({timeout:60000})
-
+        //Aggreement Tab
                 await this.page.locator(this.bidderopportunity_webelements.AgreementsTab).click()
                 await this.page.locator(this.bidderopportunity_webelements.CheckStatus).click()
                 await this.page.waitForTimeout(3000)
@@ -433,23 +460,23 @@ class BidderOpportunityPage
 
                 await this.page.locator(this.bidderopportunity_webelements.AllAccountDropdown).click()
                 await this.page.locator(this.bidderopportunity_webelements.AllBusinessAccount).click()
-                await this.page.waitForTimeout(3000)
+                await this.page.waitForTimeout(8000)
                 await this.page.locator(this.bidderopportunity_webelements.AllBusinessAccountDropdown).click()
                 await this.page.locator(this.bidderopportunity_webelements.AllDealerAccount).click()
-                await this.page.waitForTimeout(3000)
+                await this.page.waitForTimeout(8000)
                 await this.page.locator(this.bidderopportunity_webelements.AllDealerAccountDropdown).click()
                 await this.page.locator(this.bidderopportunity_webelements.AllPersonalAccount).click()
-                await this.page.waitForTimeout(3000)
+                await this.page.waitForTimeout(8000)
                 await this.page.locator(this.bidderopportunity_webelements.AllPersonalAccountDropdown).click()
                 await this.page.locator(this.bidderopportunity_webelements.AllVipAccount).click()
-                await this.page.waitForTimeout(3000)
+                await this.page.waitForTimeout(8000)
                 await this.page.locator(this.bidderopportunity_webelements.AllVipAccountDropdown).click()
                 await this.page.locator(this.bidderopportunity_webelements.AllAccount).click()
-                await this.page.waitForTimeout(3000)
+                await this.page.waitForTimeout(8000)
 
                 await this.page.locator(this.bidderopportunity_webelements.CustomerFilter).fill(this.testdata.CustomerName)
                 await this.page.locator(this.bidderopportunity_webelements.CustomerFilter).press('Enter')
-                await this.page.waitForTimeout(5000)
+                await this.page.waitForTimeout(8000)
 
                 await this.page.locator(this.bidderopportunity_webelements.MenuVehicle).click()
 
@@ -526,40 +553,40 @@ class BidderOpportunityPage
 
                 await this.page.locator(this.bidderopportunity_webelements.BidderScottsdaleFall2025Dropdown).click()
                 await this.page.locator(this.bidderopportunity_webelements.MenuSubmit).click()
-                await this.page.waitForTimeout(4000)
+                await this.page.waitForTimeout(8000)
                 await this.page.locator(this.bidderopportunity_webelements.MenuInReview).click()
-                await this.page.waitForTimeout(4000)
+                await this.page.waitForTimeout(8000)
                 await this.page.locator(this.bidderopportunity_webelements.MenuComplete).click()
-                await this.page.waitForTimeout(4000)
+                await this.page.waitForTimeout(8000)
                 await this.page.locator(this.bidderopportunity_webelements.MenuAllOpportunity).click()
-                await this.page.waitForTimeout(4000)
+                await this.page.waitForTimeout(8000)
                 await this.page.locator(this.bidderopportunity_webelements.MenuCredentialMailing).click()
-                await this.page.waitForTimeout(4000)
+                await this.page.waitForTimeout(8000)
                 await this.page.locator(this.bidderopportunity_webelements.MenuAbsentee).click()
-                await this.page.waitForTimeout(4000)
+                await this.page.waitForTimeout(8000)
                 await this.page.locator(this.bidderopportunity_webelements.MenuMethodOfPayment).click()
-                await this.page.waitForTimeout(4000)
+                await this.page.waitForTimeout(8000)
                 await this.page.locator(this.bidderopportunity_webelements.MenuMyAssigned).click()
-                await this.page.waitForTimeout(4000)
+                await this.page.waitForTimeout(8000)
                 await this.page.locator(this.bidderopportunity_webelements.VIPOpportunities).click()
-                await this.page.waitForTimeout(4000)
+                await this.page.waitForTimeout(8000)
                 await this.page.locator(this.bidderopportunity_webelements.BidderScottsdaleFall2025Dropdown).click()
 
                 await this.page.locator(this.bidderopportunity_webelements.ConsignmentScottsdaleFall2025Dropdown).click()
                 await this.page.locator(this.bidderopportunity_webelements.MenuAllOpportunity).click()
-                await this.page.waitForTimeout(4000)
+                await this.page.waitForTimeout(8000)
                 await this.page.locator(this.bidderopportunity_webelements.MenuOpportunityWithOpenTask).click()
-                await this.page.waitForTimeout(4000)
+                await this.page.waitForTimeout(8000)
                 await this.page.locator(this.bidderopportunity_webelements.MenuNewOpportunity).click()
-                await this.page.waitForTimeout(4000)
+                await this.page.waitForTimeout(8000)
                 await this.page.locator(this.bidderopportunity_webelements.MenuInCompleteOpportunity).click()
-                await this.page.waitForTimeout(4000)
+                await this.page.waitForTimeout(8000)
                 await this.page.locator(this.bidderopportunity_webelements.MenuEvaluateOpportunity).click()
-                await this.page.waitForTimeout(4000)
+                await this.page.waitForTimeout(8000)
                 await this.page.locator(this.bidderopportunity_webelements.MenuCompleteOpportunity).click()
-                await this.page.waitForTimeout(4000)
+                await this.page.waitForTimeout(8000)
                 await this.page.locator(this.bidderopportunity_webelements.MenuAssignedOpportunity).click()
-                await this.page.waitForTimeout(4000)
+                await this.page.waitForTimeout(8000)
                 await this.page.locator(this.bidderopportunity_webelements.ConsignmentScottsdaleFall2025Dropdown).click()
 
                 await this.page.locator(this.bidderopportunity_webelements.MenuHome).click()

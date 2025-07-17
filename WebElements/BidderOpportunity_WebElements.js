@@ -56,6 +56,8 @@ class BidderOpportunity_WebElements
         this.Verify_TotalBids = "//div[@id='leftCol']/div/label[contains(text(), 'Bids')]"
         this.Close_PhoneObserver = "//button[@title='Close']"
 
+        this.Create_Package = "//span[text()='Create Package']"
+        
 
         this.AddDocument_Register = "(//button[@aria-label='Add Document'])[1]"
         this.frame = "//iframe[@id='FullPageWebResource']"  

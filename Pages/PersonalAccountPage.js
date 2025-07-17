@@ -122,6 +122,14 @@ class PersonalAccountPage
                                      'Title(s)',
                                      'Other',
                               ];
+        // const ServiceTypes = [
+        //                              'FEDEX_2_DAY',
+        //                              'FEDEX_EXPRESS_SAVER',
+        //                              'PRIORITY_OVERNIGHT',
+        //                              'FEDEX_2_DAY_AM',
+        //                              'STANDARD_OVERNIGHT',
+        //                              'FIRST_OVERNIGHT',
+        //                       ];
 
 for (let i = 0; i < packageTypes.length; i++) 
     {
@@ -206,7 +214,7 @@ for (let i = 0; i < packageTypes.length; i++)
                     await this.page.locator(this.PersonalAccount_WebElements.Close_Tracking).click()
                     await this.page.waitForTimeout(2000)
 
-                    //ZPLII
+     //ZPLII
                     await this.page.locator(this.PersonalAccount_WebElements.Create_Package).click();
                     await this.page.waitForTimeout(1000);
 
@@ -237,6 +245,74 @@ for (let i = 0; i < packageTypes.length; i++)
                     // console.log(`Dialog message: ${dialog.message()}`);
                     // await dialog.accept(); // Accepts the alert
                     // });
+
+                    await this.page.locator(this.PersonalAccount_WebElements.Close_Tracking).click();
+                    await this.page.waitForTimeout(2000)
+
+    //New Address
+                    await this.page.locator(this.PersonalAccount_WebElements.Create_Package).click();
+                    await this.page.waitForTimeout(1000);
+
+                    await this.page.locator(this.PersonalAccount_WebElements.Event).click();
+                    await this.page.locator(this.PersonalAccount_WebElements.Event).fill(this.testdata.Tracking_Event);
+                    await this.page.waitForTimeout(6000);
+                    await this.page.locator(this.PersonalAccount_WebElements.Select_Tracking_Event).click();
+                    await this.page.selectOption(this.PersonalAccount_WebElements.Select_PackageType_Dropdown,this.testdata.packageType_Bidder_Credential_Package)
+                    await this.page.selectOption(this.PersonalAccount_WebElements.Select_Carrier, this.testdata.Carrier_FedEx);
+                    await this.page.waitForTimeout(4000);
+
+                    await this.page.locator(this.PersonalAccount_WebElements.Recipient_Company_text).click();
+                    await this.page.selectOption(this.PersonalAccount_WebElements.Select_ImageType_Dropdown,this.testdata.Image_Type_PDF);
+                    
+                    await this.page.locator(this.PersonalAccount_WebElements.Enter_New_Address).click();
+                    await this.page.waitForTimeout(1000)
+                    await this.page.locator(this.PersonalAccount_WebElements.Country_Name).click()
+                    await this.page.locator(this.PersonalAccount_WebElements.Country_Name).fill(this.testdata.Country_name)
+                    await this.page.waitForTimeout(1000)
+                    await this.page.locator(this.PersonalAccount_WebElements.Select_CountryName).click()
+
+                    await this.page.locator(this.PersonalAccount_WebElements.AddressLine1).click()
+                    await this.page.locator(this.PersonalAccount_WebElements.AddressLine1).fill(this.testdata.Street_Address)
+
+                    await this.page.locator(this.PersonalAccount_WebElements.State_Name).click()
+                    await this.page.locator(this.PersonalAccount_WebElements.State_Name).fill(this.testdata.Street_name)
+                    await this.page.waitForTimeout(1000)
+                    await this.page.locator(this.PersonalAccount_WebElements.Select_StateName).click()
+
+                    await this.page.locator(this.PersonalAccount_WebElements.Postal_Code).click()
+                    await this.page.locator(this.PersonalAccount_WebElements.Postal_Code).fill(this.testdata.Postal_code)
+
+                    await this.page.locator(this.PersonalAccount_WebElements.City).click()
+                    await this.page.locator(this.PersonalAccount_WebElements.City).fill(this.testdata.City_name)
+                    await this.page.waitForTimeout(1000)
+                    await this.page.locator(this.PersonalAccount_WebElements.Weight).click();
+                    await this.page.locator(this.PersonalAccount_WebElements.Weight).fill(this.testdata.Weight_Value);
+
+                    await this.page.locator(this.PersonalAccount_WebElements.Save_Tracking).click();
+                    await this.page.waitForTimeout(5000);
+                    await this.page.locator(this.PersonalAccount_WebElements.Refresh_Tracking).click();
+                    await this.page.waitForTimeout(5000);
+                    await this.page.locator(this.PersonalAccount_WebElements.Refresh_Tracking).click();
+                    await this.page.waitForTimeout(5000);
+                    await this.page.locator(this.PersonalAccount_WebElements.Refresh_Tracking).click();
+                    await this.page.waitForTimeout(1000);
+
+                    // page.on('dialog', async (dialog) => {
+                    // console.log(`Dialog message: ${dialog.message()}`);
+                    // await dialog.accept(); // Accepts the alert
+                    // });
+
+                    // await this.page.locator(this.PersonalAccount_WebElements.Close_Tracking).click();
+                    // await this.page.waitForTimeout(2000)
+                    const [newPage] = await Promise.all([
+                        this.page.context().waitForEvent('page'),
+                        this.page.locator(this.PersonalAccount_WebElements.Print_Label).click()
+                    ]);
+
+                    await newPage.waitForLoadState('load');
+                    await this.page.waitForTimeout(4000);
+                    await newPage.close();
+                    await this.page.bringToFront();
 
                     await this.page.locator(this.PersonalAccount_WebElements.Close_Tracking).click();
                     await this.page.waitForTimeout(2000)

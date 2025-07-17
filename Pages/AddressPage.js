@@ -43,14 +43,15 @@ class AddressPage
             // await this.page.locator(this.address_webelements.Country).fill(this.testdata.Country_name);
             // await this.page.locator(this.address_webelements.Country_text).click();
 
-            await this.page.locator(this.address_webelements.State_Address).fill(this.testdata.Street_name,{ timeout: 4000 });
-            await this.page.getByText(this.testdata.Street_name).click();
+            await this.page.locator(this.address_webelements.State_Address).fill(this.testdata.State_name,{ timeout: 4000 });
+            await this.page.getByText(this.testdata.State_name).click();
           //  await this.page.locator(this.address_webelements.State_text).click();
+            await this.page.locator(this.address_webelements.County).click()
+            await this.page.locator(this.address_webelements.County).fill(this.testdata.County_name,{ timeout: 30000 });
+            await this.page.locator(this.address_webelements.County_text).click();
             await this.page.locator(this.address_webelements.City).fill(this.testdata.City_name);
             await this.page.locator(this.address_webelements.Postal_Code).fill(this.testdata.Postal_code);
-            await this.page.locator(this.address_webelements.County).click()
-            await this.page.locator(this.address_webelements.County).fill(this.testdata.County_name,{ timeout: 4000 });
-            await this.page.locator(this.address_webelements.County_text).click();
+            await this.page.waitForTimeout(2000)
             await this.page.selectOption(this.address_webelements.Select_status, this.testdata.status);
     }
     async saveandclose()
