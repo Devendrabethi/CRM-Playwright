@@ -157,7 +157,7 @@ class BidderOpportunityPage
                     await this.page.waitForTimeout(5000);
                     await this.page.locator(this.PersonalAccount_WebElements.Refresh_Tracking).click();
                     await this.page.waitForTimeout(5000);
-                    await this.page.locator(this.PersonalAccount_WebElements.Close_Tracking).click()
+                    await this.page.locator(this.bidderopportunity_webelements.Close_Tracking).click()
                     await this.page.waitForTimeout(2000)
                    // await this.page.locator(this.bidderopportunity_webelements.Bidder_Registerdoc_Refresh).click()
 
