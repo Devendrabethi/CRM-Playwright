@@ -143,7 +143,7 @@ class ConsignmentManagerPage
       await this.page.locator(this.consignmentManager_webElements.Change_Area).click()
        await this.page.locator(this.consignmentManager_webElements.Bidder_Manger_Button).click()
        await this.page.locator(this.consignmentManager_webElements.Select_PackageTracking).click()
-       await this.page.waitForTimeout(1000)
+       await this.page.waitForTimeout(2000)
        await this.page.locator(this.consignmentManager_webElements.Select_Bulk_PackageTracking).click()
 
         const frame = await this.page.frameLocator(this.consignmentManager_webElements.Iframe_Bulk_PackageTracking)
@@ -164,9 +164,14 @@ class ConsignmentManagerPage
                     await frame.locator(this.consignmentManager_webElements.Bidder_End).click()
                     await frame.locator(this.consignmentManager_webElements.Bidder_End).fill(this.testdata.Lot_Ending)
                     await frame.locator(this.consignmentManager_webElements.SearchButton).click()
+                    await frame.locator(this.consignmentManager_webElements.Change_Tracking_Number).click()
+                    await this.page.waitForTimeout(1000)
+                    await frame.locator(this.consignmentManager_webElements.Change_Tracking_Number).fill(this.testdata.Tracking_Number)
+                    await frame.locator(this.consignmentManager_webElements.SaveAll_Button).click()
+                    await this.page.locator(this.consignmentManager_webElements.Ok_Button).click()
                     await this.page.waitForTimeout(5000)
 
-                     await frame.locator(this.consignmentManager_webElements.Select_Search_Type_Options).selectOption(this.testdata.All_Bidders)
+                    await frame.locator(this.consignmentManager_webElements.Select_Search_Type_Options).selectOption(this.testdata.All_Bidders)
                     await frame.locator(this.consignmentManager_webElements.SearchButton).click()
                     await this.page.waitForTimeout(5000)
 
@@ -174,7 +179,7 @@ class ConsignmentManagerPage
                     await frame.locator(this.consignmentManager_webElements.SearchButton).click()
                     await this.page.waitForTimeout(5000)
 
-                     await frame.locator(this.consignmentManager_webElements.Select_Search_Type_Options).selectOption(this.testdata.Buyser_ByLot)
+                    await frame.locator(this.consignmentManager_webElements.Select_Search_Type_Options).selectOption(this.testdata.Buyser_ByLot)
                     await frame.locator(this.consignmentManager_webElements.Search_Lot_Field).click()
                     await frame.locator(this.consignmentManager_webElements.Search_Lot_Field).fill(this.testdata.BuyerLot)
                     await frame.locator(this.consignmentManager_webElements.SearchButton).click()

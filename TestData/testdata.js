@@ -142,7 +142,7 @@ class TestData
         this.All_Buyers = "All Buyers"
         this.Buyser_ByLot = "Buyer by Lot #"
         this.Buyser_ByCancel = "Cancelled by Lot #"
-
+        this.Tracking_Number = "9876543210"
         this.Lot_starting = "190"
         this.Lot_Ending = "1000"
         this.BuyerLot = "740 , 320"

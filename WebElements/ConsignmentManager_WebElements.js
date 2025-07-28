@@ -73,7 +73,9 @@ class ConsignmentManager_WebElements
 
         this.Bidder_Start = "//input[@id='startBidder']"
         this.Bidder_End = "//input[@id='endBidder']"
-
+        this.Change_Tracking_Number = "//table[@id='resultsTable']/tbody/tr[1]/td[6]/input"
+        this.SaveAll_Button = "//button[text()='SAVE ALL']"
+        this.Ok_Button = "//button[@aria-label='OK']"
         this.Search_Lot_Field = "//input[@id='lotNumber']"
         
         this.SearchButton = "//button[text()='SEARCH']"
