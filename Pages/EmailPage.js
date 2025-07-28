@@ -40,7 +40,7 @@ class EmailPage
     await this.page.locator(this.email_webelement.Email).fill(emailid)
     await this.page.waitForTimeout(1000)
     //await this.page.locator(this.address_webelements.Save_btn).click()
-    //await this.page.waitForTimeout(2000)
+    await this.page.waitForTimeout(1000)
     await this.page.locator(this.address_webelements.save_Close_popup).click()
     await this.page.locator(this.address_webelements.Refresh_Accountpage).click()
     await this.page.waitForTimeout(2000)

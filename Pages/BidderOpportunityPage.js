@@ -29,6 +29,7 @@ class BidderOpportunityPage
     {
         await this.page.locator(this.bidderopportunity_webelements.Bidder_Pakage_Type).click()
         await this.page.locator(this.bidderopportunity_webelements.Bidder_Pakage_Type).fill(this.testdata.Bidder_Package_Type)
+        await this.page.waitForTimeout(3000)
         await this.page.locator(this.bidderopportunity_webelements.Select_Bidder_Package_Type).click();
         await this.page.selectOption(this.bidderopportunity_webelements.Select_Bid_LimitType_dropdown,this.testdata.Bidder_BidLImit_Type); 
         await this.page.locator(this.bidderopportunity_webelements.Bid_Limit_Value).click()

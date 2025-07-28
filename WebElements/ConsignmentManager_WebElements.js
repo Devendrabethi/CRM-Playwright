@@ -25,7 +25,7 @@ class ConsignmentManager_WebElements
         this.Select_Particular_Event = "//div[@aria-label='Press SPACE to select this row.'][1]/div[1]"
         this.Select_Consignment_Event = "//ul[@aria-label='Event Form']//li[@aria-label='Consignment']"
         this.Collection_Add_Existing_Button = "//button[@aria-label='Add Existing']"
-        this.CreatedOn_Filter_Event = "(//div[@data-testid='createdon'])[2]"
+        this.CreatedOn_Filter_Event = "//div[@data-testid='createdon']"
         this.Select_Created_Collection = "(//button[@aria-label='d365testuser3 #'])[1]/preceding-sibling::div"//"(//a[@aria-label='Devendra'])[1]/ancestor::*[@col-id='bjac_name']/preceding-sibling::*[@col-id='__row_status']"
         this.SaveandClose_PopUp = "(//button[@aria-label='Save & Close'])[2]"
 
@@ -54,8 +54,30 @@ class ConsignmentManager_WebElements
         this.GoBack_Button = "//button[@title='Go back']"
 
         this.Add_Charities = "//button[@aria-label='Add Charity. New']"
+        this.CreatedOn = "(//div[@data-testid='createdon'])[3]"
+        this.HoverFirstRow = "(//div[@aria-label='Press SPACE to select this row.'])[5]"
+        this.Select_FirstRow = "(//div[@aria-label='Press SPACE to select this row.'])[1]/div[5]"
         this.Select_Charity_Association = "(//input[@aria-label='Select or deselect the row'])[3]"
         this.DoubleClick_Charities = "(//input[@aria-label='Select or deselect the row'])[6]"
+
+        this.Bidder_Manger_Button = "//li[@title='Bidder Manager']"
+        this.Select_PackageTracking = "//li[@aria-label='Package Tracking']"
+        this.Select_Bulk_PackageTracking = "//ul[@aria-label='Package Tracking']/li[@aria-label='Bulk Package Tracking']"
+        
+        this.Iframe_Bulk_PackageTracking = "//iframe[@aria-label='Bulk_Package_Tracking']"
+        this.Select_Event = "//input[@id='eventLookupText']"
+        this.Enter_EventName = "//input[@aria-label='Select record, Lookup']"
+        this.Select_CurrentEvent = "//ul[@aria-label='Lookup results']/li[1]"
+        this.Add_Button = "//button[@aria-label='Add']"
+        this.Select_Search_Type_Options = "//select[@id='searchType']"
+
+        this.Bidder_Start = "//input[@id='startBidder']"
+        this.Bidder_End = "//input[@id='endBidder']"
+
+        this.Search_Lot_Field = "//input[@id='lotNumber']"
+        
+        this.SearchButton = "//button[text()='SEARCH']"
+        
 
     }
 }

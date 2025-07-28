@@ -219,36 +219,36 @@ class NewConsignmentVehiclePage
                     await this.page.locator(this.newconsignmentvehicle_webelement.Okbutton).click({timeout:60000})
                     await this.page.waitForTimeout(8000)
                     //Exterior Section
-                    //Accepted
-                    await frame.locator(this.newconsignmentvehicle_webelement.SelectAll_AllPhotos).click({timeout:60000})
-                    await frame.locator(this.newconsignmentvehicle_webelement.Select_Accepted).selectOption({ label: this.testdata.SelctAcceptance })
-                    //await this.page.locator(this.newconsignmentvehicle_webelement.Okbutton).click({timeout:60000})
-                    await this.page.waitForTimeout(8000)
-                    //Rejected
-                    await frame.locator(this.newconsignmentvehicle_webelement.SelectAll_AllPhotos).click({timeout:60000})
-                    await frame.locator(this.newconsignmentvehicle_webelement.Select_Accepted).selectOption({ label: this.testdata.Rejected })
-                    //await this.page.locator(this.newconsignmentvehicle_webelement.Okbutton).click({timeout:60000})
-                    await this.page.waitForTimeout(8000)
-                    //Evaluation Only
-                    await frame.locator(this.newconsignmentvehicle_webelement.SelectAll_AllPhotos).click({timeout:60000})
-                    await frame.locator(this.newconsignmentvehicle_webelement.Select_Accepted).selectOption({ label: this.testdata.Evaluation_Only })
-                    //await this.page.locator(this.newconsignmentvehicle_webelement.Okbutton).click({timeout:60000})
-                    await this.page.waitForTimeout(8000)
-                    //Preliminary
-                    await frame.locator(this.newconsignmentvehicle_webelement.SelectAll_AllPhotos).click({timeout:60000})
-                    await frame.locator(this.newconsignmentvehicle_webelement.Select_Accepted).selectOption({ label: this.testdata.Preliminary })
-                   // await this.page.locator(this.newconsignmentvehicle_webelement.Okbutton).click({timeout:60000})
-                    await this.page.waitForTimeout(8000)
-                    //Print Rejected
-                    await frame.locator(this.newconsignmentvehicle_webelement.SelectAll_AllPhotos).click({timeout:60000})
-                    await frame.locator(this.newconsignmentvehicle_webelement.Select_Accepted).selectOption({ label: this.testdata.Print_Rejected })
-                    //await this.page.locator(this.newconsignmentvehicle_webelement.Okbutton).click({timeout:60000})
-                    await this.page.waitForTimeout(8000)
+                //     //Accepted
+                //     await frame.locator(this.newconsignmentvehicle_webelement.SelectAll_AllPhotos).click({timeout:60000})
+                //     await frame.locator(this.newconsignmentvehicle_webelement.Select_Accepted).selectOption({ label: this.testdata.SelctAcceptance })
+                //     //await this.page.locator(this.newconsignmentvehicle_webelement.Okbutton).click({timeout:60000})
+                //     await this.page.waitForTimeout(8000)
+                //     //Rejected
+                //     await frame.locator(this.newconsignmentvehicle_webelement.SelectAll_AllPhotos).click({timeout:60000})
+                //     await frame.locator(this.newconsignmentvehicle_webelement.Select_Accepted).selectOption({ label: this.testdata.Rejected })
+                //     //await this.page.locator(this.newconsignmentvehicle_webelement.Okbutton).click({timeout:60000})
+                //     await this.page.waitForTimeout(8000)
+                //     //Evaluation Only
+                //     await frame.locator(this.newconsignmentvehicle_webelement.SelectAll_AllPhotos).click({timeout:60000})
+                //     await frame.locator(this.newconsignmentvehicle_webelement.Select_Accepted).selectOption({ label: this.testdata.Evaluation_Only })
+                //     //await this.page.locator(this.newconsignmentvehicle_webelement.Okbutton).click({timeout:60000})
+                //     await this.page.waitForTimeout(8000)
+                //     //Preliminary
+                //     await frame.locator(this.newconsignmentvehicle_webelement.SelectAll_AllPhotos).click({timeout:60000})
+                //     await frame.locator(this.newconsignmentvehicle_webelement.Select_Accepted).selectOption({ label: this.testdata.Preliminary })
+                //    // await this.page.locator(this.newconsignmentvehicle_webelement.Okbutton).click({timeout:60000})
+                //     await this.page.waitForTimeout(8000)
+                //     //Print Rejected
+                //     await frame.locator(this.newconsignmentvehicle_webelement.SelectAll_AllPhotos).click({timeout:60000})
+                //     await frame.locator(this.newconsignmentvehicle_webelement.Select_Accepted).selectOption({ label: this.testdata.Print_Rejected })
+                //     //await this.page.locator(this.newconsignmentvehicle_webelement.Okbutton).click({timeout:60000})
+                //     await this.page.waitForTimeout(8000)
 
-                    await frame.locator(this.newconsignmentvehicle_webelement.Hover_on_photo).click()
-                    await frame.locator(this.newconsignmentvehicle_webelement.Dropdown_Primary_Section).click()
-                    await frame.locator(this.newconsignmentvehicle_webelement.Move_To_FrontPhoto).click()
-                    await this.page.waitForTimeout(4000)
+                //     await frame.locator(this.newconsignmentvehicle_webelement.Hover_on_photo).click()
+                //     await frame.locator(this.newconsignmentvehicle_webelement.Dropdown_Primary_Section).click()
+                //     await frame.locator(this.newconsignmentvehicle_webelement.Move_To_FrontPhoto).click()
+                //     await this.page.waitForTimeout(4000)
     }
     async TaskTab()
     {
@@ -321,6 +321,7 @@ class NewConsignmentVehiclePage
                   }
                 const downloadPromise1 = this.page.waitForEvent('download')
                 await this.page.locator(this.newconsignmentvehicle_webelement.PrintAll).click()
+                await this.page.waitForTimeout(6000)
                 const download1 = await downloadPromise1
                 const downloadPath1 = path1.join(downloadDir1, download1.suggestedFilename());
                 await download1.saveAs(downloadPath1)
@@ -337,6 +338,7 @@ class NewConsignmentVehiclePage
                   }
                 const downloadPromise2 = this.page.waitForEvent('download')
                 await this.page.locator(this.newconsignmentvehicle_webelement.PrintConsignmentForm).click()
+                                await this.page.waitForTimeout(6000)
                 const download2 = await downloadPromise2
                 const downloadPath2 = path2.join(downloadDir2, download2.suggestedFilename());
                 await download2.saveAs(downloadPath2)

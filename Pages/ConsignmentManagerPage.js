@@ -104,6 +104,13 @@ class ConsignmentManagerPage
     {
         await this.page.locator(this.consignmentManager_webElements.Marketting_Tab).click()
         await this.page.locator(this.consignmentManager_webElements.Add_Collection).click()
+       await this.page.waitForTimeout(2000)
+       await this.page.locator(this.consignmentManager_webElements.CreatedOn).click()
+       await this.page.waitForTimeout(1000)
+       await this.page.locator(this.consignmentManager_webElements.NewtoOld).click()
+       await this.page.waitForTimeout(1000)
+      //  await this.page.locator(this.consignmentManager_webElements.HoverFirstRow).hover()
+      //  await this.page.locator(this.consignmentManager_webElements.Select_FirstRow).click()
         await this.page.getByLabel('Event Collection', { exact: true }).locator('div').filter({ hasText: /^Toggle selection of all rows$/ }).nth(1).click()
         await this.page.waitForTimeout(1000)
       //  await this.page.locator(this.consignmentManager_webElements.Select_Collection).click()
@@ -114,6 +121,13 @@ class ConsignmentManagerPage
        //await this.page.waitForTimeout(2000)
 
         await this.page.locator(this.consignmentManager_webElements.Add_Charities).click()
+       await this.page.waitForTimeout(2000)
+       await this.page.locator(this.consignmentManager_webElements.CreatedOn).click()
+       await this.page.waitForTimeout(1000)
+       await this.page.locator(this.consignmentManager_webElements.NewtoOld).click()
+       await this.page.waitForTimeout(1000)
+      //  await this.page.locator(this.consignmentManager_webElements.HoverFirstRow).hover()
+      //  await this.page.locator(this.consignmentManager_webElements.Select_FirstRow).click()
         await this.page.getByLabel('EventCharityAssociationSubgrid').locator('div').filter({ hasText: /^Toggle selection of all rows$/ }).nth(1).click()
         await this.page.waitForTimeout(1000)
         //await this.page.locator(this.consignmentManager_webElements.Select_Charity_Association).click()
@@ -122,6 +136,55 @@ class ConsignmentManagerPage
         // await this.page.locator(this.consignmentManager_webElements.DoubleClick_Charities).dblclick()
         // await this.page.locator(this.consignmentManager_webElements.GoBack_Button).click()
         // await this.page.waitForTimeout(2000)
+    }
+
+    async BidderManager()
+    {
+      await this.page.locator(this.consignmentManager_webElements.Change_Area).click()
+       await this.page.locator(this.consignmentManager_webElements.Bidder_Manger_Button).click()
+       await this.page.locator(this.consignmentManager_webElements.Select_PackageTracking).click()
+       await this.page.waitForTimeout(1000)
+       await this.page.locator(this.consignmentManager_webElements.Select_Bulk_PackageTracking).click()
+
+        const frame = await this.page.frameLocator(this.consignmentManager_webElements.Iframe_Bulk_PackageTracking)
+                    if(!frame) throw new Error('Iframe not found')
+                    await this.page.waitForTimeout(2000)
+                    await frame.locator(this.consignmentManager_webElements.Select_Event).click()
+                    await this.page.locator(this.consignmentManager_webElements.Enter_EventName).click()
+                    await this.page.locator(this.consignmentManager_webElements.Enter_EventName).fill(this.testdata.Event_Name)
+                    await this.page.waitForTimeout(2000)
+                    await this.page.locator(this.consignmentManager_webElements.Select_CurrentEvent).click()
+                    await this.page.waitForTimeout(1000)
+                    await this.page.locator(this.consignmentManager_webElements.Add_Button).click()
+                    await this.page.waitForTimeout(3000)
+
+                    await frame.locator(this.consignmentManager_webElements.Select_Search_Type_Options).selectOption(this.testdata.Bidder_Number_by_Range)
+                    await frame.locator(this.consignmentManager_webElements.Bidder_Start).click()
+                    await frame.locator(this.consignmentManager_webElements.Bidder_Start).fill(this.testdata.Lot_starting)
+                    await frame.locator(this.consignmentManager_webElements.Bidder_End).click()
+                    await frame.locator(this.consignmentManager_webElements.Bidder_End).fill(this.testdata.Lot_Ending)
+                    await frame.locator(this.consignmentManager_webElements.SearchButton).click()
+                    await this.page.waitForTimeout(5000)
+
+                     await frame.locator(this.consignmentManager_webElements.Select_Search_Type_Options).selectOption(this.testdata.All_Bidders)
+                    await frame.locator(this.consignmentManager_webElements.SearchButton).click()
+                    await this.page.waitForTimeout(5000)
+
+                    await frame.locator(this.consignmentManager_webElements.Select_Search_Type_Options).selectOption(this.testdata.All_Buyers)
+                    await frame.locator(this.consignmentManager_webElements.SearchButton).click()
+                    await this.page.waitForTimeout(5000)
+
+                     await frame.locator(this.consignmentManager_webElements.Select_Search_Type_Options).selectOption(this.testdata.Buyser_ByLot)
+                    await frame.locator(this.consignmentManager_webElements.Search_Lot_Field).click()
+                    await frame.locator(this.consignmentManager_webElements.Search_Lot_Field).fill(this.testdata.BuyerLot)
+                    await frame.locator(this.consignmentManager_webElements.SearchButton).click()
+                    await this.page.waitForTimeout(5000)
+
+                    await frame.locator(this.consignmentManager_webElements.Select_Search_Type_Options).selectOption(this.testdata.Buyser_ByCancel)
+                    await frame.locator(this.consignmentManager_webElements.Search_Lot_Field).click()
+                    await frame.locator(this.consignmentManager_webElements.Search_Lot_Field).fill(this.testdata.BuyerCancel)
+                    await frame.locator(this.consignmentManager_webElements.SearchButton).click()
+                    await this.page.waitForTimeout(5000)
 
     }
 }

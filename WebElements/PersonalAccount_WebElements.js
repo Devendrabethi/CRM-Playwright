@@ -57,6 +57,6 @@ class PersonalAccount_WebElements
         this.Save_Tracking = "(//button[@aria-label='Save (CTRL+S)'])[2]"
         this.Refresh_Tracking = "(//button[@title='Refresh'])[2]"
         this.Print_Label = "//button[@aria-label='Print Label']"
-        this.Close_Tracking = "//button[@aria-label='Close']"
+        this.Close_Tracking = "(//button[@aria-label='Close'])[2]"
     }
 }

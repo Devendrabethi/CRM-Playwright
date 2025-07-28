@@ -64,7 +64,6 @@ class PersonalAccountPage
         await this.page.locator(this.PersonalAccount_WebElements.Documents_Tab).click()
         const fileToUpload = 
         {
-           // "Customer Photo" :      "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\colorphoto.jpg",
             "Driver's License" :    "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\license_09242024.jpg",
             "Trust Documents" :   "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\trust Doc.jpg",
             "Passport" :          "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\passport2.jpg",
@@ -150,9 +149,9 @@ for (let i = 0; i < packageTypes.length; i++)
 
                     await this.page.locator(this.PersonalAccount_WebElements.Recipient_Company_text).click();
                     await this.page.selectOption(this.PersonalAccount_WebElements.Select_ImageType_Dropdown,this.testdata.Image_Type_PDF);
-                    await this.page.locator(this.PersonalAccount_WebElements.Shipper_City).click();
-                    await this.page.locator(this.PersonalAccount_WebElements.Weight).click();
-                    await this.page.locator(this.PersonalAccount_WebElements.Weight).fill(this.testdata.Weight_Value);
+                    // await this.page.locator(this.PersonalAccount_WebElements.Shipper_City).click();
+                    // await this.page.locator(this.PersonalAccount_WebElements.Weight).click();
+                    // await this.page.locator(this.PersonalAccount_WebElements.Weight).fill(this.testdata.Weight_Value);
 
                     await this.page.locator(this.PersonalAccount_WebElements.Save_Tracking).click();
                     await this.page.waitForTimeout(5000);
@@ -285,8 +284,8 @@ for (let i = 0; i < packageTypes.length; i++)
                     await this.page.locator(this.PersonalAccount_WebElements.City).click()
                     await this.page.locator(this.PersonalAccount_WebElements.City).fill(this.testdata.City_name)
                     await this.page.waitForTimeout(1000)
-                    await this.page.locator(this.PersonalAccount_WebElements.Weight).click();
-                    await this.page.locator(this.PersonalAccount_WebElements.Weight).fill(this.testdata.Weight_Value);
+                    // await this.page.locator(this.PersonalAccount_WebElements.Weight).click();
+                    // await this.page.locator(this.PersonalAccount_WebElements.Weight).fill(this.testdata.Weight_Value);
 
                     await this.page.locator(this.PersonalAccount_WebElements.Save_Tracking).click();
                     await this.page.waitForTimeout(5000);

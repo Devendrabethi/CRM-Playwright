@@ -136,5 +136,17 @@ class TestData
 
         this.Weight_Value = "1"
         this.Tracking_Number_Value = "125413876524"
+
+        this.Bidder_Number_by_Range = "Bidder Number by Range"
+        this.All_Bidders = "All Bidders"
+        this.All_Buyers = "All Buyers"
+        this.Buyser_ByLot = "Buyer by Lot #"
+        this.Buyser_ByCancel = "Cancelled by Lot #"
+
+        this.Lot_starting = "190"
+        this.Lot_Ending = "1000"
+        this.BuyerLot = "740 , 320"
+        this.BuyerCancel = "800 , 820"
+
     }
 }
