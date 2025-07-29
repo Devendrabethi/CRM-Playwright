@@ -57,7 +57,7 @@ class BidderOpportunity_WebElements
         this.Close_PhoneObserver = "//button[@title='Close']"
 
         this.Create_Package = "//span[text()='Create Package']"
-        this.Close_Tracking = "//button[@aria-label='Close']"
+        this.Close_Tracking = "(//button[@aria-label='Close'])[2]"
         
 
         this.AddDocument_Register = "(//button[@aria-label='Add Document'])[1]"
