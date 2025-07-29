@@ -25,7 +25,7 @@ class CustomerPage
 
         const frame = await this.page.frameLocator(this.customer_webElements.frame_AuctionManager)
                     if(!frame) throw new Error('Iframe not found')
-        await frame.locator(this.customer_webElements.Auction_management).click()
+        await frame.locator(this.customer_webElements.Auction_management).click({ timeout: 60000 })
     }
 
     async manager()

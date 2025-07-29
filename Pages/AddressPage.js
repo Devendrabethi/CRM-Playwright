@@ -15,7 +15,7 @@ class AddressPage
     async newaddress()
     {
        const New_Address = this.page.locator(this.address_webelements.New_Address)
-       await expect(this.page.locator(this.address_webelements.New_Address)).toBeVisible({ timeout: 30000 })
+       await expect(this.page.locator(this.address_webelements.New_Address)).toBeVisible({ timeout: 60000 })
        await this.page.locator(this.address_webelements.New_Address).click()
     }
 

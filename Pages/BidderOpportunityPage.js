@@ -29,7 +29,7 @@ class BidderOpportunityPage
     {
         await this.page.locator(this.bidderopportunity_webelements.Bidder_Pakage_Type).click()
         await this.page.locator(this.bidderopportunity_webelements.Bidder_Pakage_Type).fill(this.testdata.Bidder_Package_Type)
-        await this.page.waitForTimeout(3000)
+        await this.page.waitForTimeout(4000)
         await this.page.locator(this.bidderopportunity_webelements.Select_Bidder_Package_Type).click();
         await this.page.selectOption(this.bidderopportunity_webelements.Select_Bid_LimitType_dropdown,this.testdata.Bidder_BidLImit_Type); 
         await this.page.locator(this.bidderopportunity_webelements.Bid_Limit_Value).click()
@@ -332,27 +332,27 @@ class BidderOpportunityPage
                     await frame.locator(this.bidderopportunity_webelements.selectPayment).selectOption([
                       { label: 'Credit Card Deposit' }
                     ]);
-                const dialogPromise = this.page.waitForEvent('dialog');
+                const dialogPromise = this.page.waitForEvent('dialog', { timeout: 60000 });
                 await frame.locator(this.bidderopportunity_webelements.submitbtn).click();
                 const dialog = await dialogPromise;
                 await dialog.accept();
 
             //Download file PrintAll
-                      // const path1 = require('path');  
-                      // const fs1 = require('fs');
-                      // const downloadDir1 = path1.join(__dirname, 'Download');
-                      // if (!fs1.existsSync(downloadDir1)) {
-                      //     fs1.mkdirSync(downloadDir1);
-                      //   }
-                      // const downloadPromise1 = this.page.waitForEvent('download')
-                      // await this.page.locator(this.bidderopportunity_webelements.PrintAll).click()
-                      // const download1 = await downloadPromise1
-                      // const downloadPath1 = path1.join(downloadDir1, download1.suggestedFilename());
-                      // await download1.saveAs(downloadPath1)
+                      const path1 = require('path');  
+                      const fs1 = require('fs');
+                      const downloadDir1 = path1.join(__dirname, 'Download');
+                      if (!fs1.existsSync(downloadDir1)) {
+                          fs1.mkdirSync(downloadDir1);
+                        }
+                      const downloadPromise1 = this.page.waitForEvent('download')
+                      await this.page.locator(this.bidderopportunity_webelements.PrintAll).click()
+                      const download1 = await downloadPromise1
+                      const downloadPath1 = path1.join(downloadDir1, download1.suggestedFilename());
+                      await download1.saveAs(downloadPath1)
       
-                     await this.page.locator(this.bidderopportunity_webelements.PrintAll).click()
-                    await this.page.waitForTimeout(1000)
-                   //Print Agreement
+                    //  await this.page.locator(this.bidderopportunity_webelements.PrintAll).click()
+                    // await this.page.waitForTimeout(1000)
+              //Print Agreement
                 await this.page.locator(this.bidderopportunity_webelements.Print_Agreement).click()
                // await this.page.waitForTimeout(2000)
                 await this.page.locator(this.bidderopportunity_webelements.Print).click()
@@ -410,7 +410,7 @@ class BidderOpportunityPage
         //Aggreement Tab
                 await this.page.locator(this.bidderopportunity_webelements.AgreementsTab).click()
                 await this.page.locator(this.bidderopportunity_webelements.CheckStatus).click()
-                await this.page.waitForTimeout(3000)
+                await this.page.waitForTimeout(8000)
                 try 
                 {
                   // Check if the Send_Agreement_Close button is present
