@@ -27,17 +27,18 @@ class BidderOpportunityPage
 
     async Bidder_details()
     {
-        await this.page.locator(this.bidderopportunity_webelements.Bidder_Pakage_Type).click()
+        // await this.page.locator(this.bidderopportunity_webelements.Bidder_Pakage_Type).click()
+        // await this.page.waitForTimeout(1000)
         await this.page.locator(this.bidderopportunity_webelements.Bidder_Pakage_Type).fill(this.testdata.Bidder_Package_Type)
         await this.page.waitForTimeout(4000)
         await this.page.locator(this.bidderopportunity_webelements.Select_Bidder_Package_Type).click();
         await this.page.selectOption(this.bidderopportunity_webelements.Select_Bid_LimitType_dropdown,this.testdata.Bidder_BidLImit_Type); 
         await this.page.locator(this.bidderopportunity_webelements.Bid_Limit_Value).click()
-        await this.page.locator(this.bidderopportunity_webelements.Bid_Limit_Value).fill(this.testdata.Bidder_Limit_Value)  
-        await this.page.waitForTimeout(1000)
+        await this.page.waitForTimeout(1500)
+        await this.page.locator(this.bidderopportunity_webelements.Bid_Limit_Value).type(this.testdata.Bidder_Limit_Value)  
         await this.page.locator(this.bidderopportunity_webelements.Bid_Limit_Estimation).click()
+        await this.page.waitForTimeout(1500)
         await this.page.locator(this.bidderopportunity_webelements.Bid_Limit_Estimation).fill(this.testdata.Bidder_Estimate_Value)  
-        await this.page.waitForTimeout(1000)
         await this.page.selectOption(this.bidderopportunity_webelements.Select_Interner_Bidder,this.testdata.Bidder_Internet_yesandpush); 
         await this.page.waitForTimeout(2000)
     }
@@ -158,7 +159,7 @@ class BidderOpportunityPage
                     await this.page.waitForTimeout(5000);
                     await this.page.locator(this.PersonalAccount_WebElements.Refresh_Tracking).click();
                     await this.page.waitForTimeout(5000);
-                    await this.page.locator(this.bidderopportunity_webelements.Close_Tracking).click()
+                    await this.page.locator(this.bidderopportunity_webelements.Close_Tracking_BidderPage).click()
                     await this.page.waitForTimeout(2000)
                    // await this.page.locator(this.bidderopportunity_webelements.Bidder_Registerdoc_Refresh).click()
 

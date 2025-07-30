@@ -274,7 +274,7 @@ for (let i = 0; i < packageTypes.length; i++)
                     await this.page.locator(this.PersonalAccount_WebElements.AddressLine1).fill(this.testdata.Street_Address)
 
                     await this.page.locator(this.PersonalAccount_WebElements.State_Name).click()
-                    await this.page.locator(this.PersonalAccount_WebElements.State_Name).fill(this.testdata.Street_name)
+                    await this.page.locator(this.PersonalAccount_WebElements.State_Name).fill(this.testdata.State_name)
                     await this.page.waitForTimeout(1000)
                     await this.page.locator(this.PersonalAccount_WebElements.Select_StateName).click()
 
