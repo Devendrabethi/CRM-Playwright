@@ -16,5 +16,7 @@ class Customer_WebElements {
         this.Createnewaccountbtn = "//span[text()='New']";
         this.Verifynewaccounttext = "//h1[text()='New Account']";
         this.verifyallaccount = "//span[text()='All Accounts']";
+
+        this.WebCustomer = "//div[@aria-label='Press SPACE to select this row.'][1]"
     }
 };

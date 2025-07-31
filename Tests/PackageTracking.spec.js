@@ -4,10 +4,8 @@ import { PersonalAccountPage} from '../Pages/PersonalAccountPage'
 import { AddressPage} from '../Pages/AddressPage'
 import { PhoneNumberPage} from '../Pages/PhoneNumberPage'
 import { EmailPage} from '../Pages/EmailPage'
-import { NewConsignmentVehiclePage} from '../Pages/NewConsignmentVehiclePage'
-import { BidderOpportunityPage} from '../Pages/BidderOpportunityPage'
 
-test('Validating Package Tracking',async({page}) =>    // Activity functionality works only in UAT
+test('Validating Package Tracking',async({page}) =>    // CRM
 {
     const customerpage = new CustomerPage(page)
     const personalaccountpage = new PersonalAccountPage(page) 
@@ -28,5 +26,15 @@ test('Validating Package Tracking',async({page}) =>    // Activity functionality
     await phonenumberpage.General_PhoneNumber()
     await emailpage.NewEmailbtn()
     await emailpage.enter_emailid()
+    await personalaccountpage.Tracking_Tab()
+})
+test('Validating Package Tracking for Web Originated',async({page}) =>    // WEB originated packlage tracking with debug
+{
+    const customerpage = new CustomerPage(page)
+    const personalaccountpage = new PersonalAccountPage(page) 
+
+    await customerpage.url()
+    await customerpage.manager()
+    await customerpage.WebCustoer()
     await personalaccountpage.Tracking_Tab()
 })

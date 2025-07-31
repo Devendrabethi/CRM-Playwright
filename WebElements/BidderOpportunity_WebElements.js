@@ -152,6 +152,9 @@ class BidderOpportunity_WebElements
         this.PasswordManager = "//input[@id='passwordmanager']"
         this.Approvebutton = "//button[@id='approveButton']"
 
+        this.Current_BidderNumber = "//input[@id='currentbiddernumber']"
+        this.Enter_New_BidderNumber = "//input[@id='newBidderNumber']"
+
         //HamburgerMenu
         this.managementbtn = "//div[@title='Management']";
         this.MenuCusomer = "//span[text()='Customers']"

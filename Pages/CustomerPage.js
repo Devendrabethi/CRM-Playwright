@@ -2,6 +2,7 @@ import { expect } from '@playwright/test'
 import { Customer_WebElements } from '../WebElements/Customer_WebElements' // Import Customer_WebElements class
 import { TestData  } from '../TestData/testdata';
 import path from 'path';
+import { BidderOpportunity_WebElements } from '../WebElements/BidderOpportunity_WebElements'  
 
 exports.CustomerPage =
 class CustomerPage 
@@ -11,6 +12,7 @@ class CustomerPage
         this.page = page
         this.customer_webElements = new Customer_WebElements(); // Initialize Locators class
         this.testdata = new TestData();
+        this.bidderopportunity_webelements = new BidderOpportunity_WebElements()
     }
 
     async url()
@@ -41,6 +43,14 @@ class CustomerPage
     {
        await expect(this.page.locator(this.customer_webElements.Createnewaccountbtn)).toBeVisible({ timeout: 30000 });
        await this.page.locator(this.customer_webElements.Createnewaccountbtn).click()
+    }
+
+    async WebCustoer()
+    {
+        await this.page.locator(this.bidderopportunity_webelements.CustomerFilter).fill(this.testdata.CustomerName)
+        await this.page.locator(this.bidderopportunity_webelements.CustomerFilter).press('Enter')
+        await this.page.locator(this.customer_webElements.WebCustomer).dblclick()
+        await this.page.waitForTimeout(4000)
     }
 
 }

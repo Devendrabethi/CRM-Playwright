@@ -393,7 +393,7 @@ class BidderOpportunityPage
                  const download2 = await downloadPromise2
                  const downloadPath2 = path2.join(downloadDir2, download2.suggestedFilename());
                  await download2.saveAs(downloadPath2)
-         //Administration
+         //Administration Auto Assign
                 await this.page.locator(this.bidderopportunity_webelements.Administration).click()
                 await this.page.locator(this.bidderopportunity_webelements.ChangeBidderNumber).click({timeout:60000})
                 const frame1 = await this.page.frameLocator(this.bidderopportunity_webelements.FrameChangeBidderNumber)
@@ -405,8 +405,27 @@ class BidderOpportunityPage
                     await frame1.locator(this.bidderopportunity_webelements.BidderNumberCheckbox).click()
                     await this.page.waitForTimeout(1000);
                     await frame1.locator(this.bidderopportunity_webelements.Approvebutton).click()
+                    await this.page.waitForTimeout(5000);
+           //Administration Manual entry
+                await this.page.locator(this.bidderopportunity_webelements.Administration).click()
+                await this.page.locator(this.bidderopportunity_webelements.ChangeBidderNumber).click({timeout:60000})
+                const frame2 = await this.page.frameLocator(this.bidderopportunity_webelements.FrameChangeBidderNumber)
+                    if(!frame2) throw new Error('Iframe not found')
 
+                    const currentValue = await frame2.locator(this.bidderopportunity_webelements.Current_BidderNumber).inputValue();
+                    const currentNumber = parseInt(currentValue, 10);
+                    const newBidderNumber = currentNumber + 1;
+                    await frame2.locator(this.bidderopportunity_webelements.Enter_New_BidderNumber).click()
+                    await frame2.locator(this.bidderopportunity_webelements.Enter_New_BidderNumber).fill(newBidderNumber.toString());
 
+                    await this.page.waitForTimeout(1000);
+                    await frame2.locator(this.bidderopportunity_webelements.SelectBidderManager).selectOption(this.testdata.ManagerName)
+                    await frame2.locator(this.bidderopportunity_webelements.PasswordManager).fill(this.testdata.ManagerPassword)
+                    await frame2.locator(this.bidderopportunity_webelements.BidderNumberCheckbox).click()
+                    await this.page.waitForTimeout(1000);
+                    await frame2.locator(this.bidderopportunity_webelements.Approvebutton).click()
+
+          //Sync
                 await this.page.locator(this.bidderopportunity_webelements.Sync).click({timeout:60000})
         //Aggreement Tab
                 await this.page.locator(this.bidderopportunity_webelements.AgreementsTab).click()

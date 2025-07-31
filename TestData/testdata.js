@@ -89,7 +89,7 @@ class TestData
 
         this.Payment_method = "Cash"
         this.PaymentNumber = "0001"
-        this.CustomerName = "Devendra"
+        this.CustomerName = "Devendra Testing"
         this.VehicleName = "Chevrolet"
 
         this.SendActivityText = "Testing Purpose"
@@ -143,7 +143,7 @@ class TestData
         this.Buyser_ByLot = "Buyer by Lot #"
         this.Buyser_ByCancel = "Cancelled by Lot #"
         this.Tracking_Number = "9876543210"
-        this.Lot_starting = "190"
+        this.Lot_starting = "1"
         this.Lot_Ending = "1000"
         this.BuyerLot = "740 , 320"
         this.BuyerCancel = "800 , 820"

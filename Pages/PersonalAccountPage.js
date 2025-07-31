@@ -137,7 +137,7 @@ for (let i = 0; i < packageTypes.length; i++)
 
                     await this.page.locator(this.PersonalAccount_WebElements.Event).click();
                     await this.page.locator(this.PersonalAccount_WebElements.Event).fill(this.testdata.Tracking_Event);
-                    await this.page.waitForTimeout(6000);
+                    await this.page.waitForTimeout(3000);
 
                     await this.page.locator(this.PersonalAccount_WebElements.Select_Tracking_Event).click();
 
@@ -145,7 +145,7 @@ for (let i = 0; i < packageTypes.length; i++)
                     await this.page.selectOption(this.PersonalAccount_WebElements.Select_PackageType_Dropdown,packageTypes[i])
 
                     await this.page.selectOption(this.PersonalAccount_WebElements.Select_Carrier, this.testdata.Carrier_FedEx);
-                    await this.page.waitForTimeout(4000);
+                    await this.page.waitForTimeout(2000);
 
                     await this.page.locator(this.PersonalAccount_WebElements.Recipient_Company_text).click();
                     await this.page.selectOption(this.PersonalAccount_WebElements.Select_ImageType_Dropdown,this.testdata.Image_Type_PDF);
