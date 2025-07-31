@@ -5,7 +5,8 @@ import { AddressPage} from '../Pages/AddressPage'
 import { PhoneNumberPage} from '../Pages/PhoneNumberPage'
 import { EmailPage} from '../Pages/EmailPage'
 
-test('Validating Package Tracking',async({page}) =>    // CRM
+ // CRM    Change the Close tracking  in Tracking TAB//
+test('Validating Package Tracking',async({page}) =>   
 {
     const customerpage = new CustomerPage(page)
     const personalaccountpage = new PersonalAccountPage(page) 
@@ -28,6 +29,7 @@ test('Validating Package Tracking',async({page}) =>    // CRM
     await emailpage.enter_emailid()
     await personalaccountpage.Tracking_Tab()
 })
+ // CRM    Change the Close tracking  in Tracking TAB//
 test('Validating Package Tracking for Web Originated',async({page}) =>    // WEB originated packlage tracking with debug
 {
     const customerpage = new CustomerPage(page)

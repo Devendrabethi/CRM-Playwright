@@ -36,9 +36,9 @@ class TestData
         this.Area_code = "928";
         this.Phone_Number = "2023810";
 
-        this.Vehicle_Year = "2012";
-        this.Vehicle_Make = "Ford";
-        this.Vehicle_Model = "F-250";
+        this.Vehicle_Year = "2015";
+        this.Vehicle_Make = "BMW";
+        this.Vehicle_Model = "F-1600";
         this.Vehicle_TransmissionType = "Automatic";
         this.Vehicle_TransmissionSpeed = "3-Speed";
 

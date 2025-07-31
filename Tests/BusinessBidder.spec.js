@@ -57,7 +57,6 @@ test('Creating Business Bidder Opportunity',async({page}) =>
     await bidderopportunitypage.BidderAssign()
     await bidderopportunitypage.Add_Envelop()
     await bidderopportunitypage.Add_Absentee_Bid()
-    await bidderopportunitypage.CreatePackage()
     await bidderopportunitypage.PhoneObserver()
     await bidderopportunitypage.RegisterDocuments()
     await bidderopportunitypage.Opportunity_product_tab()
@@ -65,4 +64,5 @@ test('Creating Business Bidder Opportunity',async({page}) =>
     await bidderopportunitypage.AnotherProduct()
     await bidderopportunitypage.TaskTab()
     await bidderopportunitypage.RibbonLevel()
+    await bidderopportunitypage.CreatePackage()
 })

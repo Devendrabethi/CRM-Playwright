@@ -58,7 +58,7 @@ class BidderOpportunity_WebElements
 
         this.Create_Package = "//span[text()='Create Package']"
         this.Close_Tracking = "(//button[@aria-label='Close'])[2]"
-        this.Close_Tracking_BidderPage = "//button[@aria-label='Close']"
+       //this.Close_Tracking_BidderPage ="//button[@aria-label='Close']"
         
 
         this.AddDocument_Register = "(//button[@aria-label='Add Document'])[1]"

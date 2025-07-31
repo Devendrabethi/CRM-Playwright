@@ -36,6 +36,7 @@ class BidderOpportunityPage
         await this.page.locator(this.bidderopportunity_webelements.Bid_Limit_Value).click()
         await this.page.waitForTimeout(1500)
         await this.page.locator(this.bidderopportunity_webelements.Bid_Limit_Value).type(this.testdata.Bidder_Limit_Value)  
+        await this.page.waitForTimeout(1000)
         await this.page.locator(this.bidderopportunity_webelements.Bid_Limit_Estimation).click()
         await this.page.waitForTimeout(1500)
         await this.page.locator(this.bidderopportunity_webelements.Bid_Limit_Estimation).fill(this.testdata.Bidder_Estimate_Value)  
@@ -159,8 +160,8 @@ class BidderOpportunityPage
                     await this.page.waitForTimeout(5000);
                     await this.page.locator(this.PersonalAccount_WebElements.Refresh_Tracking).click();
                     await this.page.waitForTimeout(5000);
-                    await this.page.locator(this.bidderopportunity_webelements.Close_Tracking_BidderPage).click()
-                    await this.page.waitForTimeout(2000)
+                    // await this.page.locator(this.bidderopportunity_webelements.Close_Tracking).click()
+                    // await this.page.waitForTimeout(2000)
                    // await this.page.locator(this.bidderopportunity_webelements.Bidder_Registerdoc_Refresh).click()
 
        }
