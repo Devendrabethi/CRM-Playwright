@@ -107,6 +107,7 @@ class DealerAccountPage
         await this.page.locator(this.dealeraccount_webelements.RealtedAccount_More_option).click();
         await this.page.locator(this.dealeraccount_webelements.Related_Accounts_refresh).click();
         await this.page.locator(this.dealeraccount_webelements.DoubleclickPersonalAccount).dblclick()
+        await this.page.waitForTimeout(3000)
     }
 
  };

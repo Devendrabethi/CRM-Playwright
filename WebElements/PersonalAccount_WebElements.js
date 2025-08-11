@@ -58,5 +58,19 @@ class PersonalAccount_WebElements
         this.Refresh_Tracking = "(//button[@title='Refresh'])[2]"
         this.Print_Label = "//button[@aria-label='Print Label']"
         this.Close_Tracking = "(//button[@aria-label='Close'])[2]"//"//button[@aria-label='Close']" this is uat and 2-otfixqa
+
+        this.Details_Tab = "//ul[@aria-label='Account Form']/li[@title='Details']"
+        this.CustomerType_Field = "//input[@aria-label='Customer Type']"
+        this.Toggle_DropDown = "//button[@aria-label='Toggle menu']"
+        this.VIP_Bidder = "//label[@title='VIP BIDDER']"
+        this.VIP_Customer = "//label[@title='VIP CUSTOMER']"
+        this.Automobilia_Bidder = "//label[@title='AUTOMOBILIA BIDDER']"
+        this.Print_Bidder_Agreement = "//button[@aria-label='Print Bidder Agreement']"
+        this.Iframe_Print_Bidder_Agreement = "//iframe[@aria-label='print_Bidder_Agreement']"
+        this.Select_Event_Dropdown = "//select[@id='eventDropdown']"
+        this.Print_Button = "//button[@id='uploadButton']"
+        this.Select_Dealer_Business_Dropdown = "//select[@id='relatedAccountsDropdown']"
+        this.Select_Option2 = "//select[@id='relatedAccountsDropdown']/option[2]"
+
     }
 }

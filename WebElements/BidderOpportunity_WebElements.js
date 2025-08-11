@@ -197,6 +197,9 @@ class BidderOpportunity_WebElements
         this.MenuCompleteOpportunity = "//span[text()='Complete Opportunities']"
         this.MenuAssignedOpportunity = "//span[text()='Assigned Opportunities']"
 
+        this.BidderScottsdale2026Dropdown = "//span[text()='Bidder Scottsdale 2026']"
+        this.ConsignmentScottsdale2026Dropdown = "//span[text()='Consignment Scottsdale 2026']"
+
         this.MenuHome = "//span[text()='Home']"
 
     }
