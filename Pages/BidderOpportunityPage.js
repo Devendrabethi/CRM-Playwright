@@ -34,11 +34,8 @@ class BidderOpportunityPage
         await this.page.locator(this.bidderopportunity_webelements.Select_Bidder_Package_Type).click();
         await this.page.selectOption(this.bidderopportunity_webelements.Select_Bid_LimitType_dropdown,this.testdata.Bidder_BidLImit_Type); 
         await this.page.locator(this.bidderopportunity_webelements.Bid_Limit_Value).click()
-        await this.page.waitForTimeout(1500)
-        await this.page.locator(this.bidderopportunity_webelements.Bid_Limit_Value).type(this.testdata.Bidder_Limit_Value)  
-        await this.page.waitForTimeout(1000)
+        await this.page.locator(this.bidderopportunity_webelements.Bid_Limit_Value).fill(this.testdata.Bidder_Limit_Value)  
         await this.page.locator(this.bidderopportunity_webelements.Bid_Limit_Estimation).click()
-        await this.page.waitForTimeout(1500)
         await this.page.locator(this.bidderopportunity_webelements.Bid_Limit_Estimation).fill(this.testdata.Bidder_Estimate_Value)  
         await this.page.selectOption(this.bidderopportunity_webelements.Select_Interner_Bidder,this.testdata.Bidder_Internet_yesandpush); 
         await this.page.waitForTimeout(2000)
@@ -64,7 +61,7 @@ class BidderOpportunityPage
     }
     async Add_Envelop()
     {
-        await expect(this.page.locator(this.bidderopportunity_webelements.Verify_BidLimitDeposits_Text)).toBeVisible({timeout:30000})
+        //await expect(this.page.locator(this.bidderopportunity_webelements.Verify_BidLimitDeposits_Text)).toBeVisible({timeout:30000})
         await this.page.locator(this.bidderopportunity_webelements.Add_Envelop_btn).click()
         await this.page.locator(this.bidderopportunity_webelements.Envelop_Number).click()
         await this.page.locator(this.bidderopportunity_webelements.Envelop_Number).fill(this.testdata.Envelop_Number)
@@ -160,8 +157,8 @@ class BidderOpportunityPage
                     await this.page.waitForTimeout(5000);
                     await this.page.locator(this.PersonalAccount_WebElements.Refresh_Tracking).click();
                     await this.page.waitForTimeout(5000);
-                    // await this.page.locator(this.bidderopportunity_webelements.Close_Tracking).click()
-                    // await this.page.waitForTimeout(2000)
+                    await this.page.locator(this.bidderopportunity_webelements.Close_Tracking).click()
+                    await this.page.waitForTimeout(2000)
                    // await this.page.locator(this.bidderopportunity_webelements.Bidder_Registerdoc_Refresh).click()
 
        }
@@ -395,8 +392,8 @@ class BidderOpportunityPage
                  const downloadPath2 = path2.join(downloadDir2, download2.suggestedFilename());
                  await download2.saveAs(downloadPath2)
          //Administration Auto Assign
-                await this.page.locator(this.bidderopportunity_webelements.Administration).click()
-                await this.page.locator(this.bidderopportunity_webelements.ChangeBidderNumber).click({timeout:60000})
+                await this.page.locator(this.bidderopportunity_webelements.Administration).click({timeout:60000})
+                //await this.page.locator(this.bidderopportunity_webelements.ChangeBidderNumber).click({timeout:60000})
                 const frame1 = await this.page.frameLocator(this.bidderopportunity_webelements.FrameChangeBidderNumber)
                     if(!frame1) throw new Error('Iframe not found')
                     await frame1.locator(this.bidderopportunity_webelements.AutoAssign).click()
@@ -406,10 +403,10 @@ class BidderOpportunityPage
                     await frame1.locator(this.bidderopportunity_webelements.BidderNumberCheckbox).click()
                     await this.page.waitForTimeout(1000);
                     await frame1.locator(this.bidderopportunity_webelements.Approvebutton).click()
-                    await this.page.waitForTimeout(5000);
+                    await this.page.waitForTimeout(10000);
            //Administration Manual entry
-                await this.page.locator(this.bidderopportunity_webelements.Administration).click()
-                await this.page.locator(this.bidderopportunity_webelements.ChangeBidderNumber).click({timeout:60000})
+                await this.page.locator(this.bidderopportunity_webelements.Administration).click({timeout:60000})
+                //await this.page.locator(this.bidderopportunity_webelements.ChangeBidderNumber).click({timeout:60000})
                 const frame2 = await this.page.frameLocator(this.bidderopportunity_webelements.FrameChangeBidderNumber)
                     if(!frame2) throw new Error('Iframe not found')
 

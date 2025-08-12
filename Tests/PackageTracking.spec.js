@@ -29,8 +29,8 @@ test('Validating Package Tracking',async({page}) =>
     await emailpage.enter_emailid()
     await personalaccountpage.Tracking_Tab()
 })
- // CRM    Change the Close tracking  in Tracking TAB//
-test('Validating Package Tracking for Web Originated',async({page}) =>    // WEB originated packlage tracking with debug
+ // WEB originated packlage tracking with debug
+test('Validating Package Tracking for Web Originated',async({page}) =>   
 {
     const customerpage = new CustomerPage(page)
     const personalaccountpage = new PersonalAccountPage(page) 

@@ -19,7 +19,7 @@ class PersonalAccount_WebElements
         this.Documents_Tab = "//ul[@aria-label='Account Form']/li[contains(@title,'Documents')]"
         this.Personal_Document_Text = "//h2[@title='Personal Documents']"
         this.Add_Document_btn = "//button[@aria-label='Add Document']"
-        this.frame = "//iframe[@id='FullPageWebResource']"
+        this.frame = "//iframe[@aria-label='vehicle_documents']"
         this.Select_DocumentType_dropdown = "//select[@id='documentType']"
         this.Expiration_Date_field = "//input[@id='date-picker']"
         this.Next_Month = "//div[@class='datepicker-days']/table[@class='table-condensed'][1]/thead/tr[2]/th[3]"
@@ -57,7 +57,7 @@ class PersonalAccount_WebElements
         this.Save_Tracking = "(//button[@aria-label='Save (CTRL+S)'])[2]"
         this.Refresh_Tracking = "(//button[@title='Refresh'])[2]"
         this.Print_Label = "//button[@aria-label='Print Label']"
-        this.Close_Tracking = "(//button[@aria-label='Close'])[2]"//"//button[@aria-label='Close']" this is uat and 2-otfixqa
+        this.Close_Tracking = "//button[@aria-label='Enter full screen mode']/following-sibling::button"//"//button[@aria-label='Close']" this is uat and 2-otfixqa
 
         this.Details_Tab = "//ul[@aria-label='Account Form']/li[@title='Details']"
         this.CustomerType_Field = "//input[@aria-label='Customer Type']"

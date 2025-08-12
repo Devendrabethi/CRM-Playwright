@@ -57,12 +57,12 @@ class BidderOpportunity_WebElements
         this.Close_PhoneObserver = "//button[@title='Close']"
 
         this.Create_Package = "//span[text()='Create Package']"
-        this.Close_Tracking = "(//button[@aria-label='Close'])[2]"
+        this.Close_Tracking = "//button[@aria-label='Enter full screen mode']/following-sibling::button"
        //this.Close_Tracking_BidderPage ="//button[@aria-label='Close']"
         
 
         this.AddDocument_Register = "(//button[@aria-label='Add Document'])[1]"
-        this.frame = "//iframe[@id='FullPageWebResource']"  
+        this.frame = "//iframe[@aria-label='bidder_documents']"  
         this.Select_DocumentType_dropdown = "//select[@id='documentType']"
         this.Bidder_Registerdoc_Refresh = "//ul[@aria-label='Opportunity Document Commands']/li[2]/button[@aria-label='Refresh']"
         
@@ -115,7 +115,7 @@ class BidderOpportunity_WebElements
 
 
          this.reqinforbtn ="//span[text()='Request Information']"
-         this.reqinforframe ="//iframe[@id='FullPageWebResource']"
+         this.reqinforframe ="//iframe[@aria-label='opportunity_multi_request']"
          this.selectvehiclephotoreq ="//select[@id='photosDrp']"
          this.selectconsigndoc = "//select[@id='opportunityDocumentsDrp']"
          this.selectcustomerDocumentsDrpreq = "//select[@id='customerDocumentsDrp']"
@@ -143,7 +143,7 @@ class BidderOpportunity_WebElements
         this.StatusChange = "//select[@aria-label='Status']"
         this.PrintBidderBadge = "//button[@aria-label='Print Bidder Badge']"
 
-        this.Administration = "(//li[@title='Administration'])[2]"
+        this.Administration = "//button[@aria-label='Administration']"
         this.ChangeBidderNumber = "//button[@aria-label='Change Bidder Number']"
         this.FrameChangeBidderNumber = "//iframe[@aria-label='Change_Bidder_Number']"
         this.AutoAssign = "//button[text()='Auto Assign']"
