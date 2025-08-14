@@ -29,15 +29,6 @@ test.skip('Creating Personal account with documents',async({page}) =>
         await emailpage.NewEmailbtn()
         await emailpage.enter_emailid()
     })
-test.skip('Checking Hamburger Menu',async({page}) =>    
-{
-    const customerpage = new CustomerPage(page)
-    const bidderopportunitypage = new BidderOpportunityPage(page)
-
-    await customerpage.url()
-    await bidderopportunitypage.BidderHamburgerMenu()
-    await bidderopportunitypage.ConsignmentHamburgerMenu()
-})
 test('Creating Individual Bidder Opportunity',async({page}) =>
 {
     const customerpage = new CustomerPage(page)

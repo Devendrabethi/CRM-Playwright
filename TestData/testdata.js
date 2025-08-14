@@ -38,7 +38,7 @@ class TestData
 
         this.Vehicle_Year = "2015";
         this.Vehicle_Make = "BMW";
-        this.Vehicle_Model = "135i";
+        this.Vehicle_Model = "128i";
         this.Vehicle_TransmissionType = "Automatic";
         this.Vehicle_TransmissionSpeed = "3-Speed";
 
