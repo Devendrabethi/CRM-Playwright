@@ -5,7 +5,6 @@ import { AddressPage} from '../Pages/AddressPage'
 import { PhoneNumberPage} from '../Pages/PhoneNumberPage'
 import { EmailPage} from '../Pages/EmailPage'
 import { NewConsignmentVehiclePage} from '../Pages/NewConsignmentVehiclePage'
-import { BidderOpportunityPage} from '../Pages/BidderOpportunityPage'
 
 test('Creating Individual Consignment',async({page}) =>    // Activity functionality works only in UAT
 {
@@ -15,7 +14,6 @@ test('Creating Individual Consignment',async({page}) =>    // Activity functiona
     const phonenumberpage = new PhoneNumberPage(page)
     const emailpage = new EmailPage(page)
     const newconsignmentvehiclepage = new NewConsignmentVehiclePage(page)
-    const bidderopportunitypage = new BidderOpportunityPage(page)
 
     await customerpage.url()
     await customerpage.manager()
@@ -30,7 +28,6 @@ test('Creating Individual Consignment',async({page}) =>    // Activity functiona
     await phonenumberpage.General_PhoneNumber()
     await emailpage.NewEmailbtn()
     await emailpage.enter_emailid()
-    //await personalaccountpage.Tracking_Tab()
     await emailpage.CredentialTab()
     await personalaccountpage.personalAccountDocuments()
     await newconsignmentvehiclepage.newcon()
@@ -44,6 +41,7 @@ test('Creating Individual Consignment',async({page}) =>    // Activity functiona
     await newconsignmentvehiclepage.MarketingTab()
     await newconsignmentvehiclepage.ConsVehicleDoc()
     await newconsignmentvehiclepage.UploadPhoto()
+    await newconsignmentvehiclepage.ComparisionTab()
     await newconsignmentvehiclepage.TaskTab()
     //await newconsignmentvehiclepage.ActivitiesTab()  // Activity functionality works only in UAT
     await newconsignmentvehiclepage.RibbonLevel()

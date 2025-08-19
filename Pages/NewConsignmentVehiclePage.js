@@ -250,6 +250,100 @@ class NewConsignmentVehiclePage
                 //     await frame.locator(this.newconsignmentvehicle_webelement.Move_To_FrontPhoto).click()
                 //     await this.page.waitForTimeout(4000)
     }
+    async ComparisionTab()
+    {
+        await this.page.locator(this.newconsignmentvehicle_webelement.ComparisionTab).click()
+        await this.page.locator(this.newconsignmentvehicle_webelement.Additoinal_Source_button).click()
+        await this.page.waitForTimeout(2000)
+        await this.page.selectOption(this.newconsignmentvehicle_webelement.Select_Source,this.testdata.Source_Barrett_Jackson)
+        await this.page.waitForTimeout(500)
+        await this.page.locator(this.newconsignmentvehicle_webelement.Source_Event).fill(this.testdata.Event_name)
+        await this.page.locator(this.newconsignmentvehicle_webelement.Source_Lot).press('Tab')
+        await this.page.locator(this.newconsignmentvehicle_webelement.Source_Lot).fill(this.testdata.lotabsentee)
+        await this.page.locator(this.newconsignmentvehicle_webelement.Source_Hammer).press('Tab')
+        await this.page.locator(this.newconsignmentvehicle_webelement.Source_Hammer).type(this.testdata.Source_Hammer)
+        await this.page.locator(this.newconsignmentvehicle_webelement.AdditionalSource_text).press('Tab')
+        await this.page.locator(this.newconsignmentvehicle_webelement.AdditionalSource_text).click()
+        await this.page.locator(this.newconsignmentvehicle_webelement.Source_Save).click()
+        await this.page.locator(this.newconsignmentvehicle_webelement.Source_SaveClose).click()
+        await this.page.waitForTimeout(2000)
+        await this.page.locator(this.newconsignmentvehicle_webelement.Additoinal_Source_button).click()
+        await this.page.selectOption(this.newconsignmentvehicle_webelement.Select_Source,this.testdata.Source_BaT)
+        await this.page.locator(this.newconsignmentvehicle_webelement.Source_Date).click()
+        await this.page.locator(this.newconsignmentvehicle_webelement.source_CurrentDate).click()
+        await this.page.locator(this.newconsignmentvehicle_webelement.Source_Lot).press('Tab')
+        await this.page.locator(this.newconsignmentvehicle_webelement.Source_Lot).fill(this.testdata.lotabsentee)
+        await this.page.locator(this.newconsignmentvehicle_webelement.Source_SalePrice).press('Tab')
+        await this.page.locator(this.newconsignmentvehicle_webelement.Source_SalePrice).fill(this.testdata.Source_SalePrice)
+        await this.page.locator(this.newconsignmentvehicle_webelement.AdditionalSource_text).press('Tab')
+        await this.page.locator(this.newconsignmentvehicle_webelement.AdditionalSource_text).click()
+        await this.page.locator(this.newconsignmentvehicle_webelement.Source_Save).click()
+        await this.page.locator(this.newconsignmentvehicle_webelement.Source_SaveClose).click()
+        await this.page.waitForTimeout(2000)
+        await this.page.locator(this.newconsignmentvehicle_webelement.Additoinal_Source_button).click()
+        await this.page.selectOption(this.newconsignmentvehicle_webelement.Select_Source,this.testdata.Source_Hagerty)
+        await this.page.waitForTimeout(500)
+        await this.page.locator(this.newconsignmentvehicle_webelement.Source_Good).fill(this.testdata.Source_Good)
+        await this.page.waitForTimeout(500)
+        await this.page.locator(this.newconsignmentvehicle_webelement.Source_Fair).fill(this.testdata.Source_Fair)
+        await this.page.waitForTimeout(500)
+        await this.page.locator(this.newconsignmentvehicle_webelement.Source_Excellect).fill(this.testdata.Source_Excellent)
+        await this.page.waitForTimeout(500)
+        await this.page.locator(this.newconsignmentvehicle_webelement.Source_Concours).fill(this.testdata.Source_Concours)
+        await this.page.waitForTimeout(500)
+        await this.page.locator(this.newconsignmentvehicle_webelement.Source_Save).click()
+        await this.page.locator(this.newconsignmentvehicle_webelement.Source_SaveClose).click()
+        await this.page.waitForTimeout(2000)
+        await this.page.locator(this.newconsignmentvehicle_webelement.Additoinal_Source_button).click()
+        await this.page.selectOption(this.newconsignmentvehicle_webelement.Select_Source,this.testdata.Source_NADA)
+        await this.page.waitForTimeout(500)
+        await this.page.locator(this.newconsignmentvehicle_webelement.Source_Low).fill(this.testdata.Source_Low)
+        await this.page.waitForTimeout(500)
+        await this.page.locator(this.newconsignmentvehicle_webelement.Source_Avg).fill(this.testdata.Source_Avg)
+        await this.page.waitForTimeout(500)
+        await this.page.locator(this.newconsignmentvehicle_webelement.Source_High).fill(this.testdata.Source_High)
+        await this.page.waitForTimeout(500)
+        await this.page.locator(this.newconsignmentvehicle_webelement.Source_Save).click()
+        await this.page.locator(this.newconsignmentvehicle_webelement.Source_SaveClose).click()
+        await this.page.waitForTimeout(2000)
+        await this.page.locator(this.newconsignmentvehicle_webelement.Additoinal_Source_button).click()
+        await this.page.selectOption(this.newconsignmentvehicle_webelement.Select_Source,this.testdata.Source_CPI)
+        await this.page.waitForTimeout(500)
+        await this.page.locator(this.newconsignmentvehicle_webelement.Source_Fair).fill(this.testdata.Source_Fair)
+        await this.page.waitForTimeout(500)
+        await this.page.locator(this.newconsignmentvehicle_webelement.Source_Good).fill(this.testdata.Source_Good)
+        await this.page.waitForTimeout(500)
+        await this.page.locator(this.newconsignmentvehicle_webelement.Source_Excellect).fill(this.testdata.Source_Excellent)
+        await this.page.waitForTimeout(500)
+        await this.page.locator(this.newconsignmentvehicle_webelement.Source_Save).click()
+        await this.page.locator(this.newconsignmentvehicle_webelement.Source_SaveClose).click()
+        await this.page.waitForTimeout(2000)
+        await this.page.locator(this.newconsignmentvehicle_webelement.Additoinal_Source_button).click()
+        await this.page.selectOption(this.newconsignmentvehicle_webelement.Select_Source,this.testdata.Source_HIBID)
+        await this.page.waitForTimeout(500)
+        await this.page.locator(this.newconsignmentvehicle_webelement.Source_Auction).fill(this.testdata.Source_Auction)
+        await this.page.waitForTimeout(500)
+        await this.page.locator(this.newconsignmentvehicle_webelement.Source_Date).click()
+        await this.page.locator(this.newconsignmentvehicle_webelement.source_CurrentDate).click()
+        await this.page.locator(this.newconsignmentvehicle_webelement.SOurce_Price).press('Tab')
+        await this.page.locator(this.newconsignmentvehicle_webelement.SOurce_Price).fill(this.testdata.Source_Price)
+        await this.page.locator(this.newconsignmentvehicle_webelement.AdditionalSource_text).click()
+        await this.page.locator(this.newconsignmentvehicle_webelement.Source_Save).click()
+        await this.page.locator(this.newconsignmentvehicle_webelement.Source_SaveClose).click()
+        await this.page.waitForTimeout(2000)
+        await this.page.locator(this.newconsignmentvehicle_webelement.Additoinal_Source_button).click()
+        await this.page.selectOption(this.newconsignmentvehicle_webelement.Select_Source,this.testdata.Source_Other)
+        await this.page.waitForTimeout(500)
+        await this.page.locator(this.newconsignmentvehicle_webelement.Source_SourceType).fill(this.testdata.Event_name)
+        await this.page.waitForTimeout(500)
+        await this.page.locator(this.newconsignmentvehicle_webelement.Source_Year).fill(this.testdata.Source_Year)
+        await this.page.locator(this.newconsignmentvehicle_webelement.Sorce_Value).press('Tab')
+        await this.page.locator(this.newconsignmentvehicle_webelement.Sorce_Value).fill(this.testdata.Source_Value)
+        await this.page.waitForTimeout(500)
+        await this.page.locator(this.newconsignmentvehicle_webelement.Source_Save).click()
+        await this.page.locator(this.newconsignmentvehicle_webelement.Source_SaveClose).click()
+
+    }
     async TaskTab()
     {
         await this.page.locator(this.newconsignmentvehicle_webelement.TaskTab).click()
@@ -313,20 +407,20 @@ class NewConsignmentVehiclePage
                 await dialog.accept();
 
                 //print all Download file
-                const path1 = require('path');  
-                const fs1 = require('fs');
-                const downloadDir1 = path1.join(__dirname, 'Download');
-                if (!fs1.existsSync(downloadDir1)) {
-                    fs1.mkdirSync(downloadDir1);
-                  }
-                const downloadPromise1 = this.page.waitForEvent('download')
+                // const path1 = require('path');  
+                // const fs1 = require('fs');
+                // const downloadDir1 = path1.join(__dirname, 'Download');
+                // if (!fs1.existsSync(downloadDir1)) {
+                //     fs1.mkdirSync(downloadDir1);
+                //   }
+                // const downloadPromise1 = this.page.waitForEvent('download')
                 await this.page.locator(this.newconsignmentvehicle_webelement.PrintAll).click()
                 await this.page.waitForTimeout(6000)
-                const download1 = await downloadPromise1
-                const downloadPath1 = path1.join(downloadDir1, download1.suggestedFilename());
-                await download1.saveAs(downloadPath1)
+                // const download1 = await downloadPromise1
+                // const downloadPath1 = path1.join(downloadDir1, download1.suggestedFilename());
+                // await download1.saveAs(downloadPath1)
 
-                await this.page.locator(this.newconsignmentvehicle_webelement.Refresh_consignment).click()
+                // await this.page.locator(this.newconsignmentvehicle_webelement.Refresh_consignment).click()
                 await this.page.locator(this.newconsignmentvehicle_webelement.WordTemplate).click({timeout:60000})
                 
                  //print consignment form Download file

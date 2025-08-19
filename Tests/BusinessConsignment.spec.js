@@ -8,7 +8,6 @@ import { BusinessPhoneNumberPage} from '../Pages/BusinessPhoneNumberPage'
 import { EmailPage} from '../Pages/EmailPage'
 import { NewConsignmentVehiclePage} from '../Pages/NewConsignmentVehiclePage'
 import { NewBusinessConsignmentVehiclePage} from '../Pages/NewBusinessConsignmentVehiclePage'
-import { BidderOpportunityPage} from '../Pages/BidderOpportunityPage'
 
 test('Creating Business Consignment',async({page}) =>
 {
@@ -21,7 +20,6 @@ test('Creating Business Consignment',async({page}) =>
     const newconsignmentvehiclepage = new NewConsignmentVehiclePage(page)
     const businessphonenumberpage = new BusinessPhoneNumberPage(page)
     const newbusinessconsignmentvehiclepage = new NewBusinessConsignmentVehiclePage(page)
-    const bidderopportunitypage = new BidderOpportunityPage(page)
 
     await customerpage.url()
     await customerpage.manager()
@@ -60,9 +58,9 @@ test('Creating Business Consignment',async({page}) =>
     await newconsignmentvehiclepage.MarketingTab()
     await newconsignmentvehiclepage.ConsVehicleDoc()
     await newconsignmentvehiclepage.UploadPhoto()
+    await newconsignmentvehiclepage.ComparisionTab()
     await newconsignmentvehiclepage.TaskTab()
     //await newconsignmentvehiclepage.ActivitiesTab()  // this functionality works only in UAT
     await newconsignmentvehiclepage.RibbonLevel()
-    //await bidderopportunitypage.HamburgerMenu()
     await newconsignmentvehiclepage.IntegrationTab()
 })

@@ -4,7 +4,7 @@ class TestData
 {
     constructor()
     {
-        this.URL ="https://bjac-hotfixqa.crm.dynamics.com/"//main.aspx?appid=58533451-8dc7-ef11-b8e9-6045bd056e7e"//Hotfixqa: https://bjac-hotfixqa.crm.dynamics.com/main.aspx?appid=58533451-8dc7-ef11-b8e9-6045bd056e7e  //uat: https://bjac-uat.crm.dynamics.com/main.aspx?appid=a7691afc-ad8a-ef11-ac21-000d3a5c4875
+        this.URL ="https://bjac-uat.crm.dynamics.com/"//main.aspx?appid=58533451-8dc7-ef11-b8e9-6045bd056e7e"//Hotfixqa: https://bjac-hotfixqa.crm.dynamics.com/main.aspx?appid=58533451-8dc7-ef11-b8e9-6045bd056e7e  //uat: https://bjac-uat.crm.dynamics.com/main.aspx?appid=a7691afc-ad8a-ef11-ac21-000d3a5c4875
         this.Emailid = "d365testuser3@barrett-jackson.com";//"dbethi@barrett-jackson.com";//d365testuser3@barrett-jackson.com"; 
         this.Password = "ZNcCzew8NjYz";//ZNcCzew8NjYz--testuser3
         this.FirstName = ""
@@ -60,6 +60,28 @@ class TestData
         this.ShortDescriptionText = "Describe your vehicle to bidders.\nDescribe your vehicle to bidders.\nDescribe your vehicle to bidders.\nDescribe your vehicle to bidders.\nDescribe your vehicle to bidders."
         this.LongDescriptionText = "Ford is the second-largest U.S.-based automaker, behind General Motors, and the sixth-largest in the world, behind Toyota, Volkswagen Group, Hyundai Motor Group, Stellantis, and General Motors, based on 2022 vehicle production.[10] The company went public in 1956 but the Ford family, through special Class B shares, retain 40 percent of the voting rights.[5][11] During the 2008–2010 automotive industry crisis, the company struggled financially but did not have to be rescued by the federal government, unlike the other two major US automakers."
 
+        this.Source_Barrett_Jackson = "Barrett-Jackson"
+        this.Source_Hammer = "45000"
+        this.Source_BaT = "BaT"
+        this.Source_SalePrice = "55000"
+        this.Source_Hagerty = "Hagerty"
+        this.Source_Good = "400"
+        this.Source_Fair = "300"
+        this.Source_Excellent = "200"
+        this.Source_Concours = "100"
+        this.Source_NADA = "NADA"
+        this.Source_Low = "300"
+        this.Source_Avg = "200"
+        this.Source_High = "100"
+        this.Source_CPI = "CPI"
+        this.Source_HIBID = "HIBID"
+        this.Source_Auction = "Auction"
+        this.Source_Price = "65000"
+        this.Source_Other = "Other"
+        this.Source_Year = "2012"
+        this.Source_Value = "75000"
+
+        
         this.Bidder_Package_Type= "PREMIUM PACKAGE"//"PREMIUM PACKAGE"//"SELECT PACKAGE"//"ABSENTEE (BIDDER)"; 
         this.Bidder_BidLImit_Type = "Woodside";
         this.Bidder_Limit_Value = "30000";

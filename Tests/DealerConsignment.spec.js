@@ -7,8 +7,7 @@ import { PhoneNumberPage} from '../Pages/PhoneNumberPage'
 import { DealerPhoneNumberPage} from '../Pages/DealerPhoneNumberPage'
 import { EmailPage} from '../Pages/EmailPage'
 import { NewConsignmentVehiclePage} from '../Pages/NewConsignmentVehiclePage'
-import { NewDealerConsignmentVehiclePage} from '../Pages/NewDealerConsignmentVehiclePage'
-import { BidderOpportunityPage} from '../Pages/BidderOpportunityPage'    
+import { NewDealerConsignmentVehiclePage} from '../Pages/NewDealerConsignmentVehiclePage'  
 
 test('Creating Dealer Consignmen ',async({page}) =>
 {
@@ -59,6 +58,7 @@ test('Creating Dealer Consignmen ',async({page}) =>
     await newconsignmentvehiclepage.MarketingTab()
     await newconsignmentvehiclepage.ConsVehicleDoc()
     await newconsignmentvehiclepage.UploadPhoto()
+    await newconsignmentvehiclepage.ComparisionTab()
     await newconsignmentvehiclepage.TaskTab()
    // await newconsignmentvehiclepage.ActivitiesTab()  // this functionality works only in UAT
     await newconsignmentvehiclepage.RibbonLevel()

@@ -5,7 +5,7 @@ import { AddressPage} from '../Pages/AddressPage'
 import { PhoneNumberPage} from '../Pages/PhoneNumberPage'
 import { EmailPage} from '../Pages/EmailPage'
 
-test('Creating Personal account with documents',async({page}) =>
+test('Creating Personal account without documents',async({page}) =>
     {
         const customerpage = new CustomerPage(page)
         const personalaccountpage = new PersonalAccountPage(page) 

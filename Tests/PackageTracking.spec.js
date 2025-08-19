@@ -6,7 +6,7 @@ import { PhoneNumberPage} from '../Pages/PhoneNumberPage'
 import { EmailPage} from '../Pages/EmailPage'
 
  // CRM    Change the Close tracking  in Tracking TAB//
-test('Validating Package Tracking',async({page}) =>   
+test('Validating Package Tracking for CRM originated',async({page}) =>   
 {
     const customerpage = new CustomerPage(page)
     const personalaccountpage = new PersonalAccountPage(page) 
