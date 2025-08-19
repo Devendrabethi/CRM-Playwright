@@ -139,7 +139,7 @@ class TestData
 
         this.Event_Name = "Scottsdale Fall 2025"
 
-        this.Account_Name = "Devendra"
+        this.Account_Name = "Dev"
         this.Hammer_Amount = "45000"
 
         this.Donation_Amount = "55000"
@@ -170,5 +170,14 @@ class TestData
         this.BuyerLot = "740 , 320"
         this.BuyerCancel = "800 , 820"
 
+        //Reports
+        this.StartDate = "8/1/2025"
+        this.EndDate = "8/19/2026"
+        this.AllDates = "All Dates"
+        this.ReportType_AllVIP = "All VIPs"
+        this.ReportType_VIPAuction = "VIPs for Auction"
+        this.ReportType_FirstBidder = "First-time Bidders"
+        this.ReportType_ReturingBidder = "Returning Bidders"
+        this.ReportType_CompBidder = "Comp Bidders"
     }
 }
