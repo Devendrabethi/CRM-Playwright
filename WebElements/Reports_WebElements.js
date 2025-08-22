@@ -40,7 +40,7 @@ class Reports_WebElements
 
 
         this.BidderList_BidderSourceCount  = "//ul[@aria-label='Bidder List']/li[@title='Bidder Source Count']"
-        this.iframe_bidder_source_count = "//iframe[@aria-label='bidder_source_count']"
+        this.iframe_bidder_source_count = "//iframe[contains(@aria-label,'bidder_source_count')]"
 
         this.BidderList_BidderCredentialTracking  = "//ul[@aria-label='Bidder List']/li[@title='Bidder Credential Tracking']"
         this.iframe_CredentialReport = "//iframe[@aria-label='CredentialReport']"

@@ -88,11 +88,7 @@ class ReportsPage
       await frame4.locator(this.reports_WebElements.Search).fill(this.testdata.Account_Name)
       await this.page.waitForTimeout(3000)
 
-      await this.page.locator(this.reports_WebElements.BidderList_BidderSourceCount).click()
-      const frame5 = await this.page.frameLocator(this.reports_WebElements.iframe_bidder_source_count)
-      if(!frame5) throw new Error('Iframe not found')
-      await frame5.locator(this.reports_WebElements.SelectEvent).selectOption(this.testdata.Event_Name)
-      await this.page.waitForTimeout(3000)
+
 
       await this.page.locator(this.reports_WebElements.BidderList_BidderCredentialTracking).click()
       const frame6 = await this.page.frameLocator(this.reports_WebElements.iframe_CredentialReport)
@@ -114,6 +110,12 @@ class ReportsPage
       await frame8.locator(this.reports_WebElements.SelectEvent).selectOption(this.testdata.Event_Name)
       await this.page.waitForTimeout(3000)
       await frame8.locator(this.reports_WebElements.Search).fill(this.testdata.Account_Name)
+      await this.page.waitForTimeout(3000)
+
+      await this.page.locator(this.reports_WebElements.BidderList_BidderSourceCount).click()
+      const frame5 = await this.page.frameLocator(this.reports_WebElements.iframe_bidder_source_count)
+      if(!frame5) throw new Error('Iframe not found')
+      await frame5.locator(this.reports_WebElements.SelectEvent).selectOption(this.testdata.Event_Name)
       await this.page.waitForTimeout(3000)
 
       await this.page.locator(this.reports_WebElements.BidderList_HammerPrice).click()

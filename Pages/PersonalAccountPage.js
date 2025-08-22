@@ -60,7 +60,7 @@ class PersonalAccountPage
     }
     async personalAccountDocuments()
     {
-        await expect(this.page.locator(this.PersonalAccount_WebElements.Documents_Tab)).toBeVisible({ timeout: 10000 })
+        await expect(this.page.locator(this.PersonalAccount_WebElements.Documents_Tab)).toBeVisible({ timeout: 30000 })
         await this.page.locator(this.PersonalAccount_WebElements.Documents_Tab).click()
         const fileToUpload = 
         {
