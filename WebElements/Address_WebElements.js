@@ -19,7 +19,7 @@ class Address_WebElements
         this.Save_Close = "//span[text()='Save & Close']"
         this.save_Close_popup = "(//span[text()='Save & Close'])[2]"
         this.Save_btn = "//span[text()='Save']"
-        this.Refresh_Accountpage = "//button[@aria-label='Refresh']"
+        this.Refresh_Accountpage = "//ul[@aria-label='Commands']//li[contains(@id, 'refreshCommand')]"
         this.Refresh_Overview= "(//button[@aria-label='Refresh'])[1]"
     }
 }
