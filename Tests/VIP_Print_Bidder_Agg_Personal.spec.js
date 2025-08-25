@@ -7,13 +7,15 @@ import { EmailPage} from '../Pages/EmailPage'
 import { DealerAccountPage} from '../Pages/DealerAccountPage'
 import { DealerPhoneNumberPage} from '../Pages/DealerPhoneNumberPage'
 
-test('Creating VIP Print Bidder Aggreement Consignment',async({page}) =>  
+test('Creating regular account Print Bidder Aggreement',async({page}) =>  
 {
     const customerpage = new CustomerPage(page)
     const personalaccountpage = new PersonalAccountPage(page) 
     const addresspage = new AddressPage(page)
     const phonenumberpage = new PhoneNumberPage(page)
     const emailpage = new EmailPage(page)
+    const dealeraccountpage = new DealerAccountPage(page) 
+    const dealerphonenumberpage = new DealerPhoneNumberPage(page)
 
     await customerpage.url()
     await customerpage.manager()
@@ -28,32 +30,18 @@ test('Creating VIP Print Bidder Aggreement Consignment',async({page}) =>
     await phonenumberpage.General_PhoneNumber()
     await emailpage.NewEmailbtn()
     await emailpage.enter_emailid()
-    await personalaccountpage.VIP_Print_Bidder_Aggreement()
-})
-test('Creating Automobilia Print Bidder Aggreement Consignment',async({page}) =>  
-{
-    const customerpage = new CustomerPage(page)
-    const personalaccountpage = new PersonalAccountPage(page) 
-    const addresspage = new AddressPage(page)
-    const phonenumberpage = new PhoneNumberPage(page)
-    const emailpage = new EmailPage(page)
-
-    await customerpage.url()
-    await customerpage.manager()
-    await customerpage.customer()
-    await personalaccountpage.accounttype_dropdown()
-    await personalaccountpage.names()
-    await personalaccountpage.save()
+    await dealeraccountpage.accounttype_dropdown()
+    await dealeraccountpage.names()
+    await dealeraccountpage.save()
     await addresspage.newaddress()
     await addresspage.generaladdress()
     await addresspage.saveandclose()
-    await phonenumberpage.phonenumberbtn()
+    await dealerphonenumberpage.phonenumberbtn()
     await phonenumberpage.General_PhoneNumber()
-    await emailpage.NewEmailbtn()
-    await emailpage.enter_emailid()
-    await personalaccountpage.Automobilia_Print_Bidder_Aggreement()
+    await dealeraccountpage.RelatedAccount()
+    await personalaccountpage.RegularAccount_Print_Bidder_Aggreement()
 })
-test('Creating Dealer or Business Print Bidder Aggreement',async({page}) =>
+test('Creating VIP account for  Personal andDealer or Business Print Bidder Aggreement',async({page}) =>
 {
     const customerpage = new CustomerPage(page)
     const personalaccountpage = new PersonalAccountPage(page) 
@@ -87,7 +75,7 @@ test('Creating Dealer or Business Print Bidder Aggreement',async({page}) =>
     await dealeraccountpage.RelatedAccount()
     await personalaccountpage.VIP_Print_Bidder_Aggreement()
 })
-test('Creating Dealer or Business Automobilia Print Bidder Aggreement',async({page}) =>
+test('Creating Automobilia account for  Personal andDealer or Business Print Bidder Aggreement',async({page}) =>
 {
     const customerpage = new CustomerPage(page)
     const personalaccountpage = new PersonalAccountPage(page) 

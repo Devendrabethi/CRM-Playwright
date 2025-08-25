@@ -326,13 +326,20 @@ for (let i = 0; i < packageTypes.length; i++)
         await this.page.locator(this.PersonalAccount_WebElements.Toggle_DropDown).click()
         await this.page.waitForTimeout(2000)
         await this.page.locator(this.PersonalAccount_WebElements.Print_Bidder_Agreement).click()
+        const frame1 = await this.page.frameLocator(this.PersonalAccount_WebElements.Iframe_Print_Bidder_Agreement)
+        if(!frame1) throw new Error('Iframe not found')
+        await this.page.waitForTimeout(2000)
+        await frame1.locator(this.PersonalAccount_WebElements.Select_Event_Dropdown).click()
+        await frame1.locator(this.PersonalAccount_WebElements.Select_Event_Dropdown).selectOption(this.testdata.Event_name)
+        await frame1.locator(this.PersonalAccount_WebElements.Print_Button).click()
+        await this.page.waitForTimeout(6000)
 
+        await this.page.locator(this.PersonalAccount_WebElements.Print_Bidder_Agreement).click()
         const frame = await this.page.frameLocator(this.PersonalAccount_WebElements.Iframe_Print_Bidder_Agreement)
         if(!frame) throw new Error('Iframe not found')
         await this.page.waitForTimeout(2000)
         await frame.locator(this.PersonalAccount_WebElements.Select_Event_Dropdown).click()
         await frame.locator(this.PersonalAccount_WebElements.Select_Event_Dropdown).selectOption(this.testdata.Event_name)
-
         const Dealer_or_Business = frame.locator(this.PersonalAccount_WebElements.Select_Dealer_Business_Dropdown)
         //const Dealer_or_Business_Option2 = frame.locator(this.PersonalAccount_WebElements.Select_Option2)
 
@@ -372,13 +379,20 @@ for (let i = 0; i < packageTypes.length; i++)
         await this.page.locator(this.PersonalAccount_WebElements.Toggle_DropDown).click()
         await this.page.waitForTimeout(2000)
         await this.page.locator(this.PersonalAccount_WebElements.Print_Bidder_Agreement).click()
+        const frame1 = await this.page.frameLocator(this.PersonalAccount_WebElements.Iframe_Print_Bidder_Agreement)
+        if(!frame1) throw new Error('Iframe not found')
+        await this.page.waitForTimeout(2000)
+        await frame1.locator(this.PersonalAccount_WebElements.Select_Event_Dropdown).click()
+        await frame1.locator(this.PersonalAccount_WebElements.Select_Event_Dropdown).selectOption(this.testdata.Event_name)
+        await frame1.locator(this.PersonalAccount_WebElements.Print_Button).click()
+        await this.page.waitForTimeout(6000)
 
+        await this.page.locator(this.PersonalAccount_WebElements.Print_Bidder_Agreement).click()
         const frame = await this.page.frameLocator(this.PersonalAccount_WebElements.Iframe_Print_Bidder_Agreement)
         if(!frame) throw new Error('Iframe not found')
         await this.page.waitForTimeout(2000)
         await frame.locator(this.PersonalAccount_WebElements.Select_Event_Dropdown).click()
         await frame.locator(this.PersonalAccount_WebElements.Select_Event_Dropdown).selectOption(this.testdata.Event_name)
-
         const Dealer_or_Business = frame.locator(this.PersonalAccount_WebElements.Select_Dealer_Business_Dropdown)
         //const Dealer_or_Business_Option2 = frame.locator(this.PersonalAccount_WebElements.Select_Option2)
 
@@ -394,6 +408,60 @@ for (let i = 0; i < packageTypes.length; i++)
                 console.log('Option 2 is NOT present. Skipping...');
             }
 
+
+        //print Bidder Aggreement Download file
+                // const path1 = require('path');  
+                // const fs1 = require('fs');
+                // const downloadDir1 = path1.join(__dirname, 'Download');
+                // if (!fs1.existsSync(downloadDir1)) {
+                //     fs1.mkdirSync(downloadDir1);
+                //   }
+               // const downloadPromise1 = this.page.waitForEvent('download',{ timeout: 60000 })
+                await frame.locator(this.PersonalAccount_WebElements.Print_Button).click()
+                await this.page.waitForTimeout(6000)
+                // const download1 = await downloadPromise1
+                // const downloadPath1 = path1.join(downloadDir1, download1.suggestedFilename());
+                // await download1.saveAs(downloadPath1)
+        
+    }
+    async RegularAccount_Print_Bidder_Aggreement()
+    {
+        await this.page.locator(this.PersonalAccount_WebElements.Details_Tab).click()
+        // await this.page.locator(this.PersonalAccount_WebElements.CustomerType_Field).click()
+        // await this.page.locator(this.PersonalAccount_WebElements.Toggle_DropDown).click()
+        // await this.page.locator(this.PersonalAccount_WebElements.VIP_Bidder).click()
+        // await this.page.locator(this.PersonalAccount_WebElements.VIP_Customer).click()
+        // await this.page.locator(this.PersonalAccount_WebElements.Toggle_DropDown).click()
+        await this.page.waitForTimeout(3000)
+        await this.page.locator(this.PersonalAccount_WebElements.Print_Bidder_Agreement).click()
+        const frame1 = await this.page.frameLocator(this.PersonalAccount_WebElements.Iframe_Print_Bidder_Agreement)
+        if(!frame1) throw new Error('Iframe not found')
+        await this.page.waitForTimeout(2000)
+        await frame1.locator(this.PersonalAccount_WebElements.Select_Event_Dropdown).click()
+        await frame1.locator(this.PersonalAccount_WebElements.Select_Event_Dropdown).selectOption(this.testdata.Event_name)
+        await frame1.locator(this.PersonalAccount_WebElements.Print_Button).click()
+        await this.page.waitForTimeout(6000)
+
+        await this.page.locator(this.PersonalAccount_WebElements.Print_Bidder_Agreement).click()
+        const frame = await this.page.frameLocator(this.PersonalAccount_WebElements.Iframe_Print_Bidder_Agreement)
+        if(!frame) throw new Error('Iframe not found')
+        await this.page.waitForTimeout(2000)
+        await frame.locator(this.PersonalAccount_WebElements.Select_Event_Dropdown).click()
+        await frame.locator(this.PersonalAccount_WebElements.Select_Event_Dropdown).selectOption(this.testdata.Event_name)
+        const Dealer_or_Business = frame.locator(this.PersonalAccount_WebElements.Select_Dealer_Business_Dropdown)
+        //const Dealer_or_Business_Option2 = frame.locator(this.PersonalAccount_WebElements.Select_Option2)
+
+        // Check if it's visible
+        if (await Dealer_or_Business.isVisible()) 
+            {
+                console.log('Option 2 is present. Clicking it...');
+                await Dealer_or_Business.click();
+                await Dealer_or_Business.selectOption({ index: 1 });
+            } 
+        else 
+            {
+                console.log('Option 2 is NOT present. Skipping...');
+            }
 
         //print Bidder Aggreement Download file
                 // const path1 = require('path');  
