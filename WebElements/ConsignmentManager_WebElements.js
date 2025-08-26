@@ -32,6 +32,14 @@ class ConsignmentManager_WebElements
         this.Charity_Add_Existing_Button = "//button[@aria-label='Add Existing. New Event Charity Association']"
         this.Select_Created_Charity = "(//label[@aria-label='Devendra Testing Charities'])[1]"
 
+        this.NewDocket = "//button[contains(@aria-label,'New Docket')]"
+        this.Name = "//input[contains(@aria-label,'NAME')]"
+        this.BeginingLot = "//input[contains(@aria-label,'Beginning LOT')]"
+        this.EndingLot = "//input[contains(@aria-label,'Ending LOT')]"
+        this.StartTime_Calender = "(//input[contains(@id,'DatePicker')])[1]"
+        this.CurrentDate = "//td[@aria-current='date']"
+        this.Saveandclose_Docket = "//button[@aria-label='Save & Close']"
+
         this.Select_Consignments_Option = "//li[@aria-label='Consignments']"
         this.Open_Consignment = "//div[@aria-label='Press SPACE to select this row.'][1]/div[1]"
         this.On_Charity_Toggle = "//button[@aria-label='Charity: No']"
