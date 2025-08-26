@@ -60,6 +60,7 @@ test('Creating Business Consignment',async({page}) =>
     await newconsignmentvehiclepage.UploadPhoto()
     await newconsignmentvehiclepage.ComparisionTab()
     await newconsignmentvehiclepage.TaskTab()
+    await newconsignmentvehiclepage.ApplicationStatus()
     //await newconsignmentvehiclepage.ActivitiesTab()  // this functionality works only in UAT
     await newconsignmentvehiclepage.RibbonLevel()
     await newconsignmentvehiclepage.IntegrationTab()

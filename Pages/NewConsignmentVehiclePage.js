@@ -218,37 +218,6 @@ class NewConsignmentVehiclePage
                     await frame.locator(this.newconsignmentvehicle_webelement.Delect_Photo).click()
                     await this.page.locator(this.newconsignmentvehicle_webelement.Okbutton).click({timeout:60000})
                     await this.page.waitForTimeout(8000)
-                    //Exterior Section
-                //     //Accepted
-                //     await frame.locator(this.newconsignmentvehicle_webelement.SelectAll_AllPhotos).click({timeout:60000})
-                //     await frame.locator(this.newconsignmentvehicle_webelement.Select_Accepted).selectOption({ label: this.testdata.SelctAcceptance })
-                //     //await this.page.locator(this.newconsignmentvehicle_webelement.Okbutton).click({timeout:60000})
-                //     await this.page.waitForTimeout(8000)
-                //     //Rejected
-                //     await frame.locator(this.newconsignmentvehicle_webelement.SelectAll_AllPhotos).click({timeout:60000})
-                //     await frame.locator(this.newconsignmentvehicle_webelement.Select_Accepted).selectOption({ label: this.testdata.Rejected })
-                //     //await this.page.locator(this.newconsignmentvehicle_webelement.Okbutton).click({timeout:60000})
-                //     await this.page.waitForTimeout(8000)
-                //     //Evaluation Only
-                //     await frame.locator(this.newconsignmentvehicle_webelement.SelectAll_AllPhotos).click({timeout:60000})
-                //     await frame.locator(this.newconsignmentvehicle_webelement.Select_Accepted).selectOption({ label: this.testdata.Evaluation_Only })
-                //     //await this.page.locator(this.newconsignmentvehicle_webelement.Okbutton).click({timeout:60000})
-                //     await this.page.waitForTimeout(8000)
-                //     //Preliminary
-                //     await frame.locator(this.newconsignmentvehicle_webelement.SelectAll_AllPhotos).click({timeout:60000})
-                //     await frame.locator(this.newconsignmentvehicle_webelement.Select_Accepted).selectOption({ label: this.testdata.Preliminary })
-                //    // await this.page.locator(this.newconsignmentvehicle_webelement.Okbutton).click({timeout:60000})
-                //     await this.page.waitForTimeout(8000)
-                //     //Print Rejected
-                //     await frame.locator(this.newconsignmentvehicle_webelement.SelectAll_AllPhotos).click({timeout:60000})
-                //     await frame.locator(this.newconsignmentvehicle_webelement.Select_Accepted).selectOption({ label: this.testdata.Print_Rejected })
-                //     //await this.page.locator(this.newconsignmentvehicle_webelement.Okbutton).click({timeout:60000})
-                //     await this.page.waitForTimeout(8000)
-
-                //     await frame.locator(this.newconsignmentvehicle_webelement.Hover_on_photo).click()
-                //     await frame.locator(this.newconsignmentvehicle_webelement.Dropdown_Primary_Section).click()
-                //     await frame.locator(this.newconsignmentvehicle_webelement.Move_To_FrontPhoto).click()
-                //     await this.page.waitForTimeout(4000)
     }
     async ComparisionTab()
     {
@@ -355,6 +324,19 @@ class NewConsignmentVehiclePage
         await this.page.locator(this.newconsignmentvehicle_webelement.TaskRefresh).click({timeout:60000})
         await this.page.locator(this.newconsignmentvehicle_webelement.Refresh_consignment).click()
     }
+    async ApplicationStatus()
+    {
+        await this.page.locator(this.newconsignmentvehicle_webelement.Sale_details_Text).click() 
+        await this.page.locator(this.newconsignmentvehicle_webelement.Comp_Value).type(this.testdata.Bjack_value)
+        await this.page.locator(this.newconsignmentvehicle_webelement.Account_Text).press('Tab') 
+        await this.page.locator(this.newconsignmentvehicle_webelement.Appilication_Text).click() 
+        await this.page.locator(this.newconsignmentvehicle_webelement.Consignment_Review_Toggle).click() 
+        await this.page.waitForTimeout(2000)
+        await this.page.locator(this.newconsignmentvehicle_webelement.Photo_Approval_Toggle).click() 
+        await this.page.locator(this.newconsignmentvehicle_webelement.OkButton_PhotoApproval).click() 
+        await this.page.waitForTimeout(3000)
+    }
+
     async ActivitiesTab()
     {
         await this.page.waitForTimeout(2000)
