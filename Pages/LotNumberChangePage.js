@@ -96,6 +96,8 @@ class LotNumberChangePage
                     await dialog.accept(); // Clicks "OK"
             });
 
+        await this.page.locator(this.lotnumberchange_webElements.SaleDay_Tab).click()
+
     }
 
 }
