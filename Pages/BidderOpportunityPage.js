@@ -155,10 +155,10 @@ class BidderOpportunityPage
                     await this.page.locator(this.PersonalAccount_WebElements.Tracking_Number).fill(this.testdata.Tracking_Number_Value)
                     await this.page.locator(this.PersonalAccount_WebElements.Save_Tracking).click();
                     await this.page.waitForTimeout(5000);
-                    await this.page.locator(this.PersonalAccount_WebElements.Refresh_Tracking).click();
-                    await this.page.waitForTimeout(5000);
-                    await this.page.locator(this.bidderopportunity_webelements.Close_Tracking).click()
-                    await this.page.waitForTimeout(2000)
+                    await this.page.locator(this.PersonalAccount_WebElements.SaveandClose).click();
+                    // await this.page.waitForTimeout(5000);
+                    // await this.page.locator(this.bidderopportunity_webelements.Close_Tracking).click()
+                    // await this.page.waitForTimeout(2000)
                    // await this.page.locator(this.bidderopportunity_webelements.Bidder_Registerdoc_Refresh).click()
 
        }
@@ -295,7 +295,7 @@ class BidderOpportunityPage
         await this.page.waitForTimeout(4000);
         await frame.locator(this.bidderopportunity_webelements.PaymentNumber).fill(this.testdata.PaymentNumberValue)
         await frame.locator(this.bidderopportunity_webelements.CardlessSubmitbutton).click()
-        await this.page.locator(this.bidderopportunity_webelements.PaymentOk).click()
+        await this.page.locator(this.bidderopportunity_webelements.PaymentOk).click({timeout:60000})
         await this.page.locator(this.bidderopportunity_webelements.Invoice_Tab).click()
         await this.page.waitForTimeout(4000)
     }

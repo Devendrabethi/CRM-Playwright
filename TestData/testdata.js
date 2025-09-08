@@ -7,8 +7,8 @@ class TestData
         this.URL ="https://bjac-hotfixqa.crm.dynamics.com/"//main.aspx?appid=58533451-8dc7-ef11-b8e9-6045bd056e7e"//Hotfixqa: https://bjac-hotfixqa.crm.dynamics.com/main.aspx?appid=58533451-8dc7-ef11-b8e9-6045bd056e7e  //uat: https://bjac-uat.crm.dynamics.com/main.aspx?appid=a7691afc-ad8a-ef11-ac21-000d3a5c4875
         this.Emailid = "d365testuser3@barrett-jackson.com";//"dbethi@barrett-jackson.com";//d365testuser3@barrett-jackson.com"; 
         this.Password = "ZNcCzew8NjYz";//ZNcCzew8NjYz--testuser3
-        this.FirstName = ""
-        this.LastName = ""
+        this.FirstName = "Devendra"
+        this.LastName = "Testing"
         this.Account_Type_Personal = "Personal";
         this.Account_Type_Business = "Business";
         this.Account_Type_Dealer = "Dealer";
@@ -98,13 +98,13 @@ class TestData
         this.selectAdsenteeBidInternet = "Internet";
         this.selectAdsenteeBidPhone = "Phone";
         this.delectAbsenteeBidAbsenteeRepresentative = "Absentee Representative"
-        this.Lotphone = "195.8";
-        this.lotabsentee = "195.8"
+        this.Lotphone = "225";
+        this.lotabsentee = "225"
         this.Contact_number = "5672345678";
         this.MaxBid = "90000"
 
         this.EventName = "Scottsdale Fall 2025"
-        this.Monday = "Monday"
+        this.Monday = "Day 1 (WED) LotRange 1-249"
 
         this.Existing_Product = "CHILD GUEST";
         this.Quantity = "2";
@@ -113,8 +113,6 @@ class TestData
         this.PaymentNumber = "0001"
         this.CustomerName = "Devendra QA Testing"
         this.VehicleName = "Chevrolet"
-
-        this.SendActivityText = "Testing Purpose"
 
         this.SelectStatusComplete = "Complete"
 
@@ -179,5 +177,19 @@ class TestData
         this.ReportType_FirstBidder = "First-time Bidders"
         this.ReportType_ReturingBidder = "Returning Bidders"
         this.ReportType_CompBidder = "Comp Bidders"
+
+        //Media Credential
+         this.SendActivityText = "Testing Purpose"
+         this.Select_Approved = "Approved"
+       
+        //LOT Change
+        this.NewDocket_Select = "Day 4 (SAT) LotRange 900-1049"
+        this.NewDocketSpot_Select = "Day 4 Prime - Lot# 925 to 1024"
+        this.NewLotNumber = "1024"
+        this.LotStatus_Tentative = "Tentative"
+        this.LotStatus_PendingRevisit = "Pending - Revisit"
+        this.LotStstaus_PendingAccepted = "Pending - Accepted"
+        this.LotStatus_Confirmed = "Pending - Confirmed"
+        this.LotStatus_Cancel = "Cancelled"
     }
 }

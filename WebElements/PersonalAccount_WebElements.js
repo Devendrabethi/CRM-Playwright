@@ -55,7 +55,8 @@ class PersonalAccount_WebElements
         this.City = "//input[@aria-label='City']"
 
         this.Save_Tracking = "(//button[@aria-label='Save (CTRL+S)'])[2]"
-        this.Refresh_Tracking = "(//button[@title='Refresh'])[2]"
+        this.Refresh_Tracking = "(//button[@title='Refresh'])[2]"//"//button[@title='Refresh']"//"(//button[@title='Refresh'])[2]"
+        this.SaveandClose = "//button[@aria-label='Save & Close']"
         this.Print_Label = "//button[@aria-label='Print Label']"
         this.Close_Tracking = "//button[@aria-label='Enter full screen mode']/following-sibling::button"//"//button[@aria-label='Close']" this is uat and 2-otfixqa
 

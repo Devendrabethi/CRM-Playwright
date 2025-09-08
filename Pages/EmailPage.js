@@ -17,7 +17,7 @@ class EmailPage
     async NewEmailbtn()
     {
         const New_Email = this.page.locator(this.email_webelement.New_Email_btn)
-       await expect(New_Email).toHaveText('New Email',{ timeout: 10000 })
+        await expect(New_Email).toHaveText('New Email',{ timeout: 10000 })
         await this.page.locator(this.email_webelement.New_Email_btn).click()
         
     }
