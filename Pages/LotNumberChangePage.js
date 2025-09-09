@@ -1,6 +1,7 @@
 import { expect } from '@playwright/test'
 import { Customer_WebElements } from '../WebElements/Customer_WebElements' 
 import { LotNumberChange_WebElements } from '../WebElements/LotNumberChange_WebElements' 
+import { BidderOpportunity_WebElements } from '../WebElements/BidderOpportunity_WebElements'  
 import { TestData  } from '../TestData/testdata';
 
 
@@ -12,6 +13,7 @@ class LotNumberChangePage
         this.page = page
         this.customer_webElements = new Customer_WebElements(); 
         this.lotnumberchange_webElements = new LotNumberChange_WebElements(); // Initialize Locators class
+        this.bidderopportunity_webelements = new BidderOpportunity_WebElements()
         this.testdata = new TestData();
     }
 
@@ -52,7 +54,7 @@ class LotNumberChangePage
         await frame.locator(this.lotnumberchange_webElements.ManagerPassword_Field).fill(this.testdata.ManagerPassword)
         await frame.locator(this.lotnumberchange_webElements.ManagerPassword_Field).press('Tab')
         await frame.locator(this.lotnumberchange_webElements.ApproveSave_Button).click()
-        await this.page.waitForTimeout(30000)
+        await this.page.waitForTimeout(40000)
 
         await this.page.locator(this.lotnumberchange_webElements.Lot_OverRide).click()
         await frame.locator(this.lotnumberchange_webElements.NewLotNumber_Field).fill(this.testdata.NewLotNumber)
@@ -79,8 +81,34 @@ class LotNumberChangePage
         await frame.locator(this.lotnumberchange_webElements.ManagerPassword_Field).fill(this.testdata.ManagerPassword)
         await frame.locator(this.lotnumberchange_webElements.ManagerPassword_Field).press('Tab')
         await frame.locator(this.lotnumberchange_webElements.ApproveSave_Button).click()
-
-        await this.page.waitForTimeout(30000)
+        await this.page.locator(this.lotnumberchange_webElements.Products_Tab).click({timeout:60000})
+        await this.page.waitForTimeout(5000)
+        await this.page.locator(this.lotnumberchange_webElements.Invoice_Tab).click()
+        await this.page.locator(this.lotnumberchange_webElements.Refresh_Invoice).click()
+        await this.page.locator(this.lotnumberchange_webElements.SelectInvoice).click()
+        await this.page.locator(this.bidderopportunity_webelements.EnterPaymentButton).click()  
+        const frame1 = await this.page.frameLocator(this.bidderopportunity_webelements.FrameInvoice)
+        if(!frame1) throw new Error('Iframe not found')
+        await frame1.locator(this.bidderopportunity_webelements.SelectPaymentMethod).selectOption(this.testdata.SelectInvoiceVisa)
+        await this.page.waitForTimeout(4000);
+        //const frame1 = await this.page.frameLocator(this.bidderopportunity_webelements.FrameCard)
+        const frameCard = await frame1.frameLocator(this.bidderopportunity_webelements.FrameCard);
+        if(!frameCard) throw new Error('Nested iframe not found')
+       // await frame1.locator(this.bidderopportunity_webelements.CardNum).waitFor({ state: 'visible' })
+       // await frameCard.locator(this.bidderopportunity_webelements.CardNum).click()
+        await frameCard.locator(this.bidderopportunity_webelements.CardNum).fill(this.testdata.CardCC)
+        await frameCard.locator(this.bidderopportunity_webelements.CardExpDate).fill(this.testdata.CardExp)
+        await frameCard.locator(this.bidderopportunity_webelements.Cvv).fill(this.testdata.CVVNum)
+        await frameCard.locator(this.bidderopportunity_webelements.ZipCode).fill(this.testdata.ZipCOde)
+        await frame1.locator(this.bidderopportunity_webelements.SubmitButton).click()
+        await this.page.locator(this.bidderopportunity_webelements.PaymentOk).click({timeout:60000})
+        await this.page.locator(this.lotnumberchange_webElements.Products_Tab).click({timeout:60000})
+        await this.page.waitForTimeout(3000)
+        await this.page.locator(this.lotnumberchange_webElements.Invoice_Tab).click()
+        await this.page.waitForTimeout(3000)
+        await this.page.locator(this.lotnumberchange_webElements.Selectsingleinvoive).dblclick()
+        await this.page.locator(this.lotnumberchange_webElements.SaveandClose).click()
+        await this.page.waitForTimeout(3000)
         await this.page.locator(this.lotnumberchange_webElements.Lot_OverRide).click()
         await frame.locator(this.lotnumberchange_webElements.NewLotNumber_Field).fill(this.testdata.NewLotNumber)
         await frame.locator(this.lotnumberchange_webElements.Selec_LotStatus).selectOption(this.testdata.LotStatus_Cancel)
@@ -97,7 +125,7 @@ class LotNumberChangePage
             });
 
         await this.page.locator(this.lotnumberchange_webElements.SaleDay_Tab).click()
-
+        await this.page.waitForTimeout(5000)   
     }
 
 }

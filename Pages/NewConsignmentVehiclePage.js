@@ -188,7 +188,7 @@ class NewConsignmentVehiclePage
                    // await this.page.waitForTimeout(2000)                   
                     const frame = await this.page.frameLocator(this.newconsignmentvehicle_webelement.Photo_frame)
                     if(!frame) throw new Error('Iframe not found')
-                    await this.page.waitForTimeout(2000)
+                    await this.page.waitForTimeout(4000)
                     await frame.locator(this.newconsignmentvehicle_webelement.plus_Add_Photo_btn).click()
                     await frame.locator(this.newconsignmentvehicle_webelement.Upload_photo_input).setInputFiles(fileToUpload)
                     await frame.locator(this.newconsignmentvehicle_webelement.Upload_photo_btn).click()

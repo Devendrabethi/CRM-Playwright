@@ -15,6 +15,12 @@ class LotNumberChange_WebElements {
             this.ManagerPassword_Text = "//label[text()='Manager Password']"
             this.Selec_LotStatus = "//select[@id='lotStatusDropdown']"
             this.ApproveSave_Button = "//button[@id='approveButton']"
+            this.Products_Tab = "//ul[@aria-label='Opportunity Form']/li[@aria-label='Products']"
+            this.Invoice_Tab = "//ul[@aria-label='Opportunity Form']/li[@aria-label='Invoice']"
+            this.Refresh_Invoice = "//li[contains(@id,'invoice')]/button[@aria-label='Refresh']"
+            this.SelectInvoice = "(//div[@col-id='__row_status'])[3]"
+            this.Selectsingleinvoive = "(//div[@col-id='__row_status'])[4]"
+            this.SaveandClose = "//button[@aria-label='Save & Close']"
             this.SaleDay_Tab = "//ul[@aria-label='Opportunity Form']/li[@aria-label='Sale Day']"
     }
 };
