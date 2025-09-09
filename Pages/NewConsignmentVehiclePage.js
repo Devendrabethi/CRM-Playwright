@@ -388,6 +388,11 @@ class NewConsignmentVehiclePage
                 const dialog = await dialogPromise;
                 await dialog.accept();
 
+                await this.page.locator(this.newconsignmentvehicle_webelement.Lot_OverRide).click()
+                await this.page.waitForTimeout(3000)
+                await this.page.locator(this.newconsignmentvehicle_webelement.Cancel_LotOverride).click()
+                await this.page.waitForTimeout(1000)
+
                 //print all Download file
                 // const path1 = require('path');  
                 // const fs1 = require('fs');
@@ -426,6 +431,15 @@ class NewConsignmentVehiclePage
     await this.page.locator(this.newconsignmentvehicle_webelement.Integration_Tab).click()
     await this.page.waitForTimeout(4000)
     await this.page.locator(this.newconsignmentvehicle_webelement.Refresh_consignment).click()
+   }
+
+   async Ribbon_Consignment()
+   {
+        await this.page.locator(this.newconsignmentvehicle_webelement.Opportunity_button).click()
+        await this.page.locator(this.newconsignmentvehicle_webelement.Consignments_Button).click()
+        await this.page.waitForTimeout(4000)
+        await this.page.locator(this.newconsignmentvehicle_webelement.First_Consignment).dblclick()
+        await this.page.waitForTimeout(10000)
    }
 
 }

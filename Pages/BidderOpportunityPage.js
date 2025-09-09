@@ -455,6 +455,13 @@ class BidderOpportunityPage
                 await this.page.waitForTimeout(2000)
 
    }
+    async Ribbon_Bidder()
+   {
+        await this.page.locator(this.bidderopportunity_webelements.Bidder_Button).click()
+        await this.page.waitForTimeout(4000)
+        await this.page.locator(this.bidderopportunity_webelements.First_Bidder).dblclick()
+        await this.page.waitForTimeout(10000)
+   }
    async BidderHamburgerMenu ()
   {
                 await this.page.locator(this.bidderopportunity_webelements.managementbtn).click()

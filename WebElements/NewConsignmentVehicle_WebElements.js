@@ -145,6 +145,9 @@ class NewConsignmentVehicle_WebElement
         this.selectcustomerDocumentsDrpreq = "//select[@id='customerDocumentsDrp']"
         this.submitbtn = "//button[@type='submit']"
 
+        this.Lot_OverRide = "//button[contains(@aria-label,'Lot# Override')]"
+        this.Cancel_LotOverride = "(//button[@aria-label='Close'])[2]"
+
         this.PrintAll = "//button[@aria-label='Print All']"
 
         this.WordTemplate = "//button[@aria-label='Word Templates']"
@@ -161,6 +164,11 @@ class NewConsignmentVehicle_WebElement
 
         //Integration
         this.Integration_Tab = "//ul[@aria-label='Opportunity Form']/li[contains(@aria-label,'Integration')]"
+
+        //ribbon
+         this.Opportunity_button = "//div[@title='Opportunities']"
+         this.Consignments_Button = "//div[@title='Consignments']"
+         this.First_Consignment = "//div[@row-index='0']/div[1]"
 
     }
 }

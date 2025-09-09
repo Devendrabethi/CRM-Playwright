@@ -202,5 +202,9 @@ class BidderOpportunity_WebElements
 
         this.MenuHome = "//span[text()='Home']"
 
+        //ribbon
+         this.Opportunity_button = "//div[@title='Opportunities']"
+         this.Bidder_Button = "//div[@title='Bidders']"
+         this.First_Bidder = "//div[@row-index='0']/div[1]"
     }
 }
