@@ -5,7 +5,7 @@ class NewConsignmentVehicle_WebElement
     {
         this.New_Consignment_opportunity_btn = "//button[@title='New Consignment Opportunity']"
         this.Vehicle_field = "//input[@aria-label='Vehicle, Lookup']"
-        this.New_Vehicle_link = "(//button[@aria-label='New'])[2]" ////button[@aria-label='New Vehicle']
+        this.New_Vehicle_link = "//div[@aria-label='Vehicle Lookup results']/descendant::button[@aria-label='New']" ////button[@aria-label='New Vehicle']
         this.Quick_Create_Vehicle_text = "//h1[text()='Quick Create: Vehicle']"
         this.Vin = "//input[@aria-label='VIN']"
         this.Year ="//input[@aria-label='Year']"

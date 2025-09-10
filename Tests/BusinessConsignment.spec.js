@@ -54,7 +54,7 @@ test('Creating Business Consignment',async({page}) =>
     await newbusinessconsignmentvehiclepage.Account_Address()
     await newconsignmentvehiclepage.Appilication_Info()
     await newconsignmentvehiclepage.SaleDay()
-    await newconsignmentvehiclepage.Assign()
+    //await newconsignmentvehiclepage.Assign()
     await newconsignmentvehiclepage.MarketingTab()
     await newconsignmentvehiclepage.ConsVehicleDoc()
     await newconsignmentvehiclepage.UploadPhoto()

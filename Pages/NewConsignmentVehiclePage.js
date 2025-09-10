@@ -107,12 +107,7 @@ class NewConsignmentVehiclePage
         await this.page.locator(this.newconsignmentvehicle_webelement.Event_name).fill(this.testdata.Event_name)
         await this.page.locator(this.newconsignmentvehicle_webelement.Event_Name_dropdown).click()
     }
-    async SaleDay()
-    {
-        // await this.page.locator(this.newconsignmentvehicle_webelement.Sale_Day_Tab).click()
-        // await this.page.locator(this.newconsignmentvehicle_webelement.Time_on_Block).click()
-        // await this.page.locator(this.newconsignmentvehicle_webelement.Time_on_Block_minutes).click()
-    }
+
     async Assign()
     {
         await this.page.locator(this.newconsignmentvehicle_webelement.Assign_To).click()
