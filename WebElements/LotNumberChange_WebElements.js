@@ -22,5 +22,11 @@ class LotNumberChange_WebElements {
             this.Selectsingleinvoive = "(//div[@col-id='__row_status'])[4]"
             this.SaveandClose = "//button[@aria-label='Save & Close']"
             this.SaleDay_Tab = "//ul[@aria-label='Opportunity Form']/li[@aria-label='Sale Day']"
+            this.Refresh_Button = "//li[contains(@id,'opportunity')]/button[@aria-label='Refresh']"
+            this.LotAssign = "//button[@aria-label='Lot# Assign']"
+            this.Frame_LotAssign = "//iframe[@aria-label='AssignLotfromConsignment']"
+            this.New_LotNumber = "//input[@id='newLotNumber']"
+            this.Select_StatusDropdown = "//select[@id='lotStatusDropdown']"
+            this.Save_Button = "//button[@id='approveButton']"
     }
 };

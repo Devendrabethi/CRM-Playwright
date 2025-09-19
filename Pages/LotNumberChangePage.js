@@ -56,32 +56,27 @@ class LotNumberChangePage
         await frame.locator(this.lotnumberchange_webElements.ApproveSave_Button).click()
         await this.page.waitForTimeout(40000)
 
-        await this.page.locator(this.lotnumberchange_webElements.Lot_OverRide).click()
-        await frame.locator(this.lotnumberchange_webElements.NewLotNumber_Field).fill(this.testdata.NewLotNumber)
-        await frame.locator(this.lotnumberchange_webElements.Selec_LotStatus).selectOption(this.testdata.LotStatus_PendingRevisit)
-        await frame.locator(this.lotnumberchange_webElements.Select_Manager).selectOption(this.testdata.ManagerName)
-        await frame.locator(this.lotnumberchange_webElements.ManagerPassword_Field).fill(this.testdata.ManagerPassword)
-        await frame.locator(this.lotnumberchange_webElements.ManagerPassword_Field).press('Tab')
-        await frame.locator(this.lotnumberchange_webElements.ApproveSave_Button).click()
+            const lotStatuses = [
+                                    this.testdata.LotStatus_PendingRevisit,
+                                    this.testdata.LotStstaus_PendingAccepted,
+                                    this.testdata.LotStatus_Confirmed
+                                ];
 
-        await this.page.waitForTimeout(30000)
-        await this.page.locator(this.lotnumberchange_webElements.Lot_OverRide).click()
-        await frame.locator(this.lotnumberchange_webElements.NewLotNumber_Field).fill(this.testdata.NewLotNumber)
-        await frame.locator(this.lotnumberchange_webElements.Selec_LotStatus).selectOption(this.testdata.LotStstaus_PendingAccepted)
-        await frame.locator(this.lotnumberchange_webElements.Select_Manager).selectOption(this.testdata.ManagerName)
-        await frame.locator(this.lotnumberchange_webElements.ManagerPassword_Field).fill(this.testdata.ManagerPassword)
-        await frame.locator(this.lotnumberchange_webElements.ManagerPassword_Field).press('Tab')
-        await frame.locator(this.lotnumberchange_webElements.ApproveSave_Button).click()
+            for (const status of lotStatuses) {
+                await this.page.locator(this.lotnumberchange_webElements.Lot_OverRide).click();
 
-        await this.page.waitForTimeout(30000)
-        await this.page.locator(this.lotnumberchange_webElements.Lot_OverRide).click()
-        await frame.locator(this.lotnumberchange_webElements.NewLotNumber_Field).fill(this.testdata.NewLotNumber)
-        await frame.locator(this.lotnumberchange_webElements.Selec_LotStatus).selectOption(this.testdata.LotStatus_Confirmed)
-        await frame.locator(this.lotnumberchange_webElements.Select_Manager).selectOption(this.testdata.ManagerName)
-        await frame.locator(this.lotnumberchange_webElements.ManagerPassword_Field).fill(this.testdata.ManagerPassword)
-        await frame.locator(this.lotnumberchange_webElements.ManagerPassword_Field).press('Tab')
-        await frame.locator(this.lotnumberchange_webElements.ApproveSave_Button).click()
-        await this.page.locator(this.lotnumberchange_webElements.Products_Tab).click({timeout:60000})
+                await frame.locator(this.lotnumberchange_webElements.Selec_LotStatus).selectOption(status);
+                //await frame.locator(this.lotnumberchange_webElements.NewLotNumber_Field).fill(this.testdata.NewLotNumber)
+                await frame.locator(this.lotnumberchange_webElements.Select_Manager).selectOption(this.testdata.ManagerName);
+                await frame.locator(this.lotnumberchange_webElements.ManagerPassword_Field).fill(this.testdata.ManagerPassword);
+                await frame.locator(this.lotnumberchange_webElements.ManagerPassword_Field).press('Tab');
+                await frame.locator(this.lotnumberchange_webElements.ApproveSave_Button).click();
+
+                await this.page.waitForTimeout(30000);
+            }
+
+            await this.page.locator(this.lotnumberchange_webElements.Products_Tab).click({ timeout: 60000 });
+
         await this.page.waitForTimeout(5000)
         await this.page.locator(this.lotnumberchange_webElements.Invoice_Tab).click()
         await this.page.locator(this.lotnumberchange_webElements.Refresh_Invoice).click()
@@ -109,8 +104,9 @@ class LotNumberChangePage
         await this.page.locator(this.lotnumberchange_webElements.Selectsingleinvoive).dblclick()
         await this.page.locator(this.lotnumberchange_webElements.SaveandClose).click()
         await this.page.waitForTimeout(3000)
+
         await this.page.locator(this.lotnumberchange_webElements.Lot_OverRide).click()
-        await frame.locator(this.lotnumberchange_webElements.NewLotNumber_Field).fill(this.testdata.NewLotNumber)
+        //await frame.locator(this.lotnumberchange_webElements.NewLotNumber_Field).fill(this.testdata.NewLotNumber)
         await frame.locator(this.lotnumberchange_webElements.Selec_LotStatus).selectOption(this.testdata.LotStatus_Cancel)
         await frame.locator(this.lotnumberchange_webElements.Select_Manager).selectOption(this.testdata.ManagerName)
         await frame.locator(this.lotnumberchange_webElements.ManagerPassword_Field).fill(this.testdata.ManagerPassword)
@@ -126,6 +122,33 @@ class LotNumberChangePage
 
         await this.page.locator(this.lotnumberchange_webElements.SaleDay_Tab).click()
         await this.page.waitForTimeout(5000)   
+        await this.page.locator(this.lotnumberchange_webElements.Refresh_Button).click()
+        await this.page.waitForTimeout(10000)   
+        await this.page.locator(this.lotnumberchange_webElements.LotAssign).click()
+                const Lotframe = await this.page.frameLocator(this.lotnumberchange_webElements.Frame_LotAssign)
+                    if(!Lotframe) throw new Error('Iframe not found')
+        await Lotframe.locator(this.lotnumberchange_webElements.New_LotNumber).fill(this.testdata.NewLotNumber)
+        await Lotframe.locator(this.lotnumberchange_webElements.Select_StatusDropdown).selectOption(this.testdata.LotStatus_Tentative)
+        await Lotframe.locator(this.lotnumberchange_webElements.Save_Button).click()
+        await this.page.waitForTimeout(40000)
+
+        const lotStatuses1 = [
+                                    this.testdata.LotStatus_PendingRevisit,
+                                    this.testdata.LotStstaus_PendingAccepted,
+                                    this.testdata.LotStatus_Confirmed,
+                                    this.testdata.LotStatus_Cancel
+                                ];
+
+            for (const status of lotStatuses1) {
+
+                await this.page.locator(this.lotnumberchange_webElements.LotAssign).click()
+                const Lotframe = await this.page.frameLocator(this.lotnumberchange_webElements.Frame_LotAssign)
+                    if(!Lotframe) throw new Error('Iframe not found')
+                await Lotframe.locator(this.lotnumberchange_webElements.Selec_LotStatus).selectOption(status);
+                await Lotframe.locator(this.lotnumberchange_webElements.Save_Button).click();
+                await this.page.waitForTimeout(30000);
+            }
+
     }
 
 }

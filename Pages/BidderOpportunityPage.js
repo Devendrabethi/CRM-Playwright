@@ -24,19 +24,41 @@ class BidderOpportunityPage
         await expect(this.page.locator(this.bidderopportunity_webelements.Verify_NewOpportunity_Text)).toBeVisible({timeout:30000})
 
     }
-
-    async Bidder_details()
+        async Bidder_details_CompType()
     {
-        // await this.page.locator(this.bidderopportunity_webelements.Bidder_Pakage_Type).click()
-        // await this.page.waitForTimeout(1000)
-        await this.page.locator(this.bidderopportunity_webelements.Bidder_Pakage_Type).fill(this.testdata.Bidder_Package_Type)
-        await this.page.waitForTimeout(4000)
-        await this.page.locator(this.bidderopportunity_webelements.Select_Bidder_Package_Type).click();
+        await this.page.waitForTimeout(2000)
         await this.page.selectOption(this.bidderopportunity_webelements.Select_Bid_LimitType_dropdown,this.testdata.Bidder_BidLImit_Type); 
         await this.page.locator(this.bidderopportunity_webelements.Bid_Limit_Value).click()
         await this.page.locator(this.bidderopportunity_webelements.Bid_Limit_Value).fill(this.testdata.Bidder_Limit_Value)  
         await this.page.locator(this.bidderopportunity_webelements.Bid_Limit_Estimation).click()
         await this.page.locator(this.bidderopportunity_webelements.Bid_Limit_Estimation).fill(this.testdata.Bidder_Estimate_Value)  
+       //await this.page.locator(this.bidderopportunity_webelements.Event_Text).click()
+        await this.page.waitForTimeout(1000)
+        await this.page.locator(this.bidderopportunity_webelements.Bidder_Package_Hover).hover()
+        await this.page.locator(this.bidderopportunity_webelements.Delete_BidderPackage).click()
+        await this.page.waitForTimeout(2000)
+        await this.page.locator(this.bidderopportunity_webelements.Bidder_Pakage_Type).fill(this.testdata.Bidder_Package_Type)
+        await this.page.waitForTimeout(4000)
+        await this.page.locator(this.bidderopportunity_webelements.Select_Bidder_Package_Type).click();
+        
+        await this.page.selectOption(this.bidderopportunity_webelements.Select_Interner_Bidder,this.testdata.Bidder_Internet_yesandpush); 
+        await this.page.waitForTimeout(2000)
+    }
+
+    async Bidder_details()
+    {
+        await this.page.waitForTimeout(2000)
+        await this.page.selectOption(this.bidderopportunity_webelements.Select_Bid_LimitType_dropdown,this.testdata.Bidder_BidLImit_Type); 
+        await this.page.locator(this.bidderopportunity_webelements.Bid_Limit_Value).click()
+        await this.page.locator(this.bidderopportunity_webelements.Bid_Limit_Value).fill(this.testdata.Bidder_Limit_Value)  
+        await this.page.locator(this.bidderopportunity_webelements.Bid_Limit_Estimation).click()
+        await this.page.locator(this.bidderopportunity_webelements.Bid_Limit_Estimation).fill(this.testdata.Bidder_Estimate_Value)  
+       //await this.page.locator(this.bidderopportunity_webelements.Event_Text).click()
+        await this.page.waitForTimeout(1000)
+        await this.page.locator(this.bidderopportunity_webelements.Bidder_Pakage_Type).fill(this.testdata.Bidder_Package_Type)
+        await this.page.waitForTimeout(4000)
+        await this.page.locator(this.bidderopportunity_webelements.Select_Bidder_Package_Type).click();
+        
         await this.page.selectOption(this.bidderopportunity_webelements.Select_Interner_Bidder,this.testdata.Bidder_Internet_yesandpush); 
         await this.page.waitForTimeout(2000)
     }
@@ -299,6 +321,10 @@ class BidderOpportunityPage
         await this.page.locator(this.bidderopportunity_webelements.Invoice_Tab).click()
         await this.page.waitForTimeout(4000)
     }
+    async SendTerminal()
+    {
+
+    }
     async TaskTab()
     {
         await this.page.locator(this.bidderopportunity_webelements.TaskTab).click()
@@ -336,18 +362,21 @@ class BidderOpportunityPage
                 const dialog = await dialogPromise;
                 await dialog.accept();
 
-            //Download file PrintAll
-                      const path1 = require('path');  
-                      const fs1 = require('fs');
-                      const downloadDir1 = path1.join(__dirname, 'Download');
-                      if (!fs1.existsSync(downloadDir1)) {
-                          fs1.mkdirSync(downloadDir1);
-                        }
-                      const downloadPromise1 = this.page.waitForEvent('download')
-                      await this.page.locator(this.bidderopportunity_webelements.PrintAll).click()
-                      const download1 = await downloadPromise1
-                      const downloadPath1 = path1.join(downloadDir1, download1.suggestedFilename());
-                      await download1.saveAs(downloadPath1)
+                await this.page.locator(this.bidderopportunity_webelements.Refresh_Bidder).click()
+                await this.page.waitForTimeout(5000)
+
+            // //Download file PrintAll
+            //           const path1 = require('path');  
+            //           const fs1 = require('fs');
+            //           const downloadDir1 = path1.join(__dirname, 'Download');
+            //           if (!fs1.existsSync(downloadDir1)) {
+            //               fs1.mkdirSync(downloadDir1);
+            //             }
+            //           const downloadPromise1 = this.page.waitForEvent('download')
+            //           await this.page.locator(this.bidderopportunity_webelements.PrintAll).click()      add ones confirm
+            //           const download1 = await downloadPromise1
+            //           const downloadPath1 = path1.join(downloadDir1, download1.suggestedFilename());
+            //           await download1.saveAs(downloadPath1)
       
                     //  await this.page.locator(this.bidderopportunity_webelements.PrintAll).click()
                     // await this.page.waitForTimeout(1000)
@@ -403,7 +432,7 @@ class BidderOpportunityPage
                     await frame1.locator(this.bidderopportunity_webelements.BidderNumberCheckbox).click()
                     await this.page.waitForTimeout(1000);
                     await frame1.locator(this.bidderopportunity_webelements.Approvebutton).click()
-                    await this.page.waitForTimeout(10000);
+                    await this.page.waitForTimeout(20000);
            //Administration Manual entry
                 await this.page.locator(this.bidderopportunity_webelements.Administration).click({timeout:60000})
                 //await this.page.locator(this.bidderopportunity_webelements.ChangeBidderNumber).click({timeout:60000})
@@ -426,7 +455,7 @@ class BidderOpportunityPage
           //Sync
                 await this.page.locator(this.bidderopportunity_webelements.Sync).click({timeout:60000})
         //Aggreement Tab
-                await this.page.locator(this.bidderopportunity_webelements.AgreementsTab).click()
+                await this.page.locator(this.newconsignmentvehicle_webelement.Documentation_Tab).click()
                 await this.page.locator(this.bidderopportunity_webelements.CheckStatus).click()
                 await this.page.waitForTimeout(8000)
                 try 

@@ -53,7 +53,6 @@ test('Creating Dealer Consignmen ',async({page}) =>
     await newdealerconsignmentvehiclepage.Account()
     await newdealerconsignmentvehiclepage.Account_Address()
     await newconsignmentvehiclepage.Appilication_Info()
-    await newconsignmentvehiclepage.SaleDay()
     //await newconsignmentvehiclepage.Assign()
     await newconsignmentvehiclepage.MarketingTab()
     await newconsignmentvehiclepage.ConsVehicleDoc()

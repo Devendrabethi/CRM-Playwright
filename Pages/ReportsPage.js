@@ -163,6 +163,12 @@ class ReportsPage
       await frame11.locator(this.reports_WebElements.Search).fill(this.testdata.Account_Name)
       await this.page.waitForTimeout(3000)
       await this.page.locator(this.reports_WebElements.BidderList).click()
+
+      await this.page.locator(this.reports_WebElements.TopVipBidder).click()
+      const frame12 = await this.page.frameLocator(this.reports_WebElements.iframe_TopVipBidder)
+      if(!frame12) throw new Error('Iframe not found')
+      await frame12.locator(this.reports_WebElements.Search).fill(this.testdata.Account_Name)
+      await this.page.waitForTimeout(3000)
     }
     async Customer()
     {
@@ -175,7 +181,7 @@ class ReportsPage
       await frame.locator(this.reports_WebElements.SelectAll_CustomerType).click()
       await this.page.waitForTimeout(1000)
       await frame.locator(this.reports_WebElements.Ok_Button).click()
-      await frame.locator(this.reports_WebElements.Search).fill(this.testdata.Account_Name)
+      await frame.locator(this.reports_WebElements.Search).fill(this.testdata.Account_Name,{ timeout: 60000 })
       await this.page.waitForTimeout(5000)
       await this.page.locator(this.reports_WebElements.Customer_Dropdown).click()
     }

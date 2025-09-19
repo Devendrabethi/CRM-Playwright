@@ -56,7 +56,19 @@ class PersonalAccountPage
 
     async save()
     {
-        await this.page.locator(this.PersonalAccount_WebElements.Savebtn).click({ timeout: 10000 });
+        await this.page.locator(this.PersonalAccount_WebElements.Savebtn).click({ timeout: 30000 });
+    }
+    async Event_Auct_Comp()
+    {
+        await this.page.locator(this.PersonalAccount_WebElements.Event_Auct_Comp).click()
+        await this.page.locator(this.PersonalAccount_WebElements.New_Account_Event).click()
+        await this.page.locator(this.PersonalAccount_WebElements.Event_Field).click()
+        await this.page.locator(this.PersonalAccount_WebElements.Event_Field).fill(this.testdata.Event_name)
+        await this.page.waitForTimeout(3000)
+        await this.page.locator(this.PersonalAccount_WebElements.Select_Event).click()
+        await this.page.selectOption(this.PersonalAccount_WebElements.Select_Next_Auct_Comp_Type,this.testdata.Account_Auct_EventType);
+        await this.page.locator(this.PersonalAccount_WebElements.SaveandClose_AccountEvent).click()
+
     }
     async personalAccountDocuments()
     {
@@ -113,6 +125,58 @@ class PersonalAccountPage
     {
          await this.page.locator(this.PersonalAccount_WebElements.Tracking_Tab).click()
 
+
+         
+     //ZPLII
+                    await this.page.locator(this.PersonalAccount_WebElements.Create_Package).click();
+                    await this.page.waitForTimeout(1000);
+
+                    await this.page.locator(this.PersonalAccount_WebElements.Event).click();
+                    await this.page.locator(this.PersonalAccount_WebElements.Event).fill(this.testdata.Tracking_Event);
+                    await this.page.waitForTimeout(6000);
+                    await this.page.locator(this.PersonalAccount_WebElements.Select_Tracking_Event).click();
+                    await this.page.selectOption(this.PersonalAccount_WebElements.Select_PackageType_Dropdown,this.testdata.packageType_Bidder_Credential_Package)
+                    await this.page.selectOption(this.PersonalAccount_WebElements.Select_Carrier, this.testdata.Carrier_FedEx);
+                    await this.page.waitForTimeout(4000);
+
+                    await this.page.locator(this.PersonalAccount_WebElements.Recipient_Company_text).click()
+                    await this.page.locator(this.PersonalAccount_WebElements.ImageType_Text).click()
+                    await this.page.selectOption(this.PersonalAccount_WebElements.Select_ImageType_Dropdown,this.testdata.ImageType_ZPLII);
+                    // await this.page.locator(this.PersonalAccount_WebElements.Shipper_City).click();
+                    // await this.page.locator(this.PersonalAccount_WebElements.Weight).click();
+                    // await this.page.locator(this.PersonalAccount_WebElements.Weight).fill(this.testdata.Weight_Value);
+                    await this.page.selectOption(this.PersonalAccount_WebElements.Select_Packaging,this.testdata.FEDEX_EXTRA_LARGE_BOX)
+                    await this.page.waitForTimeout(4000);
+                    await this.page.selectOption(this.PersonalAccount_WebElements.Select_Packaging,this.testdata.FEDEX_ENVELOPE)
+                    await this.page.waitForTimeout(4000);
+                    await this.page.selectOption(this.PersonalAccount_WebElements.Select_Packaging,this.testdata.FEDEX_PAK)
+                    await this.page.waitForTimeout(4000);
+                    await this.page.selectOption(this.PersonalAccount_WebElements.Select_Packaging,this.testdata.FEDEX_TUBE)
+                    await this.page.waitForTimeout(4000);
+                    await this.page.selectOption(this.PersonalAccount_WebElements.Select_Packaging,this.testdata.FEDEX_SMALL_BOX)
+                    await this.page.waitForTimeout(4000);
+                    await this.page.selectOption(this.PersonalAccount_WebElements.Select_Packaging,this.testdata.FEDEX_MEDIUM_BOX)
+                    await this.page.waitForTimeout(4000);
+                    await this.page.selectOption(this.PersonalAccount_WebElements.Select_Packaging,this.testdata.FEDEX_LARGE_BOX)
+                    await this.page.waitForTimeout(4000);
+
+                    await this.page.locator(this.PersonalAccount_WebElements.Save_Tracking).click();
+                    await this.page.waitForTimeout(5000);
+                    await this.page.locator(this.PersonalAccount_WebElements.Refresh_Tracking).click();
+                    await this.page.waitForTimeout(5000);
+                    await this.page.locator(this.PersonalAccount_WebElements.Refresh_Tracking).click();
+                    await this.page.waitForTimeout(5000);
+                    await this.page.locator(this.PersonalAccount_WebElements.Refresh_Tracking).click();
+                    await this.page.waitForTimeout(1000);
+
+                    // page.on('dialog', async (dialog) => {
+                    // console.log(`Dialog message: ${dialog.message()}`);
+                    // await dialog.accept(); // Accepts the alert
+                    // });
+
+                    await this.page.locator(this.PersonalAccount_WebElements.Close_Tracking).click();
+                    await this.page.waitForTimeout(2000)
+
          const packageTypes = [
                                      'Bidder Credential Package',
                                      'Bidder Collateral Return',
@@ -121,14 +185,6 @@ class PersonalAccountPage
                                      'Title(s)',
                                      'Other',
                               ];
-        // const ServiceTypes = [
-        //                              'FEDEX_2_DAY',
-        //                              'FEDEX_EXPRESS_SAVER',
-        //                              'PRIORITY_OVERNIGHT',
-        //                              'FEDEX_2_DAY_AM',
-        //                              'STANDARD_OVERNIGHT',
-        //                              'FIRST_OVERNIGHT',
-        //                       ];
 
 for (let i = 0; i < packageTypes.length; i++) 
     {
@@ -148,6 +204,7 @@ for (let i = 0; i < packageTypes.length; i++)
                     await this.page.waitForTimeout(2000);
 
                     await this.page.locator(this.PersonalAccount_WebElements.Recipient_Company_text).click();
+                    await this.page.locator(this.PersonalAccount_WebElements.ImageType_Text).click()
                     await this.page.selectOption(this.PersonalAccount_WebElements.Select_ImageType_Dropdown,this.testdata.Image_Type_PDF);
                     // await this.page.locator(this.PersonalAccount_WebElements.Shipper_City).click();
                     // await this.page.locator(this.PersonalAccount_WebElements.Weight).click();
@@ -213,41 +270,6 @@ for (let i = 0; i < packageTypes.length; i++)
                     await this.page.locator(this.PersonalAccount_WebElements.Close_Tracking).click()
                     await this.page.waitForTimeout(2000)
 
-     //ZPLII
-                    await this.page.locator(this.PersonalAccount_WebElements.Create_Package).click();
-                    await this.page.waitForTimeout(1000);
-
-                    await this.page.locator(this.PersonalAccount_WebElements.Event).click();
-                    await this.page.locator(this.PersonalAccount_WebElements.Event).fill(this.testdata.Tracking_Event);
-                    await this.page.waitForTimeout(6000);
-                    await this.page.locator(this.PersonalAccount_WebElements.Select_Tracking_Event).click();
-                    await this.page.selectOption(this.PersonalAccount_WebElements.Select_PackageType_Dropdown,this.testdata.packageType_Bidder_Credential_Package)
-                    await this.page.selectOption(this.PersonalAccount_WebElements.Select_Carrier, this.testdata.Carrier_FedEx);
-                    await this.page.waitForTimeout(4000);
-
-                    await this.page.locator(this.PersonalAccount_WebElements.Recipient_Company_text).click();
-                    await this.page.selectOption(this.PersonalAccount_WebElements.Select_ImageType_Dropdown,this.testdata.ImageType_ZPLII);
-                    await this.page.locator(this.PersonalAccount_WebElements.Shipper_City).click();
-                    await this.page.locator(this.PersonalAccount_WebElements.Weight).click();
-                    await this.page.locator(this.PersonalAccount_WebElements.Weight).fill(this.testdata.Weight_Value);
-
-                    await this.page.locator(this.PersonalAccount_WebElements.Save_Tracking).click();
-                    await this.page.waitForTimeout(5000);
-                    await this.page.locator(this.PersonalAccount_WebElements.Refresh_Tracking).click();
-                    await this.page.waitForTimeout(5000);
-                    await this.page.locator(this.PersonalAccount_WebElements.Refresh_Tracking).click();
-                    await this.page.waitForTimeout(5000);
-                    await this.page.locator(this.PersonalAccount_WebElements.Refresh_Tracking).click();
-                    await this.page.waitForTimeout(1000);
-
-                    // page.on('dialog', async (dialog) => {
-                    // console.log(`Dialog message: ${dialog.message()}`);
-                    // await dialog.accept(); // Accepts the alert
-                    // });
-
-                    await this.page.locator(this.PersonalAccount_WebElements.Close_Tracking).click();
-                    await this.page.waitForTimeout(2000)
-
     //New Address
                     await this.page.locator(this.PersonalAccount_WebElements.Create_Package).click();
                     await this.page.waitForTimeout(1000);
@@ -261,6 +283,7 @@ for (let i = 0; i < packageTypes.length; i++)
                     await this.page.waitForTimeout(4000);
 
                     await this.page.locator(this.PersonalAccount_WebElements.Recipient_Company_text).click();
+                    await this.page.locator(this.PersonalAccount_WebElements.ImageType_Text).click()
                     await this.page.selectOption(this.PersonalAccount_WebElements.Select_ImageType_Dropdown,this.testdata.Image_Type_PDF);
                     
                     await this.page.locator(this.PersonalAccount_WebElements.Enter_New_Address).click();

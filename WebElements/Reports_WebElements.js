@@ -38,10 +38,6 @@ class Reports_WebElements
         this.BidderList_BidderOverLimit  = "//ul[@aria-label='Bidder List']/li[@title='Bidders Over Limit']"
         this.iframe_bidders_over_limit = "//iframe[@aria-label='bidders_over_limit']"
 
-
-        this.BidderList_BidderSourceCount  = "//ul[@aria-label='Bidder List']/li[@title='Bidder Source Count']"
-        this.iframe_bidder_source_count = "//iframe[contains(@aria-label,'bidder_source_count')]"
-
         this.BidderList_BidderCredentialTracking  = "//ul[@aria-label='Bidder List']/li[@title='Bidder Credential Tracking']"
         this.iframe_CredentialReport = "//iframe[@aria-label='CredentialReport']"
 
@@ -50,6 +46,9 @@ class Reports_WebElements
 
         this.BidderList_BidLimitDeposit  = "//ul[@aria-label='Bidder List']/li[@title='Bid Limit Deposit']"
         this.iframe_bidlimit_deposit = "//iframe[@aria-label='bidlimit_deposit']"
+
+        this.BidderList_BidderSourceCount  = "//ul[@aria-label='Bidder List']/li[@title='Bidder Source Count']"
+        this.iframe_bidder_source_count = "//iframe[contains(@aria-label,'bidder_source_count')]"
 
         this.BidderList_HammerPrice  = "//ul[@aria-label='Bidder List']/li[@title='Hammer Prices']"
         this.iframe_HammerPrices = "//iframe[@aria-label='HammerPrices']"
@@ -62,6 +61,9 @@ class Reports_WebElements
         this.BidderList_BidderListMultiple  = "//ul[@aria-label='Bidder List']/li[@title='Bidder List Multiple']"
         this.iframe_bidder_list_multiple = "//iframe[@aria-label='bidder_list_multiple']"
         this.Select_ReportType = "//select[@id='ReportTypeDropdown']"
+
+        this.TopVipBidder = "//ul[@aria-label='Bidder List']/li[@title='Top VIP Bidders']"
+        this.iframe_TopVipBidder = "//iframe[@aria-label='topVipBidders']"
 
         this.Customer_Dropdown = "//span[text()='Customer']/parent::div"
         this.Customer_CustomerType = "//ul[@aria-label='Customer']/li[@aria-label='Customers by Customer Type ']"

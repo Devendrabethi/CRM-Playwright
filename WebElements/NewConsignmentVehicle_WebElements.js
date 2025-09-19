@@ -146,7 +146,7 @@ class NewConsignmentVehicle_WebElement
         this.submitbtn = "//button[@type='submit']"
 
         this.Lot_OverRide = "//button[contains(@aria-label,'Lot# Override')]"
-        this.Cancel_LotOverride = "(//button[@aria-label='Close'])[2]"
+        this.Cancel_LotOverride = "//button[@aria-label='Close' and @data-id='dialogCloseIconButton']"
 
         this.PrintAll = "//button[@aria-label='Print All']"
 

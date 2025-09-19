@@ -6,7 +6,7 @@ import { PhoneNumberPage} from '../Pages/PhoneNumberPage'
 import { EmailPage} from '../Pages/EmailPage'
 
  // CRM    Change the Close tracking  in Tracking TAB//
-test('Validating Package Tracking for CRM originated',async({page}) =>   
+test('Validating Package Tracking and Price Estimator CRM originated',async({page}) =>   
 {
     const customerpage = new CustomerPage(page)
     const personalaccountpage = new PersonalAccountPage(page) 
@@ -30,7 +30,7 @@ test('Validating Package Tracking for CRM originated',async({page}) =>
     await personalaccountpage.Tracking_Tab()
 })
  // WEB originated packlage tracking with debug
-test('Validating Package Tracking for Web Originated',async({page}) =>   
+test('Validating Package Tracking and Price Estimator for Web Originated',async({page}) =>   
 {
     const customerpage = new CustomerPage(page)
     const personalaccountpage = new PersonalAccountPage(page) 

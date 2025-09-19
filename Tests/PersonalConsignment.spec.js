@@ -36,7 +36,6 @@ test('Creating Individual Consignment',async({page}) =>    // Activity functiona
     await newconsignmentvehiclepage.SaleDetails()
     await newconsignmentvehiclepage.Account_Address()
     await newconsignmentvehiclepage.Appilication_Info()
-    await newconsignmentvehiclepage.SaleDay()
    // await newconsignmentvehiclepage.Assign()
     await newconsignmentvehiclepage.MarketingTab()
     await newconsignmentvehiclepage.ConsVehicleDoc()

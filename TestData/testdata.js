@@ -4,12 +4,13 @@ class TestData
 {
     constructor()
     {
-        this.URL ="https://bjac-hotfixqa.crm.dynamics.com/"
+        this.URL ="https://bjac-uat.crm.dynamics.com/"
         this.Emailid = "d365testuser3@barrett-jackson.com";//"dbethi@barrett-jackson.com";//d365testuser3@barrett-jackson.com"; 
         this.Password = "ZNcCzew8NjYz";//ZNcCzew8NjYz--testuser3
         this.FirstName = "Devendra"
         this.LastName = "Testing"
         this.Account_Type_Personal = "Personal";
+        this.Account_Auct_EventType = "Comp Previous Buyer"
         this.Account_Type_Business = "Business";
         this.Account_Type_Dealer = "Dealer";
         this.Business_TitleTo = "Devendra Business";
@@ -20,6 +21,14 @@ class TestData
         this.Business_PhoneType = "BUSINESS PHONE";
         this.Image_Type_PDF = "PDF"
         this.ImageType_ZPLII = "ZPLII"
+
+        this.FEDEX_EXTRA_LARGE_BOX = "FEDEX_EXTRA_LARGE_BOX"
+        this.FEDEX_ENVELOPE = "FEDEX_ENVELOPE"
+        this.FEDEX_PAK = "FEDEX_PAK"
+        this.FEDEX_TUBE = "FEDEX_TUBE"
+        this.FEDEX_SMALL_BOX = "FEDEX_SMALL_BOX"
+        this.FEDEX_MEDIUM_BOX = "FEDEX_MEDIUM_BOX"
+        this.FEDEX_LARGE_BOX = "FEDEX_LARGE_BOX"
 
         this.Dealer_Number =  "Dealer1234";
         this.Dealer_TaxID_Number =  "Resale1234";
@@ -184,8 +193,8 @@ class TestData
        
         //LOT Change
         this.NewDocket_Select = "Day 4 (SAT) LotRange 900-1049"
-        this.NewDocketSpot_Select = "Day 4 Prime - Lot# 925 to 1024"
-        this.NewLotNumber = "1024"
+        this.NewDocketSpot_Select = "Day 4 Prime - Lot# 925 to 1025"
+        this.NewLotNumber = "1023.1"
         this.LotStatus_Tentative = "Tentative"
         this.LotStatus_PendingRevisit = "Pending - Revisit"
         this.LotStstaus_PendingAccepted = "Pending - Accepted"

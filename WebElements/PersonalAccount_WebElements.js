@@ -15,7 +15,13 @@ class PersonalAccount_WebElements
         this.Veridy_address_text =  "//h3[text()='Addresses']"
         this.Verify_Customet_text = "//h2[text()='Customer']"
 
-
+        this.Event_Auct_Comp = "//button[contains(@aria-label,'Account Event')]"
+        this.New_Account_Event = "//button[contains(@aria-label,'New Account Event')]"
+        this.Event_Field = "//input[@aria-label='Event, Lookup']"
+        this.Select_Event = "//ul[@aria-label='Lookup results']/li[1]"
+        this.Select_Next_Auct_Comp_Type = "(//select[contains(@aria-label,'Comp Type')])[2]"
+        this.SaveandClose_AccountEvent = "//button[@aria-label='Save and Close']"
+        
         this.Documents_Tab = "//ul[@aria-label='Account Form']/li[contains(@title,'Documents')]"
         this.Personal_Document_Text = "//h2[@title='Personal Documents']"
         this.Add_Document_btn = "//button[@aria-label='Add Document']"
@@ -44,6 +50,9 @@ class PersonalAccount_WebElements
         this.Shipper_City = "//span[@title='City']"
         this.Select_ImageType_Dropdown = "//select[@aria-label='Image Type']"
         this.Weight = "//span[@title='Weight']/following::input[1]" 
+        this.ImageType_Text = "//span[@title='Image Type']"
+        this.Select_Packaging = "//select[@aria-label='Packaging']"
+        
 
         this.Enter_New_Address = "//span[text()='Enter New Address']"
         this.Country_Name = "//input[@aria-label='Country/Territory, Lookup']"
@@ -55,7 +64,7 @@ class PersonalAccount_WebElements
         this.City = "//input[@aria-label='City']"
 
         this.Save_Tracking = "(//button[@aria-label='Save (CTRL+S)'])[2]"
-        this.Refresh_Tracking = "(//button[@title='Refresh'])[2]"//"//button[@title='Refresh']"//"(//button[@title='Refresh'])[2]"
+        this.Refresh_Tracking = "//ul[contains(@data-lp-id, 'package') and @aria-label='Commands']/li/button[@aria-label='Refresh']"//"//button[@title='Refresh']"//"(//button[@title='Refresh'])[2]"
         this.SaveandClose = "//button[@aria-label='Save & Close']"
         this.Print_Label = "//button[@aria-label='Print Label']"
         this.Close_Tracking = "//button[@aria-label='Enter full screen mode']/following-sibling::button"//"//button[@aria-label='Close']" this is uat and 2-otfixqa

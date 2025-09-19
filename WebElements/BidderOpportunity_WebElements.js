@@ -5,6 +5,9 @@ class BidderOpportunity_WebElements
     {
         this.Bidder_Registration = "//button[@aria-label='Bidder Registration']"
         this.Verify_NewOpportunity_Text = "//h1[@title='New Opportunity']"
+        this.Event_Text = "//label[text()='Event']"
+        this.Bidder_Package_Hover = "//ul[@title='Bidder Package Type']"
+        this.Delete_BidderPackage= "//button[contains(@aria-label,'Delete')]"
         this.Bidder_Pakage_Type = "//input[@aria-label='Bidder Package Type, Lookup']"
         this.Select_Bidder_Package_Type = "//ul[@aria-label='Lookup results']/li[1]"//"//ul[@aria-label='Lookup results']/li[@aria-label='ABSENTEE (BIDDER), 61']"
         this.Select_Bid_LimitType_dropdown = "//select[@aria-label='Bid Limit Type']"

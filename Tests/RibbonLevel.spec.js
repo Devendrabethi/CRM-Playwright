@@ -3,7 +3,7 @@ import { CustomerPage } from '../Pages/CustomerPage'
 import { NewConsignmentVehiclePage} from '../Pages/NewConsignmentVehiclePage'
 import { BidderOpportunityPage} from '../Pages/BidderOpportunityPage'
 
-test('Creating Business Consignment',async({page}) =>
+test('Validating Consignment and Bidder opportunity Ribbon level',async({page}) =>
 {
     const customerpage = new CustomerPage(page)
     const newconsignmentvehiclepage = new NewConsignmentVehiclePage(page)
