@@ -47,7 +47,7 @@ class CustomerPage
 
     async WebCustoer()
     {
-        await this.page.locator(this.bidderopportunity_webelements.CustomerFilter).fill(this.testdata.CustomerName)
+        await this.page.locator(this.bidderopportunity_webelements.CustomerFilter).fill(this.testdata.CustomerName,{ timeout: 60000 })
         await this.page.locator(this.bidderopportunity_webelements.CustomerFilter).press('Enter')
         await this.page.locator(this.customer_webElements.WebCustomer).dblclick()
         await this.page.waitForTimeout(4000)

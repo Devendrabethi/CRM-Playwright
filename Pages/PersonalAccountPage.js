@@ -225,7 +225,7 @@ for (let i = 0; i < packageTypes.length; i++)
                     ]);
 
                     await newPage.waitForLoadState('load');
-                    await this.page.waitForTimeout(4000);
+                    await this.page.waitForTimeout(10000);
                     await newPage.close();
                     await this.page.bringToFront();
 

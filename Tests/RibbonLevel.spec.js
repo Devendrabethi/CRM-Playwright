@@ -10,7 +10,6 @@ test('Validating Consignment and Bidder opportunity Ribbon level',async({page}) 
     const bidderopportunitypage = new BidderOpportunityPage(page)
 
     await customerpage.url()
-   // await customerpage.manager()
     await newconsignmentvehiclepage.Ribbon_Consignment()
     await newconsignmentvehiclepage.RibbonLevel()
     await bidderopportunitypage.Ribbon_Bidder()

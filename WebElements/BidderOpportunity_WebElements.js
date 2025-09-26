@@ -172,7 +172,7 @@ class BidderOpportunity_WebElements
         this.AllVipAccount = "//label[text()='All VIP Accounts']/../parent::button"
         this.AllVipAccountDropdown = "//span[text()='All VIP Accounts']"
         this.AllAccount = "//label[text()='All Accounts']/../parent::button"
-        this.CustomerFilter = "//input[@aria-label='Account Filter by keyword']"
+        this.CustomerFilter = "//input[contains(@aria-label,'Account')]"
         this.MenuVehicle = "//span[text()='Vehicles']"
         this.VehicleFilter = "//input[@aria-label='Vehicle Filter by keyword']"
         this.MenuOpportunityDropdown = "//span[text()='Opportunities']"

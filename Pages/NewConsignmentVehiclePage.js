@@ -386,7 +386,7 @@ class NewConsignmentVehiclePage
                 { label: 'Operating Agreement' },
                 { label: 'Wholesale License' }
               ]);
-                const dialogPromise = this.page.waitForEvent('dialog');
+                const dialogPromise = this.page.waitForEvent('dialog',{ timeout: 75000 });
                 await frame.locator(this.newconsignmentvehicle_webelement.submitbtn).click();
                 const dialog = await dialogPromise;
                 await dialog.accept();
@@ -397,18 +397,18 @@ class NewConsignmentVehiclePage
                 await this.page.waitForTimeout(1000)
 
                 //print all Download file
-                // const path1 = require('path');  
-                // const fs1 = require('fs');
-                // const downloadDir1 = path1.join(__dirname, 'Download');
-                // if (!fs1.existsSync(downloadDir1)) {
-                //     fs1.mkdirSync(downloadDir1);
-                //   }
-                // const downloadPromise1 = this.page.waitForEvent('download')
-                            // await this.page.locator(this.newconsignmentvehicle_webelement.PrintAll).click()            addd ones confirm
-                            // await this.page.waitForTimeout(6000)
-                // const download1 = await downloadPromise1
-                // const downloadPath1 = path1.join(downloadDir1, download1.suggestedFilename());
-                // await download1.saveAs(downloadPath1)
+                const path1 = require('path');  
+                const fs1 = require('fs');
+                const downloadDir1 = path1.join(__dirname, 'Download');
+                if (!fs1.existsSync(downloadDir1)) {
+                    fs1.mkdirSync(downloadDir1);
+                  }
+                const downloadPromise1 = this.page.waitForEvent('download',{ timeout: 75000 })
+                            await this.page.locator(this.newconsignmentvehicle_webelement.PrintAll).click()           // addd ones confirm
+                            await this.page.waitForTimeout(6000)
+                const download1 = await downloadPromise1
+                const downloadPath1 = path1.join(downloadDir1, download1.suggestedFilename());
+                await download1.saveAs(downloadPath1)
 
                 // await this.page.locator(this.newconsignmentvehicle_webelement.Refresh_consignment).click()
                 await this.page.locator(this.newconsignmentvehicle_webelement.WordTemplate).click({timeout:60000})
@@ -420,7 +420,7 @@ class NewConsignmentVehiclePage
                 if (!fs2.existsSync(downloadDir2)) {
                     fs2.mkdirSync(downloadDir2);
                   }
-                const downloadPromise2 = this.page.waitForEvent('download')
+                const downloadPromise2 = this.page.waitForEvent('download',{ timeout: 75000 })
                 await this.page.locator(this.newconsignmentvehicle_webelement.PrintConsignmentForm).click()
                                 await this.page.waitForTimeout(6000)
                 const download2 = await downloadPromise2

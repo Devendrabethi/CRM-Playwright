@@ -70,7 +70,6 @@ class MediCredentialPage
         await this.page.waitForTimeout(500)
         await this.page.locator(this.mediacredential_webElements.Email).fill(emailid)
         await this.page.waitForTimeout(1000)
-
        await this.page.locator(this.mediacredential_webElements.Event).click()
        await this.page.locator(this.mediacredential_webElements.Event).fill(this.testdata.EventName)
        await this.page.locator(this.mediacredential_webElements.Select_Event).click()
@@ -80,8 +79,9 @@ class MediCredentialPage
        await this.page.waitForTimeout(4000)
        await this.page.selectOption(this.mediacredential_webElements.Select_CredentidalStatus,this.testdata.Select_Approved);
        await this.page.waitForTimeout(5000)
-       await this.page.locator(this.mediacredential_webElements.Refresh_Button).click()
-       await this.page.locator(this.mediacredential_webElements.Refresh_Button).click()
+       await this.page.locator(this.mediacredential_webElements.Refresh_Button).click({ timeout: 60000 })
+       await this.page.waitForTimeout(2000)
+       await this.page.locator(this.mediacredential_webElements.Refresh_Button).click({ timeout: 60000 })
 
        const frame = await this.page.frameLocator(this.mediacredential_webElements.Iframe_DocuSignStatus)
         if(!frame) throw new Error('Iframe not found')

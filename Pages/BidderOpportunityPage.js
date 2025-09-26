@@ -163,25 +163,36 @@ class BidderOpportunityPage
        async CreatePackage()
        {
 
-        //USPS
+        //FEDEX
                     await this.page.locator(this.bidderopportunity_webelements.Create_Package).click()
                     await this.page.waitForTimeout(1000)
-                    // await this.page.locator(this.PersonalAccount_WebElements.Event).click()
-                    // await this.page.locator(this.PersonalAccount_WebElements.Event).fill(this.testdata.Tracking_Event)
-                    // await this.page.waitForTimeout(6000)
-                    // await this.page.locator(this.PersonalAccount_WebElements.Select_Tracking_Event).click()
                     await this.page.selectOption(this.PersonalAccount_WebElements.Select_PackageType_Dropdown,this.testdata.packageType_Bidder_Credential_Package)
-                    await this.page.selectOption(this.PersonalAccount_WebElements.Select_Carrier,this.testdata.Carrier_USPS)
+                    await this.page.selectOption(this.PersonalAccount_WebElements.Select_Carrier,this.testdata.Carrier_FedEx)
                     await this.page.waitForTimeout(4000)
-                    await this.page.locator(this.PersonalAccount_WebElements.Tracking_Number).click()
-                    await this.page.locator(this.PersonalAccount_WebElements.Tracking_Number).fill(this.testdata.Tracking_Number_Value)
+                    await this.page.locator(this.PersonalAccount_WebElements.Recipient_Company_text).click();
+                    await this.page.locator(this.PersonalAccount_WebElements.ImageType_Text).click()
+                    await this.page.selectOption(this.PersonalAccount_WebElements.Select_ImageType_Dropdown,this.testdata.Image_Type_PDF)
+                    await this.page.waitForTimeout(2000)
                     await this.page.locator(this.PersonalAccount_WebElements.Save_Tracking).click();
+                    await this.page.waitForTimeout(5000)
+                    await this.page.locator(this.PersonalAccount_WebElements.Refresh_Tracking).click();
                     await this.page.waitForTimeout(5000);
+                    await this.page.locator(this.PersonalAccount_WebElements.Refresh_Tracking).click();
+                    await this.page.waitForTimeout(5000);
+                    await this.page.locator(this.PersonalAccount_WebElements.Refresh_Tracking).click();
+                    await this.page.waitForTimeout(1000);
+
+                    const [newPage] = await Promise.all([
+                        this.page.context().waitForEvent('page'),
+                        this.page.locator(this.PersonalAccount_WebElements.Print_Label).click()
+                    ]);
+
+                    await newPage.waitForLoadState('load');
+                    await this.page.waitForTimeout(10000);
+                    await newPage.close();
+                    await this.page.bringToFront();
+                    await this.page.waitForTimeout(2000)
                     await this.page.locator(this.PersonalAccount_WebElements.SaveandClose).click();
-                    // await this.page.waitForTimeout(5000);
-                    // await this.page.locator(this.bidderopportunity_webelements.Close_Tracking).click()
-                    // await this.page.waitForTimeout(2000)
-                   // await this.page.locator(this.bidderopportunity_webelements.Bidder_Registerdoc_Refresh).click()
 
        }
     async RegisterDocuments()
@@ -328,7 +339,7 @@ class BidderOpportunityPage
     async TaskTab()
     {
         await this.page.locator(this.bidderopportunity_webelements.TaskTab).click()
-        await this.page.locator(this.bidderopportunity_webelements.TaskRefresh).click()
+        await this.page.locator(this.bidderopportunity_webelements.TaskRefresh).click({timeout:60000})
         await this.page.waitForTimeout(2000)
         await this.page.locator(this.bidderopportunity_webelements.Refresh_Bidder).click()
     }
@@ -365,18 +376,18 @@ class BidderOpportunityPage
                 await this.page.locator(this.bidderopportunity_webelements.Refresh_Bidder).click()
                 await this.page.waitForTimeout(5000)
 
-            // //Download file PrintAll
-            //           const path1 = require('path');  
-            //           const fs1 = require('fs');
-            //           const downloadDir1 = path1.join(__dirname, 'Download');
-            //           if (!fs1.existsSync(downloadDir1)) {
-            //               fs1.mkdirSync(downloadDir1);
-            //             }
-            //           const downloadPromise1 = this.page.waitForEvent('download')
-            //           await this.page.locator(this.bidderopportunity_webelements.PrintAll).click()      add ones confirm
-            //           const download1 = await downloadPromise1
-            //           const downloadPath1 = path1.join(downloadDir1, download1.suggestedFilename());
-            //           await download1.saveAs(downloadPath1)
+            //Download file PrintAll
+                      const path1 = require('path');  
+                      const fs1 = require('fs');
+                      const downloadDir1 = path1.join(__dirname, 'Download');
+                      if (!fs1.existsSync(downloadDir1)) {
+                          fs1.mkdirSync(downloadDir1);
+                        }
+                      const downloadPromise1 = this.page.waitForEvent('download', { timeout: 60000 })
+                      await this.page.locator(this.bidderopportunity_webelements.PrintAll).click()      //add ones confirm
+                      const download1 = await downloadPromise1
+                      const downloadPath1 = path1.join(downloadDir1, download1.suggestedFilename());
+                      await download1.saveAs(downloadPath1)
       
                     //  await this.page.locator(this.bidderopportunity_webelements.PrintAll).click()
                     // await this.page.waitForTimeout(1000)
@@ -384,9 +395,9 @@ class BidderOpportunityPage
                 await this.page.locator(this.bidderopportunity_webelements.Print_Agreement).click()
                // await this.page.waitForTimeout(2000)
                 await this.page.locator(this.bidderopportunity_webelements.Print).click()
-                await this.page.waitForTimeout(1000)
+                await this.page.waitForTimeout(2000)
                 await this.page.locator(this.bidderopportunity_webelements.Save_btn).click({timeout:60000})
-              //  await this.page.waitForTimeout(1000)
+                await this.page.waitForTimeout(1000)
                 await this.page.locator(this.bidderopportunity_webelements.GoBack_btn).click({timeout:60000})
              //   await this.page.waitForTimeout(2000)
                 //await this.page.locator(this.bidderopportunity_webelements.Refresh_Bidder).click()
@@ -415,7 +426,7 @@ class BidderOpportunityPage
                  if (!fs2.existsSync(downloadDir2)) {
                    fs2.mkdirSync(downloadDir2);
                    }
-                 const downloadPromise2 = this.page.waitForEvent('download')
+                 const downloadPromise2 = this.page.waitForEvent('download', { timeout: 60000 })
                  await this.page.locator(this.bidderopportunity_webelements.PrintBidderBadge).click({timeout:60000});
                  const download2 = await downloadPromise2
                  const downloadPath2 = path2.join(downloadDir2, download2.suggestedFilename());
