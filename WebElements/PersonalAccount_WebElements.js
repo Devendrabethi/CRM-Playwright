@@ -51,6 +51,7 @@ class PersonalAccount_WebElements
         this.Select_ImageType_Dropdown = "//select[@aria-label='Image Type']"
         this.Weight = "//span[@title='Weight']/following::input[1]" 
         this.ImageType_Text = "//span[@title='Image Type']"
+        this.OneRate = "//button[contains(@aria-label,'Use one rate')]"
         this.Select_Packaging = "//select[@aria-label='Packaging']"
         
 

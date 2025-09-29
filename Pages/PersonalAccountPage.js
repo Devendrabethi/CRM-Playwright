@@ -141,24 +141,29 @@ class PersonalAccountPage
 
                     await this.page.locator(this.PersonalAccount_WebElements.Recipient_Company_text).click()
                     await this.page.locator(this.PersonalAccount_WebElements.ImageType_Text).click()
-                    await this.page.selectOption(this.PersonalAccount_WebElements.Select_ImageType_Dropdown,this.testdata.ImageType_ZPLII);
+                    await this.page.waitForTimeout(15000)
+                    await this.page.locator(this.PersonalAccount_WebElements.OneRate).click()
+                    await this.page.waitForTimeout(15000)
+                    await this.page.locator(this.PersonalAccount_WebElements.OneRate).click()
+                    await this.page.waitForTimeout(15000)
+                    //await this.page.selectOption(this.PersonalAccount_WebElements.Select_ImageType_Dropdown,this.testdata.ImageType_ZPLII);
                     // await this.page.locator(this.PersonalAccount_WebElements.Shipper_City).click();
                     // await this.page.locator(this.PersonalAccount_WebElements.Weight).click();
                     // await this.page.locator(this.PersonalAccount_WebElements.Weight).fill(this.testdata.Weight_Value);
                     await this.page.selectOption(this.PersonalAccount_WebElements.Select_Packaging,this.testdata.FEDEX_EXTRA_LARGE_BOX)
-                    await this.page.waitForTimeout(4000);
+                    await this.page.waitForTimeout(7000);
                     await this.page.selectOption(this.PersonalAccount_WebElements.Select_Packaging,this.testdata.FEDEX_ENVELOPE)
-                    await this.page.waitForTimeout(4000);
+                    await this.page.waitForTimeout(7000);
                     await this.page.selectOption(this.PersonalAccount_WebElements.Select_Packaging,this.testdata.FEDEX_PAK)
-                    await this.page.waitForTimeout(4000);
+                    await this.page.waitForTimeout(7000);
                     await this.page.selectOption(this.PersonalAccount_WebElements.Select_Packaging,this.testdata.FEDEX_TUBE)
-                    await this.page.waitForTimeout(4000);
+                    await this.page.waitForTimeout(7000);
                     await this.page.selectOption(this.PersonalAccount_WebElements.Select_Packaging,this.testdata.FEDEX_SMALL_BOX)
-                    await this.page.waitForTimeout(4000);
+                    await this.page.waitForTimeout(7000);
                     await this.page.selectOption(this.PersonalAccount_WebElements.Select_Packaging,this.testdata.FEDEX_MEDIUM_BOX)
-                    await this.page.waitForTimeout(4000);
+                    await this.page.waitForTimeout(7000);
                     await this.page.selectOption(this.PersonalAccount_WebElements.Select_Packaging,this.testdata.FEDEX_LARGE_BOX)
-                    await this.page.waitForTimeout(4000);
+                    await this.page.waitForTimeout(7000);
 
                     await this.page.locator(this.PersonalAccount_WebElements.Save_Tracking).click();
                     await this.page.waitForTimeout(5000);
@@ -332,7 +337,7 @@ for (let i = 0; i < packageTypes.length; i++)
                     ]);
 
                     await newPage.waitForLoadState('load');
-                    await this.page.waitForTimeout(4000);
+                    await this.page.waitForTimeout(10000);
                     await newPage.close();
                     await this.page.bringToFront();
 
