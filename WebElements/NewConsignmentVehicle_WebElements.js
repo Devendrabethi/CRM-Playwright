@@ -87,6 +87,11 @@ class NewConsignmentVehicle_WebElement
         this.SelectAll_AllPhotos_Interior = "(//input[contains(@id,'select-all')])[2]"
         this.Download_Photos = "(//div[contains(@id,'download')])[3]"
         this.Delect_Photo = "(//div[contains(@id,'delete')])[3]"
+        this.SelectAll_AllPhotos_Exterior = "(//input[contains(@id,'select-all')])[3]"
+        this.AccepttoMisc_Exterior = "//div[@id='exterior-section']//div[contains(@id,'accept-misc')]"
+        this.SelectAll_Misc = "//input[@id='selectAllMisc']"
+        this.Remove_AllMiscPhotos = "//input[@id='selectAllMisc']/parent::div/following-sibling::button"
+        this.Scroll_Exterior = "//span[@id='allexteriorphotosCounts']"
 
         this.Hover_on_photo = "(//div[@id='containerExterior']/div/div/div[@class='photo-status-label'])[1]"
         this.Dropdown_Primary_Section = "(//div[@id='containerExterior']/div/following-sibling::div/div/div[contains(@class,'dropdown move-button')]/button)[1]"

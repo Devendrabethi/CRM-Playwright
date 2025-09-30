@@ -210,10 +210,18 @@ class NewConsignmentVehiclePage
                     await download1.saveAs(downloadPath1)
                     await this.page.locator(this.newconsignmentvehicle_webelement.Okbutton).click({timeout:60000})
                     await this.page.waitForTimeout(3000)
-
                     await frame.locator(this.newconsignmentvehicle_webelement.Delect_Photo).click()
                     await this.page.locator(this.newconsignmentvehicle_webelement.Okbutton).click({timeout:60000})
-                    await this.page.waitForTimeout(8000)
+                    await this.page.waitForTimeout(20000)
+                    await frame.locator(this.newconsignmentvehicle_webelement.SelectAll_AllPhotos_Exterior).click({timeout:60000})
+                    await frame.locator(this.newconsignmentvehicle_webelement.AccepttoMisc_Exterior).click({timeout:60000})
+                    await this.page.waitForTimeout(35000)
+                    await frame.locator(this.newconsignmentvehicle_webelement.SelectAll_Misc).click({timeout:60000})
+                    await this.page.waitForTimeout(3000)
+                    await frame.locator(this.newconsignmentvehicle_webelement.Remove_AllMiscPhotos).click({timeout:60000})
+                    await this.page.waitForTimeout(35000)
+                    await frame.locator(this.newconsignmentvehicle_webelement.Scroll_Exterior).click()
+                    await this.page.waitForTimeout(3000)
     }
     async ComparisionTab()
     {
