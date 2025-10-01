@@ -28,9 +28,9 @@ class PhoneNumberPage
     
         // await this.page.locator(this.phonenumber_webelement.Country).fill(this.testdata.Country_name)
         // await this.page.locator(this.address_webelements.Country_text).click()
-         await this.page.locator(this.phonenumber_webelement.Number).click()
+         await this.page.locator(this.phonenumber_webelement.Number).press('Tab')
         await this.page.locator(this.phonenumber_webelement.Number).fill(this.testdata.Phone_Number)
-        await this.page.locator(this.phonenumber_webelement.AreaCode_Text).click()
+        await this.page.locator(this.phonenumber_webelement.AreaCode_Text).press('Tab')
         await this.page.locator(this.phonenumber_webelement.AreaCode).fill(this.testdata.Area_code)
         await this.page.waitForTimeout(1000)
         // await this.page.locator(this.address_webelements.Save_btn).click()

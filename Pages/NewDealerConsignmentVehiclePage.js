@@ -89,17 +89,6 @@ class NewDealerConsignmentVehiclePage
     }
     async Account()
     {
-        // const personalAccountPage = new PersonalAccountPage();  // Create an instance of PersonalAccountPage
-        // const userData = await personalAccountPage.names(); // Get the user data
-
-        // const firstName = userData.FirstName;
-        // const lastName = userData.LastName;
-        // await this.page.locator(this.newconsignmentvehicle_webelement.Responsible_Account).fill(firstName+" "+ lastName)
-
-        //For personal no need to enter firstname and last name
-            // await this.page.locator(this.newconsignmentvehicle_webelement.Responsible_Account).fill(this.testdata.FirstName+" "+ this.testdata.LastName)
-            // await this.page.locator(this.newconsignmentvehicle_webelement.Responsible_Account_dropdown).click({ timeout: 60000 })
-
             await this.page.locator(this.newconsignmentvehicle_webelement.hover_Account).hover()
             await this.page.locator(this.newconsignmentvehicle_webelement.Delete_Personal_Account).click()
             await this.page.locator(this.newconsignmentvehicle_webelement.Account_field).click()

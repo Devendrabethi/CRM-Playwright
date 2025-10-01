@@ -262,22 +262,6 @@ class BidderOpportunityPage
         await this.page.waitForTimeout(1000)
         await this.page.locator(this.bidderopportunity_webelements.Save_Close).click()
         await this.page.waitForTimeout(5000)
-        // ----
-
-        // await this.page.locator(this.bidderopportunity_webelements.First_Invoice).dblclick()  
-        // await this.page.selectOption(this.bidderopportunity_webelements.select_Payment_Method,this.testdata.Payment_method)
-        // await this.page.locator(this.bidderopportunity_webelements.Payment_Date).click()
-        // await this.page.waitForTimeout(1000)
-        // await this.page.locator(this.bidderopportunity_webelements.Payment_current_Date).click()  
-        // await this.page.locator(this.bidderopportunity_webelements.Payment_Number).fill(this.testdata.PaymentNumber)
-        // await this.page.waitForTimeout(1000)
-        // await this.page.locator(this.bidderopportunity_webelements.Bidder_Assign_To).click()
-        // await this.page.locator(this.bidderopportunity_webelements.Bidder_Status).click()
-        // await this.page.locator(this.bidderopportunity_webelements.Bidder_Status_Paid).click()
-        // await this.page.locator(this.bidderopportunity_webelements.Bidder_Assign_To).click()
-        // await this.page.locator(this.bidderopportunity_webelements.Save_btn).click()
-        // await this.page.locator(this.bidderopportunity_webelements.Save_Close).click()
-        // await this.page.waitForTimeout(5000)
 
         await this.page.locator(this.bidderopportunity_webelements.SelectAllInvoice).click()  
         await this.page.locator(this.bidderopportunity_webelements.EnterPaymentButton).click()  

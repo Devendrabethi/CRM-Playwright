@@ -23,23 +23,6 @@ class ReportsPage
                         this.page.context().waitForEvent('page'),
                         this.page.locator(this.reports_WebElements.Opportunity_Invoice_Report ).dblclick()
                     ]);
-      // await newPage.waitForLoadState('load');
-      // await this.page.waitForTimeout(4000);
-      // await newPage.waitForSelector(this.reports_WebElements.iframe_InvoiceReport);
-      // const frame = await this.page.frameLocator(this.reports_WebElements.iframe_InvoiceReport)
-      //               if(!frame) throw new Error('Iframe not found')
-      // await frame.locator(this.reports_WebElements.StartDate_Field).click()
-      // await frame.locator(this.reports_WebElements.StartDate_Field).fill(this.testdata.StartDate)
-      // await frame.locator(this.reports_WebElements.EndDate_Field).fill(this.testdata.EndDate)
-      // await frame.locator(this.reports_WebElements.PaymentStatus).click()
-      // await frame.locator(this.reports_WebElements.SelectAll_PaymentStatus_BidderStatus).click()
-      // await frame.locator(this.reports_WebElements.PaymentStatus).click()
-      // await this.page.waitForTimeout(1000)
-      // await frame.locator(this.reports_WebElements.BidderStatus).click()
-      // await frame.locator(this.reports_WebElements.SelectAll_PaymentStatus_BidderStatus).click()
-      // await frame.locator(this.reports_WebElements.BidderStatus).click()
-      // await this.page.waitForTimeout(1000)
-      // await frame.locator(this.reports_WebElements.ViewReport).click()
       await this.page.waitForTimeout(30000)
       await newPage.close();
       await this.page.bringToFront();
