@@ -29,7 +29,7 @@ class LotNumberChangePage
 
         const frame = await this.page.frameLocator(this.customer_webElements.frame_AuctionManager)
                     if(!frame) throw new Error('Iframe not found')
-        await frame.locator(this.customer_webElements.Auction_management).click({ timeout: 60000 })
+        await frame.locator(this.customer_webElements.Auction_management).click({ timeout: 90000 })
     }
 
     async OpportunityForLot()
@@ -50,7 +50,7 @@ class LotNumberChangePage
         const lotStatuses1 = [
                                     this.testdata.LotStatus_PendingRevisit,
                                     this.testdata.LotStstaus_PendingAccepted,
-                                    this.testdata.LotStatus_Confirmed,
+                                    //this.testdata.LotStatus_Confirmed,
                                     //this.testdata.LotStatus_Cancel
                                 ];
 
@@ -64,6 +64,18 @@ class LotNumberChangePage
                 await Lotframe.locator(this.lotnumberchange_webElements.Save_Button).click();
                 await this.page.waitForTimeout(30000);
             }
+             await this.page.locator(this.lotnumberchange_webElements.LotAssign).click()
+           // const Lotframe = await this.page.frameLocator(this.lotnumberchange_webElements.Frame_LotAssign)
+            if(!Lotframe) throw new Error('Iframe not found')
+            await Lotframe.locator(this.lotnumberchange_webElements.Selec_LotStatus).selectOption(this.testdata.LotStatus_Confirmed);
+            await Lotframe.locator(this.lotnumberchange_webElements.Checkbox_CompLotFee).check();
+            await this.page.waitForTimeout(2000);
+            await Lotframe.locator(this.lotnumberchange_webElements.Checkbox_CompLotFee).uncheck();
+            await this.page.waitForTimeout(2000);
+            await Lotframe.locator(this.lotnumberchange_webElements.LotOverrideAmount).fill(this.testdata.LotOverrideamount);
+            await this.page.waitForTimeout(2000);
+            await Lotframe.locator(this.lotnumberchange_webElements.Save_Button).click();
+            await this.page.waitForTimeout(30000);
 
         await this.page.locator(this.lotnumberchange_webElements.Products_Tab).click({ timeout: 60000 });
         await this.page.waitForTimeout(5000)
@@ -99,13 +111,13 @@ class LotNumberChangePage
         await Lotframe.locator(this.lotnumberchange_webElements.Select_StatusDropdown).selectOption(this.testdata.LotStatus_Cancel)
         await Lotframe.locator(this.lotnumberchange_webElements.Save_Button).click()
         await this.page.waitForTimeout(40000)
-        // Listen for alert and accept it
-            await this.page.waitForEvent('dialog', { timeout: 30000 }).then(async (dialog) => 
-                {
-                        console.log('Alert message:', dialog.message());
-                        // Wait for 30 seconds
-                        await dialog.accept(); // Clicks "OK"
-                });
+        // // Listen for alert and accept it
+        //     await this.page.waitForEvent('dialog', { timeout: 30000 }).then(async (dialog) => 
+        //         {
+        //                 console.log('Alert message:', dialog.message());
+        //                 // Wait for 30 seconds
+        //                 await dialog.accept(); // Clicks "OK"
+        //         });
 
         await this.page.locator(this.lotnumberchange_webElements.SaleDay_Tab).click()
         await this.page.waitForTimeout(5000)   

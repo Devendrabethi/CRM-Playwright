@@ -27,6 +27,8 @@ class LotNumberChange_WebElements {
             this.Frame_LotAssign = "//iframe[@aria-label='AssignLotfromConsignment']"
             this.New_LotNumber = "//input[@id='newLotNumber']"
             this.Select_StatusDropdown = "//select[@id='lotStatusDropdown']"
+            this.Checkbox_CompLotFee = "//input[@id='compLotFees']"
+            this.LotOverrideAmount = "//input[@id='overrideFeesAmount']"
             this.Save_Button = "//button[@id='approveButton']"
     }
 };
