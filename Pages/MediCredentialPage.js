@@ -39,12 +39,15 @@ class MediCredentialPage
         await this.page.locator(this.mediacredential_webElements.Primary_mediaCredential).click()
         await this.page.locator(this.mediacredential_webElements.Select_AllMediaCredential).click()
         await this.page.waitForTimeout(4000)
+        await this.page.screenshot({ path: './ScreenShot/AllMediaCredential.png', fullPage: true})
         await this.page.locator(this.mediacredential_webElements.All_MediaCredential).click()
         await this.page.locator(this.mediacredential_webElements.Select_OtherMediaContacts).click()
         await this.page.waitForTimeout(4000)
+        await this.page.screenshot({ path: './ScreenShot/OtherMediaContacts.png', fullPage: true})
         await this.page.locator(this.mediacredential_webElements.Other_MediaContact).click()
         await this.page.locator(this.mediacredential_webElements.Select_PrimaryMediaCredential).click()
         await this.page.waitForTimeout(4000)
+        await this.page.screenshot({ path: './ScreenShot/PrimaryMediaCredential.png', fullPage: true})
     }
 
     async MediaCredential()
@@ -82,6 +85,7 @@ class MediCredentialPage
        await this.page.locator(this.mediacredential_webElements.Refresh_Button).click({ timeout: 60000 })
        await this.page.waitForTimeout(2000)
        await this.page.locator(this.mediacredential_webElements.Refresh_Button).click({ timeout: 60000 })
+       await this.page.screenshot({ path: './ScreenShot/MediaCredentialSent.png', fullPage: true})
 
        const frame = await this.page.frameLocator(this.mediacredential_webElements.Iframe_DocuSignStatus)
         if(!frame) throw new Error('Iframe not found')
@@ -106,6 +110,7 @@ class MediCredentialPage
             await this.page.waitForTimeout(5000)
             await this.page.locator(this.mediacredential_webElements.Refresh_Button).click()
             await this.page.waitForTimeout(3000)
+            await this.page.screenshot({ path: './ScreenShot/MediaCredentialComplete.png', fullPage: true})
     }
     async Org_Details()
     {
@@ -125,13 +130,12 @@ class MediCredentialPage
             return result;
        }
         const randomEmail = generateRandomString(Math.floor(Math.random() * (26-19)) + 5);
-    
-
         const emailid = randomEmail+"@yopmail.com";
         await this.page.locator(this.mediacredential_webElements.orgDetails_Email).click({ timeout: 60000 })
         await this.page.waitForTimeout(500)
         await this.page.locator(this.mediacredential_webElements.orgDetails_Email).fill(emailid)
         await this.page.waitForTimeout(1000)
+        await this.page.screenshot({ path: './ScreenShot/OrgMediaCredentialdetails.png', fullPage: true})
         await this.page.locator(this.mediacredential_webElements.orgDetails_SaveandClose).click()
         await this.page.waitForTimeout(3000)
         await this.page.locator(this.mediacredential_webElements.Refresh_Button).click()

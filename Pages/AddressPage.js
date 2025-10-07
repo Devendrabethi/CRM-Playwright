@@ -38,6 +38,7 @@ class AddressPage
             await this.page.locator(this.address_webelements.Postal_Code).fill(this.testdata.Postal_code);
             await this.page.waitForTimeout(2000)
             await this.page.selectOption(this.address_webelements.Select_status, this.testdata.status);
+            await this.page.screenshot({ path: './ScreenShot/Address.png', fullPage: true})
     }
     async saveandclose()
     {

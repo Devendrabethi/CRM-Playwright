@@ -43,6 +43,7 @@ class CustomerPage
     {
        await expect(this.page.locator(this.customer_webElements.Createnewaccountbtn)).toBeVisible({ timeout: 30000 });
        await this.page.locator(this.customer_webElements.Createnewaccountbtn).click()
+       await this.page.screenshot({ path: './ScreenShot/CustomerSession.png', fullPage: true})
     }
 
     async WebCustoer()

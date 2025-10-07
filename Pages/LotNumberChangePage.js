@@ -74,6 +74,7 @@ class LotNumberChangePage
             await this.page.waitForTimeout(2000);
             await Lotframe.locator(this.lotnumberchange_webElements.LotOverrideAmount).fill(this.testdata.LotOverrideamount);
             await this.page.waitForTimeout(2000);
+            await this.page.screenshot({ path: './ScreenShot/LotOvverrideConfirmation.png', fullPage: true})
             await Lotframe.locator(this.lotnumberchange_webElements.Save_Button).click();
             await this.page.waitForTimeout(30000);
 
@@ -99,10 +100,12 @@ class LotNumberChangePage
         await frame1.locator(this.bidderopportunity_webelements.SubmitButton).click()
         await this.page.locator(this.bidderopportunity_webelements.PaymentOk).click({timeout:60000})
         await this.page.locator(this.lotnumberchange_webElements.Products_Tab).click({timeout:60000})
+        await this.page.screenshot({ path: './ScreenShot/LotProductTab.png', fullPage: true})
         await this.page.waitForTimeout(5000)
         await this.page.locator(this.lotnumberchange_webElements.Invoice_Tab).click()
         await this.page.waitForTimeout(5000)
         await this.page.locator(this.lotnumberchange_webElements.Selectsingleinvoive).dblclick()
+        await this.page.screenshot({ path: './ScreenShot/LotInvoiceTab.png', fullPage: true})
         await this.page.locator(this.lotnumberchange_webElements.SaveandClose).click()
         await this.page.waitForTimeout(3000)
 

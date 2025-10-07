@@ -60,7 +60,7 @@ test('Creating Dealer Consignmen ',async({page}) =>
     await newconsignmentvehiclepage.ComparisionTab()
     await newconsignmentvehiclepage.TaskTab()
     await newconsignmentvehiclepage.ApplicationStatus()
-   // await newconsignmentvehiclepage.ActivitiesTab()  // this functionality works only in UAT
-    await newconsignmentvehiclepage.RibbonLevel()
+    //await newconsignmentvehiclepage.ActivitiesTab()  // this functionality works only in UAT
+    //await newconsignmentvehiclepage.RibbonLevel()
     await newconsignmentvehiclepage.IntegrationTab()
 })

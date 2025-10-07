@@ -58,6 +58,7 @@ class NewDealerConsignmentVehiclePage
         await this.page.locator(this.newconsignmentvehicle_webelement.Select_Model).click()
         await this.page.selectOption(this.newconsignmentvehicle_webelement.Transmission_Type_dropdown,this.testdata.Vehicle_TransmissionType)
         await this.page.selectOption(this.newconsignmentvehicle_webelement.Transmission_Speed_dropdown,this.testdata.Vehicle_TransmissionSpeed)
+        await this.page.screenshot({ path: './ScreenShot/QuickCreateVehicle.png', fullPage: true})
         try
         {
             await this.page.locator(this.newconsignmentvehicle_webelement.Save_and_Close_btn).click();
@@ -86,6 +87,7 @@ class NewDealerConsignmentVehiclePage
         await this.page.locator(this.newconsignmentvehicle_webelement.Bjack_value).click()
         await this.page.waitForTimeout(500)
         await this.page.locator(this.newconsignmentvehicle_webelement.Bjack_value).fill(this.testdata.Bjack_value)
+        await this.page.screenshot({ path: './ScreenShot/SaleDetails.png', fullPage: true})
     }
     async Account()
     {
@@ -94,8 +96,7 @@ class NewDealerConsignmentVehiclePage
             await this.page.locator(this.newconsignmentvehicle_webelement.Account_field).click()
             await this.page.locator(this.newconsignmentvehicle_webelement.Account_field).press('Enter')
             await this.page.locator(this.newconsignmentvehicle_webelement.Select_Business_Account).click()
-
-
+            await this.page.screenshot({ path: './ScreenShot/DealerAccount.png', fullPage: true})
     }
     async Account_Address()
     {
@@ -106,6 +107,7 @@ class NewDealerConsignmentVehiclePage
         await this.page.locator(this.newconsignmentvehicle_webelement.Title_To).click()
         await this.page.locator(this.newconsignmentvehicle_webelement.Title_To).fill(this.testdata.Dealer_TitleTo)
         await this.page.waitForTimeout(1000)
+        await this.page.screenshot({ path: './ScreenShot/AccountAddress.png', fullPage: true})
         await this.page.locator(this.newconsignmentvehicle_webelement.Status_Text).click() 
         await this.page.waitForTimeout(2000)
     }
@@ -122,6 +124,7 @@ class NewDealerConsignmentVehiclePage
         await this.page.locator(this.newconsignmentvehicle_webelement.Sale_Day_Tab).click()
         await this.page.locator(this.newconsignmentvehicle_webelement.Time_on_Block).click()
         await this.page.locator(this.newconsignmentvehicle_webelement.Time_on_Block_minutes).click()
+        await this.page.screenshot({ path: './ScreenShot/SaleDayTab.png', fullPage: true})
     }
     async Assign()
     {
@@ -168,7 +171,8 @@ class NewDealerConsignmentVehiclePage
                         await dialog.accept()
                         })
                     await frame.locator(this.newconsignmentvehicle_webelement.Upload_btn).click()
-                    await this.page.locator(this.newconsignmentvehicle_webelement.Vehicledoc_Refresh).click()
+                    await this.page.locator(this.newconsignmentvehicle_webelement.Vehicledoc_Refresh).click({timeout:60000})
+                    await this.page.screenshot({ path: './ScreenShot/VehicleDocuments.png', fullPage: true})
              }
     }
     async UploadPhoto()
@@ -193,15 +197,15 @@ class NewDealerConsignmentVehiclePage
                     await frame.locator(this.newconsignmentvehicle_webelement.Upload_photo_input).setInputFiles(fileToUpload)
                     await frame.locator(this.newconsignmentvehicle_webelement.Upload_photo_btn).click()
                     await this.page.waitForTimeout(12000)
+                    await this.page.screenshot({ path: './ScreenShot/UploadPhotos.png', fullPage: true})
                     await frame.locator(this.newconsignmentvehicle_webelement.Cross_mark).click()
                     await frame.locator(this.newconsignmentvehicle_webelement.Refresh_btn).click()
                     await this.page.waitForTimeout(6000)
                     //await frame.locator(this.newconsignmentvehicle_webelement.scroll_allphoto).scrollIntoViewIfNeeded()
-
-
                     await this.page.locator(this.newconsignmentvehicle_webelement.Marketing_Tab).click()
                     await this.page.locator(this.newconsignmentvehicle_webelement.ShortDescription).fill(this.testdata.ShortDescriptionText)
                     await this.page.locator(this.newconsignmentvehicle_webelement.LongDescription).fill(this.testdata.LongDescriptionText)
+                    await this.page.screenshot({ path: './ScreenShot/ShortLongDesc.png', fullPage: true})
                     await this.page.locator(this.newconsignmentvehicle_webelement.Refresh_consignment).click()
                     await this.page.locator(this.newconsignmentvehicle_webelement.Marketing_Tab).click()
 
@@ -234,8 +238,9 @@ class NewDealerConsignmentVehiclePage
                 { label: 'Operating Agreement' },
                 { label: 'Wholesale License' }
               ]);
+              await this.page.screenshot({ path: './ScreenShot/ReqInformation.png', fullPage: true})
                 const dialogPromise = this.page.waitForEvent('dialog');
-                await frame.locator(this.newconsignmentvehicle_webelement.submitbtn).click();
+                await frame.locator(this.newconsignmentvehicle_webelement.submitbtn).click('dialog',{ timeout: 75000 });
                 const dialog = await dialogPromise;
                 await dialog.accept();
 

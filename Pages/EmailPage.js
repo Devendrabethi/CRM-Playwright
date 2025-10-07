@@ -54,6 +54,7 @@ class EmailPage
         await this.page.locator(this.address_webelements.Refresh_Overview).click()
         await this.page.locator(this.email_webelement.CredentialTab).click()
         await this.page.waitForTimeout(9000)
+        await this.page.screenshot({ path: './ScreenShot/CredentialTab.png', fullPage: true})
         const frame = await this.page.frameLocator(this.email_webelement.frame)
         if(!frame) throw new Error('Iframe not found')
         await frame.locator(this.email_webelement.Createbtn).click({ timeout: 60000 })

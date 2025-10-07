@@ -42,6 +42,7 @@ class BidderOpportunityPage
         await this.page.locator(this.bidderopportunity_webelements.Select_Bidder_Package_Type).click();
         
         await this.page.selectOption(this.bidderopportunity_webelements.Select_Interner_Bidder,this.testdata.Bidder_Internet_yesandpush); 
+        await this.page.screenshot({ path: './ScreenShot/BidderDetailsSessionwithComp.png', fullPage: true})
         await this.page.waitForTimeout(2000)
     }
 
@@ -61,12 +62,14 @@ class BidderOpportunityPage
         
         await this.page.selectOption(this.bidderopportunity_webelements.Select_Interner_Bidder,this.testdata.Bidder_Internet_yesandpush); 
         await this.page.waitForTimeout(2000)
+        await this.page.screenshot({ path: './ScreenShot/BidderDetails.png', fullPage: true})
     }
     async bidder_Address()
     {
         await this.page.locator(this.bidderopportunity_webelements.Mailing_Address).click()
         await this.page.locator(this.bidderopportunity_webelements.Mailing_Address).fill(this.testdata.Account_Address)
         await this.page.locator(this.bidderopportunity_webelements.Mailing_Address_select).click();
+        await this.page.screenshot({ path: './ScreenShot/BidderAddress.png', fullPage: true})
         // await this.page.locator(this.bidderopportunity_webelements.Vehicle_Titling).click()
         // await this.page.locator(this.bidderopportunity_webelements.Vehicle_Titling).fill(this.testdata.Account_Address)
         // await this.page.locator(this.bidderopportunity_webelements.Vehicle_Titling_address_select).click();
@@ -104,6 +107,7 @@ class BidderOpportunityPage
         await this.page.locator(this.bidderopportunity_webelements.Cashiering).click()
         await this.page.locator(this.bidderopportunity_webelements.Cashiering_Save).click()
         await this.page.waitForTimeout(1000)
+        await this.page.screenshot({ path: './ScreenShot/AddEnvelopSession.png', fullPage: true})
     }
 
     async Add_Absentee_Bid()
@@ -137,7 +141,7 @@ class BidderOpportunityPage
         await this.page.locator(this.bidderopportunity_webelements.PhoneObserver).click()
         const frame = await this.page.frameLocator(this.bidderopportunity_webelements.FrameSendAbsenteebid)
                     if(!frame) throw new Error('Iframe not found')
-
+        await this.page.screenshot({ path: './ScreenShot/AddAbsenteeSession.png', fullPage: true})
         await frame.locator(this.bidderopportunity_webelements.SendAbsenteeBid).click()
         await this.page.locator(this.bidderopportunity_webelements.OkPopUp).click()
         await this.page.waitForTimeout(1000)
@@ -153,7 +157,7 @@ class BidderOpportunityPage
         await frame1.locator(this.bidderopportunity_webelements.Launch).click()
 
          await this.page.waitForTimeout(30000)
-
+        await this.page.screenshot({ path: './ScreenShot/PhoneObserver.png', fullPage: true})
         await this.page.locator(this.bidderopportunity_webelements.Close_PhoneObserver).click()
         await this.page.waitForTimeout(2000)
         await this.page.goBack()
@@ -181,7 +185,7 @@ class BidderOpportunityPage
                     await this.page.waitForTimeout(5000);
                     await this.page.locator(this.PersonalAccount_WebElements.Refresh_Tracking).click();
                     await this.page.waitForTimeout(1000);
-
+                    await this.page.screenshot({ path: './ScreenShot/TraclingInBidder.png', fullPage: true})
                     const [newPage] = await Promise.all([
                         this.page.context().waitForEvent('page'),
                         this.page.locator(this.PersonalAccount_WebElements.Print_Label).click()
@@ -227,6 +231,7 @@ class BidderOpportunityPage
                     await frame.locator(this.newconsignmentvehicle_webelement.Upload_btn).click()
                     await this.page.locator(this.bidderopportunity_webelements.Bidder_Registerdoc_Refresh).click()
              }
+             await this.page.screenshot({ path: './ScreenShot/RegisterDocuments.png', fullPage: true})
     }
 
     async Opportunity_product_tab()
@@ -242,6 +247,7 @@ class BidderOpportunityPage
         //await this.page.locator(this.bidderopportunity_webelements.Quantity).click()
         await this.page.locator(this.bidderopportunity_webelements.Quantity).fill(this.testdata.Quantity)
         await this.page.waitForTimeout(1000)
+        await this.page.screenshot({ path: './ScreenShot/ProductTab.png', fullPage: true})
         await this.page.locator(this.bidderopportunity_webelements.Save_Close).click()
     }
 
@@ -260,6 +266,7 @@ class BidderOpportunityPage
         await this.page.locator(this.bidderopportunity_webelements.Bidder_Assign_To).click()
         await this.page.locator(this.bidderopportunity_webelements.Save_btn).click()
         await this.page.waitForTimeout(1000)
+        await this.page.screenshot({ path: './ScreenShot/ManualInvoive.png', fullPage: true})
         await this.page.locator(this.bidderopportunity_webelements.Save_Close).click()
         await this.page.waitForTimeout(5000)
 
@@ -279,6 +286,7 @@ class BidderOpportunityPage
         await frameCard.locator(this.bidderopportunity_webelements.CardExpDate).fill(this.testdata.CardExp)
         await frameCard.locator(this.bidderopportunity_webelements.Cvv).fill(this.testdata.CVVNum)
         await frameCard.locator(this.bidderopportunity_webelements.ZipCode).fill(this.testdata.ZipCOde)
+        await this.page.screenshot({ path: './ScreenShot/WithCardInvoive.png', fullPage: true})
         await frame.locator(this.bidderopportunity_webelements.SubmitButton).click()
         await this.page.locator(this.bidderopportunity_webelements.PaymentOk).click({timeout:60000})
         // await this.page.locator(this.bidderopportunity_webelements.Invoice_Tab).click()
@@ -311,6 +319,7 @@ class BidderOpportunityPage
         await frame.locator(this.bidderopportunity_webelements.SelectPaymentMethod).selectOption(this.testdata.SelectInvoiceCash)
         await this.page.waitForTimeout(4000);
         await frame.locator(this.bidderopportunity_webelements.PaymentNumber).fill(this.testdata.PaymentNumberValue)
+        await this.page.screenshot({ path: './ScreenShot/WithoutCardInvoive.png', fullPage: true})
         await frame.locator(this.bidderopportunity_webelements.CardlessSubmitbutton).click()
         await this.page.locator(this.bidderopportunity_webelements.PaymentOk).click({timeout:60000})
         await this.page.locator(this.bidderopportunity_webelements.Invoice_Tab).click()
@@ -325,6 +334,7 @@ class BidderOpportunityPage
         await this.page.locator(this.bidderopportunity_webelements.TaskTab).click()
         await this.page.locator(this.bidderopportunity_webelements.TaskRefresh).click({timeout:60000})
         await this.page.waitForTimeout(2000)
+        await this.page.screenshot({ path: './ScreenShot/TaskTab.png', fullPage: true})
         await this.page.locator(this.bidderopportunity_webelements.Refresh_Bidder).click()
     }
     async RibbonLevel()
@@ -352,6 +362,7 @@ class BidderOpportunityPage
                     await frame.locator(this.bidderopportunity_webelements.selectPayment).selectOption([
                       { label: 'Credit Card Deposit' }
                     ]);
+                    await this.page.screenshot({ path: './ScreenShot/RequestInformationBidder.png', fullPage: true})
                 const dialogPromise = this.page.waitForEvent('dialog', { timeout: 60000 });
                 await frame.locator(this.bidderopportunity_webelements.submitbtn).click();
                 const dialog = await dialogPromise;
@@ -372,9 +383,6 @@ class BidderOpportunityPage
                       const download1 = await downloadPromise1
                       const downloadPath1 = path1.join(downloadDir1, download1.suggestedFilename());
                       await download1.saveAs(downloadPath1)
-      
-                    //  await this.page.locator(this.bidderopportunity_webelements.PrintAll).click()
-                    // await this.page.waitForTimeout(1000)
               //Print Agreement
                 await this.page.locator(this.bidderopportunity_webelements.Print_Agreement).click()
                // await this.page.waitForTimeout(2000)
@@ -383,8 +391,6 @@ class BidderOpportunityPage
                 await this.page.locator(this.bidderopportunity_webelements.Save_btn).click({timeout:60000})
                 await this.page.waitForTimeout(1000)
                 await this.page.locator(this.bidderopportunity_webelements.GoBack_btn).click({timeout:60000})
-             //   await this.page.waitForTimeout(2000)
-                //await this.page.locator(this.bidderopportunity_webelements.Refresh_Bidder).click()
        //Send Agreement
                 await this.page.locator(this.bidderopportunity_webelements.Send_Agreement).click({timeout:60000})
                 try 
@@ -426,6 +432,7 @@ class BidderOpportunityPage
                     await frame1.locator(this.bidderopportunity_webelements.PasswordManager).fill(this.testdata.ManagerPassword)
                     await frame1.locator(this.bidderopportunity_webelements.BidderNumberCheckbox).click()
                     await this.page.waitForTimeout(1000);
+                    await this.page.screenshot({ path: './ScreenShot/AdministrationAucto.png', fullPage: true})
                     await frame1.locator(this.bidderopportunity_webelements.Approvebutton).click()
                     await this.page.waitForTimeout(20000);
            //Administration Manual entry
@@ -452,6 +459,7 @@ class BidderOpportunityPage
         //Aggreement Tab
                 await this.page.locator(this.newconsignmentvehicle_webelement.Documentation_Tab).click()
                 await this.page.locator(this.bidderopportunity_webelements.CheckStatus).click()
+                await this.page.screenshot({ path: './ScreenShot/CheckStatusAgreementInBidder.png', fullPage: true})
                 await this.page.waitForTimeout(8000)
                 try 
                 {
@@ -466,7 +474,7 @@ class BidderOpportunityPage
                   
               else 
               {
-                console.log('DocuSign Not available to Send Agreement Close button not visible or not present');
+                console.log('DocuSign Available, if not we able to see pop up ');
               }
             }
             catch (error) 
@@ -507,7 +515,7 @@ class BidderOpportunityPage
                 const download1 = await downloadPromise1
                 const downloadPath1 = path1.join(downloadDir1, download1.suggestedFilename());
                 await download1.saveAs(downloadPath1)
-
+                await this.page.screenshot({ path: './ScreenShot/HamburgerCustomer.png', fullPage: true})
                 await this.page.locator(this.bidderopportunity_webelements.AllAccountDropdown).click()
                 await this.page.locator(this.bidderopportunity_webelements.AllBusinessAccount).click()
                 await this.page.waitForTimeout(8000)
@@ -542,7 +550,7 @@ class BidderOpportunityPage
                 const download2 = await downloadPromise2
                 const downloadPath2 = path2.join(downloadDir2, download2.suggestedFilename());
                 await download2.saveAs(downloadPath2)
-
+                await this.page.screenshot({ path: './ScreenShot/HamburgerVehicle.png', fullPage: true})
                 await this.page.locator(this.bidderopportunity_webelements.VehicleFilter).fill(this.testdata.VehicleName)
                 await this.page.locator(this.bidderopportunity_webelements.VehicleFilter).press('Enter')
                 await this.page.waitForTimeout(5000)
@@ -562,7 +570,7 @@ class BidderOpportunityPage
                 const download3 = await downloadPromise3
                 const downloadPath3 = path3.join(downloadDir3, download3.suggestedFilename());
                 await download3.saveAs(downloadPath3)
-
+                await this.page.screenshot({ path: './ScreenShot/HamburgerConsignment.png', fullPage: true})
                 await this.page.locator(this.bidderopportunity_webelements.ConsignmentandBidderFilter).fill(this.testdata.CustomerName)
                 await this.page.locator(this.bidderopportunity_webelements.ConsignmentandBidderFilter).press('Enter')
                 await this.page.waitForTimeout(4000)
@@ -580,7 +588,7 @@ class BidderOpportunityPage
                  const download4 = await downloadPromise4
                  const downloadPath4 = path4.join(downloadDir4, download4.suggestedFilename());
                  await download4.saveAs(downloadPath4)
-
+                 await this.page.screenshot({ path: './ScreenShot/HamburgerBidder.png', fullPage: true})
                 await this.page.locator(this.bidderopportunity_webelements.ConsignmentandBidderFilter).fill(this.testdata.CustomerName)
                 await this.page.locator(this.bidderopportunity_webelements.ConsignmentandBidderFilter).press('Enter')
                 await this.page.waitForTimeout(4000)
@@ -598,7 +606,7 @@ class BidderOpportunityPage
                 const download5 = await downloadPromise5
                 const downloadPath5 = path5.join(downloadDir5, download5.suggestedFilename());
                 await download5.saveAs(downloadPath5)
-                
+                await this.page.screenshot({ path: './ScreenShot/HamburgerAbsenteeBids.png', fullPage: true})
                 await this.page.waitForTimeout(4000)
 
                 await this.page.locator(this.bidderopportunity_webelements.BidderScottsdaleFall2025Dropdown).click()

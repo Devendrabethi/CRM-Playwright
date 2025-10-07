@@ -46,7 +46,7 @@ class BusinessAccountPage
                 await expect(this.page.locator(this.businessaccount_webelements.Business_Field_text)).toBeVisible({ timeout: 10000 })
                 await this.page.locator(this.businessaccount_webelements.EIN).click();
                 await this.page.locator(this.businessaccount_webelements.EIN).fill(this.testdata.EIN_Number);
-
+                await this.page.screenshot({ path: './ScreenShot/BusinessAccount.png', fullPage: true})
                 await this.page.waitForTimeout(1000); 
     }
 
@@ -80,7 +80,7 @@ class BusinessAccountPage
                     await this.page.locator(this.PersonalAccount_WebElements.Persondoc_Refresh).click()
              }
                    // await this.page.waitForTimeout(4000)
-                    //await this.page.screenshot({ path: './ScreenShot/AccountDocumentsPage.png', fullPage: true})
+                    await this.page.screenshot({ path: './ScreenShot/BusinessAccountDocumentsPage.png', fullPage: true})
                   
     }
     async RelatedAccount()
@@ -95,6 +95,7 @@ class BusinessAccountPage
         await this.page.locator(this.businessaccount_webelements.Add_btn).click();
         await this.page.locator(this.businessaccount_webelements.RealtedAccount_More_option).click();
         await this.page.locator(this.businessaccount_webelements.Related_Accounts_refresh).click();
+        await this.page.screenshot({ path: './ScreenShot/BusinessRelateAccount.png', fullPage: true})
         await this.page.locator(this.businessaccount_webelements.DoubleclickPersonalAccount).dblclick()
     }
 

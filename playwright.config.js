@@ -31,8 +31,9 @@ module.exports = defineConfig({
     //headless: true,
     video: 'on',
     screenshot :'on',
-    trace: 'on',
+    trace: 'on'
   },
+   outputDir: 'test-results/',
     /* Reporter to use. See https://playwright.dev/docs/test-reporters */
 
   reporter: [["html"], ["allure-playwright"]],

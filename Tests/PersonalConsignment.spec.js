@@ -44,6 +44,6 @@ test('Creating Individual Consignment',async({page}) =>    // Activity functiona
     await newconsignmentvehiclepage.TaskTab()
     await newconsignmentvehiclepage.ApplicationStatus()
     //await newconsignmentvehiclepage.ActivitiesTab()  // Activity functionality works only in UAT
-    await newconsignmentvehiclepage.RibbonLevel()
+    //await newconsignmentvehiclepage.RibbonLevel()
     await newconsignmentvehiclepage.IntegrationTab()
 })

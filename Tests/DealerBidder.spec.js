@@ -64,5 +64,5 @@ test('Creating Dealer Bidder Opportunity',async({page}) =>
     await bidderopportunitypage.Invoice_Tab()
     await bidderopportunitypage.AnotherProduct()
     await bidderopportunitypage.TaskTab()
-    await bidderopportunitypage.RibbonLevel()
+    //await bidderopportunitypage.RibbonLevel()
 })

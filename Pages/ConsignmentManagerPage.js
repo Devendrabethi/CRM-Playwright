@@ -229,26 +229,31 @@ class ConsignmentManagerPage
                     await frame.locator(this.consignmentManager_webElements.SaveAll_Button).click()
                     await this.page.locator(this.consignmentManager_webElements.Ok_Button).click()
                     await this.page.waitForTimeout(5000)
+                    await this.page.screenshot({ path: './ScreenShot/BulkBidderManagerPageTrackingNumber.png', fullPage: true})
 
                     await frame.locator(this.consignmentManager_webElements.Select_Search_Type_Options).selectOption(this.testdata.All_Bidders)
                     await frame.locator(this.consignmentManager_webElements.SearchButton).click()
                     await this.page.waitForTimeout(5000)
+                    await this.page.screenshot({ path: './ScreenShot/BulkBidderManagerPageAllBidder.png', fullPage: true})
 
                     await frame.locator(this.consignmentManager_webElements.Select_Search_Type_Options).selectOption(this.testdata.All_Buyers)
                     await frame.locator(this.consignmentManager_webElements.SearchButton).click()
                     await this.page.waitForTimeout(5000)
+                    await this.page.screenshot({ path: './ScreenShot/BulkBidderManagerPageAllBuyer.png', fullPage: true})
 
                     await frame.locator(this.consignmentManager_webElements.Select_Search_Type_Options).selectOption(this.testdata.Buyser_ByLot)
                     await frame.locator(this.consignmentManager_webElements.Search_Lot_Field).click()
                     await frame.locator(this.consignmentManager_webElements.Search_Lot_Field).fill(this.testdata.BuyerLot)
                     await frame.locator(this.consignmentManager_webElements.SearchButton).click()
                     await this.page.waitForTimeout(5000)
+                    await this.page.screenshot({ path: './ScreenShot/BulkBidderManagerPageByLot.png', fullPage: true})
 
                     await frame.locator(this.consignmentManager_webElements.Select_Search_Type_Options).selectOption(this.testdata.Buyser_ByCancel)
                     await frame.locator(this.consignmentManager_webElements.Search_Lot_Field).click()
                     await frame.locator(this.consignmentManager_webElements.Search_Lot_Field).fill(this.testdata.BuyerCancel)
                     await frame.locator(this.consignmentManager_webElements.SearchButton).click()
                     await this.page.waitForTimeout(5000)
+                    await this.page.screenshot({ path: './ScreenShot/BulkBidderManagerPageCancel.png', fullPage: true})
 
     }
 }
