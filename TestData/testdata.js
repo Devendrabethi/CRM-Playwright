@@ -45,9 +45,9 @@ class TestData
         this.Area_code = "928";
         this.Phone_Number = "2023810";
 
-        this.Vehicle_Year = "2015";
-        this.Vehicle_Make = "BMW";
-        this.Vehicle_Model = "128i";
+        this.Vehicle_Year = "2020";
+        this.Vehicle_Make = "TOYOTA";
+        this.Vehicle_Model = "BJ42";
         this.Vehicle_TransmissionType = "Automatic";
         this.Vehicle_TransmissionSpeed = "3-Speed";
 

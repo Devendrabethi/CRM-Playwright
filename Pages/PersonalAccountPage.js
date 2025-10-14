@@ -102,6 +102,26 @@ class PersonalAccountPage
              }
                    // await this.page.waitForTimeout(4000)
                     await this.page.screenshot({ path: './ScreenShot/AccountDocumentsPage.png', fullPage: true})
+                    await this.page.locator(this.PersonalAccount_WebElements.Select_FirstDocumentUnarchived).click()
+                    await this.page.locator(this.PersonalAccount_WebElements.Archive_Button).click()
+                    await this.page.locator(this.PersonalAccount_WebElements.Ok_Button).click()
+                    await this.page.locator(this.PersonalAccount_WebElements.Refresh_Account).click()
+                    await this.page.locator(this.PersonalAccount_WebElements.Documents_Tab).click()
+                    await this.page.waitForTimeout(2000)
+                    await this.page.screenshot({ path: './ScreenShot/AccountDocumentWithArchived.png', fullPage: true})
+                    await this.page.locator(this.PersonalAccount_WebElements.SelectFirstDocument_Archived).click()
+                    await this.page.locator(this.PersonalAccount_WebElements.UnArchived_Button).click()
+                    await this.page.locator(this.PersonalAccount_WebElements.Ok_Button).click()
+                     const frame = await this.page.frameLocator(this.PersonalAccount_WebElements.frame_AccountExp)
+                    if(!frame) throw new Error('Iframe not found')
+                    await frame.locator(this.PersonalAccount_WebElements.Expiration_Date_field).click()
+                    await frame.locator(this.PersonalAccount_WebElements.Next_Month).click()
+                    await frame.locator(this.PersonalAccount_WebElements.Select_NextMonthDate).click()
+                    await frame.locator(this.PersonalAccount_WebElements.Ok_ExpiryDate).click()
+                    await this.page.locator(this.PersonalAccount_WebElements.Refresh_Account).click()
+                    await this.page.locator(this.PersonalAccount_WebElements.Documents_Tab).click()
+                    await this.page.waitForTimeout(2000)
+                    await this.page.screenshot({ path: './ScreenShot/AccountDocumentWithArchivedtoUnArchived.png', fullPage: true})
 
                     const fileToUpload1 = 
                     {

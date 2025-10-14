@@ -33,6 +33,15 @@ class PersonalAccount_WebElements
         this.Upload_Document = "//input[@id='fileInput']"
         this.Upload_btn = "//button[@id='uploadButton']"
         this.Persondoc_Refresh = "//ul[@aria-label='Account Documents Commands']/li[2]/button[@aria-label='Refresh']"
+        this.Select_FirstDocumentUnarchived = "//div[@row-index='0']/div[@col-id='bjac_documenttype']"
+        this.Archive_Button = "//button[@aria-label='Archive']"
+        this.Ok_Button = "//button[@aria-label='OK']"
+        this.Refresh_Account = "(//button[@aria-label='Refresh'])[1]"
+        this.SelectFirstDocument_Archived = "(//div[@row-index='0'])[2]/div[@col-id='bjac_documenttype']"
+        this.UnArchived_Button = "//button[@aria-label='UnArchive']"
+        this.frame_AccountExp = "//iframe[@aria-label='account_document_expiration_date']"
+        this.Ok_ExpiryDate = "//button[text()='OK']"
+
 
         this.ExistCropPhoto = "//button[@id='cropPhotoTab']"
         this.CropImage = "//button[@id='cropButton']"
