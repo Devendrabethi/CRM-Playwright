@@ -1,6 +1,8 @@
 import { expect } from '@playwright/test'
 import { TestData } from '../TestData/testdata.js';
 import { NewConsignmentVehicle_WebElement } from '../WebElements/NewConsignmentVehicle_WebElements.js';
+import { LotNumberChange_WebElements } from '../WebElements/LotNumberChange_WebElements' 
+import { BidderOpportunity_WebElements } from '../WebElements/BidderOpportunity_WebElements'  
 import { PersonalAccountPage } from '../Pages/PersonalAccountPage.js'  
 exports.NewConsignmentVehiclePage =
 class NewConsignmentVehiclePage
@@ -10,6 +12,8 @@ class NewConsignmentVehiclePage
         this.page = page
         this.testdata = new TestData()
         this.newconsignmentvehicle_webelement = new NewConsignmentVehicle_WebElement()
+        this.lotnumberchange_webElements = new LotNumberChange_WebElements(); // Initialize Locators class
+        this.bidderopportunity_webelements = new BidderOpportunity_WebElements()
     }
     async newcon()
     {
@@ -366,7 +370,82 @@ class NewConsignmentVehiclePage
     }
     async RibbonLevel()
     {
-        await this.page.locator(this.newconsignmentvehicle_webelement.reqinforbtn).click()
+        
+            //Lot Assign
+                await this.page.locator(this.newconsignmentvehicle_webelement.LotAssign).click()
+                await this.page.waitForTimeout(5000)
+                const Lotframe = await this.page.frameLocator(this.lotnumberchange_webElements.Frame_LotAssign)
+        if(!Lotframe) throw new Error('Iframe not found')
+        await Lotframe.locator(this.lotnumberchange_webElements.New_LotNumber).fill(this.testdata.NewLotNumber)
+        await Lotframe.locator(this.lotnumberchange_webElements.Select_StatusDropdown).selectOption(this.testdata.LotStatus_Tentative)
+        await Lotframe.locator(this.lotnumberchange_webElements.Save_Button).click()
+        await this.page.waitForTimeout(40000)
+
+        const lotStatuses1 = [
+                                    this.testdata.LotStatus_PendingRevisit,
+                                    this.testdata.LotStstaus_PendingAccepted,
+                                    //this.testdata.LotStatus_Confirmed,
+                                    //this.testdata.LotStatus_Cancel
+                                ];
+
+            for (const status of lotStatuses1) 
+            {
+
+                await this.page.locator(this.lotnumberchange_webElements.LotAssign).click()
+                const Lotframe = await this.page.frameLocator(this.lotnumberchange_webElements.Frame_LotAssign)
+                    if(!Lotframe) throw new Error('Iframe not found')
+                await Lotframe.locator(this.lotnumberchange_webElements.Selec_LotStatus).selectOption(status);
+                await Lotframe.locator(this.lotnumberchange_webElements.Save_Button).click();
+                await this.page.waitForTimeout(15000);
+            }
+             await this.page.locator(this.lotnumberchange_webElements.LotAssign).click()
+           // const Lotframe = await this.page.frameLocator(this.lotnumberchange_webElements.Frame_LotAssign)
+            if(!Lotframe) throw new Error('Iframe not found')
+            await Lotframe.locator(this.lotnumberchange_webElements.Selec_LotStatus).selectOption(this.testdata.LotStatus_Confirmed);
+            await Lotframe.locator(this.lotnumberchange_webElements.Checkbox_CompLotFee).check();
+            await this.page.waitForTimeout(2000);
+            await Lotframe.locator(this.lotnumberchange_webElements.Checkbox_CompLotFee).uncheck();
+            await this.page.waitForTimeout(2000);
+            await Lotframe.locator(this.lotnumberchange_webElements.LotOverrideAmount).fill(this.testdata.LotOverrideamount);
+            await this.page.waitForTimeout(2000);
+            await this.page.screenshot({ path: './ScreenShot/LotOvverrideConfirmation.png', fullPage: true})
+            await Lotframe.locator(this.lotnumberchange_webElements.Save_Button).click();
+            await this.page.waitForTimeout(20000);
+
+        await this.page.locator(this.lotnumberchange_webElements.Products_Tab).click({ timeout: 60000 });
+        await this.page.waitForTimeout(5000)
+        await this.page.locator(this.lotnumberchange_webElements.Invoice_Tab).click()
+        await this.page.locator(this.lotnumberchange_webElements.Refresh_Invoice).click()
+        await this.page.locator(this.lotnumberchange_webElements.SelectInvoice).click()
+        await this.page.locator(this.bidderopportunity_webelements.EnterPaymentButton).click()  
+        const frame1 = await this.page.frameLocator(this.bidderopportunity_webelements.FrameInvoice)
+        if(!frame1) throw new Error('Iframe not found')
+        await frame1.locator(this.bidderopportunity_webelements.SelectPaymentMethod).selectOption(this.testdata.SelectInvoiceVisa)
+        await this.page.waitForTimeout(4000);
+        //const frame1 = await this.page.frameLocator(this.bidderopportunity_webelements.FrameCard)
+        const frameCard = await frame1.frameLocator(this.bidderopportunity_webelements.FrameCard);
+        if(!frameCard) throw new Error('Nested iframe not found')
+       // await frame1.locator(this.bidderopportunity_webelements.CardNum).waitFor({ state: 'visible' })
+       // await frameCard.locator(this.bidderopportunity_webelements.CardNum).click()
+        await frameCard.locator(this.bidderopportunity_webelements.CardNum).fill(this.testdata.CardCC)
+        await frameCard.locator(this.bidderopportunity_webelements.CardExpDate).fill(this.testdata.CardExp)
+        await frameCard.locator(this.bidderopportunity_webelements.Cvv).fill(this.testdata.CVVNum)
+        await frameCard.locator(this.bidderopportunity_webelements.ZipCode).fill(this.testdata.ZipCOde)
+        await frame1.locator(this.bidderopportunity_webelements.SubmitButton).click()
+        await this.page.locator(this.bidderopportunity_webelements.PaymentOk).click({timeout:60000})
+        await this.page.locator(this.lotnumberchange_webElements.Products_Tab).click({timeout:60000})
+        await this.page.screenshot({ path: './ScreenShot/LotProductTab.png', fullPage: true})
+        await this.page.waitForTimeout(5000)
+        await this.page.locator(this.lotnumberchange_webElements.Invoice_Tab).click()
+        await this.page.waitForTimeout(5000)
+        await this.page.locator(this.lotnumberchange_webElements.Selectsingleinvoive).dblclick()
+        await this.page.screenshot({ path: './ScreenShot/LotInvoiceTab.png', fullPage: true})
+        await this.page.locator(this.lotnumberchange_webElements.SaveandClose).click()
+        await this.page.waitForTimeout(3000)
+
+ //Request Information
+
+    await this.page.locator(this.newconsignmentvehicle_webelement.reqinforbtn).click()
         const frame = await this.page.frameLocator(this.newconsignmentvehicle_webelement.reqinforframe)
         if(!frame) throw new Error('Iframe not found')
             await frame.locator(this.newconsignmentvehicle_webelement.selectvehiclephotoreq).selectOption([
@@ -392,30 +471,43 @@ class NewConsignmentVehiclePage
                 { label: 'Operating Agreement' },
                 { label: 'Wholesale License' }
               ]);
+            //     await frame.locator(this.newconsignmentvehicle_webelement.Payments).selectOption([
+            //     { label: 'Consignment Lot Fee' }
+            //   ]);
               await this.page.screenshot({ path: './ScreenShot/ReqInformation.png', fullPage: true})
                 const dialogPromise = this.page.waitForEvent('dialog',{ timeout: 75000 });
                 await frame.locator(this.newconsignmentvehicle_webelement.submitbtn).click();
                 const dialog = await dialogPromise;
                 await dialog.accept();
-            //Lot Assign
-                await this.page.locator(this.newconsignmentvehicle_webelement.LotAssign).click()
-                await this.page.waitForTimeout(5000)
-                await this.page.locator(this.newconsignmentvehicle_webelement.Cancel_LotAssign).click()
-                await this.page.waitForTimeout(3000)
+
+
+
+///Lot Cancel
+        await this.page.locator(this.lotnumberchange_webElements.LotAssign).click()
+        //await frame.locator(this.lotnumberchange_webElements.NewLotNumber_Field).fill(this.testdata.NewLotNumber)
+        await Lotframe.locator(this.lotnumberchange_webElements.Select_StatusDropdown).selectOption(this.testdata.LotStatus_Cancel)
+        await Lotframe.locator(this.lotnumberchange_webElements.Save_Button).click()
+        await this.page.waitForTimeout(15000)
+        await this.page.locator(this.lotnumberchange_webElements.SaleDay_Tab).click()
+        await this.page.waitForTimeout(5000)   
+        await this.page.locator(this.lotnumberchange_webElements.Refresh_Button).click()
+        await this.page.waitForTimeout(10000) 
+                // await this.page.locator(this.newconsignmentvehicle_webelement.Cancel_LotAssign).click()
+                // await this.page.waitForTimeout(3000)
 
                 //print all Download file
-                const path1 = require('path');  
-                const fs1 = require('fs');
-                const downloadDir1 = path1.join(__dirname, 'Download');
-                if (!fs1.existsSync(downloadDir1)) {
-                    fs1.mkdirSync(downloadDir1);
-                  }
-                const downloadPromise1 = this.page.waitForEvent('download',{ timeout: 75000 })
+                // const path1 = require('path');  
+                // const fs1 = require('fs');
+                // const downloadDir1 = path1.join(__dirname, 'Download');
+                // if (!fs1.existsSync(downloadDir1)) {
+                //     fs1.mkdirSync(downloadDir1);
+                //   }
+                // const downloadPromise1 = this.page.waitForEvent('download',{ timeout: 75000 })
                             await this.page.locator(this.newconsignmentvehicle_webelement.PrintAll).click()           // addd ones confirm
                             await this.page.waitForTimeout(6000)
-                const download1 = await downloadPromise1
-                const downloadPath1 = path1.join(downloadDir1, download1.suggestedFilename());
-                await download1.saveAs(downloadPath1)
+                // const download1 = await downloadPromise1
+                // const downloadPath1 = path1.join(downloadDir1, download1.suggestedFilename());
+                // await download1.saveAs(downloadPath1)
 
                 // await this.page.locator(this.newconsignmentvehicle_webelement.Refresh_consignment).click()
                 await this.page.locator(this.newconsignmentvehicle_webelement.WordTemplate).click({timeout:60000})

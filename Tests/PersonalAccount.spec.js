@@ -19,6 +19,7 @@ test('Creating Personal account without documents',async({page}) =>
         await personalaccountpage.accounttype_dropdown()
         await personalaccountpage.names()
         await personalaccountpage.save()
+        await personalaccountpage.Event_Auct_Comp()
         await addresspage.newaddress()
         await addresspage.generaladdress()
         await addresspage.saveandclose()

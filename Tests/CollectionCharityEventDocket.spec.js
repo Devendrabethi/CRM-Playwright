@@ -9,9 +9,9 @@ test('Validating Colection, Charities, Events and Docket',async({page}) =>    //
 
     await customerpage.url()
     await consignmentmanagerPage.ChangeArea()
-    // await consignmentmanagerPage.Collections()
-    // await consignmentmanagerPage.Charities()
-    // await consignmentmanagerPage.Events()
+    await consignmentmanagerPage.Collections()
+    await consignmentmanagerPage.Charities()
+    await consignmentmanagerPage.Events()
     await consignmentmanagerPage.Dockets()
     await consignmentmanagerPage.Consignment()
     await consignmentmanagerPage.MarkettingTab()

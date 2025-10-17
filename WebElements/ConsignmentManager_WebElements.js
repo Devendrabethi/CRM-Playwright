@@ -76,15 +76,16 @@ class ConsignmentManager_WebElements
         this.Add_Collection = "//button[@aria-label='Add Collection']"
         this.Select_Collection ="(//input[@aria-label='Toggle selection of all rows'])[5]"
         this.SaveandClose_Collection = "//button[@aria-label='Save & Close']"
-        this.DoubleClick_Collection = "(//input[@aria-label='Select or deselect the row'])[1]"
+        this.DoubleClick_Collection = "(//div[@aria-label='Press SPACE to select this row.'][1]/div[1])[1]"
         this.GoBack_Button = "//button[@title='Go back']"
 
         this.Add_Charities = "//button[@aria-label='Add Charity. New']"
         this.CreatedOn = "(//div[@data-testid='createdon'])[3]"
+        this.CreatedOnCharity = "(//div[@data-testid='createdon'])[1]"
         this.HoverFirstRow = "(//div[@aria-label='Press SPACE to select this row.'])[5]"
         this.Select_FirstRow = "(//div[@aria-label='Press SPACE to select this row.'])[1]/div[5]"
         this.Select_Charity_Association = "(//input[@aria-label='Select or deselect the row'])[3]"
-        this.DoubleClick_Charities = "(//input[@aria-label='Select or deselect the row'])[3]"
+        this.DoubleClick_Charities = "(//div[@aria-label='Press SPACE to select this row.'][1]/div[1])[2]"
 
         this.Bidder_Manger_Button = "//li[@title='Bidder Manager']"
         this.Select_PackageTracking = "//li[@aria-label='Package Tracking']"

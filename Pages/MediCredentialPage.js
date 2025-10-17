@@ -74,7 +74,7 @@ class MediCredentialPage
         await this.page.locator(this.mediacredential_webElements.Email).fill(emailid)
         await this.page.waitForTimeout(1000)
        await this.page.locator(this.mediacredential_webElements.Event).click()
-       await this.page.locator(this.mediacredential_webElements.Event).fill(this.testdata.EventName)
+       await this.page.locator(this.mediacredential_webElements.Event).fill(this.testdata.Event_name)
        await this.page.locator(this.mediacredential_webElements.Select_Event).click()
 
        await this.page.locator(this.mediacredential_webElements.Media_Organization).fill(this.testdata.SendActivityText)
@@ -84,8 +84,7 @@ class MediCredentialPage
        await this.page.waitForTimeout(5000)
        await this.page.locator(this.mediacredential_webElements.Refresh_Button).click({ timeout: 60000 })
        await this.page.waitForTimeout(2000)
-       await this.page.locator(this.mediacredential_webElements.Refresh_Button).click({ timeout: 60000 })
-       await this.page.screenshot({ path: './ScreenShot/MediaCredentialSent.png', fullPage: true})
+       await this.page.reload()
 
        const frame = await this.page.frameLocator(this.mediacredential_webElements.Iframe_DocuSignStatus)
         if(!frame) throw new Error('Iframe not found')
@@ -93,6 +92,8 @@ class MediCredentialPage
              const [newPage] = await Promise.all
              ([
                 this.page.context().waitForEvent('page'),
+                await expect(frame.locator(this.mediacredential_webElements.Print)).toBeVisible(),
+                await this.page.screenshot({ path: './ScreenShot/MediaCredentialSent.png', fullPage: true}),
                 await frame.locator(this.mediacredential_webElements.Print).click()
             ]);
             await newPage.waitForLoadState('load');

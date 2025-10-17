@@ -148,6 +148,7 @@ class NewConsignmentVehicle_WebElement
         this.selectvehiclephotoreq ="//select[@id='photosDrp']"
         this.selectconsigndoc = "//select[@id='opportunityDocumentsDrp']"
         this.selectcustomerDocumentsDrpreq = "//select[@id='customerDocumentsDrp']"
+        this.Payments = "//select[@id='paymentDrp']"
         this.submitbtn = "//button[@type='submit']"
 
         this.LotAssign = "//button[@aria-label='Lot# Assign']"

@@ -59,7 +59,9 @@ class TestData
 
         this. Account_Address = "5055 E Somerset Dr - Arizona";
         this.personal_TitleTo = "Devendra Individual";
-        this.Event_name = "Scottsdale Fall 2025";
+        this.Event_name = "Scottsdale 2026";
+        this.Event_nameSD2025 = "Scottsdale Fall 2025"
+        this.Event_namePB2025 = "Palm Beach 2025";
         this.Odometer_Type = "Miles";
         this.Odometeer_mileage = "45000";
         this.Sale_Type = "No Reserve";
@@ -107,8 +109,8 @@ class TestData
         this.selectAdsenteeBidInternet = "Internet";
         this.selectAdsenteeBidPhone = "Phone";
         this.delectAbsenteeBidAbsenteeRepresentative = "Absentee Representative"
-        this.Lotphone = "225";
-        this.lotabsentee = "225"
+        this.Lotphone = "1023.1";
+        this.lotabsentee = "1023.1"
         this.Contact_number = "5672345678";
         this.MaxBid = "90000"
 
@@ -144,7 +146,7 @@ class TestData
         this.Charities_Description = "Devendra Testing Charities"
         this.Charities_URL = "DevendraTesting"
 
-        this.Event_Name = "Scottsdale Fall 2025"
+       // this.Event_Name = "Scottsdale Fall 2025"
 
         this.Account_Name = "Dev"
         this.Hammer_Amount = "45000"

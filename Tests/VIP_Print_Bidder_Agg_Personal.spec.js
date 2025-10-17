@@ -7,7 +7,7 @@ import { EmailPage} from '../Pages/EmailPage'
 import { DealerAccountPage} from '../Pages/DealerAccountPage'
 import { DealerPhoneNumberPage} from '../Pages/DealerPhoneNumberPage'
 
-test('Creating regular account Print Bidder Aggreement',async({page}) =>  
+test('Creating regular account Print Bidder Aggreement with dealer',async({page}) =>  
 {
     const customerpage = new CustomerPage(page)
     const personalaccountpage = new PersonalAccountPage(page) 
@@ -41,7 +41,7 @@ test('Creating regular account Print Bidder Aggreement',async({page}) =>
     await dealeraccountpage.RelatedAccount()
     await personalaccountpage.RegularAccount_Print_Bidder_Aggreement()
 })
-test('Creating VIP account for  Personal andDealer or Business Print Bidder Aggreement',async({page}) =>
+test('Creating VIP account for  Personal and Dealer or Business Print Bidder Aggreement',async({page}) =>
 {
     const customerpage = new CustomerPage(page)
     const personalaccountpage = new PersonalAccountPage(page) 
@@ -75,7 +75,7 @@ test('Creating VIP account for  Personal andDealer or Business Print Bidder Aggr
     await dealeraccountpage.RelatedAccount()
     await personalaccountpage.VIP_Print_Bidder_Aggreement()
 })
-test('Creating Automobilia account for  Personal andDealer or Business Print Bidder Aggreement',async({page}) =>
+test('Creating Automobilia account for  Personal and Dealer or Business Print Bidder Aggreement',async({page}) =>
 {
     const customerpage = new CustomerPage(page)
     const personalaccountpage = new PersonalAccountPage(page) 

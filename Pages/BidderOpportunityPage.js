@@ -372,17 +372,18 @@ class BidderOpportunityPage
                 await this.page.waitForTimeout(5000)
 
             //Download file PrintAll
-                      const path1 = require('path');  
-                      const fs1 = require('fs');
-                      const downloadDir1 = path1.join(__dirname, 'Download');
-                      if (!fs1.existsSync(downloadDir1)) {
-                          fs1.mkdirSync(downloadDir1);
-                        }
-                      const downloadPromise1 = this.page.waitForEvent('download', { timeout: 60000 })
+                      // const path1 = require('path');  
+                      // const fs1 = require('fs');
+                      // const downloadDir1 = path1.join(__dirname, 'Download');
+                      // if (!fs1.existsSync(downloadDir1)) {
+                      //     fs1.mkdirSync(downloadDir1);
+                      //   }
+                      // const downloadPromise1 = this.page.waitForEvent('download', { timeout: 60000 })
                       await this.page.locator(this.bidderopportunity_webelements.PrintAll).click()      //add ones confirm
-                      const download1 = await downloadPromise1
-                      const downloadPath1 = path1.join(downloadDir1, download1.suggestedFilename());
-                      await download1.saveAs(downloadPath1)
+                      await this.page.waitForTimeout(5000)
+                      // const download1 = await downloadPromise1
+                      // const downloadPath1 = path1.join(downloadDir1, download1.suggestedFilename());
+                      // await download1.saveAs(downloadPath1)
               //Print Agreement
                 await this.page.locator(this.bidderopportunity_webelements.Print_Agreement).click()
                // await this.page.waitForTimeout(2000)

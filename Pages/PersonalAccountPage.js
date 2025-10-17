@@ -70,6 +70,26 @@ class PersonalAccountPage
         await this.page.screenshot({ path: './ScreenShot/EventAuctComp.png', fullPage: true})
         await this.page.locator(this.PersonalAccount_WebElements.SaveandClose_AccountEvent).click()
 
+        await this.page.locator(this.PersonalAccount_WebElements.Event_Auct_Comp).click()
+        await this.page.locator(this.PersonalAccount_WebElements.New_Account_Event).click()
+        await this.page.locator(this.PersonalAccount_WebElements.Event_Field).click()
+        await this.page.locator(this.PersonalAccount_WebElements.Event_Field).fill(this.testdata.Event_nameSD2025)
+        await this.page.waitForTimeout(3000)
+        await this.page.locator(this.PersonalAccount_WebElements.Select_Event).click()
+        //await this.page.selectOption(this.PersonalAccount_WebElements.Select_Next_Auct_Comp_Type,this.testdata.Account_Auct_EventType);
+        await this.page.screenshot({ path: './ScreenShot/EventAuctComp.png', fullPage: true})
+        await this.page.locator(this.PersonalAccount_WebElements.SaveandClose_AccountEvent).click()
+
+         await this.page.locator(this.PersonalAccount_WebElements.Event_Auct_Comp).click()
+        await this.page.locator(this.PersonalAccount_WebElements.New_Account_Event).click()
+        await this.page.locator(this.PersonalAccount_WebElements.Event_Field).click()
+        await this.page.locator(this.PersonalAccount_WebElements.Event_Field).fill(this.testdata.Event_namePB2025)
+        await this.page.waitForTimeout(3000)
+        await this.page.locator(this.PersonalAccount_WebElements.Select_Event).click()
+        await this.page.selectOption(this.PersonalAccount_WebElements.Select_Next_Auct_Comp_Type,this.testdata.Account_Auct_EventType);
+        await this.page.screenshot({ path: './ScreenShot/EventAuctComp.png', fullPage: true})
+        await this.page.locator(this.PersonalAccount_WebElements.SaveandClose_AccountEvent).click()
+
     }
     async personalAccountDocuments()
     {
@@ -118,6 +138,7 @@ class PersonalAccountPage
                     await frame.locator(this.PersonalAccount_WebElements.Next_Month).click()
                     await frame.locator(this.PersonalAccount_WebElements.Select_NextMonthDate).click()
                     await frame.locator(this.PersonalAccount_WebElements.Ok_ExpiryDate).click()
+                    await this.page.waitForTimeout(4000)
                     await this.page.locator(this.PersonalAccount_WebElements.Refresh_Account).click()
                     await this.page.locator(this.PersonalAccount_WebElements.Documents_Tab).click()
                     await this.page.waitForTimeout(2000)
@@ -381,8 +402,8 @@ for (let i = 0; i < packageTypes.length; i++)
         await this.page.waitForTimeout(2000)
         await frame1.locator(this.PersonalAccount_WebElements.Select_Event_Dropdown).click()
         await frame1.locator(this.PersonalAccount_WebElements.Select_Event_Dropdown).selectOption(this.testdata.Event_name)
-        await this.page.screenshot({ path: './ScreenShot/VIPCustomerPersonal.png', fullPage: true})
         await frame1.locator(this.PersonalAccount_WebElements.Print_Button).click()
+        await this.page.screenshot({ path: './ScreenShot/VIPCustomerPersonal.png', fullPage: true})
         await this.page.waitForTimeout(6000)
 
         await this.page.locator(this.PersonalAccount_WebElements.Print_Bidder_Agreement).click()
@@ -392,7 +413,6 @@ for (let i = 0; i < packageTypes.length; i++)
         await frame.locator(this.PersonalAccount_WebElements.Select_Event_Dropdown).click()
         await frame.locator(this.PersonalAccount_WebElements.Select_Event_Dropdown).selectOption(this.testdata.Event_name)
         const Dealer_or_Business = frame.locator(this.PersonalAccount_WebElements.Select_Dealer_Business_Dropdown)
-        await this.page.screenshot({ path: './ScreenShot/VIPCUstomerCompany.png', fullPage: true})
         //const Dealer_or_Business_Option2 = frame.locator(this.PersonalAccount_WebElements.Select_Option2)
 
         // Check if it's visible
@@ -416,6 +436,7 @@ for (let i = 0; i < packageTypes.length; i++)
                 //   }
                // const downloadPromise1 = this.page.waitForEvent('download',{ timeout: 60000 })
                 await frame.locator(this.PersonalAccount_WebElements.Print_Button).click()
+                await this.page.screenshot({ path: './ScreenShot/VIPCUstomerCompany.png', fullPage: true})
                 await this.page.waitForTimeout(6000)
                 // const download1 = await downloadPromise1
                 // const downloadPath1 = path1.join(downloadDir1, download1.suggestedFilename());
@@ -436,8 +457,8 @@ for (let i = 0; i < packageTypes.length; i++)
         await this.page.waitForTimeout(2000)
         await frame1.locator(this.PersonalAccount_WebElements.Select_Event_Dropdown).click()
         await frame1.locator(this.PersonalAccount_WebElements.Select_Event_Dropdown).selectOption(this.testdata.Event_name)
-        await this.page.screenshot({ path: './ScreenShot/AutomobiliaCustomerPersonal.png', fullPage: true})
         await frame1.locator(this.PersonalAccount_WebElements.Print_Button).click()
+        await this.page.screenshot({ path: './ScreenShot/AutomobiliaCustomerPersonal.png', fullPage: true})
         await this.page.waitForTimeout(6000)
 
         await this.page.locator(this.PersonalAccount_WebElements.Print_Bidder_Agreement).click()
@@ -447,7 +468,6 @@ for (let i = 0; i < packageTypes.length; i++)
         await frame.locator(this.PersonalAccount_WebElements.Select_Event_Dropdown).click()
         await frame.locator(this.PersonalAccount_WebElements.Select_Event_Dropdown).selectOption(this.testdata.Event_name)
         const Dealer_or_Business = frame.locator(this.PersonalAccount_WebElements.Select_Dealer_Business_Dropdown)
-        await this.page.screenshot({ path: './ScreenShot/AutomobiliaCustomerCompany.png', fullPage: true})
         //const Dealer_or_Business_Option2 = frame.locator(this.PersonalAccount_WebElements.Select_Option2)
 
         // Check if it's visible
@@ -472,6 +492,7 @@ for (let i = 0; i < packageTypes.length; i++)
                 //   }
                // const downloadPromise1 = this.page.waitForEvent('download',{ timeout: 60000 })
                 await frame.locator(this.PersonalAccount_WebElements.Print_Button).click()
+                await this.page.screenshot({ path: './ScreenShot/AutomobiliaCustomerCompany.png', fullPage: true})
                 await this.page.waitForTimeout(6000)
                 // const download1 = await downloadPromise1
                 // const downloadPath1 = path1.join(downloadDir1, download1.suggestedFilename());
@@ -489,6 +510,7 @@ for (let i = 0; i < packageTypes.length; i++)
         await frame1.locator(this.PersonalAccount_WebElements.Select_Event_Dropdown).click()
         await frame1.locator(this.PersonalAccount_WebElements.Select_Event_Dropdown).selectOption(this.testdata.Event_name)
         await frame1.locator(this.PersonalAccount_WebElements.Print_Button).click()
+        await this.page.screenshot({ path: './ScreenShot/ReglarAccountwithPersonal.png', fullPage: true})
         await this.page.waitForTimeout(6000)
 
         await this.page.locator(this.PersonalAccount_WebElements.Print_Bidder_Agreement).click()
@@ -521,6 +543,7 @@ for (let i = 0; i < packageTypes.length; i++)
                 //   }
                // const downloadPromise1 = this.page.waitForEvent('download',{ timeout: 60000 })
                 await frame.locator(this.PersonalAccount_WebElements.Print_Button).click()
+                await this.page.screenshot({ path: './ScreenShot/ReglarAccountwithDealer/Business.png', fullPage: true})
                 await this.page.waitForTimeout(6000)
                 // const download1 = await downloadPromise1
                 // const downloadPath1 = path1.join(downloadDir1, download1.suggestedFilename());
