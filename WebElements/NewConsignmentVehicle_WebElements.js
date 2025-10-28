@@ -4,7 +4,7 @@ class NewConsignmentVehicle_WebElement
     constructor()
     {
         this.NewOpportunity_Button = "//button[@aria-label='New Opportunity']"
-        this.New_Consignment_opportunity_btn = "//button[@title='New Consignment Opportunity']"
+        this.New_Consignment_opportunity_btn = "//button[@aria-label='Vehicle Consignment']"
         this.Vehicle_field = "//input[@aria-label='Vehicle, Lookup']"
         this.New_Vehicle_link = "//div[@aria-label='Vehicle Lookup results']/descendant::button[@aria-label='New']" ////button[@aria-label='New Vehicle']
         this.Quick_Create_Vehicle_text = "//h1[text()='Quick Create: Vehicle']"
