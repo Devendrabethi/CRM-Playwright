@@ -3,6 +3,7 @@ class NewConsignmentVehicle_WebElement
 {
     constructor()
     {
+        this.NewOpportunity_Button = "//button[@aria-label='New Opportunity']"
         this.New_Consignment_opportunity_btn = "//button[@title='New Consignment Opportunity']"
         this.Vehicle_field = "//input[@aria-label='Vehicle, Lookup']"
         this.New_Vehicle_link = "//div[@aria-label='Vehicle Lookup results']/descendant::button[@aria-label='New']" ////button[@aria-label='New Vehicle']
@@ -174,6 +175,11 @@ class NewConsignmentVehicle_WebElement
         //ribbon
          this.Opportunity_button = "//div[@title='Opportunities']"
          this.Consignments_Button = "//div[@title='Consignments']"
+         this.ConsignmentType_Dropdown = "(//div[@col-id='bjac_consigntype'])[1]"
+         this.FilterBy = "//button[@aria-label='Filter by']"
+         this.FilterBy_Value = "//div[@aria-label='Filter by value']"
+         this.Select_Vehicle = "//div[@title='Vehicle']"
+         this.Apply_Button = "//span[text()='Apply']"
          this.First_Consignment = "//div[@row-index='0']/div[1]"
 
     }

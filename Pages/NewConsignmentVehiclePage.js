@@ -17,6 +17,8 @@ class NewConsignmentVehiclePage
     }
     async newcon()
     {
+        await this.page.locator(this.newconsignmentvehicle_webelement.NewOpportunity_Button).click({ timeout: 60000 })   
+        await this.page.waitForTimeout(2000)
         await this.page.locator(this.newconsignmentvehicle_webelement.New_Consignment_opportunity_btn).click({ timeout: 60000 })
         //await this.page.waitForTimeout(4000)
     }
@@ -539,6 +541,13 @@ class NewConsignmentVehiclePage
    {
         await this.page.locator(this.newconsignmentvehicle_webelement.Opportunity_button).click()
         await this.page.locator(this.newconsignmentvehicle_webelement.Consignments_Button).click()
+        await this.page.waitForTimeout(4000)
+        await this.page.locator(this.newconsignmentvehicle_webelement.ConsignmentType_Dropdown).click()
+        await this.page.locator(this.newconsignmentvehicle_webelement.FilterBy).click()
+        await this.page.locator(this.newconsignmentvehicle_webelement.FilterBy_Value).click()
+        await this.page.locator(this.newconsignmentvehicle_webelement.Select_Vehicle).click()
+        await this.page.waitForTimeout(2000)
+        await this.page.locator(this.newconsignmentvehicle_webelement.Apply_Button).click()
         await this.page.waitForTimeout(4000)
         await this.page.locator(this.newconsignmentvehicle_webelement.First_Consignment).dblclick()
         await this.page.waitForTimeout(10000)

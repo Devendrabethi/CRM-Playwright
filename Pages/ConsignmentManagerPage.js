@@ -1,5 +1,6 @@
 import { expect } from '@playwright/test'
-import { ConsignmentManager_WebElements } from '../WebElements/ConsignmentManager_WebElements'    
+import { ConsignmentManager_WebElements } from '../WebElements/ConsignmentManager_WebElements'   
+import { NewConsignmentVehicle_WebElement } from '../WebElements/NewConsignmentVehicle_WebElements.js'; 
 import { TestData } from '../TestData/testdata.js';
 
 exports.ConsignmentManagerPage =
@@ -9,6 +10,7 @@ class ConsignmentManagerPage
     {
         this.page = page
         this.consignmentManager_webElements =  new ConsignmentManager_WebElements()
+        this.newconsignmentvehicle_webelement = new NewConsignmentVehicle_WebElement()
         this.testdata = new TestData()
     }
     async ChangeArea()
@@ -133,6 +135,13 @@ class ConsignmentManagerPage
     {
        await this.page.locator(this.consignmentManager_webElements.Select_Consignments_Option).click()
        await this.page.waitForTimeout(2000)
+       await this.page.locator(this.newconsignmentvehicle_webelement.ConsignmentType_Dropdown).click()
+       await this.page.locator(this.newconsignmentvehicle_webelement.FilterBy).click()
+       await this.page.locator(this.newconsignmentvehicle_webelement.FilterBy_Value).click()
+       await this.page.locator(this.newconsignmentvehicle_webelement.Select_Vehicle).click()
+       await this.page.waitForTimeout(2000)
+       await this.page.locator(this.newconsignmentvehicle_webelement.Apply_Button).click()
+       await this.page.waitForTimeout(4000)
        await this.page.locator(this.consignmentManager_webElements.Open_Consignment).dblclick()
        await this.page.waitForTimeout(2000)
        await this.page.locator(this.consignmentManager_webElements.On_Charity_Toggle).click()

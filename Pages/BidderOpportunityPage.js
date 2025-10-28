@@ -20,6 +20,8 @@ class BidderOpportunityPage
 
     async New_Bidder_Opportunity()
     {
+        await this.page.locator(this.bidderopportunity_webelements.NewOpportunity_Button).click({ timeout: 60000 })
+        await this.page.waitForTimeout(2000)
         await this.page.locator(this.bidderopportunity_webelements.Bidder_Registration).click()
         await expect(this.page.locator(this.bidderopportunity_webelements.Verify_NewOpportunity_Text)).toBeVisible({timeout:30000})
 

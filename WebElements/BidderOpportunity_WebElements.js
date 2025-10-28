@@ -3,6 +3,7 @@ class BidderOpportunity_WebElements
 {
     constructor()
     {
+        this.NewOpportunity_Button = "//button[@aria-label='New Opportunity']"
         this.Bidder_Registration = "//button[@aria-label='Bidder Registration']"
         this.Verify_NewOpportunity_Text = "//h1[@title='New Opportunity']"
         this.Event_Text = "//label[text()='Event']"

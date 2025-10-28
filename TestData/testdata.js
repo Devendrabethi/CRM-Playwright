@@ -4,7 +4,7 @@ class TestData
 {
     constructor()
     {
-        this.URL ="https://bjac-uat.crm.dynamics.com/"
+        this.URL ="https://bjac-atoqa.crm.dynamics.com/"
         this.Emailid = "d365testuser3@barrett-jackson.com";//"dbethi@barrett-jackson.com";//d365testuser3@barrett-jackson.com"; 
         this.Password = "ZNcCzew8NjYz";//ZNcCzew8NjYz--testuser3
         this.FirstName = "Devendra"
