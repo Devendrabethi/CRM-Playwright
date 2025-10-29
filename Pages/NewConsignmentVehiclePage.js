@@ -143,7 +143,8 @@ class NewConsignmentVehiclePage
             "Power of Attorney" :          "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\Power of Attorney.jpg",
             "Title Reassignment" :           "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\Title Reassignment.jpg",
             "VIN History" :      "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\VIN History.jpg",
-            "DYNO Sheet" :    "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\Dyno.jpg"
+            "DYNO Sheet" :    "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\Dyno.jpg",
+            "Vehicle Contract":  "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\CarFax.jpg"
         }
         for (const [documentType, documentPath] of Object.entries(fileToUpload))
              {
