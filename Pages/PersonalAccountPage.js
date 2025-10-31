@@ -174,7 +174,7 @@ class PersonalAccountPage
                     await this.page.waitForTimeout(1000);
 
                     await this.page.locator(this.PersonalAccount_WebElements.Event).click();
-                    await this.page.locator(this.PersonalAccount_WebElements.Event).fill(this.testdata.Tracking_Event);
+                    await this.page.locator(this.PersonalAccount_WebElements.Event).fill(this.testdata.Event_name);
                     await this.page.waitForTimeout(6000);
                     await this.page.locator(this.PersonalAccount_WebElements.Select_Tracking_Event).click();
                     await this.page.selectOption(this.PersonalAccount_WebElements.Select_PackageType_Dropdown,this.testdata.packageType_Bidder_Credential_Package)
@@ -241,7 +241,7 @@ for (let i = 0; i < packageTypes.length; i++)
                     await this.page.waitForTimeout(1000);
 
                     await this.page.locator(this.PersonalAccount_WebElements.Event).click();
-                    await this.page.locator(this.PersonalAccount_WebElements.Event).fill(this.testdata.Tracking_Event);
+                    await this.page.locator(this.PersonalAccount_WebElements.Event).fill(this.testdata.Event_name);
                     await this.page.waitForTimeout(3000);
 
                     await this.page.locator(this.PersonalAccount_WebElements.Select_Tracking_Event).click();
@@ -285,7 +285,7 @@ for (let i = 0; i < packageTypes.length; i++)
                     await this.page.locator(this.PersonalAccount_WebElements.Create_Package).click()
                     await this.page.waitForTimeout(1000)
                     await this.page.locator(this.PersonalAccount_WebElements.Event).click()
-                    await this.page.locator(this.PersonalAccount_WebElements.Event).fill(this.testdata.Tracking_Event)
+                    await this.page.locator(this.PersonalAccount_WebElements.Event).fill(this.testdata.Event_name)
                     await this.page.waitForTimeout(6000)
                     await this.page.locator(this.PersonalAccount_WebElements.Select_Tracking_Event).click()
                     await this.page.selectOption(this.PersonalAccount_WebElements.Select_PackageType_Dropdown,this.testdata.packageType_Bidder_Credential_Package)
@@ -303,7 +303,7 @@ for (let i = 0; i < packageTypes.length; i++)
                     await this.page.locator(this.PersonalAccount_WebElements.Create_Package).click()
                     await this.page.waitForTimeout(1000)
                     await this.page.locator(this.PersonalAccount_WebElements.Event).click()
-                    await this.page.locator(this.PersonalAccount_WebElements.Event).fill(this.testdata.Tracking_Event)
+                    await this.page.locator(this.PersonalAccount_WebElements.Event).fill(this.testdata.Event_name)
                     await this.page.waitForTimeout(6000)
                     await this.page.locator(this.PersonalAccount_WebElements.Select_Tracking_Event).click()
                     await this.page.selectOption(this.PersonalAccount_WebElements.Select_PackageType_Dropdown,this.testdata.packageType_Bidder_Credential_Package)
@@ -322,7 +322,7 @@ for (let i = 0; i < packageTypes.length; i++)
                     await this.page.waitForTimeout(1000);
 
                     await this.page.locator(this.PersonalAccount_WebElements.Event).click();
-                    await this.page.locator(this.PersonalAccount_WebElements.Event).fill(this.testdata.Tracking_Event);
+                    await this.page.locator(this.PersonalAccount_WebElements.Event).fill(this.testdata.Event_name);
                     await this.page.waitForTimeout(6000);
                     await this.page.locator(this.PersonalAccount_WebElements.Select_Tracking_Event).click();
                     await this.page.selectOption(this.PersonalAccount_WebElements.Select_PackageType_Dropdown,this.testdata.packageType_Bidder_Credential_Package)

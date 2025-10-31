@@ -10,7 +10,7 @@ class MediaCredential_WebElements {
             this.Select_OtherMediaContacts = "//label[text()='Other Media Contacts']"
             this.Other_MediaContact = "//button[@aria-label='Other Media Contacts']"
             this.Select_PrimaryMediaCredential = "//label[text()='Primary Media Credentials']"
-            this.NewContact_Media = "//ul[@aria-label='Contact Commands']/li[contains(@id,'contact')]/button[contains(@aria-label,'New Contact - Media')]"
+            this.NewContact_Media = "//ul[@aria-label='Contact Commands']/li[contains(@id,'contact')]/button[contains(@aria-label,'New')]"
             this.FirstName = "//input[@aria-label='First Name']"
             this.LastName = "//input[@aria-label='Last Name']"
             this.Email = "//input[@aria-label='Email']"
@@ -35,7 +35,7 @@ class MediaCredential_WebElements {
             this.Refresh_Button = "//button[@aria-label='Refresh']"
 
             this.OrgDetails_Tab = "//li[@aria-label='Org Details ']"
-            this.AddMediaContact_Button = "//button[contains(@aria-label,'Add Media Contact')]"
+            this.AddMediaContact_Button = "//button[contains(@aria-label,'Add New Contact')]"
             this.OrgDetails_FirstName = "(//input[@aria-label='First Name'])[2]"
             this.orgDetails_LastName = "(//input[@aria-label='Last Name'])[2]"
             this.orgDetails_Email = "(//input[@aria-label='Email'])[2]"

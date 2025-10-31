@@ -104,6 +104,7 @@ class MediCredentialPage
             await newPage.locator(this.mediacredential_webElements.AdoptandSign).click()
             await this.page.waitForTimeout(5000)
             await newPage.locator(this.mediacredential_webElements.Finish_Button).click()
+            await this.page.screenshot({ path: './ScreenShot/MediaCredentialDocusign.png', fullPage: true})
             await this.page.waitForTimeout(10000)
             await newPage.close();
             await this.page.bringToFront();
@@ -115,6 +116,7 @@ class MediCredentialPage
     }
     async Org_Details()
     {
+        await this.page.waitForTimeout(5000)
         await this.page.locator(this.mediacredential_webElements.OrgDetails_Tab).click()
         await this.page.locator(this.mediacredential_webElements.AddMediaContact_Button).click()
         await this.page.waitForTimeout(3000)

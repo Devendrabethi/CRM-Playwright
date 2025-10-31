@@ -374,10 +374,10 @@ class NewConsignmentVehiclePage
     async RibbonLevel()
     {
         
-            //Lot Assign
-                await this.page.locator(this.newconsignmentvehicle_webelement.LotAssign).click()
-                await this.page.waitForTimeout(5000)
-                const Lotframe = await this.page.frameLocator(this.lotnumberchange_webElements.Frame_LotAssign)
+//Lot Assign
+        await this.page.locator(this.newconsignmentvehicle_webelement.LotAssign).click()
+        await this.page.waitForTimeout(5000)
+        const Lotframe = await this.page.frameLocator(this.lotnumberchange_webElements.Frame_LotAssign)
         if(!Lotframe) throw new Error('Iframe not found')
         await Lotframe.locator(this.lotnumberchange_webElements.New_LotNumber).fill(this.testdata.NewLotNumber)
         await Lotframe.locator(this.lotnumberchange_webElements.Select_StatusDropdown).selectOption(this.testdata.LotStatus_Tentative)
@@ -413,42 +413,11 @@ class NewConsignmentVehiclePage
             await this.page.waitForTimeout(2000);
             await this.page.screenshot({ path: './ScreenShot/LotOvverrideConfirmation.png', fullPage: true})
             await Lotframe.locator(this.lotnumberchange_webElements.Save_Button).click();
-            await this.page.waitForTimeout(20000);
+            await this.page.waitForTimeout(25000);
 
-        await this.page.locator(this.lotnumberchange_webElements.Products_Tab).click({ timeout: 60000 });
-        await this.page.waitForTimeout(5000)
-        await this.page.locator(this.lotnumberchange_webElements.Invoice_Tab).click()
-        await this.page.locator(this.lotnumberchange_webElements.Refresh_Invoice).click()
-        await this.page.locator(this.lotnumberchange_webElements.SelectInvoice).click()
-        await this.page.locator(this.bidderopportunity_webelements.EnterPaymentButton).click()  
-        const frame1 = await this.page.frameLocator(this.bidderopportunity_webelements.FrameInvoice)
-        if(!frame1) throw new Error('Iframe not found')
-        await frame1.locator(this.bidderopportunity_webelements.SelectPaymentMethod).selectOption(this.testdata.SelectInvoiceVisa)
-        await this.page.waitForTimeout(4000);
-        //const frame1 = await this.page.frameLocator(this.bidderopportunity_webelements.FrameCard)
-        const frameCard = await frame1.frameLocator(this.bidderopportunity_webelements.FrameCard);
-        if(!frameCard) throw new Error('Nested iframe not found')
-       // await frame1.locator(this.bidderopportunity_webelements.CardNum).waitFor({ state: 'visible' })
-       // await frameCard.locator(this.bidderopportunity_webelements.CardNum).click()
-        await frameCard.locator(this.bidderopportunity_webelements.CardNum).fill(this.testdata.CardCC)
-        await frameCard.locator(this.bidderopportunity_webelements.CardExpDate).fill(this.testdata.CardExp)
-        await frameCard.locator(this.bidderopportunity_webelements.Cvv).fill(this.testdata.CVVNum)
-        await frameCard.locator(this.bidderopportunity_webelements.ZipCode).fill(this.testdata.ZipCOde)
-        await frame1.locator(this.bidderopportunity_webelements.SubmitButton).click()
-        await this.page.locator(this.bidderopportunity_webelements.PaymentOk).click({timeout:60000})
-        await this.page.locator(this.lotnumberchange_webElements.Products_Tab).click({timeout:60000})
-        await this.page.screenshot({ path: './ScreenShot/LotProductTab.png', fullPage: true})
-        await this.page.waitForTimeout(5000)
-        await this.page.locator(this.lotnumberchange_webElements.Invoice_Tab).click()
-        await this.page.waitForTimeout(5000)
-        await this.page.locator(this.lotnumberchange_webElements.Selectsingleinvoive).dblclick()
-        await this.page.screenshot({ path: './ScreenShot/LotInvoiceTab.png', fullPage: true})
-        await this.page.locator(this.lotnumberchange_webElements.SaveandClose).click()
-        await this.page.waitForTimeout(3000)
+             //Request Information
 
- //Request Information
-
-    await this.page.locator(this.newconsignmentvehicle_webelement.reqinforbtn).click()
+        await this.page.locator(this.newconsignmentvehicle_webelement.reqinforbtn).click()
         const frame = await this.page.frameLocator(this.newconsignmentvehicle_webelement.reqinforframe)
         if(!frame) throw new Error('Iframe not found')
             await frame.locator(this.newconsignmentvehicle_webelement.selectvehiclephotoreq).selectOption([
@@ -483,13 +452,85 @@ class NewConsignmentVehiclePage
                 const dialog = await dialogPromise;
                 await dialog.accept();
 
+        //Consignment Print Contract
+                await this.page.locator(this.bidderopportunity_webelements.Print_Contract).click()
+               // await this.page.waitForTimeout(2000)
+                await this.page.locator(this.bidderopportunity_webelements.Print).click()
+                await this.page.waitForTimeout(2000)
+                try
+                {
+                            this.page.on('dialog', async (dialog) => {
+                            console.log(`Dialog message: ${dialog.message()}`);
+                            await dialog.accept(); // Accept the alert
+                            });
+                             await this.page.waitForTimeout(1000)
+                             await this.page.locator(this.bidderopportunity_webelements.Save_btn).click();
+                             await this.page.locator(this.bidderopportunity_webelements.GoBack_btn).click({timeout:60000})
+                }
+                catch(error)
+                {
+                        await this.page.locator(this.bidderopportunity_webelements.Save_btn).click({timeout:60000})
+                        await this.page.waitForTimeout(1000)
+                        await this.page.locator(this.bidderopportunity_webelements.GoBack_btn).click({timeout:60000})
+                }
+        //Consignment Send Contract
+                await this.page.locator(this.bidderopportunity_webelements.Send_Contract).click({timeout:60000})
+                try 
+                {
+                  // Check if the Send_Agreement_Close button is present
+                      await this.page.locator(this.bidderopportunity_webelements.Send_Agreement_Close).click({timeout:5000});
+                    //  await this.page.waitForTimeout(2000);
+                } 
+              catch (error) 
+              {
+                      await this.page.locator(this.bidderopportunity_webelements.Send).click();
+                     // await this.page.waitForTimeout(2000);
+                      await this.page.locator(this.bidderopportunity_webelements.Okbtn).click({timeout:60000});
+                      await this.page.locator(this.bidderopportunity_webelements.Save_btn).click();
+                     // await this.page.waitForTimeout(1000);
+                      await this.page.locator(this.bidderopportunity_webelements.GoBack_btn).click();
+                     // await this.page.waitForTimeout(1000);
+              }        
 
+        await this.page.locator(this.lotnumberchange_webElements.Products_Tab).click({ timeout: 60000 });
+        await this.page.waitForTimeout(5000)
+        await this.page.locator(this.lotnumberchange_webElements.Invoice_Tab).click()
+        await this.page.locator(this.lotnumberchange_webElements.Refresh_Invoice).click()
+        await this.page.locator(this.lotnumberchange_webElements.SelectInvoice).click()
+        await this.page.locator(this.bidderopportunity_webelements.EnterPaymentButton).click()  
+        const frame1 = await this.page.frameLocator(this.bidderopportunity_webelements.FrameInvoice)
+        if(!frame1) throw new Error('Iframe not found')
+        await frame1.locator(this.bidderopportunity_webelements.SelectPaymentMethod).selectOption(this.testdata.SelectInvoiceVisa)
+        await this.page.waitForTimeout(4000);
+        //const frame1 = await this.page.frameLocator(this.bidderopportunity_webelements.FrameCard)
+        const frameCard = await frame1.frameLocator(this.bidderopportunity_webelements.FrameCard);
+        if(!frameCard) throw new Error('Nested iframe not found')
+       // await frame1.locator(this.bidderopportunity_webelements.CardNum).waitFor({ state: 'visible' })
+       // await frameCard.locator(this.bidderopportunity_webelements.CardNum).click()
+        await frameCard.locator(this.bidderopportunity_webelements.CardNum).fill(this.testdata.CardCC)
+        await frameCard.locator(this.bidderopportunity_webelements.CardExpDate).fill(this.testdata.CardExp)
+        await frameCard.locator(this.bidderopportunity_webelements.Cvv).fill(this.testdata.CVVNum)
+        await frameCard.locator(this.bidderopportunity_webelements.ZipCode).fill(this.testdata.ZipCOde)
+        await frame1.locator(this.bidderopportunity_webelements.SubmitButton).click()
+        await this.page.locator(this.bidderopportunity_webelements.PaymentOk).click({timeout:60000})
+        await this.page.locator(this.lotnumberchange_webElements.Products_Tab).click({timeout:60000})
+        await this.page.screenshot({ path: './ScreenShot/LotProductTab.png', fullPage: true})
+        await this.page.waitForTimeout(5000)
+        await this.page.locator(this.lotnumberchange_webElements.Invoice_Tab).click()
+        await this.page.waitForTimeout(5000)
+        await this.page.locator(this.lotnumberchange_webElements.Selectsingleinvoive).dblclick()
+        await this.page.screenshot({ path: './ScreenShot/LotInvoiceTab.png', fullPage: true})
+        await this.page.locator(this.lotnumberchange_webElements.SaveandClose).click()
+        await this.page.waitForTimeout(3000)
 
 ///Lot Cancel
         await this.page.locator(this.lotnumberchange_webElements.LotAssign).click()
-        //await frame.locator(this.lotnumberchange_webElements.NewLotNumber_Field).fill(this.testdata.NewLotNumber)
         await Lotframe.locator(this.lotnumberchange_webElements.Select_StatusDropdown).selectOption(this.testdata.LotStatus_Cancel)
         await Lotframe.locator(this.lotnumberchange_webElements.Save_Button).click()
+        this.page.on('dialog', async (dialog) => {
+        console.log(`Dialog message: ${dialog.message()}`);
+        await dialog.accept(); // Accept the alert
+        });
         await this.page.waitForTimeout(15000)
         await this.page.locator(this.lotnumberchange_webElements.SaleDay_Tab).click()
         await this.page.waitForTimeout(5000)   

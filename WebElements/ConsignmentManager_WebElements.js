@@ -38,8 +38,8 @@ class ConsignmentManager_WebElements
         this.SelectDays = "//select[@id='days']"
         this.LaunchButton = "//button[text()='Launch']"
         this.Iframe_DaysOfConsign = "//iframe[@aria-label='DayofConsign']"
-        this.Day1Prime = "//button[text()='Day 1 Prime ']"
-        this.Day1Pm = "//button[text()='Day 1 PM ']"
+        this.Day1Prime = "//button[contains(text(), 'Prime')]"
+        this.Day1Pm = "//button[contains(text(),'PM ')]"
         this.Other = "//button[text()='Others']"
         this.Seach_Field = "(//input[@type='search'])[4]"
         this.FirstCIdCheckbox = "//table[@id='rightTab_OTHERS_table']/tbody/tr[1]/td[1]"
@@ -52,10 +52,10 @@ class ConsignmentManager_WebElements
         this.Time_Button = "//button[text()='Time']"
         this.Cancelled_Button = "//button[text()='Cancelled']"
         this.SlideShow_Button ="//button[text()='Slide Show']"
-        this.Close_SlideShow = "(//button[@aria-label='Close'])[2]"
+        this.Close_SlideShow = "(//button[@aria-label='Close'])[3]"
         this.Trend_Button = "//button[text()='Trend']"
         this.Refresh_Button = "//button[text()='Refresh']"
-        this.Close_Docket = "(//button[@aria-label='Close'])[1]"
+        this.Close_Docket = "(//button[@aria-label='Close'])[2]"
 
 
         this.Select_Consignments_Option = "//li[@aria-label='Consignments']"
@@ -81,7 +81,7 @@ class ConsignmentManager_WebElements
 
         this.Add_Charities = "//button[@aria-label='Add Charity. New']"
         this.CreatedOn = "(//div[@data-testid='createdon'])[3]"
-        this.CreatedOnCharity = "(//div[@data-testid='createdon'])[1]"
+        this.CreatedOnCharity = "(//div[@data-testid='createdon'])[3]"
         this.HoverFirstRow = "(//div[@aria-label='Press SPACE to select this row.'])[5]"
         this.Select_FirstRow = "(//div[@aria-label='Press SPACE to select this row.'])[1]/div[5]"
         this.Select_Charity_Association = "(//input[@aria-label='Select or deselect the row'])[3]"

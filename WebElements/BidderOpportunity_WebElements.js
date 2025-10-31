@@ -74,7 +74,7 @@ class BidderOpportunity_WebElements
         this.TaskRefresh = "(//span[text()='Refresh'])[2]/../parent::button"
 
         this.Opportunity_Product_Tab = "//ul[@aria-label='Opportunity Form']/li[contains(@title,'Products')]"
-        this.Add_Product_button = "//button[@aria-label='Add Product']"
+        this.Add_Product_button = "//button[@aria-label='Add product']"
         this.Existing_Product = "//input[@aria-label='Product, Lookup']"
         this.Selecting_product = "//ul[@aria-label='Lookup results']/li[1]"
         this.Quantity = "//input[@aria-label='Quantity']"
@@ -137,6 +137,9 @@ class BidderOpportunity_WebElements
          this.Send = "//button[@title='Send']/parent::li"
          this.Okbtn = "//button[@aria-label='OK']"
 
+         this.Print_Contract = "//button[@aria-label='Print Contract']"
+         this.Send_Contract = "//button[@aria-label='Send Contract']"
+
          this.Sync = "//button[@aria-label='Sync']"
 
          this.AgreementsTab = "//ul[@aria-label='Opportunity Form']/li[contains(@aria-label,'Agreements')]"
@@ -181,7 +184,7 @@ class BidderOpportunity_WebElements
         this.ConsignmentandBidderFilter = "//input[@aria-label='Opportunity Filter by keyword']"
         this.MenuBidder = "//span[text()='Bidders']"
         this.MenuAbsenteeBids = "//span[text()='Absentees Bids']"
-        this.BidderScottsdaleFall2025Dropdown = "//span[text()='Bidder Scottsdale Fall 2025']"
+        this.BidderScottsdale2026Dropdown = "//span[text()='Bidder Scottsdale 2026']"
         this.MenuSubmit = "//span[text()='Submitted']"
         this.MenuInReview = "//span[text()='In Review']"
         this.MenuComplete = "//span[text()='Complete']"
@@ -192,7 +195,7 @@ class BidderOpportunity_WebElements
         this.MenuMyAssigned = "//span[text()='My Assigned']"
         this.VIPOpportunities = "//span[text()='VIP Opportunities']"
 
-        this.ConsignmentScottsdaleFall2025Dropdown = "//span[text()='Consignment Scottsdale Fall 2025']"
+        this.ConsignmentScottsdale2026Dropdown = "//span[text()='Consignment Scottsdale 2026']"
         this.MenuAllOpportunity = "//span[text()='All Opportunities']"
         this.MenuOpportunityWithOpenTask = "//span[text()='Opportunities with Open Tasks']"
         this.MenuNewOpportunity = "//span[text()='New Opportunities']"
@@ -201,8 +204,11 @@ class BidderOpportunity_WebElements
         this.MenuCompleteOpportunity = "//span[text()='Complete Opportunities']"
         this.MenuAssignedOpportunity = "//span[text()='Assigned Opportunities']"
 
-        this.BidderScottsdale2026Dropdown = "//span[text()='Bidder Scottsdale 2026']"
-        this.ConsignmentScottsdale2026Dropdown = "//span[text()='Consignment Scottsdale 2026']"
+        this.BidderPalmBeach2026Dropdown = "//span[text()='Bidder Palm Beach 2026']"
+        this.ConsignmentPalmBeach2026Dropdown = "//span[text()='Consignment Palm Beach 2026']"
+
+        this.BidderColumbus2026Dropdown = "//span[text()='Bidder Columbus 2026']"
+        this.ConsignmentColumbus2026Dropdown = "//span[text()='Consignment Columbus 2026']"
 
         this.MenuHome = "//span[text()='Home']"
 

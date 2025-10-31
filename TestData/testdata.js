@@ -4,7 +4,7 @@ class TestData
 {
     constructor()
     {
-        this.URL ="https://bjac-atoqa.crm.dynamics.com/"
+        this.URL ="https://bjac-hotfixqa.crm.dynamics.com/"
         this.Emailid = "d365testuser3@barrett-jackson.com";//"dbethi@barrett-jackson.com";//d365testuser3@barrett-jackson.com"; 
         this.Password = "ZNcCzew8NjYz";//ZNcCzew8NjYz--testuser3
         this.FirstName = "Devendra"
@@ -59,7 +59,7 @@ class TestData
 
         this. Account_Address = "5055 E Somerset Dr - Arizona";
         this.personal_TitleTo = "Devendra Individual";
-        this.Event_name = "Scottsdale 2026";
+        this.Event_name = "Scottsdale Fall 2025"//"Scottsdale 2026";
         this.Event_nameSD2025 = "Scottsdale Fall 2025"
         this.Event_namePB2025 = "Palm Beach 2025";
         this.Odometer_Type = "Miles";
@@ -109,12 +109,12 @@ class TestData
         this.selectAdsenteeBidInternet = "Internet";
         this.selectAdsenteeBidPhone = "Phone";
         this.delectAbsenteeBidAbsenteeRepresentative = "Absentee Representative"
-        this.Lotphone = "1023.1";
-        this.lotabsentee = "1023.1"
+        this.Lotphone = "23.1";
+        this.lotabsentee = "23.1"
         this.Contact_number = "5672345678";
         this.MaxBid = "90000"
 
-        this.EventName = "Scottsdale Fall 2025"
+        //this.EventName = "Scottsdale Fall 2025"
         this.Monday = "Day 1 (WED) LotRange 1-249"
 
         this.Existing_Product = "CHILD GUEST";
@@ -153,7 +153,7 @@ class TestData
 
         this.Donation_Amount = "55000"
         //Tracking
-        this.Tracking_Event = "Scottsdale Fall 2025"
+       // this.Tracking_Event = "Scottsdale Fall 2025"
         this.packageType_Bidder_Credential_Package = "Bidder Credential Package"
         this.PackageType_Bidder_Collateral_Return = "Bidder Collateral Return"
         this.PackageType_Gift = "Gift(s)"
@@ -196,7 +196,7 @@ class TestData
         //LOT Change
         this.NewDocket_Select = "Day 4 (SAT) LotRange 900-1049"
         this.NewDocketSpot_Select = "Day 4 Prime - Lot# 925 to 1025"
-        this.NewLotNumber = "1023.1"
+        this.NewLotNumber = "23.1"
         this.LotStatus_Tentative = "Tentative"
         this.LotStatus_PendingRevisit = "Pending - Revisit"
         this.LotStstaus_PendingAccepted = "Pending - Accepted"
