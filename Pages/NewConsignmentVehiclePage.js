@@ -443,9 +443,9 @@ class NewConsignmentVehiclePage
                 { label: 'Operating Agreement' },
                 { label: 'Wholesale License' }
               ]);
-            //     await frame.locator(this.newconsignmentvehicle_webelement.Payments).selectOption([
-            //     { label: 'Consignment Lot Fee' }
-            //   ]);
+                await frame.locator(this.newconsignmentvehicle_webelement.Payments).selectOption([
+                { label: 'Consignment Lot Fee' }
+              ]);
               await this.page.screenshot({ path: './ScreenShot/ReqInformation.png', fullPage: true})
                 const dialogPromise = this.page.waitForEvent('dialog',{ timeout: 75000 });
                 await frame.locator(this.newconsignmentvehicle_webelement.submitbtn).click();
@@ -475,17 +475,23 @@ class NewConsignmentVehiclePage
                 }
         //Consignment Send Contract
                 await this.page.locator(this.bidderopportunity_webelements.Send_Contract).click({timeout:60000})
+                await this.page.locator(this.bidderopportunity_webelements.Send).click();
                 try 
                 {
+                    this.page.on('dialog', async (dialog) => {
+                            console.log(`Dialog message: ${dialog.message()}`);
+                            await dialog.accept(); // Accept the alert
+                            });
+                             await this.page.waitForTimeout(1000)
                   // Check if the Send_Agreement_Close button is present
                       await this.page.locator(this.bidderopportunity_webelements.Send_Agreement_Close).click({timeout:5000});
                     //  await this.page.waitForTimeout(2000);
                 } 
               catch (error) 
               {
-                      await this.page.locator(this.bidderopportunity_webelements.Send).click();
                      // await this.page.waitForTimeout(2000);
-                      await this.page.locator(this.bidderopportunity_webelements.Okbtn).click({timeout:60000});
+                     await this.page.screenshot({ path: './ScreenShot/SendContract.png', fullPage: true})
+                      await this.page.locator(this.bidderopportunity_webelements.Okbtn).click({timeout:1000000});
                       await this.page.locator(this.bidderopportunity_webelements.Save_btn).click();
                      // await this.page.waitForTimeout(1000);
                       await this.page.locator(this.bidderopportunity_webelements.GoBack_btn).click();
@@ -529,7 +535,7 @@ class NewConsignmentVehiclePage
         await Lotframe.locator(this.lotnumberchange_webElements.Save_Button).click()
         this.page.on('dialog', async (dialog) => {
         console.log(`Dialog message: ${dialog.message()}`);
-        await dialog.accept(); // Accept the alert
+        //await dialog.accept(); // Accept the alert
         });
         await this.page.waitForTimeout(15000)
         await this.page.locator(this.lotnumberchange_webElements.SaleDay_Tab).click()

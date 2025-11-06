@@ -66,7 +66,7 @@ class PersonalAccountPage
         await this.page.locator(this.PersonalAccount_WebElements.Event_Field).fill(this.testdata.Event_name)
         await this.page.waitForTimeout(3000)
         await this.page.locator(this.PersonalAccount_WebElements.Select_Event).click()
-        await this.page.selectOption(this.PersonalAccount_WebElements.Select_Next_Auct_Comp_Type,this.testdata.Account_Auct_EventType);
+        //await this.page.selectOption(this.PersonalAccount_WebElements.Select_Next_Auct_Comp_Type,this.testdata.Account_Auct_EventType);
         await this.page.screenshot({ path: './ScreenShot/EventAuctComp.png', fullPage: true})
         await this.page.locator(this.PersonalAccount_WebElements.SaveandClose_AccountEvent).click()
 
@@ -86,7 +86,7 @@ class PersonalAccountPage
         await this.page.locator(this.PersonalAccount_WebElements.Event_Field).fill(this.testdata.Event_namePB2025)
         await this.page.waitForTimeout(3000)
         await this.page.locator(this.PersonalAccount_WebElements.Select_Event).click()
-        await this.page.selectOption(this.PersonalAccount_WebElements.Select_Next_Auct_Comp_Type,this.testdata.Account_Auct_EventType);
+        //await this.page.selectOption(this.PersonalAccount_WebElements.Select_Next_Auct_Comp_Type,this.testdata.Account_Auct_EventType);
         await this.page.screenshot({ path: './ScreenShot/EventAuctComp.png', fullPage: true})
         await this.page.locator(this.PersonalAccount_WebElements.SaveandClose_AccountEvent).click()
 

@@ -59,7 +59,7 @@ class TestData
 
         this. Account_Address = "5055 E Somerset Dr - Arizona";
         this.personal_TitleTo = "Devendra Individual";
-        this.Event_name = "Scottsdale Fall 2025"//"Scottsdale 2026";
+        this.Event_name = "Scottsdale 2026"//"Scottsdale 2026";
         this.Event_nameSD2025 = "Scottsdale Fall 2025"
         this.Event_namePB2025 = "Palm Beach 2025";
         this.Odometer_Type = "Miles";
@@ -137,6 +137,7 @@ class TestData
         this.ZipCOde = "11111"
 
         this.SelectInvoiceCash = "Cash"
+        this.SelectInvoiceCheck = "Check"
         this.PaymentNumberValue = "0005"
 
         this.Collection_Name = "Devendra"

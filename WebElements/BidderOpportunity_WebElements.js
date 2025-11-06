@@ -88,6 +88,7 @@ class BidderOpportunity_WebElements
         this.select_Payment_Method = "//select[@aria-label='Payment Method']"
 
         this.SelectAllInvoice = "(//div[@col-id='__row_status'])[1]"
+        this.SelectFirstInvoice = "(//label[@aria-label='New'])[1]"
         this.EnterPaymentButton = "//button[@aria-label='Enter Payment']"
         this.FrameInvoice = "//iframe[@aria-label='Pay_Invoice']"
         this.SelectPaymentMethod = "//select[@id='paymentMethods']"
@@ -215,6 +216,8 @@ class BidderOpportunity_WebElements
         //ribbon
          this.Opportunity_button = "//div[@title='Opportunities']"
          this.Bidder_Button = "//div[@title='Bidders']"
+         this.SubmitOn = "//div[contains(@data-testid,'submittedon')]"
+         this.NewtoOld = "//button[@name='Sort newer to older']"
          this.First_Bidder = "//div[@row-index='0']/div[1]"
     }
 }

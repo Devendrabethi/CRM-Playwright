@@ -273,12 +273,12 @@ class BidderOpportunityPage
         // await this.page.locator(this.bidderopportunity_webelements.Save_Close).click()
         // await this.page.waitForTimeout(5000)
         await this.page.waitForTimeout(4000)
+        await this.page.screenshot({ path: './ScreenShot/ProductDetails.png', fullPage: true})
         await this.page.locator(this.bidderopportunity_webelements.GoBack_btn).click()
         await this.page.waitForTimeout(2000)
 
-        await this.page.locator(this.bidderopportunity_webelements.SelectAllInvoice).click()  
+        await this.page.locator(this.bidderopportunity_webelements.SelectFirstInvoice).click()  
         await this.page.locator(this.bidderopportunity_webelements.EnterPaymentButton).click()  
-
         const frame = await this.page.frameLocator(this.bidderopportunity_webelements.FrameInvoice)
         if(!frame) throw new Error('Iframe not found')
         await frame.locator(this.bidderopportunity_webelements.SelectPaymentMethod).selectOption(this.testdata.SelectInvoiceVisa)
@@ -295,8 +295,18 @@ class BidderOpportunityPage
         await this.page.screenshot({ path: './ScreenShot/WithCardInvoive.png', fullPage: true})
         await frame.locator(this.bidderopportunity_webelements.SubmitButton).click()
         await this.page.locator(this.bidderopportunity_webelements.PaymentOk).click({timeout:60000})
-        // await this.page.locator(this.bidderopportunity_webelements.Invoice_Tab).click()
-        // await this.page.waitForTimeout(2000)
+        await this.page.waitForTimeout(6000);
+        await this.page.locator(this.bidderopportunity_webelements.Invoice_Tab).click()
+        await this.page.waitForTimeout(2000)
+        await this.page.locator(this.bidderopportunity_webelements.SelectFirstInvoice).click()  
+        await this.page.locator(this.bidderopportunity_webelements.EnterPaymentButton).click()  
+        await frame.locator(this.bidderopportunity_webelements.SelectPaymentMethod).selectOption(this.testdata.SelectInvoiceCheck)
+        await this.page.waitForTimeout(4000);
+        await frame.locator(this.bidderopportunity_webelements.PaymentNumber).fill(this.testdata.PaymentNumberValue)
+        await this.page.screenshot({ path: './ScreenShot/WithoutCardInvoive.png', fullPage: true})
+        await frame.locator(this.bidderopportunity_webelements.CardlessSubmitbutton).click()
+        await this.page.locator(this.bidderopportunity_webelements.PaymentOk).click({timeout:60000})
+        await this.page.waitForTimeout(6000);
     }
     async AnotherProduct()
     {
@@ -318,7 +328,7 @@ class BidderOpportunityPage
         await this.page.waitForTimeout(4000)
         await this.page.locator(this.bidderopportunity_webelements.GoBack_btn).click()
         await this.page.waitForTimeout(2000)
-        await this.page.locator(this.bidderopportunity_webelements.SelectAllInvoice).click()  
+        await this.page.locator(this.bidderopportunity_webelements.SelectFirstInvoice).click()  
         await this.page.locator(this.bidderopportunity_webelements.EnterPaymentButton).click() 
         const frame = await this.page.frameLocator(this.bidderopportunity_webelements.FrameInvoice)
         if(!frame) throw new Error('Iframe not found')
@@ -372,7 +382,7 @@ class BidderOpportunityPage
                 const dialogPromise = this.page.waitForEvent('dialog', { timeout: 60000 });
                 await frame.locator(this.bidderopportunity_webelements.submitbtn).click();
                 const dialog = await dialogPromise;
-                await dialog.accept();
+               // await dialog.accept();
 
                 await this.page.locator(this.bidderopportunity_webelements.Refresh_Bidder).click()
                 await this.page.waitForTimeout(5000)
@@ -463,6 +473,7 @@ class BidderOpportunityPage
 
           //Sync
                 await this.page.locator(this.bidderopportunity_webelements.Sync).click({timeout:60000})
+                await this.page.waitForTimeout(3000);
         //Aggreement Tab
                 await this.page.locator(this.newconsignmentvehicle_webelement.Documentation_Tab).click()
                 await this.page.locator(this.bidderopportunity_webelements.CheckStatus).click()
@@ -497,6 +508,10 @@ class BidderOpportunityPage
     async Ribbon_Bidder()
    {
         await this.page.locator(this.bidderopportunity_webelements.Bidder_Button).click()
+        await this.page.waitForTimeout(4000)
+        await this.page.locator(this.bidderopportunity_webelements.SubmitOn).click()
+        await this.page.waitForTimeout(2000)
+        await this.page.locator(this.bidderopportunity_webelements.NewtoOld).click()
         await this.page.waitForTimeout(4000)
         await this.page.locator(this.bidderopportunity_webelements.First_Bidder).dblclick()
         await this.page.waitForTimeout(10000)

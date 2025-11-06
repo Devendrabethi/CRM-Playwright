@@ -171,7 +171,7 @@ class ReportsPage
     async Consignors()
     {
       await this.page.waitForTimeout(3000)
-      await this.page.locator(this.reports_WebElements.Consigonor_Dropdown).click()
+      await this.page.locator(this.reports_WebElements.Consignment_Dropdown).click()
       await this.page.locator(this.reports_WebElements.TopConsignor).click()
       await this.page.waitForTimeout(15000)
       await this.page.locator(this.reports_WebElements.TopConsignor_Auction).click()
@@ -181,6 +181,6 @@ class ReportsPage
       await this.page.waitForTimeout(5000)
       await frame.locator(this.reports_WebElements.Search).fill(this.testdata.Account_Name)
       await this.page.waitForTimeout(3000)
-      await this.page.locator(this.reports_WebElements.Consigonor_Dropdown).click()
+      await this.page.locator(this.reports_WebElements.Consignment_Dropdown).click()
     }
 }

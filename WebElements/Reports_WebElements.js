@@ -72,9 +72,9 @@ class Reports_WebElements
         this.SelectAll_CustomerType = "//div[@id='customerTypePanel']/div/a[text()='Select All']"
         this.Ok_Button = "//button[@id='applyFilterBtn']"
 
-        this.Consigonor_Dropdown = "//span[text()='Consignors']/parent::div"
-        this.TopConsignor = "//ul[@aria-label='Consignors']/li[@aria-label='Top Consignors']"
+        this.Consignment_Dropdown = "//span[text()='Consignment']/parent::div"
+        this.TopConsignor = "//ul[@aria-label='Consignment']/li[@aria-label='Top Consignors']"
         this.iframe_TopConsignor = "//iframe[@aria-label='topconsigners']"
-        this.TopConsignor_Auction = "//ul[@aria-label='Consignors']/li[@aria-label='Top Consignors - Auction']"
+        this.TopConsignor_Auction = "//ul[@aria-label='Consignment']/li[@aria-label='Top Consignors - Auction']"
     }
 }
