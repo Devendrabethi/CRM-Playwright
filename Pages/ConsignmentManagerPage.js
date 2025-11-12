@@ -225,7 +225,7 @@ class ConsignmentManagerPage
                     await this.page.waitForTimeout(2000)
                     await frame.locator(this.consignmentManager_webElements.Select_Event).click()
                     await this.page.locator(this.consignmentManager_webElements.Enter_EventName).click()
-                    await this.page.locator(this.consignmentManager_webElements.Enter_EventName).fill(this.testdata.Event_Name)
+                    await this.page.locator(this.consignmentManager_webElements.Enter_EventName).fill(this.testdata.Event_name)
                     await this.page.waitForTimeout(2000)
                     await this.page.locator(this.consignmentManager_webElements.Select_CurrentEvent).click()
                     await this.page.waitForTimeout(1000)

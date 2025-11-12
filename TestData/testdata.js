@@ -30,6 +30,13 @@ class TestData
         this.FEDEX_MEDIUM_BOX = "FEDEX_MEDIUM_BOX"
         this.FEDEX_LARGE_BOX = "FEDEX_LARGE_BOX"
 
+        this.FEDEX_2_DAY = "FEDEX_2_DAY"
+        this.FEDEX_EXPRESS_SAVER = "FEDEX_EXPRESS_SAVER"
+        this.PRIORITY_OVERNIGHT = "PRIORITY_OVERNIGHT"
+        this.FEDEX_2_DAY_AM = "FEDEX_2_DAY_AM"
+        this.STANDARD_OVERNIGHT = "STANDARD_OVERNIGHT"
+        this.FIRST_OVERNIGHT = "FIRST_OVERNIGHT"
+
         this.Dealer_Number =  "Dealer1234";
         this.Dealer_TaxID_Number =  "Resale1234";
         this.Dealer_PhoneType = "DEALER PHONE";
@@ -176,7 +183,7 @@ class TestData
         this.Buyser_ByCancel = "Cancelled by Lot #"
         this.Tracking_Number = "9876543210"
         this.Lot_starting = "1"
-        this.Lot_Ending = "1000"
+        this.Lot_Ending = "10000"
         this.BuyerLot = "740 , 320"
         this.BuyerCancel = "800 , 820"
 

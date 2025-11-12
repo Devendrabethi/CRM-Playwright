@@ -62,6 +62,7 @@ class PersonalAccount_WebElements
         this.ImageType_Text = "//span[@title='Image Type']"
         this.OneRate = "//button[contains(@aria-label,'Use one rate')]"
         this.Select_Packaging = "//select[@aria-label='Packaging']"
+        this.Select_ServiceType = "//select[@aria-label='Service Type']"
         
 
         this.Enter_New_Address = "//span[text()='Enter New Address']"

@@ -168,6 +168,24 @@ class PersonalAccountPage
          await this.page.locator(this.PersonalAccount_WebElements.Tracking_Tab).click()
 
 
+                        const packagingOptions = [
+                        this.testdata.FEDEX_EXTRA_LARGE_BOX,
+                        this.testdata.FEDEX_ENVELOPE,
+                        this.testdata.FEDEX_PAK,
+                        this.testdata.FEDEX_TUBE,
+                        this.testdata.FEDEX_SMALL_BOX,
+                        this.testdata.FEDEX_MEDIUM_BOX,
+                        this.testdata.FEDEX_LARGE_BOX
+                        ];
+                        const ServiceTypeOptions = [
+                        this.testdata.FEDEX_2_DAY,
+                        this.testdata.FEDEX_EXPRESS_SAVER,
+                        this.testdata.PRIORITY_OVERNIGHT,
+                        this.testdata.FEDEX_2_DAY_AM,
+                        this.testdata.STANDARD_OVERNIGHT,
+                        this.testdata.FIRST_OVERNIGHT,
+                        ];
+
          
      //ZPLII
                     await this.page.locator(this.PersonalAccount_WebElements.Create_Package).click();
@@ -194,20 +212,32 @@ class PersonalAccountPage
                     // await this.page.locator(this.PersonalAccount_WebElements.Shipper_City).click();
                     // await this.page.locator(this.PersonalAccount_WebElements.Weight).click();
                     // await this.page.locator(this.PersonalAccount_WebElements.Weight).fill(this.testdata.Weight_Value);
-                    await this.page.selectOption(this.PersonalAccount_WebElements.Select_Packaging,this.testdata.FEDEX_EXTRA_LARGE_BOX)
-                    await this.page.waitForTimeout(7000);
-                    await this.page.selectOption(this.PersonalAccount_WebElements.Select_Packaging,this.testdata.FEDEX_ENVELOPE)
-                    await this.page.waitForTimeout(7000);
-                    await this.page.selectOption(this.PersonalAccount_WebElements.Select_Packaging,this.testdata.FEDEX_PAK)
-                    await this.page.waitForTimeout(7000);
-                    await this.page.selectOption(this.PersonalAccount_WebElements.Select_Packaging,this.testdata.FEDEX_TUBE)
-                    await this.page.waitForTimeout(7000);
-                    await this.page.selectOption(this.PersonalAccount_WebElements.Select_Packaging,this.testdata.FEDEX_SMALL_BOX)
-                    await this.page.waitForTimeout(7000);
-                    await this.page.selectOption(this.PersonalAccount_WebElements.Select_Packaging,this.testdata.FEDEX_MEDIUM_BOX)
-                    await this.page.waitForTimeout(7000);
-                    await this.page.selectOption(this.PersonalAccount_WebElements.Select_Packaging,this.testdata.FEDEX_LARGE_BOX)
-                    await this.page.waitForTimeout(7000);
+                        for (const option of packagingOptions) 
+                            {
+                                await this.page.selectOption(this.PersonalAccount_WebElements.Select_Packaging, option);
+                                await this.page.waitForTimeout(7000);
+                            }
+                            for (const option of ServiceTypeOptions) 
+                            {
+                                await this.page.selectOption(this.PersonalAccount_WebElements.Select_ServiceType, option);
+                                await this.page.waitForTimeout(7000);
+                            }
+                    // await this.page.selectOption(this.PersonalAccount_WebElements.Select_Packaging,this.testdata.FEDEX_EXTRA_LARGE_BOX)
+                    // await this.page.waitForTimeout(7000);
+                    // await this.page.selectOption(this.PersonalAccount_WebElements.Select_Packaging,this.testdata.FEDEX_ENVELOPE)
+                    // await this.page.waitForTimeout(7000);
+                    // await this.page.selectOption(this.PersonalAccount_WebElements.Select_Packaging,this.testdata.FEDEX_PAK)
+                    // await this.page.waitForTimeout(7000);
+                    // await this.page.selectOption(this.PersonalAccount_WebElements.Select_Packaging,this.testdata.FEDEX_TUBE)
+                    // await this.page.waitForTimeout(7000);
+                    // await this.page.selectOption(this.PersonalAccount_WebElements.Select_Packaging,this.testdata.FEDEX_SMALL_BOX)
+                    // await this.page.waitForTimeout(7000);
+                    // await this.page.selectOption(this.PersonalAccount_WebElements.Select_Packaging,this.testdata.FEDEX_MEDIUM_BOX)
+                    // await this.page.waitForTimeout(7000);
+                    // await this.page.selectOption(this.PersonalAccount_WebElements.Select_Packaging,this.testdata.FEDEX_LARGE_BOX)
+                    // await this.page.waitForTimeout(7000);
+
+
 
                     await this.page.locator(this.PersonalAccount_WebElements.Save_Tracking).click();
                     await this.page.waitForTimeout(5000);
