@@ -75,6 +75,7 @@ class TestData
         this.Owner_Est_Value = "80000";
         this.Bjack_value = "2000";
 
+        this.Marketing_Description = "Automobilia Devendra QA Testing"
         this.ShortDescriptionText = "Describe your vehicle to bidders.\nDescribe your vehicle to bidders.\nDescribe your vehicle to bidders.\nDescribe your vehicle to bidders.\nDescribe your vehicle to bidders."
         this.LongDescriptionText = "Ford is the second-largest U.S.-based automaker, behind General Motors, and the sixth-largest in the world, behind Toyota, Volkswagen Group, Hyundai Motor Group, Stellantis, and General Motors, based on 2022 vehicle production.[10] The company went public in 1956 but the Ford family, through special Class B shares, retain 40 percent of the voting rights.[5][11] During the 2008–2010 automotive industry crisis, the company struggled financially but did not have to be rescued by the federal government, unlike the other two major US automakers."
 
@@ -205,6 +206,7 @@ class TestData
         this.NewDocket_Select = "Day 4 (SAT) LotRange 900-1049"
         this.NewDocketSpot_Select = "Day 4 Prime - Lot# 925 to 1025"
         this.NewLotNumber = "23.1"
+        this.AutomobiliaNewLotNumber = "1891.1"
         this.LotStatus_Tentative = "Tentative"
         this.LotStatus_PendingRevisit = "Pending - Revisit"
         this.LotStstaus_PendingAccepted = "Pending - Accepted"

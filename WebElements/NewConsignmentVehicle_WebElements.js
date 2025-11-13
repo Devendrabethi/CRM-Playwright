@@ -26,8 +26,8 @@ class NewConsignmentVehicle_WebElement
         this.Odometer_Type_dropdown = "//select[@aria-label='Odometer Type'] "
         this.Description_Mileage = "//input[@aria-label='Description Mileage'] "
         this.Sale_Type_dropdown = "//select[@aria-label='Sale Type'] "
-        this.Owner_Estimate_value = "//input[@aria-label='Owner Estimated Value'] "
-        this.Bjack_value = " //input[@aria-label='Barrett-Jackson Value']"
+        this.Owner_Estimate_value = "//input[contains(@aria-label,'Owner Estimated Value')]"
+        this.Bjack_value = "  //input[contains(@aria-label,'Barrett-Jackson Value')]"
         this.Comp_Value = "//input[@aria-label='Comp Value']"
         this.Responsible_Account = "//input[@aria-label='Responsible Account, Lookup'] "
         this.Responsible_Account_dropdown = "//div[@aria-label='Responsible Account Lookup results']/ul/li "
@@ -55,7 +55,7 @@ class NewConsignmentVehicle_WebElement
         this.Assign_To_Inputfield = " //input[@aria-label='Assign To, Lookup']"
         this.Assign_To_Specialist_dropdown = "//div[@aria-label='Assign To Lookup results']/ul/li[1] "
         this.save_consignment = " //span[text()='Save']"
-        this.Refresh_consignment = "(//button[@aria-label='Refresh'])[1] "
+        this.Refresh_consignment = "(//button[@aria-label='Refresh'])[1] " 
 
         this.Verify_RegistrationDocuments_Text = "//h2[@title='Registration Documents']"
         this.Documentation_Tab = "//ul[@aria-label='Opportunity Form']/li[contains(@aria-label,'Documentation')]"
@@ -101,7 +101,7 @@ class NewConsignmentVehicle_WebElement
         this.Marketing_Tab="//ul[@aria-label='Opportunity Form']/li[contains(@aria-label,'Marketing')]"
         this.ShortDescription = "//textarea[@aria-label='Short Description']"
         this.LongDescription = "//textarea[@aria-label='Long Description']"
-        this.Refresh_consignment="(//button[@aria-label='Refresh'])[1]"
+       // this.Refresh_consignment="(//button[@aria-label='Refresh'])[1]"
 
         this.TaskTab = "//ul[@aria-label='Opportunity Form']/li[contains(@aria-label,'Tasks')]"
         this.TaskRefresh = "(//span[text()='Refresh'])[2]/../parent::button"
