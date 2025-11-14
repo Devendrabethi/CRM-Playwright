@@ -47,5 +47,6 @@ test('Creating Individual Bidder Opportunity',async({page}) =>
     await bidderopportunitypage.Invoice_Tab()
     await bidderopportunitypage.AnotherProduct()    
     await bidderopportunitypage.TaskTab()
+    await newconsignmentvehiclepage.IntegrationTab()
     //await bidderopportunitypage.RibbonLevel()
 })
