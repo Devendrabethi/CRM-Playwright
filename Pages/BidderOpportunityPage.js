@@ -37,9 +37,9 @@ class BidderOpportunityPage
         await this.page.locator(this.bidderopportunity_webelements.Bid_Limit_Estimation).fill(this.testdata.Bidder_Estimate_Value)  
        //await this.page.locator(this.bidderopportunity_webelements.Event_Text).click()
         await this.page.waitForTimeout(1000)
-        await this.page.locator(this.bidderopportunity_webelements.Bidder_Package_Hover).hover()
-        await this.page.locator(this.bidderopportunity_webelements.Delete_BidderPackage).click()
-        await this.page.waitForTimeout(2000)
+        // await this.page.locator(this.bidderopportunity_webelements.Bidder_Package_Hover).hover()
+        // await this.page.locator(this.bidderopportunity_webelements.Delete_BidderPackage).click()
+        // await this.page.waitForTimeout(2000)
         await this.page.locator(this.bidderopportunity_webelements.Bidder_Pakage_Type).fill(this.testdata.Bidder_Package_Type)
         await this.page.waitForTimeout(4000)
         await this.page.locator(this.bidderopportunity_webelements.Select_Bidder_Package_Type).click();

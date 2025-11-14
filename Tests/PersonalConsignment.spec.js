@@ -21,6 +21,7 @@ test('Creating Individual Consignment',async({page}) =>    // Activity functiona
     await personalaccountpage.accounttype_dropdown()
     await personalaccountpage.names()
     await personalaccountpage.save()
+    await personalaccountpage.Event_Auct_Comp()
     await addresspage.newaddress()
     await addresspage.generaladdress()
     await addresspage.saveandclose()
@@ -43,7 +44,7 @@ test('Creating Individual Consignment',async({page}) =>    // Activity functiona
     await newconsignmentvehiclepage.ComparisionTab()
     await newconsignmentvehiclepage.TaskTab()
     await newconsignmentvehiclepage.ApplicationStatus()
-    //await newconsignmentvehiclepage.ActivitiesTab()  // Activity functionality works only in UAT
+    //await newconsignmentvehiclepage.ActivitiesTab() 
     //await newconsignmentvehiclepage.RibbonLevel()
     await newconsignmentvehiclepage.IntegrationTab()
 })

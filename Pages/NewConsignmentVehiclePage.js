@@ -217,11 +217,11 @@ class NewConsignmentVehiclePage
                     await this.page.waitForTimeout(20000)
                     await frame.locator(this.newconsignmentvehicle_webelement.SelectAll_AllPhotos_Exterior).click({timeout:60000})
                     await frame.locator(this.newconsignmentvehicle_webelement.AccepttoMisc_Exterior).click({timeout:60000})
-                    await this.page.waitForTimeout(35000)
+                    await this.page.waitForTimeout(25000)
                     await frame.locator(this.newconsignmentvehicle_webelement.SelectAll_Misc).click({timeout:60000})
                     await this.page.waitForTimeout(3000)
                     await frame.locator(this.newconsignmentvehicle_webelement.Remove_AllMiscPhotos).click({timeout:60000})
-                    await this.page.waitForTimeout(35000)
+                    await this.page.waitForTimeout(25000)
                     await frame.locator(this.newconsignmentvehicle_webelement.Scroll_Exterior).click()
                     await this.page.waitForTimeout(3000)
     }

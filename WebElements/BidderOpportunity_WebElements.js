@@ -71,7 +71,7 @@ class BidderOpportunity_WebElements
         this.Bidder_Registerdoc_Refresh = "//ul[@aria-label='Opportunity Document Commands']/li[2]/button[@aria-label='Refresh']"
         
         this.TaskTab = "//ul[@aria-label='Opportunity Form']/li[contains(@aria-label,'Tasks')]"
-        this.TaskRefresh = "(//span[text()='Refresh'])[2]/../parent::button"
+        this.TaskRefresh = "//ul[@aria-label='Task Commands']/li[contains(@id,'refresh')]"
 
         this.Opportunity_Product_Tab = "//ul[@aria-label='Opportunity Form']/li[contains(@title,'Products')]"
         this.Add_Product_button = "//button[@aria-label='Add product']"
