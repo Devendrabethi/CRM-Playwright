@@ -32,7 +32,7 @@ class BidderOpportunity_WebElements
         this.Payment_Number = "//input[@aria-label='Payment Number']"
         this.Deposite_Value = "//input[@aria-label='Deposit Value']"
         this.Select_second_field = "//div[@aria-label='Editable Grid']/div/div/div/div[2]/div[1]"
-        this.Return_Type = "//div[@aria-label='Editable Grid']/div/div/div/div[2]/div[7]"
+        this.Return_Type = "//div[@aria-label='Editable Grid']/div/div/div/div[2]/div[8]"
         this.Toggle_button_dropdown = "//button[@aria-label='Toggle Dropdown']"
         this.Cashiering = "//div[text()='At Cashiering']"
         this.Cashiering_Save = "//button[@title='Save']"
@@ -83,8 +83,11 @@ class BidderOpportunity_WebElements
 
         this.Invoice_Tab = "//ul[@aria-label='Opportunity Form']/li[contains(@title,'Invoices')]"
         this.Generate_Invoive = "//button[@aria-label='Generate Invoice. Generate New Invoice']"
+        this.Payment_AdjustmentTab = "//ul[@aria-label='Invoice Form']/li[contains(@aria-label,'Payments / Adjustments')]"
+        this.PaymentTable = "(//input[@aria-label='Select or deselect the row'])[2]/parent::div"
         this.First_Invoice = "//div[@aria-label='Press SPACE to select this row.'][1]/div[1]"
         this.Second_Invoice = "//div[@aria-label='Press SPACE to select this row.'][2]/div[1]"
+        this.Third_Invoice = "//div[@aria-label='Press SPACE to select this row.'][3]/div[1]"
         this.select_Payment_Method = "//select[@aria-label='Payment Method']"
 
         this.SelectAllInvoice = "(//div[@col-id='__row_status'])[1]"
@@ -94,6 +97,7 @@ class BidderOpportunity_WebElements
         this.SelectPaymentMethod = "//select[@id='paymentMethods']"
 
         this.PaymentNumber = "//input[@id='paymentnumber']"
+        this.Last4cc = "//input[@id='last4cc']"
 
         this.FrameCard = "//iframe[contains(@name, 'single-card')]"
         this.CardNum = "//input[@title='Credit card number']"
@@ -102,7 +106,7 @@ class BidderOpportunity_WebElements
         this.ZipCode = "//input[@title='ZIP Code']"
         this.SubmitButton = "//button[text()='Submit Payment']"
         this.PaymentOk = "//button[@aria-label='OK']"
-
+        this.CreditCard_PaymentProcess = "//input[@id='isCreditCardPaymentProcessed']"
         this.CardlessSubmitbutton = "//button[@id='submitButton']"
 
 

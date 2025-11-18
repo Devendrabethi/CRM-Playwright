@@ -67,7 +67,7 @@ class PersonalAccountPage
         await this.page.waitForTimeout(3000)
         await this.page.locator(this.PersonalAccount_WebElements.Select_Event).click()
         //await this.page.selectOption(this.PersonalAccount_WebElements.Select_Next_Auct_Comp_Type,this.testdata.Account_Auct_EventType);
-        await this.page.screenshot({ path: './ScreenShot/EventAuctComp.png', fullPage: true})
+        //await this.page.screenshot({ path: './ScreenShot/EventAuctComp.png', fullPage: true})
         await this.page.locator(this.PersonalAccount_WebElements.SaveandClose_AccountEvent).click()
 
         await this.page.locator(this.PersonalAccount_WebElements.Event_Auct_Comp).click()
@@ -77,7 +77,7 @@ class PersonalAccountPage
         await this.page.waitForTimeout(3000)
         await this.page.locator(this.PersonalAccount_WebElements.Select_Event).click()
         //await this.page.selectOption(this.PersonalAccount_WebElements.Select_Next_Auct_Comp_Type,this.testdata.Account_Auct_EventType);
-        await this.page.screenshot({ path: './ScreenShot/EventAuctComp.png', fullPage: true})
+        //await this.page.screenshot({ path: './ScreenShot/EventAuctComp.png', fullPage: true})
         await this.page.locator(this.PersonalAccount_WebElements.SaveandClose_AccountEvent).click()
 
          await this.page.locator(this.PersonalAccount_WebElements.Event_Auct_Comp).click()
@@ -87,8 +87,9 @@ class PersonalAccountPage
         await this.page.waitForTimeout(3000)
         await this.page.locator(this.PersonalAccount_WebElements.Select_Event).click()
         //await this.page.selectOption(this.PersonalAccount_WebElements.Select_Next_Auct_Comp_Type,this.testdata.Account_Auct_EventType);
-        await this.page.screenshot({ path: './ScreenShot/EventAuctComp.png', fullPage: true})
         await this.page.locator(this.PersonalAccount_WebElements.SaveandClose_AccountEvent).click()
+        await this.page.waitForTimeout(2000)
+        await this.page.screenshot({ path: './ScreenShot/1 EventAuctComp.png', fullPage: true})
 
     }
     async personalAccountDocuments()
@@ -121,14 +122,14 @@ class PersonalAccountPage
                     await this.page.locator(this.PersonalAccount_WebElements.Persondoc_Refresh).click()
              }
                    // await this.page.waitForTimeout(4000)
-                    await this.page.screenshot({ path: './ScreenShot/AccountDocumentsPage.png', fullPage: true})
+                    await this.page.screenshot({ path: './ScreenShot/2 AccountDocumentsPage.png', fullPage: true})
                     await this.page.locator(this.PersonalAccount_WebElements.Select_FirstDocumentUnarchived).click()
                     await this.page.locator(this.PersonalAccount_WebElements.Archive_Button).click()
                     await this.page.locator(this.PersonalAccount_WebElements.Ok_Button).click()
                     await this.page.locator(this.PersonalAccount_WebElements.Refresh_Account).click()
                     await this.page.locator(this.PersonalAccount_WebElements.Documents_Tab).click()
                     await this.page.waitForTimeout(2000)
-                    await this.page.screenshot({ path: './ScreenShot/AccountDocumentWithArchived.png', fullPage: true})
+                    await this.page.screenshot({ path: './ScreenShot/3 AccountDocumentWithArchived.png', fullPage: true})
                     await this.page.locator(this.PersonalAccount_WebElements.SelectFirstDocument_Archived).click()
                     await this.page.locator(this.PersonalAccount_WebElements.UnArchived_Button).click()
                     await this.page.locator(this.PersonalAccount_WebElements.Ok_Button).click()
@@ -142,7 +143,7 @@ class PersonalAccountPage
                     await this.page.locator(this.PersonalAccount_WebElements.Refresh_Account).click()
                     await this.page.locator(this.PersonalAccount_WebElements.Documents_Tab).click()
                     await this.page.waitForTimeout(2000)
-                    await this.page.screenshot({ path: './ScreenShot/AccountDocumentWithArchivedtoUnArchived.png', fullPage: true})
+                    await this.page.screenshot({ path: './ScreenShot/4 AccountDocumentWithArchivedtoUnArchived.png', fullPage: true})
 
                     const fileToUpload1 = 
                     {
@@ -158,7 +159,7 @@ class PersonalAccountPage
                                 await frame.locator(this.PersonalAccount_WebElements.ExistCropPhoto).click()
                                 await frame.locator(this.PersonalAccount_WebElements.Upload_Document_CropImage).setInputFiles(documentPath)
                                 await frame.locator(this.PersonalAccount_WebElements.CropImage).click()
-                                await this.page.screenshot({ path: './ScreenShot/CustomerPhoto.png', fullPage: true})
+                                await this.page.screenshot({ path: './ScreenShot/5 CustomerPhoto.png', fullPage: true})
                                 await frame.locator(this.PersonalAccount_WebElements.Upload_btn).click()
                                 await this.page.locator(this.PersonalAccount_WebElements.Persondoc_Refresh).click()
                         }
@@ -204,10 +205,10 @@ class PersonalAccountPage
                     await this.page.waitForTimeout(15000)
                     await this.page.locator(this.PersonalAccount_WebElements.OneRate).click()
                     await this.page.waitForTimeout(15000)
-                    await this.page.screenshot({ path: './ScreenShot/OneRateToggleOn.png', fullPage: true})
+                    await this.page.screenshot({ path: './ScreenShot/6 OneRateToggleOn.png', fullPage: true})
                     await this.page.locator(this.PersonalAccount_WebElements.OneRate).click()
                     await this.page.waitForTimeout(15000)
-                    await this.page.screenshot({ path: './ScreenShot/OneRateToggleOff.png', fullPage: true})
+                    await this.page.screenshot({ path: './ScreenShot/7 OneRateToggleOff.png', fullPage: true})
                     //await this.page.selectOption(this.PersonalAccount_WebElements.Select_ImageType_Dropdown,this.testdata.ImageType_ZPLII);
                     // await this.page.locator(this.PersonalAccount_WebElements.Shipper_City).click();
                     // await this.page.locator(this.PersonalAccount_WebElements.Weight).click();
@@ -247,7 +248,7 @@ class PersonalAccountPage
                     await this.page.waitForTimeout(5000);
                     await this.page.locator(this.PersonalAccount_WebElements.Refresh_Tracking).click();
                     await this.page.waitForTimeout(1000);
-                    await this.page.screenshot({ path: './ScreenShot/ZPLIIScreen.png', fullPage: true})
+                    await this.page.screenshot({ path: './ScreenShot/8 ZPLIIScreen.png', fullPage: true})
                     // page.on('dialog', async (dialog) => {
                     // console.log(`Dialog message: ${dialog.message()}`);
                     // await dialog.accept(); // Accepts the alert
@@ -297,7 +298,7 @@ for (let i = 0; i < packageTypes.length; i++)
                     await this.page.waitForTimeout(5000);
                     await this.page.locator(this.PersonalAccount_WebElements.Refresh_Tracking).click();
                     await this.page.waitForTimeout(1000);
-                    await this.page.screenshot({ path: './ScreenShot/PDF.png', fullPage: true})
+                    await this.page.screenshot({ path: './ScreenShot/9 PDF.png', fullPage: true})
                     const [newPage] = await Promise.all([
                         this.page.context().waitForEvent('page'),
                         this.page.locator(this.PersonalAccount_WebElements.Print_Label).click()
@@ -325,7 +326,7 @@ for (let i = 0; i < packageTypes.length; i++)
                     await this.page.locator(this.PersonalAccount_WebElements.Tracking_Number).fill(this.testdata.Tracking_Number_Value)
                     await this.page.locator(this.PersonalAccount_WebElements.Save_Tracking).click();
                     await this.page.waitForTimeout(5000);
-                    await this.page.screenshot({ path: './ScreenShot/USPS.png', fullPage: true})
+                    await this.page.screenshot({ path: './ScreenShot/10 USPS.png', fullPage: true})
                     await this.page.locator(this.PersonalAccount_WebElements.Close_Tracking).click()
                     await this.page.waitForTimeout(2000)
 
@@ -343,7 +344,7 @@ for (let i = 0; i < packageTypes.length; i++)
                     await this.page.locator(this.PersonalAccount_WebElements.Tracking_Number).fill(this.testdata.Tracking_Number_Value)
                     await this.page.locator(this.PersonalAccount_WebElements.Save_Tracking).click();
                     await this.page.waitForTimeout(5000);
-                    await this.page.screenshot({ path: './ScreenShot/UPS.png', fullPage: true})
+                    await this.page.screenshot({ path: './ScreenShot/11 UPS.png', fullPage: true})
                     await this.page.locator(this.PersonalAccount_WebElements.Close_Tracking).click()
                     await this.page.waitForTimeout(2000)
 
@@ -384,7 +385,7 @@ for (let i = 0; i < packageTypes.length; i++)
                     await this.page.locator(this.PersonalAccount_WebElements.City).click()
                     await this.page.locator(this.PersonalAccount_WebElements.City).fill(this.testdata.City_name)
                     await this.page.waitForTimeout(1000)
-                    await this.page.screenshot({ path: './ScreenShot/NewAddressOnTracking.png', fullPage: true})
+                    await this.page.screenshot({ path: './ScreenShot/12 NewAddressOnTracking.png', fullPage: true})
                     // await this.page.locator(this.PersonalAccount_WebElements.Weight).click();
                     // await this.page.locator(this.PersonalAccount_WebElements.Weight).fill(this.testdata.Weight_Value);
 
@@ -433,7 +434,7 @@ for (let i = 0; i < packageTypes.length; i++)
         await frame1.locator(this.PersonalAccount_WebElements.Select_Event_Dropdown).click()
         await frame1.locator(this.PersonalAccount_WebElements.Select_Event_Dropdown).selectOption(this.testdata.Event_name)
         await frame1.locator(this.PersonalAccount_WebElements.Print_Button).click()
-        await this.page.screenshot({ path: './ScreenShot/VIPCustomerPersonal.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/13 VIPCustomerPersonal.png', fullPage: true})
         await this.page.waitForTimeout(6000)
 
         await this.page.locator(this.PersonalAccount_WebElements.Print_Bidder_Agreement).click()
@@ -466,7 +467,7 @@ for (let i = 0; i < packageTypes.length; i++)
                 //   }
                // const downloadPromise1 = this.page.waitForEvent('download',{ timeout: 60000 })
                 await frame.locator(this.PersonalAccount_WebElements.Print_Button).click()
-                await this.page.screenshot({ path: './ScreenShot/VIPCUstomerCompany.png', fullPage: true})
+                await this.page.screenshot({ path: './ScreenShot/14 VIPCUstomerCompany.png', fullPage: true})
                 await this.page.waitForTimeout(6000)
                 // const download1 = await downloadPromise1
                 // const downloadPath1 = path1.join(downloadDir1, download1.suggestedFilename());
@@ -488,7 +489,7 @@ for (let i = 0; i < packageTypes.length; i++)
         await frame1.locator(this.PersonalAccount_WebElements.Select_Event_Dropdown).click()
         await frame1.locator(this.PersonalAccount_WebElements.Select_Event_Dropdown).selectOption(this.testdata.Event_name)
         await frame1.locator(this.PersonalAccount_WebElements.Print_Button).click()
-        await this.page.screenshot({ path: './ScreenShot/AutomobiliaCustomerPersonal.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/15 AutomobiliaCustomerPersonal.png', fullPage: true})
         await this.page.waitForTimeout(6000)
 
         await this.page.locator(this.PersonalAccount_WebElements.Print_Bidder_Agreement).click()
@@ -522,7 +523,7 @@ for (let i = 0; i < packageTypes.length; i++)
                 //   }
                // const downloadPromise1 = this.page.waitForEvent('download',{ timeout: 60000 })
                 await frame.locator(this.PersonalAccount_WebElements.Print_Button).click()
-                await this.page.screenshot({ path: './ScreenShot/AutomobiliaCustomerCompany.png', fullPage: true})
+                await this.page.screenshot({ path: './ScreenShot/16 AutomobiliaCustomerCompany.png', fullPage: true})
                 await this.page.waitForTimeout(6000)
                 // const download1 = await downloadPromise1
                 // const downloadPath1 = path1.join(downloadDir1, download1.suggestedFilename());
@@ -540,7 +541,7 @@ for (let i = 0; i < packageTypes.length; i++)
         await frame1.locator(this.PersonalAccount_WebElements.Select_Event_Dropdown).click()
         await frame1.locator(this.PersonalAccount_WebElements.Select_Event_Dropdown).selectOption(this.testdata.Event_name)
         await frame1.locator(this.PersonalAccount_WebElements.Print_Button).click()
-        await this.page.screenshot({ path: './ScreenShot/ReglarAccountwithPersonal.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/17 ReglarAccountwithPersonal.png', fullPage: true})
         await this.page.waitForTimeout(6000)
 
         await this.page.locator(this.PersonalAccount_WebElements.Print_Bidder_Agreement).click()
@@ -573,7 +574,7 @@ for (let i = 0; i < packageTypes.length; i++)
                 //   }
                // const downloadPromise1 = this.page.waitForEvent('download',{ timeout: 60000 })
                 await frame.locator(this.PersonalAccount_WebElements.Print_Button).click()
-                await this.page.screenshot({ path: './ScreenShot/ReglarAccountwithDealer/Business.png', fullPage: true})
+                await this.page.screenshot({ path: './ScreenShot/18 ReglarAccountwithDealer/Business.png', fullPage: true})
                 await this.page.waitForTimeout(6000)
                 // const download1 = await downloadPromise1
                 // const downloadPath1 = path1.join(downloadDir1, download1.suggestedFilename());

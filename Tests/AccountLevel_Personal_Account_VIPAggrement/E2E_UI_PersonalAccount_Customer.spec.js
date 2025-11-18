@@ -1,9 +1,9 @@
 import{test} from '@playwright/test'
-import { CustomerPage } from '../Pages/CustomerPage'
-import { PersonalAccountPage} from '../Pages/PersonalAccountPage'
-import { AddressPage} from '../Pages/AddressPage'
-import { PhoneNumberPage} from '../Pages/PhoneNumberPage'
-import { EmailPage} from '../Pages/EmailPage'
+import { CustomerPage } from '../../Pages/CustomerPage'
+import { PersonalAccountPage} from '../../Pages/PersonalAccountPage'
+import { AddressPage} from '../../Pages/AddressPage'
+import { PhoneNumberPage} from '../../Pages/PhoneNumberPage'
+import { EmailPage} from '../../Pages/EmailPage'
 
 test('Creating Personal account without documents',async({page}) =>
     {

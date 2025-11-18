@@ -1,13 +1,13 @@
 import{test} from '@playwright/test'
-import { CustomerPage } from '../Pages/CustomerPage'
-import { PersonalAccountPage} from '../Pages/PersonalAccountPage'
-import { BusinessAccountPage} from '../Pages/BusinessAccountPage'
-import { AddressPage} from '../Pages/AddressPage'
-import { PhoneNumberPage} from '../Pages/PhoneNumberPage'
-import { BusinessPhoneNumberPage} from '../Pages/BusinessPhoneNumberPage'
-import { EmailPage} from '../Pages/EmailPage'
-import { NewConsignmentVehiclePage} from '../Pages/NewConsignmentVehiclePage'
-import { NewBusinessConsignmentVehiclePage} from '../Pages/NewBusinessConsignmentVehiclePage'
+import { CustomerPage } from '../../Pages/CustomerPage'
+import { PersonalAccountPage} from '../../Pages/PersonalAccountPage'
+import { BusinessAccountPage} from '../../Pages/BusinessAccountPage'
+import { AddressPage} from '../../Pages/AddressPage'
+import { PhoneNumberPage} from '../../Pages/PhoneNumberPage'
+import { BusinessPhoneNumberPage} from '../../Pages/BusinessPhoneNumberPage'
+import { EmailPage} from '../../Pages/EmailPage'
+import { NewConsignmentVehiclePage} from '../../Pages/NewConsignmentVehiclePage'
+import { NewBusinessConsignmentVehiclePage} from '../../Pages/NewBusinessConsignmentVehiclePage'
 
 test('Creating Business Consignment',async({page}) =>
 {

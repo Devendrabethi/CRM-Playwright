@@ -51,7 +51,7 @@ class NewConsignmentVehiclePage
         await this.page.locator(this.newconsignmentvehicle_webelement.Select_Model).click()
         await this.page.selectOption(this.newconsignmentvehicle_webelement.Transmission_Type_dropdown,this.testdata.Vehicle_TransmissionType)
         await this.page.selectOption(this.newconsignmentvehicle_webelement.Transmission_Speed_dropdown,this.testdata.Vehicle_TransmissionSpeed)
-        await this.page.screenshot({ path: './ScreenShot/QuickCreateVehicle.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/31 QuickCreateVehicle.png', fullPage: true})
         try
         {
             await this.page.locator(this.newconsignmentvehicle_webelement.Save_and_Close_btn).click();
@@ -80,7 +80,7 @@ class NewConsignmentVehiclePage
         await this.page.locator(this.newconsignmentvehicle_webelement.Bjack_value).click()
         await this.page.waitForTimeout(500)
         await this.page.locator(this.newconsignmentvehicle_webelement.Bjack_value).fill(this.testdata.Bjack_value)
-        await this.page.screenshot({ path: './ScreenShot/SaleDetails.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/32 SaleDetails.png', fullPage: true})
     }
     async Account()
     {
@@ -94,7 +94,7 @@ class NewConsignmentVehiclePage
         await this.page.locator(this.newconsignmentvehicle_webelement.Title_To).click()
         await this.page.locator(this.newconsignmentvehicle_webelement.Title_To).fill(this.testdata.personal_TitleTo)
         await this.page.waitForTimeout(1000)
-        await this.page.screenshot({ path: './ScreenShot/AccountAddress.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/33 AccountAddress.png', fullPage: true})
         await this.page.locator(this.newconsignmentvehicle_webelement.Status_Text).click() 
         await this.page.waitForTimeout(2000)
     }
@@ -122,7 +122,7 @@ class NewConsignmentVehiclePage
         await this.page.locator(this.newconsignmentvehicle_webelement.Marketing_Tab).click()
         await this.page.locator(this.newconsignmentvehicle_webelement.ShortDescription).fill(this.testdata.ShortDescriptionText)
         await this.page.locator(this.newconsignmentvehicle_webelement.LongDescription).fill(this.testdata.LongDescriptionText)
-        await this.page.screenshot({ path: './ScreenShot/ShortLongDesc.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/34 ShortLongDesc.png', fullPage: true})
         await this.page.locator(this.newconsignmentvehicle_webelement.Refresh_consignment).click()
         await this.page.locator(this.newconsignmentvehicle_webelement.Marketing_Tab).click()
     }
@@ -163,7 +163,7 @@ class NewConsignmentVehiclePage
                         })
                     await frame.locator(this.newconsignmentvehicle_webelement.Upload_btn).click()
                     await this.page.locator(this.newconsignmentvehicle_webelement.Vehicledoc_Refresh).click({timeout:60000})
-                    await this.page.screenshot({ path: './ScreenShot/VehicleDocuments.png', fullPage: true})
+                    await this.page.screenshot({ path: './ScreenShot/35 VehicleDocuments.png', fullPage: true})
              }
     }
     async UploadPhoto()
@@ -190,7 +190,7 @@ class NewConsignmentVehiclePage
                     await frame.locator(this.newconsignmentvehicle_webelement.Upload_photo_input).setInputFiles(fileToUpload)
                     await frame.locator(this.newconsignmentvehicle_webelement.Upload_photo_btn).click()
                     //await this.page.waitForTimeout(12000)
-                    await this.page.screenshot({ path: './ScreenShot/UploadPhotos.png', fullPage: true})
+                    await this.page.screenshot({ path: './ScreenShot/36 UploadPhotos.png', fullPage: true})
                     await frame.locator(this.newconsignmentvehicle_webelement.Cross_mark).click({timeout:90000})
                     await frame.locator(this.newconsignmentvehicle_webelement.Refresh_btn).click()
                     await this.page.waitForTimeout(4000)  
@@ -323,7 +323,7 @@ class NewConsignmentVehiclePage
         await this.page.locator(this.newconsignmentvehicle_webelement.Sorce_Value).fill(this.testdata.Source_Value)
         await this.page.waitForTimeout(500)
         await this.page.locator(this.newconsignmentvehicle_webelement.Source_Save).click()
-        await this.page.screenshot({ path: './ScreenShot/ComparisionTab.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/37 ComparisionTab.png', fullPage: true})
         await this.page.locator(this.newconsignmentvehicle_webelement.Source_SaveClose).click()
 
     }
@@ -336,7 +336,7 @@ class NewConsignmentVehiclePage
         await this.page.waitForTimeout(2000)
         await this.page.locator(this.newconsignmentvehicle_webelement.MarkComplete).click()
         await this.page.locator(this.newconsignmentvehicle_webelement.TaskRefresh).click({timeout:60000})
-        await this.page.screenshot({ path: './ScreenShot/TaskTab.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/38 TaskTab.png', fullPage: true})
         await this.page.locator(this.newconsignmentvehicle_webelement.Refresh_consignment).click()
     }
     async ApplicationStatus()
@@ -348,7 +348,7 @@ class NewConsignmentVehiclePage
         await this.page.locator(this.newconsignmentvehicle_webelement.Consignment_Review_Toggle).click() 
         await this.page.waitForTimeout(2000)
         await this.page.locator(this.newconsignmentvehicle_webelement.Photo_Approval_Toggle).click() 
-        await this.page.screenshot({ path: './ScreenShot/ApplicationStatus.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/39 ApplicationStatus.png', fullPage: true})
         await this.page.locator(this.newconsignmentvehicle_webelement.OkButton_PhotoApproval).click() 
         await this.page.waitForTimeout(3000)
     }
@@ -411,7 +411,7 @@ class NewConsignmentVehiclePage
             await this.page.waitForTimeout(2000);
             await Lotframe.locator(this.lotnumberchange_webElements.LotOverrideAmount).fill(this.testdata.LotOverrideamount);
             await this.page.waitForTimeout(2000);
-            await this.page.screenshot({ path: './ScreenShot/LotOvverrideConfirmation.png', fullPage: true})
+            await this.page.screenshot({ path: './ScreenShot/102 LotOvverrideConfirmation.png', fullPage: true})
             await Lotframe.locator(this.lotnumberchange_webElements.Save_Button).click();
             await this.page.waitForTimeout(25000);
 
@@ -446,7 +446,7 @@ class NewConsignmentVehiclePage
                 await frame.locator(this.newconsignmentvehicle_webelement.Payments).selectOption([
                 { label: 'Consignment Lot Fee' }
               ]);
-              await this.page.screenshot({ path: './ScreenShot/ReqInformation.png', fullPage: true})
+              await this.page.screenshot({ path: './ScreenShot/103 ReqInformation.png', fullPage: true})
                 const dialogPromise = this.page.waitForEvent('dialog',{ timeout: 75000 });
                 await frame.locator(this.newconsignmentvehicle_webelement.submitbtn).click();
                 const dialog = await dialogPromise;
@@ -490,7 +490,7 @@ class NewConsignmentVehiclePage
               catch (error) 
               {
                      // await this.page.waitForTimeout(2000);
-                     await this.page.screenshot({ path: './ScreenShot/SendContract.png', fullPage: true})
+                     await this.page.screenshot({ path: './ScreenShot/104 SendContract.png', fullPage: true})
                       await this.page.locator(this.bidderopportunity_webelements.Okbtn).click({timeout:1000000});
                       await this.page.locator(this.bidderopportunity_webelements.Save_btn).click();
                      // await this.page.waitForTimeout(1000);
@@ -520,12 +520,12 @@ class NewConsignmentVehiclePage
         await frame1.locator(this.bidderopportunity_webelements.SubmitButton).click()
         await this.page.locator(this.bidderopportunity_webelements.PaymentOk).click({timeout:60000})
         await this.page.locator(this.lotnumberchange_webElements.Products_Tab).click({timeout:60000})
-        await this.page.screenshot({ path: './ScreenShot/LotProductTab.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/105 LotProductTab.png', fullPage: true})
         await this.page.waitForTimeout(5000)
         await this.page.locator(this.lotnumberchange_webElements.Invoice_Tab).click()
         await this.page.waitForTimeout(5000)
         await this.page.locator(this.lotnumberchange_webElements.Selectsingleinvoive).dblclick()
-        await this.page.screenshot({ path: './ScreenShot/LotInvoiceTab.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/106 LotInvoiceTab.png', fullPage: true})
         await this.page.locator(this.lotnumberchange_webElements.SaveandClose).click()
         await this.page.waitForTimeout(3000)
 

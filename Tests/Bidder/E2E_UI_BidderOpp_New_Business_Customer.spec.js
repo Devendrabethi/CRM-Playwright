@@ -1,27 +1,28 @@
 import{test} from '@playwright/test'
-import { CustomerPage } from '../Pages/CustomerPage'
-import { PersonalAccountPage} from '../Pages/PersonalAccountPage'
-import { AddressPage} from '../Pages/AddressPage'
-import { PhoneNumberPage} from '../Pages/PhoneNumberPage'
-import { EmailPage} from '../Pages/EmailPage'
-import { DealerAccountPage} from '../Pages/DealerAccountPage'
-import { DealerPhoneNumberPage} from '../Pages/DealerPhoneNumberPage'
-import { NewConsignmentVehiclePage} from '../Pages/NewConsignmentVehiclePage'
-import { BidderOpportunityPage} from '../Pages/BidderOpportunityPage'
-import { NewDealerConsignmentVehiclePage} from '../Pages/NewDealerConsignmentVehiclePage'
+import { CustomerPage } from '../../Pages/CustomerPage'
+import { PersonalAccountPage} from '../../Pages/PersonalAccountPage'
+import { AddressPage} from '../../Pages/AddressPage'
+import { PhoneNumberPage} from '../../Pages/PhoneNumberPage'
+import { EmailPage} from '../../Pages/EmailPage'
+import { BusinessAccountPage} from '../../Pages/BusinessAccountPage'
+import { BusinessPhoneNumberPage} from '../../Pages/BusinessPhoneNumberPage'
+import { NewConsignmentVehiclePage} from '../../Pages/NewConsignmentVehiclePage'
+import { BidderOpportunityPage} from '../../Pages/BidderOpportunityPage'
+import { NewBusinessConsignmentVehiclePage} from '../../Pages/NewBusinessConsignmentVehiclePage'
 
-test('Creating Dealer Bidder Opportunity',async({page}) =>
+
+test('Creating Business Bidder Opportunity',async({page}) =>
 {
     const customerpage = new CustomerPage(page)
     const personalaccountpage = new PersonalAccountPage(page) 
     const addresspage = new AddressPage(page)
     const phonenumberpage = new PhoneNumberPage(page)
     const emailpage = new EmailPage(page)
-    const dealeraccountpage = new DealerAccountPage(page) 
-    const dealerphonenumberpage = new DealerPhoneNumberPage(page)
+    const businessaccountpage = new BusinessAccountPage(page) 
+    const businessphonenumberpage = new BusinessPhoneNumberPage(page)
     const newconsignmentvehiclepage = new NewConsignmentVehiclePage(page)
     const bidderopportunitypage = new BidderOpportunityPage(page)
-    const newdealerconsignmentvehiclepage = new NewDealerConsignmentVehiclePage(page)
+    const newbusinessconsignmentvehiclepage = new NewBusinessConsignmentVehiclePage(page)
 
     await customerpage.url()
     await customerpage.manager()
@@ -39,18 +40,18 @@ test('Creating Dealer Bidder Opportunity',async({page}) =>
     await emailpage.enter_emailid()
     await emailpage.CredentialTab()
     await personalaccountpage.personalAccountDocuments()
-    await dealeraccountpage.accounttype_dropdown()
-    await dealeraccountpage.names()
-    await dealeraccountpage.save()
+    await businessaccountpage.accounttype_dropdown()
+    await businessaccountpage.names()
+    await businessaccountpage.save()
     await addresspage.newaddress()
     await addresspage.generaladdress()
     await addresspage.saveandclose()
-    await dealerphonenumberpage.phonenumberbtn()
+    await businessphonenumberpage.phonenumberbtn()
     await phonenumberpage.General_PhoneNumber()
-    await dealeraccountpage.personalAccountDocuments()
-    await dealeraccountpage.RelatedAccount()
+    await businessaccountpage.personalAccountDocuments()
+    await businessaccountpage.RelatedAccount()
     await bidderopportunitypage.New_Bidder_Opportunity()
-    await newdealerconsignmentvehiclepage.Account()
+    await newbusinessconsignmentvehiclepage.Account()
     await newconsignmentvehiclepage.Appilication_Info()
     await bidderopportunitypage.Bidder_details()
     await bidderopportunitypage.bidder_Address()

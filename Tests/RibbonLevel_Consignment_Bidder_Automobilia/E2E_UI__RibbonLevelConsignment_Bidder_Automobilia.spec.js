@@ -1,8 +1,8 @@
 import{test} from '@playwright/test'
-import { CustomerPage } from '../Pages/CustomerPage'
-import { NewConsignmentVehiclePage} from '../Pages/NewConsignmentVehiclePage'
-import { BidderOpportunityPage} from '../Pages/BidderOpportunityPage'
-import { NewAutomobiliaConsignmentPage} from '../Pages/NewAutomobiliaConsignmentPage'
+import { CustomerPage } from '../../Pages/CustomerPage'
+import { NewConsignmentVehiclePage} from '../../Pages/NewConsignmentVehiclePage'
+import { BidderOpportunityPage} from '../../Pages/BidderOpportunityPage'
+import { NewAutomobiliaConsignmentPage} from '../../Pages/NewAutomobiliaConsignmentPage'
 
 test('Validating Consignment (Product, Invoice and Sale Details) and Bidder opportunity Ribbon level',async({page}) =>
 {

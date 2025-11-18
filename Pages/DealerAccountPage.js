@@ -52,7 +52,7 @@ class DealerAccountPage
                 await this.page.locator(this.dealeraccount_webelements.Dealer_Number).fill(this.testdata.Dealer_Number);
                 await this.page.locator(this.dealeraccount_webelements.Dealer_TAXID).click();
                 await this.page.locator(this.dealeraccount_webelements.Dealer_TAXID).fill(this.testdata.Dealer_TaxID_Number);
-                await this.page.screenshot({ path: './ScreenShot/DealerAccount.png', fullPage: true})
+                await this.page.screenshot({ path: './ScreenShot/21 DealerAccount.png', fullPage: true})
                 await this.page.waitForTimeout(1000); 
                 //return GlobalUserData; // Return the object containing names
     }
@@ -91,14 +91,14 @@ class DealerAccountPage
                     await this.page.locator(this.PersonalAccount_WebElements.Persondoc_Refresh).click()
              }
                    // await this.page.waitForTimeout(4000)
-                    await this.page.screenshot({ path: './ScreenShot/DealerAccountDocumentsPage.png', fullPage: true})
+                    await this.page.screenshot({ path: './ScreenShot/22 DealerAccountDocumentsPage.png', fullPage: true})
                     await this.page.locator(this.PersonalAccount_WebElements.Select_FirstDocumentUnarchived).click()
                     await this.page.locator(this.PersonalAccount_WebElements.Archive_Button).click()
                     await this.page.locator(this.PersonalAccount_WebElements.Ok_Button).click()
                     await this.page.locator(this.PersonalAccount_WebElements.Refresh_Account).click()
                     await this.page.locator(this.PersonalAccount_WebElements.Documents_Tab).click()
                     await this.page.waitForTimeout(2000)
-                    await this.page.screenshot({ path: './ScreenShot/DealerDocumentWithArchived.png', fullPage: true})
+                    await this.page.screenshot({ path: './ScreenShot/23 DealerDocumentWithArchived.png', fullPage: true})
                     await this.page.locator(this.PersonalAccount_WebElements.SelectFirstDocument_Archived).click()
                     await this.page.locator(this.PersonalAccount_WebElements.UnArchived_Button).click()
                     await this.page.locator(this.PersonalAccount_WebElements.Ok_Button).click()
@@ -111,7 +111,7 @@ class DealerAccountPage
                     await this.page.locator(this.PersonalAccount_WebElements.Refresh_Account).click()
                     await this.page.locator(this.PersonalAccount_WebElements.Documents_Tab).click()
                     await this.page.waitForTimeout(2000)
-                    await this.page.screenshot({ path: './ScreenShot/DealerDocumentWithArchivedtoUnArchived.png', fullPage: true})
+                    await this.page.screenshot({ path: './ScreenShot/24 DealerDocumentWithArchivedtoUnArchived.png', fullPage: true})
                   
     }
     async RelatedAccount()
@@ -126,7 +126,7 @@ class DealerAccountPage
         await this.page.locator(this.dealeraccount_webelements.Add_btn).click();
         await this.page.locator(this.dealeraccount_webelements.RealtedAccount_More_option).click();
         await this.page.locator(this.dealeraccount_webelements.Related_Accounts_refresh).click();
-        await this.page.screenshot({ path: './ScreenShot/DealerRelateAccount.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/25 DealerRelateAccount.png', fullPage: true})
         await this.page.locator(this.dealeraccount_webelements.DoubleclickPersonalAccount).dblclick()
         await this.page.waitForTimeout(3000)
     }

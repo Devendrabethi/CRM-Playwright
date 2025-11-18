@@ -1,11 +1,11 @@
 import{test} from '@playwright/test'
-import { CustomerPage } from '../Pages/CustomerPage'
-import { PersonalAccountPage} from '../Pages/PersonalAccountPage'
-import { AddressPage} from '../Pages/AddressPage'
-import { PhoneNumberPage} from '../Pages/PhoneNumberPage'
-import { EmailPage} from '../Pages/EmailPage'
-import { DealerAccountPage} from '../Pages/DealerAccountPage'
-import { DealerPhoneNumberPage} from '../Pages/DealerPhoneNumberPage'
+import { CustomerPage } from '../../Pages/CustomerPage'
+import { PersonalAccountPage} from '../../Pages/PersonalAccountPage'
+import { AddressPage} from '../../Pages/AddressPage'
+import { PhoneNumberPage} from '../../Pages/PhoneNumberPage'
+import { EmailPage} from '../../Pages/EmailPage'
+import { DealerAccountPage} from '../../Pages/DealerAccountPage'
+import { DealerPhoneNumberPage} from '../../Pages/DealerPhoneNumberPage'
 
 test('Creating regular account Print Bidder Aggreement with dealer',async({page}) =>  
 {

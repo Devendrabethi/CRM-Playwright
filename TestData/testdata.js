@@ -4,7 +4,7 @@ class TestData
 {
     constructor()
     {
-        this.URL ="https://bjac-hotfixqa.crm.dynamics.com/"
+        this.URL ="https://bjac-uat.crm.dynamics.com/"
         this.Emailid = "d365testuser3@barrett-jackson.com";//"dbethi@barrett-jackson.com";//d365testuser3@barrett-jackson.com"; 
         this.Password = "ZNcCzew8NjYz";//ZNcCzew8NjYz--testuser3
         this.FirstName = "Devendra"
@@ -117,8 +117,8 @@ class TestData
         this.selectAdsenteeBidInternet = "Internet";
         this.selectAdsenteeBidPhone = "Phone";
         this.delectAbsenteeBidAbsenteeRepresentative = "Absentee Representative"
-        this.Lotphone = "23.1";
-        this.lotabsentee = "23.1"
+        this.Lotphone = "23.1";//64
+        this.lotabsentee = "23.1"//64
         this.Contact_number = "5672345678";
         this.MaxBid = "90000"
 
@@ -134,10 +134,10 @@ class TestData
         this.VehicleName = "Chevrolet"
 
         this.SelectStatusComplete = "Complete"
-
+//Administration
         this.ManagerName = "Rohit Sharma"
         this.ManagerPassword = "Rohit1234"
-
+//Payment in Invoice
         this.SelectInvoiceVisa = "Visa"
         this.CardCC ="4111 1111 1111 1111"// "	6011 0000 0000 0004"//"4111 1111 1111 1111"
         this.CardExp = "05/28"
@@ -147,10 +147,10 @@ class TestData
         this.SelectInvoiceCash = "Cash"
         this.SelectInvoiceCheck = "Check"
         this.PaymentNumberValue = "0005"
-
+//Collections
         this.Collection_Name = "Devendra"
         this.Colection_Description = "Devendra Testing Collection"
-
+//Charity
         this.Charities_Name = "Devendra Testing"
         this.Charities_Description = "Devendra Testing Charities"
         this.Charities_URL = "DevendraTesting"
@@ -161,7 +161,7 @@ class TestData
         this.Hammer_Amount = "45000"
 
         this.Donation_Amount = "55000"
-        //Tracking
+//Tracking
        // this.Tracking_Event = "Scottsdale Fall 2025"
         this.packageType_Bidder_Credential_Package = "Bidder Credential Package"
         this.PackageType_Bidder_Collateral_Return = "Bidder Collateral Return"
@@ -173,10 +173,9 @@ class TestData
         this.Carrier_USPS= "United States Postal Service (USPS)"
         this.Carrier_FedEx = "FedEx"
         this.Carrier_UPS = "United Postal Service (UPS)"
-
+//Bulk Package Tracking
         this.Weight_Value = "1"
         this.Tracking_Number_Value = "125413876524"
-
         this.Bidder_Number_by_Range = "Bidder Number by Range"
         this.All_Bidders = "All Bidders"
         this.All_Buyers = "All Buyers"
@@ -188,7 +187,7 @@ class TestData
         this.BuyerLot = "740 , 320"
         this.BuyerCancel = "800 , 820"
 
-        //Reports
+//Reports
         this.StartDate = "8/1/2025"
         this.EndDate = "8/19/2026"
         this.AllDates = "All Dates"
@@ -198,11 +197,11 @@ class TestData
         this.ReportType_ReturingBidder = "Returning Bidders"
         this.ReportType_CompBidder = "Comp Bidders"
 
-        //Media Credential
+//Media Credential
          this.SendActivityText = "Testing Purpose"
          this.Select_Approved = "Approved"
        
-        //LOT Change
+//LOT Change
         this.NewDocket_Select = "Day 4 (SAT) LotRange 900-1049"
         this.NewDocketSpot_Select = "Day 4 Prime - Lot# 925 to 1025"
         this.NewLotNumber = "23.1"

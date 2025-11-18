@@ -1,6 +1,6 @@
 import{test} from '@playwright/test'
-import { CustomerPage } from '../Pages/CustomerPage'
-import { ReportsPage } from '../Pages/ReportsPage'
+import { CustomerPage } from '../../Pages/CustomerPage'
+import { ReportsPage } from '../../Pages/ReportsPage'
 
 test('Validating Reports',async({page}) =>    // Must have the useraccount TestUser3 with sold status
 {

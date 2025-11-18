@@ -34,7 +34,7 @@ class BusinessPhoneNumberPage
         await this.page.locator(this.phonenumber_webelement.Number).click()
         await this.page.locator(this.phonenumber_webelement.Number).fill(this.testdata.Phone_Number)
         await this.page.locator(this.address_webelements.Save_btn).click()
-        await this.page.screenshot({ path: './ScreenShot/BusinessPhoneNumber.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/26.1 BusinessPhoneNumber.png', fullPage: true})
        // await this.page.waitForTimeout(4000)
         await this.page.locator(this.address_webelements.Save_Close).click()
         await this.page.waitForTimeout(4000)

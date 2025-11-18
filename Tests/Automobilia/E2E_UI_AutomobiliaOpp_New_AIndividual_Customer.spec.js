@@ -1,11 +1,11 @@
 import{test} from '@playwright/test'
-import { CustomerPage } from '../Pages/CustomerPage'
-import { PersonalAccountPage} from '../Pages/PersonalAccountPage'
-import { AddressPage} from '../Pages/AddressPage'
-import { PhoneNumberPage} from '../Pages/PhoneNumberPage'
-import { EmailPage} from '../Pages/EmailPage'
-import { NewConsignmentVehiclePage} from '../Pages/NewConsignmentVehiclePage'
-import { NewAutomobiliaConsignmentPage} from '../Pages/NewAutomobiliaConsignmentPage'
+import { CustomerPage } from '../../Pages/CustomerPage'
+import { PersonalAccountPage} from '../../Pages/PersonalAccountPage'
+import { AddressPage} from '../../Pages/AddressPage'
+import { PhoneNumberPage} from '../../Pages/PhoneNumberPage'
+import { EmailPage} from '../../Pages/EmailPage'
+import { NewConsignmentVehiclePage} from '../../Pages/NewConsignmentVehiclePage'
+import { NewAutomobiliaConsignmentPage} from '../../Pages/NewAutomobiliaConsignmentPage'
 
 test('Creating Individual Consignment',async({page}) =>    // Activity functionality works only in UAT
 {
@@ -32,5 +32,15 @@ test('Creating Individual Consignment',async({page}) =>    // Activity functiona
     await emailpage.enter_emailid()
     await emailpage.CredentialTab()
     await personalaccountpage.personalAccountDocuments()
-    await newautomobiliaconsignmentpage.NewBatchAutomobiliaConsignment()
+    await newautomobiliaconsignmentpage.newcon()
+    await newautomobiliaconsignmentpage.SaleDetails()
+    await newautomobiliaconsignmentpage.Account_Address()
+    await newautomobiliaconsignmentpage.Appilication_Info()
+    //await newautomobiliaconsignmentpage.Assign()
+    await newautomobiliaconsignmentpage.MarketingTab()
+    await newautomobiliaconsignmentpage.ConsOpportunityDoc()
+    await newautomobiliaconsignmentpage.UploadPhoto()
+    //await newconsignmentvehiclepage.ActivitiesTab()  // Activity functionality works only in UAT
+    //await newconsignmentvehiclepage.RibbonLevel()
+    await newautomobiliaconsignmentpage.IntegrationTab()
 })

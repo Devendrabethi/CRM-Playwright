@@ -1,6 +1,6 @@
 import{test} from '@playwright/test'
-import { LotNumberChangePage } from '../Pages/LotNumberChangePage'
-import { BidderOpportunityPage} from '../Pages/BidderOpportunityPage'
+import { LotNumberChangePage } from '../../Pages/LotNumberChangePage'
+import { BidderOpportunityPage} from '../../Pages/BidderOpportunityPage'
 
 test('Validating Lot Ovverride and Lot Assign',async({page}) =>  
 {

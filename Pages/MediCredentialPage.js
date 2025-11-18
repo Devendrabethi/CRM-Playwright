@@ -39,15 +39,15 @@ class MediCredentialPage
         await this.page.locator(this.mediacredential_webElements.Primary_mediaCredential).click()
         await this.page.locator(this.mediacredential_webElements.Select_AllMediaCredential).click()
         await this.page.waitForTimeout(4000)
-        await this.page.screenshot({ path: './ScreenShot/AllMediaCredential.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/86 AllMediaCredential.png', fullPage: true})
         await this.page.locator(this.mediacredential_webElements.All_MediaCredential).click()
         await this.page.locator(this.mediacredential_webElements.Select_OtherMediaContacts).click()
         await this.page.waitForTimeout(4000)
-        await this.page.screenshot({ path: './ScreenShot/OtherMediaContacts.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/87 OtherMediaContacts.png', fullPage: true})
         await this.page.locator(this.mediacredential_webElements.Other_MediaContact).click()
         await this.page.locator(this.mediacredential_webElements.Select_PrimaryMediaCredential).click()
         await this.page.waitForTimeout(4000)
-        await this.page.screenshot({ path: './ScreenShot/PrimaryMediaCredential.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/88 PrimaryMediaCredential.png', fullPage: true})
     }
 
     async MediaCredential()
@@ -93,7 +93,7 @@ class MediCredentialPage
              ([
                 this.page.context().waitForEvent('page'),
                 await expect(frame.locator(this.mediacredential_webElements.Print)).toBeVisible(),
-                await this.page.screenshot({ path: './ScreenShot/MediaCredentialSent.png', fullPage: true}),
+                await this.page.screenshot({ path: './ScreenShot/89 MediaCredentialSent.png', fullPage: true}),
                 await frame.locator(this.mediacredential_webElements.Print).click()
             ]);
             await newPage.waitForLoadState('load');
@@ -104,7 +104,7 @@ class MediCredentialPage
             await newPage.locator(this.mediacredential_webElements.AdoptandSign).click()
             await this.page.waitForTimeout(5000)
             await newPage.locator(this.mediacredential_webElements.Finish_Button).click()
-            await this.page.screenshot({ path: './ScreenShot/MediaCredentialDocusign.png', fullPage: true})
+            await this.page.screenshot({ path: './ScreenShot/90 MediaCredentialDocusign.png', fullPage: true})
             await this.page.waitForTimeout(10000)
             await newPage.close();
             await this.page.bringToFront();
@@ -112,7 +112,7 @@ class MediCredentialPage
             await this.page.waitForTimeout(5000)
             await this.page.locator(this.mediacredential_webElements.Refresh_Button).click()
             await this.page.waitForTimeout(3000)
-            await this.page.screenshot({ path: './ScreenShot/MediaCredentialComplete.png', fullPage: true})
+            await this.page.screenshot({ path: './ScreenShot/91 MediaCredentialComplete.png', fullPage: true})
     }
     async Org_Details()
     {
@@ -138,7 +138,7 @@ class MediCredentialPage
         await this.page.waitForTimeout(500)
         await this.page.locator(this.mediacredential_webElements.orgDetails_Email).fill(emailid)
         await this.page.waitForTimeout(1000)
-        await this.page.screenshot({ path: './ScreenShot/OrgMediaCredentialdetails.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/92 OrgMediaCredentialdetails.png', fullPage: true})
         await this.page.locator(this.mediacredential_webElements.orgDetails_SaveandClose).click()
         await this.page.waitForTimeout(3000)
         await this.page.locator(this.mediacredential_webElements.Refresh_Button).click()

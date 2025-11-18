@@ -1,6 +1,6 @@
 import{test} from '@playwright/test'
-import { CustomerPage } from '../Pages/CustomerPage'
-import { BidderOpportunityPage} from '../Pages/BidderOpportunityPage'
+import { CustomerPage } from '../../Pages/CustomerPage'
+import { BidderOpportunityPage} from '../../Pages/BidderOpportunityPage'
 
 test('Validating Hamburger Menu',async({page}) =>  
 {

@@ -46,7 +46,7 @@ class BusinessAccountPage
                 await expect(this.page.locator(this.businessaccount_webelements.Business_Field_text)).toBeVisible({ timeout: 10000 })
                 await this.page.locator(this.businessaccount_webelements.EIN).click();
                 await this.page.locator(this.businessaccount_webelements.EIN).fill(this.testdata.EIN_Number);
-                await this.page.screenshot({ path: './ScreenShot/BusinessAccount.png', fullPage: true})
+                await this.page.screenshot({ path: './ScreenShot/26 BusinessAccount.png', fullPage: true})
                 await this.page.waitForTimeout(1000); 
     }
 
@@ -80,14 +80,14 @@ class BusinessAccountPage
                     await this.page.locator(this.PersonalAccount_WebElements.Persondoc_Refresh).click()
              }
                    // await this.page.waitForTimeout(4000)
-                    await this.page.screenshot({ path: './ScreenShot/BusinessAccountDocumentsPage.png', fullPage: true})
+                    await this.page.screenshot({ path: './ScreenShot/27 BusinessAccountDocumentsPage.png', fullPage: true})
                     await this.page.locator(this.PersonalAccount_WebElements.Select_FirstDocumentUnarchived).click()
                     await this.page.locator(this.PersonalAccount_WebElements.Archive_Button).click()
                     await this.page.locator(this.PersonalAccount_WebElements.Ok_Button).click()
                     await this.page.locator(this.PersonalAccount_WebElements.Refresh_Account).click()
                     await this.page.locator(this.PersonalAccount_WebElements.Documents_Tab).click()
                     await this.page.waitForTimeout(2000)
-                    await this.page.screenshot({ path: './ScreenShot/BusinessDocumentWithArchived.png', fullPage: true})
+                    await this.page.screenshot({ path: './ScreenShot/28 BusinessDocumentWithArchived.png', fullPage: true})
                     await this.page.locator(this.PersonalAccount_WebElements.Select_FirstDocumentUnarchived).click()
                     await this.page.locator(this.PersonalAccount_WebElements.UnArchived_Button).click()
                     await this.page.locator(this.PersonalAccount_WebElements.Ok_Button).click()
@@ -100,7 +100,7 @@ class BusinessAccountPage
                     await this.page.locator(this.PersonalAccount_WebElements.Refresh_Account).click()
                     await this.page.locator(this.PersonalAccount_WebElements.Documents_Tab).click()
                     await this.page.waitForTimeout(2000)
-                    await this.page.screenshot({ path: './ScreenShot/BusinessDocumentWithArchivedtoUnArchived.png', fullPage: true})
+                    await this.page.screenshot({ path: './ScreenShot/29 BusinessDocumentWithArchivedtoUnArchived.png', fullPage: true})
                   
     }
     async RelatedAccount()
@@ -115,7 +115,7 @@ class BusinessAccountPage
         await this.page.locator(this.businessaccount_webelements.Add_btn).click();
         await this.page.locator(this.businessaccount_webelements.RealtedAccount_More_option).click();
         await this.page.locator(this.businessaccount_webelements.Related_Accounts_refresh).click();
-        await this.page.screenshot({ path: './ScreenShot/BusinessRelateAccount.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/30 BusinessRelateAccount.png', fullPage: true})
         await this.page.locator(this.businessaccount_webelements.DoubleclickPersonalAccount).dblclick()
     }
 

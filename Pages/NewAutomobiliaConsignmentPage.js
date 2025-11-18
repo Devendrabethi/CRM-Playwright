@@ -32,7 +32,7 @@ class NewAutomobiliaConsignmentPage
         await this.page.locator(this.newconsignmentvehicle_webelement.Bjack_value).click()
         await this.page.waitForTimeout(500)
         await this.page.locator(this.newconsignmentvehicle_webelement.Bjack_value).fill(this.testdata.Bjack_value)
-        await this.page.screenshot({ path: './ScreenShot/SaleDetails.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/96 SaleDetails.png', fullPage: true})
     }
     async Account_Address()
     {
@@ -42,7 +42,7 @@ class NewAutomobiliaConsignmentPage
         await this.page.locator(this.newautomobiliaconsignment_webelements.Poa_Odo).click()
         await this.page.locator(this.newautomobiliaconsignment_webelements.Poa_Odo).fill(this.testdata.personal_TitleTo)
         await this.page.waitForTimeout(1000)
-        await this.page.screenshot({ path: './ScreenShot/AccountAddress.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/97 AccountAddress.png', fullPage: true})
         //await this.page.locator(this.newconsignmentvehicle_webelement.Status_Text).click() 
         await this.page.waitForTimeout(2000)
     }
@@ -68,7 +68,7 @@ class NewAutomobiliaConsignmentPage
         await this.page.locator(this.newautomobiliaconsignment_webelements.Marketing_Description).fill(this.testdata.Marketing_Description)
         await this.page.locator(this.newconsignmentvehicle_webelement.ShortDescription).fill(this.testdata.ShortDescriptionText)
         await this.page.locator(this.newconsignmentvehicle_webelement.LongDescription).fill(this.testdata.LongDescriptionText)
-        await this.page.screenshot({ path: './ScreenShot/ShortLongDesc.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/98 ShortLongDesc.png', fullPage: true})
         await this.page.locator(this.newautomobiliaconsignment_webelements.save_consignment).click()
         await this.page.waitForTimeout(2000)
         await this.page.locator(this.newconsignmentvehicle_webelement.Refresh_consignment).click({ timeout: 60000 }) 
@@ -100,7 +100,7 @@ class NewAutomobiliaConsignmentPage
                         })
                     await frame.locator(this.newconsignmentvehicle_webelement.Upload_btn).click()
                     await this.page.locator(this.newautomobiliaconsignment_webelements.Opportunitydoc_Refresh).click({timeout:60000})
-                    await this.page.screenshot({ path: './ScreenShot/OpportunityDocuments.png', fullPage: true})
+                    await this.page.screenshot({ path: './ScreenShot/99 OpportunityDocuments.png', fullPage: true})
              }
     }
     async UploadPhoto()
@@ -127,10 +127,10 @@ class NewAutomobiliaConsignmentPage
                     await frame.locator(this.newconsignmentvehicle_webelement.Upload_photo_input).setInputFiles(fileToUpload)
                     await frame.locator(this.newconsignmentvehicle_webelement.Upload_photo_btn).click()
                     //await this.page.waitForTimeout(12000)
-                    await this.page.screenshot({ path: './ScreenShot/UploadPhotos.png', fullPage: true})
+                    await this.page.screenshot({ path: './ScreenShot/100 UploadPhotos.png', fullPage: true})
                     await frame.locator(this.newautomobiliaconsignment_webelements.Cross_mark).click({timeout:90000})
                     await frame.locator(this.newconsignmentvehicle_webelement.Refresh_btn).click()
-                    await this.page.waitForTimeout(8000)   
+                    await this.page.waitForTimeout(4000)   
                     await frame.locator(this.newautomobiliaconsignment_webelements.SelectAll_Misc).click({timeout:60000})
                     await this.page.waitForTimeout(3000)
                       //Photos Download file
@@ -150,8 +150,8 @@ class NewAutomobiliaConsignmentPage
                     await this.page.waitForTimeout(3000)
                     await frame.locator(this.newautomobiliaconsignment_webelements.Delete_MiscPhotos).click()
                     await this.page.locator(this.newconsignmentvehicle_webelement.Okbutton).click({timeout:60000})
-                    await this.page.waitForTimeout(20000)
-                    await frame.locator(this.newconsignmentvehicle_webelement.Refresh_btn).click()
+                    await this.page.waitForTimeout(25000)
+                    //await frame.locator(this.newconsignmentvehicle_webelement.Refresh_btn).click()
 
                     if(!frame) throw new Error('Iframe not found')
                     //await this.page.waitForTimeout(6000)
@@ -160,7 +160,7 @@ class NewAutomobiliaConsignmentPage
                     await frame.locator(this.newconsignmentvehicle_webelement.Upload_photo_input).setInputFiles(fileToUpload)
                     await frame.locator(this.newconsignmentvehicle_webelement.Upload_photo_btn).click()
                     //await this.page.waitForTimeout(12000)
-                    await this.page.screenshot({ path: './ScreenShot/UploadPhotos.png', fullPage: true})
+                    await this.page.screenshot({ path: './ScreenShot/101 UploadPhotos.png', fullPage: true})
                     await frame.locator(this.newautomobiliaconsignment_webelements.Cross_mark).click({timeout:90000})
                     await frame.locator(this.newconsignmentvehicle_webelement.Refresh_btn).click()
                     await this.page.waitForTimeout(8000)          
@@ -206,7 +206,7 @@ class NewAutomobiliaConsignmentPage
             await this.page.waitForTimeout(2000);
             await Lotframe.locator(this.lotnumberchange_webElements.LotOverrideAmount).fill(this.testdata.LotOverrideamount);
             await this.page.waitForTimeout(2000);
-            await this.page.screenshot({ path: './ScreenShot/LotOvverrideConfirmation.png', fullPage: true})
+            await this.page.screenshot({ path: './ScreenShot/107 LotOvverrideConfirmation.png', fullPage: true})
             await Lotframe.locator(this.lotnumberchange_webElements.Save_Button).click();
             await this.page.waitForTimeout(25000);
 
@@ -234,7 +234,7 @@ class NewAutomobiliaConsignmentPage
                 await frame.locator(this.newconsignmentvehicle_webelement.Payments).selectOption([
                 { label: 'Consignment Lot Fee' }
               ]);
-              await this.page.screenshot({ path: './ScreenShot/ReqInformation.png', fullPage: true})
+              await this.page.screenshot({ path: './ScreenShot/108 ReqInformation.png', fullPage: true})
                 const dialogPromise = this.page.waitForEvent('dialog',{ timeout: 75000 });
                 await frame.locator(this.newconsignmentvehicle_webelement.submitbtn).click();
                 const dialog = await dialogPromise;
@@ -308,12 +308,12 @@ class NewAutomobiliaConsignmentPage
         await frame1.locator(this.bidderopportunity_webelements.SubmitButton).click()
         await this.page.locator(this.bidderopportunity_webelements.PaymentOk).click({timeout:60000})
         await this.page.locator(this.lotnumberchange_webElements.Sales_Fees_Tab).click({timeout:60000})
-        await this.page.screenshot({ path: './ScreenShot/LotProductTab.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/109 LotProductTab.png', fullPage: true})
         await this.page.waitForTimeout(5000)
         //await this.page.locator(this.lotnumberchange_webElements.Invoice_Tab).click()
         await this.page.waitForTimeout(5000)
         await this.page.locator(this.lotnumberchange_webElements.Selectsingleinvoive).dblclick()
-        await this.page.screenshot({ path: './ScreenShot/LotInvoiceTab.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/110 LotInvoiceTab.png', fullPage: true})
         await this.page.locator(this.lotnumberchange_webElements.SaveandClose).click()
         await this.page.waitForTimeout(3000)
 
@@ -409,12 +409,12 @@ class NewAutomobiliaConsignmentPage
         await this.page.locator(this.newconsignmentvehicle_webelement.Bjack_value).click()
         await this.page.waitForTimeout(500)
         await this.page.locator(this.newconsignmentvehicle_webelement.Bjack_value).fill(this.testdata.Bjack_value)
-        await this.page.screenshot({ path: './ScreenShot/SaleDetails.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/111 SaleDetails.png', fullPage: true})
         await this.page.locator(this.newautomobiliaconsignment_webelements.Marketing_Description).click()
         await this.page.locator(this.newautomobiliaconsignment_webelements.Marketing_Description).fill(this.testdata.Marketing_Description)
         await this.page.locator(this.newautomobiliaconsignment_webelements.BatchItem_Short_description).fill(this.testdata.ShortDescriptionText)
         await this.page.locator(this.newautomobiliaconsignment_webelements.BatchItem_Long_Description).fill(this.testdata.LongDescriptionText)
-        await this.page.screenshot({ path: './ScreenShot/ShortLongDesc.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/112 ShortLongDesc.png', fullPage: true})
         await this.page.locator(this.newautomobiliaconsignment_webelements.save_consignment).click()
         await this.page.waitForTimeout(2000)
         await this.page.locator(this.newautomobiliaconsignment_webelements.saveandclose_ItemAutomobilia).click()
