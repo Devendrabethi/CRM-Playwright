@@ -45,7 +45,7 @@ class BidderOpportunityPage
         await this.page.locator(this.bidderopportunity_webelements.Select_Bidder_Package_Type).click();
         
         await this.page.selectOption(this.bidderopportunity_webelements.Select_Interner_Bidder,this.testdata.Bidder_Internet_yesandpush); 
-        await this.page.screenshot({ path: './ScreenShot/ 51 BidderDetailsSessionwithoutComp.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/51 BidderDetailsSessionwithoutComp.png', fullPage: true})
         await this.page.waitForTimeout(2000)
     }
 
@@ -289,18 +289,12 @@ class BidderOpportunityPage
         await this.page.waitForTimeout(4000)
         await this.page.locator(this.bidderopportunity_webelements.PaymentTable).dblclick()
         await this.page.waitForTimeout(4000)
+        await this.page.locator(this.bidderopportunity_webelements.DetailsTab).click()
+        await this.page.waitForTimeout(2000)
         await this.page.screenshot({ path: './ScreenShot/61 PaymentTableWithPaymentCreated.png', fullPage: true})
         await this.page.locator(this.bidderopportunity_webelements.GoBack_btn).click()
         await this.page.waitForTimeout(2000)
         await this.page.locator(this.bidderopportunity_webelements.GoBack_btn).click()
-        // await this.page.locator(this.bidderopportunity_webelements.EnterPaymentButton).click()  
-        // await frame.locator(this.bidderopportunity_webelements.SelectPaymentMethod).selectOption(this.testdata.SelectInvoiceCheck)
-        // await this.page.waitForTimeout(4000);
-        // await frame.locator(this.bidderopportunity_webelements.PaymentNumber).fill(this.testdata.PaymentNumberValue)
-        // await this.page.screenshot({ path: './ScreenShot/WithoutCardInvoive.png', fullPage: true})
-        // await frame.locator(this.bidderopportunity_webelements.CardlessSubmitbutton).click()
-        // await this.page.locator(this.bidderopportunity_webelements.PaymentOk).click({timeout:60000})
-        // await this.page.waitForTimeout(6000);
     }
     async AnotherProduct()
     {
@@ -368,11 +362,15 @@ class BidderOpportunityPage
         await this.page.waitForTimeout(4000) 
         await this.page.locator(this.bidderopportunity_webelements.PaymentTable).dblclick()
         await this.page.waitForTimeout(4000)
+        await this.page.locator(this.bidderopportunity_webelements.DetailsTab).click()
+        await this.page.waitForTimeout(2000)
         await this.page.screenshot({ path: './ScreenShot/63 PaymentTableWithPaymentCreated.png', fullPage: true})
         await this.page.locator(this.bidderopportunity_webelements.GoBack_btn).click()
         await this.page.waitForTimeout(2000)
         await this.page.locator(this.bidderopportunity_webelements.GoBack_btn).click()
+        await this.page.waitForTimeout(3000)
 
+        //await this.page.locator(this.bidderopportunity_webelements.Opportunity_Product_Tab).click()
         // await frame.locator(this.bidderopportunity_webelements.SelectPaymentMethod).selectOption(this.testdata.SelectInvoiceCash)
         // await this.page.waitForTimeout(4000);
         // await frame.locator(this.bidderopportunity_webelements.PaymentNumber).fill(this.testdata.PaymentNumberValue)
@@ -381,6 +379,15 @@ class BidderOpportunityPage
         // await this.page.locator(this.bidderopportunity_webelements.PaymentOk).click({timeout:60000})
         // await this.page.locator(this.bidderopportunity_webelements.Invoice_Tab).click()
         // await this.page.waitForTimeout(4000)
+
+        // await this.page.locator(this.bidderopportunity_webelements.EnterPaymentButton).click()  
+        // await frame.locator(this.bidderopportunity_webelements.SelectPaymentMethod).selectOption(this.testdata.SelectInvoiceCheck)
+        // await this.page.waitForTimeout(4000);
+        // await frame.locator(this.bidderopportunity_webelements.PaymentNumber).fill(this.testdata.PaymentNumberValue)
+        // await this.page.screenshot({ path: './ScreenShot/WithoutCardInvoive.png', fullPage: true})
+        // await frame.locator(this.bidderopportunity_webelements.CardlessSubmitbutton).click()
+        // await this.page.locator(this.bidderopportunity_webelements.PaymentOk).click({timeout:60000})
+        // await this.page.waitForTimeout(6000);
     }
     async SendTerminal()
     {
@@ -513,7 +520,7 @@ class BidderOpportunityPage
                     await frame2.locator(this.bidderopportunity_webelements.Approvebutton).click()
 
           //Sync
-                await this.page.locator(this.bidderopportunity_webelements.Sync).click({timeout:60000})
+                await expect(await this.page.locator(this.bidderopportunity_webelements.Sync)).toBeVisible({timeout:60000})
                 await this.page.waitForTimeout(3000);
         //Aggreement Tab
                 await this.page.locator(this.newconsignmentvehicle_webelement.Documentation_Tab).click()
