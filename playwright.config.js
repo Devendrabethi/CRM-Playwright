@@ -1,5 +1,11 @@
 // @ts-check
 const { defineConfig, devices } = require('@playwright/test');
+import dotenv from "dotenv"
+
+dotenv.config({
+  path: process.env.TEST_ENV ?`./env-files/.env.${process.env.TEST_ENV}` : `./env-files/.env.hotfixqa`  // TEST_ENV is the variable name 
+  //path:`./env-files/.env.${process.env.TEST_ENV}` // direct from terminal
+})
 
 /**
  * Read environment variables from file.
@@ -28,7 +34,7 @@ module.exports = defineConfig({
     // baseURL: 'http://127.0.0.1:3000',
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    //headless: true,
+    headless: false, //falese means we can see browser
     video: 'on',
     screenshot :'on',
     trace: 'on'

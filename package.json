@@ -2,7 +2,11 @@
   "name": "crm-playwright",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {},
+"scripts": {
+  "test_hotfixdev": "cross-env TEST_ENV=hotfixdev npx playwright test --project=chromium",
+  "test_hotfixqa": "cross-env TEST_ENV=hotfixqa npx playwright test --project=chromium",
+  "test_uat": "cross-env TEST_ENV=uat npx playwright test --project=chromium"
+},
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -13,6 +17,8 @@
     "allure-playwright": "^3.2.1"
   },
   "dependencies": {
+    "cross-env": "^5.1.2",
+    "dotenv": "^17.2.3",
     "javascript": "^1.0.0",
     "pdf-lib": "^1.17.1",
     "playwright": "^1.49.1"
