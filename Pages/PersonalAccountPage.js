@@ -576,6 +576,7 @@ for (let i = 0; i < packageTypes.length; i++)
                 await frame.locator(this.PersonalAccount_WebElements.Print_Button).click()
                 await this.page.screenshot({ path: './ScreenShot/18 ReglarAccountwithDealer/Business.png', fullPage: true})
                 await this.page.waitForTimeout(6000)
+
                 // const download1 = await downloadPromise1
                 // const downloadPath1 = path1.join(downloadDir1, download1.suggestedFilename());
                 // await download1.saveAs(downloadPath1)

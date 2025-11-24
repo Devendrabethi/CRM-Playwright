@@ -1,17 +1,15 @@
 import{test} from '@playwright/test'
 import { CustomerPage } from '../../Pages/CustomerPage'
 import { PersonalAccountPage} from '../../Pages/PersonalAccountPage'
+import { BusinessAccountPage} from '../../Pages/BusinessAccountPage'
 import { AddressPage} from '../../Pages/AddressPage'
 import { PhoneNumberPage} from '../../Pages/PhoneNumberPage'
-import { EmailPage} from '../../Pages/EmailPage'
-import { BusinessAccountPage} from '../../Pages/BusinessAccountPage'
 import { BusinessPhoneNumberPage} from '../../Pages/BusinessPhoneNumberPage'
+import { EmailPage} from '../../Pages/EmailPage'
 import { NewConsignmentVehiclePage} from '../../Pages/NewConsignmentVehiclePage'
-import { BidderOpportunityPage} from '../../Pages/BidderOpportunityPage'
 import { NewBusinessConsignmentVehiclePage} from '../../Pages/NewBusinessConsignmentVehiclePage'
 
-
-// test('Creating Business Bidder Opportunity',async({page}) =>
+// test('Creating Business Consignment',async({page}) =>
 // {
 //     const customerpage = new CustomerPage(page)
 //     const personalaccountpage = new PersonalAccountPage(page) 
@@ -19,9 +17,8 @@ import { NewBusinessConsignmentVehiclePage} from '../../Pages/NewBusinessConsign
 //     const phonenumberpage = new PhoneNumberPage(page)
 //     const emailpage = new EmailPage(page)
 //     const businessaccountpage = new BusinessAccountPage(page) 
-//     const businessphonenumberpage = new BusinessPhoneNumberPage(page)
 //     const newconsignmentvehiclepage = new NewConsignmentVehiclePage(page)
-//     const bidderopportunitypage = new BidderOpportunityPage(page)
+//     const businessphonenumberpage = new BusinessPhoneNumberPage(page)
 //     const newbusinessconsignmentvehiclepage = new NewBusinessConsignmentVehiclePage(page)
 
 //     await customerpage.url()
@@ -30,7 +27,6 @@ import { NewBusinessConsignmentVehiclePage} from '../../Pages/NewBusinessConsign
 //     await personalaccountpage.accounttype_dropdown()
 //     await personalaccountpage.names()
 //     await personalaccountpage.save()
-//     await personalaccountpage.Event_Auct_Comp()
 //     await addresspage.newaddress()
 //     await addresspage.generaladdress()
 //     await addresspage.saveandclose()
@@ -50,26 +46,26 @@ import { NewBusinessConsignmentVehiclePage} from '../../Pages/NewBusinessConsign
 //     await phonenumberpage.General_PhoneNumber()
 //     await businessaccountpage.personalAccountDocuments()
 //     await businessaccountpage.RelatedAccount()
-//     await bidderopportunitypage.New_Bidder_Opportunity()
+//     await newconsignmentvehiclepage.newcon()
+//     await newconsignmentvehiclepage.vehicledeatails()
+//     await newconsignmentvehiclepage.Mileage()
+//     await newconsignmentvehiclepage.SaleDetails()
 //     await newbusinessconsignmentvehiclepage.Account()
+//     await newbusinessconsignmentvehiclepage.Account_Address()
 //     await newconsignmentvehiclepage.Appilication_Info()
-//     await bidderopportunitypage.Bidder_details()
-//     await bidderopportunitypage.bidder_Address()
-//     await bidderopportunitypage.BidderAssign()
-//     await bidderopportunitypage.Add_Envelop()
-//     await bidderopportunitypage.Add_Absentee_Bid()
-//     await bidderopportunitypage.CreatePackage()
-//     await bidderopportunitypage.PhoneObserver()
-//     await bidderopportunitypage.RegisterDocuments()
-//     await bidderopportunitypage.Opportunity_product_tab()
-//     await bidderopportunitypage.Invoice_Tab()
-//     await bidderopportunitypage.AnotherProduct()
-//     await bidderopportunitypage.TaskTab()
+//     //await newconsignmentvehiclepage.Assign()
+//     await newconsignmentvehiclepage.MarketingTab()
+//     await newconsignmentvehiclepage.ConsVehicleDoc()
+//     await newconsignmentvehiclepage.UploadPhoto()
+//     await newconsignmentvehiclepage.ComparisionTab()
+//     await newconsignmentvehiclepage.TaskTab()
+//     await newconsignmentvehiclepage.ApplicationStatus()
+//     //await newconsignmentvehiclepage.ActivitiesTab()  // this functionality works only in UAT
+//     //await newconsignmentvehiclepage.RibbonLevel()
 //     await newconsignmentvehiclepage.IntegrationTab()
-//     //await bidderopportunitypage.RibbonLevel()
 // })
 
-test('Creating Business Bidder Opportunity', async ({ page }) => {
+test('Creating Business Consignment', async ({ page }) => {
 
     const customerpage = new CustomerPage(page);
     const personalaccountpage = new PersonalAccountPage(page);
@@ -77,24 +73,22 @@ test('Creating Business Bidder Opportunity', async ({ page }) => {
     const phonenumberpage = new PhoneNumberPage(page);
     const emailpage = new EmailPage(page);
     const businessaccountpage = new BusinessAccountPage(page);
-    const businessphonenumberpage = new BusinessPhoneNumberPage(page);
     const newconsignmentvehiclepage = new NewConsignmentVehiclePage(page);
+    const businessphonenumberpage = new BusinessPhoneNumberPage(page);
     const newbusinessconsignmentvehiclepage = new NewBusinessConsignmentVehiclePage(page);
-    const bidderopportunitypage = new BidderOpportunityPage(page);
 
-    // ---------------- CUSTOMER NAVIGATION ----------------
-    await test.step('Open Customer Page and Navigate', async () => {
+    // ---------------- NAVIGATION ----------------
+    await test.step('Open Customer Page & Navigate', async () => {
         await customerpage.url();
         await customerpage.manager();
         await customerpage.customer();
     });
 
-    // ---------------- PERSONAL ACCOUNT ----------------
+    // ---------------- PERSONAL ACCOUNT SETUP ----------------
     await test.step('Create Personal Account', async () => {
         await personalaccountpage.accounttype_dropdown();
         await personalaccountpage.names();
         await personalaccountpage.save();
-        await personalaccountpage.Event_Auct_Comp();
     });
 
     await test.step('Add Personal Address', async () => {
@@ -103,12 +97,12 @@ test('Creating Business Bidder Opportunity', async ({ page }) => {
         await addresspage.saveandclose();
     });
 
-    await test.step('Add Personal Phone Number', async () => {
+    await test.step('Add Personal Phone', async () => {
         await phonenumberpage.phonenumberbtn();
         await phonenumberpage.General_PhoneNumber();
     });
 
-    await test.step('Add Personal Email and Credentials', async () => {
+    await test.step('Add Personal Email', async () => {
         await emailpage.NewEmailbtn();
         await emailpage.enter_emailid();
         await emailpage.CredentialTab();
@@ -118,7 +112,7 @@ test('Creating Business Bidder Opportunity', async ({ page }) => {
         await personalaccountpage.personalAccountDocuments();
     });
 
-    // ---------------- BUSINESS ACCOUNT ----------------
+    // ---------------- BUSINESS ACCOUNT SETUP ----------------
     await test.step('Create Business Account', async () => {
         await businessaccountpage.accounttype_dropdown();
         await businessaccountpage.names();
@@ -131,57 +125,66 @@ test('Creating Business Bidder Opportunity', async ({ page }) => {
         await addresspage.saveandclose();
     });
 
-    await test.step('Add Business Phone Number', async () => {
+    await test.step('Add Business Phone', async () => {
         await businessphonenumberpage.phonenumberbtn();
         await phonenumberpage.General_PhoneNumber();
     });
 
-    await test.step('Upload Business Documents and Link Personal Accounts', async () => {
+    await test.step('Upload Business Documents + Link to Personal', async () => {
         await businessaccountpage.personalAccountDocuments();
         await businessaccountpage.RelatedAccount();
     });
 
-    // ---------------- BIDDER OPPORTUNITY ----------------
-    await test.step('Create New Bidder Opportunity', async () => {
-        await bidderopportunitypage.New_Bidder_Opportunity();
+    // ---------------- BUSINESS CONSIGNMENT ----------------
+    await test.step('Create New Vehicle Consignment', async () => {
+        await newconsignmentvehiclepage.newcon();
     });
 
-    await test.step('Fill Account and Application Info', async () => {
+    await test.step('Enter Vehicle Details', async () => {
+        await newconsignmentvehiclepage.vehicledeatails();
+        await newconsignmentvehiclepage.Mileage();
+    });
+
+    await test.step('Enter Sale Details', async () => {
+        await newconsignmentvehiclepage.SaleDetails();
+    });
+
+    await test.step('Business Account & Address For Consignment', async () => {
         await newbusinessconsignmentvehiclepage.Account();
+        await newbusinessconsignmentvehiclepage.Account_Address();
+    });
+
+    await test.step('Application Information', async () => {
         await newconsignmentvehiclepage.Appilication_Info();
     });
 
-    await test.step('Fill Bidder Details', async () => {
-        await bidderopportunitypage.Bidder_details();
-        await bidderopportunitypage.bidder_Address();
-        await bidderopportunitypage.BidderAssign();
+    await test.step('Assign Consignment', async () => {
+        await newconsignmentvehiclepage.Assign();
     });
 
-    await test.step('Add Bidder Packages', async () => {
-        await bidderopportunitypage.Add_Envelop();
-        await bidderopportunitypage.Add_Absentee_Bid();
-        await bidderopportunitypage.CreatePackage();
+    await test.step('Marketing, Documentation and Photo functionality', async () => {
+        await newconsignmentvehiclepage.MarketingTab();
+        await newconsignmentvehiclepage.ConsVehicleDoc();
+        await newconsignmentvehiclepage.UploadPhoto();
     });
 
-    await test.step('Phone Observer and Documents of Registration Documents', async () => {
-        await bidderopportunitypage.PhoneObserver();
-        await bidderopportunitypage.RegisterDocuments();
+    await test.step('Comparisons, Tasks and Review, Photo Approval toggle from Overview', async () => {
+        await newconsignmentvehiclepage.ComparisionTab();
+        await newconsignmentvehiclepage.TaskTab();
+        await newconsignmentvehiclepage.ApplicationStatus();
     });
 
-    await test.step('Adding products and generating the invoice, Making payment for multiple invoice with Credit Card and Credit Checkbox and Task Tab', async () => {
-        await bidderopportunitypage.Opportunity_product_tab();
-        await bidderopportunitypage.Invoice_Tab();
-        await bidderopportunitypage.AnotherProduct();
-        await bidderopportunitypage.TaskTab();
-    });
+    // Activity-related steps (UAT only)
+    // await test.step('Activities (UAT only)', async () => {
+    //     await newconsignmentvehiclepage.ActivitiesTab();
+    // });
 
+    // await test.step('Consignment Ribbon Level', async () => {
+    //     await newconsignmentvehiclepage.RibbonLevel();
+    // });
+    
     await test.step('Integration Tab', async () => {
         await newconsignmentvehiclepage.IntegrationTab();
     });
-
-    // RibbonLevel functionality (optional)
-    // await test.step('Bidder Ribbon Level', async () => {
-    //     await bidderopportunitypage.RibbonLevel();
-    // });
 
 });

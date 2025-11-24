@@ -155,12 +155,18 @@ class TestData
         this.Charities_Description = "Devendra Testing Charities"
         this.Charities_URL = "DevendraTesting"
 
-       // this.Event_Name = "Scottsdale Fall 2025"
+// this.Event_Name = "Scottsdale Fall 2025"
 
         this.Account_Name = "Dev"
         this.Hammer_Amount = "45000"
-
         this.Donation_Amount = "55000"
+//Docket
+        this.DocketDescYear = "2020"
+        this.DocketOwner = "Dev"
+        this.BjacValueBerween = "Between"
+        this.Value1 = "0"
+        this.Value2 = "30000"
+
 //Tracking
        // this.Tracking_Event = "Scottsdale Fall 2025"
         this.packageType_Bidder_Credential_Package = "Bidder Credential Package"

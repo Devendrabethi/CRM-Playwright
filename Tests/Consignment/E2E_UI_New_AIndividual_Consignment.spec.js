@@ -5,9 +5,8 @@ import { AddressPage} from '../../Pages/AddressPage'
 import { PhoneNumberPage} from '../../Pages/PhoneNumberPage'
 import { EmailPage} from '../../Pages/EmailPage'
 import { NewConsignmentVehiclePage} from '../../Pages/NewConsignmentVehiclePage'
-import { NewAutomobiliaConsignmentPage} from '../../Pages/NewAutomobiliaConsignmentPage'
 
-// test('Creating Personal Automobilia Consignment',async({page}) =>  
+// test('Creating Personal Consignment',async({page}) =>    // Activity functionality works only in UAT
 // {
 //     const customerpage = new CustomerPage(page)
 //     const personalaccountpage = new PersonalAccountPage(page) 
@@ -15,7 +14,6 @@ import { NewAutomobiliaConsignmentPage} from '../../Pages/NewAutomobiliaConsignm
 //     const phonenumberpage = new PhoneNumberPage(page)
 //     const emailpage = new EmailPage(page)
 //     const newconsignmentvehiclepage = new NewConsignmentVehiclePage(page)
-//     const newautomobiliaconsignmentpage = new NewAutomobiliaConsignmentPage(page)
 
 //     await customerpage.url()
 //     await customerpage.manager()
@@ -23,6 +21,7 @@ import { NewAutomobiliaConsignmentPage} from '../../Pages/NewAutomobiliaConsignm
 //     await personalaccountpage.accounttype_dropdown()
 //     await personalaccountpage.names()
 //     await personalaccountpage.save()
+//     await personalaccountpage.Event_Auct_Comp()
 //     await addresspage.newaddress()
 //     await addresspage.generaladdress()
 //     await addresspage.saveandclose()
@@ -32,20 +31,26 @@ import { NewAutomobiliaConsignmentPage} from '../../Pages/NewAutomobiliaConsignm
 //     await emailpage.enter_emailid()
 //     await emailpage.CredentialTab()
 //     await personalaccountpage.personalAccountDocuments()
-//     await newautomobiliaconsignmentpage.newcon()
-//     await newautomobiliaconsignmentpage.SaleDetails()
-//     await newautomobiliaconsignmentpage.Account_Address()
-//     await newautomobiliaconsignmentpage.Appilication_Info()
-//     await newautomobiliaconsignmentpage.Assign()
-//     await newautomobiliaconsignmentpage.MarketingTab()
-//     await newautomobiliaconsignmentpage.ConsOpportunityDoc()
-//     await newautomobiliaconsignmentpage.UploadPhoto()
-//     //await newconsignmentvehiclepage.ActivitiesTab()  // Activity functionality works only in UAT
+//     await newconsignmentvehiclepage.newcon()
+//     await newconsignmentvehiclepage.vehicledeatails()
+//     await newconsignmentvehiclepage.Mileage()
+//     await newconsignmentvehiclepage.SaleDetails()
+//     await newconsignmentvehiclepage.Account_Address()
+//     await newconsignmentvehiclepage.Appilication_Info()
+//     await newconsignmentvehiclepage.Assign()
+//     await newconsignmentvehiclepage.MarketingTab()
+//     await newconsignmentvehiclepage.ConsVehicleDoc()
+//     await newconsignmentvehiclepage.UploadPhoto()
+//     await newconsignmentvehiclepage.ComparisionTab()
+//     await newconsignmentvehiclepage.TaskTab()
+//     await newconsignmentvehiclepage.ApplicationStatus()
+//     //await newconsignmentvehiclepage.ActivitiesTab() 
 //     //await newconsignmentvehiclepage.RibbonLevel()
-//     await newautomobiliaconsignmentpage.IntegrationTab()
+//     await newconsignmentvehiclepage.IntegrationTab()
 // })
 
-test('Creating Personal Automobilia Consignment', async ({ page }) => {
+test('Creating Personal Consignment', async ({ page }) => {  
+    // Activity functionality works only in UAT
 
     const customerpage = new CustomerPage(page);
     const personalaccountpage = new PersonalAccountPage(page);
@@ -53,7 +58,6 @@ test('Creating Personal Automobilia Consignment', async ({ page }) => {
     const phonenumberpage = new PhoneNumberPage(page);
     const emailpage = new EmailPage(page);
     const newconsignmentvehiclepage = new NewConsignmentVehiclePage(page);
-    const newautomobiliaconsignmentpage = new NewAutomobiliaConsignmentPage(page);
 
     // ---------------- CUSTOMER NAVIGATION ----------------
     await test.step('Open Customer Page and Navigate', async () => {
@@ -67,6 +71,7 @@ test('Creating Personal Automobilia Consignment', async ({ page }) => {
         await personalaccountpage.accounttype_dropdown();
         await personalaccountpage.names();
         await personalaccountpage.save();
+        await personalaccountpage.Event_Auct_Comp();
     });
 
     await test.step('Add Personal Address', async () => {
@@ -90,35 +95,55 @@ test('Creating Personal Automobilia Consignment', async ({ page }) => {
         await personalaccountpage.personalAccountDocuments();
     });
 
-    // ---------------- AUTOMOBILIA CONSIGNMENT ----------------
-    await test.step('Create New Automobilia Consignment', async () => {
-        await newautomobiliaconsignmentpage.newcon();
+    // ---------------- PERSONAL CONSIGNMENT ----------------
+    await test.step('Create New Vehicle Consignment', async () => {
+        await newconsignmentvehiclepage.newcon();
     });
 
-    await test.step('Fill Sale Details', async () => {
-        await newautomobiliaconsignmentpage.SaleDetails();
+    await test.step('Enter Vehicle Details', async () => {
+        await newconsignmentvehiclepage.vehicledeatails();
+        await newconsignmentvehiclepage.Mileage();
     });
 
-    await test.step('Fill Account & Address Info', async () => {
-        await newautomobiliaconsignmentpage.Account_Address();
+    await test.step('Enter Sale Details', async () => {
+        await newconsignmentvehiclepage.SaleDetails();
+    });
+
+    await test.step('Fill Account & Address Information', async () => {
+        await newconsignmentvehiclepage.Account_Address();
     });
 
     await test.step('Fill Application Information', async () => {
-        await newautomobiliaconsignmentpage.Appilication_Info();
+        await newconsignmentvehiclepage.Appilication_Info();
     });
 
     await test.step('Assign Consignment', async () => {
-        await newautomobiliaconsignmentpage.Assign();
+        await newconsignmentvehiclepage.Assign();
     });
 
-    await test.step('Fill Marketing Tab', async () => {
-        await newautomobiliaconsignmentpage.MarketingTab();
-        await newautomobiliaconsignmentpage.ConsOpportunityDoc();
-        await newautomobiliaconsignmentpage.UploadPhoto();
+    await test.step('Marketing, Documentation and Photo functionality', async () => {
+        await newconsignmentvehiclepage.MarketingTab();
+        await newconsignmentvehiclepage.ConsVehicleDoc();
+        await newconsignmentvehiclepage.UploadPhoto();
     });
+
+    await test.step('Comparisons, Tasks and Review, Photo Approval toggle from Overview', async () => {
+        await newconsignmentvehiclepage.ComparisionTab();
+        await newconsignmentvehiclepage.TaskTab();
+        await newconsignmentvehiclepage.ApplicationStatus();
+    });
+
+    // Activity-related steps (UAT only)
+    // await test.step('Activities (UAT only)', async () => {
+    //     await newconsignmentvehiclepage.ActivitiesTab();
+    // });
+
+    // await test.step('Consignment Ribbon Level', async () => {
+    //     await newconsignmentvehiclepage.RibbonLevel();
+    // });
 
     await test.step('Integration Tab', async () => {
-        await newautomobiliaconsignmentpage.IntegrationTab();
+        await newconsignmentvehiclepage.IntegrationTab();
     });
 
 });
