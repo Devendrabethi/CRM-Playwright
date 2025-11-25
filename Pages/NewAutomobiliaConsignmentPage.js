@@ -209,8 +209,7 @@ class NewAutomobiliaConsignmentPage
             await this.page.screenshot({ path: './ScreenShot/107 LotOvverrideConfirmation.png', fullPage: true})
             await Lotframe.locator(this.lotnumberchange_webElements.Save_Button).click();
             await this.page.waitForTimeout(25000);
-
-             //Request Information
+//Request Information
 
         await this.page.locator(this.newconsignmentvehicle_webelement.reqinforbtn).click()
         const frame = await this.page.frameLocator(this.newconsignmentvehicle_webelement.reqinforframe)
@@ -285,7 +284,7 @@ class NewAutomobiliaConsignmentPage
         //               await this.page.locator(this.bidderopportunity_webelements.GoBack_btn).click();
         //              // await this.page.waitForTimeout(1000);
         //       }        
-
+//salefee tab
         await this.page.locator(this.lotnumberchange_webElements.Sales_Fees_Tab).click({ timeout: 60000 });
         await this.page.waitForTimeout(5000)
         // await this.page.locator(this.lotnumberchange_webElements.Invoice_Tab).click()

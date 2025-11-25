@@ -40,7 +40,7 @@ class BidderOpportunityPage
         // await this.page.locator(this.bidderopportunity_webelements.Bidder_Package_Hover).hover()
         // await this.page.locator(this.bidderopportunity_webelements.Delete_BidderPackage).click()
         // await this.page.waitForTimeout(2000)
-        await this.page.locator(this.bidderopportunity_webelements.Bidder_Pakage_Type).fill(this.testdata.Bidder_Package_Type)
+        await this.page.locator(this.bidderopportunity_webelements.Bidder_Pakage_Type).fill(process.env.Bidder_Package_Type)
         await this.page.waitForTimeout(4000)
         await this.page.locator(this.bidderopportunity_webelements.Select_Bidder_Package_Type).click();
         
@@ -403,7 +403,7 @@ class BidderOpportunityPage
     }
     async RibbonLevel()
     {
-        //Request Information
+  //Request Information
          await this.page.locator(this.bidderopportunity_webelements.reqinforbtn).click()
                   const frame = await this.page.frameLocator(this.bidderopportunity_webelements.reqinforframe)
                   if(!frame) throw new Error('Iframe not found')
@@ -435,7 +435,7 @@ class BidderOpportunityPage
                 await this.page.locator(this.bidderopportunity_webelements.Refresh_Bidder).click()
                 await this.page.waitForTimeout(5000)
 
-            //Download file PrintAll
+//Download file PrintAll
                       // const path1 = require('path');  
                       // const fs1 = require('fs');
                       // const downloadDir1 = path1.join(__dirname, 'Download');
@@ -448,7 +448,7 @@ class BidderOpportunityPage
                       // const download1 = await downloadPromise1
                       // const downloadPath1 = path1.join(downloadDir1, download1.suggestedFilename());
                       // await download1.saveAs(downloadPath1)
-              //Print Agreement
+//Print Agreement
                 await this.page.locator(this.bidderopportunity_webelements.Print_Agreement).click()
                // await this.page.waitForTimeout(2000)
                 await this.page.locator(this.bidderopportunity_webelements.Print).click()
@@ -456,7 +456,7 @@ class BidderOpportunityPage
                 await this.page.locator(this.bidderopportunity_webelements.Save_btn).click({timeout:60000})
                 await this.page.waitForTimeout(1000)
                 await this.page.locator(this.bidderopportunity_webelements.GoBack_btn).click({timeout:60000})
-       //Send Agreement
+//Send Agreement
                 await this.page.locator(this.bidderopportunity_webelements.Send_Agreement).click({timeout:60000})
                 try 
                 {
@@ -474,7 +474,7 @@ class BidderOpportunityPage
                       await this.page.locator(this.bidderopportunity_webelements.GoBack_btn).click();
                      // await this.page.waitForTimeout(1000);
               }
-        //Download file Print Bidder Badge
+//Download file Print Bidder Badge
                  const path2 = require('path');  
                  const fs2 = require('fs');
                  const downloadDir2 = path2.join(__dirname, 'Download');
@@ -486,7 +486,7 @@ class BidderOpportunityPage
                  const download2 = await downloadPromise2
                  const downloadPath2 = path2.join(downloadDir2, download2.suggestedFilename());
                  await download2.saveAs(downloadPath2)
-         //Administration Auto Assign
+//Administration Auto Assign
                 await this.page.locator(this.bidderopportunity_webelements.Administration).click({timeout:60000})
                 //await this.page.locator(this.bidderopportunity_webelements.ChangeBidderNumber).click({timeout:60000})
                 const frame1 = await this.page.frameLocator(this.bidderopportunity_webelements.FrameChangeBidderNumber)
@@ -519,10 +519,10 @@ class BidderOpportunityPage
                     await this.page.waitForTimeout(1000);
                     await frame2.locator(this.bidderopportunity_webelements.Approvebutton).click()
 
-          //Sync
+//Sync
                 await expect(await this.page.locator(this.bidderopportunity_webelements.Sync)).toBeVisible({timeout:60000})
                 await this.page.waitForTimeout(3000);
-        //Aggreement Tab
+//Aggreement Tab
                 await this.page.locator(this.newconsignmentvehicle_webelement.Documentation_Tab).click()
                 await this.page.locator(this.bidderopportunity_webelements.CheckStatus).click()
                 await this.page.screenshot({ path: './ScreenShot/67 CheckStatusAgreementInBidder.png', fullPage: true})

@@ -415,7 +415,7 @@ class NewConsignmentVehiclePage
             await Lotframe.locator(this.lotnumberchange_webElements.Save_Button).click();
             await this.page.waitForTimeout(25000);
 
-             //Request Information
+//Request Information
 
         await this.page.locator(this.newconsignmentvehicle_webelement.reqinforbtn).click()
         const frame = await this.page.frameLocator(this.newconsignmentvehicle_webelement.reqinforframe)
@@ -452,7 +452,7 @@ class NewConsignmentVehiclePage
                 const dialog = await dialogPromise;
                 await dialog.accept();
 
-        //Consignment Print Contract
+//Consignment Print Contract
                 await this.page.locator(this.bidderopportunity_webelements.Print_Contract).click()
                // await this.page.waitForTimeout(2000)
                 await this.page.locator(this.bidderopportunity_webelements.Print).click()
@@ -473,7 +473,7 @@ class NewConsignmentVehiclePage
                         await this.page.waitForTimeout(1000)
                         await this.page.locator(this.bidderopportunity_webelements.GoBack_btn).click({timeout:60000})
                 }
-        //Consignment Send Contract
+//Consignment Send Contract
                 await this.page.locator(this.bidderopportunity_webelements.Send_Contract).click({timeout:60000})
                 await this.page.locator(this.bidderopportunity_webelements.Send).click();
                 try 
