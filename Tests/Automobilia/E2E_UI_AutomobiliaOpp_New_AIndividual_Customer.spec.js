@@ -7,44 +7,6 @@ import { EmailPage} from '../../Pages/EmailPage'
 import { NewConsignmentVehiclePage} from '../../Pages/NewConsignmentVehiclePage'
 import { NewAutomobiliaConsignmentPage} from '../../Pages/NewAutomobiliaConsignmentPage'
 
-// test('Creating Personal Automobilia Consignment',async({page}) =>  
-// {
-//     const customerpage = new CustomerPage(page)
-//     const personalaccountpage = new PersonalAccountPage(page) 
-//     const addresspage = new AddressPage(page)
-//     const phonenumberpage = new PhoneNumberPage(page)
-//     const emailpage = new EmailPage(page)
-//     const newconsignmentvehiclepage = new NewConsignmentVehiclePage(page)
-//     const newautomobiliaconsignmentpage = new NewAutomobiliaConsignmentPage(page)
-
-//     await customerpage.url()
-//     await customerpage.manager()
-//     await customerpage.customer()
-//     await personalaccountpage.accounttype_dropdown()
-//     await personalaccountpage.names()
-//     await personalaccountpage.save()
-//     await addresspage.newaddress()
-//     await addresspage.generaladdress()
-//     await addresspage.saveandclose()
-//     await phonenumberpage.phonenumberbtn()
-//     await phonenumberpage.General_PhoneNumber()
-//     await emailpage.NewEmailbtn()
-//     await emailpage.enter_emailid()
-//     await emailpage.CredentialTab()
-//     await personalaccountpage.personalAccountDocuments()
-//     await newautomobiliaconsignmentpage.newcon()
-//     await newautomobiliaconsignmentpage.SaleDetails()
-//     await newautomobiliaconsignmentpage.Account_Address()
-//     await newautomobiliaconsignmentpage.Appilication_Info()
-//     await newautomobiliaconsignmentpage.Assign()
-//     await newautomobiliaconsignmentpage.MarketingTab()
-//     await newautomobiliaconsignmentpage.ConsOpportunityDoc()
-//     await newautomobiliaconsignmentpage.UploadPhoto()
-//     //await newconsignmentvehiclepage.ActivitiesTab()  // Activity functionality works only in UAT
-//     //await newconsignmentvehiclepage.RibbonLevel()
-//     await newautomobiliaconsignmentpage.IntegrationTab()
-// })
-
 test('Creating Personal Automobilia Consignment', async ({ page }) => {
 
     const customerpage = new CustomerPage(page);

@@ -6,30 +6,6 @@ import { PhoneNumberPage} from '../../Pages/PhoneNumberPage'
 import { EmailPage} from '../../Pages/EmailPage'
 
  // CRM    Change the Close tracking  in Tracking TAB//
-// test('Validating Package Tracking with Different Package type, Carrier, Use One Rate, Service type and Packaging for Price Estimator for CRM originated',async({page}) =>   
-// {
-//     const customerpage = new CustomerPage(page)
-//     const personalaccountpage = new PersonalAccountPage(page) 
-//     const addresspage = new AddressPage(page)
-//     const phonenumberpage = new PhoneNumberPage(page)
-//     const emailpage = new EmailPage(page)
-
-//     await customerpage.url()
-//     await customerpage.manager()
-//     await customerpage.customer()
-//     await personalaccountpage.accounttype_dropdown()
-//     await personalaccountpage.names()
-//     await personalaccountpage.save()
-//     await addresspage.newaddress()
-//     await addresspage.generaladdress()
-//     await addresspage.saveandclose()
-//     await phonenumberpage.phonenumberbtn()
-//     await phonenumberpage.General_PhoneNumber()
-//     await emailpage.NewEmailbtn()
-//     await emailpage.enter_emailid()
-//     await personalaccountpage.Tracking_Tab()
-// })
-
 test('Validating PACKAGE TRACKING / PRICE ESTIMATOR for CRM originated', async ({ page }) => {
 
     const customerpage = new CustomerPage(page);
@@ -76,16 +52,6 @@ test('Validating PACKAGE TRACKING / PRICE ESTIMATOR for CRM originated', async (
 });
 
  // WEB originated packlage tracking with debug
-// test('Validating Package Tracking and Price Estimator for Web Originated',async({page}) =>   
-// {
-//     const customerpage = new CustomerPage(page)
-//     const personalaccountpage = new PersonalAccountPage(page) 
-
-//     await customerpage.url()
-//     await customerpage.manager()
-//     await customerpage.WebCustoer()
-//     await personalaccountpage.Tracking_Tab()
-// })
 
 test('Validating Package Tracking and Price Estimator for Web Originated', async ({ page }) => {
 

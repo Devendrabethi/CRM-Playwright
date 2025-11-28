@@ -498,10 +498,10 @@ class NewConsignmentVehiclePage
                      // await this.page.waitForTimeout(1000);
               }        
 
-        await this.page.locator(this.lotnumberchange_webElements.Products_Tab).click({ timeout: 60000 });
+        await this.page.locator(this.lotnumberchange_webElements.Opportunity_SalesFees_Tab).click({ timeout: 60000 });
         await this.page.waitForTimeout(5000)
-        await this.page.locator(this.lotnumberchange_webElements.Invoice_Tab).click()
-        await this.page.locator(this.lotnumberchange_webElements.Refresh_Invoice).click()
+        // await this.page.locator(this.lotnumberchange_webElements.Invoice_Tab).click()
+        // await this.page.locator(this.lotnumberchange_webElements.Refresh_Invoice).click()
         await this.page.locator(this.lotnumberchange_webElements.SelectInvoice).click()
         await this.page.locator(this.bidderopportunity_webelements.EnterPaymentButton).click()  
         const frame1 = await this.page.frameLocator(this.bidderopportunity_webelements.FrameInvoice)
@@ -519,15 +519,27 @@ class NewConsignmentVehiclePage
         await frameCard.locator(this.bidderopportunity_webelements.ZipCode).fill(this.testdata.ZipCOde)
         await frame1.locator(this.bidderopportunity_webelements.SubmitButton).click()
         await this.page.locator(this.bidderopportunity_webelements.PaymentOk).click({timeout:60000})
-        await this.page.locator(this.lotnumberchange_webElements.Products_Tab).click({timeout:60000})
+        await this.page.locator(this.lotnumberchange_webElements.Opportunity_SalesFees_Tab).click({timeout:60000})
         await this.page.screenshot({ path: './ScreenShot/105 LotProductTab.png', fullPage: true})
         await this.page.waitForTimeout(5000)
-        await this.page.locator(this.lotnumberchange_webElements.Invoice_Tab).click()
-        await this.page.waitForTimeout(5000)
+        // await this.page.locator(this.lotnumberchange_webElements.Invoice_Tab).click()
+        // await this.page.waitForTimeout(5000)
         await this.page.locator(this.lotnumberchange_webElements.Selectsingleinvoive).dblclick()
-        await this.page.screenshot({ path: './ScreenShot/106 LotInvoiceTab.png', fullPage: true})
-        await this.page.locator(this.lotnumberchange_webElements.SaveandClose).click()
         await this.page.waitForTimeout(3000)
+        await this.page.screenshot({ path: './ScreenShot/106 LotSaleFeesTab.png', fullPage: true})
+        await this.page.locator(this.bidderopportunity_webelements.Payment_AdjustmentTab).click()
+        await this.page.waitForTimeout(4000) 
+        await this.page.locator(this.bidderopportunity_webelements.PaymentTable).dblclick()
+        await this.page.waitForTimeout(4000)
+        await this.page.locator(this.bidderopportunity_webelements.DetailsTab).click()
+        await this.page.waitForTimeout(2000)
+        await this.page.screenshot({ path: './ScreenShot/63 PaymentTableWithPaymentCreated.png', fullPage: true})
+        await this.page.locator(this.bidderopportunity_webelements.GoBack_btn).click()
+        await this.page.waitForTimeout(2000)
+        await this.page.locator(this.bidderopportunity_webelements.GoBack_btn).click()
+        await this.page.waitForTimeout(3000)
+        // await this.page.locator(this.lotnumberchange_webElements.SaveandClose).click()
+        // await this.page.waitForTimeout(3000)
 
 ///Lot Cancel
         await this.page.locator(this.lotnumberchange_webElements.LotAssign).click()
