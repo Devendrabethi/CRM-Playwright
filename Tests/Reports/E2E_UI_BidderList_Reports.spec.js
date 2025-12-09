@@ -1,49 +1,51 @@
-import{test} from '@playwright/test'
-import { CustomerPage } from '../../Pages/CustomerPage'
-import { ReportsPage } from '../../Pages/ReportsPage'
+import { test } from '@playwright/test';
+import { CustomerPage } from '../../Pages/CustomerPage';
+import { ReportsPage } from '../../Pages/ReportsPage';
 
-// test('Validating Reports',async({page}) =>    // Must have the useraccount TestUser3 with sold status
-// {
-//     const customerpage = new CustomerPage(page)
-//     const reportspage = new ReportsPage(page) 
+let browser;
+let context;
+let page;
+let customerpage;
+let reportspage;
 
-//     await customerpage.url()
-//     await reportspage.ChangeAreaReports()
-//     await reportspage.OpportunityInvoiceReport()
-//     await reportspage.BidderList()
-//     await reportspage.Customer()
-//     await reportspage.Consignors()
-// })
+test.describe('Reports Validation Workflow', () => {
 
-test('Validating Reports', async ({ page }) => {
+    test.beforeAll(async ({ playwright }) => {
+        browser = await playwright.chromium.launch();
+        context = await browser.newContext();
+        page = await context.newPage();
 
-    const customerpage = new CustomerPage(page);
-    const reportspage = new ReportsPage(page);
+        customerpage = new CustomerPage(page);
+        reportspage = new ReportsPage(page);
+    });
 
-    // ---------------- NAVIGATION ----------------
-    await test.step('Open Customer Page', async () => {
+    test('01. Open Customer Page', async () => {
         await customerpage.url();
     });
 
-    // ---------------- REPORTS AREA ----------------
-    await test.step('Change Area to Reports', async () => {
+    test('02. Change Area to Reports', async () => {
         await reportspage.ChangeAreaReports();
     });
 
-    await test.step('Validate Opportunity Invoice Report', async () => {
+    test('03. Validate Opportunity Invoice Report', async () => {
         await reportspage.OpportunityInvoiceReport();
     });
 
-    await test.step('Validate Bidder List Report', async () => {
+    test('04. Validate Bidder List Report', async () => {
         await reportspage.BidderList();
     });
 
-    await test.step('Validate Customer Report', async () => {
+    test('05. Validate Customer Report', async () => {
         await reportspage.Customer();
     });
 
-    await test.step('Validate Consignors Report', async () => {
+    test('06. Validate Consignors Report', async () => {
         await reportspage.Consignors();
+    });
+
+    test.afterAll(async () => {
+        await context.close();
+        await browser.close();
     });
 
 });

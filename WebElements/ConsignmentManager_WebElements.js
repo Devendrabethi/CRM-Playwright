@@ -52,7 +52,7 @@ class ConsignmentManager_WebElements
         this.Time_Button = "//button[text()='Time']"
         this.Cancelled_Button = "//button[text()='Cancelled']"
         this.SlideShow_Button ="//button[text()='Slide Show']"
-        this.Close_SlideShow = "(//button[@aria-label='Close'])[2]"
+        this.Close_SlideShow = "(//button[@aria-label='Close'])[3]"
         this.Trend_Button = "//button[text()='Trend']"
         this.Refresh_Button = "//button[text()='Refresh']"
         this.NextDateDocket = "//button[@id='nextButton']/i"

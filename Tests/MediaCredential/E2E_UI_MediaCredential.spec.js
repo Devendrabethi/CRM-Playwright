@@ -1,25 +1,40 @@
-import{test} from '@playwright/test'
-import { MediCredentialPage } from '../../Pages/MediCredentialPage'
-import { BidderOpportunityPage} from '../../Pages/BidderOpportunityPage'
+import { test } from '@playwright/test';
+import { MediCredentialPage } from '../../Pages/MediCredentialPage';
 
-test('Validating Media Credential', async ({ page }) => {
+let browser;
+let context;
+let page;
+let medicredentialpage;
 
-    const medicredentialpage = new MediCredentialPage(page);
+test.describe('Media Credential Validation Workflow', () => {
 
-    await test.step('Open Media Credential Page', async () => {
+    test.beforeAll(async ({ playwright }) => {
+        browser = await playwright.chromium.launch();
+        context = await browser.newContext();
+        page = await context.newPage();
+
+        medicredentialpage = new MediCredentialPage(page);
+    });
+
+    test('01. Open Media Credential Page', async () => {
         await medicredentialpage.url();
     });
 
-    await test.step('Navigate to Manager Section', async () => {
+    test('02. Navigate to Manager Section', async () => {
         await medicredentialpage.manager();
     });
 
-    await test.step('Validate Media Credential Page With Docusign', async () => {
+    test('03. Validate Media Credential Page With Docusign', async () => {
         await medicredentialpage.MediaCredential();
     });
 
-    await test.step('Validate Organization Details', async () => {
+    test('04. Validate Organization Details', async () => {
         await medicredentialpage.Org_Details();
+    });
+
+    test.afterAll(async () => {
+        await context.close();
+        await browser.close();
     });
 
 });

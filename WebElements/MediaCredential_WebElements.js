@@ -35,7 +35,7 @@ class MediaCredential_WebElements {
             this.Refresh_Button = "//button[@aria-label='Refresh']"
 
             this.OrgDetails_Tab = "//li[@aria-label='Org Details ']"
-            this.AddMediaContact_Button = "//button[contains(@aria-label,'Add New Contact')]"
+            this.AddMediaContact_Button = "(//button[contains(@aria-label,'Add Media Contact')])"
             this.OrgDetails_FirstName = "(//input[@aria-label='First Name'])[2]"
             this.orgDetails_LastName = "(//input[@aria-label='Last Name'])[2]"
             this.orgDetails_Email = "(//input[@aria-label='Email'])[2]"

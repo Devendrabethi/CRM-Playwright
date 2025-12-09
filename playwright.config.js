@@ -21,7 +21,7 @@ module.exports = defineConfig({
   testDir: './Tests',
   globalSetup: require.resolve('./global-setup.js'),
   /* Run tests in files in parallel */
-  fullyParallel: true,
+  fullyParallel: false,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
   forbidOnly: !!process.env.CI,
   /* Retry on CI only */

@@ -15,6 +15,7 @@ class BidderOpportunity_WebElements
         this.Bid_Limit_Value = "//input[@aria-label='Bid Limit Value']"
         this.Bid_Limit_Estimation = "//input[@aria-label='Bid Limit Estimated']"
         this.Select_Interner_Bidder = "//select[@aria-label='Internet Bidder']"
+        this.ConsignmentValue_Button = "(//div[contains(@data-id,'bjac_consignmentvalues')])[5]/button"
 
         this.Mailing_Address = "//input[@aria-label='Mailing Address, Lookup']"
         this.Mailing_Address_select = "//div[@aria-label='Mailing Address Lookup results']/ul/li[1]"
@@ -94,7 +95,7 @@ class BidderOpportunity_WebElements
         this.Third_Invoice = "(//div[@aria-label='Press SPACE to select this row.'][3]/div[1])[2]"
         this.select_Payment_Method = "//select[@aria-label='Payment Method']"
 
-        this.SelectAllInvoice = "(//div[@col-id='__row_status'])[1]"
+        this.SelectAllInvoice = "//div[@id='dataSetRoot_Invoices']/div[2]/descendant::div[@role='row'][1]/div[@col-id='__row_status']"
         this.SelectFirstInvoice = "(//label[@aria-label='New'])[1]"
         this.EnterPaymentButton = "//button[@aria-label='Enter Payment']"
         this.FrameInvoice = "//iframe[@aria-label='Pay_Invoice']"

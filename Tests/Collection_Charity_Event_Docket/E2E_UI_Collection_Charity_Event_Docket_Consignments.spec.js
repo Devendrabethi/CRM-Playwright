@@ -1,45 +1,60 @@
-import{test} from '@playwright/test'
-import { CustomerPage } from '../../Pages/CustomerPage'
-import { ConsignmentManagerPage } from '../../Pages/ConsignmentManagerPage'
+import { test } from '@playwright/test';
+import { CustomerPage } from '../../Pages/CustomerPage';
+import { ConsignmentManagerPage } from '../../Pages/ConsignmentManagerPage';
 
-test('Validating Collection, Charities, Events and Docket (Assigning Lot)', async ({ page }) => {  
-    // Must have the useraccount TestUser3 with sold status
+let browser;
+let context;
+let page;
+let customerpage;
+let consignmentmanagerPage;
 
-    const customerpage = new CustomerPage(page);
-    const consignmentmanagerPage = new ConsignmentManagerPage(page);
+test.describe('Consignment Manager Workflow', () => {
+
+    test.beforeAll(async ({ playwright }) => {
+        browser = await playwright.chromium.launch();
+        context = await browser.newContext();
+        page = await context.newPage();
+
+        customerpage = new CustomerPage(page);
+        consignmentmanagerPage = new ConsignmentManagerPage(page);
+    });
 
     // ---------------- NAVIGATION ----------------
-    await test.step('Open Customer Page', async () => {
+    test('01. Open Customer Page', async () => {
         await customerpage.url();
     });
 
-    // ---------------- CONSIGNMENT MANAGER AREAS ----------------
-    await test.step('Change Area to Consignment Manager', async () => {
+    // ---------------- CONSIGNMENT MANAGER ----------------
+    test('02. Change Area to Consignment Manager', async () => {
         await consignmentmanagerPage.ChangeArea();
     });
 
-    await test.step('Validate Collections', async () => {
+    test('03. Validate Collections', async () => {
         await consignmentmanagerPage.Collections();
     });
 
-    await test.step('Validate Charities', async () => {
+    test('04. Validate Charities', async () => {
         await consignmentmanagerPage.Charities();
     });
 
-    await test.step('Validate Events', async () => {
+    test('05. Validate Events', async () => {
         await consignmentmanagerPage.Events();
     });
 
-    await test.step('Validate Dockets and assigning Lot', async () => {
+    test('06. Validate Dockets and Assign Lot', async () => {
         await consignmentmanagerPage.Dockets();
     });
 
-    await test.step('Open Consignment and Add Buyer and Add Doner Details ', async () => {
+    test('07. Open Consignment and Add Buyer & Donor Details', async () => {
         await consignmentmanagerPage.Consignment();
     });
 
-    await test.step('Validate Marketing Tab adding Collections and Charity', async () => {
+    test('08. Validate Marketing Tab by Adding Collections and Charity', async () => {
         await consignmentmanagerPage.MarkettingTab();
     });
 
+    test.afterAll(async () => {
+        await context.close();
+        await browser.close();
+    });
 });

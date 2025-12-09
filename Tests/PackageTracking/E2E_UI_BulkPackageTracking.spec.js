@@ -1,18 +1,35 @@
-import{test} from '@playwright/test'
-import { CustomerPage } from '../../Pages/CustomerPage'
-import { ConsignmentManagerPage } from '../../Pages/ConsignmentManagerPage'
+import { test } from '@playwright/test';
+import { CustomerPage } from '../../Pages/CustomerPage';
+import { ConsignmentManagerPage } from '../../Pages/ConsignmentManagerPage';
 
-test('Validating Bulk Package Tracking', async ({ page }) => {
+let browser;
+let context;
+let page;
+let customerpage;
+let consignmentmanagerPage;
 
-    const customerpage = new CustomerPage(page);
-    const consignmentmanagerPage = new ConsignmentManagerPage(page);
+test.describe('Bulk Package Tracking Validation Workflow', () => {
 
-    await test.step('Open Customer Page', async () => {
+    test.beforeAll(async ({ playwright }) => {
+        browser = await playwright.chromium.launch();
+        context = await browser.newContext();
+        page = await context.newPage();
+
+        customerpage = new CustomerPage(page);
+        consignmentmanagerPage = new ConsignmentManagerPage(page);
+    });
+
+    test('01. Open Customer Page', async () => {
         await customerpage.url();
     });
 
-    await test.step('Validate Bulk Package Tracking (Bidder Manager)', async () => {
+    test('02. Validate Bulk Package Tracking (Bidder Manager)', async () => {
         await consignmentmanagerPage.BidderManager();
+    });
+
+    test.afterAll(async () => {
+        await context.close();
+        await browser.close();
     });
 
 });

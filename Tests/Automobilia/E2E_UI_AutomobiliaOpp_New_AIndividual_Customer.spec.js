@@ -1,86 +1,110 @@
-import{test} from '@playwright/test'
-import { CustomerPage } from '../../Pages/CustomerPage'
-import { PersonalAccountPage} from '../../Pages/PersonalAccountPage'
-import { AddressPage} from '../../Pages/AddressPage'
-import { PhoneNumberPage} from '../../Pages/PhoneNumberPage'
-import { EmailPage} from '../../Pages/EmailPage'
-import { NewConsignmentVehiclePage} from '../../Pages/NewConsignmentVehiclePage'
-import { NewAutomobiliaConsignmentPage} from '../../Pages/NewAutomobiliaConsignmentPage'
+import { test } from '@playwright/test';
+import { CustomerPage } from '../../Pages/CustomerPage';
+import { PersonalAccountPage } from '../../Pages/PersonalAccountPage';
+import { AddressPage } from '../../Pages/AddressPage';
+import { PhoneNumberPage } from '../../Pages/PhoneNumberPage';
+import { EmailPage } from '../../Pages/EmailPage';
+import { NewConsignmentVehiclePage } from '../../Pages/NewConsignmentVehiclePage';
+import { NewAutomobiliaConsignmentPage } from '../../Pages/NewAutomobiliaConsignmentPage';
 
-test('Creating Personal Automobilia Consignment', async ({ page }) => {
+let browser;
+let context;
+let page;
+let customerpage;
+let personalaccountpage;
+let addresspage;
+let phonenumberpage;
+let emailpage;
+let newconsignmentvehiclepage;
+let newautomobiliaconsignmentpage;
 
-    const customerpage = new CustomerPage(page);
-    const personalaccountpage = new PersonalAccountPage(page);
-    const addresspage = new AddressPage(page);
-    const phonenumberpage = new PhoneNumberPage(page);
-    const emailpage = new EmailPage(page);
-    const newconsignmentvehiclepage = new NewConsignmentVehiclePage(page);
-    const newautomobiliaconsignmentpage = new NewAutomobiliaConsignmentPage(page);
+test.describe('Automobilia Consignment Workflow', () => {
+
+    test.beforeAll(async ({ playwright }) => {
+        // Launch browser
+        browser = await playwright.chromium.launch();
+        context = await browser.newContext();
+        page = await context.newPage();
+
+        // Initialize page objects
+        customerpage = new CustomerPage(page);
+        personalaccountpage = new PersonalAccountPage(page);
+        addresspage = new AddressPage(page);
+        phonenumberpage = new PhoneNumberPage(page);
+        emailpage = new EmailPage(page);
+        newconsignmentvehiclepage = new NewConsignmentVehiclePage(page);
+        newautomobiliaconsignmentpage = new NewAutomobiliaConsignmentPage(page);
+    });
 
     // ---------------- CUSTOMER NAVIGATION ----------------
-    await test.step('Open Customer Page and Navigate', async () => {
+    test('01. Navigate to Customer Page', async () => {
         await customerpage.url();
         await customerpage.manager();
         await customerpage.customer();
     });
 
     // ---------------- PERSONAL ACCOUNT ----------------
-    await test.step('Create Personal Account', async () => {
+    test('02. Create Personal Account', async () => {
         await personalaccountpage.accounttype_dropdown();
         await personalaccountpage.names();
         await personalaccountpage.save();
     });
 
-    await test.step('Add Personal Address', async () => {
+    test('03. Add Personal Address', async () => {
         await addresspage.newaddress();
         await addresspage.generaladdress();
         await addresspage.saveandclose();
     });
 
-    await test.step('Add Personal Phone Number', async () => {
+    test('04. Add Personal Phone Number', async () => {
         await phonenumberpage.phonenumberbtn();
         await phonenumberpage.General_PhoneNumber();
     });
 
-    await test.step('Add Personal Email and Credentials', async () => {
+    test('05. Add Personal Email and Credentials', async () => {
         await emailpage.NewEmailbtn();
         await emailpage.enter_emailid();
         await emailpage.CredentialTab();
     });
 
-    await test.step('Upload Personal Documents', async () => {
+    test('06. Upload Personal Documents', async () => {
         await personalaccountpage.personalAccountDocuments();
     });
 
     // ---------------- AUTOMOBILIA CONSIGNMENT ----------------
-    await test.step('Create New Automobilia Consignment', async () => {
+    test('07. Create New Automobilia Consignment', async () => {
         await newautomobiliaconsignmentpage.newcon();
     });
 
-    await test.step('Fill Sale Details', async () => {
+    test('08. Fill Sale Details', async () => {
         await newautomobiliaconsignmentpage.SaleDetails();
     });
 
-    await test.step('Fill Account & Address Info', async () => {
+    test('09. Fill Account & Address Info', async () => {
         await newautomobiliaconsignmentpage.Account_Address();
     });
 
-    await test.step('Fill Application Information', async () => {
+    test('10. Fill Application Information', async () => {
         await newautomobiliaconsignmentpage.Appilication_Info();
     });
 
-    await test.step('Assign Consignment', async () => {
+    test('11. Assign Consignment', async () => {
         await newautomobiliaconsignmentpage.Assign();
     });
 
-    await test.step('Fill Marketing Tab', async () => {
+    test('12. Fill Marketing Tab', async () => {
         await newautomobiliaconsignmentpage.MarketingTab();
         await newautomobiliaconsignmentpage.ConsOpportunityDoc();
         await newautomobiliaconsignmentpage.UploadPhoto();
     });
 
-    await test.step('Integration Tab', async () => {
+    test('13. Integration Tab', async () => {
         await newautomobiliaconsignmentpage.IntegrationTab();
+    });
+
+    test.afterAll(async () => {
+        await context.close();
+        await browser.close();
     });
 
 });

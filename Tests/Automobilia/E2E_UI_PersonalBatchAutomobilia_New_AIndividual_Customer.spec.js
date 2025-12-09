@@ -1,58 +1,82 @@
-import{test} from '@playwright/test'
-import { CustomerPage } from '../../Pages/CustomerPage'
-import { PersonalAccountPage} from '../../Pages/PersonalAccountPage'
-import { AddressPage} from '../../Pages/AddressPage'
-import { PhoneNumberPage} from '../../Pages/PhoneNumberPage'
-import { EmailPage} from '../../Pages/EmailPage'
-import { NewAutomobiliaConsignmentPage} from '../../Pages/NewAutomobiliaConsignmentPage'
+import { test } from '@playwright/test';
+import { CustomerPage } from '../../Pages/CustomerPage';
+import { PersonalAccountPage } from '../../Pages/PersonalAccountPage';
+import { AddressPage } from '../../Pages/AddressPage';
+import { PhoneNumberPage } from '../../Pages/PhoneNumberPage';
+import { EmailPage } from '../../Pages/EmailPage';
+import { NewAutomobiliaConsignmentPage } from '../../Pages/NewAutomobiliaConsignmentPage';
 
-test('Creating Personal Batch Automobilia Consignment', async ({ page }) => {
+let browser;
+let context;
+let page;
+let customerpage;
+let personalaccountpage;
+let addresspage;
+let phonenumberpage;
+let emailpage;
+let newautomobiliaconsignmentpage;
 
-    const customerpage = new CustomerPage(page);
-    const personalaccountpage = new PersonalAccountPage(page);
-    const addresspage = new AddressPage(page);
-    const phonenumberpage = new PhoneNumberPage(page);
-    const emailpage = new EmailPage(page);
-    const newautomobiliaconsignmentpage = new NewAutomobiliaConsignmentPage(page);
+test.describe('Personal Batch Automobilia Consignment Workflow', () => {
+
+    test.beforeAll(async ({ playwright }) => {
+        // Launch browser once
+        browser = await playwright.chromium.launch();
+        context = await browser.newContext();
+        page = await context.newPage();
+
+        // Initialize page objects
+        customerpage = new CustomerPage(page);
+        personalaccountpage = new PersonalAccountPage(page);
+        addresspage = new AddressPage(page);
+        phonenumberpage = new PhoneNumberPage(page);
+        emailpage = new EmailPage(page);
+        newautomobiliaconsignmentpage = new NewAutomobiliaConsignmentPage(page);
+    });
 
     // ---------------- CUSTOMER NAVIGATION ----------------
-    await test.step('Open Customer Page and Navigate', async () => {
+    test('01. Open Customer Page and Navigate', async () => {
         await customerpage.url();
         await customerpage.manager();
         await customerpage.customer();
     });
 
     // ---------------- PERSONAL ACCOUNT ----------------
-    await test.step('Create Personal Account', async () => {
+    test('02. Create Personal Account', async () => {
         await personalaccountpage.accounttype_dropdown();
         await personalaccountpage.names();
         await personalaccountpage.save();
     });
 
-    await test.step('Add Personal Address', async () => {
+    test('03. Add Personal Address', async () => {
         await addresspage.newaddress();
         await addresspage.generaladdress();
         await addresspage.saveandclose();
     });
 
-    await test.step('Add Personal Phone Number', async () => {
+    test('04. Add Personal Phone Number', async () => {
         await phonenumberpage.phonenumberbtn();
         await phonenumberpage.General_PhoneNumber();
     });
 
-    await test.step('Add Personal Email and Credentials', async () => {
+    test('05. Add Personal Email and Credentials', async () => {
         await emailpage.NewEmailbtn();
         await emailpage.enter_emailid();
         await emailpage.CredentialTab();
     });
 
-    await test.step('Upload Personal Documents', async () => {
+    test('06. Upload Personal Documents', async () => {
         await personalaccountpage.personalAccountDocuments();
     });
 
     // ---------------- BATCH AUTOMOBILIA CONSIGNMENT ----------------
-    await test.step('Create New Batch Automobilia Consignment', async () => {
+    test('07. Create New Batch Automobilia Consignment', async () => {
         await newautomobiliaconsignmentpage.NewBatchAutomobiliaConsignment();
     });
 
+    test.afterAll(async () => {
+        await context.close();
+        await browser.close();
+    });
+
 });
+

@@ -1,78 +1,105 @@
-import{test} from '@playwright/test'
-import { CustomerPage } from '../../Pages/CustomerPage'
-import { PersonalAccountPage} from '../../Pages/PersonalAccountPage'
-import { AddressPage} from '../../Pages/AddressPage'
-import { PhoneNumberPage} from '../../Pages/PhoneNumberPage'
-import { EmailPage} from '../../Pages/EmailPage'
+import { test } from '@playwright/test';
+import { CustomerPage } from '../../Pages/CustomerPage';
+import { PersonalAccountPage } from '../../Pages/PersonalAccountPage';
+import { AddressPage } from '../../Pages/AddressPage';
+import { PhoneNumberPage } from '../../Pages/PhoneNumberPage';
+import { EmailPage } from '../../Pages/EmailPage';
 
- // CRM    Change the Close tracking  in Tracking TAB//
-test('Validating PACKAGE TRACKING / PRICE ESTIMATOR for CRM originated', async ({ page }) => {
+let browser;
+let context;
+let page;
+let customerpage;
+let personalaccountpage;
+let addresspage;
+let phonenumberpage;
+let emailpage;
 
-    const customerpage = new CustomerPage(page);
-    const personalaccountpage = new PersonalAccountPage(page);
-    const addresspage = new AddressPage(page);
-    const phonenumberpage = new PhoneNumberPage(page);
-    const emailpage = new EmailPage(page);
+test.describe('Package Tracking / Price Estimator Tests', () => {
 
-    // ---------------- NAVIGATION ----------------
-    await test.step('Open Customer Page & Navigate', async () => {
-        await customerpage.url();
-        await customerpage.manager();
-        await customerpage.customer();
+    test.beforeAll(async ({ playwright }) => {
+        browser = await playwright.chromium.launch();
+        context = await browser.newContext();
+        page = await context.newPage();
+
+        customerpage = new CustomerPage(page);
+        personalaccountpage = new PersonalAccountPage(page);
+        addresspage = new AddressPage(page);
+        phonenumberpage = new PhoneNumberPage(page);
+        emailpage = new EmailPage(page);
     });
 
-    // ---------------- PERSONAL ACCOUNT SETUP ----------------
-    await test.step('Create Personal Account', async () => {
-        await personalaccountpage.accounttype_dropdown();
-        await personalaccountpage.names();
-        await personalaccountpage.save();
+    // ---------------- CRM ORIGINATED ----------------
+    test('Validating PACKAGE TRACKING / PRICE ESTIMATOR for CRM originated', async () => {
+
+        await test.step('Open Customer Page & Navigate', async () => {
+            await customerpage.url();
+            await customerpage.manager();
+            await customerpage.customer();
+        });
+
+        await test.step('Create Personal Account', async () => {
+            await personalaccountpage.accounttype_dropdown();
+            await personalaccountpage.names();
+            await personalaccountpage.save();
+        });
+
+        await test.step('Add Personal Address', async () => {
+            await addresspage.newaddress();
+            await addresspage.generaladdress();
+            await addresspage.saveandclose();
+        });
+
+        await test.step('Add Personal Phone Number', async () => {
+            await phonenumberpage.phonenumberbtn();
+            await phonenumberpage.General_PhoneNumber();
+        });
+
+        await test.step('Add Email', async () => {
+            await emailpage.NewEmailbtn();
+            await emailpage.enter_emailid();
+        });
+
+        await test.step('Validate Package Tracking with Price Estimator', async () => {
+            await personalaccountpage.Tracking_Tab();
+        });
+
     });
 
-    await test.step('Add Personal Address', async () => {
-        await addresspage.newaddress();
-        await addresspage.generaladdress();
-        await addresspage.saveandclose();
+    test.afterAll(async () => {
+        await context.close();
+        await browser.close();
     });
-
-    await test.step('Add Personal Phone Number', async () => {
-        await phonenumberpage.phonenumberbtn();
-        await phonenumberpage.General_PhoneNumber();
-    });
-
-    await test.step('Add Email', async () => {
-        await emailpage.NewEmailbtn();
-        await emailpage.enter_emailid();
-    });
-
-    // ---------------- PACKAGE TRACKING / PRICE ESTIMATOR ----------------
-    await test.step('Validate Package Tracking with Different Package type, Carrier, Use One Rate, Service type and Packaging for Price Estimator', async () => {
-        await personalaccountpage.Tracking_Tab();
-    });
-
 });
 
- // WEB originated packlage tracking with debug
+test.describe('Web Originated Package Tracking Workflow', () => {
 
-test('Validating Package Tracking and Price Estimator for Web Originated', async ({ page }) => {
+    test.beforeAll(async ({ playwright }) => {
+        browser = await playwright.chromium.launch();
+        context = await browser.newContext();
+        page = await context.newPage();
 
-    const customerpage = new CustomerPage(page);
-    const personalaccountpage = new PersonalAccountPage(page);
+        customerpage = new CustomerPage(page);
+        personalaccountpage = new PersonalAccountPage(page);
+    });
 
-    // ---------------- NAVIGATION ----------------
-    await test.step('Open Customer Page & Navigate', async () => {
+    test('01. Open Customer Page & Navigate', async () => {
         await customerpage.url();
         await customerpage.manager();
     });
 
-    // ---------------- WEB ORIGINATED CUSTOMER ----------------
-    await test.step('Select Web Originated Customer', async () => {
+    test('02. Select Web Originated Customer', async () => {
         await customerpage.WebCustoer();
     });
 
-    // ---------------- TRACKING TAB ----------------
-    await test.step('Validate Package Tracking with Different Package type, Carrier, Use One Rate, Service type and Packaging for Price Estimator', async () => {
+    test('03. Validate Package Tracking / Price Estimator', async () => {
         await personalaccountpage.Tracking_Tab();
     });
 
+    test.afterAll(async () => {
+        await context.close();
+        await browser.close();
+    });
+
 });
+
 
