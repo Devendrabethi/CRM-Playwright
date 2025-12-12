@@ -32,6 +32,26 @@ class ConsignmentManager_WebElements
         this.Charity_Add_Existing_Button = "//button[@aria-label='Add Existing. New Event Charity Association']"
         this.Select_Created_Charity = "(//label[@aria-label='Devendra Testing Charities'])[1]"
 
+        this.Select_Bidder_Event = "//ul[@aria-label='Event Form']//li[@aria-label='Bidder']"
+        this.Select_SetupTake_Event = "//ul[@aria-label='Event Form']//li[@aria-label='Setup Tasks']"
+        this.NewTask = "//button[contains(@aria-label,'New Task')]"
+        this.Subject = "//input[@aria-label='Subject']"
+        this.Event_Description = "//textarea[@aria-label='Description']"
+        this.DateOfDue = "//input[@aria-label='Date of Due']"
+        this.Select_CurrentDate = "//td[@aria-current='date']"
+        this.Regarding = "//input[contains(@aria-label,'Regarding')]"
+        this.Select_FirstRegarding = "//div[contains(@aria-label,'Regarding')]/ul/li[1]"
+        this.Select_ConsignmentStage = "//select[@aria-label='Consignment Stage']"
+        this.SaveandCloseTask = "//button[@aria-label='Save and Close']"
+        this.Select_FirstTask = "(//label[@aria-label='Normal'])[1]"
+        this.EditButton = "//button[@aria-label='Edit']"
+        this.SaveandClose_Edittask = "//button[@aria-label='Save & Close']"
+        this.Mark_Complete = "//button[@aria-label='MARK COMPLETE']"
+        this.Refresh_SetupTak = "(//button[@aria-label='Refresh'])[2]"
+        this.DeletePopup = "//button[@aria-label='Delete']"
+
+
+
         this.Docket = "//ul[@aria-label='Consignment']/li[@aria-label='Docket']"
         this.iframe_DocketLaunch = "//iframe[@aria-label='DocketLaunch']"
         this.SelectEvent = "//select[@id='eventdropdown']"

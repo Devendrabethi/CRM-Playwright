@@ -42,6 +42,7 @@ class TestData
         this.Dealer_PhoneType = "DEALER PHONE";
         
         this.Street_Address = "5055 E Somerset Dr";
+        this.AptSuit_Address = "Testing"
         this.Country_name = "United States of America";
         this.State_name = "Arizona";
         this.City_name = "Cottonwood";
@@ -52,7 +53,8 @@ class TestData
         this.Area_code = "928";
         this.Phone_Number = "2023810";
 
-        this.Vehicle_Year = "2020";
+        this.vehicleYears = ["2014", "2013", "2016", "2017", "2018", "2019"];
+        //this.Vehicle_Year = "2020";
         this.Vehicle_Make = "TOYOTA";
         this.Vehicle_Model = "BJ42";
         this.Vehicle_TransmissionType = "Automatic";
@@ -74,6 +76,7 @@ class TestData
         this.Sale_Type = "No Reserve";
         this.Owner_Est_Value = "80000";
         this.Bjack_value = "2000";
+        this.Consignment_representative = "Gopal"
 
         this.Marketing_Description = "Automobilia Devendra QA Testing"
         this.ShortDescriptionText = "Describe your vehicle to bidders.\nDescribe your vehicle to bidders.\nDescribe your vehicle to bidders.\nDescribe your vehicle to bidders.\nDescribe your vehicle to bidders."
@@ -218,5 +221,11 @@ class TestData
         this.LotStatus_Confirmed = "Pending - Confirmed"
         this.LotOverrideamount = "450"
         this.LotStatus_Cancel = "Cancelled"
+    
+//Setup Task
+        this.Subject = "Devendra Subject"
+        this.Description = "Devendra Description"
+        this.Consignment_Stage = "Review Details"
+        this.Updated_Subject = "Devendra Subject Updated"
     }
 }

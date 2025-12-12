@@ -7,6 +7,8 @@ class MediaCredential_WebElements {
             this.Primary_mediaCredential = "//button[@aria-label='Primary Media Credentials']"
             this.Select_AllMediaCredential = "//label[text()='All Media Credentials']"
             this.All_MediaCredential = "//button[@aria-label='All Media Credentials']"
+            this.Select_All_Media_Credentials_CurrentEvent = "//label[text()='All Media Credentials - Current Event']"
+            this.All_Media_Credentials_CurrentEvent = "//button[@aria-label='All Media Credentials - Current Event']"
             this.Select_OtherMediaContacts = "//label[text()='Other Media Contacts']"
             this.Other_MediaContact = "//button[@aria-label='Other Media Contacts']"
             this.Select_PrimaryMediaCredential = "//label[text()='Primary Media Credentials']"

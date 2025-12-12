@@ -6,6 +6,7 @@ class Address_WebElements
         this.New_Address = "//button[contains(@aria-label, 'New Address')]"
         this.New_Address_Text = "//h1[@title='New Address']"
         this.Street_Address = "//input[@aria-label='Street Address']"
+        this.AptSuit_Address = "//input[@aria-label='Apt/Suite/Unit']"
         this.Country = "//input[@aria-label='Country, Lookup']"
         this.Country_text_name = "//label[text()='Country']"
         this.Country_text = "//div[@aria-label='Country Lookup results']/ul/li"

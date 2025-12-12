@@ -119,6 +119,7 @@ test.describe('Dealer Consignment Workflow', () => {
 
     test('15. Application Info & Assignment', async () => {
         await newconsignmentvehiclepage.Appilication_Info();
+        await newconsignmentvehiclepage.Consignment_Representative();
     });
 
     test('16. Assign Consignment', async () => {

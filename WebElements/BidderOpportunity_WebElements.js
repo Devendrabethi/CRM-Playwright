@@ -60,6 +60,8 @@ class BidderOpportunity_WebElements
         this.Launch = "//button[@id='launchbutton']"
         this.Verify_TotalBids = "//div[@id='leftCol']/div/label[contains(text(), 'Bids')]"
         this.Close_PhoneObserver = "//button[@title='Close']"
+        this.HamBerger_LivePhoneObserver = "//span[text()='Live Phone Observer']"
+        this.Frame_LivePhoneObserver = "//iframe[@aria-label='new_launch_phone_observer']"
 
         this.Create_Package = "//span[text()='Create Package']"
         this.Close_Tracking = "//button[@aria-label='Enter full screen mode']/following-sibling::button"
@@ -94,6 +96,7 @@ class BidderOpportunity_WebElements
         this.Second_Invoice = "(//div[@aria-label='Press SPACE to select this row.'][2]/div[1])[2]"
         this.Third_Invoice = "(//div[@aria-label='Press SPACE to select this row.'][3]/div[1])[2]"
         this.select_Payment_Method = "//select[@aria-label='Payment Method']"
+        this.PaymentTab_ThirdInvoice = "(//input[@aria-label='Select or deselect the row'])[3]/parent::div"
 
         this.SelectAllInvoice = "//div[@id='dataSetRoot_Invoices']/div[2]/descendant::div[@role='row'][1]/div[@col-id='__row_status']"
         this.SelectFirstInvoice = "(//label[@aria-label='New'])[1]"

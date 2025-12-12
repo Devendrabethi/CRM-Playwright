@@ -24,7 +24,7 @@ class BidderOpportunityPage
         await this.page.locator(this.bidderopportunity_webelements.NewOpportunity_Button).click({ timeout: 60000 })
         await this.page.waitForTimeout(2000)
         await this.page.locator(this.bidderopportunity_webelements.Bidder_Registration).click()
-        await expect(this.page.locator(this.bidderopportunity_webelements.Verify_NewOpportunity_Text)).toBeVisible({timeout:30000})
+        await expect(this.page.locator(this.bidderopportunity_webelements.Verify_NewOpportunity_Text)).toBeVisible({timeout:60000})
 
     }
         async Bidder_details_CompType()
@@ -84,6 +84,7 @@ class BidderOpportunityPage
     {
         await this.page.locator(this.newconsignmentvehicle_webelement.Assign_To).click()
         await this.page.locator(this.newconsignmentvehicle_webelement.Assign_To_Inputfield).click()
+        await this.page.keyboard.press('Enter');
         await this.page.locator(this.newconsignmentvehicle_webelement.Assign_To_Inputfield).press('Enter');
         await this.page.locator(this.newconsignmentvehicle_webelement.Assign_To_Specialist_dropdown).click()
         await this.page.locator(this.bidderopportunity_webelements.Save_Bidder_Opportunity).click()
@@ -93,7 +94,7 @@ class BidderOpportunityPage
     async Add_Envelop()
     {
         //await expect(this.page.locator(this.bidderopportunity_webelements.Verify_BidLimitDeposits_Text)).toBeVisible({timeout:30000})
-        await this.page.locator(this.bidderopportunity_webelements.Add_Envelop_btn).click()
+        await this.page.locator(this.bidderopportunity_webelements.Add_Envelop_btn).click({timeout:60000})
         await this.page.locator(this.bidderopportunity_webelements.Envelop_Number).click()
         await this.page.locator(this.bidderopportunity_webelements.Envelop_Number).fill(this.testdata.Envelop_Number)
         await this.page.selectOption(this.bidderopportunity_webelements.Select_Deposite_Type,this.testdata.Deposite_Type)
@@ -161,10 +162,21 @@ class BidderOpportunityPage
         await this.page.waitForTimeout(5000)
         //await frame1.locator(this.bidderopportunity_webelements.Select_PhoneObserver_Date).selectOption({ label: this.testdata.Monday })
         await frame1.locator(this.bidderopportunity_webelements.Launch).click()
-
-         await this.page.waitForTimeout(30000)
+        await this.page.waitForTimeout(30000)
         await this.page.screenshot({ path: './ScreenShot/56 PhoneObserver.png', fullPage: true})
         await this.page.locator(this.bidderopportunity_webelements.Close_PhoneObserver).click()
+        await this.page.waitForTimeout(2000)
+        await this.page.locator(this.bidderopportunity_webelements.HamBerger_LivePhoneObserver).click()
+         const frame2 = await this.page.frameLocator(this.bidderopportunity_webelements.Frame_LivePhoneObserver)
+        await frame2.locator(this.bidderopportunity_webelements.SelectEvent).selectOption({ label: this.testdata.Event_name })
+        await this.page.waitForTimeout(5000)
+        //await frame1.locator(this.bidderopportunity_webelements.Select_PhoneObserver_Date).selectOption({ label: this.testdata.Monday })
+        await frame2.locator(this.bidderopportunity_webelements.Launch).click()
+        await this.page.waitForTimeout(30000)
+        await this.page.screenshot({ path: './ScreenShot/56 PhoneObserver.png', fullPage: true})
+        await this.page.locator(this.bidderopportunity_webelements.Close_PhoneObserver).click()
+        await this.page.waitForTimeout(2000)
+        await this.page.goBack()
         await this.page.waitForTimeout(2000)
         await this.page.goBack()
         await this.page.waitForTimeout(2000)
@@ -382,7 +394,7 @@ class BidderOpportunityPage
         await this.page.locator(this.bidderopportunity_webelements.Third_Invoice).dblclick()  
         await this.page.locator(this.bidderopportunity_webelements.Payment_AdjustmentTab).click()
         await this.page.waitForTimeout(4000) 
-        await this.page.locator(this.bidderopportunity_webelements.PaymentTable).dblclick()
+        await this.page.locator(this.bidderopportunity_webelements.PaymentTab_ThirdInvoice).dblclick()
         await this.page.waitForTimeout(4000)
         await this.page.locator(this.bidderopportunity_webelements.DetailsTab).click()
         await this.page.waitForTimeout(2000)

@@ -46,8 +46,8 @@ class NewConsignmentVehicle_WebElement
         this.Event_text = "//span[@title='Event']"
         this.Event_name = " //input[@aria-label='Event, Lookup']"
         this.Event_Name_dropdown = "//div[@aria-label='Event Lookup results']/ul/li "
-        this.Representative_Consignment_name = "//input[@aria-label='Requested Consignment Representative, Lookup'] "
-        this.Representative_consignment_dropdown = " //div[@aria-label='Requested Consignment Representative Lookup results']/ul/li[1]"
+        this.Representative_Consignment_name = "//input[@aria-label='Requested Consignment Representative, Lookup']" //input[@aria-label='Requested Consignment Representative, Lookup']
+        this.Representative_consignment_dropdown = "//div[@aria-label='Requested Consignment Representative Lookup results']/ul/li[1]"
         this.Sale_Day_Tab = " //ul[@aria-label='Opportunity Form']/li[contains(@aria-label,'Sale Day')]"
         this.Time_on_Block = "//div[@aria-label='Time on Block'] "
         this.Time_on_Block_minutes = "//ul[@aria-label='Time on Block']/div/li[3]"

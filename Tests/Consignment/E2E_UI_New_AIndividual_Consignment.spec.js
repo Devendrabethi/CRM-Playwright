@@ -87,6 +87,7 @@ test.describe('Personal Consignment Workflow', () => {
 
     test('11. Fill Application Information', async () => {
         await newconsignmentvehiclepage.Appilication_Info();
+        await newconsignmentvehiclepage.Consignment_Representative();
     });
 
     test('12. Assign Consignment', async () => {

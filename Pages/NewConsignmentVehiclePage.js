@@ -42,7 +42,11 @@ class NewConsignmentVehiclePage
             const VinNumber =randomVin;
         await this.page.locator(this.newconsignmentvehicle_webelement.Vin).click()
         await this.page.locator(this.newconsignmentvehicle_webelement.Vin).fill(VinNumber)
-        await this.page.locator(this.newconsignmentvehicle_webelement.Year).fill(this.testdata.Vehicle_Year)
+
+        const randomYear = this.testdata.vehicleYears[ Math.floor(Math.random() * this.testdata.vehicleYears.length)]
+        await this.page.fill(this.newconsignmentvehicle_webelement.Year, randomYear);
+
+        //await this.page.locator(this.newconsignmentvehicle_webelement.Year).fill(this.testdata.Vehicle_Year)
         await this.page.locator(this.newconsignmentvehicle_webelement.Make_field).click()
         await this.page.locator(this.newconsignmentvehicle_webelement.Make_field).fill(this.testdata.Vehicle_Make)
         await this.page.locator(this.newconsignmentvehicle_webelement.Select_Make).click()
@@ -105,16 +109,28 @@ class NewConsignmentVehiclePage
         await this.page.locator(this.newconsignmentvehicle_webelement.Event_name).fill(this.testdata.Event_name)
         await this.page.locator(this.newconsignmentvehicle_webelement.Event_Name_dropdown).click()
     }
+    async Consignment_Representative()
+    {
+        await this.page.waitForTimeout(2000)
+        await this.page.locator(this.newconsignmentvehicle_webelement.Representative_Consignment_name).click()
+        //await this.page.keyboard.press('Enter');
+        await this.page.locator(this.newconsignmentvehicle_webelement.Representative_Consignment_name).fill(this.testdata.Consignment_representative)
+        await this.page.waitForTimeout(4000)
+        await this.page.locator(this.newconsignmentvehicle_webelement.Representative_consignment_dropdown).click()
+        await this.page.screenshot({ path: './ScreenShot/33.1 Consignment representative.png', fullPage: true})
+    }
 
     async Assign()
     {
         await this.page.locator(this.newconsignmentvehicle_webelement.Assign_To).click()
         await this.page.locator(this.newconsignmentvehicle_webelement.Assign_To_Inputfield).click()
+        await this.page.keyboard.press('Enter');
         await this.page.locator(this.newconsignmentvehicle_webelement.Assign_To_Inputfield).press('Enter');
         await this.page.locator(this.newconsignmentvehicle_webelement.Assign_To_Specialist_dropdown).click()
         await this.page.locator(this.newconsignmentvehicle_webelement.save_consignment).click()
         await this.page.waitForTimeout(2000)
         await this.page.locator(this.newconsignmentvehicle_webelement.Refresh_consignment).click({ timeout: 60000 }) 
+        await this.page.screenshot({ path: './ScreenShot/33.2 Assigned to specliast .png', fullPage: true})
 
     }
     async MarketingTab()
@@ -497,11 +513,13 @@ class NewConsignmentVehiclePage
                       await this.page.locator(this.bidderopportunity_webelements.GoBack_btn).click();
                      // await this.page.waitForTimeout(1000);
               }        
-
         await this.page.locator(this.lotnumberchange_webElements.Opportunity_SalesFees_Tab).click({ timeout: 60000 });
         await this.page.waitForTimeout(5000)
         // await this.page.locator(this.lotnumberchange_webElements.Invoice_Tab).click()
         // await this.page.locator(this.lotnumberchange_webElements.Refresh_Invoice).click()
+
+
+        
         await this.page.locator(this.lotnumberchange_webElements.SelectInvoice).click()
         await this.page.locator(this.bidderopportunity_webelements.EnterPaymentButton).click()  
         const frame1 = await this.page.frameLocator(this.bidderopportunity_webelements.FrameInvoice)
