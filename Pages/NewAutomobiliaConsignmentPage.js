@@ -53,6 +53,16 @@ class NewAutomobiliaConsignmentPage
         await this.page.locator(this.newconsignmentvehicle_webelement.Event_name).fill(this.testdata.Event_name)
         await this.page.locator(this.newconsignmentvehicle_webelement.Event_Name_dropdown).click()
     }
+        async Consignment_Representative()
+    {
+        await this.page.waitForTimeout(2000)
+        await this.page.locator(this.newconsignmentvehicle_webelement.Representative_Consignment_name).click()
+        //await this.page.keyboard.press('Enter');
+        await this.page.locator(this.newconsignmentvehicle_webelement.Representative_Consignment_name).fill(this.testdata.Consignment_representative)
+        await this.page.waitForTimeout(4000)
+        await this.page.locator(this.newconsignmentvehicle_webelement.Representative_consignment_dropdown).click()
+        await this.page.screenshot({ path: './ScreenShot/33.1 Consignment representative.png', fullPage: true})
+    }
 
     async Assign()
     {
@@ -150,7 +160,7 @@ class NewAutomobiliaConsignmentPage
                     await this.page.waitForTimeout(3000)
                     await frame.locator(this.newautomobiliaconsignment_webelements.Delete_MiscPhotos).click()
                     await this.page.locator(this.newconsignmentvehicle_webelement.Okbutton).click({timeout:60000})
-                    await this.page.waitForTimeout(25000)
+                    await this.page.waitForTimeout(30000)
                     //await frame.locator(this.newconsignmentvehicle_webelement.Refresh_btn).click()
 
                     if(!frame) throw new Error('Iframe not found')

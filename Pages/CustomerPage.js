@@ -22,8 +22,10 @@ class CustomerPage
         await this.page.goto(process.env.URL)
         await this.page.locator(this.customer_webElements.emailid).fill(process.env.Emailid)
         await this.page.locator(this.customer_webElements.nextbtn).click()
+        await this.page.waitForTimeout(2000)
         await this.page.locator(this.customer_webElements.password).fill(process.env.Password)
         await this.page.locator(this.customer_webElements.signinbtn).click()
+        await this.page.waitForTimeout(2000)
         await this.page.locator(this.customer_webElements.yesbtn).click()
 
         const frame = await this.page.frameLocator(this.customer_webElements.frame_AuctionManager)

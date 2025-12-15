@@ -85,7 +85,6 @@ class BidderOpportunityPage
         await this.page.locator(this.newconsignmentvehicle_webelement.Assign_To).click()
         await this.page.locator(this.newconsignmentvehicle_webelement.Assign_To_Inputfield).click()
         await this.page.keyboard.press('Enter');
-        await this.page.locator(this.newconsignmentvehicle_webelement.Assign_To_Inputfield).press('Enter');
         await this.page.locator(this.newconsignmentvehicle_webelement.Assign_To_Specialist_dropdown).click()
         await this.page.locator(this.bidderopportunity_webelements.Save_Bidder_Opportunity).click()
         //await this.page.locator(this.bidderopportunity_webelements.Refresh_Bidder_Opportunity).click() 

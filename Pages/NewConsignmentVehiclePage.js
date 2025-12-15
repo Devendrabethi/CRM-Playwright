@@ -125,7 +125,6 @@ class NewConsignmentVehiclePage
         await this.page.locator(this.newconsignmentvehicle_webelement.Assign_To).click()
         await this.page.locator(this.newconsignmentvehicle_webelement.Assign_To_Inputfield).click()
         await this.page.keyboard.press('Enter');
-        await this.page.locator(this.newconsignmentvehicle_webelement.Assign_To_Inputfield).press('Enter');
         await this.page.locator(this.newconsignmentvehicle_webelement.Assign_To_Specialist_dropdown).click()
         await this.page.locator(this.newconsignmentvehicle_webelement.save_consignment).click()
         await this.page.waitForTimeout(2000)
