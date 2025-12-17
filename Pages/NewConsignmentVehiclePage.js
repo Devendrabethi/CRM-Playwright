@@ -461,6 +461,7 @@ class NewConsignmentVehiclePage
                 await frame.locator(this.newconsignmentvehicle_webelement.Payments).selectOption([
                 { label: 'Consignment Lot Fee' }
               ]);
+              await frame.locator(this.bidderopportunity_webelements.selectNote).fill(this.testdata.CustomerName);
               await this.page.screenshot({ path: './ScreenShot/103 ReqInformation.png', fullPage: true})
                 const dialogPromise = this.page.waitForEvent('dialog',{ timeout: 75000 });
                 await frame.locator(this.newconsignmentvehicle_webelement.submitbtn).click();

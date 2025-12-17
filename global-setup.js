@@ -31,7 +31,7 @@ async function globalSetup() {
   // Prepare executor info JSON
   const executor = {
     name: 'Devendra Prasad',
-    buildName: 'CRM Configurations_1.143.0.26,  BJACGT6D365BusinessPlugins_1.3.0.49'
+    buildName: 'CRM Configurations_1.143.0.29,  BJACGT6D365BusinessPlugins_1.3.0.50,  BJAC_BusinessProcesses_1.2.0.7'
   };
 
   // Write executor.json file (one file, JSON string)

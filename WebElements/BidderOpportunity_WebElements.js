@@ -137,6 +137,7 @@ class BidderOpportunity_WebElements
          this.selectconsigndoc = "//select[@id='opportunityDocumentsDrp']"
          this.selectcustomerDocumentsDrpreq = "//select[@id='customerDocumentsDrp']"
          this.selectPayment = "//select[@id='paymentDrp']"
+         this.selectNote = "//textarea[@id='notesArea']"
          this.submitbtn = "//button[@type='submit']"
  
          this.PrintAll = "//button[@aria-label='Print All']"

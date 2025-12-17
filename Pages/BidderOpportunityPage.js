@@ -311,8 +311,8 @@ class BidderOpportunityPage
         await this.page.waitForTimeout(2000)
         await this.page.locator(this.bidderopportunity_webelements.First_Invoice).dblclick()  
         await this.page.locator(this.bidderopportunity_webelements.Payment_AdjustmentTab).click()
-        await this.page.waitForTimeout(4000)
-        await this.page.locator(this.bidderopportunity_webelements.PaymentTable).dblclick()
+        await this.page.waitForTimeout(6000)
+        await this.page.locator(this.bidderopportunity_webelements.PaymentTable).dblclick({timeout:60000})
         await this.page.waitForTimeout(4000)
         await this.page.locator(this.bidderopportunity_webelements.DetailsTab).click()
         await this.page.waitForTimeout(2000)
@@ -459,7 +459,8 @@ class BidderOpportunityPage
                     await frame.locator(this.bidderopportunity_webelements.selectPayment).selectOption([
                       { label: 'Credit Card Deposit' }
                     ]);
-                    await this.page.screenshot({ path: './ScreenShot/65 RequestInformationBidder.png', fullPage: true})
+                await frame.locator(this.bidderopportunity_webelements.selectNote).fill(this.testdata.CustomerName);
+                await this.page.screenshot({ path: './ScreenShot/65 RequestInformationBidder.png', fullPage: true})
                 const dialogPromise = this.page.waitForEvent('dialog', { timeout: 60000 });
                 await frame.locator(this.bidderopportunity_webelements.submitbtn).click();
                 const dialog = await dialogPromise;
