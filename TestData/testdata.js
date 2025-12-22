@@ -120,8 +120,8 @@ class TestData
         this.selectAdsenteeBidInternet = "Internet";
         this.selectAdsenteeBidPhone = "Phone";
         this.delectAbsenteeBidAbsenteeRepresentative = "Absentee Representative"
-        this.Lotphone = "23.1";//64
-        this.lotabsentee = "23.1"//64
+        this.Lotphone = "23.5";//64
+        this.lotabsentee = "23.5"//64
         this.Contact_number = "5672345678";
         this.MaxBid = "90000"
 
@@ -169,6 +169,8 @@ class TestData
         this.BjacValueBerween = "Between"
         this.Value1 = "0"
         this.Value2 = "30000"
+        this.StoreAutomobilia = "Automobilia"
+        this.StoreVehicle = "Vehicle"
 
 //Tracking
        // this.Tracking_Event = "Scottsdale Fall 2025"
@@ -213,7 +215,7 @@ class TestData
 //LOT Change
         this.NewDocket_Select = "Day 4 (SAT) LotRange 900-1049"
         this.NewDocketSpot_Select = "Day 4 Prime - Lot# 925 to 1025"
-        this.NewLotNumber = "23.1"
+        this.NewLotNumber = "23.5"
         this.AutomobiliaNewLotNumber = "1891.1"
         this.LotStatus_Tentative = "Tentative"
         this.LotStatus_PendingRevisit = "Pending - Revisit"

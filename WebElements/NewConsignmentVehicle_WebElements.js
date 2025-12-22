@@ -179,6 +179,7 @@ class NewConsignmentVehicle_WebElement
          this.FilterBy = "//button[@aria-label='Filter by']"
          this.FilterBy_Value = "//div[@aria-label='Filter by value']"
          this.Select_Vehicle = "//div[@title='Vehicle']"
+         this.Select_FilterBy_Text = "//h3[contains(text(),'Filter By')]"
          this.Select_ConsignmentManager_Vehicle = "(//div[@title='Vehicle'])[2]"
          this.Apply_Button = "//span[text()='Apply']"
          this.First_Consignment = "//div[@row-index='0']/div[1]"

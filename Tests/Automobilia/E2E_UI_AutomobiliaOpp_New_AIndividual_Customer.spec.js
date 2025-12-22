@@ -93,7 +93,7 @@ test.describe('Automobilia Consignment Workflow', () => {
         await newautomobiliaconsignmentpage.Assign();
     });
 
-    test('12. Fill Marketing Tab', async () => {
+    test('12. Fill Marketing, Documentation and Photos Tab', async () => {
         await newautomobiliaconsignmentpage.MarketingTab();
         await newautomobiliaconsignmentpage.ConsOpportunityDoc();
         await newautomobiliaconsignmentpage.UploadPhoto();

@@ -496,11 +496,11 @@ class NewConsignmentVehiclePage
                 {
                     this.page.on('dialog', async (dialog) => {
                             console.log(`Dialog message: ${dialog.message()}`);
-                            await dialog.accept(); // Accept the alert
+                            //await dialog.accept(); // Accept the alert
                             });
                              await this.page.waitForTimeout(1000)
                   // Check if the Send_Agreement_Close button is present
-                      await this.page.locator(this.bidderopportunity_webelements.Send_Agreement_Close).click({timeout:5000});
+                      await this.page.locator(this.bidderopportunity_webelements.Send_Agreement_Close).click({timeout:60000});
                     //  await this.page.waitForTimeout(2000);
                 } 
               catch (error) 
@@ -625,6 +625,8 @@ class NewConsignmentVehiclePage
         await this.page.locator(this.newconsignmentvehicle_webelement.FilterBy_Value).click()
         await this.page.locator(this.newconsignmentvehicle_webelement.Select_Vehicle).click()
         await this.page.waitForTimeout(2000)
+        await this.page.locator(this.newconsignmentvehicle_webelement.Select_FilterBy_Text).click()
+        await this.page.waitForTimeout(1000)
         await this.page.locator(this.newconsignmentvehicle_webelement.Apply_Button).click()
         await this.page.waitForTimeout(4000)
         await this.page.locator(this.newconsignmentvehicle_webelement.First_Consignment).dblclick()

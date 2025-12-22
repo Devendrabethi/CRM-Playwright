@@ -407,6 +407,8 @@ class NewAutomobiliaConsignmentPage
         await this.page.locator(this.newconsignmentvehicle_webelement.FilterBy_Value).click()
         await this.page.locator(this.newautomobiliaconsignment_webelements.Select_Automobilia).click()
         await this.page.waitForTimeout(2000)
+        await this.page.locator(this.newconsignmentvehicle_webelement.Select_FilterBy_Text).click()
+        await this.page.waitForTimeout(1000)
         await this.page.locator(this.newconsignmentvehicle_webelement.Apply_Button).click()
         await this.page.waitForTimeout(4000)
         await this.page.locator(this.newconsignmentvehicle_webelement.First_Consignment).dblclick()
