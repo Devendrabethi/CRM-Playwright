@@ -41,7 +41,7 @@ class TestData
         this.Dealer_TaxID_Number =  "Resale1234";
         this.Dealer_PhoneType = "DEALER PHONE";
         
-        this.Street_Address = "5055 E Somerset Dr";
+        this.Street_Address = "15555 North 79th Place";
         this.AptSuit_Address = "Testing"
         this.Country_name = "United States of America";
         this.State_name = "Arizona";
@@ -229,5 +229,10 @@ class TestData
         this.Description = "Devendra Description"
         this.Consignment_Stage = "Review Details"
         this.Updated_Subject = "Devendra Subject Updated"
+
+//Lead
+        this.LeadType_Consignment = "Consignment"
+//Seat Reswervation
+        
     }
 }

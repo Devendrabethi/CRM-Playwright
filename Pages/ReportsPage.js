@@ -42,7 +42,7 @@ class ReportsPage
       const frame1 = await this.page.frameLocator(this.reports_WebElements.iframe_BidderLotNumber)
       if(!frame1) throw new Error('Iframe not found')
       await frame1.locator(this.reports_WebElements.SelectEvent).selectOption(this.testdata.Event_name)
-    await frame1.locator(this.reports_WebElements.select_Date).selectOption(this.testdata.AllDates)
+      await frame1.locator(this.reports_WebElements.select_Date).selectOption(this.testdata.AllDates)
       await this.page.waitForTimeout(3000)
       await frame1.locator(this.reports_WebElements.Search).fill(this.testdata.Account_Name)
       await this.page.waitForTimeout(3000)
