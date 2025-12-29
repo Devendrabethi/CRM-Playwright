@@ -22,6 +22,7 @@ class MediaCredential_WebElements {
             this.Save_Button = "//button[contains(@aria-label,'Save (CTRL+S)')]"
 
             this.Select_CredentidalStatus = "//select[@aria-label='Credential Status']"
+            this.Extra_Text = "//textarea[@aria-label='Extra Text in Email']"
             this.Refresh_Button = "//button[@aria-label='Refresh']"
 
 

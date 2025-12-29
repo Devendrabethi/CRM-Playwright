@@ -85,6 +85,7 @@ class MediCredentialPage
        await this.page.locator(this.mediacredential_webElements.Save_Button).click()
        await this.page.waitForTimeout(4000)
        await this.page.selectOption(this.mediacredential_webElements.Select_CredentidalStatus,this.testdata.Select_Approved);
+       await this.page.locator(this.mediacredential_webElements.Extra_Text).fill(this.testdata.CustomerName)
        await this.page.waitForTimeout(5000)
        await this.page.locator(this.mediacredential_webElements.Refresh_Button).click({ timeout: 60000 })
        await this.page.waitForTimeout(2000)
