@@ -17,6 +17,7 @@ class NewDealerConsignmentVehiclePage
             await this.page.locator(this.newconsignmentvehicle_webelement.Delete_Personal_Account).click()
             await this.page.locator(this.newconsignmentvehicle_webelement.Account_field).click()
             await this.page.locator(this.newconsignmentvehicle_webelement.Account_field).press('Enter')
+            await page.keyboard.press('Enter');
             await this.page.locator(this.newconsignmentvehicle_webelement.Select_Business_Account).click()
             await this.page.screenshot({ path: './ScreenShot/40 DealerAccount.png', fullPage: true})
     }

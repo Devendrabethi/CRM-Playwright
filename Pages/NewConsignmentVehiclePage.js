@@ -388,7 +388,6 @@ class NewConsignmentVehiclePage
     }
     async RibbonLevel()
     {
-        
 //Lot Assign
         await this.page.locator(this.newconsignmentvehicle_webelement.LotAssign).click()
         await this.page.waitForTimeout(5000)
@@ -512,14 +511,12 @@ class NewConsignmentVehiclePage
                      // await this.page.waitForTimeout(1000);
                       await this.page.locator(this.bidderopportunity_webelements.GoBack_btn).click();
                      // await this.page.waitForTimeout(1000);
-              }        
+              }      
+//SalesFee                
         await this.page.locator(this.lotnumberchange_webElements.Opportunity_SalesFees_Tab).click({ timeout: 60000 });
         await this.page.waitForTimeout(5000)
         // await this.page.locator(this.lotnumberchange_webElements.Invoice_Tab).click()
         // await this.page.locator(this.lotnumberchange_webElements.Refresh_Invoice).click()
-
-
-        
         await this.page.locator(this.lotnumberchange_webElements.SelectInvoice).click()
         await this.page.locator(this.bidderopportunity_webelements.EnterPaymentButton).click()  
         const frame1 = await this.page.frameLocator(this.bidderopportunity_webelements.FrameInvoice)
@@ -542,7 +539,7 @@ class NewConsignmentVehiclePage
         await this.page.waitForTimeout(5000)
         // await this.page.locator(this.lotnumberchange_webElements.Invoice_Tab).click()
         // await this.page.waitForTimeout(5000)
-        await this.page.locator(this.lotnumberchange_webElements.Selectsingleinvoive).dblclick()
+        await this.page.locator(this.lotnumberchange_webElements.SelectInvoice).dblclick()
         await this.page.waitForTimeout(3000)
         await this.page.screenshot({ path: './ScreenShot/106 LotSaleFeesTab.png', fullPage: true})
         await this.page.locator(this.bidderopportunity_webelements.Payment_AdjustmentTab).click()
@@ -558,6 +555,19 @@ class NewConsignmentVehiclePage
         await this.page.waitForTimeout(3000)
         // await this.page.locator(this.lotnumberchange_webElements.SaveandClose).click()
         // await this.page.waitForTimeout(3000)
+        await this.page.locator(this.lotnumberchange_webElements.Refresh_Button).click()
+
+//Grevience
+        await this.page.locator(this.bidderopportunity_webelements.New_Grievance).click()
+        await this.page.waitForTimeout(2000)
+        await this.page.locator(this.bidderopportunity_webelements.Note).fill(this.testdata.CustomerName);
+        await this.page.waitForTimeout(1000)
+        await this.page.locator(this.bidderopportunity_webelements.Save_btn).click()
+        const fileToUpload1 =   "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\colorphoto.jpg"
+        await this.page.setInputFiles(this.bidderopportunity_webelements.Upload_Photo, fileToUpload1);
+        await this.page.waitForTimeout(1000)
+        await this.page.locator(this.bidderopportunity_webelements.SaveandClose_Grevience).click()
+        await this.page.waitForTimeout(2000)
 
 ///Lot Cancel
         await this.page.locator(this.lotnumberchange_webElements.LotAssign).click()

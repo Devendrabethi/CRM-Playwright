@@ -139,6 +139,7 @@ class BidderOpportunity_WebElements
          this.selectPayment = "//select[@id='paymentDrp']"
          this.selectNote = "//textarea[@id='notesArea']"
          this.submitbtn = "//button[@type='submit']"
+         this.CancelButton = "//button[@id='cancelButton']"
  
          this.PrintAll = "//button[@aria-label='Print All']"
 
@@ -227,10 +228,17 @@ class BidderOpportunity_WebElements
         this.MenuHome = "//span[text()='Home']"
 
         //ribbon
-         this.Opportunity_button = "//div[@title='Opportunities']"
-         this.Bidder_Button = "//div[@title='Bidders']"
-         this.SubmitOn = "//div[contains(@data-testid,'submittedon')]"
-         this.NewtoOld = "//button[@name='Sort newer to older']"
-         this.First_Bidder = "//div[@row-index='0']/div[1]"
+        this.Opportunity_button = "//div[@title='Opportunities']"
+        this.Bidder_Button = "//div[@title='Bidders']"
+        this.SubmitOn = "//div[contains(@data-testid,'submittedon')]"
+        this.NewtoOld = "//button[@name='Sort newer to older']"
+        this.First_Bidder = "//div[@row-index='0']/div[1]"
+
+         //Grievance
+        this.New_Grievance = "//button[contains(@aria-label,'New Grievance')]"
+        this.Note = "//textarea[@aria-label='Notes']"
+        this.Upload_Photo = "//input[@type='file']"
+        this.SaveandClose_Grevience = "//button[@aria-label='Save & Close']"
+
     }
 }

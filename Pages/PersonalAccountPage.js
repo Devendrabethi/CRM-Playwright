@@ -132,6 +132,7 @@ class PersonalAccountPage
                     await this.page.waitForTimeout(2000)
                     await this.page.screenshot({ path: './ScreenShot/3 AccountDocumentWithArchived.png', fullPage: true})
                     await this.page.locator(this.PersonalAccount_WebElements.SelectFirstDocument_Archived).click()
+                    await this.page.waitForTimeout(1000)
                     await this.page.locator(this.PersonalAccount_WebElements.UnArchived_Button).click()
                     await this.page.locator(this.PersonalAccount_WebElements.Ok_Button).click()
                      const frame = await this.page.frameLocator(this.PersonalAccount_WebElements.frame_AccountExp)
@@ -360,11 +361,11 @@ for (let i = 0; i < packageTypes.length; i++)
                     await this.page.selectOption(this.PersonalAccount_WebElements.Select_PackageType_Dropdown,this.testdata.packageType_Bidder_Credential_Package)
                     await this.page.selectOption(this.PersonalAccount_WebElements.Select_Carrier, this.testdata.Carrier_FedEx);
                     await this.page.waitForTimeout(4000);
-
+                    await this.page.locator(this.PersonalAccount_WebElements.Tracking_Number).click()
+                    await this.page.locator(this.PersonalAccount_WebElements.Tracking_Number).fill(this.testdata.Tracking_Number_Value)
                     await this.page.locator(this.PersonalAccount_WebElements.Recipient_Company_text).click();
                     await this.page.locator(this.PersonalAccount_WebElements.ImageType_Text).click()
                     await this.page.selectOption(this.PersonalAccount_WebElements.Select_ImageType_Dropdown,this.testdata.Image_Type_PDF);
-                    
                     await this.page.locator(this.PersonalAccount_WebElements.Enter_New_Address).click();
                     await this.page.waitForTimeout(1000)
                     await this.page.locator(this.PersonalAccount_WebElements.Country_Name).click()

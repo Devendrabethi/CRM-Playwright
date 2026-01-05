@@ -89,6 +89,7 @@ class BusinessAccountPage
                     await this.page.waitForTimeout(2000)
                     await this.page.screenshot({ path: './ScreenShot/28 BusinessDocumentWithArchived.png', fullPage: true})
                     await this.page.locator(this.PersonalAccount_WebElements.Select_FirstDocumentUnarchived).click()
+                    await this.page.waitForTimeout(1000)
                     await this.page.locator(this.PersonalAccount_WebElements.UnArchived_Button).click()
                     await this.page.locator(this.PersonalAccount_WebElements.Ok_Button).click()
                      const frame = await this.page.frameLocator(this.PersonalAccount_WebElements.frame_AccountExp)

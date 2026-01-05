@@ -100,6 +100,7 @@ class DealerAccountPage
                     await this.page.waitForTimeout(2000)
                     await this.page.screenshot({ path: './ScreenShot/23 DealerDocumentWithArchived.png', fullPage: true})
                     await this.page.locator(this.PersonalAccount_WebElements.SelectFirstDocument_Archived).click()
+                    await this.page.waitForTimeout(1000)
                     await this.page.locator(this.PersonalAccount_WebElements.UnArchived_Button).click()
                     await this.page.locator(this.PersonalAccount_WebElements.Ok_Button).click()
                      const frame = await this.page.frameLocator(this.PersonalAccount_WebElements.frame_AccountExp)
