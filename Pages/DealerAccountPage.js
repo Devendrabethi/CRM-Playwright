@@ -68,7 +68,7 @@ class DealerAccountPage
         {
             "Dealer License" :      "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\Dealer License.jpg",
             "Resale License" :    "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\Resale License.jpg",
-            "Operating Agreement" :   "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\operating agreement.jpg",
+            "Operating Agreement" :   "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\Insurance.pdf",
             "Verification of Ownership" :          "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\Verification of Ownership.jpg",
             "Wholesale License" :           "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\Wholesale.jpg",
         }

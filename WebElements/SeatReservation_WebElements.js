@@ -32,13 +32,14 @@ class SeatReservation_WebElements
         this.Open_Reserved_Seat = "//span[contains(text(),'C - Row')]/parent::div/following-sibling::div/div[3]/div[2]/div/div[@data-seat-number='52']/following-sibling::div/a"
         this.Reservation_Button = "//li[@aria-label='Reservations']"
         this.Open_Active_Reservation = "//label[@aria-label='Active']"
+        this.PrintLabel = "//button[contains(text(),'Print Labels')]"
         this.Cancel_Seat = "//button[@id='cancelSeatsBtn']"
         this.Yes_CancelSeat = "//button[@aria-label='Yes, Cancel Seats']"
         this.Close_SeatChart = "//button[@aria-label='Close']"
 
-        this.Select_E_Table = "//div[@id='seatChart']/div[7]/div/div/input"
-        this.ClearAll_E_Table = "//div[@id='seatChart']/div[7]/div/div[2]/button[contains(text(),'Clear All')]"
-        this.OpenResertved_Seat_High4 = "//div[@data-seat-number='1' and @data-row-name='E - Table']/following-sibling::div/a"
+        this.Select_D_Table = "//div[@id='seatChart']/div[7]/div/div/input"
+        this.ClearAll_D_Table = "//div[@id='seatChart']/div[7]/div/div[2]/button[contains(text(),'Clear All')]"
+        this.OpenResertved_Seat_High4 = "//div[@data-seat-number='1' and @data-row-name='D - Table']/following-sibling::div/a"
 
         this.Seat_Reservation = "//li[@aria-label='Seat Reservation']"
         this.Iframe_SeatReservationView = "//iframe[@aria-label='SeatReservationView']"

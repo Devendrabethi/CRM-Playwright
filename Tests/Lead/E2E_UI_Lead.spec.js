@@ -75,6 +75,7 @@ test.describe('Lead Bidder Flow and Consignment Flow', () => {
     });
 
     test('12. Open New Lead for Consignment', async () => {
+        await leadpage.ReadOnlyGrid()
         await leadpage.Lead_New();
     });
     test('13. Fill personal account information', async () => {

@@ -17,7 +17,7 @@ class NewBusinessConsignmentVehiclePage
             await this.page.locator(this.newconsignmentvehicle_webelement.Delete_Personal_Account).click()
             await this.page.locator(this.newconsignmentvehicle_webelement.Account_field).click()
             await this.page.locator(this.newconsignmentvehicle_webelement.Account_field).press('Enter')
-            await page.keyboard.press('Enter');
+            //await page.keyboard.press('Enter');
             await this.page.locator(this.newconsignmentvehicle_webelement.Select_Business_Account).click()
             await this.page.waitForTimeout(1000)
             await this.page.screenshot({ path: './ScreenShot/42 BusinessAccount.png', fullPage: true})
@@ -30,6 +30,7 @@ class NewBusinessConsignmentVehiclePage
         await this.page.locator(this.newconsignmentvehicle_webelement.Account_Address).click()
         await this.page.locator(this.newconsignmentvehicle_webelement.Account_Address).fill(this.testdata.Account_Address)
         await this.page.locator(this.newconsignmentvehicle_webelement.Account_Address_dropdown).click()
+        await this.page.locator(this.newconsignmentvehicle_webelement.Account_Address_dropdown).press('Enter')
         await this.page.locator(this.newconsignmentvehicle_webelement.Title_To).click()
         await this.page.locator(this.newconsignmentvehicle_webelement.Title_To).fill(this.testdata.Business_TitleTo)
         await this.page.screenshot({ path: './ScreenShot/43 AccountAddress.png', fullPage: true})

@@ -25,6 +25,11 @@ class LeadPage
         await this.page.waitForTimeout(2000)
         await this.page.screenshot({ path: './ScreenShot/150 Lead Hamburger.png', fullPage: true})
     }
+    async ReadOnlyGrid()
+    {
+        await this.page.waitForTimeout(2000)
+        await this.page.locator(this.lead_webelement.ReadOnlyGrid).click()
+    }
     async Lead_New()
     {
         await this.page.waitForTimeout(2000)

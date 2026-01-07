@@ -95,6 +95,7 @@ class NewConsignmentVehiclePage
         await this.page.locator(this.newconsignmentvehicle_webelement.Account_Address).click()
         await this.page.locator(this.newconsignmentvehicle_webelement.Account_Address).fill(this.testdata.Account_Address)
         await this.page.locator(this.newconsignmentvehicle_webelement.Account_Address_dropdown).click()
+        await this.page.locator(this.newconsignmentvehicle_webelement.Account_Address_dropdown).press('Enter')
         await this.page.locator(this.newconsignmentvehicle_webelement.Title_To).click()
         await this.page.locator(this.newconsignmentvehicle_webelement.Title_To).fill(this.testdata.personal_TitleTo)
         await this.page.waitForTimeout(1000)
@@ -147,8 +148,8 @@ class NewConsignmentVehiclePage
 
         const fileToUpload = 
         {
-            "Title Front" :      "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\Front title.jpg",
-            "Title Back" :    "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\Back Titile.jpg",
+            "Title Front" :      "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\Insurance.pdf",
+            "Title Back" :    "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\Insurance.pdf",
             "Registration" :   "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\Registration.png",
             "NMVITS Report" :          "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\NVIT.png",
             "CarFax" :           "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\CarFax.jpg",
@@ -191,9 +192,9 @@ class NewConsignmentVehiclePage
             "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\1Rear34.jpeg",
             "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\side344.jpeg",
             "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\1Interiorr.jpeg",
-            "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\1Engine.jpeg",
+            "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\engine.heic",
             "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\vin.heif",
-            "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\underside.jpg",
+            "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\NVIT.png",
             "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\odometer.jpg",
         ]
                    // await this.page.waitForTimeout(2000)                   

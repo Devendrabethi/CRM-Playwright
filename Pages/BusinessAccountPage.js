@@ -59,7 +59,7 @@ class BusinessAccountPage
         await this.page.locator(this.PersonalAccount_WebElements.Documents_Tab).click()
         const fileToUpload = 
         {
-            "Operating Agreement" :      "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\operating agreement.jpg"  
+            "Operating Agreement" :      "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\Insurance.pdf"  
         }
         for (const [documentType, documentPath] of Object.entries(fileToUpload))
              {

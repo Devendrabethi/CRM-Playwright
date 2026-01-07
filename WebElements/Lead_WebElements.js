@@ -5,6 +5,7 @@ class Lead_WebElement
     {
         this.managementbtn = "//div[@title='Management']";
         this.Lead_button = "//li[@aria-label='Leads']";
+        this.ReadOnlyGrid = "//button[@aria-label='Read Only Grid']"
         this.Lead_New = "//button[@aria-label='New']"
         this.Phone_Field = "//input[@aria-label='Phone']"
         this.Address1 = "//input[@aria-label='Address Line 1']"
