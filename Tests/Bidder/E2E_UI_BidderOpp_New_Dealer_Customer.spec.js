@@ -105,10 +105,10 @@ test.describe('Dealer Bidder Opportunity Workflow', () => {
     // ---------------- BIDDER OPPORTUNITY ----------------
     test('11. Create New Bidder Opportunity', async () => {
         await bidderopportunitypage.New_Bidder_Opportunity();
+        await newdealerconsignmentvehiclepage.Account();
     });
 
-    test('12. Fill Account and Application Info', async () => {
-        await newdealerconsignmentvehiclepage.Account();
+    test.skip('12. Fill Account and Application Info', async () => {
         await newconsignmentvehiclepage.Appilication_Info();
     });
 

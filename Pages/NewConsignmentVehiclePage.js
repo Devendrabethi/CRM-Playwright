@@ -93,9 +93,11 @@ class NewConsignmentVehiclePage
     async Account_Address()
     {
         await this.page.locator(this.newconsignmentvehicle_webelement.Account_Address).click()
-        await this.page.locator(this.newconsignmentvehicle_webelement.Account_Address).fill(this.testdata.Account_Address)
+         await this.page.locator(this.newconsignmentvehicle_webelement.Account_Address).press('Enter')
+         await this.page.waitForTimeout(1000)
+        //await this.page.locator(this.newconsignmentvehicle_webelement.Account_Address).fill(this.testdata.Account_Address)
         await this.page.locator(this.newconsignmentvehicle_webelement.Account_Address_dropdown).click()
-        await this.page.locator(this.newconsignmentvehicle_webelement.Account_Address_dropdown).press('Enter')
+        //await this.page.locator(this.newconsignmentvehicle_webelement.Account_Address_dropdown).press('Enter')
         await this.page.locator(this.newconsignmentvehicle_webelement.Title_To).click()
         await this.page.locator(this.newconsignmentvehicle_webelement.Title_To).fill(this.testdata.personal_TitleTo)
         await this.page.waitForTimeout(1000)
@@ -140,7 +142,9 @@ class NewConsignmentVehiclePage
         await this.page.locator(this.newconsignmentvehicle_webelement.LongDescription).fill(this.testdata.LongDescriptionText)
         await this.page.screenshot({ path: './ScreenShot/34 ShortLongDesc.png', fullPage: true})
         await this.page.locator(this.newconsignmentvehicle_webelement.Refresh_consignment).click()
+        await this.page.waitForTimeout(2000)
         await this.page.locator(this.newconsignmentvehicle_webelement.Marketing_Tab).click()
+        await this.page.waitForTimeout(2000)
     }
     async ConsVehicleDoc()
     {
@@ -149,12 +153,12 @@ class NewConsignmentVehiclePage
         const fileToUpload = 
         {
             "Title Front" :      "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\Insurance.pdf",
-            "Title Back" :    "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\Insurance.pdf",
+            "Title Back" :    "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\1Interiorr.jpeg",
             "Registration" :   "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\Registration.png",
             "NMVITS Report" :          "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\NVIT.png",
             "CarFax" :           "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\CarFax.jpg",
-            "Consignment Agreement" :      "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\consignment agreement.jpg",
-            "VIN Decode" :    "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\vinpicture.jpg",
+            "Consignment Agreement" :      "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\vin.heif",
+            "VIN Decode" :    "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\engine.heic",
             "LIEN Release" :   "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\LIEN Release.jpg",
             "Power of Attorney" :          "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\Power of Attorney.jpg",
             "Title Reassignment" :           "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\Title Reassignment.jpg",
@@ -366,6 +370,8 @@ class NewConsignmentVehiclePage
         await this.page.locator(this.newconsignmentvehicle_webelement.Photo_Approval_Toggle).click() 
         await this.page.screenshot({ path: './ScreenShot/39 ApplicationStatus.png', fullPage: true})
         await this.page.locator(this.newconsignmentvehicle_webelement.OkButton_PhotoApproval).click() 
+        await this.page.waitForTimeout(3000)
+        await this.page.locator(this.newconsignmentvehicle_webelement.Photo_Tab).click()
         await this.page.waitForTimeout(3000)
     }
 

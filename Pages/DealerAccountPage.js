@@ -66,11 +66,11 @@ class DealerAccountPage
         await this.page.locator(this.PersonalAccount_WebElements.Documents_Tab).click()
         const fileToUpload = 
         {
-            "Dealer License" :      "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\Dealer License.jpg",
+            "Dealer License" :      "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\1Engine.jpeg",
             "Resale License" :    "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\Resale License.jpg",
             "Operating Agreement" :   "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\Insurance.pdf",
-            "Verification of Ownership" :          "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\Verification of Ownership.jpg",
-            "Wholesale License" :           "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\Wholesale.jpg",
+            "Verification of Ownership" :          "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\vin.heif",
+            "Wholesale License" :           "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\engine.heic",
         }
         for (const [documentType, documentPath] of Object.entries(fileToUpload))
              {

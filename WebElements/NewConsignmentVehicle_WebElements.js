@@ -31,8 +31,8 @@ class NewConsignmentVehicle_WebElement
         this.Comp_Value = "//input[@aria-label='Comp Value']"
         this.Responsible_Account = "//input[@aria-label='Responsible Account, Lookup'] "
         this.Responsible_Account_dropdown = "//div[@aria-label='Responsible Account Lookup results']/ul/li "
-        this.Account_Address = "//input[@aria-label='Titled To Address, Lookup'] "
-        this.Account_Address_dropdown = "//div[@aria-label='Titled To Address Lookup results']/ul/li "
+        //this.Account_Address = "//input[@aria-label='Titled To Address, Lookup'] "
+        this.Account_Address_dropdown = "//div[@aria-label='Titled To Address Lookup results']/ul/li"
         this.Title_To = "//input[@aria-label='POA/ODO'] "
 
         this.Sale_details_Text = "//h2[@title='Sale Details']"
@@ -55,7 +55,7 @@ class NewConsignmentVehicle_WebElement
         this.Assign_To_Inputfield = " //input[@aria-label='Assign To, Lookup']"
         this.Assign_To_Specialist_dropdown = "//div[@aria-label='Assign To Lookup results']/ul/li[1] "
         this.save_consignment = " //span[text()='Save']"
-        this.Refresh_consignment = "(//button[@aria-label='Refresh'])[1] " 
+        this.Refresh_consignment = "(//button[@aria-label='Refresh'])[1]" 
 
         this.Verify_RegistrationDocuments_Text = "//h2[@title='Registration Documents']"
         this.Documentation_Tab = "//ul[@aria-label='Opportunity Form']/li[contains(@aria-label,'Documentation')]"
