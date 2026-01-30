@@ -8,7 +8,7 @@ let page;
 let customerpage;
 let consignmentmanagerPage;
 
-test.describe('Consignment Manager Workflow', () => {
+test.describe('Consignment Manager Workflow for Collection, Charity, Event, Docket, Consignments.spec', () => {
 
     test.beforeAll(async ({ playwright }) => {
         browser = await playwright.chromium.launch();

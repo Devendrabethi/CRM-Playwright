@@ -90,7 +90,7 @@ class ConsignmentManagerPage
        await this.page.locator(this.consignmentManager_webElements.Select_CurrentDate).click()
       //  await this.page.locator(this.consignmentManager_webElements.Regarding).press('Enter');
       //  await this.page.locator(this.consignmentManager_webElements.Select_FirstRegarding).click()
-       await this.page.locator(this.consignmentManager_webElements.Select_ConsignmentStage).selectOption(this.testdata.Consignment_Stage)
+      // await this.page.locator(this.consignmentManager_webElements.Select_ConsignmentStage).selectOption(this.testdata.Consignment_Stage)
        await this.page.locator(this.consignmentManager_webElements.SaveandCloseTask).click()
        await this.page.waitForTimeout(4000)
        await this.page.locator(this.consignmentManager_webElements.Select_FirstTask).click()

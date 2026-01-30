@@ -37,7 +37,8 @@ class NewAutomobiliaConsignmentPage
     async Account_Address()
     {
         await this.page.locator(this.newconsignmentvehicle_webelement.Account_Address).click()
-        await this.page.locator(this.newconsignmentvehicle_webelement.Account_Address).fill(this.testdata.Account_Address)
+        await this.page.locator(this.newconsignmentvehicle_webelement.Account_Address).press('Enter')
+        //await this.page.locator(this.newconsignmentvehicle_webelement.Account_Address).fill(this.testdata.Account_Address)
         await this.page.locator(this.newconsignmentvehicle_webelement.Account_Address_dropdown).click()
         await this.page.locator(this.newautomobiliaconsignment_webelements.Poa_Odo).click()
         await this.page.locator(this.newautomobiliaconsignment_webelements.Poa_Odo).fill(this.testdata.personal_TitleTo)

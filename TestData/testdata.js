@@ -104,7 +104,7 @@ class TestData
         this.Source_Value = "75000"
 
         
-        //this.Bidder_Package_Type= "PREMIUM PACKAGE"//"PREMIUM PACKAGE"//"SELECT PACKAGE"//"ABSENTEE (BIDDER)"; 
+        this.Bidder_Package_Type= "PREMIUM PACKAGE"//"PREMIUM PACKAGE"//"SELECT PACKAGE"//"ABSENTEE (BIDDER)"; 
         this.Bidder_BidLImit_Type = "Woodside";
         this.Bidder_Limit_Value = "30000";
         this.Bidder_Estimate_Value = "20000";

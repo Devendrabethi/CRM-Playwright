@@ -108,7 +108,7 @@ test.describe('Dealer Bidder Opportunity Workflow', () => {
         await newdealerconsignmentvehiclepage.Account();
     });
 
-    test.skip('12. Fill Account and Application Info', async () => {
+    test('12. Fill Account and Application Info', async () => {
         await newconsignmentvehiclepage.Appilication_Info();
     });
 

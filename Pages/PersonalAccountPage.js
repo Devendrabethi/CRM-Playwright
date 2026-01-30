@@ -99,9 +99,9 @@ class PersonalAccountPage
         await this.page.locator(this.PersonalAccount_WebElements.Documents_Tab).click()
         const fileToUpload = 
         {
-            "Driver's License" :    "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\license_09242024.jpg",
-            "Trust Documents" :   "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\trust Doc.jpg",
-            "Passport" :          "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\passport2.jpg",
+            "Driver's License" :    "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\1Engine.jpeg",
+            "Trust Documents" :   "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\vin.heif",
+            "Passport" :          "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\engine.heic",
             "Insurance" :           "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\Insurance.pdf",
         }
         for (const [documentType, documentPath] of Object.entries(fileToUpload))

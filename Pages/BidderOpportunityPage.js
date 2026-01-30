@@ -74,7 +74,8 @@ class BidderOpportunityPage
     async bidder_Address()
     {
         await this.page.locator(this.bidderopportunity_webelements.Mailing_Address).click()
-        await this.page.locator(this.bidderopportunity_webelements.Mailing_Address).fill(this.testdata.Account_Address)
+         await this.page.locator(this.bidderopportunity_webelements.Mailing_Address).press('Enter')
+        //await this.page.locator(this.bidderopportunity_webelements.Mailing_Address).fill(this.testdata.Account_Address)
         await this.page.locator(this.bidderopportunity_webelements.Mailing_Address_select).click();
         await this.page.screenshot({ path: './ScreenShot/53 BidderAddress.png', fullPage: true})
         // await this.page.locator(this.bidderopportunity_webelements.Vehicle_Titling).click()
