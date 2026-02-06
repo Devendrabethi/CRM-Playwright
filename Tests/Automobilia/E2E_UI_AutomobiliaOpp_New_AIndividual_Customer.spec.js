@@ -86,6 +86,7 @@ test.describe('Automobilia Consignment Workflow', () => {
 
     test('10. Fill Application Information', async () => {
         await newautomobiliaconsignmentpage.Appilication_Info();
+        await newautomobiliaconsignmentpage.MarketingTab();
         await newautomobiliaconsignmentpage.Consignment_Representative();
     });
 
@@ -94,7 +95,6 @@ test.describe('Automobilia Consignment Workflow', () => {
     });
 
     test('12. Fill Marketing, Documentation and Photos Tab', async () => {
-        await newautomobiliaconsignmentpage.MarketingTab();
         await newautomobiliaconsignmentpage.ConsOpportunityDoc();
         await newautomobiliaconsignmentpage.UploadPhoto();
     });

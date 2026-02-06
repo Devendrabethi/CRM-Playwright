@@ -19,7 +19,7 @@ class LotNumberChange_WebElements {
             this.Products_Tab = "//ul[@aria-label='Opportunity Form']/li[@aria-label='Products']"
             this.Invoice_Tab = "//ul[@aria-label='Opportunity Form']/li[@aria-label='Invoice']"
             this.Refresh_Invoice = "//li[contains(@id,'invoice')]/button[@aria-label='Refresh']"
-            this.SelectInvoice = "(//div[@aria-label='Press SPACE to select this row.'][1]/div[1])[3]"
+            this.SelectInvoice = "(//div[@aria-label='Press SPACE to select this row.'][1]/div[1])[2]"
             this.Selectsingleinvoive = "(//div[@col-id='__row_status'])[4]"
             this.SaveandClose = "//button[@aria-label='Save & Close']"
             this.SaleDay_Tab = "//ul[@aria-label='Opportunity Form']/li[@aria-label='Sale Day']"

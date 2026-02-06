@@ -77,7 +77,7 @@ test.describe('Personal Bidder Opportunity Workflow', () => {
         await bidderopportunitypage.New_Bidder_Opportunity();
     });
 
-    test.skip('08. Fill Application Info', async () => {
+    test('08. Fill Application Info', async () => {
         await newconsignmentvehiclepage.Appilication_Info();
     });
 

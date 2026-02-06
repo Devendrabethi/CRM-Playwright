@@ -400,7 +400,7 @@ class NewConsignmentVehiclePage
         await this.page.waitForTimeout(5000)
         const Lotframe = await this.page.frameLocator(this.lotnumberchange_webElements.Frame_LotAssign)
         if(!Lotframe) throw new Error('Iframe not found')
-        await Lotframe.locator(this.lotnumberchange_webElements.New_LotNumber).fill(this.testdata.NewLotNumber)
+        await Lotframe.locator(this.lotnumberchange_webElements.New_LotNumber).fill(this.testdata.NewLotNumber, { timeout: 60000 })
         await Lotframe.locator(this.lotnumberchange_webElements.Select_StatusDropdown).selectOption(this.testdata.LotStatus_Tentative)
         await Lotframe.locator(this.lotnumberchange_webElements.Save_Button).click()
         await this.page.waitForTimeout(40000)
@@ -449,7 +449,8 @@ class NewConsignmentVehiclePage
                 { label: 'Engine Photo' },
                 { label: 'VIN Photo' },
                 { label: 'Odometer Photo' }
-              ]);
+              ],
+                { timeout: 60000 });
               await frame.locator(this.newconsignmentvehicle_webelement.selectconsigndoc).selectOption([
                 { label: 'Title Front' },
                 { label: 'Title Back' },

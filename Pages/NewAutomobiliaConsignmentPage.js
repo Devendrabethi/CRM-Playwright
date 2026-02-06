@@ -54,24 +54,6 @@ class NewAutomobiliaConsignmentPage
         await this.page.locator(this.newconsignmentvehicle_webelement.Event_name).fill(this.testdata.Event_name)
         await this.page.locator(this.newconsignmentvehicle_webelement.Event_Name_dropdown).click()
     }
-        async Consignment_Representative()
-    {
-        await this.page.waitForTimeout(2000)
-        await this.page.locator(this.newconsignmentvehicle_webelement.Representative_Consignment_name).click()
-        //await this.page.keyboard.press('Enter');
-        await this.page.locator(this.newconsignmentvehicle_webelement.Representative_Consignment_name).fill(this.testdata.Consignment_representative)
-        await this.page.waitForTimeout(4000)
-        await this.page.locator(this.newconsignmentvehicle_webelement.Representative_consignment_dropdown).click()
-        await this.page.screenshot({ path: './ScreenShot/33.1 Consignment representative.png', fullPage: true})
-    }
-
-    async Assign()
-    {
-        await this.page.locator(this.newconsignmentvehicle_webelement.Assign_To).click()
-        await this.page.locator(this.newconsignmentvehicle_webelement.Assign_To_Inputfield).click()
-        await this.page.locator(this.newconsignmentvehicle_webelement.Assign_To_Inputfield).press('Enter');
-        await this.page.locator(this.newconsignmentvehicle_webelement.Assign_To_Specialist_dropdown).click()
-    }
     async MarketingTab()
     {
         await this.page.locator(this.newconsignmentvehicle_webelement.Marketing_Tab).click()
@@ -85,6 +67,28 @@ class NewAutomobiliaConsignmentPage
         await this.page.locator(this.newconsignmentvehicle_webelement.Refresh_consignment).click({ timeout: 60000 }) 
         await this.page.locator(this.newconsignmentvehicle_webelement.Marketing_Tab).click()
         await this.page.waitForTimeout(6000)
+    }
+    async Consignment_Representative()
+    {
+        await this.page.waitForTimeout(2000)
+        await this.page.locator(this.newconsignmentvehicle_webelement.Representative_Consignment_name).click()
+        //await this.page.keyboard.press('Enter');
+        await this.page.locator(this.newconsignmentvehicle_webelement.Representative_Consignment_name).fill(this.testdata.Consignment_representative)
+        await this.page.waitForTimeout(4000)
+        await this.page.locator(this.newconsignmentvehicle_webelement.Representative_consignment_dropdown).click()
+        await this.page.screenshot({ path: './ScreenShot/33.1 Consignment representative.png', fullPage: true})
+        await this.page.waitForTimeout(2000)
+        await this.page.locator(this.newconsignmentvehicle_webelement.Refresh_consignment).click({ timeout: 60000 }) 
+    }
+
+    async Assign()
+    {
+        await this.page.locator(this.newconsignmentvehicle_webelement.Assign_To).click()
+        await this.page.locator(this.newconsignmentvehicle_webelement.Assign_To_Inputfield).click()
+        await this.page.locator(this.newconsignmentvehicle_webelement.Assign_To_Inputfield).press('Enter');
+        await this.page.locator(this.newconsignmentvehicle_webelement.Assign_To_Specialist_dropdown).click()
+        await this.page.waitForTimeout(2000)
+        await this.page.locator(this.newconsignmentvehicle_webelement.Refresh_consignment).click({ timeout: 60000 }) 
     }
     async ConsOpportunityDoc()
     {
@@ -241,15 +245,15 @@ class NewAutomobiliaConsignmentPage
                 { label: 'Operating Agreement' },
                 { label: 'Wholesale License' }
               ]);
-                await frame.locator(this.newconsignmentvehicle_webelement.Payments).selectOption([
-                { label: 'Consignment Lot Fee' }
-              ]);
+            //     await frame.locator(this.newconsignmentvehicle_webelement.Payments).selectOption([
+            //     { label: 'Consignment Lot Fee' }
+            //   ]);
               await frame.locator(this.bidderopportunity_webelements.selectNote).fill(this.testdata.CustomerName);
               await this.page.screenshot({ path: './ScreenShot/108 ReqInformation.png', fullPage: true})
                 const dialogPromise = this.page.waitForEvent('dialog',{ timeout: 75000 });
                 await frame.locator(this.newconsignmentvehicle_webelement.submitbtn).click();
                 const dialog = await dialogPromise;
-                await dialog.accept();
+                //await dialog.accept();
 
         // //Consignment Print Contract
         //         await this.page.locator(this.bidderopportunity_webelements.Print_Contract).click()

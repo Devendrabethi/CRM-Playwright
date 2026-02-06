@@ -68,8 +68,8 @@ class TestData
 
         this. Account_Address = "5055 E Somerset Dr - Arizona";
         this.personal_TitleTo = "Devendra Individual";
-        this.Event_name = "Palm Beach 2026"//"Scottsdale 2026";
-        this.Event_nameSD2025 = "Scottsdale 2026"
+        this.Event_name = "Scottsdale 2026"//"Scottsdale 2026";  Palm Beach 2026
+        this.Event_nameSD2025 = "Palm Beach 2026"
         this.Event_namePB2025 = "Palm Beach 2025";
         this.Odometer_Type = "Miles";
         this.Odometeer_mileage = "45000";
@@ -120,8 +120,8 @@ class TestData
         this.selectAdsenteeBidInternet = "Internet";
         this.selectAdsenteeBidPhone = "Phone";
         this.delectAbsenteeBidAbsenteeRepresentative = "Absentee Representative"
-        this.Lotphone = "23.5";//64
-        this.lotabsentee = "23.5"//64
+        this.Lotphone = "23.1";//64
+        this.lotabsentee = "23.1"//64
         this.Contact_number = "5672345678";
         this.MaxBid = "90000"
 
@@ -215,7 +215,7 @@ class TestData
 //LOT Change
         this.NewDocket_Select = "Day 4 (SAT) LotRange 900-1049"
         this.NewDocketSpot_Select = "Day 4 Prime - Lot# 925 to 1025"
-        this.NewLotNumber = "23.5"
+        this.NewLotNumber = "33.1"
         this.AutomobiliaNewLotNumber = "1891.1"
         this.LotStatus_Tentative = "Tentative"
         this.LotStatus_PendingRevisit = "Pending - Revisit"

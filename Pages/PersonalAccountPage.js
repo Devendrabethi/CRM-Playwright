@@ -407,15 +407,16 @@ for (let i = 0; i < packageTypes.length; i++)
 
                     // await this.page.locator(this.PersonalAccount_WebElements.Close_Tracking).click();
                     // await this.page.waitForTimeout(2000)
-                    const [newPage] = await Promise.all([
-                        this.page.context().waitForEvent('page'),
-                        this.page.locator(this.PersonalAccount_WebElements.Print_Label).click()
-                    ]);
+        // for Manual Tracking no print label
+                    // const [newPage] = await Promise.all([
+                    //     this.page.context().waitForEvent('page'),
+                    //     this.page.locator(this.PersonalAccount_WebElements.Print_Label).click()
+                    // ]);
 
-                    await newPage.waitForLoadState('load');
-                    await this.page.waitForTimeout(10000);
-                    await newPage.close();
-                    await this.page.bringToFront();
+                    // await newPage.waitForLoadState('load');
+                    // await this.page.waitForTimeout(10000);
+                    // await newPage.close();
+                    // await this.page.bringToFront();
 
                     await this.page.locator(this.PersonalAccount_WebElements.Close_Tracking).click();
                     await this.page.waitForTimeout(2000)

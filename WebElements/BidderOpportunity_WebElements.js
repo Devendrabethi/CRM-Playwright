@@ -89,7 +89,7 @@ class BidderOpportunity_WebElements
         // this.Save_Close = "//span[text()='Save & Close']"
         // this.Invoice_Tab = "//ul[@aria-label='Opportunity Form']/li[contains(@title,'Invoices')]"
         this.Generate_Invoive = "//button[@aria-label='Generate Invoice. Generate New Invoice']"
-        this.Payment_AdjustmentTab = "//ul[@aria-label='Invoice Form']/li[contains(@aria-label,'Payments / Adjustments')]"
+        this.Payment_AdjustmentTab = "//ul[@aria-label='Invoice Form']/li[contains(@aria-label,'Payments')]"
         this.PaymentTable = "(//input[@aria-label='Select or deselect the row'])[2]/parent::div"
         this.DetailsTab = "//ul[@aria-label='Payment Form']/li[@aria-label='Details']"
         this.First_Invoice = "(//div[@aria-label='Press SPACE to select this row.'][1]/div[1])[2]"

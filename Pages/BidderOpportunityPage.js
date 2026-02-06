@@ -448,7 +448,7 @@ class BidderOpportunityPage
                     await frame.locator(this.bidderopportunity_webelements.selectconsigndoc).selectOption([
                       { label: 'Funds Letter' },
                       { label: 'Authorization to Bid' },
-                      { label: 'Absentee Bidder Addendum' }
+                      //{ label: 'Absentee Bidder Addendum' }
                     ]);
                     await frame.locator(this.bidderopportunity_webelements.selectcustomerDocumentsDrpreq).selectOption([
                       { label: 'Drivers License' },

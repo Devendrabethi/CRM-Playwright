@@ -25,9 +25,10 @@ class NewDealerConsignmentVehiclePage
     {
        // await this.page.locator(this.newconsignmentvehicle_webelement.Account_Address).scrollIntoViewIfNeeded({ timeout: 5000 });
         await this.page.locator(this.newconsignmentvehicle_webelement.Account_Address).click()
-        await this.page.locator(this.newconsignmentvehicle_webelement.Account_Address).fill(this.testdata.Account_Address)
+        await this.page.locator(this.newconsignmentvehicle_webelement.Account_Address).press('Enter')
+        //await this.page.locator(this.newconsignmentvehicle_webelement.Account_Address).fill(this.testdata.Account_Address)
         await this.page.locator(this.newconsignmentvehicle_webelement.Account_Address_dropdown).click()
-        await this.page.locator(this.newconsignmentvehicle_webelement.Account_Address_dropdown).press('Enter')
+        //await this.page.locator(this.newconsignmentvehicle_webelement.Account_Address_dropdown).press('Enter')
         await this.page.locator(this.newconsignmentvehicle_webelement.Title_To).click()
         await this.page.locator(this.newconsignmentvehicle_webelement.Title_To).fill(this.testdata.Dealer_TitleTo)
         await this.page.waitForTimeout(1000)
