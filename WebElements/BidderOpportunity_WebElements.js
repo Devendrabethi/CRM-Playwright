@@ -136,6 +136,7 @@ class BidderOpportunity_WebElements
          this.selectvehiclephotoreq ="//select[@id='photosDrp']"
          this.selectconsigndoc = "//select[@id='opportunityDocumentsDrp']"
          this.selectcustomerDocumentsDrpreq = "//select[@id='customerDocumentsDrp']"
+         this.Ok_Addendum = "//button[@aria-label='OK']"
          this.selectPayment = "//select[@id='paymentDrp']"
          this.selectNote = "//textarea[@id='notesArea']"
          this.submitbtn = "//button[@type='submit']"
@@ -150,7 +151,6 @@ class BidderOpportunity_WebElements
          this.Send_Agreement = "//button[@aria-label='Send Agreement']"
          this.Send_Agreement_Close = "//span[text()='OK']"//"//button[@aria-label='OK']"
          this.Send = "//button[@title='Send']/parent::li"
-         this.Okbtn = "//button[@aria-label='OK']"
 
          this.Print_Contract = "//button[@aria-label='Print Contract']"
          this.Send_Contract = "//button[@aria-label='Send Contract']"

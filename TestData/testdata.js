@@ -69,7 +69,7 @@ class TestData
         this. Account_Address = "5055 E Somerset Dr - Arizona";
         this.personal_TitleTo = "Devendra Individual";
         this.Event_name = "Scottsdale 2026"//"Scottsdale 2026";  Palm Beach 2026
-        this.Event_nameSD2025 = "Palm Beach 2026"
+        this.Event_nameSD2025 = "Scottsdale 2025"
         this.Event_namePB2025 = "Palm Beach 2025";
         this.Odometer_Type = "Miles";
         this.Odometeer_mileage = "45000";
@@ -218,9 +218,9 @@ class TestData
         this.NewLotNumber = "33.1"
         this.AutomobiliaNewLotNumber = "1891.1"
         this.LotStatus_Tentative = "Tentative"
-        this.LotStatus_PendingRevisit = "Pending - Revisit"
-        this.LotStstaus_PendingAccepted = "Pending - Accepted"
-        this.LotStatus_Confirmed = "Pending - Confirmed"
+        this.LotStatus_Revisit = "Revisit"
+        this.LotStstaus_Confirmed = "Confirmed"
+        this.LotStatus_Assigned = "Assigned"
         this.LotOverrideamount = "450"
         this.LotStatus_Cancel = "Cancelled"
     

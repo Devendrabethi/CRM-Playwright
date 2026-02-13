@@ -406,8 +406,8 @@ class NewConsignmentVehiclePage
         await this.page.waitForTimeout(40000)
 
         const lotStatuses1 = [
-                                    this.testdata.LotStatus_PendingRevisit,
-                                    this.testdata.LotStstaus_PendingAccepted,
+                                    this.testdata.LotStatus_Revisit,
+                                    this.testdata.LotStstaus_Confirmed,
                                     //this.testdata.LotStatus_Confirmed,
                                     //this.testdata.LotStatus_Cancel
                                 ];
@@ -425,7 +425,8 @@ class NewConsignmentVehiclePage
              await this.page.locator(this.lotnumberchange_webElements.LotAssign).click()
            // const Lotframe = await this.page.frameLocator(this.lotnumberchange_webElements.Frame_LotAssign)
             if(!Lotframe) throw new Error('Iframe not found')
-            await Lotframe.locator(this.lotnumberchange_webElements.Selec_LotStatus).selectOption(this.testdata.LotStatus_Confirmed);
+            await Lotframe.locator(this.lotnumberchange_webElements.Selec_LotStatus).selectOption(this.testdata.LotStatus_Assigned);
+            await this.page.waitForTimeout(3000);
             await Lotframe.locator(this.lotnumberchange_webElements.Checkbox_CompLotFee).check();
             await this.page.waitForTimeout(2000);
             await Lotframe.locator(this.lotnumberchange_webElements.Checkbox_CompLotFee).uncheck();
@@ -581,10 +582,11 @@ class NewConsignmentVehiclePage
         await this.page.locator(this.lotnumberchange_webElements.LotAssign).click()
         await Lotframe.locator(this.lotnumberchange_webElements.Select_StatusDropdown).selectOption(this.testdata.LotStatus_Cancel)
         await Lotframe.locator(this.lotnumberchange_webElements.Save_Button).click()
-        this.page.on('dialog', async (dialog) => {
-        console.log(`Dialog message: ${dialog.message()}`);
-        //await dialog.accept(); // Accept the alert
-        });
+        // this.page.on('dialog', async (dialog) => {
+        // console.log(`Dialog message: ${dialog.message()}`);
+        // //await dialog.accept(); // Accept the alert
+        // });
+        await Lotframe.locator(this.lotnumberchange_webElements.Ok_Button).click()
         await this.page.waitForTimeout(15000)
         await this.page.locator(this.lotnumberchange_webElements.SaleDay_Tab).click()
         await this.page.waitForTimeout(5000)   

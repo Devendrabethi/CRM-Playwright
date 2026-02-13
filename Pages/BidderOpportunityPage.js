@@ -448,7 +448,7 @@ class BidderOpportunityPage
                     await frame.locator(this.bidderopportunity_webelements.selectconsigndoc).selectOption([
                       { label: 'Funds Letter' },
                       { label: 'Authorization to Bid' },
-                      //{ label: 'Absentee Bidder Addendum' }
+                      { label: 'Absentee Bidder Addendum' }
                     ]);
                     await frame.locator(this.bidderopportunity_webelements.selectcustomerDocumentsDrpreq).selectOption([
                       { label: 'Drivers License' },
@@ -468,18 +468,11 @@ class BidderOpportunityPage
                 await frame.locator(this.bidderopportunity_webelements.submitbtn).click();
                 const dialog = await dialogPromise;
                // await dialog.accept();
-                await this.page.locator(this.bidderopportunity_webelements.Refresh_Bidder).click()
-                await this.page.waitForTimeout(5000)
-                await this.page.locator(this.bidderopportunity_webelements.reqinforbtn).click()
-                await frame.locator(this.bidderopportunity_webelements.selectconsigndoc).selectOption([
-                      { label: 'Absentee Bidder Addendum' }
-                    ]);
-                await frame.locator(this.bidderopportunity_webelements.selectNote).fill(this.testdata.CustomerName);
-                await frame.locator(this.bidderopportunity_webelements.submitbtn).click();
-                await this.page.locator(this.bidderopportunity_webelements.Okbtn).click({timeout:60000});
-                await frame.locator(this.bidderopportunity_webelements.CancelButton).click();
+                await this.page.locator(this.bidderopportunity_webelements.Ok_Addendum).click()
                 await this.page.waitForTimeout(2000)
-
+                await frame.locator(this.bidderopportunity_webelements.CancelButton).click();
+                await this.page.locator(this.bidderopportunity_webelements.Refresh_Bidder).click()
+                await this.page.waitForTimeout(2000)
 //Download file PrintAll
                       // const path1 = require('path');  
                       // const fs1 = require('fs');

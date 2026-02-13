@@ -47,56 +47,56 @@ test.describe('Business Consignment Workflow', () => {
         await customerpage.customer();
     });
 
-    // // ---------------- PERSONAL ACCOUNT ----------------
-    // test('02. Create Personal Account', async () => {
-    //     await personalaccountpage.accounttype_dropdown();
-    //     await personalaccountpage.names();
-    //     await personalaccountpage.save();
-    // });
+    // ---------------- PERSONAL ACCOUNT ----------------
+    test('02. Create Personal Account', async () => {
+        await personalaccountpage.accounttype_dropdown();
+        await personalaccountpage.names();
+        await personalaccountpage.save();
+    });
 
-    // test('03. Add Personal Address', async () => {
-    //     await addresspage.newaddress();
-    //     await addresspage.generaladdress();
-    //     await addresspage.saveandclose();
-    // });
+    test('03. Add Personal Address', async () => {
+        await addresspage.newaddress();
+        await addresspage.generaladdress();
+        await addresspage.saveandclose();
+    });
 
-    // test('04. Add Personal Phone', async () => {
-    //     await phonenumberpage.phonenumberbtn();
-    //     await phonenumberpage.General_PhoneNumber();
-    // });
+    test('04. Add Personal Phone', async () => {
+        await phonenumberpage.phonenumberbtn();
+        await phonenumberpage.General_PhoneNumber();
+    });
 
-    // test('05. Add Personal Email', async () => {
-    //     await emailpage.NewEmailbtn();
-    //     await emailpage.enter_emailid();
-    //     await emailpage.CredentialTab();
-    // });
+    test('05. Add Personal Email', async () => {
+        await emailpage.NewEmailbtn();
+        await emailpage.enter_emailid();
+        await emailpage.CredentialTab();
+    });
 
-    // test('06. Upload Personal Documents', async () => {
-    //     await personalaccountpage.personalAccountDocuments();
-    // });
+    test('06. Upload Personal Documents', async () => {
+        await personalaccountpage.personalAccountDocuments();
+    });
 
-    // // ---------------- BUSINESS ACCOUNT ----------------
-    // test('07. Create Business Account', async () => {
-    //     await businessaccountpage.accounttype_dropdown();
-    //     await businessaccountpage.names();
-    //     await businessaccountpage.save();
-    // });
+    // ---------------- BUSINESS ACCOUNT ----------------
+    test('07. Create Business Account', async () => {
+        await businessaccountpage.accounttype_dropdown();
+        await businessaccountpage.names();
+        await businessaccountpage.save();
+    });
 
-    // test('08. Add Business Address', async () => {
-    //     await addresspage.newaddress();
-    //     await addresspage.generaladdress();
-    //     await addresspage.saveandclose();
-    // });
+    test('08. Add Business Address', async () => {
+        await addresspage.newaddress();
+        await addresspage.generaladdress();
+        await addresspage.saveandclose();
+    });
 
-    // test('09. Add Business Phone', async () => {
-    //     await businessphonenumberpage.phonenumberbtn();
-    //     await phonenumberpage.General_PhoneNumber();
-    // });
+    test('09. Add Business Phone', async () => {
+        await businessphonenumberpage.phonenumberbtn();
+        await phonenumberpage.General_PhoneNumber();
+    });
 
-    // test('10. Upload Business Documents + Link to Personal', async () => {
-    //     await businessaccountpage.personalAccountDocuments();
-    //     await businessaccountpage.RelatedAccount();
-    // });
+    test('10. Upload Business Documents + Link to Personal', async () => {
+        await businessaccountpage.personalAccountDocuments();
+        await businessaccountpage.RelatedAccount();
+    });
 
     // ---------------- BUSINESS CONSIGNMENT ----------------
     test('11. Create New Vehicle Consignment', async () => {

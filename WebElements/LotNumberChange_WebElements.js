@@ -31,6 +31,7 @@ class LotNumberChange_WebElements {
             this.Checkbox_CompLotFee = "//input[@id='compLotFees']"
             this.LotOverrideAmount = "//input[@id='overrideFeesAmount']"
             this.Save_Button = "//button[@id='approveButton']"
+            this.Ok_Button = "//button[@aria-label='OK']"
 
             this.Sales_Fees_Tab = "//ul[@aria-label='Opportunity Form']/li[@aria-label='Sales / Fees']"
     }
