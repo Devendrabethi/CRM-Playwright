@@ -75,6 +75,7 @@ test.describe('Business Bidder Opportunity Workflow', () => {
         await emailpage.NewEmailbtn();
         await emailpage.enter_emailid();
         await emailpage.CredentialTab();
+        await emailpage.Wristband();
     });
 
     test('06. Upload Personal Documents', async () => {

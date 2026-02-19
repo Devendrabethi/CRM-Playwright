@@ -97,7 +97,7 @@ class DealerAccountPage
                     await this.page.locator(this.PersonalAccount_WebElements.Ok_Button).click()
                     await this.page.locator(this.PersonalAccount_WebElements.Refresh_Account).click()
                     await this.page.locator(this.PersonalAccount_WebElements.Documents_Tab).click()
-                    await this.page.waitForTimeout(2000)
+                    await this.page.waitForTimeout(3000)
                     await this.page.screenshot({ path: './ScreenShot/23 DealerDocumentWithArchived.png', fullPage: true})
                     await this.page.locator(this.PersonalAccount_WebElements.SelectFirstDocument_Archived).click()
                     await this.page.waitForTimeout(1000)
@@ -111,7 +111,7 @@ class DealerAccountPage
                     await frame.locator(this.PersonalAccount_WebElements.Ok_ExpiryDate).click()
                     await this.page.locator(this.PersonalAccount_WebElements.Refresh_Account).click()
                     await this.page.locator(this.PersonalAccount_WebElements.Documents_Tab).click()
-                    await this.page.waitForTimeout(2000)
+                    await this.page.waitForTimeout(3000)
                     await this.page.screenshot({ path: './ScreenShot/24 DealerDocumentWithArchivedtoUnArchived.png', fullPage: true})
                   
     }

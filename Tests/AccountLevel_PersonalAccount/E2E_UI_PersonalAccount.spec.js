@@ -62,6 +62,8 @@ test.describe('Personal Account Workflow', () => {
     test('07. Enter email address', async () => {
         await emailpage.NewEmailbtn();
         await emailpage.enter_emailid();
+        await emailpage.CredentialTab();
+        await emailpage.Wristband();
     });
 
     test.afterAll(async () => {

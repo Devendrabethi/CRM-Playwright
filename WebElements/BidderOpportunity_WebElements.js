@@ -97,6 +97,11 @@ class BidderOpportunity_WebElements
         this.Third_Invoice = "(//div[@aria-label='Press SPACE to select this row.'][3]/div[1])[2]"
         this.select_Payment_Method = "//select[@aria-label='Payment Method']"
         this.PaymentTab_ThirdInvoice = "(//input[@aria-label='Select or deselect the row'])[3]/parent::div"
+//wristband
+        this.Wristband_Tab = "//ul[@aria-label='Invoice Form']/li[contains(@aria-label,'Wrstband')]"
+        this.iframe_Wristband_Invoice = "//iframe[@title='Invoice WRSTBAND Credential']"
+        this.Open_OrderAction = "//tbody[@id='ordersBody']/tr/td/button/i"
+        
 
         this.SelectAllInvoice = "//div[@id='dataSetRoot_Invoices']/div[2]/descendant::div[@role='row'][1]/div[@col-id='__row_status']"
         this.SelectFirstInvoice = "(//label[@aria-label='New'])[1]"

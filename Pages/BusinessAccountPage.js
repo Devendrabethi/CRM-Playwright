@@ -86,7 +86,7 @@ class BusinessAccountPage
                     await this.page.locator(this.PersonalAccount_WebElements.Ok_Button).click()
                     await this.page.locator(this.PersonalAccount_WebElements.Refresh_Account).click()
                     await this.page.locator(this.PersonalAccount_WebElements.Documents_Tab).click()
-                    await this.page.waitForTimeout(2000)
+                    await this.page.waitForTimeout(3000)
                     await this.page.screenshot({ path: './ScreenShot/28 BusinessDocumentWithArchived.png', fullPage: true})
                     await this.page.locator(this.PersonalAccount_WebElements.Select_FirstDocumentUnarchived).click()
                     await this.page.waitForTimeout(1000)
@@ -100,7 +100,7 @@ class BusinessAccountPage
                     await frame.locator(this.PersonalAccount_WebElements.Ok_ExpiryDate).click()
                     await this.page.locator(this.PersonalAccount_WebElements.Refresh_Account).click()
                     await this.page.locator(this.PersonalAccount_WebElements.Documents_Tab).click()
-                    await this.page.waitForTimeout(2000)
+                    await this.page.waitForTimeout(3000)
                     await this.page.screenshot({ path: './ScreenShot/29 BusinessDocumentWithArchivedtoUnArchived.png', fullPage: true})
                   
     }

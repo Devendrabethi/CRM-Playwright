@@ -347,6 +347,23 @@ class NewConsignmentVehiclePage
         await this.page.locator(this.newconsignmentvehicle_webelement.Source_SaveClose).click()
 
     }
+    async AutocheckTab()
+    {
+        await this.page.locator(this.newconsignmentvehicle_webelement.AutoCheckTab).click()
+        await this.page.waitForTimeout(2000)
+        await this.page.locator(this.newconsignmentvehicle_webelement.RunAutoCheck).click()
+        await this.page.waitForTimeout(5000)
+        await this.page.locator(this.newconsignmentvehicle_webelement.TaskRefresh).click()
+        await this.page.waitForTimeout(2000)
+    }  
+    async SalesFeeTab()
+    {
+        await this.page.locator(this.newconsignmentvehicle_webelement.SalesFeeTab).click()
+        await this.page.waitForTimeout(2000)
+        await this.page.locator(this.newconsignmentvehicle_webelement.TaskRefresh).click()
+        await this.page.waitForTimeout(2000)
+    }     
+
     async TaskTab()
     {
         await this.page.locator(this.newconsignmentvehicle_webelement.TaskTab).click()
@@ -365,6 +382,10 @@ class NewConsignmentVehiclePage
         await this.page.locator(this.newconsignmentvehicle_webelement.Comp_Value).type(this.testdata.Bjack_value)
         await this.page.locator(this.newconsignmentvehicle_webelement.Account_Text).press('Tab') 
         await this.page.locator(this.newconsignmentvehicle_webelement.Appilication_Text).click() 
+        await this.page.locator(this.newconsignmentvehicle_webelement.TitleCopy_Toggle).click() 
+        await this.page.waitForTimeout(1000)
+        await this.page.locator(this.newconsignmentvehicle_webelement.BillOfSale_Toggle).click() 
+        await this.page.waitForTimeout(1000)
         await this.page.locator(this.newconsignmentvehicle_webelement.Consignment_Review_Toggle).click() 
         await this.page.waitForTimeout(2000)
         await this.page.locator(this.newconsignmentvehicle_webelement.Photo_Approval_Toggle).click() 

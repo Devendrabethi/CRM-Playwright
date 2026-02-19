@@ -39,6 +39,8 @@ class NewConsignmentVehicle_WebElement
         this.Account_Text = "//h2[@title='Account']"
         this.Status_Text = "//label[text()='Status']"
         this.Appilication_Text = "//h2[@title='Application Status']"
+        this.TitleCopy_Toggle = "//button[contains(@aria-label,'Title Copy')]"
+        this.BillOfSale_Toggle = "//button[contains(@aria-label,'Bill of Sale')]"
         this.Consignment_Review_Toggle = "//button[contains(@aria-label,'Consignment Reviewed')]"
         this.Photo_Approval_Toggle = "//button[contains(@aria-label,'Photos Approved')]"
         this.OkButton_PhotoApproval = "//button[@aria-label='OK']"
@@ -103,12 +105,18 @@ class NewConsignmentVehicle_WebElement
         this.LongDescription = "//textarea[@aria-label='Long Description']"
        // this.Refresh_consignment="(//button[@aria-label='Refresh'])[1]"
 
+//Auto Check
+         this.AutoCheckTab = "//ul[@aria-label='Opportunity Form']/li[contains(@aria-label,'AutoCheck')]"
+         this.RunAutoCheck = "//ul[contains(@aria-label,'Auto Check')]/li[contains(@id,'Run AutoCheck')]"
+//SalesDay
+         this.SalesFeeTab = "//ul[@aria-label='Opportunity Form']/li[contains(@aria-label,'Sales/Fees')]"         
+//Task
         this.TaskTab = "//ul[@aria-label='Opportunity Form']/li[contains(@aria-label,'Tasks')]"
         this.TaskRefresh = "(//span[text()='Refresh'])[2]/../parent::button"
         this.SelectAllTaskRadiobtn = "//div[@data-testid='subject']/../../../preceding-sibling::div"
         this.MarkComplete = "//span[text()='MARK COMPLETE']/../parent::button"
         this.Status = "//label[text()='Status']"
-
+//Comparision
         this.ComparisionTab = "//ul[@aria-label='Opportunity Form']/li[contains(@aria-label,'Comparisons')]"
         this.Additoinal_Source_button = "//button[contains(@aria-label,'New Additional Source')]"
         this.AdditionalSource_text = "//label[contains(text(),'Additional Source')]"
@@ -134,7 +142,7 @@ class NewConsignmentVehicle_WebElement
         this.Source_Save = "//button[@aria-label='Save (CTRL+S)']"
         this.Source_SaveClose = "//button[@aria-label='Save & Close']"
 
-
+//Activities
         this.ActivitiesTab = "//ul[@aria-label='Opportunity Form']/li[contains(@aria-label,'Activities')]"
         this.PlusbtnActivity = "//button[@title='Create a timeline record.']"
         this.EmailActivity = "//li[@aria-label='Email Activity']"

@@ -128,9 +128,10 @@ class PersonalAccountPage
                     await this.page.locator(this.PersonalAccount_WebElements.Archive_Button).click()
                     await this.page.locator(this.PersonalAccount_WebElements.Ok_Button).click()
                     await this.page.locator(this.PersonalAccount_WebElements.Refresh_Account).click()
+                    await this.page.waitForTimeout(4000)
                     await this.page.locator(this.PersonalAccount_WebElements.Documents_Tab).click()
-                    await this.page.waitForTimeout(2000)
                     await this.page.screenshot({ path: './ScreenShot/3 AccountDocumentWithArchived.png', fullPage: true})
+                    await this.page.waitForTimeout(3000)
                     await this.page.locator(this.PersonalAccount_WebElements.SelectFirstDocument_Archived).click()
                     await this.page.waitForTimeout(1000)
                     await this.page.locator(this.PersonalAccount_WebElements.UnArchived_Button).click()
@@ -143,8 +144,8 @@ class PersonalAccountPage
                     await frame.locator(this.PersonalAccount_WebElements.Ok_ExpiryDate).click()
                     await this.page.waitForTimeout(4000)
                     await this.page.locator(this.PersonalAccount_WebElements.Refresh_Account).click()
+                    await this.page.waitForTimeout(4000)
                     await this.page.locator(this.PersonalAccount_WebElements.Documents_Tab).click()
-                    await this.page.waitForTimeout(2000)
                     await this.page.screenshot({ path: './ScreenShot/4 AccountDocumentWithArchivedtoUnArchived.png', fullPage: true})
 
                     const fileToUpload1 = 

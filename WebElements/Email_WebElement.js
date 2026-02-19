@@ -12,6 +12,15 @@ class Email_WebElement
         this.Okbtn = "//button[@aria-label='OK']"
         this.Verifybtn = "//button[@id='verify']"
         this.ResetPassword = "//button[text()='RESET PASSWORD']"
-
+//wristband
+        this.iframe_wristband = "//iframe[@title='Account WRSTBAND Credential']"
+        this.Add_Button = "//button[@id='addBtn']"
+        this.SelectEvent = "//select[@id='eventSelect']"
+        this.SelectCredential = "//select[@id='credentialSelect']"
+        this.Save_Addbutton = "//button[@id='saveBtn']"
+        this.Select_FirstOption = "//tbody[@id='credentialBody']/tr[1]/td/input"
+        this.Delete_Button = "//button[@id='deleteBtn']"
+        this.Submit_Button = "//button[@id='submitBtn']"
+        this.Refresh_CredentialLine = "(//button[@aria-label='Refresh'])[2]"
     }
 }

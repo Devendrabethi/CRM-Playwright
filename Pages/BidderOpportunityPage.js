@@ -321,6 +321,24 @@ class BidderOpportunityPage
         await this.page.screenshot({ path: './ScreenShot/61 PaymentTableWithPaymentCreated.png', fullPage: true})
         await this.page.locator(this.bidderopportunity_webelements.GoBack_btn).click()
         await this.page.waitForTimeout(2000)
+        await this.page.locator(this.bidderopportunity_webelements.Wristband_Tab).click()
+        await this.page.waitForTimeout(2000)
+        const framewristband = await this.page.frameLocator(this.bidderopportunity_webelements.iframe_Wristband_Invoice);
+        if(!framewristband) throw new Error('Nested iframe not found')
+        const openOrder = framewristband.locator(this.bidderopportunity_webelements.Open_OrderAction);
+        if (await openOrder.isEnabled()) 
+          {
+              await openOrder.click();
+              await this.page.waitForTimeout(4000)
+              await openOrder.click();
+          }
+          else 
+          {
+              console.log("Button is disabled");
+          }
+        // await framewristband.locator(this.bidderopportunity_webelements.Open_OrderAction).click()
+        // await this.page.waitForTimeout(4000)
+        // await framewristband.locator(this.bidderopportunity_webelements.Open_OrderAction).click()
         await this.page.locator(this.bidderopportunity_webelements.GoBack_btn).click()
         await this.page.waitForTimeout(2000)
     }
@@ -402,6 +420,12 @@ class BidderOpportunityPage
         await this.page.screenshot({ path: './ScreenShot/63 PaymentTableWithPaymentCreated.png', fullPage: true})
         await this.page.locator(this.bidderopportunity_webelements.GoBack_btn).click()
         await this.page.waitForTimeout(2000)
+        await this.page.locator(this.bidderopportunity_webelements.Wristband_Tab).click()
+        await this.page.waitForTimeout(2000)
+        const framewristband = await this.page.frameLocator(this.bidderopportunity_webelements.iframe_Wristband_Invoice);
+        if(!framewristband) throw new Error('Nested iframe not found')
+        await framewristband.locator(this.bidderopportunity_webelements.Open_OrderAction).click()
+        await this.page.waitForTimeout(4000)
         await this.page.locator(this.bidderopportunity_webelements.GoBack_btn).click()
         await this.page.waitForTimeout(3000)
 

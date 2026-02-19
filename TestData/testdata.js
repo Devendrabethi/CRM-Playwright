@@ -68,9 +68,10 @@ class TestData
 
         this. Account_Address = "5055 E Somerset Dr - Arizona";
         this.personal_TitleTo = "Devendra Individual";
-        this.Event_name = "Scottsdale 2026"//"Scottsdale 2026";  Palm Beach 2026
+        this.Event_name = "Palm Beach 2026"//"Scottsdale 2026";  Palm Beach 2026
         this.Event_nameSD2025 = "Scottsdale 2025"
         this.Event_namePB2025 = "Palm Beach 2025";
+        this.Event_WristBand = "Scottsdale 2026"
         this.Odometer_Type = "Miles";
         this.Odometeer_mileage = "45000";
         this.Sale_Type = "No Reserve";

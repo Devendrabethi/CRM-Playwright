@@ -69,6 +69,7 @@ test.describe('Business Consignment Workflow', () => {
         await emailpage.NewEmailbtn();
         await emailpage.enter_emailid();
         await emailpage.CredentialTab();
+        await emailpage.Wristband();
     });
 
     test('06. Upload Personal Documents', async () => {
@@ -134,6 +135,8 @@ test.describe('Business Consignment Workflow', () => {
 
     test('18. Comparisons, Tasks and Review, Photo Approval toggle from Overview', async () => {
         await newconsignmentvehiclepage.ComparisionTab();
+        await newconsignmentvehiclepage.AutocheckTab();
+        await newconsignmentvehiclepage.SalesFeeTab();
         await newconsignmentvehiclepage.TaskTab();
         await newconsignmentvehiclepage.ApplicationStatus();
     });
