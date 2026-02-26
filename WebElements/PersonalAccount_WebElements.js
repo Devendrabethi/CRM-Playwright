@@ -38,6 +38,7 @@ class PersonalAccount_WebElements
         this.Ok_Button = "//button[@aria-label='OK']"
         this.Refresh_Account = "(//button[@aria-label='Refresh'])[1]"
         this.SelectFirstDocument_Archived = "(//div[@row-index='0'])[2]/div[@col-id='bjac_documenttype']"
+        this.CompanySelectFirstDocument_Archived = "(//div[@row-index='0'])[3]/div[@col-id='bjac_documenttype']"
         this.UnArchived_Button = "//button[@aria-label='UnArchive']"
         this.frame_AccountExp = "//iframe[@aria-label='account_document_expiration_date']"
         this.Ok_ExpiryDate = "//button[text()='OK']"

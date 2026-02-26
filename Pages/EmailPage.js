@@ -79,17 +79,18 @@ class EmailPage
             for (const value of credentials) 
             {
             await frame.locator(this.email_webelement.Add_Button).click({ timeout: 60000 });
+            await this.page.waitForTimeout(2000)
             await frame.locator(this.email_webelement.SelectEvent).selectOption(this.testdata.Event_WristBand);
-            await this.page.waitForTimeout(2000)
             await frame.locator(this.email_webelement.SelectCredential).selectOption({ label: value });
-            await this.page.waitForTimeout(2000)
             await frame.locator(this.email_webelement.Save_Addbutton).click();
             await this.page.locator(this.email_webelement.Okbtn).click();
+            await this.page.waitForTimeout(2000)
             }
             await frame.locator(this.email_webelement.Select_FirstOption).click();
             await frame.locator(this.email_webelement.Delete_Button).click();
             await this.page.waitForTimeout(2000)
             await frame.locator(this.email_webelement.Add_Button).click({ timeout: 60000 })
+            await this.page.waitForTimeout(2000)
             await frame.locator(this.email_webelement.SelectEvent).selectOption(this.testdata.Event_WristBand)
             await this.page.waitForTimeout(2000)
             await frame.locator(this.email_webelement.SelectCredential).selectOption({ label: 'Bidder Badge (1)' })
