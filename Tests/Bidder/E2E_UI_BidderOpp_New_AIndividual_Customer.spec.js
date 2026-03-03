@@ -96,6 +96,7 @@ test.describe('Personal Bidder Opportunity Workflow', () => {
 
     test('11. Phone Observer and Registration Documents', async () => {
         await bidderopportunitypage.PhoneObserver();
+        await bidderopportunitypage.BillOfSale();
         await bidderopportunitypage.RegisterDocuments();
     });
 

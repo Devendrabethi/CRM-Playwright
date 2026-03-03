@@ -79,7 +79,7 @@ class BusinessAccountPage
                     await frame.locator(this.PersonalAccount_WebElements.Upload_btn).click()
                     await this.page.locator(this.PersonalAccount_WebElements.Persondoc_Refresh).click()
              }
-                   // await this.page.waitForTimeout(4000)
+                    await this.page.waitForTimeout(3000)
                     await this.page.screenshot({ path: './ScreenShot/27 BusinessAccountDocumentsPage.png', fullPage: true})
                     await this.page.locator(this.PersonalAccount_WebElements.Select_FirstDocumentUnarchived).click()
                     await this.page.locator(this.PersonalAccount_WebElements.Archive_Button).click()
@@ -88,7 +88,7 @@ class BusinessAccountPage
                     await this.page.locator(this.PersonalAccount_WebElements.Documents_Tab).click()
                     await this.page.waitForTimeout(3000)
                     await this.page.screenshot({ path: './ScreenShot/28 BusinessDocumentWithArchived.png', fullPage: true})
-                    await this.page.locator(this.PersonalAccount_WebElements.CompanySelectFirstDocument_Archived).click()
+                    await this.page.locator(this.PersonalAccount_WebElements.Select_FirstDocumentUnarchived).click()
                     await this.page.waitForTimeout(1000)
                     await this.page.locator(this.PersonalAccount_WebElements.UnArchived_Button).click()
                     await this.page.locator(this.PersonalAccount_WebElements.Ok_Button).click()

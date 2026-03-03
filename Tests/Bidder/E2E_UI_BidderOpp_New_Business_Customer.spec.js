@@ -129,6 +129,7 @@ test.describe('Business Bidder Opportunity Workflow', () => {
 
     test('15. Phone Observer and Registration Documents', async () => {
         await bidderopportunitypage.PhoneObserver();
+        await bidderopportunitypage.BillOfSale();
         await bidderopportunitypage.RegisterDocuments();
     });
 

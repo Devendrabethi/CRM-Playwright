@@ -16,7 +16,11 @@ class NewBusinessConsignmentVehiclePage
             await this.page.locator(this.newconsignmentvehicle_webelement.hover_Account).hover()
             await this.page.locator(this.newconsignmentvehicle_webelement.Delete_Personal_Account).click()
             await this.page.locator(this.newconsignmentvehicle_webelement.Account_field).click()
+            await this.page.waitForTimeout(1000)
             await this.page.locator(this.newconsignmentvehicle_webelement.Account_field).press('Enter')
+            await this.page.waitForTimeout(1000)
+            await this.page.locator(this.newconsignmentvehicle_webelement.Account_field_Search).click()
+            await this.page.waitForTimeout(1000)
             //await page.keyboard.press('Enter');
             await this.page.locator(this.newconsignmentvehicle_webelement.Select_Business_Account).click()
             await this.page.waitForTimeout(1000)

@@ -62,7 +62,15 @@ class BidderOpportunity_WebElements
         this.Close_PhoneObserver = "//button[@title='Close']"
         this.HamBerger_LivePhoneObserver = "//span[text()='Live Phone Observer']"
         this.Frame_LivePhoneObserver = "//iframe[@aria-label='new_launch_phone_observer']"
-
+//Bill Of Sale
+        this.BillOfSale = "//span[text()='Bill of Sales']"
+        this.OpenFirstBillOfSale = "//div[@aria-label='Press SPACE to select this row.'][1]/div[1]"
+        this.Iframe_BillOfSale = "//iframe[@title='Customer Bill Of Sale']"
+        this.Property_Button = "//button[@id='btnProperty']"
+        this.KeyControl_Button = "//button[@id='btnKey']"
+        this.Print_Button = "//button[@id='btnPrint']"
+        this.PrintBoth = "//button[contains(@onclick,'printSection') and contains(@onclick,'full')]"
+//Create Package
         this.Create_Package = "//span[text()='Create Package']"
         this.Close_Tracking = "//button[@aria-label='Enter full screen mode']/following-sibling::button"
        //this.Close_Tracking_BidderPage ="//button[@aria-label='Close']"

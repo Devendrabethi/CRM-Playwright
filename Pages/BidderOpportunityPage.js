@@ -155,33 +155,6 @@ class BidderOpportunityPage
         await this.page.waitForTimeout(1000)
        // await this.page.locator(this.bidderopportunity_webelements.managementbtn).click()
     }
-      async PhoneObserver()
-       {
-        await this.page.locator(this.bidderopportunity_webelements.HamBerger_PhoneObserver).click()
-        const frame1 = await this.page.frameLocator(this.bidderopportunity_webelements.Frame_PhoneObserver)
-        await frame1.locator(this.bidderopportunity_webelements.SelectEvent).selectOption({ label: this.testdata.Event_name })
-        await this.page.waitForTimeout(5000)
-        //await frame1.locator(this.bidderopportunity_webelements.Select_PhoneObserver_Date).selectOption({ label: this.testdata.Monday })
-        await frame1.locator(this.bidderopportunity_webelements.Launch).click()
-        await this.page.waitForTimeout(30000)
-        await this.page.screenshot({ path: './ScreenShot/56 PhoneObserver.png', fullPage: true})
-        await this.page.locator(this.bidderopportunity_webelements.Close_PhoneObserver).click()
-        await this.page.waitForTimeout(2000)
-        await this.page.locator(this.bidderopportunity_webelements.HamBerger_LivePhoneObserver).click()
-         const frame2 = await this.page.frameLocator(this.bidderopportunity_webelements.Frame_LivePhoneObserver)
-        await frame2.locator(this.bidderopportunity_webelements.SelectEvent).selectOption({ label: this.testdata.Event_name })
-        await this.page.waitForTimeout(5000)
-        //await frame1.locator(this.bidderopportunity_webelements.Select_PhoneObserver_Date).selectOption({ label: this.testdata.Monday })
-        await frame2.locator(this.bidderopportunity_webelements.Launch).click()
-        await this.page.waitForTimeout(30000)
-        await this.page.screenshot({ path: './ScreenShot/56 PhoneObserver.png', fullPage: true})
-        await this.page.locator(this.bidderopportunity_webelements.Close_PhoneObserver).click()
-        await this.page.waitForTimeout(2000)
-        await this.page.goBack()
-        await this.page.waitForTimeout(2000)
-        await this.page.goBack()
-        await this.page.waitForTimeout(2000)
-       }
 //Create Package    
        async CreatePackage()
        {
@@ -218,7 +191,68 @@ class BidderOpportunityPage
                     await this.page.locator(this.PersonalAccount_WebElements.SaveandClose).click();
                     await this.page.waitForTimeout(3000)
 
+       }    
+      async PhoneObserver()
+       {
+        await this.page.locator(this.bidderopportunity_webelements.HamBerger_PhoneObserver).click()
+        const frame1 = await this.page.frameLocator(this.bidderopportunity_webelements.Frame_PhoneObserver)
+        await frame1.locator(this.bidderopportunity_webelements.SelectEvent).selectOption({ label: this.testdata.Event_name })
+        await this.page.waitForTimeout(5000)
+        //await frame1.locator(this.bidderopportunity_webelements.Select_PhoneObserver_Date).selectOption({ label: this.testdata.Monday })
+        await frame1.locator(this.bidderopportunity_webelements.Launch).click()
+        await this.page.waitForTimeout(30000)
+        await this.page.screenshot({ path: './ScreenShot/56 PhoneObserver.png', fullPage: true})
+        await this.page.locator(this.bidderopportunity_webelements.Close_PhoneObserver).click()
+        await this.page.waitForTimeout(2000)
+        await this.page.locator(this.bidderopportunity_webelements.HamBerger_LivePhoneObserver).click()
+         const frame2 = await this.page.frameLocator(this.bidderopportunity_webelements.Frame_LivePhoneObserver)
+        await frame2.locator(this.bidderopportunity_webelements.SelectEvent).selectOption({ label: this.testdata.Event_name })
+        await this.page.waitForTimeout(5000)
+        //await frame1.locator(this.bidderopportunity_webelements.Select_PhoneObserver_Date).selectOption({ label: this.testdata.Monday })
+        await frame2.locator(this.bidderopportunity_webelements.Launch).click()
+        await this.page.waitForTimeout(30000)
+        await this.page.screenshot({ path: './ScreenShot/56 PhoneObserver.png', fullPage: true})
+        await this.page.locator(this.bidderopportunity_webelements.Close_PhoneObserver).click()
+        await this.page.waitForTimeout(2000)
+
        }
+       async BillOfSale()
+       {
+        await this.page.locator(this.bidderopportunity_webelements.BillOfSale).click()
+        await this.page.waitForTimeout(3000);
+        await this.page.locator(this.bidderopportunity_webelements.OpenFirstBillOfSale).dblclick()
+        await this.page.waitForTimeout(5000)
+        const frame1 = await this.page.frameLocator(this.bidderopportunity_webelements.Iframe_BillOfSale)
+        //await frame1.locator(this.bidderopportunity_webelements.Property_Button).click()
+                        const [newPage] = await Promise.all([
+                        this.page.context().waitForEvent('page'),
+                        frame1.locator(this.bidderopportunity_webelements.Property_Button).click()
+                    ]);
+        await newPage.waitForLoadState('load');
+        await this.page.waitForTimeout(10000);
+        await newPage.close();
+        await this.page.bringToFront();
+                        const [newPage1] = await Promise.all([
+                        this.page.context().waitForEvent('page'),
+                        frame1.locator(this.bidderopportunity_webelements.KeyControl_Button).click()
+                    ]);
+        //await frame1.locator(this.bidderopportunity_webelements.KeyControl_Button).click()
+        await newPage1.waitForLoadState('load');
+        await this.page.waitForTimeout(10000);
+        await newPage1.close();
+        await this.page.bringToFront();
+        await frame1.locator(this.bidderopportunity_webelements.Print_Button).click()
+        await this.page.waitForTimeout(4000);
+        await this.page.goBack()
+        await this.page.waitForTimeout(2000);
+        await this.page.goBack()
+        await this.page.waitForTimeout(2000)
+        await this.page.goBack()
+        await this.page.waitForTimeout(2000)
+        await this.page.goBack()
+        await this.page.waitForTimeout(2000)
+       }
+
     async RegisterDocuments()
     {
         await this.page.locator(this.newconsignmentvehicle_webelement.Documentation_Tab).click()
@@ -326,16 +360,18 @@ class BidderOpportunityPage
         const framewristband = await this.page.frameLocator(this.bidderopportunity_webelements.iframe_Wristband_Invoice);
         if(!framewristband) throw new Error('Nested iframe not found')
         const openOrder = framewristband.locator(this.bidderopportunity_webelements.Open_OrderAction);
-        if (await openOrder.isEnabled()) 
-          {
-              await openOrder.click();
-              await this.page.waitForTimeout(4000)
-              await openOrder.click();
-          }
-          else 
-          {
-              console.log("Button is disabled");
-          }
+            try {
+            await openOrder.waitFor({ state: 'visible', timeout: 10000 });
+
+            if (await openOrder.isEnabled()) {
+                await openOrder.click();
+            } else {
+                console.log("Button is disabled");
+            }
+
+        } catch (error) {
+            console.log("Button did not appear within 5 seconds");
+        }
         // await framewristband.locator(this.bidderopportunity_webelements.Open_OrderAction).click()
         // await this.page.waitForTimeout(4000)
         // await framewristband.locator(this.bidderopportunity_webelements.Open_OrderAction).click()
@@ -351,18 +387,6 @@ class BidderOpportunityPage
         await this.page.waitForTimeout(7000)
         await frame1.locator(this.bidderopportunity_webelements.SecondProduct).click()
         await this.page.waitForTimeout(5000)
-        // await this.page.locator(this.bidderopportunity_webelements.Add_Product_button).click()
-        // await this.page.locator(this.bidderopportunity_webelements.Existing_Product).click()
-        // await this.page.waitForTimeout(2000)
-        // await this.page.locator(this.bidderopportunity_webelements.Existing_Product).fill(this.testdata.Existing_Product)
-        // await this.page.waitForTimeout(2000)
-        // await this.page.locator(this.bidderopportunity_webelements.Selecting_product).click()
-        // await this.page.locator(this.bidderopportunity_webelements.Quantity).click()
-        // await this.page.locator(this.bidderopportunity_webelements.Quantity).fill(this.testdata.Quantity)
-        // await this.page.waitForTimeout(2000)
-        // await this.page.locator(this.bidderopportunity_webelements.Save_btn).click()
-        // await this.page.locator(this.bidderopportunity_webelements.Save_Close).click()
-        // await this.page.locator(this.bidderopportunity_webelements.Invoice_Tab).click()
         await this.page.locator(this.bidderopportunity_webelements.Generate_Invoive).click()
         await this.page.waitForTimeout(4000)
         await this.page.locator(this.bidderopportunity_webelements.Payment_AdjustmentTab).click()
@@ -372,19 +396,6 @@ class BidderOpportunityPage
         await this.page.locator(this.bidderopportunity_webelements.Opportunity_SalesFees_Tab).click()
         await frame1.locator(this.bidderopportunity_webelements.FirstProduct).click()
         await this.page.waitForTimeout(7000)
-
-        // await this.page.locator(this.bidderopportunity_webelements.Add_Product_button).click()
-        // await this.page.locator(this.bidderopportunity_webelements.Existing_Product).click()
-        // await this.page.waitForTimeout(2000)
-        // await this.page.locator(this.bidderopportunity_webelements.Existing_Product).fill(this.testdata.Existing_Product)
-        // await this.page.waitForTimeout(2000)
-        // await this.page.locator(this.bidderopportunity_webelements.Selecting_product).click()
-        // await this.page.locator(this.bidderopportunity_webelements.Quantity).click()
-        // await this.page.locator(this.bidderopportunity_webelements.Quantity).fill(this.testdata.Quantity)
-        // await this.page.waitForTimeout(2000)
-        // await this.page.locator(this.bidderopportunity_webelements.Save_btn).click()
-        // await this.page.locator(this.bidderopportunity_webelements.Save_Close).click()
-        //await this.page.locator(this.bidderopportunity_webelements.Invoice_Tab).click()
         await this.page.locator(this.bidderopportunity_webelements.Generate_Invoive).click()
         await this.page.waitForTimeout(4000)
         await this.page.locator(this.bidderopportunity_webelements.Payment_AdjustmentTab).click()
@@ -423,30 +434,22 @@ class BidderOpportunityPage
         await this.page.locator(this.bidderopportunity_webelements.Wristband_Tab).click()
         await this.page.waitForTimeout(2000)
         const framewristband = await this.page.frameLocator(this.bidderopportunity_webelements.iframe_Wristband_Invoice);
-        if(!framewristband) throw new Error('Nested iframe not found')
-        await framewristband.locator(this.bidderopportunity_webelements.Open_OrderAction).click()
-        await this.page.waitForTimeout(4000)
+         if(!framewristband) throw new Error('Nested iframe not found')
+        const openOrder = framewristband.locator(this.bidderopportunity_webelements.Open_OrderAction);
+            try {
+            await openOrder.waitFor({ state: 'visible', timeout: 10000 });
+
+            if (await openOrder.isEnabled()) {
+                await openOrder.click();
+            } else {
+                console.log("Button is disabled");
+            }
+
+        } catch (error) {
+            console.log("Button did not appear within 5 seconds");
+        }
         await this.page.locator(this.bidderopportunity_webelements.GoBack_btn).click()
         await this.page.waitForTimeout(3000)
-
-        //await this.page.locator(this.bidderopportunity_webelements.Opportunity_Product_Tab).click()
-        // await frame.locator(this.bidderopportunity_webelements.SelectPaymentMethod).selectOption(this.testdata.SelectInvoiceCash)
-        // await this.page.waitForTimeout(4000);
-        // await frame.locator(this.bidderopportunity_webelements.PaymentNumber).fill(this.testdata.PaymentNumberValue)
-        // await this.page.screenshot({ path: './ScreenShot/WithoutCardInvoive.png', fullPage: true})
-        // await frame.locator(this.bidderopportunity_webelements.CardlessSubmitbutton).click()
-        // await this.page.locator(this.bidderopportunity_webelements.PaymentOk).click({timeout:60000})
-        // await this.page.locator(this.bidderopportunity_webelements.Invoice_Tab).click()
-        // await this.page.waitForTimeout(4000)
-
-        // await this.page.locator(this.bidderopportunity_webelements.EnterPaymentButton).click()  
-        // await frame.locator(this.bidderopportunity_webelements.SelectPaymentMethod).selectOption(this.testdata.SelectInvoiceCheck)
-        // await this.page.waitForTimeout(4000);
-        // await frame.locator(this.bidderopportunity_webelements.PaymentNumber).fill(this.testdata.PaymentNumberValue)
-        // await this.page.screenshot({ path: './ScreenShot/WithoutCardInvoive.png', fullPage: true})
-        // await frame.locator(this.bidderopportunity_webelements.CardlessSubmitbutton).click()
-        // await this.page.locator(this.bidderopportunity_webelements.PaymentOk).click({timeout:60000})
-        // await this.page.waitForTimeout(6000);
     }
     async SendTerminal()
     {
