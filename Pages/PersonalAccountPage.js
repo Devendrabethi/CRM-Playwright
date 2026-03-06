@@ -54,7 +54,18 @@ class PersonalAccountPage
                 await this.page.waitForTimeout(1000); 
                 //return GlobalUserData; // Return the object containing names
     }
-
+    async Customer_Type()
+    {
+        await this.page.locator(this.PersonalAccount_WebElements.CustomerType_Dropdown).click()
+        await this.page.locator(this.PersonalAccount_WebElements.CustomerType_Dropdown).fill(this.testdata.Vip_Field)
+        await this.page.waitForTimeout(1000); 
+        await this.page.locator(this.PersonalAccount_WebElements.Select_BidderCustomerType).click()
+        await this.page.waitForTimeout(1000); 
+        await this.page.locator(this.PersonalAccount_WebElements.Select_CustomerCustomerType).click()
+        await this.page.waitForTimeout(1000); 
+        await this.page.locator(this.PersonalAccount_WebElements.CustomerType_Text).click()
+        await this.page.waitForTimeout(1000); 
+    }
     async save()
     {
         await this.page.locator(this.PersonalAccount_WebElements.Savebtn).click({ timeout: 30000 });
@@ -81,7 +92,7 @@ class PersonalAccountPage
         //await this.page.screenshot({ path: './ScreenShot/EventAuctComp.png', fullPage: true})
         await this.page.locator(this.PersonalAccount_WebElements.SaveandClose_AccountEvent).click()
 
-         await this.page.locator(this.PersonalAccount_WebElements.Event_Auct_Comp).click()
+        await this.page.locator(this.PersonalAccount_WebElements.Event_Auct_Comp).click()
         await this.page.locator(this.PersonalAccount_WebElements.New_Account_Event).click()
         await this.page.locator(this.PersonalAccount_WebElements.Event_Field).click()
         await this.page.locator(this.PersonalAccount_WebElements.Event_Field).fill(this.testdata.Event_namePB2025)
@@ -92,6 +103,19 @@ class PersonalAccountPage
         await this.page.waitForTimeout(2000)
         await this.page.screenshot({ path: './ScreenShot/1 EventAuctComp.png', fullPage: true})
 
+    }
+    async NewVIPAdvanceRegistration()
+    {
+        await this.page.locator(this.PersonalAccount_WebElements.NewConsignment_Button).click({ timeout: 60000 })   
+        await this.page.waitForTimeout(2000)
+        await this.page.locator(this.PersonalAccount_WebElements.NewVipAdvanceRegistration).click({ timeout: 60000 })
+        await this.page.waitForTimeout(4000)
+        const frame = await this.page.frameLocator(this.PersonalAccount_WebElements.Iframe_VipAdvanceRegistration)
+        if(!frame) throw new Error('Iframe not found')
+        await frame.locator(this.PersonalAccount_WebElements.Submit_Button).click()
+        await this.page.waitForTimeout(2000)
+         await this.page.locator(this.PersonalAccount_WebElements.Ok_Button).click({ timeout: 60000 })
+         await this.page.waitForTimeout(10000)
     }
     async personalAccountDocuments()
     {

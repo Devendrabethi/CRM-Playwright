@@ -14,14 +14,25 @@ class PersonalAccount_WebElements
         this.Savebtn =              "//button[@aria-label='Save (CTRL+S)']"
         this.Veridy_address_text =  "//h3[text()='Addresses']"
         this.Verify_Customet_text = "//h2[text()='Customer']"
-
+//Customer Type
+        this.CustomerType_Dropdown = "//input[contains(@aria-label,'Customer Type')]"
+        this.Select_BidderCustomerType = "(//ul[contains(@aria-labelledby,'bjac_account_customer_types')]/li/label[@title='VIP BIDDER'])"
+        this.Select_CustomerCustomerType = "(//ul[contains(@aria-labelledby,'bjac_account_customer_types')]/li/label[@title='VIP CUSTOMER'])"
+        this.CustomerType_Text = "//span[@title='Customer Type']"
+        this.CustomerType_DropdownAgain = "//button[@aria-label='Toggle menu']"
+//Event Comp Type
         this.Event_Auct_Comp = "//button[contains(@aria-label,'Account Event')]"
         this.New_Account_Event = "//button[contains(@aria-label,'New Account Event')]"
         this.Event_Field = "//input[@aria-label='Event, Lookup']"
         this.Select_Event = "//ul[@aria-label='Lookup results']/li[1]"
         this.Select_Next_Auct_Comp_Type = "(//select[contains(@aria-label,'Comp Type')])[2]"
         this.SaveandClose_AccountEvent = "//button[@aria-label='Save and Close']"
-        
+//New VIP Advance Registration 
+        this.NewConsignment_Button = "//button[@aria-label='New Opportunity']"
+        this.NewVipAdvanceRegistration = "//button[@aria-label='VIP Advance Registration']"
+        this.Iframe_VipAdvanceRegistration = "//iframe[@aria-label='VIP_Advance_Popup']"
+        this.Submit_Button = "//button[text()='Submit']"
+
         this.Documents_Tab = "//ul[@aria-label='Account Form']/li[contains(@title,'Documents')]"
         this.Personal_Document_Text = "//h2[@title='Personal Documents']"
         this.Add_Document_btn = "//button[@aria-label='Add Document']"

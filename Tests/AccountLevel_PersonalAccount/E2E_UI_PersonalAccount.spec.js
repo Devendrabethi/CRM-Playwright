@@ -44,8 +44,8 @@ test.describe('Personal Account Workflow', () => {
     test('04. Fill personal account information', async () => {
         await personalaccountpage.accounttype_dropdown();
         await personalaccountpage.names();
+        await personalaccountpage.Customer_Type();
         await personalaccountpage.save();
-        await personalaccountpage.Event_Auct_Comp();
     });
 
     test('05. Enter address details', async () => {
@@ -64,6 +64,10 @@ test.describe('Personal Account Workflow', () => {
         await emailpage.enter_emailid();
         await emailpage.CredentialTab();
         await emailpage.Wristband();
+    });
+
+     test('08. New VIP Advance Registration', async () => {
+        await personalaccountpage.NewVIPAdvanceRegistration();
     });
 
     test.afterAll(async () => {

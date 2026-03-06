@@ -67,6 +67,7 @@ class NewAutomobiliaConsignmentPage
         await this.page.locator(this.newconsignmentvehicle_webelement.Refresh_consignment).click({ timeout: 60000 }) 
         await this.page.locator(this.newconsignmentvehicle_webelement.Marketing_Tab).click()
         await this.page.waitForTimeout(6000)
+        await this.page.locator(this.newconsignmentvehicle_webelement.Refresh_consignment).click({ timeout: 60000 }) 
     }
     async Consignment_Representative()
     {
@@ -89,6 +90,16 @@ class NewAutomobiliaConsignmentPage
         await this.page.locator(this.newconsignmentvehicle_webelement.Assign_To_Specialist_dropdown).click()
         await this.page.waitForTimeout(2000)
         await this.page.locator(this.newconsignmentvehicle_webelement.Refresh_consignment).click({ timeout: 60000 }) 
+    }
+
+    async ApplicationStatus()
+    {
+        await this.page.selectOption(this.newconsignmentvehicle_webelement.Condition,this.testdata.Condition);
+        await this.page.locator(this.newconsignmentvehicle_webelement.Size).fill(this.testdata.Size)
+        await this.page.locator(this.newconsignmentvehicle_webelement.ApproximateWeight).fill(this.testdata.Weight)
+        await this.page.waitForTimeout(2000)
+        await this.page.locator(this.newautomobiliaconsignment_webelements.save_consignment).click()
+
     }
     async ConsOpportunityDoc()
     {
@@ -446,10 +457,16 @@ class NewAutomobiliaConsignmentPage
         await this.page.locator(this.newautomobiliaconsignment_webelements.BatchItem_Short_description).fill(this.testdata.ShortDescriptionText)
         await this.page.locator(this.newautomobiliaconsignment_webelements.BatchItem_Long_Description).fill(this.testdata.LongDescriptionText)
         await this.page.screenshot({ path: './ScreenShot/112 ShortLongDesc.png', fullPage: true})
+
+        await this.page.selectOption(this.newconsignmentvehicle_webelement.Condition,this.testdata.Condition);
+        await this.page.locator(this.newconsignmentvehicle_webelement.Size).fill(this.testdata.Size)
+        await this.page.locator(this.newconsignmentvehicle_webelement.ApproximateWeight).fill(this.testdata.Weight)
+        await this.page.waitForTimeout(2000)
         await this.page.locator(this.newautomobiliaconsignment_webelements.save_consignment).click()
         await this.page.waitForTimeout(2000)
         await this.page.locator(this.newautomobiliaconsignment_webelements.saveandclose_ItemAutomobilia).click()
         await this.page.waitForTimeout(2000)
+        
         await this.page.locator(this.newautomobiliaconsignment_webelements.Submit_BatchAutomobilia).click()
         await this.page.locator(this.newconsignmentvehicle_webelement.Okbutton).click({timeout:60000})
         await this.page.waitForTimeout(2000)

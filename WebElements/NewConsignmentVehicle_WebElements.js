@@ -64,6 +64,10 @@ class NewConsignmentVehicle_WebElement
         this.Assign_To_Specialist_dropdown = "//div[@aria-label='Assign To Lookup results']/ul/li[1] "
         this.save_consignment = " //span[text()='Save']"
         this.Refresh_consignment = "(//button[@aria-label='Refresh'])[1]" 
+//Application Status
+        this.Condition = "//select[@aria-label='Condition']"
+        this.Size = "//input[contains(@aria-label,'Size (H * W * D - inches)')]"
+        this.ApproximateWeight = "//input[@aria-label='Approximate Weight (lb)']"
 
         this.Verify_RegistrationDocuments_Text = "//h2[@title='Registration Documents']"
         this.Documentation_Tab = "//ul[@aria-label='Opportunity Form']/li[contains(@aria-label,'Documentation')]"

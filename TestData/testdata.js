@@ -66,18 +66,24 @@ class TestData
         this.Preliminary = "Preliminary"
         this.Print_Rejected = "Print Rejected"
 
+        this.Vip_Field = "VIP"
+        this.Vip_Customer_Field = "VIP CUSTOMER"
+
         this. Account_Address = "5055 E Somerset Dr - Arizona";
         this.personal_TitleTo = "Devendra Individual";
         this.Event_name = "Palm Beach 2026"//"Scottsdale 2026";  Palm Beach 2026
         this.Event_nameSD2025 = "Scottsdale 2025"
         this.Event_namePB2025 = "Palm Beach 2025";
-        this.Event_WristBand = "Scottsdale 2026"
+        this.Event_WristBand = "Palm Beach 2026"//"Scottsdale 2026"
         this.Odometer_Type = "Miles";
         this.Odometeer_mileage = "45000";
         this.Sale_Type = "No Reserve";
         this.Owner_Est_Value = "80000";
         this.Bjack_value = "2000";
         this.Consignment_representative = "Gopal"
+        this.Condition = "Original"
+        this.Size = "10*25*50"
+        this.Weight = "23.5"
 
         this.Marketing_Description = "Automobilia Devendra QA Testing"
         this.ShortDescriptionText = "Describe your vehicle to bidders.\nDescribe your vehicle to bidders.\nDescribe your vehicle to bidders.\nDescribe your vehicle to bidders.\nDescribe your vehicle to bidders."

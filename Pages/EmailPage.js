@@ -75,12 +75,12 @@ class EmailPage
     {
         const frame = await this.page.frameLocator(this.email_webelement.iframe_wristband)
         if(!frame) throw new Error('Iframe not found')
-            const credentials = ['Bidder Badge (1)', 'Child Pass (1)', 'Drink Ticket (1)', 'Gala Event Ticket (1)', 'Guest Pass (1)'];
+            const credentials = ['BIDDER BADGE DRINKS','BIDDER BADGE NO DRINKS','Bidder Badge (1)', 'Child Pass (1)', 'Drink Ticket (1)', 'Gala Event Ticket (1)', 'Guest Pass (1)'];
             for (const value of credentials) 
             {
             await frame.locator(this.email_webelement.Add_Button).click({ timeout: 60000 });
             await this.page.waitForTimeout(2000)
-            await frame.locator(this.email_webelement.SelectEvent).selectOption(this.testdata.Event_WristBand);
+            //await frame.locator(this.email_webelement.SelectEvent).selectOption(this.testdata.Event_WristBand);
             await frame.locator(this.email_webelement.SelectCredential).selectOption({ label: value });
             await frame.locator(this.email_webelement.Save_Addbutton).click();
             await this.page.locator(this.email_webelement.Okbtn).click();
@@ -91,8 +91,8 @@ class EmailPage
             await this.page.waitForTimeout(2000)
             await frame.locator(this.email_webelement.Add_Button).click({ timeout: 60000 })
             await this.page.waitForTimeout(2000)
-            await frame.locator(this.email_webelement.SelectEvent).selectOption(this.testdata.Event_WristBand)
-            await this.page.waitForTimeout(2000)
+            // await frame.locator(this.email_webelement.SelectEvent).selectOption(this.testdata.Event_WristBand)
+            // await this.page.waitForTimeout(2000)
             await frame.locator(this.email_webelement.SelectCredential).selectOption({ label: 'Bidder Badge (1)' })
             await this.page.waitForTimeout(2000)
             await frame.locator(this.email_webelement.Save_Addbutton).click()
