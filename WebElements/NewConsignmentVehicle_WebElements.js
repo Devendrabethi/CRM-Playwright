@@ -67,7 +67,8 @@ class NewConsignmentVehicle_WebElement
 //Application Status
         this.Condition = "//select[@aria-label='Condition']"
         this.Size = "//input[contains(@aria-label,'Size (H * W * D - inches)')]"
-        this.ApproximateWeight = "//input[@aria-label='Approximate Weight (lb)']"
+        this.ApproximateWeight = "//input[@aria-label='Approximate weight (lb)']"
+        this.Condition_Text = "//label[text()='Condition']"
 
         this.Verify_RegistrationDocuments_Text = "//h2[@title='Registration Documents']"
         this.Documentation_Tab = "//ul[@aria-label='Opportunity Form']/li[contains(@aria-label,'Documentation')]"

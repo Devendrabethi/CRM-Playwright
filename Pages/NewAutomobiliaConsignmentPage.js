@@ -95,9 +95,13 @@ class NewAutomobiliaConsignmentPage
     async ApplicationStatus()
     {
         await this.page.selectOption(this.newconsignmentvehicle_webelement.Condition,this.testdata.Condition);
+        await this.page.waitForTimeout(1000)
         await this.page.locator(this.newconsignmentvehicle_webelement.Size).fill(this.testdata.Size)
+        await this.page.waitForTimeout(1000)
         await this.page.locator(this.newconsignmentvehicle_webelement.ApproximateWeight).fill(this.testdata.Weight)
         await this.page.waitForTimeout(2000)
+        await this.page.locator(this.newconsignmentvehicle_webelement.Condition_Text).click()
+        await this.page.waitForTimeout(1000)
         await this.page.locator(this.newautomobiliaconsignment_webelements.save_consignment).click()
 
     }
@@ -459,9 +463,13 @@ class NewAutomobiliaConsignmentPage
         await this.page.screenshot({ path: './ScreenShot/112 ShortLongDesc.png', fullPage: true})
 
         await this.page.selectOption(this.newconsignmentvehicle_webelement.Condition,this.testdata.Condition);
+        await this.page.waitForTimeout(1000)
         await this.page.locator(this.newconsignmentvehicle_webelement.Size).fill(this.testdata.Size)
+        await this.page.waitForTimeout(1000)
         await this.page.locator(this.newconsignmentvehicle_webelement.ApproximateWeight).fill(this.testdata.Weight)
         await this.page.waitForTimeout(2000)
+        await this.page.locator(this.newconsignmentvehicle_webelement.Condition_Text).click()
+        await this.page.waitForTimeout(1000)
         await this.page.locator(this.newautomobiliaconsignment_webelements.save_consignment).click()
         await this.page.waitForTimeout(2000)
         await this.page.locator(this.newautomobiliaconsignment_webelements.saveandclose_ItemAutomobilia).click()
@@ -474,7 +482,7 @@ class NewAutomobiliaConsignmentPage
         await this.page.locator(this.newconsignmentvehicle_webelement.Consignments_Button).click()
         await this.page.waitForTimeout(4000)
         await this.page.locator(this.newconsignmentvehicle_webelement.First_Consignment).dblclick()
-
+        await this.page.waitForTimeout(8000)
     }
 
 }
