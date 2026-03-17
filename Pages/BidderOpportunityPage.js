@@ -257,34 +257,39 @@ class BidderOpportunityPage
     {
         await this.page.locator(this.newconsignmentvehicle_webelement.Documentation_Tab).click()
         await expect(this.page.locator(this.newconsignmentvehicle_webelement.Verify_RegistrationDocuments_Text)).toBeVisible({timeout:30000})
-        const fileToUpload = 
-        {
-            "Bidder Agreement" :      "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\Bidder Agreement.jpg",
-            "Square Payment Receipt" :    "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\Square Payment Receipt.jpg",
-            "Authorization to Bid" :   "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\Authorization to Bid.jpg",
-            "Funds Letter" :          "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\Funds Letter.png",
-            "Additional Funds Letter" :           "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\Additional Funds Letter.png",
-            "Bidding Collateral" :      "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\Bidding Collateral.jpg",
-            "OFAC" :    "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\OFAC.jpg"
-        }
-        for (const [documentType, documentPath] of Object.entries(fileToUpload))
-             {
-                   // await this.page.waitForTimeout(2000)
-                    await this.page.locator(this.bidderopportunity_webelements.AddDocument_Register).click()
-                    const frame = await this.page.frameLocator(this.bidderopportunity_webelements.frame)
-                    if(!frame) throw new Error('Iframe not found')
-                    await frame.locator(this.bidderopportunity_webelements.Select_DocumentType_dropdown).selectOption(documentType)
-                    await frame.locator(this.newconsignmentvehicle_webelement.Expiration_Date_field).click()
-                    await frame.locator(this.newconsignmentvehicle_webelement.Next_Month).click()
-                    await frame.locator(this.newconsignmentvehicle_webelement.Select_NextMonthDate).click()
-                    await frame.locator(this.newconsignmentvehicle_webelement.Upload_Document).setInputFiles(documentPath)
-                    await this.page.once('dialog', async(dialog) =>
-                        { //enabling alert handling
-                        await dialog.accept()
-                        })
-                    await frame.locator(this.newconsignmentvehicle_webelement.Upload_btn).click()
-                    await this.page.locator(this.bidderopportunity_webelements.Bidder_Registerdoc_Refresh).click()
-             }
+
+        const fileToUpload1 = 
+                    {
+                                    "Bidder Agreement" :      "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\1Engine.jpeg",
+                                    "Square Payment Receipt" :    "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\Square Payment Receipt.jpg",
+                                    "Authorization to Bid" :   "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\engine.heic",
+                                    "Funds Letter" :          "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\Funds Letter.png",
+                                    "Additional Funds Letter" :           "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\Insurance.pdf",
+                                    "Bidding Collateral" :      "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\vin.heif",
+                                    "OFAC" :    "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\OFAC.jpg"
+                    }
+                    for (const [documentType, documentPath] of Object.entries(fileToUpload1))
+                        {
+                              // await this.page.waitForTimeout(2000)
+                               await this.page.locator(this.bidderopportunity_webelements.AddDocument_Register).click()
+                               const frame = await this.page.frameLocator(this.bidderopportunity_webelements.frame)
+                               if(!frame) throw new Error('Iframe not found')
+                                await frame.locator(this.bidderopportunity_webelements.Select_DocumentType_dropdown).selectOption(documentType)
+                                                await frame.locator(this.newconsignmentvehicle_webelement.Expiration_Date_field).click()
+                                                await frame.locator(this.newconsignmentvehicle_webelement.Next_Month).click()
+                                                await frame.locator(this.newconsignmentvehicle_webelement.Select_NextMonthDate).click()
+                                await frame.locator(this.PersonalAccount_WebElements.ExistCropPhoto).click()
+                                await this.page.waitForTimeout(2000)
+                                await frame.locator(this.bidderopportunity_webelements.Upload_BidderRegisterDocument).setInputFiles(documentPath)
+                                //await frame.locator(this.PersonalAccount_WebElements.CropImage).click()
+                                await this.page.screenshot({ path: './ScreenShot/5 CustomerPhoto.png', fullPage: true})
+                                await frame.locator(this.PersonalAccount_WebElements.Upload_btn).click()
+                                await this.page.once('dialog', async(dialog) =>
+                                { //enabling alert handling
+                                await dialog.accept()
+                                })
+                                await this.page.locator(this.bidderopportunity_webelements.Bidder_Registerdoc_Refresh).click()
+                        }
              await this.page.screenshot({ path: './ScreenShot/58 RegisterDocuments.png', fullPage: true})
     }
 
@@ -355,26 +360,6 @@ class BidderOpportunityPage
         await this.page.screenshot({ path: './ScreenShot/61 PaymentTableWithPaymentCreated.png', fullPage: true})
         await this.page.locator(this.bidderopportunity_webelements.GoBack_btn).click()
         await this.page.waitForTimeout(2000)
-        await this.page.locator(this.bidderopportunity_webelements.Wristband_Tab).click()
-        await this.page.waitForTimeout(2000)
-        const framewristband = await this.page.frameLocator(this.bidderopportunity_webelements.iframe_Wristband_Invoice);
-        if(!framewristband) throw new Error('Nested iframe not found')
-        const openOrder = framewristband.locator(this.bidderopportunity_webelements.Open_OrderAction);
-            try {
-            await openOrder.waitFor({ state: 'visible', timeout: 10000 });
-
-            if (await openOrder.isEnabled()) {
-                await openOrder.click();
-            } else {
-                console.log("Button is disabled");
-            }
-
-        } catch (error) {
-            console.log("Button did not appear within 5 seconds");
-        }
-        // await framewristband.locator(this.bidderopportunity_webelements.Open_OrderAction).click()
-        // await this.page.waitForTimeout(4000)
-        // await framewristband.locator(this.bidderopportunity_webelements.Open_OrderAction).click()
         await this.page.locator(this.bidderopportunity_webelements.GoBack_btn).click()
         await this.page.waitForTimeout(2000)
     }
@@ -431,10 +416,15 @@ class BidderOpportunityPage
         await this.page.screenshot({ path: './ScreenShot/63 PaymentTableWithPaymentCreated.png', fullPage: true})
         await this.page.locator(this.bidderopportunity_webelements.GoBack_btn).click()
         await this.page.waitForTimeout(2000)
-        await this.page.locator(this.bidderopportunity_webelements.Wristband_Tab).click()
+        await this.page.locator(this.bidderopportunity_webelements.GoBack_btn).click()
+        await this.page.waitForTimeout(3000)
+    }
+    async Wristband()
+    {
+         await this.page.locator(this.bidderopportunity_webelements.Wristband_Tab).click()
         await this.page.waitForTimeout(2000)
         const framewristband = await this.page.frameLocator(this.bidderopportunity_webelements.iframe_Wristband_Invoice);
-         if(!framewristband) throw new Error('Nested iframe not found')
+        if(!framewristband) throw new Error('Nested iframe not found')
         const openOrder = framewristband.locator(this.bidderopportunity_webelements.Open_OrderAction);
             try {
             await openOrder.waitFor({ state: 'visible', timeout: 10000 });
@@ -448,12 +438,9 @@ class BidderOpportunityPage
         } catch (error) {
             console.log("Button did not appear within 5 seconds");
         }
-        await this.page.locator(this.bidderopportunity_webelements.GoBack_btn).click()
-        await this.page.waitForTimeout(3000)
-    }
-    async SendTerminal()
-    {
-
+        // await framewristband.locator(this.bidderopportunity_webelements.Open_OrderAction).click()
+        // await this.page.waitForTimeout(4000)
+        // await framewristband.locator(this.bidderopportunity_webelements.Open_OrderAction).click()
     }
     async TaskTab()
     {

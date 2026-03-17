@@ -79,6 +79,7 @@ class BidderOpportunity_WebElements
         this.AddDocument_Register = "(//button[@aria-label='Add Document'])[1]"
         this.frame = "//iframe[@aria-label='bidder_documents']"  
         this.Select_DocumentType_dropdown = "//select[@id='documentType']"
+        this.Upload_BidderRegisterDocument = "//input[@id='cropFileInput']"
         this.Bidder_Registerdoc_Refresh = "//ul[@aria-label='Opportunity Document Commands']/li[2]/button[@aria-label='Refresh']"
         
         this.TaskTab = "//ul[@aria-label='Opportunity Form']/li[contains(@aria-label,'Tasks')]"
@@ -106,8 +107,8 @@ class BidderOpportunity_WebElements
         this.select_Payment_Method = "//select[@aria-label='Payment Method']"
         this.PaymentTab_ThirdInvoice = "(//input[@aria-label='Select or deselect the row'])[3]/parent::div"
 //wristband
-        this.Wristband_Tab = "//ul[@aria-label='Invoice Form']/li[contains(@aria-label,'Wrstband')]"
-        this.iframe_Wristband_Invoice = "//iframe[@title='Invoice WRSTBAND Credential']"
+        this.Wristband_Tab = "//ul[@aria-label='Opportunity Form']/li[contains(@aria-label,'Wrstband')]"
+        this.iframe_Wristband_Invoice = "//iframe[@title='Bidder WRSTBAND Credential ']"
         this.Open_OrderAction = "//tbody[@id='ordersBody']/tr/td/button/i"
         
 

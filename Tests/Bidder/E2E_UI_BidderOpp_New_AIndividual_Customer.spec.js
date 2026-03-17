@@ -62,9 +62,11 @@ test.describe('Personal Bidder Opportunity Workflow', () => {
         await phonenumberpage.General_PhoneNumber();
     });
 
-    test('05. Add Personal Email and Credentials', async () => {
+    test('05. Add Personal Email', async () => {
         await emailpage.NewEmailbtn();
         await emailpage.enter_emailid();
+    });
+    test('5.1. Credentials and Wristband', async () => {
         await emailpage.CredentialTab();
         await emailpage.Wristband();
     });
@@ -96,7 +98,7 @@ test.describe('Personal Bidder Opportunity Workflow', () => {
 
     test('11. Phone Observer and Registration Documents', async () => {
         await bidderopportunitypage.PhoneObserver();
-        await bidderopportunitypage.BillOfSale();
+        //await bidderopportunitypage.BillOfSale();
         await bidderopportunitypage.RegisterDocuments();
     });
 
@@ -104,6 +106,7 @@ test.describe('Personal Bidder Opportunity Workflow', () => {
         await bidderopportunitypage.Opportunity_product_tab();
         await bidderopportunitypage.Invoice_Tab();
         await bidderopportunitypage.AnotherProduct();
+        await bidderopportunitypage.Wristband();
         await bidderopportunitypage.TaskTab();
     });
 
