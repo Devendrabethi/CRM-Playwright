@@ -51,6 +51,7 @@ class NewConsignmentVehicle_WebElement
         this.Web_Hidden_Toggle ="//button[contains(@aria-label,'Web Hidden')]"
         this.Print_Media_Toggle ="//button[contains(@aria-label,'Print Media')]"
         this.E_Blast_Include_Toggle ="//button[contains(@aria-label,'E Blast Include')]"
+        this.PressRelease_Toggle = "//button[contains(@aria-label,'Press Release')]"
         this.Event_text = "//span[@title='Event']"
         this.Event_name = " //input[@aria-label='Event, Lookup']"
         this.Event_Name_dropdown = "//div[@aria-label='Event Lookup results']/ul/li "
@@ -65,9 +66,10 @@ class NewConsignmentVehicle_WebElement
         this.save_consignment = " //span[text()='Save']"
         this.Refresh_consignment = "(//button[@aria-label='Refresh'])[1]" 
 //Application Status
+        this.ApproximateWeight_Text = "//label[text()='Approximate Weight (lb)']"
         this.Condition = "//select[@aria-label='Condition']"
         this.Size = "//input[contains(@aria-label,'Size (H * W * D - inches)')]"
-        this.ApproximateWeight = "//input[@aria-label='Approximate weight (lb)']"
+        this.ApproximateWeight = "//input[@aria-label='Approximate Weight (lb)']"
         this.Condition_Text = "//label[text()='Condition']"
 
         this.Verify_RegistrationDocuments_Text = "//h2[@title='Registration Documents']"

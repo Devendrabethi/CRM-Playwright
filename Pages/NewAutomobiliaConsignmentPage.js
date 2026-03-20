@@ -94,13 +94,15 @@ class NewAutomobiliaConsignmentPage
 
     async ApplicationStatus()
     {
+        await this.page.locator(this.newconsignmentvehicle_webelement.ApproximateWeight_Text).click()
         await this.page.selectOption(this.newconsignmentvehicle_webelement.Condition,this.testdata.Condition);
         await this.page.waitForTimeout(1000)
         await this.page.locator(this.newconsignmentvehicle_webelement.Size).fill(this.testdata.Size)
         await this.page.waitForTimeout(1000)
+        await this.page.locator(this.newconsignmentvehicle_webelement.ApproximateWeight).click()
         await this.page.locator(this.newconsignmentvehicle_webelement.ApproximateWeight).fill(this.testdata.Weight)
         await this.page.waitForTimeout(2000)
-        await this.page.locator(this.newconsignmentvehicle_webelement.Condition_Text).click()
+        await this.page.locator(this.newconsignmentvehicle_webelement.ApproximateWeight_Text).click()
         await this.page.waitForTimeout(1000)
         await this.page.locator(this.newautomobiliaconsignment_webelements.save_consignment).click()
 

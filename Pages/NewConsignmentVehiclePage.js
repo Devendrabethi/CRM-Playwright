@@ -165,7 +165,8 @@ class NewConsignmentVehiclePage
             "Title Reassignment" :           "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\Title Reassignment.jpg",
             "VIN History" :      "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\VIN History.jpg",
             "DYNO Sheet" :    "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\Dyno.jpg",
-            "Vehicle Contract":  "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\CarFax.jpg"
+            "Vehicle Contract":  "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\CarFax.jpg",
+            "BILL of LADING" : "C:\\Users\\bdevendra\\source\\repos\\CRM Playwright\\Photos\\vin.heif"
         }
         for (const [documentType, documentPath] of Object.entries(fileToUpload))
              {
@@ -346,7 +347,7 @@ class NewConsignmentVehiclePage
         await this.page.locator(this.newconsignmentvehicle_webelement.Source_Save).click()
         await this.page.screenshot({ path: './ScreenShot/37 ComparisionTab.png', fullPage: true})
         await this.page.locator(this.newconsignmentvehicle_webelement.Source_SaveClose).click()
-
+        await this.page.waitForTimeout(2000)
     }
     async AutocheckTab()
     {
@@ -408,8 +409,11 @@ class NewConsignmentVehiclePage
         await this.page.waitForTimeout(1000)
         await this.page.locator(this.newconsignmentvehicle_webelement.E_Blast_Include_Toggle).click() 
         await this.page.waitForTimeout(1000)
+        await this.page.locator(this.newconsignmentvehicle_webelement.PressRelease_Toggle).click() 
+        await this.page.waitForTimeout(2000)
+        await this.page.locator(this.newconsignmentvehicle_webelement.Refresh_consignment).click()
         await this.page.locator(this.newconsignmentvehicle_webelement.Photo_Tab).click()
-        await this.page.waitForTimeout(3000)
+        await this.page.waitForTimeout(4000)
     }
 
     async ActivitiesTab()
