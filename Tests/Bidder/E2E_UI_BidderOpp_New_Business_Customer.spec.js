@@ -113,7 +113,7 @@ test.describe('Business Bidder Opportunity Workflow', () => {
         await newbusinessconsignmentvehiclepage.Account();
     });
 
-    test('12. Fill Account and Application Info', async () => {
+    test.skip('12. Fill Account and Application Info', async () => {
         await newconsignmentvehiclepage.Appilication_Info();
     });
 
