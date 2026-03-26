@@ -101,7 +101,7 @@ class BidderOpportunity_WebElements
         this.Payment_AdjustmentTab = "//ul[@aria-label='Invoice Form']/li[contains(@aria-label,'Payments')]"
         this.PaymentTable = "(//label[@aria-label='Visa'])[1]"
         this.DetailsTab = "//ul[@aria-label='Payment Form']/li[@aria-label='Details']"
-        this.First_Invoice = "(//label[@aria-label='Paid'])[1]"
+        this.First_Invoice = "(//label[@aria-label='Purchase'])[1]"
         this.Second_Invoice = "(//div[@aria-label='Press SPACE to select this row.'][2]/div[1])[2]"
         this.Third_Invoice = "(//label[@aria-label='Paid'])[3]"
         this.select_Payment_Method = "//select[@aria-label='Payment Method']"

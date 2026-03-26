@@ -86,7 +86,7 @@ class NewConsignmentVehicle_WebElement
 
         this.Photo_Tab="//ul[@aria-label='Opportunity Form']/li[contains(@aria-label,'Photos')]"
         this.Photo_frame = "//iframe[@title='Upload Vehicle Photos']"  //"//iframe[@id='WebResource_new_6']"   //hotfixqa  //iframe[@id='WebResource_uploadphotos']"
-        this.plus_Add_Photo_btn="//h3[@id='primaryphotos']/button"
+        this.plus_Add_Photo_btn="//h3[@id='primaryphotos']/button[2]"
         this.Upload_photo_input="//input[@name='file']"
         this.Upload_photo_btn="//button[@id='uploadButton']"
         this.Cross_mark="(//button[@aria-label='Close'])[1]"

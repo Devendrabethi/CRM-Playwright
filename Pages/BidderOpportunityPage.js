@@ -409,10 +409,10 @@ class BidderOpportunityPage
         await this.page.waitForTimeout(6000);
         await this.page.locator(this.bidderopportunity_webelements.Opportunity_SalesFees_Tab).click()
         await this.page.waitForTimeout(2000)
-        await this.page.locator(this.bidderopportunity_webelements.Third_Invoice).dblclick()  
+        await this.page.locator(this.bidderopportunity_webelements.First_Invoice).dblclick()  
         await this.page.locator(this.bidderopportunity_webelements.Payment_AdjustmentTab).click()
         await this.page.waitForTimeout(4000) 
-        await this.page.locator(this.bidderopportunity_webelements.PaymentTab_ThirdInvoice).dblclick()
+        await this.page.locator(this.bidderopportunity_webelements.PaymentTable).dblclick()
         await this.page.waitForTimeout(4000)
         await this.page.locator(this.bidderopportunity_webelements.DetailsTab).click()
         await this.page.waitForTimeout(2000)
