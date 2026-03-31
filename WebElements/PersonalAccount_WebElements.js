@@ -43,7 +43,7 @@ class PersonalAccount_WebElements
         this.Select_NextMonthDate = "//table[@class='table-condensed']/thead/following-sibling::tbody/tr[4]/td[5]"
         this.Upload_Document = "//input[@id='fileInput']"
         this.Upload_btn = "//button[@id='uploadButton']"
-        this.Persondoc_Refresh = "//ul[@aria-label='Account Documents Commands']/li[2]/button[@aria-label='Refresh']"
+        this.Persondoc_Refresh = "//ul[@aria-label='Account Documents Commands']/li[2]/div/button[@aria-label='Refresh']"
         this.Select_FirstDocumentUnarchived = "//div[@row-index='0']/div[@col-id='bjac_documenttype']"
         this.Archive_Button = "//button[@aria-label='Archive']"
         this.Ok_Button = "//button[@aria-label='OK']"

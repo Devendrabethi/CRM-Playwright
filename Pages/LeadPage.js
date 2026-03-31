@@ -106,6 +106,7 @@ class LeadPage
     }
     async Consignment_Registration()
     {
+        await this.page.selectOption(this.lead_webelement.Select_TimeFrame, { index: 2 }); 
         await this.page.locator(this.lead_webelement.Vehicle_Description).fill(this.testdata.CustomerName);
 
          function generateRandomString(length) {

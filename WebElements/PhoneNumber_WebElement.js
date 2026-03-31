@@ -3,8 +3,8 @@ class PhoneNumber_WebElement
 {
     constructor()
     {
-        this.threedotbtn = "//button[@title='More commands for Phone Number']"
-        this.New_PhoneNumber_btn = "//button[contains(@title,'New Phone Number')]"
+        this.threedotbtn = "//button[@aria-label='More commands for Phone Number']"
+        this.New_PhoneNumber_btn = "//button[contains(@aria-label,'New Phone Number')]"
         this.Country = "//input[@aria-label='Country, Lookup']"
         this.AreaCode_Text ="//label[text()='Area Code']"
         this.AreaCode = "//input[@aria-label='Area Code']"

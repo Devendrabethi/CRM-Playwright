@@ -27,7 +27,7 @@ class DealerAccount_WebElements
 
 
         this.Overview_tab = "//ul[@aria-label='Account Form']/li[contains(@aria-label,'Overview')]"
-        this.threedotbtn= "//button[@title='More commands for Account']"
+        this.threedotbtn= "//button[@aria-label='More commands for Account']"
         this.Add_Existing_Account= "//span[text()='Add Existing Account']"
         this.FirstAccount_Realting= "//div[@role='region']/ul/li[contains(@id,'resultsContainer_0_0')]"
         this.Add_btn= "//span[text()='Add']"

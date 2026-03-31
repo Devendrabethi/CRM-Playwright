@@ -17,6 +17,7 @@ class Lead_WebElement
         this.Ok_Button = "//button[@aria-label='OK']"
 
         this.Select_Type = "//select[@aria-label='Type']"
+        this.Select_TimeFrame = "//select[@aria-label='Time-frame to sell']"
         this.Vehicle_Description = "//input[@aria-label='Vehicle Description']"
         this.Vehicle_Vin = "//input[@aria-label='Vehicle VIN']"
 
