@@ -22,5 +22,8 @@ class Email_WebElement
         this.Delete_Button = "//button[@id='deleteBtn']"
         this.Submit_Button = "//button[@id='submitBtn']"
         this.Refresh_CredentialLine = "(//button[@aria-label='Refresh'])[2]"
+// Credential Line in Hamburf=ger menu
+        this.Hamburger_CredentialLine = "//span[text()='Credential Lines']"        
+        
     }
 }

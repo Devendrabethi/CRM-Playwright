@@ -104,6 +104,10 @@ class EmailPage
             await this.page.waitForTimeout(2000)
             await this.page.screenshot({ path: './ScreenShot/21.1 Wristband.png', fullPage: true})
             await this.page.waitForTimeout(3000)
-
+            await this.page.locator(this.email_webelement.Hamburger_CredentialLine).click();
+            await this.page.waitForTimeout(5000)
+            await this.page.goBack()
+            await this.page.waitForTimeout(2000)
     }
+
 }
