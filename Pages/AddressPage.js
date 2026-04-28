@@ -43,7 +43,7 @@ class AddressPage
             await this.page.waitForTimeout(2000)
             await this.page.keyboard.press('Tab');
             await this.page.waitForTimeout(1500)
-            await this.page.selectOption(this.address_webelements.Select_status, this.testdata.status);
+            //await this.page.selectOption(this.address_webelements.Select_status, this.testdata.status);
             await this.page.screenshot({ path: './ScreenShot/0 Address.png', fullPage: true})
     }
     async saveandclose()

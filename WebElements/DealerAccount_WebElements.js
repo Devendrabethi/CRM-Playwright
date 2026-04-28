@@ -4,13 +4,15 @@ class DealerAccount_WebElements
     constructor()
     {
         this.Createnewaccountbtn = "//span[text()='New']"
-        this.Account_Type_Dealer = "//select[@aria-label='Account Type']"   
+        this.Account_Type_Dealer = "//button[@aria-label='Account Type']"   
+        this.Select_Dealer = "//div[text()='Dealer']"
         this.Customer_Name_Dealer =  "//input[@aria-label='Company Name']"
         this.Dealer_Field_text =     "//h2[text()='Dealer']"
         this.Dealer_Number =         "//input[@aria-label='Dealer Number']"
         this.Dealer_TAXID =          "//input[@aria-label='Tax ID']"
         this.Savebtn =              "//button[@aria-label='Save (CTRL+S)']"
-        this.Phone_Type_DealerPhone = "//select[@aria-label='Phone Type']"
+        this.Phone_Type_DealerPhone = "//button[@aria-label='Phone Type']"
+        this.Select_PhoneType = "//div[text()='DIRECT PHONE']"
 
 
         this.Documents_Tab = "//ul[@aria-label='Account Form']/li[contains(@title,'Documents')]"
@@ -30,7 +32,7 @@ class DealerAccount_WebElements
         this.threedotbtn= "//button[@aria-label='More commands for Account']"
         this.Add_Existing_Account= "//span[text()='Add Existing Account']"
         this.FirstAccount_Realting= "//div[@role='region']/ul/li[contains(@id,'resultsContainer_0_0')]"
-        this.Add_btn= "//span[text()='Add']"
+        this.Add_btn= "//button[text()='Add']"
         this.RealtedAccount_More_option= "//button[@aria-label='More commands for Account']"
         this.Related_Accounts_refresh= "(//button[@aria-label='Refresh'])[4]"
         this.DoubleclickPersonalAccount = "(//div[@col-id='bjac_account_accounttype'])[2]"

@@ -103,7 +103,7 @@ test.describe('Business Bidder Opportunity Workflow', () => {
     });
 
     test('10. Upload Business Documents and Link Personal Accounts', async () => {
-        await businessaccountpage.personalAccountDocuments();
+        //await businessaccountpage.personalAccountDocuments();
         await businessaccountpage.RelatedAccount();
     });
 

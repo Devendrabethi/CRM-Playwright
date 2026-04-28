@@ -21,7 +21,7 @@ class DealerAccountPage
     {
         await this.page.locator(this.dealeraccount_webelements.Createnewaccountbtn).click();
         await this.page.locator(this.dealeraccount_webelements.Account_Type_Dealer).click(); // Open dropdown
-        await this.page.selectOption(this.dealeraccount_webelements.Account_Type_Dealer,this.testdata.Account_Type_Dealer);
+        await this.page.locator(this.dealeraccount_webelements.Select_Dealer).click()
         //await this.page.locator(`text=${this.testdata.Account_Type_Dealer}`).click(); // Select the option
         
     }

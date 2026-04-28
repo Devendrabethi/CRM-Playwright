@@ -19,11 +19,10 @@ class BusinessAccountPage
     {
         await this.page.locator(this.businessaccount_webelements.Createnewaccountbtn).click();
         await this.page.locator(this.businessaccount_webelements.Account_Type_Business).click();
-        await this.page.selectOption(this.businessaccount_webelements.Account_Type_Business,this.testdata.Account_Type_Business);      
+        await this.page.locator(this.businessaccount_webelements.Account_Type_Business);      
+        await this.page.locator(this.businessaccount_webelements.Select_Business).click()
         
     }
-
-   
     async  names()
                 {
            function generateRandomString(length)

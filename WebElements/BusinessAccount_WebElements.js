@@ -4,12 +4,14 @@ class BusinessAccount_WebElements
     constructor()
     {
         this.Createnewaccountbtn = "//span[text()='New']"
-        this.Account_Type_Business = "//select[@aria-label='Account Type']"
+        this.Account_Type_Business = "//button[@aria-label='Account Type']"
+        this.Select_Business = "//div[text()='Business']"
         this.Customer_Name_Business =            "//input[@aria-label='Company Name']"
         this.Business_Field_text =      "//h2[text()='Business']"
         this.EIN =             "//input[@aria-label='Employee ID Number (EIN)']"
         this.Savebtn =              "//button[@aria-label='Save (CTRL+S)']"
         this.Phone_Type_BusinessPhone =  "//select[@aria-label='Phone Type']"
+        this.Select_PhoneType = "//div[text()='DIRECT PHONE']"
 
 
         this.Documents_Tab = "//ul[@aria-label='Account Form']/li[contains(@title,'Documents')]"
@@ -27,10 +29,10 @@ class BusinessAccount_WebElements
 
         this.Overview_tab = "//ul[@aria-label='Account Form']/li[contains(@aria-label,'Overview')]"
         this.Realted_Account_Text = "//h3[text()='Related Accounts']"
-        this.threedotbtn= "//button[@title='More commands for Account']"
+        this.threedotbtn= "//button[@aria-label='More commands for Account']"
         this.Add_Existing_Account= "//span[text()='Add Existing Account']"
         this.FirstAccount_Realting= "//div[@role='region']/ul/li[contains(@id,'resultsContainer_0_0')]"
-        this.Add_btn= "//span[text()='Add']"
+        this.Add_btn= "//button[text()='Add']"
         this.RealtedAccount_More_option= "//button[@aria-label='More commands for Account']"
         this.Related_Accounts_refresh= "(//button[@aria-label='Refresh'])[4]"
         this.DoubleclickPersonalAccount = "(//div[@col-id='bjac_account_accounttype'])[2]"

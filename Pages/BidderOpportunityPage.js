@@ -30,7 +30,8 @@ class BidderOpportunityPage
         async Bidder_details_CompType()
     {
         await this.page.waitForTimeout(2000)
-        await this.page.selectOption(this.bidderopportunity_webelements.Select_Bid_LimitType_dropdown,this.testdata.Bidder_BidLImit_Type); 
+        await this.page.locator(this.bidderopportunity_webelements.Select_Bid_LimitType_dropdown).click()
+        await this.page.locator(this.bidderopportunity_webelements.SelectBid_LimitType_Woodside).click()
         await this.page.locator(this.bidderopportunity_webelements.Bid_Limit_Value).click()
         await this.page.locator(this.bidderopportunity_webelements.Bid_Limit_Value).fill(this.testdata.Bidder_Limit_Value)  
         await this.page.locator(this.bidderopportunity_webelements.Bid_Limit_Estimation).click()
@@ -43,8 +44,8 @@ class BidderOpportunityPage
         await this.page.locator(this.bidderopportunity_webelements.Bidder_Pakage_Type).fill(process.env.Bidder_Package_Type)
         await this.page.waitForTimeout(4000)
         await this.page.locator(this.bidderopportunity_webelements.Select_Bidder_Package_Type).click();
-        
-        await this.page.selectOption(this.bidderopportunity_webelements.Select_Interner_Bidder,this.testdata.Bidder_Internet_yesandpush); 
+        await this.page.locator(this.bidderopportunity_webelements.Select_Interner_Bidder).click()
+        await this.page.locator(this.bidderopportunity_webelements.Select_Yes_Push).click()
         await this.page.screenshot({ path: './ScreenShot/51 BidderDetailsSessionwithoutComp.png', fullPage: true})
         await this.page.waitForTimeout(2000)
     }
@@ -52,7 +53,8 @@ class BidderOpportunityPage
     async Bidder_details()
     {
         await this.page.waitForTimeout(2000)
-        await this.page.selectOption(this.bidderopportunity_webelements.Select_Bid_LimitType_dropdown,this.testdata.Bidder_BidLImit_Type); 
+        await this.page.locator(this.bidderopportunity_webelements.Select_Bid_LimitType_dropdown).click()
+        await this.page.locator(this.bidderopportunity_webelements.SelectBid_LimitType_Woodside).click()
         await this.page.locator(this.bidderopportunity_webelements.Bid_Limit_Value).click()
         await this.page.locator(this.bidderopportunity_webelements.Bid_Limit_Value).fill(this.testdata.Bidder_Limit_Value)  
         await this.page.locator(this.bidderopportunity_webelements.Bid_Limit_Estimation).click()
@@ -63,8 +65,8 @@ class BidderOpportunityPage
         await this.page.locator(this.bidderopportunity_webelements.Bidder_Pakage_Type).fill(this.testdata.Bidder_Package_Type)
         await this.page.waitForTimeout(4000)
         await this.page.locator(this.bidderopportunity_webelements.Select_Bidder_Package_Type).click();
-        
-        await this.page.selectOption(this.bidderopportunity_webelements.Select_Interner_Bidder,this.testdata.Bidder_Internet_yesandpush); 
+        await this.page.locator(this.bidderopportunity_webelements.Select_Interner_Bidder).click()
+        await this.page.locator(this.bidderopportunity_webelements.Select_Yes_Push).click()
         await this.page.waitForTimeout(2000)
         await this.page.screenshot({ path: './ScreenShot/52 BidderDetails.png', fullPage: true})
         await this.page.locator(this.bidderopportunity_webelements.ConsignmentValue_Button).click()
@@ -98,10 +100,12 @@ class BidderOpportunityPage
         await this.page.locator(this.bidderopportunity_webelements.Add_Envelop_btn).click({timeout:60000})
         await this.page.locator(this.bidderopportunity_webelements.Envelop_Number).click()
         await this.page.locator(this.bidderopportunity_webelements.Envelop_Number).fill(this.testdata.Envelop_Number)
-        await this.page.selectOption(this.bidderopportunity_webelements.Select_Deposite_Type,this.testdata.Deposite_Type)
+        await this.page.locator(this.bidderopportunity_webelements.Select_Deposite_Type).click()
+        await this.page.locator(this.bidderopportunity_webelements.Select_WireTransfer).click()
         await this.page.locator(this.bidderopportunity_webelements.Deposite_Amount).click()
         await this.page.locator(this.bidderopportunity_webelements.Deposite_Amount).fill(this.testdata.Deposite_Amount)
         await this.page.locator(this.bidderopportunity_webelements.Deposite_Date).click()
+        await this.page.locator(this.bidderopportunity_webelements.Select_Date).click()
         await this.page.locator(this.bidderopportunity_webelements.Payment_Number).click()
         await this.page.locator(this.bidderopportunity_webelements.Payment_Number).fill(this.testdata.Payment_Number)
         await this.page.locator(this.address_webelements.Save_btn).click()
@@ -122,11 +126,13 @@ class BidderOpportunityPage
     {
         await expect(this.page.locator(this.bidderopportunity_webelements.Verify_Absentees_Bids_Text)).toBeVisible({timeout:30000})
         await this.page.locator(this.bidderopportunity_webelements.Add_New_Absentee_Bid_btn).click()
-        await this.page.selectOption(this.bidderopportunity_webelements.Select_Absentee_Bid,this.testdata.selectAdsenteeBidInternet)
+        await this.page.locator(this.bidderopportunity_webelements.Select_Absentee_Bid).click()
+        await this.page.locator(this.bidderopportunity_webelements.Select_Internet).click()
         await this.page.locator(this.bidderopportunity_webelements.Save_Absentee_Bid).click()
 
         await this.page.locator(this.bidderopportunity_webelements.Add_New_Absentee_Bid_btn).click()
-        await this.page.selectOption(this.bidderopportunity_webelements.Select_Absentee_Bid,this.testdata.selectAdsenteeBidPhone)
+         await this.page.locator(this.bidderopportunity_webelements.Select_Absentee_Bid).click()
+        await this.page.locator(this.bidderopportunity_webelements.Select_Phone_AbsenteeBid).click()
         await this.page.waitForTimeout(1500)
         await this.page.locator(this.bidderopportunity_webelements.Lot_Number).click()
         await this.page.locator(this.bidderopportunity_webelements.Lot_Number).fill(this.testdata.Lotphone)
@@ -134,10 +140,9 @@ class BidderOpportunityPage
         await this.page.locator(this.bidderopportunity_webelements.Contact_Phone).fill(this.testdata.Contact_number)
         await this.page.waitForTimeout(1000)
         await this.page.locator(this.bidderopportunity_webelements.Save_Absentee_Bid).click()
-        
-
         await this.page.locator(this.bidderopportunity_webelements.Add_New_Absentee_Bid_btn).click()
-        await this.page.selectOption(this.bidderopportunity_webelements.Select_Absentee_Bid,this.testdata.delectAbsenteeBidAbsenteeRepresentative)
+         await this.page.locator(this.bidderopportunity_webelements.Select_Absentee_Bid).click()
+        await this.page.locator(this.bidderopportunity_webelements.Select_Representative_AbsenteeBid).click()
         await this.page.waitForTimeout(1500)
         await this.page.locator(this.bidderopportunity_webelements.Lot_Number).click()
         await this.page.locator(this.bidderopportunity_webelements.Lot_Number).fill(this.testdata.lotabsentee)
@@ -162,12 +167,15 @@ class BidderOpportunityPage
         //FEDEX
                     await this.page.locator(this.bidderopportunity_webelements.Create_Package).click()
                     await this.page.waitForTimeout(1000)
-                    await this.page.selectOption(this.PersonalAccount_WebElements.Select_PackageType_Dropdown,this.testdata.packageType_Bidder_Credential_Package)
-                    await this.page.selectOption(this.PersonalAccount_WebElements.Select_Carrier,this.testdata.Carrier_FedEx)
+                    await this.page.locator(this.PersonalAccount_WebElements.Select_PackageType_Dropdown).click()
+                    await this.page.locator(this.PersonalAccount_WebElements.Select_BidderCredentialPackage).click()
+                    await this.page.locator(this.PersonalAccount_WebElements.Select_Carrier).click()
+                    await this.page.locator(this.PersonalAccount_WebElements.Select_FedEx).click()
                     await this.page.waitForTimeout(4000)
                     await this.page.locator(this.PersonalAccount_WebElements.Recipient_Company_text).click();
                     await this.page.locator(this.PersonalAccount_WebElements.ImageType_Text).click()
-                    await this.page.selectOption(this.PersonalAccount_WebElements.Select_ImageType_Dropdown,this.testdata.Image_Type_PDF)
+                    await this.page.locator(this.PersonalAccount_WebElements.Select_ImageType_Dropdown).click()
+                    await this.page.locator(this.PersonalAccount_WebElements.Select_PDF).click()
                     await this.page.waitForTimeout(2000)
                     await this.page.locator(this.PersonalAccount_WebElements.Save_Tracking).click();
                     await this.page.waitForTimeout(5000)
@@ -280,8 +288,8 @@ class BidderOpportunityPage
                                                 await frame.locator(this.newconsignmentvehicle_webelement.Expiration_Date_field).click()
                                                 await frame.locator(this.newconsignmentvehicle_webelement.Next_Month).click()
                                                 await frame.locator(this.newconsignmentvehicle_webelement.Select_NextMonthDate).click()
-                                await frame.locator(this.PersonalAccount_WebElements.ExistCropPhoto).click()
-                                await this.page.waitForTimeout(2000)
+                                // await frame.locator(this.PersonalAccount_WebElements.ExistCropPhoto).click()
+                                // await this.page.waitForTimeout(2000)
                                 await frame.locator(this.bidderopportunity_webelements.Upload_BidderRegisterDocument).setInputFiles(documentPath)
                                 await this.page.waitForTimeout(2000)
                                 //await frame.locator(this.PersonalAccount_WebElements.CropImage).click()

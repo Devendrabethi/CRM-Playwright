@@ -16,10 +16,10 @@ class PersonalAccountPage
 
     async accounttype_dropdown()
     {
-        const CustomerText = this.page.locator(this.PersonalAccount_WebElements.CustomerText)
+        //const CustomerText = this.page.locator(this.PersonalAccount_WebElements.CustomerText)
        // await expect(CustomerText).toHaveText('Customer',{ timeout: 60000 })
-        await this.page.selectOption(this.PersonalAccount_WebElements.AccountType_Dropdown,this.testdata.Account_Type_Personal);
-        
+        await this.page.locator(this.PersonalAccount_WebElements.AccountType_Dropdown).click()
+        await this.page.locator(this.PersonalAccount_WebElements.Select_Personal).click()
     }
 
    
@@ -78,7 +78,8 @@ class PersonalAccountPage
         await this.page.locator(this.PersonalAccount_WebElements.Event_Field).fill(this.testdata.Event_name)
         await this.page.waitForTimeout(3000)
         await this.page.locator(this.PersonalAccount_WebElements.Select_Event).click()
-        await this.page.selectOption(this.PersonalAccount_WebElements.Select_Next_Auct_Comp_Type,this.testdata.Account_Auct_EventType);
+        await this.page.locator(this.PersonalAccount_WebElements.Select_Next_Auct_Comp_Type).click()
+        await this.page.locator(this.PersonalAccount_WebElements.Select_CompType).click()
         await this.page.screenshot({ path: './ScreenShot/EventAuctComp.png', fullPage: true})
         await this.page.locator(this.PersonalAccount_WebElements.SaveandClose_AccountEvent).click()
 

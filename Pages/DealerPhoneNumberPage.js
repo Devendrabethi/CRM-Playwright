@@ -23,7 +23,8 @@ class DealerPhoneNumberPage
     {
         await this.page.locator(this.phonenumber_webelement.threedotbtn).click()
         await this.page.locator(this.phonenumber_webelement.New_PhoneNumber_btn).click()
-        await this.page.selectOption(this.dealeraccount_webelements.Phone_Type_DealerPhone,this.testdata.Dealer_PhoneType);
+        await this.page.locator(this.dealeraccount_webelements.Phone_Type_DealerPhone).click()
+        await this.page.locator(this.dealeraccount_webelements.Select_PhoneType).click()
 
     }
 
