@@ -23,9 +23,9 @@ class NewAutomobiliaConsignment_WebElements
         this.Submit_BatchAutomobilia = "//button[@aria-label='Submit']"
 
         this.Verify_RegistrationDocuments_Text = "//h2[@title='Registration Documents']"
-        this.Opportunity_Add_Document_btn = "//ul[@aria-label='Opportunity Document Commands']/li/button[contains(@aria-label,'Add Document')]"
+        this.Opportunity_Add_Document_btn = "(//button[contains(@aria-label,'Add Document')])[1]"
         this.frame = "//iframe[@aria-label='bidder_documents']"  
-        this.Opportunitydoc_Refresh ="//ul[@aria-label='Opportunity Document Commands']/li[2]/button[@aria-label='Refresh']"
+        this.Opportunitydoc_Refresh ="//ul[@aria-label='Opportunity Document Commands']/li[2]/div/button[@aria-label='Refresh']"
 
         this.Photo_frame = "//iframe[@title='bjac_AutoPhotosUpload']"
         this.Cross_mark="//button[@aria-label='Close' and contains(@class, 'close')]"

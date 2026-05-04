@@ -39,7 +39,7 @@ class PersonalAccountPage
                 const randomLastName = generateRandomString(Math.floor(Math.random() * (26-19)) + 1);
 
                 //const firstName = "Devendra" + randomFirstName;
-                const firstName = "Devendra";
+                const firstName = "Devendraa";
                 const lastName = "Individual" + randomLastName;
 
                 // Fill the form fields with the generated names

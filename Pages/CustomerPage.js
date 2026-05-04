@@ -47,7 +47,11 @@ class CustomerPage
        await this.page.waitForTimeout(4000)
        await expect(this.page.locator(this.customer_webElements.Createnewaccountbtn)).toBeVisible({ timeout: 30000 });
        await this.page.locator(this.customer_webElements.Createnewaccountbtn).click()
+       await this.page.waitForTimeout(2000)
        await this.page.screenshot({ path: './ScreenShot/0.0 CustomerSession.png', fullPage: true})
+       await this.page.locator(this.customer_webElements.Overview_Tab).click()
+       await this.page.waitForTimeout(4000)
+       await this.page.locator(this.customer_webElements.Details_Tab).click()
        await this.page.waitForTimeout(4000)
     }
 

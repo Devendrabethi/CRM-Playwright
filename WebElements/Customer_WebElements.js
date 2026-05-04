@@ -14,6 +14,8 @@ class Customer_WebElements {
         this.Customerbtn = "//span[text()='Customers']";
         this.verifyallaccount = "//span[text()='All Accounts']"
         this.Createnewaccountbtn = "//span[text()='New']";
+        this.Overview_Tab = "//li[@aria-label='Overview']"
+        this.Details_Tab = "//li[@aria-label='Details']"
         this.Verifynewaccounttext = "//h1[text()='New Account']";
         this.verifyallaccount = "//span[text()='All Accounts']";
 

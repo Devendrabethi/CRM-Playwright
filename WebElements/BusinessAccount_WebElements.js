@@ -10,7 +10,7 @@ class BusinessAccount_WebElements
         this.Business_Field_text =      "//h2[text()='Business']"
         this.EIN =             "//input[@aria-label='Employee ID Number (EIN)']"
         this.Savebtn =              "//button[@aria-label='Save (CTRL+S)']"
-        this.Phone_Type_BusinessPhone =  "//select[@aria-label='Phone Type']"
+        this.Phone_Type_BusinessPhone =  "//button[@aria-label='Phone Type']"
         this.Select_PhoneType = "//div[text()='DIRECT PHONE']"
 
 

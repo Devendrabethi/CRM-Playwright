@@ -14,10 +14,12 @@ class Lead_WebElement
         this.City = "//input[@aria-label='City']"
         this.Zip = "//input[@aria-label='ZIP']"
         this.Register_Button = "//button[contains(@aria-label,'Register')]"
-        this.Ok_Button = "//button[@aria-label='OK']"
+        this.Ok_Button = "//button[@title='OK']"
 
-        this.Select_Type = "//select[@aria-label='Type']"
-        this.Select_TimeFrame = "//select[@aria-label='Time-frame to sell']"
+        this.Select_Type = "//button[@aria-label='Type']"
+        this.Select_Consignment = "//div[text()='Consignment']"
+        this.Select_TimeFrame = "//button[@aria-label='Time-frame to sell']"
+        this.Select_Month = "//div[text()='1-3 months']"
         this.Vehicle_Description = "//input[@aria-label='Vehicle Description']"
         this.Vehicle_Vin = "//input[@aria-label='Vehicle VIN']"
 

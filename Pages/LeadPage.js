@@ -77,7 +77,9 @@ class LeadPage
     }
     async Bidder_Registration()
     {
-        await this.page.selectOption(this.bidderopportunity_webelements.Select_Bid_LimitType_dropdown,this.testdata.Bidder_BidLImit_Type); 
+        //await this.page.selectOption(this.bidderopportunity_webelements.Select_Bid_LimitType_dropdown,this.testdata.Bidder_BidLImit_Type); 
+        await this.page.locator(this.bidderopportunity_webelements.Select_Bid_LimitType_dropdown).click()
+        await this.page.locator(this.bidderopportunity_webelements.SelectBid_LimitType_Woodside).click()
         await this.page.locator(this.bidderopportunity_webelements.Bid_Limit_Value).click()
         await this.page.locator(this.bidderopportunity_webelements.Bid_Limit_Value).fill(this.testdata.Bidder_Limit_Value)  
         await this.page.waitForTimeout(3000)
@@ -100,13 +102,15 @@ class LeadPage
     }
     async LeadInfo_Consignment()
     {
-        await this.page.selectOption(this.lead_webelement.Select_Type,this.testdata.LeadType_Consignment);
+        await this.page.locator(this.lead_webelement.Select_Type).click()
+        await this.page.locator(this.lead_webelement.Select_Consignment).click()
         await this.page.waitForTimeout(2000)
         await this.page.screenshot({ path: './ScreenShot/154 Consignment Lead Info.png', fullPage: true})
     }
     async Consignment_Registration()
     {
-        await this.page.selectOption(this.lead_webelement.Select_TimeFrame, { index: 2 }); 
+        await this.page.locator(this.lead_webelement.Select_TimeFrame).click()
+        await this.page.locator(this.lead_webelement.Select_Month).click()
         await this.page.locator(this.lead_webelement.Vehicle_Description).fill(this.testdata.CustomerName);
 
          function generateRandomString(length) {

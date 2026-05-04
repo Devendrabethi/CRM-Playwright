@@ -32,7 +32,7 @@ class BidderOpportunity_WebElements
         this.Select_Deposite_Type = "//button[@aria-label='Deposit Type']"
         this.Select_WireTransfer = "//div[text()='Wire Transfer']"
         this.Deposite_Amount = "//input[@aria-label='Deposit Amount']"
-        this.Deposite_Date = "//input[@aria-label='Date of Deposit Date']"
+        this.Deposite_Date = "//input[@aria-label='Deposit Date']"
         this.Select_Date = "//td[@aria-selected='true']"
         this.Payment_Number = "//input[@aria-label='Payment Number']"
         this.Deposite_Value = "//input[@aria-label='Deposit Value']"
@@ -230,6 +230,7 @@ class BidderOpportunity_WebElements
         this.MenuMethodOfPayment = "//span[text()='Method of Payment']"
         this.MenuMyAssigned = "//span[text()='My Assigned']"
         this.VIPOpportunities = "//span[text()='VIP Opportunities']"
+        this.Automobilia = "//span[text()='Automobilia']"
 
         this.ConsignmentScottsdale2026Dropdown = "//span[text()='Consignment Scottsdale 2026']"
         this.MenuAllOpportunity = "//span[text()='All Opportunities']"

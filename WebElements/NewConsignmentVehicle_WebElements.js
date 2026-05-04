@@ -71,7 +71,8 @@ class NewConsignmentVehicle_WebElement
         this.Refresh_consignment = "(//button[@aria-label='Refresh'])[1]" 
 //Application Status
         this.ApproximateWeight_Text = "//label[text()='Approximate Weight (lb)']"
-        this.Condition = "//select[@aria-label='Condition']"
+        this.Condition = "//button[@aria-label='Condition']"
+        this.Original_Condition = "//div[text()='Original']"
         this.Size = "//input[contains(@aria-label,'Size (H * W * D - inches)')]"
         this.ApproximateWeight = "//input[@aria-label='Approximate Weight (lb)']"
         this.Condition_Text = "//label[text()='Condition']"
