@@ -5,14 +5,14 @@ class MediaCredential_WebElements {
             this.managementbtn = "//div[@title='Management']";
             this.MediaCredential_button ="//ul[@aria-label='Management']/li[@aria-label='Media Credentials']"
             this.Primary_mediaCredential = "//button[@aria-label='Primary Media Credentials']"
-            this.Select_AllMediaCredential = "//label[text()='All Media Credentials']"
-            this.All_MediaCredential = "//button[@aria-label='All Media Credentials']"
+            this.Select_AllMediaCredential = "//label[text()='All Media Credentials - Active']"
+            this.All_MediaCredential = "//button[@aria-label='All Media Credentials - Active']"
             this.Select_All_Media_Credentials_CurrentEvent = "//label[text()='All Media Credentials - Current Event']"
             this.All_Media_Credentials_CurrentEvent = "//button[@aria-label='All Media Credentials - Current Event']"
             this.Select_OtherMediaContacts = "//label[text()='Other Media Contacts']"
             this.Other_MediaContact = "//button[@aria-label='Other Media Contacts']"
             this.Select_PrimaryMediaCredential = "//label[text()='Primary Media Credentials']"
-            this.NewContact_Media = "//ul[@aria-label='Contact Commands']/li[contains(@id,'contact')]/button[contains(@aria-label,'New')]"
+            this.NewContact_Media = "//button[@aria-label='New Contact - Media']"
             this.FirstName = "//input[@aria-label='First Name']"
             this.LastName = "//input[@aria-label='Last Name']"
             this.Email = "//input[@aria-label='Email']"
@@ -21,7 +21,8 @@ class MediaCredential_WebElements {
             this.Media_Organization = "//input[contains(@aria-label,'Media Organization ')]"
             this.Save_Button = "//button[contains(@aria-label,'Save (CTRL+S)')]"
 
-            this.Select_CredentidalStatus = "//select[@aria-label='Credential Status']"
+            this.Select_CredentidalStatus = "//button[@aria-label='Credential Status']"
+            this.Approve_Button = "//div[text()='Approved']"
             this.Extra_Text = "//textarea[@aria-label='Extra Text in Email']"
             this.Refresh_Button = "//button[@aria-label='Refresh']"
 

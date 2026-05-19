@@ -707,6 +707,26 @@ class BidderOpportunityPage
                 await this.page.locator(this.bidderopportunity_webelements.ConsignmentandBidderFilter).fill(this.testdata.CustomerName)
                 await this.page.locator(this.bidderopportunity_webelements.ConsignmentandBidderFilter).press('Enter')
                 await this.page.waitForTimeout(4000)
+
+                await this.page.locator(this.bidderopportunity_webelements.Automobilia).click()
+
+                 //Download file
+                const path3 = require('path');  
+                const fs3 = require('fs');
+                const downloadDir3_1 = path3.join(__dirname, 'Download');
+                if (!fs3.existsSync(downloadDir3_1)) {
+                    fs3.mkdirSync(downloadDir3_1);
+                  }
+                const downloadPromise3 = this.page.waitForEvent('download',{ timeout: 50000 })
+                await this.page.locator(this.bidderopportunity_webelements.ExportToExcel).click()
+                const download3_1 = await downloadPromise3
+                const downloadPath3_1 = path3.join(downloadDir3_1, download3_1.suggestedFilename());
+                await download3_1.saveAs(downloadPath3_1)
+                await this.page.screenshot({ path: './ScreenShot/70 HamburgerConsignment.png', fullPage: true})
+                await this.page.locator(this.bidderopportunity_webelements.ConsignmentandBidderFilter).fill(this.testdata.CustomerName)
+                await this.page.locator(this.bidderopportunity_webelements.ConsignmentandBidderFilter).press('Enter')
+                await this.page.waitForTimeout(4000)
+
                 await this.page.locator(this.bidderopportunity_webelements.MenuBidder).click()
 
                  //Download file

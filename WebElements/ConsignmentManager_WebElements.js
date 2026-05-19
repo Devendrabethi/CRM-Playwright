@@ -14,7 +14,7 @@ class ConsignmentManager_WebElements
         this.Description_Field = "//textarea[@aria-label='Description']"
         this.SaveandClose = "//button[@aria-label='Save & Close']"
         this.CreatedOn_Filter = "//div[@data-testid='createdon']"
-        this.NewtoOld = "//button[@name='Sort newer to older']"
+        this.NewtoOld = "//button[@name='Newer to older']"
 
         this.Select_Charities = "//li[@aria-label='Charities']"
         this.New_Charities_Button = "//button[contains(@aria-label,'New Charity')]"
@@ -26,7 +26,7 @@ class ConsignmentManager_WebElements
         this.Select_Consignment_Event = "//ul[@aria-label='Event Form']//li[@aria-label='Consignment']"
         this.Collection_Add_Existing_Button = "//button[@aria-label='Add Existing']"
         this.CreatedOn_Filter_Event = "//div[@data-testid='createdon']"
-        this.Select_Created_Collection = "(//button[@aria-label='d365testuser3 #'])[1]/preceding-sibling::div"//"(//a[@aria-label='Devendra'])[1]/ancestor::*[@col-id='bjac_name']/preceding-sibling::*[@col-id='__row_status']"
+        this.Select_Created_Collection = "(//label[contains(@aria-label,'Devendra Testing Collection')])[1]"//"(//a[@aria-label='Devendra'])[1]/ancestor::*[@col-id='bjac_name']/preceding-sibling::*[@col-id='__row_status']"
         this.SaveandClose_PopUp = "(//button[@aria-label='Save & Close'])[2]"
 
         this.Charity_Add_Existing_Button = "//button[@aria-label='Add Existing. New Event Charity Association']"
@@ -37,7 +37,7 @@ class ConsignmentManager_WebElements
         this.NewTask = "//button[contains(@aria-label,'New Task')]"
         this.Subject = "//input[@aria-label='Subject']"
         this.Event_Description = "//textarea[@aria-label='Description']"
-        this.DateOfDue = "//input[@aria-label='Date of Due']"
+        this.DateOfDue = "//input[@aria-label='Due']"
         this.Select_CurrentDate = "//td[@aria-current='date']"
         this.Regarding = "//input[contains(@aria-label,'Regarding')]"
         this.Select_FirstRegarding = "//div[contains(@aria-label,'Regarding')]/ul/li[1]"
@@ -59,9 +59,9 @@ class ConsignmentManager_WebElements
         this.SelectDays = "//select[@id='days']"
         this.LaunchButton = "//button[text()='Launch']"
         this.Iframe_DaysOfConsign = "//iframe[@aria-label='DayofConsign']"
-        this.Day1AM = "//button[contains(text(), 'Lot# 1-50 ')]"
-        this.Day1Prime = "//button[contains(text(), 'Lot# 51-150 ')]"
-        this.Day1Pm = "//button[contains(text(),'Lot# 151-200 ')]"
+        this.Day1AM = "//button[contains(text(), 'Lot# 1-49.9 ')]"
+        this.Day1Prime = "//button[contains(text(), 'Lot# 50-174.9 ')]"
+        this.Day1Pm = "//button[contains(text(),'Lot# 175-225.9 ')]"
         this.AllDays = "//button[text()='All Days']"
         this.Seach_Field = "(//input[@type='search'])[4]"
         this.FirstCIdCheckbox = "//table[@id='rightTab_ALLDAYS_table']/tbody/tr[1]/td[1]"
@@ -95,7 +95,7 @@ class ConsignmentManager_WebElements
 
         this.Select_Consignments_Option = "//li[@aria-label='Consignments']"
         this.Open_Consignment = "//div[@aria-label='Press SPACE to select this row.'][1]/div[1]"
-        this.On_Charity_Toggle = "//button[@aria-label='Charity: No']"
+        this.On_Charity_Toggle = "//input[@aria-label='Charity: No']"
         this.Save_Button = "//button[@aria-label='Save (CTRL+S)']"
 
         this.Add_Buyer = "(//button[@aria-label='Add'])[1]"
@@ -107,6 +107,7 @@ class ConsignmentManager_WebElements
         this.Add_Donor = "(//button[@aria-label='Add'])[2]"
         this.DonationAmount_Field = "//input[@aria-label='Donation']"
 
+        this.Overview_Tab = "//ul[@aria-label='Opportunity Form']/li[@aria-label='Overview']"
         this.Marketting_Tab = "//ul[@aria-label='Opportunity Form']/li[@aria-label='Marketing']"
         this.Add_Collection = "//button[@aria-label='Add Collection']"
         this.Select_Collection ="(//input[@aria-label='Toggle selection of all rows'])[5]"
@@ -130,14 +131,14 @@ class ConsignmentManager_WebElements
         this.Select_Event = "//input[@id='eventLookupText']"
         this.Enter_EventName = "//input[@aria-label='Select record, Lookup']"
         this.Select_CurrentEvent = "//ul[@aria-label='Lookup results']/li[1]"
-        this.Add_Button = "//button[@aria-label='Add']"
+        this.Add_Button = "//button[@title='Add']"
         this.Select_Search_Type_Options = "//select[@id='searchType']"
 
         this.Bidder_Start = "//input[@id='startBidder']"
         this.Bidder_End = "//input[@id='endBidder']"
         this.Change_Tracking_Number = "//table[@id='resultsTable']/tbody/tr[1]/td[6]/input"
         this.SaveAll_Button = "//button[text()='SAVE ALL']"
-        this.Ok_Button = "//button[@aria-label='OK']"
+        this.Ok_Button = "//button[@title='OK']"
         this.Search_Lot_Field = "//input[@id='lotNumber']"
         
         this.SearchButton = "//button[text()='SEARCH']"

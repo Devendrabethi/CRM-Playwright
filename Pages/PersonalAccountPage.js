@@ -207,27 +207,30 @@ class PersonalAccountPage
                         this.testdata.FEDEX_LARGE_BOX
                         ];
                         const ServiceTypeOptions = [
-                        this.testdata.FEDEX_2_DAY,
                         this.testdata.FEDEX_EXPRESS_SAVER,
                         this.testdata.PRIORITY_OVERNIGHT,
                         this.testdata.FEDEX_2_DAY_AM,
                         this.testdata.STANDARD_OVERNIGHT,
                         this.testdata.FIRST_OVERNIGHT,
+                        this.testdata.FEDEX_2_DAY,
                         ];
 
          
      //ZPLII
-                    await this.page.locator(this.PersonalAccount_WebElements.Create_Package).click();
+                    await this.page.locator(this.PersonalAccount_WebElements.Create_Package).click({ timeout: 60000 });
                     await this.page.waitForTimeout(1000);
 
                     await this.page.locator(this.PersonalAccount_WebElements.Event).click();
                     await this.page.locator(this.PersonalAccount_WebElements.Event).fill(this.testdata.Event_name);
-                    await this.page.waitForTimeout(6000);
-                    await this.page.locator(this.PersonalAccount_WebElements.Select_Tracking_Event).click();
-                    await this.page.selectOption(this.PersonalAccount_WebElements.Select_PackageType_Dropdown,this.testdata.packageType_Bidder_Credential_Package)
-                    await this.page.selectOption(this.PersonalAccount_WebElements.Select_Carrier, this.testdata.Carrier_FedEx);
+                    //await this.page.waitForTimeout(6000);
+                    await this.page.locator(this.PersonalAccount_WebElements.Select_Tracking_Event).click({ timeout: 60000 });
+                    await this.page.waitForTimeout(2000);
+                    await this.page.locator(this.PersonalAccount_WebElements.Select_PackageType_Dropdown).click({ timeout: 60000 })
+                    await this.page.locator(this.PersonalAccount_WebElements.Select_BidderCredentialPackage).click({ timeout: 60000 })
+                    await this.page.waitForTimeout(2000);
+                    await this.page.locator(this.PersonalAccount_WebElements.Select_Carrier).click({ timeout: 60000 })
+                    await this.page.locator(this.PersonalAccount_WebElements.Select_FedEx).click({ timeout: 60000 })
                     await this.page.waitForTimeout(4000);
-
                     await this.page.locator(this.PersonalAccount_WebElements.Recipient_Company_text).click()
                     await this.page.locator(this.PersonalAccount_WebElements.ImageType_Text).click()
                     await this.page.waitForTimeout(15000)
@@ -243,12 +246,18 @@ class PersonalAccountPage
                     // await this.page.locator(this.PersonalAccount_WebElements.Weight).fill(this.testdata.Weight_Value);
                         for (const option of packagingOptions) 
                             {
-                                await this.page.selectOption(this.PersonalAccount_WebElements.Select_Packaging, option);
+                                await this.page.locator(this.PersonalAccount_WebElements.Select_Packaging).click()
+                                 // Select option
+                                    //await this.page.locator(`text="${option}"`).click();
+                                    await this.page.getByText(packageTypes[i], { exact: true }).click();
                                 await this.page.waitForTimeout(7000);
                             }
                             for (const option of ServiceTypeOptions) 
                             {
-                                await this.page.selectOption(this.PersonalAccount_WebElements.Select_ServiceType, option);
+                                await this.page.locator(this.PersonalAccount_WebElements.Select_ServiceType).click()
+                                // Select option
+                                    //await this.page.locator(`text="${option}"`).click();
+                                    await this.page.getByText(packageTypes[i], { exact: true }).click();
                                 await this.page.waitForTimeout(7000);
                             }
                     // await this.page.selectOption(this.PersonalAccount_WebElements.Select_Packaging,this.testdata.FEDEX_EXTRA_LARGE_BOX)
@@ -306,14 +315,17 @@ for (let i = 0; i < packageTypes.length; i++)
                     await this.page.locator(this.PersonalAccount_WebElements.Select_Tracking_Event).click();
 
                     // 🔄 Select different package type each iteration
-                    await this.page.selectOption(this.PersonalAccount_WebElements.Select_PackageType_Dropdown,packageTypes[i])
-
-                    await this.page.selectOption(this.PersonalAccount_WebElements.Select_Carrier, this.testdata.Carrier_FedEx);
+                    await this.page.locator(this.PersonalAccount_WebElements.Select_PackageType_Dropdown).click()
+                     // Click package type
+                    await this.page.getByText(packageTypes[i], { exact: true }).click();
+                    await this.page.locator(this.PersonalAccount_WebElements.Select_Carrier).click()
+                    await this.page.locator(this.PersonalAccount_WebElements.Select_FedEx).click()
                     await this.page.waitForTimeout(2000);
 
                     await this.page.locator(this.PersonalAccount_WebElements.Recipient_Company_text).click();
                     await this.page.locator(this.PersonalAccount_WebElements.ImageType_Text).click()
-                    await this.page.selectOption(this.PersonalAccount_WebElements.Select_ImageType_Dropdown,this.testdata.Image_Type_PDF);
+                    await this.page.locator(this.PersonalAccount_WebElements.Select_ImageType_Dropdown).click()
+                    await this.page.locator(this.PersonalAccount_WebElements.Select_PDF).click()
                     // await this.page.locator(this.PersonalAccount_WebElements.Shipper_City).click();
                     // await this.page.locator(this.PersonalAccount_WebElements.Weight).click();
                     // await this.page.locator(this.PersonalAccount_WebElements.Weight).fill(this.testdata.Weight_Value);
@@ -347,8 +359,10 @@ for (let i = 0; i < packageTypes.length; i++)
                     await this.page.locator(this.PersonalAccount_WebElements.Event).fill(this.testdata.Event_name)
                     await this.page.waitForTimeout(6000)
                     await this.page.locator(this.PersonalAccount_WebElements.Select_Tracking_Event).click()
-                    await this.page.selectOption(this.PersonalAccount_WebElements.Select_PackageType_Dropdown,this.testdata.packageType_Bidder_Credential_Package)
-                    await this.page.selectOption(this.PersonalAccount_WebElements.Select_Carrier,this.testdata.Carrier_USPS)
+                    await this.page.locator(this.PersonalAccount_WebElements.Select_PackageType_Dropdown).click()
+                    await this.page.locator(this.PersonalAccount_WebElements.Select_BidderCredentialPackage).click()
+                    await this.page.locator(this.PersonalAccount_WebElements.Select_Carrier).click()
+                    await this.page.locator(this.PersonalAccount_WebElements.Select_USPS).click()
                     await this.page.waitForTimeout(4000)
                     await this.page.locator(this.PersonalAccount_WebElements.Tracking_Number).click()
                     await this.page.locator(this.PersonalAccount_WebElements.Tracking_Number).fill(this.testdata.Tracking_Number_Value)
@@ -365,8 +379,10 @@ for (let i = 0; i < packageTypes.length; i++)
                     await this.page.locator(this.PersonalAccount_WebElements.Event).fill(this.testdata.Event_name)
                     await this.page.waitForTimeout(6000)
                     await this.page.locator(this.PersonalAccount_WebElements.Select_Tracking_Event).click()
-                    await this.page.selectOption(this.PersonalAccount_WebElements.Select_PackageType_Dropdown,this.testdata.packageType_Bidder_Credential_Package)
-                    await this.page.selectOption(this.PersonalAccount_WebElements.Select_Carrier,this.testdata.Carrier_UPS)
+                    await this.page.locator(this.PersonalAccount_WebElements.Select_PackageType_Dropdown).click()
+                    await this.page.locator(this.PersonalAccount_WebElements.Select_BidderCredentialPackage).click()
+                    await this.page.locator(this.PersonalAccount_WebElements.Select_Carrier).click()
+                    await this.page.locator(this.PersonalAccount_WebElements.Select_UPS).click()
                     await this.page.waitForTimeout(4000)
                     await this.page.locator(this.PersonalAccount_WebElements.Tracking_Number).click()
                     await this.page.locator(this.PersonalAccount_WebElements.Tracking_Number).fill(this.testdata.Tracking_Number_Value)
@@ -384,14 +400,17 @@ for (let i = 0; i < packageTypes.length; i++)
                     await this.page.locator(this.PersonalAccount_WebElements.Event).fill(this.testdata.Event_name);
                     await this.page.waitForTimeout(6000);
                     await this.page.locator(this.PersonalAccount_WebElements.Select_Tracking_Event).click();
-                    await this.page.selectOption(this.PersonalAccount_WebElements.Select_PackageType_Dropdown,this.testdata.packageType_Bidder_Credential_Package)
-                    await this.page.selectOption(this.PersonalAccount_WebElements.Select_Carrier, this.testdata.Carrier_FedEx);
+                    await this.page.locator(this.PersonalAccount_WebElements.Select_PackageType_Dropdown).click()
+                    await this.page.locator(this.PersonalAccount_WebElements.Select_BidderCredentialPackage).click()
+                    await this.page.locator(this.PersonalAccount_WebElements.Select_Carrier).click()
+                    await this.page.locator(this.PersonalAccount_WebElements.Select_FedEx).click()
                     await this.page.waitForTimeout(4000);
                     await this.page.locator(this.PersonalAccount_WebElements.Tracking_Number).click()
                     await this.page.locator(this.PersonalAccount_WebElements.Tracking_Number).fill(this.testdata.Tracking_Number_Value)
                     await this.page.locator(this.PersonalAccount_WebElements.Recipient_Company_text).click();
                     await this.page.locator(this.PersonalAccount_WebElements.ImageType_Text).click()
-                    await this.page.selectOption(this.PersonalAccount_WebElements.Select_ImageType_Dropdown,this.testdata.Image_Type_PDF);
+                    await this.page.locator(this.PersonalAccount_WebElements.Select_ImageType_Dropdown).click()
+                    await this.page.locator(this.PersonalAccount_WebElements.Select_PDF).click()
                     await this.page.locator(this.PersonalAccount_WebElements.Enter_New_Address).click();
                     await this.page.waitForTimeout(1000)
                     await this.page.locator(this.PersonalAccount_WebElements.Country_Name).click()

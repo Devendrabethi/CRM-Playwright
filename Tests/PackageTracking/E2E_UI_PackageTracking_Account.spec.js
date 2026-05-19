@@ -31,40 +31,6 @@ test.describe('Package Tracking / Price Estimator Tests', () => {
     // ---------------- CRM ORIGINATED ----------------
     // test('Validating PACKAGE TRACKING / PRICE ESTIMATOR for CRM originated', async () => {
 
-    //     await test.step('Open Customer Page & Navigate', async () => {
-    //         await customerpage.url();
-    //         await customerpage.manager();
-    //         await customerpage.customer();
-    //     });
-
-    //     await test.step('Create Personal Account', async () => {
-    //         await personalaccountpage.accounttype_dropdown();
-    //         await personalaccountpage.names();
-    //         await personalaccountpage.save();
-    //     });
-
-    //     await test.step('Add Personal Address', async () => {
-    //         await addresspage.newaddress();
-    //         await addresspage.generaladdress();
-    //         await addresspage.saveandclose();
-    //     });
-
-    //     await test.step('Add Personal Phone Number', async () => {
-    //         await phonenumberpage.phonenumberbtn();
-    //         await phonenumberpage.General_PhoneNumber();
-    //     });
-
-    //     await test.step('Add Email', async () => {
-    //         await emailpage.NewEmailbtn();
-    //         await emailpage.enter_emailid();
-    //     });
-
-    //     await test.step('Validate Package Tracking with Price Estimator', async () => {
-    //         await personalaccountpage.Tracking_Tab();
-    //     });
-
-    // });
-
     test('01. Open Customer Page & Navigate', async () => {
     await customerpage.url();
     await customerpage.manager();
@@ -103,7 +69,7 @@ test('06. Validate Package Tracking with Price Estimator', async () => {
         await browser.close();
     });
 });
-
+//WEB Originated
 test.describe('Web Originated Package Tracking Workflow', () => {
 
     test.beforeAll(async ({ playwright }) => {
